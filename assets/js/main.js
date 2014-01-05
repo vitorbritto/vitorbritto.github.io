@@ -4,7 +4,7 @@
 
 "use strict";
 
-var baseUrl = "http://www.vitorbritto.com/blog/assets/css/";
+var baseUrl = "http://www.vitorbritto.com.br/blog/assets/css/";
 // var baseUrl = "http://localhost:4000/assets/css/";
 
 var themeLight = document.getElementById("theme-light"),
