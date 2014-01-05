@@ -1,0 +1,37 @@
+#Info
+name:        Vitor Britto
+description: Desenvolvedor Web
+url:         http://www.vitorbritto.com.br/blog
+baseurl:     http://www.vitorbritto.com.br/blog/
+domain:      vitorbritto.com.br
+
+#Config
+source:      .
+destination: ./_build
+permalink:   /:title/
+markdown:    redcarpet
+pygments:    true
+redcarpet:
+    extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+exclude: [
+bower.json,
+package.json,
+Gruntfile.js,
+config.rb,
+.editorconfig,
+.gitignore,
+Rakefile,
+Gemfile,
+Gemfile.lock,
+sass,
+node_modules,
+legacy,
+main.js,
+README.md
+]
+
+# Custom
+twitter:    https://twitter.com/vitorbritto
+facebook:   https://www.facebook.com/vbwebstudio
+github:     https://github.com/vitorbritto
+rssfeed:    http://feeds.feedburner.com/vitorbritto

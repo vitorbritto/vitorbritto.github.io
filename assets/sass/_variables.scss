@@ -1,0 +1,158 @@
+////////////////////////////////////////////////////////////////////
+//
+// INITIAL CONFIGURATION
+//
+////////////////////////////////////////////////////////////////////
+
+// 1 - Pick a reset or normalization - Accepted values: "meyer", "normalize" (default) or "custom"
+$use-reset:            "normalize";
+
+// 2 - Would you like to use grid system classes?
+$use-grids:            true;
+
+// 3 - Pick a type of grid - Accepted values: "fluid", "static"
+$use-grid-type:        "fluid";
+
+// 4 - Responsiveness?
+$use-responsive:       true;
+
+// 5 - Would you like to use border-box? - It's highly recommended to use it!
+$use-border-box:       true;
+
+// 6 - Would you like to use experimental and legacy(old browser) support?
+$legacy-support:       true;
+$experimental-support: true;
+
+
+////////////////////////////////////////////////////////////////////
+//
+// GRID SYSTEM CONFIGURATION
+//
+////////////////////////////////////////////////////////////////////
+
+// Set the number of columns, column and gutter widths
+$column-width: 60px;
+$gutter-width: 20px;
+$columns: 12;
+
+// Use max-width for your container
+$use-max-width: true;
+$max-width: 960px; // Set your max-width value
+
+// Use padding-left and padding-right on your container
+$use-container-gutter: true;
+$container-gutter: 20px; // Set a custom value for the padding
+
+// Enable sub-pixel fix for IE6 & 7.
+// Set $legacy-support to TRUE on _defaults.scss
+// See http://tylertate.com/blog/2012/01/05/subpixel-rounding.html
+$min-width: 999999;
+$correction: 0.5 / $min-width * 100;
+
+// Use the offset options in your grid - push, pull, squish and centered
+$use-offset: false;
+
+// Set your helper classes
+$class-container:   'container';
+$class-row:         'row';
+$class-column:      'span';
+$class-push:        'push';
+$class-pull:        'pull';
+$class-squish:      'squish';
+
+// Set your breakpoints
+$tvscreen: 1441px;
+$desktop:  979px;
+$tablet:   768px;
+$mobile:   767px;
+
+
+////////////////////////////////////////////////////////////////////
+//
+// CORE SETTINGS
+//
+////////////////////////////////////////////////////////////////////
+
+
+// Typography
+// -------------------------
+$sans-font-family:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif-font-family:       Georgia, "Times New Roman", Times, serif;
+$mono-font-family:        Monaco, Menlo, Consolas, "Courier New", monospace;
+
+// Uncomment to set a custom font-family
+$custom-font-family:      "Lato", sans-serif;
+
+
+$base-font-family:        $custom-font-family;
+$base-font-size:          16px;
+$base-line-height:        24px;
+$alt-font-family:         $serif-font-family;
+
+$headings-font-family:    inherit   !default;
+$headings-font-weight:    300       !default;
+$headings-color:          inherit   !default;
+
+
+// Component sizing
+// -------------------------
+$font-size-large:         $base-font-size * 1.25; // ~18px
+$font-size-small:         $base-font-size * 0.85; // ~12px
+$font-size-mini:          $base-font-size * 0.75; // ~11px
+
+$padding-large:           11px 19px !default; // 44px
+$padding-small:           2px 10px  !default; // 26px
+$padding-mini:            0px 6px   !default; // 22px
+
+$base-border-radius:      5px !default;
+$border-radius-large:     8px !default;
+$border-radius-small:     3px !default;
+
+
+////////////////////////////////////////////////////////////////////
+//
+// COMPONENTS
+//
+////////////////////////////////////////////////////////////////////
+
+
+// Buttons
+// -------------------------
+
+// Sassy Buttons - Compass extension by Jared Hardy - http://www.jaredhardy.com
+
+// Sassy Button defaults
+// These are the base defaults for the buttons, if you are going to use similar buttons on an entire site changing these
+// can save you some time by calling the sassy button mixin with less arguments.
+
+$btn-base-color:             rgba(11, 153, 194, 1)       !default;
+$btn-second-color:           false                       !default;
+$btn-border-radius:          5px                         !default;
+$btn-padding:                0.5em 1.5em                 !default;
+$btn-font-size:              14px                        !default;
+$btn-text-color:             white                       !default;
+$btn-text-style:             "raised"                    !default;
+$btn-gradient-style:         "simple"                    !default;
+$btn-pseudo-states:          true                        !default;
+
+
+////////////////////////////////////////////////////////////////////
+//
+// SUPPORT - Legacy and Experimental Browser Support
+//
+////////////////////////////////////////////////////////////////////
+
+$legacy-support-for-ie:                 $legacy-support;
+$legacy-support-for-ie6:                $legacy-support;
+$legacy-support-for-ie7:                $legacy-support;
+$legacy-support-for-ie8:                $legacy-support;
+$legacy-support-for-mozilla:            $legacy-support;
+
+$experimental-support-for-mozilla:      $experimental-support;
+$experimental-support-for-webkit:       $experimental-support;
+$experimental-support-for-opera:        $experimental-support;
+$experimental-support-for-microsoft:    $experimental-support;
+$experimental-support-for-khtml:        $experimental-support;
+$experimental-support-for-svg:          $experimental-support;
+$experimental-support-for-pie:          $experimental-support;
+$experimental-support-for-gradients:    $experimental-support;

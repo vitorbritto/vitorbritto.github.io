@@ -1,0 +1,14 @@
+---
+layout: archive
+title: Arquivos
+description: Lista com todos os artigos publicados neste Blog.
+---
+
+<section id="archive">
+    {% for post in site.posts %}
+    <div class="article">
+        <span><strong>Publicado em:</strong> {{ post.date | date:"%d/%m/%Y" }} | <strong>Por:</strong> {{ post.author }}</span>
+        <h4><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h4>
+    </div>
+    {% endfor %}
+</section>

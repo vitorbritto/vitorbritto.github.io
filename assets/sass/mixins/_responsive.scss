@@ -1,0 +1,18 @@
+// Media Queries
+// -------------------------
+
+@mixin respond-to($media-query) {
+
+    @if $media-query == tvscreen {
+        @media (min-width: $tvscreen) { @content; }
+    }
+
+    @if $media-query == tablet {
+        @media (min-width: $tablet) and  (max-width: $desktop) { @content; }
+    }
+
+    @if $media-query == mobile {
+        @media (max-width:$mobile) { @content; }
+    }
+
+}

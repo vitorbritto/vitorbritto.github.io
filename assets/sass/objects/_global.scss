@@ -1,0 +1,18 @@
+//
+// Global Utility Classes
+// --------------------------------------------------
+
+.ir             { @include hide-text(); }
+.affix          { position: fixed; }
+.hide           { display: none; }
+.box-shadow     { display: block; }
+.invisible      { visibility: hidden; }
+.clear          { clear: both; }
+.clearfix       { @include clearfix(); }
+.pull-left      { @include pull-left(); }
+.pull-right     { @include pull-right(); }
+
+.radius         { @include border-radius($base-border-radius); }
+.radius-large   { @include border-radius($border-radius-large); }
+.radius-small   { @include border-radius($border-radius-small); }
+.round          { @include border-radius(50%); }

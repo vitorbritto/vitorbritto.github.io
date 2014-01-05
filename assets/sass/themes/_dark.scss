@@ -1,0 +1,91 @@
+////////////////////////////////////////////////////////////////////
+//
+// DARK THEME SETTINGS
+//
+////////////////////////////////////////////////////////////////////
+
+
+// IMPORTANT MESSAGE
+// -----------------------------------------------------------------
+// Feel free to edit but DO NOT REMOVE ANY VARIABLES HERE!
+// If you find you need to do so it is a failing of the
+// framework so please tweet at @vitorbritto.
+// -----------------------------------------------------------------
+
+
+// Colors
+// -------------------------
+
+// Grays
+$black:                 #000000                 !default;
+$gray:                  #555555                 !default;
+$white:                 #ffffff                 !default;
+$gray-dark:             #333333                 !default;
+$gray-light:            #bbbbbb                 !default;
+$gray-darker:           #1d1d1d                 !default;
+$gray-lighter:          #eeeeee                 !default;
+
+// Common Colors
+$blue:                  #0064cd                 !default;
+$green:                 #3ca838                 !default;
+$red:                   #db3f2f                 !default;
+$yellow:                #ff9a1f                 !default;
+$orange:                #e64919                 !default;
+$pink:                  #c3325f                 !default;
+$purple:                #834186                 !default;
+
+// Light Colors
+$blue-light:             #48a1e5                !default;
+$green-light:            #8bd47d                !default;
+$red-light:              #ea4938                !default;
+$yellow-light:           lighten($yellow, 25%)  !default;
+$pink-light:             #c3325f                !default;
+$purple-light:           #834186                !default;
+
+// Dark Colors
+$blue-dark:              darken($blue, 10%)     !default;
+$yellow-dark:            darken($yellow, 10%)   !default;
+$red-dark:               darken($red, 10%)      !default;
+$green-dark:             #2a7a1a                !default;
+$purple-dark:            #371849                !default;
+
+
+// Scaffolding
+// -------------------------
+$background-color:      $gray-darker   !default;
+$text-color:            $white         !default;
+
+
+// Links
+// -------------------------
+$link-color:            $red                        !default;
+$link-color-hover:      lighten($link-color, 5%)    !default;
+$link-color-focus:      lighten($link-color, 5%)    !default;
+$link-color-active:     lighten($link-color, 5%)    !default;
+$link-color-visited:    $link-color                 !default;
+
+
+// Tables
+// -------------------------
+$table-background:               transparent                !default; // overall background-color
+$table-background-accent:        #f9f9f9                    !default; // for striping
+$table-background-hover:         #f5f5f5                    !default; // for hover
+$table-border:                   #ddd                       !default; // table and cell border
+
+
+// Forms
+// -------------------------
+$input-background:               $white                     !default;
+$input-border:                   $gray-light                !default;
+$input-border-hover:             darken($blue-light, 10%)   !default;
+$input-border-radius:            $base-border-radius        !default;
+$input-disabled-background:      $gray-lighter              !default;
+$form-actions-background:        #f5f5f5                    !default;
+$placeholder-text:               $gray-light                !default;
+$input-height:                   $base-line-height + 10px   !default;
+
+
+// Misc
+// -------------------------
+$hr-border:                      $gray                      !default;
+$horizontal-component-offset:    180px                      !default;

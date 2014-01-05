@@ -1,0 +1,200 @@
+// STRUCTURE MIXINS
+// --------------------------------------------------
+
+
+// Links
+// ------------------
+@mixin link-colors($normal, $hover: false, $active: false, $visited: false, $focus: false) {
+    color: $normal;
+    @if $visited {
+        &:visited {
+            color: $visited;
+        }
+    }
+    @if $focus {
+        &:focus {
+            color: $focus;
+        }
+    }
+    @if $hover {
+        &:hover {
+            color: $hover;
+        }
+    }
+    @if $active {
+        &:active {
+            color: $active;
+        }
+    }
+}
+
+@mixin link-style($link-type) {
+    @if $link-type == "normal" {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @if $link-type == "unstyled" {
+        color: inherit;
+        text-decoration: inherit;
+        cursor: inherit;
+        &:active, &:focus {
+            outline: none;
+        }
+    }
+}
+
+
+// Lists
+// ------------------
+
+@mixin list-style($list-type) {
+    @if $list-type == "unstyled" {
+        list-style-image: none;
+        list-style-type: none;
+        margin-left: 0;
+    }
+    @if $list-type == "square" {
+        list-style-type: square;
+        margin-left: 20px;
+    }
+    @if $list-type == "inline" {
+        margin-left: 0;
+        list-style: none;
+        & > li {
+            display: inline-block;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    }
+}
+
+
+// Images
+// ------------------
+
+@mixin img($style: false, $align: false) {
+    @if $align {
+        border: none;
+        @if $align == "left" {
+            @include float(left);
+            margin: 0 30px 30px 0;
+            border: none;
+        }
+        @else if $align == "right" {
+            @include float(right);
+            margin: 0 0 30px 30px;
+        }
+    }
+    @if $style == "circle" {
+        @include border-radius(500px);
+    }
+    @else if $style == "rounded" {
+        @include border-radius($base-border-radius);
+    }
+    @else if $style == "polaroid" {
+        padding: 4px;
+        background-color: $white;
+        border: 1px solid $gray-light;
+        border: 1px solid rgba(0,0,0,.2);
+        @include box-shadow(0 1px 3px rgba(0,0,0,.1));
+    }
+}
+
+
+// Forms
+// ------------------
+
+// Generate Input List
+$inputs-list: 'input[type="email"]',
+'input[type="number"]',
+'input[type="password"]',
+'input[type="search"]',
+'input[type="tel"]',
+'input[type="text"]',
+'input[type="url"]',
+
+// Webkit & Gecko may change the display of these in the future
+'input[type="color"]',
+'input[type="date"]',
+'input[type="datetime"]',
+'input[type="datetime-local"]',
+'input[type="month"]',
+'input[type="time"]',
+'input[type="week"]';
+
+$unquoted-inputs-list: ();
+@each $input-type in $inputs-list {
+    $unquoted-inputs-list: append($unquoted-inputs-list, unquote($input-type), comma);
+}
+
+$all-text-inputs: $unquoted-inputs-list;
+
+
+// Hover Pseudo-class
+$all-text-inputs-hover: ();
+@each $input-type in $unquoted-inputs-list {
+    $input-type-hover: $input-type + ":hover";
+    $all-text-inputs-hover: append($all-text-inputs-hover, $input-type-hover, comma);
+}
+
+// Focus Pseudo-class
+$all-text-inputs-focus: ();
+@each $input-type in $unquoted-inputs-list {
+    $input-type-focus: $input-type + ":focus";
+    $all-text-inputs-focus: append($all-text-inputs-focus, $input-type-focus, comma);
+}
+
+// Input Sizes
+@mixin input-size($size) {
+    @if $size == "mini" {
+        @include column($columns/$columns);
+    }
+    @else if $size == "small" {
+        @include column($columns/4);
+    }
+    @else if $size == "medium" {
+        @include column($columns/2);
+    }
+    @else if $size == "large" {
+        @include column($columns/2 + $columns/4);
+    }
+    @else if $size == "full" {
+        display: block;
+        width: 100%;
+        min-height: $input-height; // Make inputs at least the height of their button counterpart(line-height + padding + border)
+        @include box-sizing(border-box); // Makes inputs behave like true block-level elements
+    }
+}
+
+// Placeholder text
+$placeholders: '-webkit-input-placeholder',
+               '-moz-placeholder',
+               '-ms-input-placeholder';
+
+@mixin placeholder() {
+  @each $placeholder in $placeholders {
+    @if $placeholder == "-webkit-input-placeholder" {
+      &::#{$placeholder} {
+        @content;
+      }
+    }
+    @else if $placeholder == "-moz-placeholder" {
+      // FF 18-
+      &:#{$placeholder} {
+        @content;
+      }
+
+      // FF 19+
+      &::#{$placeholder} {
+        @content;
+      }
+    }
+    @else {
+      &:#{$placeholder} {
+        @content;
+      }
+    }
+  }
+}

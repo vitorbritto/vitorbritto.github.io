@@ -1,0 +1,21 @@
+---
+layout: default
+title: Vitor Britto - Desenvolvedor Web
+---
+
+<ul id="posts">
+    {% for post in site.posts %}
+    <li class="post span4">
+        <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">
+            <img src="{{post.cover}}" alt="">
+            <h4 class="title">{{ post.title }}</h4>
+        </a>
+        <span class="date">{{ post.date | date:"%d/%m/%Y" }} | Por {{ post.author }}</span>
+    </li>
+    {% endfor %}
+</ul>
+
+<div class="clear"></div>
+
+<a href="{{ site.baseurl }}archive" title="Confira a lista completa de artigos" class="btn-archive">Confira a lista completa de artigos</a>
+

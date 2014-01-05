@@ -1,0 +1,30 @@
+/* TEAM */
+
+Code:
+    Vitor Britto
+    Site: www.vitorbritto.com.br
+    Contact: code@vitorbritto.com.br
+    Twitter: @vitorbritto
+    From: Bahia, Brazil
+
+Design:
+    Vitor Britto
+    Site: www.vitorbritto.com.br
+    Contact: code@vitorbritto.com.br
+    Twitter: @ vitorbritto
+    From: Bahia, Brazil
+
+
+/* SITE */
+
+Last Update:
+    05/07/2012
+
+Standards:
+	HTML5, CSS3, jQuery, PHP
+
+Components:
+	jQuery Mobile
+
+Software:
+	Sublime Text 2, Photoshop
