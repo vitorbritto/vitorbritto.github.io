@@ -6,34 +6,15 @@ Meu blog pessoal onde abordo temas sobre desenvolvimento web, experiência do us
 
 Este blog foi desenvolvido com [Jekyll](http://jekyllrb.com/), um *static generator* em Ruby.
 
-## Utilizando
+## Como utilizar
 
 Para rodar este blog localmente na sua máquina, execute os seguintes passos:
 
-1. Caso você não possua o Git e Ruby, instale-os na sua máquina.
-
-- [Git](http://git-scm.com/downloads)
-- [Ruby](http://www.ruby-lang.org/pt/downloads/)
-
-2. Instale o [Jekyll](http://jekyllrb.com/) através do comando:
-
-```bash
-gem install jekyll
-```
-
-3. Clone o projeto e acesso o diretório do projeto com o seguinte comando:
-
-```bash
-git clone git@github.com:vitorbritto/blog.git && cd blog
-```
-
-4. Agora, execute:
-
-```bash
-rake build
-```
-
-5. Confira o site rodando em `http://localhost:4000` :D
+1. Caso você não possua o [Git](http://git-scm.com/downloads) e [Ruby](http://www.ruby-lang.org/pt/downloads/), instale-os na sua máquina.
+2. Instale o [Jekyll](http://jekyllrb.com/) através do comando: `gem install jekyll`
+3. Clone o projeto e acesso o diretório do projeto com o seguinte comando: `git clone git@github.com:vitorbritto/blog.git && cd blog`
+4. Agora, execute: `rake build`
+5. Confira o site rodando em `http://localhost:4000`.
 
 ## Estrutura
 
