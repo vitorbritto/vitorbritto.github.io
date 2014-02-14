@@ -19,6 +19,17 @@ themeDark.onclick = function () {
     document.getElementById("theme-css").href = baseUrl + "style.css";
 };
 
+// Ambient Light Events
+
+window.addEventListener('devicelight', function(event) {
+  var light = event.value
+
+  if (light <= 10) {
+    document.getElementById("theme-css").href = baseUrl + "style.css";
+  } else {
+    document.getElementById("theme-css").href = baseUrl + "theme-light.css";
+  }
+});
 
 $(document).ready(function(){
 
