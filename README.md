@@ -1,10 +1,10 @@
 # Blog - Vitor Britto
 
-Meu blog pessoal onde abordo temas sobre desenvolvimento web, experiência do usuário e produtividade no ambiente de trabalho.
+Espaço onde escrevo artigos sobre desenvolvimento web, experiência do usuário e produtividade no ambiente de trabalho.
 
 ## Bem vindo!
 
-Este blog foi desenvolvido com [Jekyll](http://jekyllrb.com/), um *static generator* em Ruby.
+Este projeto foi desenvolvido com [Jekyll](http://jekyllrb.com/), um *static generator* em Ruby.
 
 ## Como utilizar
 
