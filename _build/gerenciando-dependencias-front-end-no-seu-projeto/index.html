@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Gerenciando dependências Front-end no seu projeto</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Desenvolvedor Web" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="Gerenciando dependências Front-end no seu projeto"/>
+    <meta property="og:site_name" content="Blog - Vitor Britto"/>
+    <meta property="og:url" content="http://www.vitorbritto.com.br/blog/gerenciando-dependencias-front-end-no-seu-projeto/"/>
+    <meta property="og:image" content="http://www.vitorbritto.com.br/blog/assets/images/fb.jpg"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="Imagine ter de instalar e gerenciar bibliotecas de terceiros toda vez que iniciar um novo projeto. Já pensou nas etapas que você terá de realizar? Com o Bower, o gerenciamento de suas dependências se torna ágil, prático e inteligente."/>
+
+    <link rel="shortcut icon" href="http://www.vitorbritto.com.br/blog/assets/images/favicon.png" type="image/x-icon">
+    <link href="http://feeds.feedburner.com/vitorbritto" rel="alternate" type="application/rss+xml">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <link href="http://www.vitorbritto.com.br/blog/assets/css/style.css" rel="stylesheet" id="theme-css"/>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <header class="header">
+
+                <div class="span4">
+                    <div class="header-info">
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h4 class="header-description">Desenvolvedor Web</h4>
+                    </div>
+                </div>
+
+                <div class="span5">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/">Início</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/about">Sobre</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/projects">Projetos</a></li>
+    </ul>
+</nav>
+
+                </div>
+
+                <div class="span3">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item">
+            <a href="https://www.facebook.com/vbwebstudio" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://twitter.com/vitorbritto" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://github.com/vitorbritto" title="Github" target="_blank"><i class="icon-github"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="mailto:contato@vitorbritto.com.br"><i class="icon-envelope-alt"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="http://feeds.feedburner.com/vitorbritto" title="RSS Feed" target="_blank"><i class="icon-rss"></i></a>
+        </li>
+    </ul>
+</nav>
+
+                </div>
+
+            </header>
+        </div>
+
+        <div class="line"></div>
+
+
+
+<!-- Switch Theme -->
+<div class="theme-wrapper">
+    <p class="theme-text">Tema:</p>
+    <span class="theme-btn light" id="theme-light"></span>
+    <span class="theme-btn dark" id="theme-dark"></span>
+</div>
+
+    <div class="row">
+
+        <article class="article">
+
+            <img class="article-img" src="http://www.vitorbritto.com.br/blog/assets/images/posts/post-bower.jpg">
+            <h2 class="article-title">Gerenciando dependências Front-end no seu projeto</h2>
+            <span class="article-date">Publicado em: 11/10/2013 | Por: Vitor Britto</span>
+            <div class="line"></div>
+
+            <section class="article-entry">
+                <p>Saudações!</p>
+
+<p>Sabemos da necessidade em ter um Workflow produtivo e inteligente, além de utilizar ferramentas que agregam poder e atalhos para gerenciar tarefas no desenvolvimento dos projetos. Uma dessas ferramentas é o Bower.</p>
+
+<p>Imagine ter de instalar e gerenciar bibliotecas de terceiros toda vez que iniciar um novo projeto. Já pensou nas etapas que você terá de realizar?</p>
+
+<p>Realmente, isso não é legal. Nem para você, nem para o seu tempo hábil, muito menos para o seu Workflow.</p>
+
+<p>Com o Bower, o gerenciamento de suas dependências se torna ágil, prático e inteligente. Veja por quê.</p>
+
+              <h3 id="O-que-é-o-Bower-">
+                <a name="O-que-é-o-Bower-" href="#O-que-é-o-Bower-"></a>O que é o Bower?
+              </h3>
+            
+<p>O Bower é um gerenciador de pacotes front-end, executado através da linha de comando, que possibilita o gerenciamento de pacotes, mesmo que isso signifique HTML, CSS, ou imagens. Neste caso, um pacote qualquer, código de terceiros encapsulado, geralmente acessível ao público a partir de um repositório Git.</p>
+
+<p>Algo importante que você deve saber sobre o Bower, é que ele é somente um gerenciador de pacotes. Nada mais além disso. Se você está em busca de uma ferramenta capaz de automatizar tarefas, procure pelo <a href="http://gruntjs.com/">Grunt</a>.</p>
+
+<p>Então, vamos ao que interessa.</p>
+
+              <h3 id="Instalando">
+                <a name="Instalando" href="#Instalando"></a>Instalando
+              </h3>
+            
+<p>O Bower depende do <a href="http://nodejs.org/">Node</a> e <a href="http://npmjs.org/">NPM</a>. Execute o comando abaixo para iniciar a sua instalação:</p>
+
+<p><code>npm install -g bower</code></p>
+
+<p><em>Certifique-se também de que o <a href="http://git-scm.com/">Git</a> está instalado na sua máquina pois, alguns pacotes necessitam dele para realizar o procedimento de busca e instalação.</em></p>
+
+<blockquote>
+<p><strong>Uma nota para usuários de Windows</strong></p>
+
+<p>Para utilizar o Bower no Windows, você precisa ter instalado o <a href="http://code.google.com/p/msysgit/">msysgit</a> corretamente. Certifique-se de checar a opção <em>Run Git from the Windows Command Prompt</em>.</p>
+
+<p>Note que se você estiver usando o <strong>TortoiseGit</strong> e o Bower continuar pedindo sua senha SSH, você deve adicionar a seguinte variável de ambiente: <code>GIT_SSH - C:\Program Files\TortoiseGit\bin\TortoisePlink.exe</code>. Ajuste o caminho <code>TortoisePlink</code> se necessário.</p>
+</blockquote>
+
+              <h3 id="Utilizando">
+                <a name="Utilizando" href="#Utilizando"></a>Utilizando
+              </h3>
+            
+<p>Ao instalar o Bower, o seu braço direito será o comando <code>bower help</code>. Isto é o necessário para iniciar o seu uso.</p>
+
+<p><strong>Executando como Administrador</strong></p>
+
+<blockquote>
+<p>O Bower pode ser executado por qualquer usuário do sistema, não há a necessidade de permissões administrativas. Entretanto, se ainda assim quiser executar os comandos com o <code>sudo</code>, utilize a opção <code>--allow-root</code>.</p>
+</blockquote>
+
+              <h4 id="Encontrando-pacotes">
+                <a name="Encontrando-pacotes" href="#Encontrando-pacotes"></a>Encontrando pacotes
+              </h4>
+            
+<p>Para encontrar pacotes registrados no Bower, execute:</p>
+
+<p><code>bower search [&lt;nome&gt;]</code></p>
+
+<p>Confira o exemplo:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower search socket
+<a name="line-2"></a>Search results:
+<a name="line-3"></a>
+<a name="line-4"></a>    socket.io-client git://github.com/LearnBoost/socket.io-client.git
+<a name="line-5"></a>    angular-socket-io git://github.com/btford/angular-socket-io.git
+<a name="line-6"></a>    socket.io git://github.com/LearnBoost/socket.io
+<a name="line-7"></a>    web-socket-js git://github.com/gimite/web-socket-js.git
+<a name="line-8"></a>    socketio-file-upload git://github.com/vote539/socketio-file-upload.git
+<a name="line-9"></a>    simplesocket git://github.com/mkuklis/simplesocket.git
+</code></pre></div>
+<p><strong>Nota:</strong> utilizando somente <code>bower search</code>, todos os pacotes serão listados.</p>
+
+              <h4 id="Instalando-pacotes-e-dependências">
+                <a name="Instalando-pacotes-e-dependências" href="#Instalando-pacotes-e-dependências"></a>Instalando pacotes e dependências
+              </h4>
+            
+<p>O Bower oferece diversas possibilidades para instalar as dependências no seu projeto:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># Através das dependências encontradas no diretório onde consta o arquivo bower.json</span>
+<a name="line-2"></a>bower install
+<a name="line-3"></a>
+<a name="line-4"></a><span class="c"># Através de um pacote local ou remoto</span>
+<a name="line-5"></a>bower install &lt;pacote&gt;
+<a name="line-6"></a>
+<a name="line-7"></a><span class="c"># Através de uma versão específica de um determinado pacote</span>
+<a name="line-8"></a>bower install &lt;pacote&gt;#&lt;versão&gt;
+<a name="line-9"></a>
+<a name="line-10"></a><span class="c"># Através de um nome customizado e uma versão específica do pacote</span>
+<a name="line-11"></a>bower install &lt;nome&gt;<span class="o">=</span>&lt;pacote&gt;#&lt;versão&gt;
+</code></pre></div>
+<p>Onde <code>&lt;pacote&gt;</code> possui as seguintes possbilidades:</p>
+
+<ul>
+<li>Por um nome que mapeia o pacote registrado no Bower (ex.: <code>jquery</code>).</li>
+<li>Um ponto de saída remoto, sendo ele um repositório Git público ou privado (ex.: <code>git://github.com/usuario/um-pacote-qualquer.git</code>).</li>
+<li>Um ponto de saída local (ex.: uma pasta que se comporte como um repositório Git).</li>
+<li>O caminho relativo para um ponto de saída (ex.: usuário/repositório).</li>
+<li>A URL de um arquivo que possua um arquivo <code>zip</code> ou <code>tar</code> (o conteúdo será extraído).</li>
+</ul>
+
+<p>Confira o exemplo:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower install socket.io
+<a name="line-2"></a>bower socket.io#*           not-cached git://github.com/LearnBoost/socket.io.git#*
+<a name="line-3"></a>bower socket.io#*              resolve git://github.com/LearnBoost/socket.io.git#*
+<a name="line-4"></a>bower socket.io#*             download https://github.com/LearnBoost/socket.io/archive/0.9.15.tar.gz
+<a name="line-5"></a>bower socket.io#*              extract archive.tar.gz
+<a name="line-6"></a>bower socket.io#*             resolved git://github.com/LearnBoost/socket.io.git#0.9.15
+<a name="line-7"></a>bower socket.io#~0.9.15        install socket.io#0.9.15
+<a name="line-8"></a>
+<a name="line-9"></a>socket.io#0.9.15 components/socket.io
+</code></pre></div>
+<blockquote>
+<p><strong>Nota 1:</strong> todos os conteúdos do pacote serão instalados no diretório <code>bower_components</code> por padrão. Você nunca deve modificar diretamente o conteúdo deste diretório.</p>
+
+<p><strong>Nota 2:</strong> caso você possua um arquivo <code>bower.json</code> configurado e resolva instalar novas dependências, utilize a opção <code>--save</code>. Exemplo: <code>bower install &lt;nova-dependencia&gt; --save</code>.</p>
+
+<p><strong>Nota 3:</strong> você pode configurar o <code>bower.json</code> criando um arquivo <code>.bowerrc</code>. A especificação atual pode ser lida <a href="https://docs.google.com/document/d/1APq7oA9tNao1UYWyOm8dKqlRP2blVkROYLZ2fLIjtWc/edit#heading=h.4pzytc1f9j8k">aqui</a>, na seção de <strong>Configuração</strong>.</p>
+</blockquote>
+
+              <h4 id="Usando-as-dependências">
+                <a name="Usando-as-dependências" href="#Usando-as-dependências"></a>Usando as dependências
+              </h4>
+            
+<p>O bower &quot;não opina&quot; no uso dos componentes instalados. Fica a critério do desenvolvedor em como os componentes vão se comportar.</p>
+
+<p>A abordagem mais fácil é utilizar o Bower estaticamente. Basta fazer a referência para os componentes instalados manualmente usando a tag <code>script</code>:</p>
+
+<p><code>&lt;script src=&quot;/components/jquery/index.js&quot;&gt;&lt;/script&gt;</code></p>
+
+<p>Para projetos mais complexos, você provavelmente vai querer concatenar seus scripts ou realizar um carregamento modular. Bower é apenas um gerenciador de pacotes, mas existem muitas outras ferramentas - como <a href="https://github.com/sstephenson/sprockets">Sprockets</a> e <a href="http://requirejs.org/">RequireJS</a> - que vai ajudá-lo a fazer isto.</p>
+
+              <h5 id="Ajudando-mais-um-pouco">
+                <a name="Ajudando-mais-um-pouco" href="#Ajudando-mais-um-pouco"></a>Ajudando mais um pouco
+              </h5>
+            
+<p>O Bower disponibiliza um mapeamento de dados mas, isto pode ser feito através de uma ferramenta de <em>build</em> para consumí-los de forma eficaz.</p>
+
+<p>Se você declarar a opção <code>--paths</code> no comando <code>list</code> do Bower, você terá um mapeamento para cada dependência no seu <code>bower.json</code>.</p>
+
+<p>Confira o exemplo:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower list --paths
+<a name="line-2"></a><span class="o">{</span>
+<a name="line-3"></a>  <span class="s2">&quot;backbone&quot;</span>: <span class="s2">&quot;components/backbone/index.js&quot;</span>,
+<a name="line-4"></a>  <span class="s2">&quot;jquery&quot;</span>: <span class="s2">&quot;components/jquery/index.js&quot;</span>,
+<a name="line-5"></a>  <span class="s2">&quot;underscore&quot;</span>: <span class="s2">&quot;components/underscore/index.js&quot;</span>
+<a name="line-6"></a><span class="o">}</span>
+</code></pre></div>
+<p>Como alternativa, todos os comandos suportam a opcão <code>--json</code> que gera uma saída em JSON. Os comandos com resultados de saída terão <code>stdout</code> como destino, já os erros e logs terão como destino o <code>stderr</code>.</p>
+
+              <h4 id="Atualizando-as-dependências">
+                <a name="Atualizando-as-dependências" href="#Atualizando-as-dependências"></a>Atualizando as dependências
+              </h4>
+            
+<p>Existem duas formas para atualizar as dependências do seu pacote:</p>
+
+<ol>
+<li><code>bower update</code>: atualiza todas as dependências instaladas.</li>
+<li><code>bower update &lt;dependência&gt;</code>: atualiza uma dependência específica.</li>
+</ol>
+
+<p>Confira o exemplo:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower update
+<a name="line-2"></a>bower socket.io#~0.9.15         cached git://github.com/LearnBoost/socket.io.git#0.9.15
+<a name="line-3"></a>bower socket.io#~0.9.15       validate 0.9.15 against git://github.com/LearnBoost/socket.io.git#~0.9.15
+</code></pre></div>
+              <h4 id="Removendo-as-dependências">
+                <a name="Removendo-as-dependências" href="#Removendo-as-dependências"></a>Removendo as dependências
+              </h4>
+            
+<p>Para remover uma dependência local, execute: <code>bower uninstall &lt;dependência&gt;</code></p>
+
+<p>Confira o exemplo:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower uninstall socket.io
+<a name="line-2"></a>bower uninstall     socket.io
+</code></pre></div>
+              <h4 id="Outros-comandos-para-as-dependências">
+                <a name="Outros-comandos-para-as-dependências" href="#Outros-comandos-para-as-dependências"></a>Outros comandos para as dependências
+              </h4>
+            
+<p>O Bower possui alguns comandos que auxiliam no gerenciamento das dependências e que você deveria conhecer.</p>
+
+              <h5 id="bower-list">
+                <a name="bower-list" href="#bower-list"></a>bower list
+              </h5>
+            
+<p>Com o <code>bower list</code> é possível mostrar as dependências instaladas localmente no seu pacote Bower.</p>
+
+<p>Confira o exemplo:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower list
+<a name="line-2"></a>bower check-new     Checking <span class="k">for </span>new versions of the project dependencies..
+<a name="line-3"></a>bower#0.0.0 /Users/vitorbritto/temp/managers/bower
+<a name="line-4"></a>└── socket.io#0.9.15 extraneous
+</code></pre></div>
+<p><strong>Nota:</strong> perceba que ao executar este comando, o Bower verifica se existe uma nova versão das dependências instaladas.</p>
+
+              <h5 id="bower-lookup">
+                <a name="bower-lookup" href="#bower-lookup"></a>bower lookup
+              </h5>
+            
+<p>Com o <code>bower lookup</code> é possível verificar a <em>url</em> de uma dependência.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower lookup jquery
+<a name="line-2"></a>jquery git://github.com/components/jquery.git
+</code></pre></div>
+              <h5 id="bower-info">
+                <a name="bower-info" href="#bower-info"></a>bower info
+              </h5>
+            
+<p>Com o <code>bower info</code> é possível verificar as versões disponíveis de uma dependência.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower info modernizr
+<a name="line-2"></a>bower modernizr#*               cached git://github.com/Modernizr/Modernizr.git#2.6.2
+<a name="line-3"></a>bower modernizr#*             validate 2.6.2 against git://github.com/Modernizr/Modernizr.git#*
+<a name="line-4"></a>
+<a name="line-5"></a><span class="o">{</span>
+<a name="line-6"></a>  name: <span class="s1">&#39;modernizr&#39;</span>,
+<a name="line-7"></a>  homepage: <span class="s1">&#39;https://github.com/Modernizr/Modernizr&#39;</span>,
+<a name="line-8"></a>  version: <span class="s1">&#39;2.6.2&#39;</span>
+<a name="line-9"></a><span class="o">}</span>
+<a name="line-10"></a>
+<a name="line-11"></a>Available versions:
+<a name="line-12"></a>  - 2.6.2
+<a name="line-13"></a>  - 2.6.1
+<a name="line-14"></a>  - 2.5.3
+<a name="line-15"></a>  - 2.5.2
+<a name="line-16"></a>  - 2.5.1
+<a name="line-17"></a>  - 2.0.6
+<a name="line-18"></a>
+<a name="line-19"></a>You can request info <span class="k">for </span>a specific version with <span class="s1">&#39;bower info modernizr#&lt;version&gt;&#39;</span>
+</code></pre></div>
+              <h5 id="bower-cache-clean">
+                <a name="bower-cache-clean" href="#bower-cache-clean"></a>bower cache clean
+              </h5>
+            
+<p>Com o <code>bower cache clean</code> é possível remover todos os pacotes mantidos em cache pelo Bower.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower cache clean
+<a name="line-2"></a>bower deleted       Cached package jquery: /Users/vitorbritto/.cache/bower/packages/29cb4373d29144ca260ac7c3997f4381/2.0.3
+<a name="line-3"></a>bower deleted       Cached package modernizr: /Users/vitorbritto/.cache/bower/packages/49c1c17a4ec1b92db2a4728ece50773a/2.6.2
+</code></pre></div>
+              <h3 id="Definindo-um-pacote">
+                <a name="Definindo-um-pacote" href="#Definindo-um-pacote"></a>Definindo um pacote
+              </h3>
+            
+<p>Para definir um pacote do Bower, é preciso criar o arquivo <code>bower.json</code> no diretório raiz do seu projeto e especificar as suas dependências. Isto é similar ao <code>package.json</code> do Node ou uma <code>Gemfile</code> do Ruby.</p>
+
+<p><strong>Nota:</strong> nas versões anteriores a <strong>0.9.0</strong> do Bower, o pacote de metadados era chamado de <code>component.json</code>, ao invés de <code>bower.json</code>. Isto foi modificado para impedir conflitos com outra ferramenta. Você ainda pode utilizar o <code>component.json</code>, mas lembre-se de que este é obsoleto e que será removido em um próximo lançamento.</p>
+
+<p>O <code>bower.json</code> define uma série de opções, entre elas:</p>
+
+<ul>
+<li><code>name</code> (obrigatório): nome do seu pacote.</li>
+<li><code>version</code>: versão semântica (veja <a href="http://semver.org/">semver</a>).</li>
+<li><code>main</code> [string|array]: ponto(s) de saída do seu pacote.</li>
+<li><code>ignore</code> [array]: lista dos arquivos que não serão colocados em produção.</li>
+<li><code>dependencies</code> [hash]: dependências para produção.</li>
+<li><code>devDependencies</code> [hash]: dependências para desenvolvimento.</li>
+<li><code>private</code> [boolean]: define se o pacote será privado e/ou terá permissão para registro no futuro (mais a respeito sobre registro de pacotes, na seção <strong>Registrando um pacote no Bower</strong>).</li>
+</ul>
+<div class="highlight"><pre><code class="json language-json" data-lang="json"><a name="line-1"></a><span class="p">{</span>
+<a name="line-2"></a>  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;meu-projeto&quot;</span><span class="p">,</span>
+<a name="line-3"></a>  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+<a name="line-4"></a>  <span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;caminho/para/index.js&quot;</span><span class="p">,</span>
+<a name="line-5"></a>  <span class="nt">&quot;ignore&quot;</span><span class="p">:</span> <span class="p">[</span>
+<a name="line-6"></a>    <span class="s2">&quot;.jshintrc&quot;</span><span class="p">,</span>
+<a name="line-7"></a>    <span class="s2">&quot;**/*.txt&quot;</span>
+<a name="line-8"></a>  <span class="p">],</span>
+<a name="line-9"></a>  <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-10"></a>    <span class="nt">&quot;&lt;name&gt;&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;version&gt;&quot;</span><span class="p">,</span>
+<a name="line-11"></a>    <span class="nt">&quot;&lt;name&gt;&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;folder&gt;&quot;</span><span class="p">,</span>
+<a name="line-12"></a>    <span class="nt">&quot;&lt;name&gt;&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;package&gt;&quot;</span>
+<a name="line-13"></a>  <span class="p">},</span>
+<a name="line-14"></a>  <span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-15"></a>    <span class="nt">&quot;&lt;test-framework-name&gt;&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;version&gt;&quot;</span>
+<a name="line-16"></a>  <span class="p">}</span>
+<a name="line-17"></a><span class="p">}</span>
+</code></pre></div>
+<p>Mas, eu terei de criar esse arquivo manualmente?</p>
+
+<p>Não! Você pode criar o arquivo <code>bower.json</code> dinamicamente com o comando: <code>bower init</code>.</p>
+
+<p>Confira o exemplo:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower init
+<a name="line-2"></a><span class="o">[</span>?<span class="o">]</span> name: projeto-bower
+<a name="line-3"></a><span class="o">[</span>?<span class="o">]</span> version: 1.0.0
+<a name="line-4"></a><span class="o">[</span>?<span class="o">]</span> description: Meu primeiro projeto com Bower
+<a name="line-5"></a><span class="o">[</span>?<span class="o">]</span> main file:
+<a name="line-6"></a><span class="o">[</span>?<span class="o">]</span> keywords:
+<a name="line-7"></a><span class="o">[</span>?<span class="o">]</span> authors: Nome <span class="k">do </span>Autor &lt;email@dominio.com.br&gt;
+<a name="line-8"></a><span class="o">[</span>?<span class="o">]</span> license: MIT
+<a name="line-9"></a><span class="o">[</span>?<span class="o">]</span> homepage:
+<a name="line-10"></a><span class="o">[</span>?<span class="o">]</span> <span class="nb">set </span>currently installed components as dependencies? Yes
+<a name="line-11"></a><span class="o">[</span>?<span class="o">]</span> add commonly ignored files to ignore list? Yes
+<a name="line-12"></a><span class="o">[</span>?<span class="o">]</span> would you like to mark this package as private which prevents it from being accidentally published to the registry? Yes
+<a name="line-13"></a>
+<a name="line-14"></a><span class="o">{</span>
+<a name="line-15"></a>  name: <span class="s1">&#39;projeto-bower&#39;</span>,
+<a name="line-16"></a>  version: <span class="s1">&#39;1.0.0&#39;</span>,
+<a name="line-17"></a>  description: <span class="s1">&#39;Meu primeiro projeto com Bower&#39;</span>,
+<a name="line-18"></a>  authors: <span class="o">[</span>
+<a name="line-19"></a>    <span class="s1">&#39;Nome do Autor &lt;email@dominio.com.br&gt;&#39;</span>
+<a name="line-20"></a>  <span class="o">]</span>,
+<a name="line-21"></a>  license: <span class="s1">&#39;MIT&#39;</span>,
+<a name="line-22"></a>  private: <span class="nb">true</span>,
+<a name="line-23"></a>  ignore: <span class="o">[</span>
+<a name="line-24"></a>    <span class="s1">&#39;**/.*&#39;</span>,
+<a name="line-25"></a>    <span class="s1">&#39;node_modules&#39;</span>,
+<a name="line-26"></a>    <span class="s1">&#39;bower_components&#39;</span>,
+<a name="line-27"></a>    <span class="s1">&#39;components&#39;</span>,
+<a name="line-28"></a>    <span class="s1">&#39;test&#39;</span>,
+<a name="line-29"></a>    <span class="s1">&#39;tests&#39;</span>
+<a name="line-30"></a>  <span class="o">]</span>
+<a name="line-31"></a><span class="o">}</span>
+</code></pre></div>
+              <h3 id="O-que-mais-o-Bower-pode-me-oferece-">
+                <a name="O-que-mais-o-Bower-pode-me-oferece-" href="#O-que-mais-o-Bower-pode-me-oferece-"></a>O que mais o Bower pode me oferece?
+              </h3>
+            
+<p>O Bower também possui uma API muito poderosa. Todos os comandos podem ser acessados através do objeto <code>bower.commands</code>.</p>
+
+<p>Confira:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="kd">var</span> <span class="nx">bower</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;bower&#39;</span><span class="p">);</span>
+<a name="line-2"></a>
+<a name="line-3"></a><span class="nx">bower</span><span class="p">.</span><span class="nx">commands</span>
+<a name="line-4"></a><span class="p">.</span><span class="nx">install</span><span class="p">([</span><span class="s1">&#39;jquery&#39;</span><span class="p">],</span> <span class="p">{</span> <span class="nx">save</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span> <span class="p">{</span> <span class="cm">/* configuração customizada */</span> <span class="p">})</span>
+<a name="line-5"></a><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">installed</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-6"></a>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">installed</span><span class="p">);</span>
+<a name="line-7"></a><span class="p">});</span>
+<a name="line-8"></a>
+<a name="line-9"></a><span class="nx">bower</span><span class="p">.</span><span class="nx">commands</span>
+<a name="line-10"></a><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="s1">&#39;jquery&#39;</span><span class="p">,</span> <span class="p">{})</span>
+<a name="line-11"></a><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-12"></a>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">results</span><span class="p">);</span>
+<a name="line-13"></a><span class="p">});</span>
+</code></pre></div>
+<p><code>Commands</code> transmite quatro tipos de eventos: <code>log</code>, <code>prompt</code>, <code>end</code>, <code>error</code>.</p>
+
+<ul>
+<li><code>log</code> é transmitido para reportar o estado/progresso do comando.</li>
+<li><code>prompt</code> é transmitido sempre que houver a necessidade de exibir um alerta para o usuário.</li>
+<li><code>error</code> será transmitido somente quando ocorrer um erro.</li>
+<li><code>end</code> será transmitido quando o comando finalizar com sucesso.</li>
+</ul>
+
+<p>Para se ter uma ideia de como este cara trabalha, é uma boa ideia você checar o arquivo <code>bin</code>.</p>
+
+<p>Quando se utiliza o Bower programaticamente, o alerta é desabilitado por padrão. Embora você possa habilitá-lo ao chamar comandos com <code>interactive: true</code> na configuração. Isso requer que você espere pelo evento <code>prompt</code> e manuseie-o do seu jeito.
+O jeito mais fácil é utilizando o módulo NPM <a href="https://npmjs.org/package/inquirer">inquirer</a>.</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="kd">var</span> <span class="nx">inquirer</span> <span class="o">=</span>  <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;inquirer&#39;</span><span class="p">);</span>
+<a name="line-2"></a>
+<a name="line-3"></a><span class="nx">bower</span><span class="p">.</span><span class="nx">commands</span>
+<a name="line-4"></a><span class="p">.</span><span class="nx">install</span><span class="p">([</span><span class="s1">&#39;jquery&#39;</span><span class="p">],</span> <span class="p">{</span> <span class="nx">save</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">interactive</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
+<a name="line-5"></a><span class="c1">// ...</span>
+<a name="line-6"></a><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;prompt&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">prompts</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-7"></a>    <span class="nx">inquirer</span><span class="p">.</span><span class="nx">prompt</span><span class="p">(</span><span class="nx">prompts</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+<a name="line-8"></a><span class="p">});</span>
+</code></pre></div>
+              <h3 id="Colocando-a-mão-na-massa">
+                <a name="Colocando-a-mão-na-massa" href="#Colocando-a-mão-na-massa"></a>Colocando a mão na massa
+              </h3>
+            
+<p>Agora que você está familiarizado com o Bower, está na hora de criar um projeto a fim de colocar em prática o que você aprendeu.</p>
+
+<p><strong>Execute os seguintes passos:</strong></p>
+
+<ol>
+<li>Instale o bower na sua máquina <em>(instale o Node e Git, caso não estejam instalados ainda)</em>.</li>
+<li>Crie um diretório para o exemplo prático</li>
+<li>Crie o arquivo <code>bower.json</code> com as configurações do seu pacote <em>(utilize um comando do bower para criar este arquivo dinâmicamente)</em>.</li>
+<li><strong>Procure</strong> pelos seguintes pacotes: <code>jquery</code>, <code>modernizr</code> e <code>socket.io</code>.</li>
+<li><strong>Instale-os</strong> como dependências no seu projeto.</li>
+<li><strong>Liste</strong> as dependencias instaladas no seu projeto.</li>
+<li><strong>Remova</strong> a dependência <code>socket.io</code>.</li>
+<li>Faça o <strong>mapeamento</strong> dos dados das dependências instaladas no seu pacote.</li>
+<li><strong>Copie</strong> o caminho gerado de cada dependência e <strong>insira</strong> na tag <em>script</em> respectivamente <em>(lembre-se de que você pode facilitar o uso dos componentes do bower com um carregamento modular)</em>.</li>
+</ol>
+
+              <h3 id="E-chegamos-ao-fim-">
+                <a name="E-chegamos-ao-fim-" href="#E-chegamos-ao-fim-"></a>E chegamos ao fim…
+              </h3>
+            
+<p>Espero que este artigo tenha sido útil para você e que o Bower agregue produtividade ao seu Workflow. Recomendo a leitura da documentação e a prática constante.</p>
+
+<p>Até a próxima! =]</p>
+
+              <h5 id="Referências">
+                <a name="Referências" href="#Referências"></a>Referências
+              </h5>
+            
+<ul>
+<li><a href="http://bower.io/">Documentação original do Bower</a></li>
+</ul>
+
+            </section>
+
+        </article>
+
+        <section class="box">
+    <div class="span3">
+        <img class="box-thumb" src="http://www.vitorbritto.com.br/blog/assets/images/avatar.jpg">
+    </div>
+    <div class="span9">
+        <section class="box-details">
+            <h3>Vitor Britto</h3>
+            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+        </section>
+    </div>
+</section>
+
+        <div class="box">
+    <div class="newsletter-wrapper">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=vitorbritto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <h3 class="newsletter-title">Receba os artigos no seu e-mail</h3>
+        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
+        <input class="input" type="email" name="email" placeholder="Digite o seu email"/>
+        <input type="hidden" value="vitorbritto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn-newsletter" type="submit" value="Assinar Newsletter" />
+    </form>
+    </div>
+</div>
+
+
+        <div class="line"></div>
+
+        
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+    var disqus_shortname = 'blogvitorbritto'; // shortname
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Por favor, habilite o JavaScript para ver os <a href="http://disqus.com/?ref_noscript">comentários</a> deste artigo.</noscript>
+
+
+
+    </div>
+
+        <div class="line"></div>
+
+        <div class="row">
+            <footer class="footer">
+                    <p class="footer-text">Desenvolvido por Vitor Britto. Feito com <a href="http://jekyllrb.com/" title="Jekyll" target="_blank">Jekyll</a>, <i class="icon-coffee"></i> e <i class="icon-heart"></i>.</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://www.vitorbritto.com.br/blog/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src='http://www.vitorbritto.com.br/blog/assets/js/app.min.js'></script>
+
+    <!-- Google Analytics -->
+    <script>
+    var _gaq=[['_setAccount','UA-12808940-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

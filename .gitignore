@@ -1,4 +1,5 @@
 .DS_Store
-_build
 _drafts
 Gemfile.lock
+node_modules
+.sass-cache

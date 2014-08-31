@@ -1,15 +1,17 @@
 ---
 layout: post
-title: "Dica Rápida: Compactando o seu Gruntfile"
-link: "http://vitorbritto.com/blog/compactando-o-seu-gruntfile/"
-date: 2013-10-13 19:30:12
+title: "Compactando o seu Gruntfile"
+description: Imagine que você está desenvolvendo um aplicativo web e que envolve uma série de tarefas padrão. Ter de colocar todas essas tarefas no seu Gruntfile poderá lhe render um arquivo muito extenso. Para isso, vamos criar um novo arquivo JSON que terá uma requisição no Gruntfile.
+link: "http://vitorbritto.com.br/blog/compactando-o-seu-gruntfile/"
+date: 2013-10-13
 cover: "assets/images/posts/post-compactando-gruntfile.jpg"
 avatar: "assets/images/avatar.jpg"
 author: Vitor Britto
-bio: Desenvolvedor Web e Designer, extremamente apaixonado pelo seu trabalho. Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, projetos colaborativos, desenvolvimento de projetos pessoais e escrever os artigos aqui publicados.
-description: Imagine que você está desenvolvendo um aplicativo web e que envolve uma série de tarefas padrão. Ter de colocar todas essas tarefas no seu Gruntfile poderá lhe render um arquivo muito extenso. Para isso, vamos criar um novo arquivo JSON que terá uma requisição no Gruntfile.
+bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true
 ---
+
+**UPDATE - 14/10/2013:** removida a requisição do arquivo `grunt-config.json` em favor do uso do método `grunt.file.readJSON()` da API do Grunt.
 
 Saudações!
 
@@ -148,6 +150,6 @@ module.exports = function(grunt) {
 
 O código completo encontra-se neste [Gists](https://gist.github.com/vitorbritto/6967478)
 
-Espero que tenha sido útil para você! Até a próxima!
+Espero que tenha sido útil para você!
 
-**UPDATE:** removida a requisição do arquivo `grunt-config.json` em favor do uso do método `grunt.file` da API do Grunt.
+Até a próxima! =]

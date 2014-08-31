@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>A nova geração Web: estrelando o DocPad</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Desenvolvedor Web" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="A nova geração Web: estrelando o DocPad"/>
+    <meta property="og:site_name" content="Blog - Vitor Britto"/>
+    <meta property="og:url" content="http://www.vitorbritto.com.br/blog/a-nova-geracao-web-estrelando-docpad/"/>
+    <meta property="og:image" content="http://www.vitorbritto.com.br/blog/assets/images/fb.jpg"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="O DocPad é um gerador estático, onde os autores desta excelente ferramenta o descrevem como a nova geração da arquitetura web; permitindo o gerenciamento de conteúdo atráves do sistema de arquivos, compilação através de plugins e que conta com alguns métodos para colocar o seu website em produção de maneira ágil."/>
+
+    <link rel="shortcut icon" href="http://www.vitorbritto.com.br/blog/assets/images/favicon.png" type="image/x-icon">
+    <link href="http://feeds.feedburner.com/vitorbritto" rel="alternate" type="application/rss+xml">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <link href="http://www.vitorbritto.com.br/blog/assets/css/style.css" rel="stylesheet" id="theme-css"/>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <header class="header">
+
+                <div class="span4">
+                    <div class="header-info">
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h4 class="header-description">Desenvolvedor Web</h4>
+                    </div>
+                </div>
+
+                <div class="span5">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/">Início</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/about">Sobre</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/projects">Projetos</a></li>
+    </ul>
+</nav>
+
+                </div>
+
+                <div class="span3">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item">
+            <a href="https://www.facebook.com/vbwebstudio" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://twitter.com/vitorbritto" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://github.com/vitorbritto" title="Github" target="_blank"><i class="icon-github"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="mailto:contato@vitorbritto.com.br"><i class="icon-envelope-alt"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="http://feeds.feedburner.com/vitorbritto" title="RSS Feed" target="_blank"><i class="icon-rss"></i></a>
+        </li>
+    </ul>
+</nav>
+
+                </div>
+
+            </header>
+        </div>
+
+        <div class="line"></div>
+
+
+
+<!-- Switch Theme -->
+<div class="theme-wrapper">
+    <p class="theme-text">Tema:</p>
+    <span class="theme-btn light" id="theme-light"></span>
+    <span class="theme-btn dark" id="theme-dark"></span>
+</div>
+
+    <div class="row">
+
+        <article class="article">
+
+            <img class="article-img" src="http://www.vitorbritto.com.br/blog/assets/images/posts/post-docpad.jpg">
+            <h2 class="article-title">A nova geração Web: estrelando o DocPad</h2>
+            <span class="article-date">Publicado em: 01/12/2013 | Por: Vitor Britto</span>
+            <div class="line"></div>
+
+            <section class="article-entry">
+                <p><strong>UPDATE - 27/07/2014</strong>: atualmente estou utilizando o <a href="http://harpjs.com/">HarpJS</a> e não mais o DocPad.</p>
+
+<p>Saudações!</p>
+
+<p>O DocPad é um gerador estático, onde os autores desta excelente ferramenta o descrevem como a nova geração da arquitetura web; permitindo o gerenciamento de conteúdo atráves do sistema de arquivos, compilação através de plugins e que conta com alguns métodos para <em>deploy</em>.</p>
+
+<p>Outra boa notícia é que o DocPad tem como base o <a href="http://nodejs.org/">Node</a> e <a href="http://expressjs.com/">Express</a>, facilitando ainda mais a curva de aprendizado para quem já trabalha com JavaScript <i class="icon-heart"></i>.</p>
+
+              <h2 id="Me-conte-mais">
+                <a name="Me-conte-mais" href="#Me-conte-mais"></a>Me conte mais
+              </h2>
+            
+<p>Entenda que o DocPad não é um gerenciador de conteúdo (CMS) como o WordPress, Joomla ou Drupal. Porém, ele oferece um método prático para que seja criada uma estrutura robusta, flexível, rápida, leve e fácil de manusear.</p>
+
+<p>O DocPad:</p>
+
+<ul>
+<li>É uma ferramenta agnostica (ou seja, você pode trabalhar com Ruby, PHP, CoffeeScript, Stylus…);</li>
+<li>Possui estruturas pré-definidas, denominada <a href="http://docpad.org/docs/skeletons">Skeletons</a>;</li>
+<li>Permite o <em>deploy</em> para <a href="http://www.heroku.com/">Heroku</a>, <a href="http://pages.github.com/">Github Pages</a>, <a href="https://github.com/bobobo1618/docpad-plugin-sunny">Amazon S3</a>, um <em>host</em> de sua preferência, entre outros;</li>
+<li>É construído em uma plataforma não-bloqueante;</li>
+<li>Possui um <em>core</em> altamente abstrato e re-utilizável;</li>
+<li>Possui uma curva de aprendizado pequena;</li>
+<li>Oferece uma configuração rápida em questão de minutos;</li>
+<li>Possui diversos <em>plugins</em> para otimização do seu projeto;</li>
+<li>Permite o versionamento do seu projeto de forma prática;</li>
+<li>Permite integração do <a href="http://socket.io/">Socket.io</a> para comunicação em tempo real;</li>
+<li>Possibilita o compartilhamento de códigos diretamente entre o <em>client-side</em> e o <em>server-side</em> com o <a href="https://github.com/substack/node-browserify">Browserify</a>;</li>
+<li>Permite a utilização de pré-processadores, como: <a href="http://coffeescript.org/">CoffeeScript</a>, <a href="http://coffeekup.org/">CoffeeKup</a>, <a href="http://learnboost.github.com/stylus/">Stylus</a> e <a href="http://lesscss.org/">LESS</a>.</li>
+</ul>
+
+              <h2 id="Instalando">
+                <a name="Instalando" href="#Instalando"></a>Instalando
+              </h2>
+            
+<p>Caso você já possua o Node instalado na sua máquina, o processo para a instalação se dá em um passo. De toda forma, vou cobrir o procedimento por completo. Vamos lá!</p>
+
+<ol>
+<li>Para instalar o Node na sua máquina, basta acessar o site do <a href="http://nodejs.org/">Node</a> e executar o download referente ao seu Sistema Operacional.</li>
+<li>Atualize o NPM e instale o DocPad com o comando:</li>
+</ol>
+
+<p><code>npm install -g npm; npm install -g docpad@6.55</code></p>
+
+<blockquote>
+<p><strong>Notas importantes:</strong></p>
+
+<ol>
+<li>Para atualizações entre versões, confira este <a href="http://docpad.org/docpad/upgrade">guia</a>;</li>
+<li>é recomendável que seja instalada uma versão estável do Node (v0.10.x) para se trabalhar com o DocPad;</li>
+<li>caso seja necessário utilizar o <code>sudo</code> para rodar o passo 2 (dois), o time do DocPad recomenda que seja <a href="http://docpad.org/node/install">realizada uma nova instalação do Node</a> de forma que esta opção não seja necessária. Os mesmos alertam sobre problemas de permissão no futuro;</li>
+<li>em complemento, execute <code>docpad update</code> no diretório do seu projeto para assegurar que a instalação local do DocPad e seus <em>plugins</em> estejam atualizados e compatíveis com a última versão;</li>
+<li>quando você executar o DocPad pela primeira vez, serão apresentadas duas perguntas:
+
+<ul>
+<li>Uma pergunta para saber se você está de acordo com os <a href="http://docpad.org/tos">termos de serviço</a> do DocPad.</li>
+<li>Outra, se você deseja se inscrever na newsletter do Docpad.</li>
+</ul></li>
+</ol>
+
+<p><em>Os responsáveis pela ferramenta, afirmam que este passo é necessário e importante para manter a transparência com os seus usuários.</em></p>
+</blockquote>
+
+              <h2 id="Antes-de-iniciar">
+                <a name="Antes-de-iniciar" href="#Antes-de-iniciar"></a>Antes de iniciar
+              </h2>
+            
+<p>É importante que você tenha em mente 2 pontos necessários para a utilização do DocPad:</p>
+
+<ol>
+<li>Sobre comando <code>docpad --help</code>, pois ele será o seu braço direito nessa jornada;</li>
+<li>Que você saiba como funciona a estrutura desta ferramenta. Isso vai facilitar o seu manuseio e entendimento. Confira:</li>
+</ol>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>projeto/
+<a name="line-2"></a>├── out/
+<a name="line-3"></a>├── src/
+<a name="line-4"></a>│   ├── documents/ (pode ser nomeado como render/)
+<a name="line-5"></a>│   ├── files/ (pode ser nomeado como static/)
+<a name="line-6"></a>│   └── layouts/
+<a name="line-7"></a>├── docpad.coffee
+<a name="line-8"></a>└── package.json
+</code></pre></div>
+              <h5 id="out">
+                <a name="out" href="#out"></a>out
+              </h5>
+            
+<p>Este diretório contém os arquivos gerados pelo Docpad.</p>
+
+              <h5 id="src">
+                <a name="src" href="#src"></a>src
+              </h5>
+            
+<p>Este diretório contém os arquivos de origem do seu projeto. Ou seja, tudo o que será renderizado no diretório <code>out</code> vai sair daqui. Além disso, dentro deste diretório ainda temos os diretórios:</p>
+
+<ul>
+<li><code>layouts</code></li>
+<li><code>documents</code></li>
+<li><code>files</code></li>
+</ul>
+
+              <h5 id="layouts">
+                <a name="layouts" href="#layouts"></a>layouts
+              </h5>
+            
+<p>O <em>layout</em> funciona de uma forma muito parecida com um <em>document</em> podendo ser renderizados, além de suportar metadados. Diferente do <em>document</em>, o <em>layout</em> não será renderizado para o diretório <code>out</code>, já que servem apenas para servir de <strong>container</strong> para eles mesmos ou um <em>document</em>.</p>
+
+              <h5 id="documents">
+                <a name="documents" href="#documents"></a>documents
+              </h5>
+            
+<p>Arquivos a serem renderizados. A renderização ocorre de uma extensão para outra, assim como no Rails (Asset Pipeline). Isto significa que um documento <code>documento.ext1.ext2</code> será renderizado de <code>ext2</code> para <code>ext1</code>, resultando em <code>documento.ext1</code>.</p>
+
+<p>Ex.: <code>src/documents/script.js.coffee</code> para <code>out/script.js</code> <strong>ou</strong> <code>src/documents/blog/main.html.md</code> para <code>out/blog/main.html</code>.</p>
+
+              <h5 id="files">
+                <a name="files" href="#files"></a>files
+              </h5>
+            
+<p>Os arquivos neste diretório são como os documentos, porém estes são renderizados para o diretório <code>out</code>. A diferença é que os arquivos encontrados aqui não serão compilados e nem suportam metadados. Ou seja, os arquivos deste diretório serão jogados diretamente no diretório <code>out</code>.</p>
+
+              <h5 id="docpad-coffee">
+                <a name="docpad-coffee" href="#docpad-coffee"></a>docpad.coffee
+              </h5>
+            
+<p>Este arquivo define as configurações do DocPad e pode ter diferentes extensões. Confira mais detalhes <a href="http://docpad.org/docpad/config">aqui</a>.</p>
+
+              <h5 id="package-json">
+                <a name="package-json" href="#package-json"></a>package.json
+              </h5>
+            
+<p>Este arquivo é necessário para qualquer aplicação em Node. Ele define os dados do seu projeto, a versão do DocPad, além dos plugins que serão utilizados.</p>
+
+              <h2 id="Pronto-para-começar-">
+                <a name="Pronto-para-começar-" href="#Pronto-para-começar-"></a>Pronto para começar?
+              </h2>
+            
+<p>Com os devidos conhecimentos sobre esta ferramenta, chegou a hora de inciarmos um exemplo prático de projeto com o Docpad.</p>
+
+<p>O que faremos neste exemplo prático?</p>
+
+<ol>
+<li>Vamos criar a estrutura do projeto;</li>
+<li>Inserir do conteúdo inicial necessário;</li>
+<li>Otimizar o processo de desenvolvimento;</li>
+<li>Utilizar os benefícios dos pré-processadores <em>(para as 3 camadas de desenvolvimento front-end)</em>;</li>
+<li>Agregar uma melhor flexibilidade ao nosso projeto;</li>
+<li>Inserir o restante do conteúdo;</li>
+</ol>
+
+              <h3 id="Criando-a-nossa-estrutura">
+                <a name="Criando-a-nossa-estrutura" href="#Criando-a-nossa-estrutura"></a>Criando a nossa estrutura
+              </h3>
+            
+<p>Antes de começarmos a desenvolver o nosso projeto, precisamos de uma estrutura para ele. Para isso, execute o seguinte comando:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>mkdir &lt;nome-do-seu-projeto&gt; &amp;&amp; cd $_ &amp;&amp; docpad run
+</code></pre></div>
+<blockquote>
+<p>Perceba que estamos executando <strong>3 comandos</strong> na mesma linha. Neste caso, estamos utilizando o operador <code>&amp;&amp;</code> para executar uma instrução mais compacta, além da variável <code>$_</code> que está sendo utilizada como referência para o nome do diretório criado anteriormente.</p>
+</blockquote>
+
+<p>Quando o <em>prompt</em> aparecer, selecione <strong>No Skeleton</strong> para que possamos criar uma estrutura do zero para o nosso projeto. O comando <code>docpad run</code> continuará rodando, isto porque o DocPad possui um recurso para observar as mudanças dos nossos arquivos, assim como gerar novos a cada mudança que for feita. Além disso, será iniciado um servidor web em <code>http://localhost:9778</code> para que possamos ver como o nosso projeto está ficando.</p>
+
+<blockquote>
+<p><strong>Nota:</strong> para encerrar o comando <code>docpad run</code>, pressione <code>CTRL+C</code>.</p>
+</blockquote>
+
+              <h3 id="Inserindo-conteúdo-inicial">
+                <a name="Inserindo-conteúdo-inicial" href="#Inserindo-conteúdo-inicial"></a>Inserindo conteúdo inicial
+              </h3>
+            
+<p>Nossa estrutura está pronta, então vamos inserir algum conteúdo.</p>
+
+              <h4 id="As-páginas-em-primeiro-lugar">
+                <a name="As-páginas-em-primeiro-lugar" href="#As-páginas-em-primeiro-lugar"></a>As páginas em primeiro lugar
+              </h4>
+            
+<p>Dentro do diretório <code>/documents</code>, crie a página <code>index.html</code> e insira o conteúdo abaixo:</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a><span class="cp">&lt;!doctype html&gt;</span>
+<a name="line-2"></a><span class="nt">&lt;html&gt;</span>
+<a name="line-3"></a><span class="nt">&lt;head&gt;</span>
+<a name="line-4"></a>    <span class="nt">&lt;title&gt;</span>Bem vindo! | Projeto com DocPad<span class="nt">&lt;/title&gt;</span>
+<a name="line-5"></a><span class="nt">&lt;/head&gt;</span>
+<a name="line-6"></a><span class="nt">&lt;body&gt;</span>
+<a name="line-7"></a>    <span class="nt">&lt;h1&gt;</span>Bem vindo!<span class="nt">&lt;/h1&gt;</span>
+<a name="line-8"></a>    <span class="nt">&lt;p&gt;</span>Este é o Projeto com DocPad!<span class="nt">&lt;/p&gt;</span>
+<a name="line-9"></a><span class="nt">&lt;/body&gt;</span>
+<a name="line-10"></a><span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>Salve e abra o seu navegador preferido no endreço <a href="http://localhost:9778">http://localhost:9778</a> (ou atualize o navegador, caso já esteja aberto).</p>
+
+<p>Show de bola! Como pode ver, o DocPad gerou um novo arquivo para a página que acabamos de criar. Agora, vamos criar uma página interna e inserir um <em>layout</em> também.</p>
+
+<p>Para isso, vamos criar, no mesmo diretório anterior (<code>/documents</code>), um novo documento chamado <code>sobre.html</code> e inserir o conteúdo abaixo:</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a><span class="cp">&lt;!doctype html&gt;</span>
+<a name="line-2"></a><span class="nt">&lt;html&gt;</span>
+<a name="line-3"></a><span class="nt">&lt;head&gt;</span>
+<a name="line-4"></a>    <span class="nt">&lt;title&gt;</span>Sobre | Projeto com DocPad<span class="nt">&lt;/title&gt;</span>
+<a name="line-5"></a><span class="nt">&lt;/head&gt;</span>
+<a name="line-6"></a><span class="nt">&lt;body&gt;</span>
+<a name="line-7"></a>    <span class="nt">&lt;h1&gt;</span>Sobre<span class="nt">&lt;/h1&gt;</span>
+<a name="line-8"></a>    <span class="nt">&lt;p&gt;</span>Este é o meu primeiro projeto com o <span class="nt">&lt;strong&gt;</span>fantástico gerador estático DocPad<span class="nt">&lt;/strong&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+<a name="line-9"></a><span class="nt">&lt;/body&gt;</span>
+<a name="line-10"></a><span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>Salve o documento e acesse o endereço <a href="http://localhost:9778/sobre.html">http://localhost:9778/sobre.html</a>.</p>
+
+<p>Perfeito! Temos as duas páginas criadas. Entretanto, duplicar informações em nossos documentos é algo extremamente desnecessário. Com um <em>layout</em>, podemos definir as áreas &quot;dinâmicas&quot; que poderão ser reaproveitadas em nosso <em>document</em>. Sendo assim, vamos mover os conteúdos repetidos dos nossos documentos para um layout chamado <code>default.html.eco</code> localizado no diretório <code>layouts</code>.</p>
+
+<p>Veja como faremos isso:</p>
+
+<p><strong><code>src/layouts/default.html.eco</code></strong></p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a><span class="cp">&lt;!doctype html&gt;</span>
+<a name="line-2"></a><span class="nt">&lt;html&gt;</span>
+<a name="line-3"></a><span class="nt">&lt;head&gt;</span>
+<a name="line-4"></a>    <span class="nt">&lt;title&gt;</span><span class="err">&lt;</span>%= @document.title %&gt; | Projeto com DocPad<span class="nt">&lt;/title&gt;</span>
+<a name="line-5"></a><span class="nt">&lt;/head&gt;</span>
+<a name="line-6"></a><span class="nt">&lt;body&gt;</span>
+<a name="line-7"></a>    <span class="nt">&lt;h1&gt;</span><span class="err">&lt;</span>%= @document.title %&gt;<span class="nt">&lt;/h1&gt;</span>
+<a name="line-8"></a>    <span class="err">&lt;</span>%- @content %&gt;
+<a name="line-9"></a><span class="nt">&lt;/body&gt;</span>
+<a name="line-10"></a><span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p><strong><code>src/documents/index.html</code></strong></p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a>---
+<a name="line-2"></a>title: &quot;Bem vindo!&quot;
+<a name="line-3"></a>layout: &quot;default&quot;
+<a name="line-4"></a>isPage: true
+<a name="line-5"></a>---
+<a name="line-6"></a>
+<a name="line-7"></a><span class="nt">&lt;p&gt;</span>Este é o Projeto com DocPad!<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
+<p><strong><code>src/documents/sobre.html</code></strong></p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a>---
+<a name="line-2"></a>title: &quot;Sobre&quot;
+<a name="line-3"></a>layout: &quot;default&quot;
+<a name="line-4"></a>isPage: true
+<a name="line-5"></a>---
+<a name="line-6"></a>
+<a name="line-7"></a><span class="nt">&lt;p&gt;</span>Este é o meu primeiro projeto com o <span class="nt">&lt;strong&gt;</span>fantástico gerador estático DocPad<span class="nt">&lt;/strong&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
+<p>Ok! Mas, ainda temos um pequeno problema. Perceba que se você acessar estas páginas no servidor web, não será renderizado o conteúdo desejado. Isto acontece pois ainda não possuímos um <em>(template engine)</em> para renderizar este layout para nós. Perceba que adicionamos também, um atributo chamado <code>isPage</code>. Vamos falar sobre esse cara mais a frente.</p>
+
+              <h4 id="Logo-depois-vem-o-template-engine-">
+                <a name="Logo-depois-vem-o-template-engine-" href="#Logo-depois-vem-o-template-engine-"></a>Logo depois vem o template engine.
+              </h4>
+            
+<p><em>Template engines</em> nos permitem inserir abstrações de código no nosso documento. Neste exemplo usaremos o plugin <a href="http://docpad.org/plugin/eco">eco</a>. Então, vamos instalar esse cara.</p>
+
+<p>Para isso, vamos parar o Docpad (CTRL+C) e executar:</p>
+
+<p><code>docpad install eco</code></p>
+
+<p>Uma vez que o plugin for instalado, vamos executar novamente o DocPad com o comando <code>docpad run</code> e abrir o navegador nos endereços mencionados anteriormente para visualizarmos as páginas do nosso projeto com o conteúdo gerado.</p>
+
+<blockquote>
+<p><strong>Notas importantes:</strong></p>
+
+<ol>
+<li>Confira a <a href="http://docpad.org/docpad/plugins">lista de plugins</a> disponíveis para o DocPad;</li>
+<li>Perceba que no topo dos nossos documentos, temos novas informações dentro dos <code>---</code>. São os metadados, os quais são responsáveis por informações referentes ao nosso documento, como: título, layout utilizado, data, entre outros. Você pode definir o que achar conveniente. Entretanto, existem algumas propriedades já definidas com os seus respectivos propósitos. Saiba mais sobre os <em>metadados</em> <a href="http://docpad.org/docpad/meta-data">aqui</a></li>
+</ol>
+</blockquote>
+
+              <h3 id="Otimizando-o-processo">
+                <a name="Otimizando-o-processo" href="#Otimizando-o-processo"></a>Otimizando o processo
+              </h3>
+            
+<p>Já temos dois documentos e um layout para abstrair informações deles. Mas, a medida em que vamos realizando alterações, seria interessante se tivessemos um mecanismo capaz de atualizar estas mudanças automaticamente no nosso navegador.</p>
+
+              <h4 id="O-que-fazemos-para-melhorar-isso-">
+                <a name="O-que-fazemos-para-melhorar-isso-" href="#O-que-fazemos-para-melhorar-isso-"></a>O que fazemos para melhorar isso?
+              </h4>
+            
+<p>Para isso, vamos utilizar o plugin <a href="http://docpad.org/plugin/livereload">Live Reload</a>. Finalize o DocPad (CTRL+C), execute o comando <code>docpad install livereload</code> para instalar o plugin e reinicie o DocPad logo em seguida.</p>
+
+<p>Mas, o nosso processo não está concluído. Precisamos adicionar um <em>block</em> (bloco) para ativar o nosso plugin <em>Live Reload</em>.</p>
+
+<p>Os blocos são peças fundamentais para adicionarmos <em>scripts</em>, <em>styles</em> e outros elementos em nossas páginas. No caso do plugin <em>Live Reload</em>, o mesmo precisa de um bloco <em>script</em> para ser injetado e ativado no nosso documento.</p>
+
+<p>Para fixarmos esta nova informação, vamos adicionar alguns blocos no nosso <em>layout</em>, o qual foi chamado anteriormente de <code>default.html.eco</code>.</p>
+
+<p>O nosso layout ficará assim agora:</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a><span class="nt">&lt;html&gt;</span>
+<a name="line-2"></a><span class="nt">&lt;head&gt;</span>
+<a name="line-3"></a>    <span class="nt">&lt;title&gt;</span><span class="err">&lt;</span>%= @document.title %&gt; | Projeto com DocPad<span class="nt">&lt;/title&gt;</span>
+<a name="line-4"></a>    <span class="err">&lt;</span>%- @getBlock(&quot;meta&quot;).toHTML() %&gt;
+<a name="line-5"></a>    <span class="err">&lt;</span>%- @getBlock(&quot;styles&quot;).toHTML() %&gt;
+<a name="line-6"></a><span class="nt">&lt;/head&gt;</span>
+<a name="line-7"></a><span class="nt">&lt;body&gt;</span>
+<a name="line-8"></a>    <span class="nt">&lt;h1&gt;</span><span class="err">&lt;</span>%= @document.title %&gt;<span class="nt">&lt;/h1&gt;</span>
+<a name="line-9"></a>    <span class="err">&lt;</span>%- @content %&gt;
+<a name="line-10"></a>    <span class="err">&lt;</span>%- @getBlock(&quot;scripts&quot;).toHTML() %&gt;
+<a name="line-11"></a><span class="nt">&lt;/body&gt;</span>
+<a name="line-12"></a><span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>Atualize o seu navegador manualmente e perceba que na próxima alteração realizada ele será atualizado automaticamente. Show de bola, né? :)</p>
+
+              <h4 id="E-os-nossos-blocos-">
+                <a name="E-os-nossos-blocos-" href="#E-os-nossos-blocos-"></a>E os nossos blocos?
+              </h4>
+            
+<p>Agora, vamos trabalhar estes caras. Serão adicionados <em>scripts</em>, <em>styles</em> e <em>imagens</em> no nosso projeto.</p>
+
+              <h5 id="Imagens">
+                <a name="Imagens" href="#Imagens"></a>Imagens
+              </h5>
+            
+<p>Vamos adicionar um logo no <code>header</code> do nosso projeto. O arquivo será colocado no diretório <code>files</code> em <code>src/files/images/logo.png</code> e posicionado no corpo do nosso layout para que seja chamado em cada documento:</p>
+
+<p><strong>default.html.eco</strong></p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a><span class="nt">&lt;body&gt;</span>
+<a name="line-2"></a>  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;/images/logo.gif&quot;</span> <span class="nt">/&gt;</span>
+<a name="line-3"></a>  <span class="nt">&lt;h1&gt;</span><span class="err">&lt;</span>%= @document.title %&gt;<span class="nt">&lt;/h1&gt;</span>
+<a name="line-4"></a>  <span class="err">&lt;</span>%- @content %&gt;
+<a name="line-5"></a>  <span class="err">&lt;</span>%- @getBlock(&quot;scripts&quot;).toHTML() %&gt;
+<a name="line-6"></a><span class="nt">&lt;/body&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>Nota: escolha uma imagem qualquer para exemplificar o seu logo.</p>
+</blockquote>
+
+              <h5 id="Styles">
+                <a name="Styles" href="#Styles"></a>Styles
+              </h5>
+            
+<p>Agora, vamos adicionar um CSS básico no <code>h1</code> dos nossos documentos. Para isso, adicione o arquivo <code>style.css</code> em <code>src/documents/css/style.css</code> e insira:</p>
+<div class="highlight"><pre><code class="css language-css" data-lang="css"><a name="line-1"></a><span class="nt">h1</span> <span class="p">{</span>
+<a name="line-2"></a>    <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+<a name="line-3"></a><span class="p">}</span>
+</code></pre></div>
+<p>depois, atualize o bloco <em>styles</em> no layout <code>default.html.eco</code>:</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a><span class="err">&lt;</span>%- @getBlock(&quot;styles&quot;).add([&quot;/css/style.css&quot;]).toHTML() %&gt;
+</code></pre></div>
+              <h5 id="Scripts">
+                <a name="Scripts" href="#Scripts"></a>Scripts
+              </h5>
+            
+<p>Para finalizar, vamos adicionar um efeito muito simples utilizando JavaScript.</p>
+
+<p>Primeiro, faça o download do <a href="http://code.jquery.com/jquery.js">jQuery</a> para este exemplo e coloque-o no diretório <code>files</code> em <code>src/files/js/vendor/jquery.js</code>.</p>
+
+<p>Agora que o jQuery já está incluso no projeto, vamos criar outro arquivo chamado <code>script.js</code> em <code>src/documents/js/script.js</code> e inserir o conteúdo abaixo:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<a name="line-2"></a>    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">().</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<a name="line-3"></a><span class="p">})();</span>
+</code></pre></div>
+<p>depois, atualize o bloco <em>script</em> no layout <code>default.html.eco</code>:</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a><span class="err">&lt;</span>%- @getBlock(&quot;scripts&quot;).add([&quot;/js/vendor/jquery.js&quot;,&quot;/js/script.js&quot;]).toHTML() %&gt;
+</code></pre></div>
+<p>Pronto! Mas, o nosso método para carregar o <em>CSS</em> e <em>JavaScript</em> não é muito adequado e não favorece para a performance do nosso projeto. O que podemos fazer a respeito? Vamos conversar sobre pré-processadores. :)</p>
+
+              <h3 id="Extraindo-os-benefícios-dos-pré-processadores">
+                <a name="Extraindo-os-benefícios-dos-pré-processadores" href="#Extraindo-os-benefícios-dos-pré-processadores"></a>Extraindo os benefícios dos pré-processadores
+              </h3>
+            
+<p>Agora, as coisas começam a ficar mais interessantes. Vamos utlizar pré-processadores para elevar o nível de produtividade no nosso projeto e agregar maior desempenho e performance.</p>
+
+<blockquote>
+<p>Nota: fique a vontade para utilizar o pré-processador da sua preferência. Confira os pré-processadores disponíveis <a href="http://docpad.org/docpad/plugins">aqui</a></p>
+</blockquote>
+
+<p>Neste exemplo, vamos utilizar os seguintes pré-processadores:</p>
+
+<ul>
+<li><strong>Markdown</strong> -&gt; HTML</li>
+<li><strong>Stylus</strong> -&gt; CSS</li>
+<li><strong>CoffeeScript</strong> -&gt; JavaScript</li>
+</ul>
+
+<p>Como faremos isso? Antes de mais nada, interrompa o DocPad (CTRL+C). Em seguida, execute os passos abaixo:</p>
+
+              <h4 id="Markdown-gt-HTML">
+                <a name="Markdown-gt-HTML" href="#Markdown-gt-HTML"></a>Markdown -&gt; HTML
+              </h4>
+            
+<ol>
+<li>Instale o plugin <a href="http://docpad.org/plugin/marked">Marked Markdown</a> com o comando <code>docpad install marked</code>.</li>
+<li>Renomei a página <code>sobre.html</code> para <code>sobre.html.md</code> (isto vai indicar que queremos compilar o arquivo Markdown em HTML).</li>
+<li>Abra o arquivo <code>sobre.html.md</code> e escreva o conteúdo abaixo com a sintaxe <em>markdown</em>:</li>
+</ol>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>Este é o meu primeiro projeto com o **fantástico gerador estático DocPad**.
+</code></pre></div>
+              <h4 id="Stylus-gt-CSS">
+                <a name="Stylus-gt-CSS" href="#Stylus-gt-CSS"></a>Stylus -&gt; CSS
+              </h4>
+            
+<ol>
+<li>Instale o plugin <a href="http://docpad.org/plugin/stylus/">Stylus</a> com o comando <code>docpad install stylus</code>.</li>
+<li>Renomei o arquivo <code>style.css</code> para <code>style.css.styl</code> (isto vai indicar que queremos compilar o arquivo Stylus em CSS).</li>
+</ol>
+
+<blockquote>
+<p>Nota: escolha o pré-processador CSS que se adapta melhor ao seu <em>Workflow</em>.</p>
+</blockquote>
+
+              <h4 id="CoffeeScript-gt-JS">
+                <a name="CoffeeScript-gt-JS" href="#CoffeeScript-gt-JS"></a>CoffeeScript -&gt; JS
+              </h4>
+            
+<ol>
+<li>Instale o plugin <a href="http://docpad.org/plugin/coffeescript/">CoffeeScript</a> com o comando <code>docpad install coffeescript</code>.</li>
+<li>Renomei o arquivo <code>script.js</code> para <code>script.js.coffee</code> (isto vai indicar que queremos compilar o arquivo CoffeeScript em JavaScript).</li>
+<li>Abra o arquivo <code>script.js.coffee</code> e atualize o seu conteúdo para refletir o abaixo:</li>
+</ol>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>$(&quot;body&quot;).hide().fadeIn(1000)
+</code></pre></div>
+<p>Nos três procedimentos anteriores, o resultado final será o mesmo. Entretanto, estaremos utilizando os benfícios do <em>markdown</em>, <em>stylus</em> e <em>coffeescript</em> a partir de agora. Execute o DocPad com o comando <code>docpad run</code> e faça alguns testes.</p>
+
+<p>Bem melhor, né? :)</p>
+
+              <h3 id="Agregando-maior-flexibilidade-ao-nosso-projeto">
+                <a name="Agregando-maior-flexibilidade-ao-nosso-projeto" href="#Agregando-maior-flexibilidade-ao-nosso-projeto"></a>Agregando maior flexibilidade ao nosso projeto
+              </h3>
+            
+<p>O nosso projeto está quase pronto. Já temos uma estrutura definida, parte do conteúdo inserido e recursos como Live Reload e Pré-processadores prontos para serem utlizados. O que mais podemos otimizar no projeto?</p>
+
+<p>Existem 2 pontos ainda que podemos trabalhar. Serão explicados separadamente, mas que trabalham em conjunto.</p>
+
+<p>São eles:</p>
+
+<ol>
+<li>Configurações do projeto (<code>docpadd.coffee</code> ou <code>docpad.js</code>)</li>
+<li>Abstrações com o uso de <em>Template Data</em> e <em>Template Helpers</em></li>
+</ol>
+
+              <h4 id="Configurações-de-projeto">
+                <a name="Configurações-de-projeto" href="#Configurações-de-projeto"></a>Configurações de projeto
+              </h4>
+            
+<p>Este é um dos passos mais importantes na criação de um projeto com o DocPad. O arquivo de configuração do DocPad nos permite criar abstrações e concentrar informações a respeito do projeto com a ajuda do <em>Template Data</em> e <em>Template Helpers</em>.</p>
+
+<p>Este arquivo deve ser colocado no diretório raiz do seu projeto e nomeado de acordo com uma das extensões abaixo. É importante lembrar que cada extensão possui suas particularidades. Confira:</p>
+
+<ul>
+<li><code>docpad.js</code> - arquivo JavaScript. Ex.: <code>module.exports = { /* configuração aqui */ }</code></li>
+<li><code>docpad.coffee</code> - arquivo CoffeeScript. Ex.: <code>module.exports = /* configuração aqui */</code></li>
+<li><code>docpad.json</code> - arquivo JSON. Ex.: <code>{ /* configuração aqui */ }</code></li>
+<li><code>docpad.cson</code> - arquivo CSON. Ex.: <code>/* configuração aqui */</code></li>
+</ul>
+
+<p>A vantagem dos arquivos <code>docpad.js</code> e <code>docpad.coffee</code> é que possibilitam a declaração de funções. No entanto, para os casos em que você não queira confiar o conteúdo dos seus arquivos de configuração para terceiros, o uso do <code>docpad.json</code> ou <code>docpad.cson</code> é mais pertinente.</p>
+
+<p>Toda vez que iniciamos um projeto com o DocPad, é criado um arquivo de configuração chamado <code>docpad.coffee</code>. Caso este arquivo não esteja presente, será preciso criá-lo manualmente. Para isso, siga os passos abaixo:</p>
+
+<ol>
+<li>Crie um arquivo <code>docpad.coffee</code> <em>(ou com uma das extensões supracitadas)</em></li>
+<li>Insira o conteúdo abaixo:</li>
+</ol>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="err">#</span> <span class="nx">Configura</span><span class="err">çõ</span><span class="nx">es</span> <span class="k">do</span> <span class="nx">DocPad</span>
+<a name="line-2"></a><span class="nx">docpadConfig</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-3"></a>    <span class="err">#</span> <span class="p">...</span>
+<a name="line-4"></a><span class="p">}</span>
+<a name="line-5"></a>
+<a name="line-6"></a><span class="err">#</span> <span class="nx">Exportar</span> <span class="nx">a</span> <span class="nx">configura</span><span class="err">çã</span><span class="nx">o</span>
+<a name="line-7"></a><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">docpadConfig</span>
+</code></pre></div>
+<p>Perceba que:</p>
+
+<ul>
+<li>A primeira parte é onde vamos colocar as configurações do nosso projeto;</li>
+<li>A segunda parte será utiliza para exportar estas configurações para outro arquivo, caso seja necessário.</li>
+</ul>
+
+<p>Confira mais informacões a respeito do arquivo de configuração <a href="http://docpad.org/docpad/config">aqui</a></p>
+
+<blockquote>
+<p>Importante: para validar as mudanças realizadas no seu arquivo de configuração, será necessário reiniciar o DocPad.</p>
+</blockquote>
+
+              <h4 id="Abstrações-com-o-uso-de-<em>Template-Data<-em>-e-<em>Template-Helpers<-em>">
+                <a name="Abstrações-com-o-uso-de-<em>Template-Data<-em>-e-<em>Template-Helpers<-em>" href="#Abstrações-com-o-uso-de-<em>Template-Data<-em>-e-<em>Template-Helpers<-em>"></a>Abstrações com o uso de <em>Template Data</em> e <em>Template Helpers</em>
+              </h4>
+            
+<p>Agora que você conhece o arquivo de configuração do DocPad, vamos entender como o <em>Template Data</em> e <em>Template Helpers</em> podem ser úteis neste processo.</p>
+
+<p>Imagine que o nosso projeto já conta com 5 páginas. Não seria muito mais prático concentrar determinadas informações em um local (ou utilizando alguma técnica) capaz de nos fornecer um método mais prático para gerenciá-los?</p>
+
+<p>Pois! É isso que o arquivo de configuração, juntamente com o <em>Template Data</em> e <em>Template Helpers</em>, faz.</p>
+
+              <h5 id="Template-Data">
+                <a name="Template-Data" href="#Template-Data"></a>Template Data
+              </h5>
+            
+<p>Tudo o que está disponível em nossos <em>templates</em> é chamado de <a href="http://docpad.org/docpad/template-data">TemplateData</a>. Por exemplo, <code>@document</code> é parte dos dados em nosso <em>template</em>. Para ser capaz de abstrair algo que nossos <em>templates</em> vão usar, teremos de estender os nossos dados. Nós podemos fazer isso, modificando o valor de uma propriedade. Vamos aplicar isso na prática para ver como fica.</p>
+
+<p>No seu arquivo de configuração <code>docpad.coffee</code>, atualize o conteúdo para refletir o seguinte:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">docpadConfig</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-2"></a>    <span class="nx">templateData</span><span class="o">:</span>
+<a name="line-3"></a>        <span class="nx">site</span><span class="o">:</span>
+<a name="line-4"></a>            <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Projeto com DocPad&quot;</span>
+<a name="line-5"></a><span class="p">}</span>
+</code></pre></div>
+<p>Com isso, nosso título encontra-se abstraído e podemos atualizar a tag <code>&lt;title&gt;</code> no <em>template</em> <code>default.html.eco</code>:</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a><span class="nt">&lt;title&gt;</span><span class="err">&lt;</span>%= if @document.title then &quot;#{@document.title} | #{@site.title}&quot; else @site.title %&gt;<span class="nt">&lt;/title&gt;</span>
+</code></pre></div>
+<p>No entanto, podemos deixá-lo mais abstrato com o uso de uma função no nosso arquivo de configuração. É aí que o <em>Template Helpers</em> entra em ação.</p>
+
+              <h5 id="Template-Helpers">
+                <a name="Template-Helpers" href="#Template-Helpers"></a>Template Helpers
+              </h5>
+            
+<p>Quando utilizamos as extensões <code>.coffee</code> ou <code>js</code>, podemos definir funções. Com isso podemos utilizar funções para os dados do nosso <em>template</em>, o qual chamamos de <em>Template Helpers</em>.</p>
+
+<p>Assim, vamos atualizar o nosso arquivo de configuração:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">docpadConfig</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-2"></a>    <span class="nx">templateData</span><span class="o">:</span>
+<a name="line-3"></a>        <span class="nx">site</span><span class="o">:</span>
+<a name="line-4"></a>            <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Projeto com DocPad&quot;</span>
+<a name="line-5"></a>
+<a name="line-6"></a>        <span class="nx">getTitle</span><span class="o">:</span> <span class="o">-&gt;</span> <span class="k">if</span> <span class="err">@</span><span class="nb">document</span><span class="p">.</span><span class="nx">title</span> <span class="nx">then</span> <span class="s2">&quot;#{@document.title} | #{@site.title}&quot;</span> <span class="k">else</span> <span class="err">@</span><span class="nx">site</span><span class="p">.</span><span class="nx">title</span>
+<a name="line-7"></a><span class="p">}</span>
+</code></pre></div>
+<p>e o título do nosso <em>template</em> <code>default.html.eco</code> para:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>&lt;title&gt;&lt;%= @getTitle() %&gt;&lt;/title&gt;
+</code></pre></div>
+<blockquote>
+<p>Nota: para mais detalhes a respeito de <em>Template Data</em> e <em>Template Helpers</em>, <a href="http://docpad.org/docs/template-data">clique aqui</a></p>
+</blockquote>
+
+              <h3 id="Inserindo-o-restante-do-conteúdo">
+                <a name="Inserindo-o-restante-do-conteúdo" href="#Inserindo-o-restante-do-conteúdo"></a>Inserindo o restante do conteúdo
+              </h3>
+            
+<p>A inserção do conteúdo foi dividido em dois momentos, pois está segunda parte lida com <em>Template Data</em> e <em>Template Helpers</em>. Desta forma, não faria sentido algum mencionar estes caras sem ao menos conhecer o mecanismo por trás deles.</p>
+
+<p>Até o momento, criamos 2 páginas para o nosso projeto.</p>
+
+<p>São elas:</p>
+
+<ul>
+<li><code>index.html</code></li>
+<li><code>sobre.html</code></li>
+</ul>
+
+<p>Agora, vamos criar um menu para navegar no nosso projeto, mas, antes, vamos atualizar o nosso <em>layout</em> <code>default.html.eco</code> e inserir, logo após o <code>h1</code>, o conteúdo abaixo:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>&lt;ul&gt;
+<a name="line-2"></a>    &lt;% for page in @getCollection(&quot;html&quot;).findAll({isPage:true}).toJSON(): %&gt;
+<a name="line-3"></a>        &lt;li class=&quot;&lt;%= if page.id is @document.id then &#39;active&#39; else &#39;inactive&#39; %&gt;&quot;&gt;
+<a name="line-4"></a>            &lt;a href=&quot;&lt;%= page.url %&gt;&quot;&gt;
+<a name="line-5"></a>                &lt;%= page.title %&gt;
+<a name="line-6"></a>            &lt;/a&gt;
+<a name="line-7"></a>        &lt;/li&gt;
+<a name="line-8"></a>    &lt;% end %&gt;
+<a name="line-9"></a>&lt;/ul&gt;
+</code></pre></div>
+<p>Salve o arquivo! Perceba que temos um menu em cada página, mas vamos dissecar o que fizemos para um melhor entendimento:</p>
+
+<ol>
+<li>Utilizamos o <em>Template Helper</em> <code>getCollection()</code> para inserir a <em>collection</em> <code>html</code>, a qual é uma coleção pré-definida no DocPad que contém todos os documentos HTML do nosso projeto.</li>
+<li>Com esta <em>collection</em>, nós avaliamos o que for página com o atributo <code>isPage</code>, caso o mesmo esteja definido como <code>true</code> (lembre que definimos este cara logo no início).</li>
+<li>Então, convertemos/persistimos o resultado através da <a href="http://backbonejs.org/#Collection"><em>collection</em> do Backbone</a> / <a href="http://docpad.org/queryengine/guide">QueryEngine</a> em um array, utilizando o método <code>toJSON()</code>.</li>
+</ol>
+
+<p>No começo pode parecer complicado absorver estas informações, mas com o tempo você pegará o jeito. :)</p>
+
+<p>O nosso menu está criado. Porém, executar essa consulta toda vez que renderizarmos o <em>layout</em> não é muito válido. Para isso, vamos atribuir um método capaz de executar esta consulta uma vez somente e fornecer o acesso aos resultados dessa <em>collection</em>.</p>
+
+<p>Abra o seu arquivo <code>docpad.coffee</code> e atualize-o com o conteúdo abaixo:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>docpadConfig = {
+<a name="line-2"></a>    collections:
+<a name="line-3"></a>        pages: -&gt;
+<a name="line-4"></a>            @getCollection(&quot;html&quot;).findAllLive({isPage:true})
+<a name="line-5"></a>}
+</code></pre></div>
+<p>em seguida, substitua a linha do <em>Template Helper</em> <code>getCollection</code> no seu arquivo <code>default.html.eco</code> para:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>&lt;% for page in @getCollection(&quot;pages&quot;).toJSON(): %&gt;
+</code></pre></div>
+              <h2 id="Ampliando-os-horizontes">
+                <a name="Ampliando-os-horizontes" href="#Ampliando-os-horizontes"></a>Ampliando os horizontes
+              </h2>
+            
+<p>A leitura da documentação é essencial para que possamos nos aprofundar nos conceitos e métodos utilizados pela ferramenta/tecnologia e extrair o máximo dela. Leia a documentação, pesquise se as dúvidas persistirem e pratique os conhecimentos adquiridos.</p>
+
+<p>Vou deixar <strong>dois exercícios</strong> para que você possa praticar e melhorar ainda mais os seus conhecimentos com esta ferramenta.</p>
+
+              <h3 id="Criando-uma-seção-de-Posts">
+                <a name="Criando-uma-seção-de-Posts" href="#Criando-uma-seção-de-Posts"></a>Criando uma seção de Posts
+              </h3>
+            
+<ol>
+<li>Crie um novo <em>document</em> chamado <code>post</code>, o qual utilizará o <em>layout</em> <code>default</code>.</li>
+<li>Insira neste novo <em>document</em>, o conteúdo: <code>&lt;div class=&quot;post&quot;&gt;&lt;%- @content %&gt;&lt;/div&gt;</code>.</li>
+<li>Crie um novo diretório <code>posts</code>, que será responsável por abrigar as suas publicações.</li>
+<li>Crie uma novo <em>layout</em> chamado <code>posts.html.eco</code> que será reponsável por listar as suas publicações.</li>
+</ol>
+
+<blockquote>
+<p><strong>Notas:</strong>
+1. Ao criar um novo <em>post</em> recomendo que utilize um metadado para datas, no formato <code>date: 2013-12-01</code>.
+2. <a href="http://docpad.org/docpad/meta-data">Confira</a> quais <em>Meta Datas</em> podem ser utilizadas.</p>
+</blockquote>
+
+              <h3 id="Fazendo-o-<em>deploy<-em>-para-o-Github-Pages">
+                <a name="Fazendo-o-<em>deploy<-em>-para-o-Github-Pages" href="#Fazendo-o-<em>deploy<-em>-para-o-Github-Pages"></a>Fazendo o <em>deploy</em> para o Github Pages
+              </h3>
+            
+<p>Existem alguns métodos para realizar o <em>deploy</em> do seu projeto, mas neste exemplo iremos utilizar o GitHub Pages. Para isso, vamos realizar dois passos apenas:</p>
+
+<ol>
+<li>Faça o download do plugin <a href="http://docpad.org/plugin/ghpages">GitHub Pages</a>. Execute o comando: <code>docpad install ghpages</code>.</li>
+<li>Realize o procedimento de <em>deploy</em> com o seguinte comando: <code>docpad deploy-ghpages --env static</code></li>
+</ol>
+
+<p>Então, é isso! Agora você está pronto para utilizar o DocPad nos seus projetos. Mas, lembre-se de elaborar um planejamento antes de iniciar qualquer projeto e avaliar a real necessidade do uso desta ferramenta no seu projeto.</p>
+
+<p>Até a próxima! =]</p>
+
+            </section>
+
+        </article>
+
+        <section class="box">
+    <div class="span3">
+        <img class="box-thumb" src="http://www.vitorbritto.com.br/blog/assets/images/avatar.jpg">
+    </div>
+    <div class="span9">
+        <section class="box-details">
+            <h3>Vitor Britto</h3>
+            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+        </section>
+    </div>
+</section>
+
+        <div class="box">
+    <div class="newsletter-wrapper">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=vitorbritto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <h3 class="newsletter-title">Receba os artigos no seu e-mail</h3>
+        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
+        <input class="input" type="email" name="email" placeholder="Digite o seu email"/>
+        <input type="hidden" value="vitorbritto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn-newsletter" type="submit" value="Assinar Newsletter" />
+    </form>
+    </div>
+</div>
+
+
+        <div class="line"></div>
+
+        
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+    var disqus_shortname = 'blogvitorbritto'; // shortname
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Por favor, habilite o JavaScript para ver os <a href="http://disqus.com/?ref_noscript">comentários</a> deste artigo.</noscript>
+
+
+
+    </div>
+
+        <div class="line"></div>
+
+        <div class="row">
+            <footer class="footer">
+                    <p class="footer-text">Desenvolvido por Vitor Britto. Feito com <a href="http://jekyllrb.com/" title="Jekyll" target="_blank">Jekyll</a>, <i class="icon-coffee"></i> e <i class="icon-heart"></i>.</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://www.vitorbritto.com.br/blog/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src='http://www.vitorbritto.com.br/blog/assets/js/app.min.js'></script>
+
+    <!-- Google Analytics -->
+    <script>
+    var _gaq=[['_setAccount','UA-12808940-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

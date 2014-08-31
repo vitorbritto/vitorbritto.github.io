@@ -20,9 +20,10 @@
 @import "themes/dark";
 @import "all";
 
-// DEMO PAGE
+// LAYOUT
 // --------------------------------------------------
 
+// GENERAL
 .container {
     @include container();
     // @include grid-background(); // Debug Grid System
@@ -34,112 +35,108 @@
     @include clearfix;
 }
 
-.wrapper-theme {
+.theme-wrapper {
     position: absolute;
     left: 0;
-    top: 40px;
+    top: 100px;
     padding: 6px;
     background: darken($gray-dark, 4%);
     @include border-radius(0 4px 4px 0);
     border: 1px solid $gray-dark;
-    p {
-        font-size: $base-font-size - 6;
-        color: $gray-light;
-        line-height: normal;
-        text-align: center;
-        text-transform: uppercase;
+}
+.theme-text {
+    font-size: $base-font-size - 6;
+    color: $gray-light;
+    line-height: normal;
+    text-align: center;
+    text-transform: uppercase;
+}
+.theme-btn {
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin: 0 2px;
+    cursor: pointer;
+    &.dark {
+        background: $black;
     }
-    .btn-theme {
-        float: left;
-        width: 24px;
-        height: 24px;
-        margin: 0 2px;
-        cursor: pointer;
-        &.dark {
-            background: $black;
-        }
-        &.light {
-            background: $white;
-        }
+    &.light {
+        background: $white;
     }
-
 }
 
 // HEADER
-#header {
-    margin-top: 40px;
-    .info {
-        @include float-left;
-        h1, h4 {
-            text-align: center;
-            line-height: 14px;
-        }
-    }
+.header { margin-top: 40px; }
 
-    .name {
-        font-size: $base-font-size * 2;
-        a {
-            color: $gray-lighter;
-            &:hover {
-                color: $gray-light;
-            }
-        }
+.header-info {
+    @include float-left;
+    h1, h4 {
+        text-align: center;
+        line-height: 14px;
     }
+}
 
-    .description {
-        color: $gray;
-        font-size: $base-font-size + 2;
-    }
-
-    // Menu
-    .nav,
-    .social {
-        @include horizontal-list();
-        @include float-right;
-        li {
-            margin: 20px auto;
-            a {
-                padding: 4px 8px;
-                text-transform: uppercase;
-                &:hover {
-                    color: $gray-lighter;
-                }
-            }
-        }
-    }
-    .nav {
-        li > a {
-            &:hover {
-                border-bottom: 1px solid $gray-lighter;
-            }
+.header-name {
+    font-size: $base-font-size * 2;
+    a {
+        color: $gray-lighter;
+        &:hover {
+            color: $gray-light;
         }
     }
 }
 
-// HOME
-#posts {
-    margin: 10px auto 0 auto;
-    .post {
-        background: $gray-lighter;
-        border: 1px solid $gray-light;
-        margin-bottom: 20px;
-        .date, .title {
-            @include float-left;
-            padding: 2px 8px;
-        }
-        .date {
-            width: 100%;
-            border-top: 1px solid lighten($gray-light, 2%);
-            font-size: $base-font-size - 2;
-            color: $gray;
-        }
-        .title {
-            margin: 10px auto;
-            font-size: $base-font-size + 2;
-            line-height: 21px;
-            font-weight: 400;
+.header-description {
+    color: $gray;
+    font-size: $base-font-size + 2;
+}
+
+// Menu
+.menu {
+    @include horizontal-list();
+    @include float-right;
+}
+.menu-item {
+    margin: 20px auto;
+    a {
+        padding: 4px 8px;
+        text-transform: uppercase;
+        &:hover {
+            color: $gray-lighter;
         }
     }
+}
+// .nav {
+//     li > a {
+//         &:hover {
+//             border-bottom: 1px solid $gray-lighter;
+//         }
+//     }
+// }
+
+// HOME
+.posts { margin: 10px auto 0 auto; }
+.post {
+    background: $gray-lighter;
+    border: 1px solid $gray-light;
+    margin-bottom: 20px;
+}
+.post-date, .post-title {
+    @include float-left;
+    padding: 2px 8px;
+}
+.post-date {
+    width: 100%;
+    border-top: 1px solid lighten($gray-light, 2%);
+    font-size: $base-font-size - 2;
+    color: $gray;
+}
+.post-title {
+    min-height: 50px;
+    margin: 10px auto;
+    font-size: $base-font-size + 2;
+    line-height: 21px;
+    font-weight: 300;
 }
 
 .btn-archive {
@@ -155,82 +152,63 @@
     }
 }
 
-// ARTICLES
-#article {
-    img {
-        display: block;
-        margin: 10px auto;
-    }
-    h2 {
-        color: $red;
-        font-size: $base-font-size * 2;
-        margin-bottom: 0px;
-    }
-    span {
-        color: $gray-light;
-        font-size: $base-font-size - 2;
-    }
-    .post-entry {
-        margin: 10px auto;
-        #{headings()} { color: $red; }
-        #{headings(5,6)} { font-weight: 400; }
-    }
+// PAGE
+.page-title {
+    font-size: $base-font-size * 2;
+    margin-bottom: 20px;
+    font-weight: 300;
 }
 
-#author {
-    margin: 20px auto;
-    background-color: lighten($gray-darker, 2%);
-    border: 1px solid darken($gray-dark, 10%);
-    @include border-radius($base-border-radius);
-    float: left;
-    .thumb {
-        margin: 8px auto;
-        @include border-radius($base-border-radius);
-        border: 1px solid darken($gray-dark, 3%);
-        vertical-align: middle;
-    }
-    .details {
-        h3 {
-            color: $red;
-        }
-        h3, p {
-            font-weight: 300;
-            line-height: $base-line-height * 1.25;
-        }
-    }
+// ARTICLES
+.article { margin: 0 auto; }
+.article-img {
+    display: block;
+    margin: 10px auto;
+}
+.article-title {
+    color: $red;
+    font-size: $base-font-size * 2;
+    margin-bottom: 0;
+}
+.article-date {
+    color: $gray-light;
+    font-size: $base-font-size - 2;
+}
+.article-entry {
+    margin: 10px auto;
+    #{headings()} { color: $red; }
+    #{headings(5,6)} { font-weight: 300; }
 }
 
 // ARCHIVES
-#archive {
-    .article {
-        border-bottom: 1px dotted $gray-dark;
-        display: block;
-        margin-bottom: 8px;
-        &:last-child {
-            border: none;
-        }
-        h4 {
-            font-size: $base-font-size - 2;
-            margin-bottom: 8px;
-            font-weight: 400;
-        }
-        span {
-            font-size: $base-font-size - 3;
-            line-height: 6px;
-        }
+.archive {
+    border-bottom: 1px dotted $gray-dark;
+    display: block;
+    margin-bottom: 8px;
+    &:last-child {
+        border: none;
     }
+}
+.archive-title {
+    font-size: $base-font-size + 2;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 300;
+}
+.archive-date {
+    font-size: $base-font-size - 4;
+    text-transform: uppercase;
+    line-height: 6px;
 }
 
 // FOOTER
-#footer {
-    margin: 0px auto;
-    p {
-        color: lighten($gray, 12%);
-        font-weight: 300;
-        text-align: center;
-        font-size: $base-font-size - 2;
-        i {
-            padding: 0 4px;
-        }
+.footer { margin: 0 auto; }
+.footer-text {
+    color: lighten($gray, 12%);
+    font-weight: 300;
+    text-align: center;
+    font-size: $base-font-size - 2;
+    i {
+        padding: 0 4px;
     }
 }

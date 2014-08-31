@@ -1,28 +1,30 @@
 # Blog - Vitor Britto
 
-Espaço onde escrevo artigos sobre desenvolvimento web, experiência do usuário e produtividade no ambiente de trabalho.
+My personal blog built with [Jekyll](http://jekyllrb.com/).
 
-## Bem vindo!
+## Run locally
 
-Este projeto foi desenvolvido com [Jekyll](http://jekyllrb.com/), um *static generator* em Ruby.
+Run this blog in your local host with the following steps:
 
-## Como utilizar
+- [Git](http://git-scm.com/downloads) and [Ruby](http://www.ruby-lang.org/pt/downloads/) are required.
+- Install [Jekyll](http://jekyllrb.com/): `gem install jekyll`
+- Clone this repository and access the generated folder: `git clone git@github.com:vitorbritto/vitorbritto.github.io.git && cd $_`
 
-Para rodar este blog localmente na sua máquina, execute os seguintes passos:
+- Comment the bellow lines in `_config.yml` file:
 
-1. Caso você não possua o [Git](http://git-scm.com/downloads) e [Ruby](http://www.ruby-lang.org/pt/downloads/), instale-os na sua máquina.
-2. Instale o [Jekyll](http://jekyllrb.com/) através do comando: `gem install jekyll`
-3. Clone o projeto e acesso o diretório do projeto com o seguinte comando: `git clone git@github.com:vitorbritto/blog.git && cd blog`
-4. Agora, execute: `rake build`
-5. Confira o site rodando em `http://localhost:4000`.
+```
+url:         http://www.vitorbritto.com.br/blog
+baseurl:     http://www.vitorbritto.com.br/blog/
+```
+- Install dependencies: `npm install`
+- Start the static web server: `rake`
+- Open your favorited browser at `http://localhost:4000`.
 
-## Estrutura
-
-A estrutura básica do projeto:
+## Structure
 
 ````bash
-blog/
-├── _drafts/
+.
+├── _build/
 ├── _includes/
 ├── _layouts/
 ├── _plugins/
@@ -30,6 +32,7 @@ blog/
 ├── about/
 ├── archive/
 ├── assets/
+│   ├── css/
 │   ├── fonts/
 │   ├── images/
 │   ├── js/
@@ -40,6 +43,7 @@ blog/
 ├── .jshintrc
 ├── _config.yml
 ├── bower.json
+├── CNAME
 ├── config.rb
 ├── feed.xml
 ├── Gemfile
@@ -54,34 +58,34 @@ blog/
 
 ### [_includes](https://github.com/vitorbritto/blog/tree/master/_includes)
 
-São blocos de código utilizados para gerar a página principal do site ([index.html](https://github.com/vitorbritto/blog/blob/master/index.html)).
+Coe blocks to generate the main content ([index.html](https://github.com/vitorbritto/blog/blob/master/index.html)).
 
 ### [_plugins](https://github.com/vitorbritto/blog/tree/master/_plugins)
 
-Contém os plugins utilizados.
+Plugins used on this projects.
 
 ### [_posts](https://github.com/vitorbritto/blog/tree/master/_posts)
 
-Contém a lista de posts.
+Published posts.
 
 ### [_layouts](https://github.com/vitorbritto/blog/tree/master/_layouts)
 
-Contém o template padrão da aplicação.
+Default templates.
 
 ### _build
 
-É onde os arquivos gerados são armazenados, uma vez que o Jekyll tenha sido rodado. Porém, esse diretório se torna desnecessário no nosso modelo, por isso está ignorado ([.gitignore](https://github.com/vitorbritto/blog/blob/master/.gitignore)).
+Output folder for compiled files.
 
 ### [assets](https://github.com/vitorbritto/blog/tree/master/assets)
 
-Possui as imagens, estilos e scritps.
+All assets available on this blog.
 
 ### [_config.yml](https://github.com/vitorbritto/blog/blob/master/_config.yml)
 
-Armazena de forma fácil a maior parte das configurações da aplicação.
+The main configuration file for Jekyll.
 
 ### [index.html](https://github.com/vitorbritto/blog/blob/master/index.html)
 
-É o arquivo que importa todas as seções da aplicação.
+The main file.
 
-*Mais informações sobre a estrutura de arquivos do Jekyll, [clique aqui](https://github.com/mojombo/jekyll/wiki/Usage).*
+*More information about Jekyll structure, [click here](https://github.com/mojombo/jekyll/wiki/Usage).*

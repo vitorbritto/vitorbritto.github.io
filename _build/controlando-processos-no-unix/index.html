@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Controlando processos no UNIX</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Desenvolvedor Web" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="Controlando processos no UNIX"/>
+    <meta property="og:site_name" content="Blog - Vitor Britto"/>
+    <meta property="og:url" content="http://www.vitorbritto.com.br/blog/controlando-processos-no-unix/"/>
+    <meta property="og:image" content="http://www.vitorbritto.com.br/blog/assets/images/fb.jpg"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="Neste artigo vamos entender o que são os processos. Como iniciar e interromper processos, enviar sinais aos programas em execução, verificar informações dos processos que estão sendo executados e muito mais."/>
+
+    <link rel="shortcut icon" href="http://www.vitorbritto.com.br/blog/assets/images/favicon.png" type="image/x-icon">
+    <link href="http://feeds.feedburner.com/vitorbritto" rel="alternate" type="application/rss+xml">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <link href="http://www.vitorbritto.com.br/blog/assets/css/style.css" rel="stylesheet" id="theme-css"/>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <header class="header">
+
+                <div class="span4">
+                    <div class="header-info">
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h4 class="header-description">Desenvolvedor Web</h4>
+                    </div>
+                </div>
+
+                <div class="span5">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/">Início</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/about">Sobre</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/projects">Projetos</a></li>
+    </ul>
+</nav>
+
+                </div>
+
+                <div class="span3">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item">
+            <a href="https://www.facebook.com/vbwebstudio" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://twitter.com/vitorbritto" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://github.com/vitorbritto" title="Github" target="_blank"><i class="icon-github"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="mailto:contato@vitorbritto.com.br"><i class="icon-envelope-alt"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="http://feeds.feedburner.com/vitorbritto" title="RSS Feed" target="_blank"><i class="icon-rss"></i></a>
+        </li>
+    </ul>
+</nav>
+
+                </div>
+
+            </header>
+        </div>
+
+        <div class="line"></div>
+
+
+
+<!-- Switch Theme -->
+<div class="theme-wrapper">
+    <p class="theme-text">Tema:</p>
+    <span class="theme-btn light" id="theme-light"></span>
+    <span class="theme-btn dark" id="theme-dark"></span>
+</div>
+
+    <div class="row">
+
+        <article class="article">
+
+            <img class="article-img" src="http://www.vitorbritto.com.br/blog/assets/images/posts/post-processos-unix.jpg">
+            <h2 class="article-title">Controlando processos no UNIX</h2>
+            <span class="article-date">Publicado em: 27/07/2014 | Por: Vitor Britto</span>
+            <div class="line"></div>
+
+            <section class="article-entry">
+                <p>Saudações!</p>
+
+<p>Vamos combinar que é muito chato quando um programa/aplicação trava ou você não é possível finalizar um procedimento por conta da lentidão na execução de uma terafa no sistema. Para contornar esta situação e conseguirmos manipular os programas, vamos entender o que são os processos no Unix.</p>
+
+              <h3 id="Processando">
+                <a name="Processando" href="#Processando"></a>Processando
+              </h3>
+            
+<p>No Unix, é possível iniciar e interromper processos, enviar sinais aos programas em execução, verificar informações dos processos que estão sendo executados e muito mais. Mas, antes de entendermos como fazer isso, é preciso entender o que é um processo.</p>
+
+<p>De forma simplificada, um processo é uma instância de um programa em execução. Logo ao iniciar o seu sistema, um processo chamado <em>init</em> é executado com um PID de número <strong>1</strong>. Para cada programa iniciado é atribuido um identificador único, o qual denominamos <em>PID</em>(process identifier). Não vou entrar em detalhes sobre como cada processo é iniciado por debaixo dos panos. Para isto, leia <a href="http://en.wikipedia.org/wiki/Process_identifier">este material</a> que pode ser encontrado no Wikipedia.</p>
+
+<p>Sendo assim, ao executar um comando no prompt do Unix shell ou inicializar um programa/aplicativo você está iniciando um processo.</p>
+
+              <h3 id="Quais-processos-estão-em-execução-">
+                <a name="Quais-processos-estão-em-execução-" href="#Quais-processos-estão-em-execução-"></a>Quais processos estão em execução?
+              </h3>
+            
+<p>Para verificar quais processos estão em execução, basta executar o comando <em>ps</em> (process status). Quando declarado sem qualquer argumento, o comando <em>ps</em> exibe todos os processos vinculados com a sessão atual do seu sistema.</p>
+
+<p><strong>Confira o exemplo abaixo:</strong></p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a>vitorbritto at ~
+<a name="line-2"></a><span class="nv">$ </span>ps
+<a name="line-3"></a>  PID TTY           TIME CMD
+<a name="line-4"></a> 2092 ttys000    0:00.97 -bash
+</code></pre></div>
+<p>Note que neste exemplo, o comando <em>ps</em> exibe o ID do processo, em qual terminal o processo está vinculado, o tempo acumulado que este processo encontra-se em execução e o comando para este processo respectivamente.</p>
+
+<p>Além disso, este comando é muito útil para verificar quais processos estão sendo executados em um sistema e quais consomem mais memória ou estão exigindo um uso excessivo da CPU.</p>
+
+<p>Então, vamos entender melhor a mecânica por trás do comando <em>ps</em>.</p>
+
+              <h3 id="Um-passo-de-cada-vez">
+                <a name="Um-passo-de-cada-vez" href="#Um-passo-de-cada-vez"></a>Um passo de cada vez
+              </h3>
+            
+<p>O comando <em>ps</em> é um dos mais comuns e utilizados no/pelo Unix, mas oferece algumas diferenças de sintaxe para renderizar o output em seus variantes (flavors). A melhor maneira de entender como a sintaxe do <em>process status</em> funciona no seu sistema, é utilizando o <strong>man pages</strong>. Para facilitar a leitura, adicione e utilize o <em>alias</em> abaixo para ler em formato PDF o manual do <em>ps</em>. Se preferir, execute da maneira mais prática e convencional com: <code>man ps</code>.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># Insira no .bashrc:</span>
+<a name="line-2"></a><span class="nb">alias </span><span class="nv">manpdf</span><span class="o">=</span><span class="s2">&quot;man -t $1 | pstopdf -i -o $1.pdf&quot;</span>
+<a name="line-3"></a><span class="c"># Execute com:</span>
+<a name="line-4"></a><span class="nv">$ </span>manpdf ps
+</code></pre></div>
+<blockquote>
+<p><strong>Importante:</strong> o arquivo PDF para o man page do <em>ps</em> será registrado no diretório corrente do terminal onde o <em>alias</em> for executado.</p>
+</blockquote>
+
+<p>Aí esta! Uma maneira prática para ler a respeito dos detalhes sobre o comando <em>ps</em> no seu sistema. E outros comandos também, por que não? :)</p>
+
+              <h3 id="Mergulhando-nos-processos">
+                <a name="Mergulhando-nos-processos" href="#Mergulhando-nos-processos"></a>Mergulhando nos processos
+              </h3>
+            
+<p>Daqui para frente, vamos percorrer os seguintes tópicos:</p>
+
+<ul>
+<li>States (estados)</li>
+<li>System process (processos do sistema)</li>
+<li>Attributes (atributos)</li>
+<li>Kill Process (matar processo)</li>
+<li>Tree Process (árvore de processos)</li>
+<li>Comando <code>top</code></li>
+</ul>
+
+<blockquote>
+<p><strong>Nota Importante:</strong> estou usando o Bash. :)</p>
+</blockquote>
+
+              <h4 id="Estados">
+                <a name="Estados" href="#Estados"></a>Estados
+              </h4>
+            
+<p>Para saber em qual estado o seu sistema se encontra, utilize o comando <code>ps</code> com o argumento <code>u</code>.</p>
+
+<p>Confira o exemplo abaixo:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a>vitorbritto at ~
+<a name="line-2"></a><span class="nv">$ </span>ps u
+<a name="line-3"></a>USER         PID    %CPU %MEM VSZ       RSS  TTY   STAT STARTED   TIME COMMAND
+<a name="line-4"></a>vitorbritto  2092   0.0  0.1  2437540   2924 s000  S     5:39PM   0:01.20 -bash
+</code></pre></div>
+<p>Perceba que o comando retorna uma série de informações a respeito do sistema no output (terminal), como:</p>
+
+<ul>
+<li>O usuário que executa o processo (USER)</li>
+<li>O identificador do processo (PID)</li>
+<li>A percentagem de uso do CPU (%CPU)</li>
+<li>A percentagem de uso real da memória (%MEM)</li>
+<li>O tamanho da memória virtual em KBs (VSZ)</li>
+<li>O tamanho de memória física usada (RSS)</li>
+<li>O terminal que o processo esá conectado (TTY)</li>
+<li>Os estados atrelados ao processo (STAT)</li>
+<li>Quando o processo foi iniciado (STARTED)</li>
+<li>A quantidade de tempo utilizado pelo processo no CPU (TIME)</li>
+<li>E o nome do comando (COMMAND)</li>
+</ul>
+
+              <h4 id="Processos-do-Sistema">
+                <a name="Processos-do-Sistema" href="#Processos-do-Sistema"></a>Processos do Sistema
+              </h4>
+            
+<p>Por padrão, o seu sistema possui diversos processos em execução, para conferir uma lista detalhada de quais processos encontram-se em execução neste exato momento no seu sistema, digite: <code>ps ax</code>. Para o nosso exemplo, vamos digitar o seguinte: <code>ps ax | wc -l</code>.</p>
+
+<p>Show de bola, Vitor! Digitei o comando e me retornou um número.</p>
+
+<p>Pois bem! Este número representa a quantidade de processos em execução no seu sistema. Agora, vamos desmembrar este comando para que você possa entender o propósito de cada elemento nele.</p>
+
+<ul>
+<li>O argumento <code>a</code> do comando <code>ps</code> retorna informações dos processos de todos os usuários.</li>
+<li>O argumento <code>x</code> do comando <code>ps</code> renderiza informações a respeito dos processos sem controlar o terminal.</li>
+<li>O caracter <code>|</code> é o que chamamos de <em>pipe</em>. É um operador capaz de repassar uma informação a partir do <em>output</em> de um comando para o <em>input</em> de outro comando.</li>
+<li>O segundo comando <code>wc -l</code> é responsável por renderizar o total de processos em execução no seu sistema.</li>
+</ul>
+
+<p>Já que este artigo não se trata do operador <code>|</code> (pipe) e do comando <code>wc</code> (e seus respectivos argumentos), recomendo a leitura de suas man pages. É uma ótima oportunidade para gerar um PDF, não é? :)</p>
+
+<p>Pois bem. Os procesos são programas em execução e que lidam com aspectos essenciais de manipulação e manutenção no seu sistema. Muitos destes processos são, convencionalmente, chamados de <em>daemons</em> e eles executam algumas rotinas. Digite o comando a seguir para visualizar quais processos estão em execução no seu sistema:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>ps ax
+</code></pre></div>
+<p>Será retornada uma lista similar a esta:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a>vitorbritto at ~
+<a name="line-2"></a><span class="nv">$ </span>ps ax
+<a name="line-3"></a>  PID   TT  STAT      TIME COMMAND
+<a name="line-4"></a>    1   ??  Ss     0:48.81 /sbin/launchd
+<a name="line-5"></a>   10   ??  Ss     0:01.99 /usr/libexec/kextd
+<a name="line-6"></a>   11   ??  Ss     0:02.91 /usr/libexec/UserEventAgent -l System
+<a name="line-7"></a>   12   ??  Ss     0:03.60 /usr/sbin/notifyd
+<a name="line-8"></a>   14   ??  Ss     0:06.54 /usr/sbin/ntpd -c /private/etc/ntp-restrict.conf -n -g -p /var/run/ntpd.pid -f /var/db/ntp.drift
+<a name="line-9"></a>   17   ??  SNs    0:00.92 /usr/libexec/warmd
+<a name="line-10"></a>   ...
+</code></pre></div>
+<blockquote>
+<p><strong>Nota:</strong> a lista acima foi renderizada em um Mac OSX.</p>
+</blockquote>
+
+              <h4 id="Atributos-do-Processo">
+                <a name="Atributos-do-Processo" href="#Atributos-do-Processo"></a>Atributos do Processo
+              </h4>
+            
+<p>Cada processo possui um ambiente com diversos atributos, assim como argumentos para a linha de comando, variáveis do ambiente, descrição dos arquivos, mascara para criação de arquivos e muito mais.</p>
+
+<p>Para verificar determinados atributos dos processos, você pode executar o comando <em>ps</em> com a flag <code>-o</code> e os atributos desejados. Veja o exemplo abaixo:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>ps -o user,pid,stime,comm
+</code></pre></div>
+<p>E será renderizado isto:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a>vitorbritto at ~
+<a name="line-2"></a><span class="nv">$ </span>ps -o user,pid,stime,comm
+<a name="line-3"></a>USER          PID     STIME COMM
+<a name="line-4"></a>vitorbritto  2092   0:00.54 -bash
+</code></pre></div>
+<p>Confira uma tabela dos atributos mais comuns disponíveis no Unix.</p>
+
+<blockquote>
+<p><strong>Nota:</strong> alguns destes atributos foram mencionados no tópico <a href="#estados">estados</a>.</p>
+</blockquote>
+
+<table><thead>
+<tr>
+<th>Campo</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user</td>
+<td>Usuário do processo</td>
+</tr>
+<tr>
+<td>pid</td>
+<td>ID do processo</td>
+</tr>
+<tr>
+<td>ppid</td>
+<td>ID do processo filho</td>
+</tr>
+<tr>
+<td>pcpu</td>
+<td>Percentagem de uso do CPU</td>
+</tr>
+<tr>
+<td>rss</td>
+<td>Tamanho de memória física usada (em kilobytes)</td>
+</tr>
+<tr>
+<td>pmem</td>
+<td>Percentagem de uso real da memória</td>
+</tr>
+<tr>
+<td>vsz</td>
+<td>Tamanho da memória virtual em KBs</td>
+</tr>
+<tr>
+<td>tty</td>
+<td>Terminal que o processo esá conectado</td>
+</tr>
+<tr>
+<td>state (ou s)</td>
+<td>Estado atrelado ao processo</td>
+</tr>
+<tr>
+<td>stime</td>
+<td>Quando o processo foi iniciado</td>
+</tr>
+<tr>
+<td>time</td>
+<td>Quantidade de tempo utilizado pelo processo no CPU</td>
+</tr>
+<tr>
+<td>command (ou comm)</td>
+<td>Nome do comando</td>
+</tr>
+</tbody></table>
+
+              <h4 id="Finalizando-um-processo">
+                <a name="Finalizando-um-processo" href="#Finalizando-um-processo"></a>Finalizando um processo
+              </h4>
+            
+<p>É possível finalizar um processo de algumas maneiras. O utilitário padrão para &quot;matar&quot; um processo, chama-se <em>kill</em>. Tecnicamente, o comando <code>kill</code> não interrompe ou finaliza o processo, isto é feito através de um sinal emitido para o processo. Os sinais (signals) são muito utilizados para a comunicação entre os processos. Cada sinal é responsável por uma ação do <strong>processo</strong>.</p>
+
+<p>O sinal padrão para o comando <code>kill</code> é o <em>SIGTERM</em> (terminar).</p>
+
+<p>Para finalizar um processo, basta inserir o PID (identificador do processo). Veja o exemplo abaixo:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a># Primeiro, buscamos o PID que queremos finalizar.
+<a name="line-2"></a># Digamos que o processo a ser finalizado seja o navegador Firefox.
+<a name="line-3"></a># No comando abaixo, passo a flag -o par retornar um output customizado
+<a name="line-4"></a># com o comando e o identificador do processo (PID). Logo após uso o pipe (|)
+<a name="line-5"></a># para repassar a informação com o grep, que funciona como um regex e realizar
+<a name="line-6"></a># uma comparação com a string &quot;firefox&quot;.
+<a name="line-7"></a>vitorbritto at ~
+<a name="line-8"></a>$ ps axww -o pid,comm | grep firefox
+<a name="line-9"></a>  787 /Applications/Firefox.app/Contents/MacOS/firefox
+<a name="line-10"></a>
+<a name="line-11"></a># Verificamos que o PID deste comando é 787.
+<a name="line-12"></a># Agora, vamos executar o comando kill para finalizar
+<a name="line-13"></a># este processo utilizando o sinal padrão (SIGTERM).
+<a name="line-14"></a>$ kill 787
+</code></pre></div>
+<p>Com o comando <code>kill -l</code>, é possível renderizar no terminal os possíveis sinais com os seus respectivos números. Veja um exemplo abaixo:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>vitorbritto at ~
+<a name="line-2"></a>$ kill -l
+<a name="line-3"></a> 1) SIGHUP       2) SIGINT       3) SIGQUI       4) SIGILL
+<a name="line-4"></a> 5) SIGTRAP      6) SIGABRT      7) SIGEMT       8) SIGFPE
+<a name="line-5"></a> 9) SIGKILL     10) SIGBUS      11) SIGSEGV     12) SIGSYS
+<a name="line-6"></a>13) SIGPIPE     14) SIGALRM     15) SIGTERM     16) SIGURG
+<a name="line-7"></a>17) SIGSTOP     18) SIGTSTP     19) SIGCONT     20) SIGCHLD
+<a name="line-8"></a>21) SIGTTIN     22) SIGTTOU     23) SIGIO       24) SIGXCPU
+<a name="line-9"></a>25) SIGXFSZ     26) SIGVTALRM   27) SIGPROF     28) SIGWINCH
+<a name="line-10"></a>29) SIGINFO     30) SIGUSR1     31) SIGUSR2
+</code></pre></div>
+<p>Muitos sistemas Unix fornecem alternativas ao comando <code>kill</code> e que podem ser utilizados com o nome do comando ao invés do PID, como:</p>
+
+<ul>
+<li><code>pgrep</code></li>
+<li><code>pkill</code></li>
+<li><code>killall</code></li>
+</ul>
+
+<p>Em alguns sistemas, o <code>killall</code> é utilizado para enviar sinais aos processos através de nomes. Tenha cuidado ao utilizar este cara, recomendo o uso do <code>pkill</code>. Desta forma, ao invés de utilizar o ID do processo (PID), você utilizaria o nome do processo.
+Veja abaixo um exemplo:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>pkill firefox
+</code></pre></div>
+<p>O argumento utilizado no <code>pkill</code> é uma simples expressão regular a ser comparada. Mesmo assim, antes de usar o <code>pkill</code>, certifique-se de que a expressão existe com o <code>pgrep</code>.</p>
+
+<blockquote>
+<p><strong>Nota:</strong> no Mac OSX, tais comandos não são nativos. Você pode usar o homebrew para instalar o <a href="http://proctools.sourceforge.net/">proctools</a> com o comando <code>brew install proctools</code></p>
+</blockquote>
+
+              <h4 id="Árvore-de-Processos">
+                <a name="Árvore-de-Processos" href="#Árvore-de-Processos"></a>Árvore de Processos
+              </h4>
+            
+<p>Sem dúvidas, este é um dos comandos mais interessantes sobre processos. O <code>pstree</code> permite que uma estrutura hierárquica seja renderizada no terminal, onde cada processo filho (child process) é relacionado ao seu processo pai (parent process).</p>
+
+<p>Infelizmente, no OSX é preciso instalar este utilitário também. Veja o exemplo abaixo como podemos instalar este camarada com o <em>homebrew</em> e a sua posterior visualização no terminal:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># 1. Instale com:</span>
+<a name="line-2"></a><span class="nv">$ </span>brew install pstree
+<a name="line-3"></a><span class="c"># 2. Execute com:</span>
+<a name="line-4"></a><span class="nv">$ </span>pstree
+<a name="line-5"></a><span class="c"># 3. O resultado (parcial) será:</span>
+<a name="line-6"></a>vitorbritto at ~
+<a name="line-7"></a><span class="nv">$ </span>pstree
+<a name="line-8"></a>-+<span class="o">=</span> 00001 root /sbin/launchd
+<a name="line-9"></a> |--<span class="o">=</span> 00010 root /usr/libexec/kextd
+<a name="line-10"></a> |--<span class="o">=</span> 00011 root /usr/libexec/UserEventAgent -l System
+<a name="line-11"></a> |--<span class="o">=</span> 00012 root /usr/sbin/notifyd
+<a name="line-12"></a> |--<span class="o">=</span> 00014 root /usr/sbin/ntpd -c /private/etc/ntp-restrict.conf -n -g -p /var/run/ntpd.pid -f /var/db/ntp.drift
+<a name="line-13"></a> |--<span class="o">=</span> 00017 nobody /usr/libexec/warmd
+<a name="line-14"></a> |--<span class="o">=</span> 00018 _usbmuxd /System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/Resources/usbmuxd -launchd
+<a name="line-15"></a> |--<span class="o">=</span> 00020 root /usr/sbin/syslogd
+</code></pre></div>
+<p>Certamente, é possível escrever um programa em Shell Script para renderizar uma <code>tree</code> de acordo com as suas necessidades. Não entraremos em detalhes sobre como realizar este procedimento, para não perdermos o foco deste artigo, mas fique a vontade para realizar algumas pesquisas. Ok?</p>
+
+              <h4 id="Comando-<code>top<-code>">
+                <a name="Comando-<code>top<-code>" href="#Comando-<code>top<-code>"></a>Comando <code>top</code>
+              </h4>
+            
+<p>Este é outro comando muito interessante. Principalmente para administradores Unix.</p>
+
+<p>Com o comando <code>top</code> é possível iniciar um utilitário interativo para análise dos processos, os quais são atualizados frequentemente e mostram informações físicas e virtuais da memória, CPU e processos lentos/travados (<a href="http://en.wikipedia.org/wiki/Zombie_process">Zombie Process</a>).</p>
+
+<p>Confira um exemplo abaixo:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a>Processes: 75 total, 4 running, 2 stuck, 69 sleeping, 494 threads                                                                                            03:35:56
+<a name="line-2"></a>Load Avg: 3.99, 3.51, 3.28  CPU usage: 66.8% user, 24.56% sys, 9.34% idle    SharedLibs: 2472K resident, 2260K data, 0B linkedit.
+<a name="line-3"></a>MemRegions: 34948 total, 642M resident, 17M private, 272M shared. PhysMem: 330M wired, 869M active, 834M inactive, 2034M used, 14M free.
+<a name="line-4"></a>VM: 187G vsize, 1101M framework vsize, 858219<span class="o">(</span>1<span class="o">)</span> pageins, 546183<span class="o">(</span>0<span class="o">)</span> pageouts. Networks: packets: 2578121/4689M in, 2119681/2093M out.
+<a name="line-5"></a>Disks: 564676/9683M <span class="nb">read</span>, 289083/12G written.
+<a name="line-6"></a>
+<a name="line-7"></a>PID   COMMAND      %CPU  TIME     <span class="c">#TH  #WQ  #POR #MREGS RPRVT  RSHRD  RSIZE  VPRVT  VSIZE  PGRP PPID STATE    UID  FAULTS     COW      MSGSENT    MSGRECV</span>
+<a name="line-8"></a>3495  top          16.9  00:04.34 1/1  0    28   29     1368K  216K   2076K  17M    2378M  3495 2092 running  0    9727+      85       1294936+   647425+
+<a name="line-9"></a>3494  taskgated    0.0   00:00.03 2    0    31   40     380K   272K   1740K  20M    2381M  3494 1    sleeping 0    577        106      116        48
+<a name="line-10"></a>3479  ocspd        0.0   00:00.04 1    0    28   29     676K   276K   2100K  26M    2387M  3479 1    sleeping 0    749        98       185        77
+<a name="line-11"></a>3377  distnoted    0.0   00:00.01 2    1    40   46     392K   240K   1012K  22M    2383M  3377 3374 sleeping 89   413        83       255        124
+<a name="line-12"></a>3376  mdworker     0.0   00:00.36 3    1    54   71     1492K  3748K  5632K  23M    2412M  3376 3374 sleeping 89   2623       203      1702       757
+<a name="line-13"></a>3374  launchd      0.0   00:00.02 2    0    53   45     368K   416K   784K   38M    2399M  3374 1    sleeping 89   602        179      1254       523
+<a name="line-14"></a>2482  Mou          0.0   22:13.93 7    1    174  480    10M    12M    31M    301M   19G    2482 137  sleeping 501  369777     596      4043593+   2069826+
+<a name="line-15"></a>2447- node-webkit  17.6  69:54.83 4/2  1    78   472    10M+   40M-   39M+   75M+   807M   2443 2443 running  501  138640191+ 690      2239122+   1119229+
+<a name="line-16"></a>2445- node-webkit  110.2 06:01:21 28/1 1    137- 913-   145M+  36M    410M+  687M-  1426M- 2443 2443 running  501  1889563+   838      259273383+ 133231723+
+<a name="line-17"></a>2443- node-webkit  10.9  43:43.71 42   1    266  382    3204K  37M    19M+   341M   1102M  2443 137  stuck    501  168935+    1219     41720371+  16962182+
+<a name="line-18"></a>2421  Preview      0.0   01:35.89 6    1    185  895    12M    24M    34M    222M   3708M  2421 137  sleeping 501  196129     745      380311     187637
+<a name="line-19"></a>2092  bash         0.0   00:01.46 1    0    20   26     1268K  216K   1668K  19M    2380M  2092 2091 sleeping 501  15364      4346     491        237
+<a name="line-20"></a>2091  login        0.0   00:00.03 2    1    34   58     0B     216K   432K   22M    2391M  2091 2089 sleeping 0    748        121      292        138
+<a name="line-21"></a>2089  Terminal     1.5   01:04.90 7    3    135  330    7376K  9412K  23M    32M    2538M  2089 137  sleeping 501  115422     539      342779+    165218+
+<a name="line-22"></a>1034  mdworker     0.0   00:47.94 4    1    55   98     3096K  4116K  8244K  29M    2418M  1034 137  sleeping 501  126235     278      427269     174393
+<a name="line-23"></a>992   Sparrow      0.0   18:16.79 17   4    309  1955   51M    17M    67M    418M   3779M  992  137  sleeping 501  1391524    1828     6624660+   3008127+
+<a name="line-24"></a>885   plugin-conta 0.0   30:46.44 8    1    487  1344   1356K  28M    5816K  56M    2725M  787  787  sleeping 501  51300527   6662     17404742+  8400203+
+<a name="line-25"></a>787   firefox      11.0  04:42:22 74   1    339  19088  281M   34M    374M   514M   3563M  787  137  sleeping 501  11793724   2573162  498594082+ 245596606+
+<a name="line-26"></a>7
+</code></pre></div>
+<p>Com este <em>overview</em> sobre processos no Unix, podemos seguir adiante e percorrer alguns aspectos para gerir tais processos. Para isto, vamos entender o que é e como funciona o comando <code>jobs</code>.</p>
+
+              <h3 id="Controlando-os-processos">
+                <a name="Controlando-os-processos" href="#Controlando-os-processos"></a>Controlando os processos
+              </h3>
+            
+<p>Com o comando <code>jobs</code>, é possível executar programas em <em>background</em>. Isso possibilita a execução de múltiplos programas ao mesmo tempo e em paralelo, a suspensão e reinício de determinados comandos também.</p>
+
+<p>Mas, como posso executar isso Vitor?</p>
+
+              <h4 id="Entendendo-melhor-o-comando-jobs">
+                <a name="Entendendo-melhor-o-comando-jobs" href="#Entendendo-melhor-o-comando-jobs"></a>Entendendo melhor o comando jobs
+              </h4>
+            
+<p>Você pode, simplesmente, inserir o operador <code>&amp;</code> ao final do comando que deseja executar. Com isso, o seu processo será executado em <em>background</em> e o seu <em>prompt</em> não será travado. Confira o exemplo abaixo:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>npm search zip &amp;
+</code></pre></div>
+<p>Neste exemplo, o <code>npm</code> fará uma busca pelos módulos com o termo <em>zip</em> e o seu prompt ficará livre para continuar executando demais comandos. Faça um teste. :)</p>
+
+              <h4 id="Manipulando-os-processos-em-execução">
+                <a name="Manipulando-os-processos-em-execução" href="#Manipulando-os-processos-em-execução"></a>Manipulando os processos em execução
+              </h4>
+            
+<p>Para verificar os processos em execução no <em>background</em>, basta digitar no terminal o comando <code>jobs</code>. Será exibida uma lista semelhante a que você verá abaixo:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span><span class="nb">jobs</span>
+<a name="line-2"></a><span class="o">[</span>1<span class="o">]</span>+ Running        npm search zip &amp;
+</code></pre></div>
+<p>É possível mover um processo para o <em>foreground</em>, mas vale lembrar que este procedimento fará com que o prompt seja travado. Isso impossibilita qualquer ação do usuário até que o processo seja finalizado. Para ver como funciona, execute o seguinte comando no processo em <em>background</em> recém-criado:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># Colocar no foreground o processo de número 1</span>
+<a name="line-2"></a><span class="nv">$ </span><span class="nb">fg </span>1
+</code></pre></div>
+<blockquote>
+<p><strong>Nota:</strong> se houverem muitos jobs em execução no <em>background</em>, é possível passar o número do <em>job</em> como argumento. Exemplo: <code>fg &lt;número do processo em background&gt;</code>.</p>
+</blockquote>
+
+              <h4 id="Acabando-com-a-festa">
+                <a name="Acabando-com-a-festa" href="#Acabando-com-a-festa"></a>Acabando com a festa
+              </h4>
+            
+<p>No nosso exemplo temos um processo em execução, no qual está buscando os módulos do node com o termo <em>zip</em> para renderizar no output (terminal). Entretanto, digamos que este processo esteja atrapalhando o desempenho do seu sistema ou que você não queira que ele prossiga. Para isso, podemos utilizar dois métodos para interromper este processo.</p>
+
+<p>No primeiro método, tratando-se de um processo no <em>foreground</em>, é possível suspender o mesmo com a combinação <code>CTRL+Z</code>. Do contrário, se for um processo no <em>background</em>, execute o comando <code>kill</code> adicionando o caracter <code>%</code> precedido do número do <em>job</em>.</p>
+
+<p>Por exemplo: <code>kill -18 %2</code>.</p>
+
+<blockquote>
+<p><strong>Nota:</strong> vale lembrar que o <code>-18</code> não é um número negativo, e sim a representação do sinal a ser passado para o processo. neste caso, o sinal de número 18 (SIGTSTP - Signal Stop).</p>
+</blockquote>
+
+              <h3 id="Por-enquanto-é-isso">
+                <a name="Por-enquanto-é-isso" href="#Por-enquanto-é-isso"></a>Por enquanto é isso
+              </h3>
+            
+<p>Podemos perceber o quão importante os processos são em um sistema e como podemos manipular/generenciar estes caras a fim de manter um bom desempenho neste ambiente.</p>
+
+<p>Vimos também que:</p>
+
+<ul>
+<li>Processos são simples inicializações de programas com uma única referência ao processo por um ID (PID).</li>
+<li>Os processos possuem processos pai e processos filho (parent e child process).</li>
+<li>As informações de um processo podem ser renderizadas no terminal com o comando <code>ps</code>.</li>
+<li>Podemos realizar diagnósticos em tempo real com o comando <code>top</code>.</li>
+<li>Conseguimos uma visualização mais elegante dos processos com o utilitário <code>pstree</code>.</li>
+<li>Sinais são utilizados como métodos para estabelecer uma comunicação entre os processos.</li>
+<li>O comando <code>kill</code> é o utilitário padrão para finalizar processos a partir de sinais. O sinal padrão é o <strong>SIGTERM</strong>.</li>
+<li>O Unix shell fornece uma maneira simples para realizar multi-tarefas em <em>background</em> e em paralelo, adicionando um caracter <code>&amp;</code> (ampersand) ao final do comando.</li>
+<li>Podemos gerenciar os procesos em <em>background</em> com o comando <code>jobs</code>.</li>
+<li>Com o comando <code>kill</code>, podemos suspender um processo.</li>
+</ul>
+
+<p>Para facilitar em futuras pesquisas, segue uma lista com alguns dos termos relacionados/utilizados neste artigo:</p>
+
+<ul>
+<li><strong>Comandos:</strong> <code>ps</code>, <code>kill</code>, <code>killall</code>, <code>|</code>, <code>pgrep</code>, <code>pkill</code>, <code>grep</code>, <code>wc</code>, <code>top</code>, <code>pstree</code>, <code>jobs</code>, <code>bg</code>, <code>fg</code>, <code>&amp;</code>.</li>
+<li><strong>Processos:</strong> Child Process <strong>e</strong> Parent Process.</li>
+<li><strong>Atributos:</strong> UID, PID, RSS, STAT, COMM, etc.</li>
+<li><strong>Sinais:</strong> SIGTERM, SIGKILL, SIGSTP, etc.</li>
+<li><strong>Jobs:</strong> <em>background</em> e <em>foreground</em>.</li>
+</ul>
+
+              <h3 id="Mas-não-para-por-aí-">
+                <a name="Mas-não-para-por-aí-" href="#Mas-não-para-por-aí-"></a>Mas não para por aí!
+              </h3>
+            
+<p>Lembre-se de que este artigo não cobre todos os detalhes sobre processos. A ideia foi passar um <em>overview</em>, mas com um certo nível de detalhes sobre processos no Unix. Recomendo a leitura do livro <a href="http://www.jstorimer.com/products/working-with-unix-processes">Working with UNIX Processes</a> do Jesse Storimer.</p>
+
+<p>Além disso, para injetarmos um pouco de JavaScript nesta caminhada, farei uma continuação deste artigo sobre como os processos e sinais podem ser executados no NodeJS. Assim, veremos como os módulos nativos e os objetos existentes nesta plataforma podem ser úteis para controlar/manipular melhor a nossa aplicação. Combinado?</p>
+
+<p>Até a próxima! =]</p>
+
+            </section>
+
+        </article>
+
+        <section class="box">
+    <div class="span3">
+        <img class="box-thumb" src="http://www.vitorbritto.com.br/blog/assets/images/avatar.jpg">
+    </div>
+    <div class="span9">
+        <section class="box-details">
+            <h3>Vitor Britto</h3>
+            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+        </section>
+    </div>
+</section>
+
+        <div class="box">
+    <div class="newsletter-wrapper">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=vitorbritto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <h3 class="newsletter-title">Receba os artigos no seu e-mail</h3>
+        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
+        <input class="input" type="email" name="email" placeholder="Digite o seu email"/>
+        <input type="hidden" value="vitorbritto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn-newsletter" type="submit" value="Assinar Newsletter" />
+    </form>
+    </div>
+</div>
+
+
+        <div class="line"></div>
+
+        
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+    var disqus_shortname = 'blogvitorbritto'; // shortname
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Por favor, habilite o JavaScript para ver os <a href="http://disqus.com/?ref_noscript">comentários</a> deste artigo.</noscript>
+
+
+
+    </div>
+
+        <div class="line"></div>
+
+        <div class="row">
+            <footer class="footer">
+                    <p class="footer-text">Desenvolvido por Vitor Britto. Feito com <a href="http://jekyllrb.com/" title="Jekyll" target="_blank">Jekyll</a>, <i class="icon-coffee"></i> e <i class="icon-heart"></i>.</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://www.vitorbritto.com.br/blog/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src='http://www.vitorbritto.com.br/blog/assets/js/app.min.js'></script>
+
+    <!-- Google Analytics -->
+    <script>
+    var _gaq=[['_setAccount','UA-12808940-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Automação de Tarefas com o Grunt JS - Parte I</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Desenvolvedor Web" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="Automação de Tarefas com o Grunt JS - Parte I"/>
+    <meta property="og:site_name" content="Blog - Vitor Britto"/>
+    <meta property="og:url" content="http://www.vitorbritto.com.br/blog/automacao-de-tarefas-com-gruntjs-parte-1/"/>
+    <meta property="og:image" content="http://www.vitorbritto.com.br/blog/assets/images/fb.jpg"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="Neste artigo vou falar sobre uma ferramenta muito importante para tornar o ambiente de trabalho mais àgil e produtivo. Esta ferramenta se chama Grunt! O que é o Grunt? Por que devo utilizá-lo? Como usá-lo? Irei responder estas e outras perguntas neste artigo."/>
+
+    <link rel="shortcut icon" href="http://www.vitorbritto.com.br/blog/assets/images/favicon.png" type="image/x-icon">
+    <link href="http://feeds.feedburner.com/vitorbritto" rel="alternate" type="application/rss+xml">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <link href="http://www.vitorbritto.com.br/blog/assets/css/style.css" rel="stylesheet" id="theme-css"/>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <header class="header">
+
+                <div class="span4">
+                    <div class="header-info">
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h4 class="header-description">Desenvolvedor Web</h4>
+                    </div>
+                </div>
+
+                <div class="span5">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/">Início</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/about">Sobre</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/projects">Projetos</a></li>
+    </ul>
+</nav>
+
+                </div>
+
+                <div class="span3">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item">
+            <a href="https://www.facebook.com/vbwebstudio" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://twitter.com/vitorbritto" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://github.com/vitorbritto" title="Github" target="_blank"><i class="icon-github"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="mailto:contato@vitorbritto.com.br"><i class="icon-envelope-alt"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="http://feeds.feedburner.com/vitorbritto" title="RSS Feed" target="_blank"><i class="icon-rss"></i></a>
+        </li>
+    </ul>
+</nav>
+
+                </div>
+
+            </header>
+        </div>
+
+        <div class="line"></div>
+
+
+
+<!-- Switch Theme -->
+<div class="theme-wrapper">
+    <p class="theme-text">Tema:</p>
+    <span class="theme-btn light" id="theme-light"></span>
+    <span class="theme-btn dark" id="theme-dark"></span>
+</div>
+
+    <div class="row">
+
+        <article class="article">
+
+            <img class="article-img" src="http://www.vitorbritto.com.br/blog/assets/images/posts/post-gruntjs.jpg">
+            <h2 class="article-title">Automação de Tarefas com o Grunt JS - Parte I</h2>
+            <span class="article-date">Publicado em: 06/10/2013 | Por: Vitor Britto</span>
+            <div class="line"></div>
+
+            <section class="article-entry">
+                <p>Saudações!</p>
+
+<p>Neste artigo vou falar sobre uma ferramenta muito importante para tornar o ambiente de trabalho mais àgil e produtivo. Esta ferramenta se chama Grunt!</p>
+
+<p>O que é o Grunt? Por que devo utilizá-lo? Como usá-lo? Irei responder estas e outras perguntas neste artigo.</p>
+
+              <h3 id="Um-pouco-de-História">
+                <a name="Um-pouco-de-História" href="#Um-pouco-de-História"></a>Um pouco de História
+              </h3>
+            
+<p>Não podemos ingressar no mundo do Grunt sem antes falarmos sobre o processo de <em>build</em>.</p>
+
+<p>O processo de <em>build</em> é uma prática que foi adotada há muito tempo na Engenharia de Softwares, sendo utilizada a favor das <a href="http://pt.wikipedia.org/wiki/Desenvolvimento_%C3%A1gil_de_software">metodologias ágeis</a>. É com este processo que automatizamos tarefas e garantimos um alto nível de qualidade em nossos projetos.</p>
+
+<p>Alguns destes nomes podem lhe parecer familiar: <em>Make</em>, <em>Rake</em>, <em>Maven</em> e <em>Ant</em>. Todos eles lidam com o processo de <em>build</em> porém, não se enquadram no âmbito <em>Front-end</em>.</p>
+
+<p>Atualmente, trabalho como <em>Front-end Developer</em> e não quero ter de criar um <em>Makefile</em> para ser executado no Shell, um <em>Rakefile</em> em Ruby ou trabalhar com <em>Maven</em> e <em>Ant</em> que utilizam sintaxe XML. O meu negócio é <strong>JavaScript</strong>!</p>
+
+<p>Então, há dois anos aproximadamente, Ben Alman (conhecido também na comunidade como Cowboy) fez um grande favor a todos nós Desenvolvedores Front-end. Ele criou o <strong>Grunt</strong>.</p>
+
+              <h3 id="O-que-é-o-Grunt-">
+                <a name="O-que-é-o-Grunt-" href="#O-que-é-o-Grunt-"></a>O que é o Grunt?
+              </h3>
+            
+<p>O Grunt é uma ferramenta para <em>build script</em>. O importante é que você saiba que ele possibilita a automação de tarefas utlizando a linguagem <em>JavaScript</em> como base.</p>
+
+<p>O Grunt depende também do <em>Node</em> e <em>NPM</em> para que seja executado na sua máquina. Para os que nunca ouviram falar nesses caras, eis uma breve explicação sobre eles:</p>
+
+<p><strong>Node:</strong> é uma plataforma focada na construção de aplicações server-side em <em>JavaScript</em>, construída a partir de uma máquina virtual do <em>Google</em> denominada <em>V8</em>.</p>
+
+<p><strong>NPM</strong>: é o &quot;cinto de utilidades&quot; do Node. Com o NPM (Node Package Manager) é possível instalar pacotes, gerenciar dependências e publicar projetos de código aberto para o Node através da linha de comando.</p>
+
+              <h3 id="Por-que-devo-utilizá-lo-">
+                <a name="Por-que-devo-utilizá-lo-" href="#Por-que-devo-utilizá-lo-"></a>Por que devo utilizá-lo?
+              </h3>
+            
+<p>Simples. Para otimizar o seu Workflow!</p>
+
+<p>Com o Grunt, você pode automatizar diversas tarefas rotineiras no desenvolvimento de um projeto com o mínimo de esforço. Quanto menos trabalho você tiver executando processos repetitivos como: minificação, compilação, testes unitários, validação de scripts (linting), deploy, e outras tarefas necessárias para garantir a qualidade dos seus projetos, melhor para o seu fluxo de trabalho. Outra vantagem? Você mantém o foco nos seus códigos e deixa o Grunt fazer toda a parte tediosa. Show de bola, não é?</p>
+
+              <h3 id="Como-faço-para-utilizar-o-Grunt-">
+                <a name="Como-faço-para-utilizar-o-Grunt-" href="#Como-faço-para-utilizar-o-Grunt-"></a>Como faço para utilizar o Grunt?
+              </h3>
+            
+<p>O primeiro contato do desenvolverdor com o Grunt pode não ser agradável. Por se tratar de uma ferramenta que é executada com a linha de comando, muitos desenvolvedores já pensam que será assustador ou terá uma grande dor de cabeça.</p>
+
+<p>Fique calmo! Vamos quebrar essa barreira e eu vou lhe mostrar que não é complicado manusear esse cara.</p>
+
+<p>Vamos lá?</p>
+
+              <h5 id="O-primeiro-passo-é-instalar-o-Node-na-sua-máquina-">
+                <a name="O-primeiro-passo-é-instalar-o-Node-na-sua-máquina-" href="#O-primeiro-passo-é-instalar-o-Node-na-sua-máquina-"></a>O primeiro passo é instalar o Node na sua máquina.
+              </h5>
+            
+<ul>
+<li>Vá até o site do <em><a href="http://www.nodejs.org">Node</a></em> e faça o download do pacote/arquivo executável.</li>
+<li>Com o <em>Node</em> instalado, abra o seu terminal/powershell (caso não possua, faça o download do <a href="http://pt.wikipedia.org/wiki/Windows_PowerShell">PowerShell</a> para o Windows).</li>
+<li>Execute o comando <code>node -v</code> para verificar se o Node foi instalado corretamente na sua máquina.</li>
+</ul>
+
+<p>Feito isso, vamos para o próximo passo.</p>
+
+              <h5 id="O-segundo-passo-é-instalar-o-Grunt-CLI-">
+                <a name="O-segundo-passo-é-instalar-o-Grunt-CLI-" href="#O-segundo-passo-é-instalar-o-Grunt-CLI-"></a>O segundo passo é instalar o Grunt CLI.
+              </h5>
+            
+<ul>
+<li>Abra o seu terminal/powershell.</li>
+<li>Execute o comando <code>npm install -g grunt-cli</code> para instalar o Grunt CLI globalmente (provavelmente seja necessário rodar como administrador no Windows ou utilizar o <code>sudo</code> nos sistemas Unix/Linux).</li>
+</ul>
+
+<p><strong>Importante:</strong> caso possua uma versão antiga do Grunt, recomenda-se que seja removida com o comando <code>npm uninstall -g grunt</code> antes de realizar uma nova instalação. É possível verificar se o Grunt está instalado na sua máquina com o comando <code>grunt -v</code>.</p>
+
+<p>Certo Vitor, mas não era <strong>Grunt</strong>? Então o que seria o <strong>Grunt CLI</strong>?</p>
+
+<p>O Grunt CLI é uma Interface de linha de comando para o Grunt e permite que você rode diferentes versões do Grunt na sua máquina. O Grunt não está sendo instalado de fato ainda. Isto será feito na pasta raiz do seu projeto.</p>
+
+<p><strong>Recapitulando:</strong></p>
+
+<p>Para instalar o <em>Grunt CLI</em> em nossa máquina, executamos os seguintes passos:</p>
+
+<ol>
+<li>Instalação do Node: <a href="http://www.nodejs.org">http://www.nodejs.org</a></li>
+<li>Instalação do Grunt CLI: <code>npm install -g grunt-cli</code> (verifique se existe uma versão anterior do Grunt com o comando <code>grunt v</code>).</li>
+</ol>
+
+              <h3 id="Começando-a-brincar-com-o-Grunt">
+                <a name="Começando-a-brincar-com-o-Grunt" href="#Começando-a-brincar-com-o-Grunt"></a>Começando a brincar com o Grunt
+              </h3>
+            
+<p>Agora que você está familiarizado com o <em>Grunt</em> e a Interface de linha de comando (Grunt CLI) está instalada na sua máquina, vamos abordar os aspectos técnicos da ferramenta.</p>
+
+<p>Todo projeto <em>Grunt</em> contém 2 importantes arquivos: <code>package.json</code> e <code>Gruntfile.js</code>. Ambos precisam estar no mesmo diretório.</p>
+
+<p>O <code>package.json</code> é utilizado para armazenar os dados do seu projeto, incluíndo a listagem dos plugins responsáveis pela execução das suas tarefas. Já o <code>Gruntfile.js</code> é um arquivo JavaScript (ou CoffeeScript) responsável pela configuração, inicialização dos plugins e registro das suas tarefas.</p>
+
+<p>Existem dois caminhos para se iniciar um projeto com o Grunt.</p>
+
+              <h4 id="Projetos-existentes">
+                <a name="Projetos-existentes" href="#Projetos-existentes"></a>Projetos existentes
+              </h4>
+            
+<p>Para projetos com o <em>Grunt</em> já configurado, basta você navegar até a pasta onde está localizado o arquivo <code>package.json</code> e executar o comando <code>npm install</code>. Com isso, todas as suas dependências serão instaladas e você estará apto a rodar suas tarefas no <em>Grunt</em>.</p>
+
+              <h4 id="Novos-projetos">
+                <a name="Novos-projetos" href="#Novos-projetos"></a>Novos projetos
+              </h4>
+            
+<p>Para novos projetos, serão executados os seguintes passos:</p>
+
+<ol>
+<li>Configuração do arquivo <code>package.json</code></li>
+<li>Instalação do Grunt e das dependências</li>
+<li>Configuração do arquivo <code>Gruntfile.js</code></li>
+</ol>
+
+              <h5 id="Configuração-do-arquivo-package-json">
+                <a name="Configuração-do-arquivo-package-json" href="#Configuração-do-arquivo-package-json"></a>Configuração do arquivo package.json
+              </h5>
+            
+<p>Essa é uma possível estrutura inicial de um arquivo <code>package.json</code>:</p>
+<div class="highlight"><pre><code class="json language-json" data-lang="json"><a name="line-1"></a><span class="p">{</span>
+<a name="line-2"></a>    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;blog&quot;</span><span class="p">,</span>
+<a name="line-3"></a>    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
+<a name="line-4"></a>    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Descrição do projeto&quot;</span><span class="p">,</span>
+<a name="line-5"></a>    <span class="nt">&quot;homepage&quot;</span><span class="p">:</span> <span class="s2">&quot;http://vitorbritto.com/blog&quot;</span><span class="p">,</span>
+<a name="line-6"></a>    <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-7"></a>        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Vitor Britto&quot;</span>
+<a name="line-8"></a>        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.vitorbritto.com&quot;</span>
+<a name="line-9"></a>    <span class="p">}</span>
+<a name="line-10"></a><span class="p">}</span>
+</code></pre></div>
+<p>Onde temos:</p>
+
+<ul>
+<li><strong>name:</strong> o nome do seu projeto</li>
+<li><strong>version:</strong> versão semântica do projeto</li>
+<li><strong>description:</strong> uma breve descrição para o projeto</li>
+<li><strong>homepage:</strong> site do projeto</li>
+<li><strong>author:</strong> dados do autor</li>
+</ul>
+
+<p><strong>Nota:</strong> é possível utilizar o comando <code>npm init</code> para gerar uma estrutura inicial do arquivo <code>package.json</code>. Ao executar este comando, algumas perguntas serão feitas. Responda-as de acordo com as suas necessidades.</p>
+
+              <h5 id="Instalação-das-dependências-do-Grunt">
+                <a name="Instalação-das-dependências-do-Grunt" href="#Instalação-das-dependências-do-Grunt"></a>Instalação das dependências do Grunt
+              </h5>
+            
+<p>Para instalar as dependências, é preciso executar o comando <code>npm install &lt;nome da dependencia&gt; --save-dev</code>. Entretanto, a primeira dependência a ser instalada deve ser o Grunt. Executando o comando <code>npm install grunt --save-dev</code> você estará instalando (de fato) o Grunt localmente no seu projeto.</p>
+
+<p>Você pode estar se perguntando qual a necessidade em se fazer isso. Simples. Toda vez que o seu projeto for manuseado por outro desenvolvedor, ou até mesmo por uma equipe diferente, a versão do grunt estará intacta. Isto vai evitar possíveis conflitos de versões do Grunt no seu projeto.</p>
+
+<p>Depois que o Grunt for instalado como dependência no seu projeto, o <code>package.json</code> ficará assim:</p>
+<div class="highlight"><pre><code class="json language-json" data-lang="json"><a name="line-1"></a><span class="p">{</span>
+<a name="line-2"></a>    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;project-name&quot;</span><span class="p">,</span>
+<a name="line-3"></a>    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
+<a name="line-4"></a>    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Project description&quot;</span><span class="p">,</span>
+<a name="line-5"></a>    <span class="nt">&quot;homepage&quot;</span><span class="p">:</span> <span class="s2">&quot;http://myprojecturl.com&quot;</span><span class="p">,</span>
+<a name="line-6"></a>    <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-7"></a>        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Vitor Britto&quot;</span>
+<a name="line-8"></a>        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.vitorbritto.com.br&quot;</span>
+<a name="line-9"></a>    <span class="p">},</span>
+<a name="line-10"></a>    <span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-11"></a>        <span class="nt">&quot;grunt&quot;</span><span class="p">:</span> <span class="s2">&quot;~0.4.0&quot;</span>
+<a name="line-12"></a>    <span class="p">}</span>
+<a name="line-13"></a><span class="p">}</span>
+</code></pre></div>
+<p>Agora, o nosso arquivo <code>package.json</code> possui o objeto JSON <code>devDependencies</code> onde as dependências serão listadas. Com o Grunt instalado localmente no seu projeto, basta instalar os <a href="http://gruntjs.com/plugins">plugins</a> necessários.</p>
+
+<p>Na segunda parte deste artigo, colocaremos em prática a instalação e configuração de alguns plugins. Vamos em frente!</p>
+
+              <h5 id="Configuracão-do-arquivo-Gruntfile-js">
+                <a name="Configuracão-do-arquivo-Gruntfile-js" href="#Configuracão-do-arquivo-Gruntfile-js"></a>Configuracão do arquivo Gruntfile.js
+              </h5>
+            
+<p>O arquivo <code>Gruntfile.js</code> é envolvido por uma função global e possui 3 métodos:</p>
+
+<ul>
+<li>initConfig(): para a <strong>configuração</strong> das tarefas.</li>
+<li>loadNpmTasks(): para a <strong>inicialização</strong> das tarefas.</li>
+<li>registerTask(): para o <strong>registro</strong> das tarefas.</li>
+</ul>
+
+<p>Confira:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
+<a name="line-2"></a>
+<a name="line-3"></a><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">grunt</span> <span class="p">)</span> <span class="p">{</span>
+<a name="line-4"></a>
+<a name="line-5"></a>    <span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+<a name="line-6"></a>
+<a name="line-7"></a>        <span class="c1">// Configurando as tarefas aqui</span>
+<a name="line-8"></a>        <span class="p">...</span>
+<a name="line-9"></a>
+<a name="line-10"></a>    <span class="p">});</span>
+<a name="line-11"></a>
+<a name="line-12"></a>    <span class="c1">// Carregando os plugins aqui</span>
+<a name="line-13"></a>    <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span> <span class="s1">&#39;grunt-plugin&#39;</span> <span class="p">);</span>
+<a name="line-14"></a>
+<a name="line-15"></a>    <span class="c1">// Registrando as tarefas customizadas aqui</span>
+<a name="line-16"></a>    <span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span> <span class="s1">&#39;nome-tarefa&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="s1">&#39;tarefa&#39;</span> <span class="p">]</span> <span class="p">);</span>
+<a name="line-17"></a>
+<a name="line-18"></a><span class="p">};</span>
+</code></pre></div>
+              <h3 id="E-na-prática-como-fica-">
+                <a name="E-na-prática-como-fica-" href="#E-na-prática-como-fica-"></a>E na prática, como fica?
+              </h3>
+            
+<p>Neste primeiro momento procurei passar os conceitos do Grunt e uma breve introdução de como se trabalhar com esta incrível ferramenta. A prática ficará para um próximo momento, onde vamos iniciar um projeto com o Grunt a fim de fixar os conhecimentos adquiridos aqui. Enquanto isso, aproveite para visitar o <a href="http://gruntjs.com/">site do Grunt</a> e ler a sua documentação.</p>
+
+              <h3 id="É-isso-">
+                <a name="É-isso-" href="#É-isso-"></a>É isso!
+              </h3>
+            
+<p>Como pode ver, o Grunt é uma ferramenta muito poderosa e que aumenta a produtividade em nosso fluxo de trabalho. Espero que o Grunt seja útil para o seu Workflow, assim como tem sido para o meu.</p>
+
+<p>Até a próxima! =]</p>
+
+            </section>
+
+        </article>
+
+        <section class="box">
+    <div class="span3">
+        <img class="box-thumb" src="http://www.vitorbritto.com.br/blog/assets/images/avatar.jpg">
+    </div>
+    <div class="span9">
+        <section class="box-details">
+            <h3>Vitor Britto</h3>
+            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+        </section>
+    </div>
+</section>
+
+        <div class="box">
+    <div class="newsletter-wrapper">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=vitorbritto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <h3 class="newsletter-title">Receba os artigos no seu e-mail</h3>
+        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
+        <input class="input" type="email" name="email" placeholder="Digite o seu email"/>
+        <input type="hidden" value="vitorbritto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn-newsletter" type="submit" value="Assinar Newsletter" />
+    </form>
+    </div>
+</div>
+
+
+        <div class="line"></div>
+
+        
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+    var disqus_shortname = 'blogvitorbritto'; // shortname
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Por favor, habilite o JavaScript para ver os <a href="http://disqus.com/?ref_noscript">comentários</a> deste artigo.</noscript>
+
+
+
+    </div>
+
+        <div class="line"></div>
+
+        <div class="row">
+            <footer class="footer">
+                    <p class="footer-text">Desenvolvido por Vitor Britto. Feito com <a href="http://jekyllrb.com/" title="Jekyll" target="_blank">Jekyll</a>, <i class="icon-coffee"></i> e <i class="icon-heart"></i>.</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://www.vitorbritto.com.br/blog/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src='http://www.vitorbritto.com.br/blog/assets/js/app.min.js'></script>
+
+    <!-- Google Analytics -->
+    <script>
+    var _gaq=[['_setAccount','UA-12808940-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

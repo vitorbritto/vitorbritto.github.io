@@ -4,11 +4,11 @@ title: Arquivos
 description: Lista com todos os artigos publicados neste Blog.
 ---
 
-<section id="archive">
+<section class="row">
     {% for post in site.posts %}
-    <div class="article">
-        <span><strong>Publicado em:</strong> {{ post.date | date:"%d/%m/%Y" }} | <strong>Por:</strong> {{ post.author }}</span>
-        <h4><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h4>
+    <div class="archive">
+        <span class="archive-date">Publicado em: {{ post.date | date:"%d/%m/%Y" }}</span>
+        <h4 class="archive-title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h4>
     </div>
     {% endfor %}
 </section>

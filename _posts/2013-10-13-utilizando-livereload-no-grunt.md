@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Dica Rápida: Utilizando LiveReload no Grunt"
-link: "http://vitorbritto.com/blog/utilizando-livereload-no-grunt/"
-date: 2013-10-13 11:37:26
+title: "Utilizando LiveReload no Grunt"
+description: Quando um novo projeto é iniciado, muitas alterações são realizadas durante a sua produção. Sendo assim, é preciso atualizar o navegador manualmente toda vez que estas alterações são feitas. Para evitar isso, temos um recurso muito interessante chamado Live Reload, que atualiza o browser automaticamente toda a vez que uma alteração no projeto é realizada.
+link: "http://vitorbritto.com.br/blog/utilizando-livereload-no-grunt/"
+date: 2013-10-13
 cover: "assets/images/posts/post-livereload.jpg"
 avatar: "assets/images/avatar.jpg"
 author: Vitor Britto
-bio: Desenvolvedor Web e Designer, extremamente apaixonado pelo seu trabalho. Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, projetos colaborativos, desenvolvimento de projetos pessoais e escrever os artigos aqui publicados.
-description: Quando um novo projeto é iniciado, muitas alterações são realizadas durante a sua produção. Sendo assim, é preciso atualizar o navegador manualmente toda vez que estas alterações são feitas. Para evitar isso, temos um recurso muito interessante chamado Live Reload, que atualiza o browser automaticamente toda a vez que uma alteração no projeto é realizada.
+bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true
 ---
 
@@ -171,4 +171,4 @@ module.exports = function(grunt) {
 
 O código completo encontra-se neste [Gists](https://gist.github.com/vitorbritto/6995472)
 
-Agora, é só adequar às suas necessidades. Até a próxima!
+Agora, é só adequar às suas necessidades. Até a próxima! =]

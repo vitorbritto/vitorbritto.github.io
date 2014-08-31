@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Agendando tarefas com o Crontab</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Desenvolvedor Web" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="Agendando tarefas com o Crontab"/>
+    <meta property="og:site_name" content="Blog - Vitor Britto"/>
+    <meta property="og:url" content="http://www.vitorbritto.com.br/blog/agendando-tarefas-com-crontab/"/>
+    <meta property="og:image" content="http://www.vitorbritto.com.br/blog/assets/images/fb.jpg"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="Para os usuários UNIX, segue uma dica interessante para agendar tarefas com o comando crontab. Este cara, permite que você realize o agendamento de tarefas em determinados períodos."/>
+
+    <link rel="shortcut icon" href="http://www.vitorbritto.com.br/blog/assets/images/favicon.png" type="image/x-icon">
+    <link href="http://feeds.feedburner.com/vitorbritto" rel="alternate" type="application/rss+xml">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <link href="http://www.vitorbritto.com.br/blog/assets/css/style.css" rel="stylesheet" id="theme-css"/>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <header class="header">
+
+                <div class="span4">
+                    <div class="header-info">
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h4 class="header-description">Desenvolvedor Web</h4>
+                    </div>
+                </div>
+
+                <div class="span5">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/">Início</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/about">Sobre</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/projects">Projetos</a></li>
+    </ul>
+</nav>
+
+                </div>
+
+                <div class="span3">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item">
+            <a href="https://www.facebook.com/vbwebstudio" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://twitter.com/vitorbritto" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://github.com/vitorbritto" title="Github" target="_blank"><i class="icon-github"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="mailto:contato@vitorbritto.com.br"><i class="icon-envelope-alt"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="http://feeds.feedburner.com/vitorbritto" title="RSS Feed" target="_blank"><i class="icon-rss"></i></a>
+        </li>
+    </ul>
+</nav>
+
+                </div>
+
+            </header>
+        </div>
+
+        <div class="line"></div>
+
+
+
+<!-- Switch Theme -->
+<div class="theme-wrapper">
+    <p class="theme-text">Tema:</p>
+    <span class="theme-btn light" id="theme-light"></span>
+    <span class="theme-btn dark" id="theme-dark"></span>
+</div>
+
+    <div class="row">
+
+        <article class="article">
+
+            <img class="article-img" src="http://www.vitorbritto.com.br/blog/assets/images/posts/post-crontab.jpg">
+            <h2 class="article-title">Agendando tarefas com o Crontab</h2>
+            <span class="article-date">Publicado em: 04/03/2014 | Por: Vitor Britto</span>
+            <div class="line"></div>
+
+            <section class="article-entry">
+                <p>Saudações!</p>
+
+<p>Para os usuários UNIX, segue uma dica interessante para agendar tarefas com o comando crontab. Este cara, permite que você realize o agendamento de tarefas em determinados períodos.</p>
+
+              <h2 id="Cenário">
+                <a name="Cenário" href="#Cenário"></a>Cenário
+              </h2>
+            
+<p>Digamos que você possua um script para realizar um procedimento em um determinado intervalo de tempo. Seja para o backup de arquivos mais obsoletos em projetos que você realizou há algum tempo e, por algum motivo, não optou pelo seu versionamento ou um simples backup de um banco de dados.</p>
+
+<p>No que se refere a <strong>backups</strong>, existem duas formas para transitar estes dados:</p>
+
+<ol>
+<li>Entre ambientes locais.</li>
+<li>De um ambiente local para um remoto (e vice-versa).</li>
+</ol>
+
+<p>Além disso, podemos utilizar os comandos <a href="http://ss64.com/bash/scp.html"><code>scp</code></a>, <a href="http://ss64.com/bash/rsync.html"><code>rsync</code></a> ou <a href="http://ss64.com/bash/cp.html"><code>cp</code></a> para realizar a transferência destes arquivos.</p>
+
+<blockquote>
+<p>Lembre-se de armazenar os seus arquivos em um local seguro no momento do <em>backup</em>.</p>
+</blockquote>
+
+              <h2 id="Entendendo-o-crontab">
+                <a name="Entendendo-o-crontab" href="#Entendendo-o-crontab"></a>Entendendo o crontab
+              </h2>
+            
+<p>O formato para o <em>crontab</em> é o seguinte:
+Campo
+Função
+Valores</p>
+
+<p>1
+Minuto
+0-59</p>
+
+<p>2
+Hora
+0-23</p>
+
+<p>3
+Dia do mês
+1-31</p>
+
+<p>4
+Mês
+1-12</p>
+
+<p>5
+Dia da semana
+0-6</p>
+
+<p>6
+Programa para execução
+comando ou script</p>
+
+<blockquote>
+<p>O dia da semana começa a contar no <strong>domingo</strong> (0).</p>
+</blockquote>
+
+<p>Confira abaixo como podemos criar as nossas tarefas:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a># Cada linha representa uma tarefa no crontab
+<a name="line-2"></a>00 6 * * 1 /caminho/para/script/status.sh
+<a name="line-3"></a>00 12 5 * * /caminho/para/script/temp.sh
+<a name="line-4"></a>30 23 * * * /caminho/para/script/backup.sh
+</code></pre></div>
+<p>Perceba que, estamos programando a execução de 3 <em>scripts</em> em Shell nas datas selecionadas e os mesmos farão o seguinte:</p>
+
+<ul>
+<li><code>status.sh</code>: realizar o procedimento contido neste script toda segunda, às 6:00 da manhã.</li>
+<li><code>temp.sh</code>: realizar o procedimento contido neste script no dia 5 de cada mês, às 12:00.</li>
+<li><code>backup.sh</code>: realizar o procedimento contido neste script todos os dias, às 23:30 da noite.</li>
+</ul>
+
+<p>Você ainda pode adicionar um 7 (sétimo) campo, onde o sexto campo será substituído pelo nome do usuário no sistema e o sétimo campo adicionado com o programa a ser executado. Veja o exemplo a seguir:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a># Execute esta tarefa a cada três horas, no dia 1 (um) de cada mês com o usuário root.
+<a name="line-2"></a>00 */3 1 * * root /caminho/para/script/security.sh
+</code></pre></div>
+<p>Perceba que estamos utilizando um novo método para definir o período desta tarefa, o <code>*/3</code>. Este trecho faz com que a tarefa seja executa em intervalos de 3 horas. Você poderia ainda definir os horários que esta tarefa seria executada, utilizando uma <code>,</code> (vírgula) para cada horário. Por exemplo: <code>00 3,9,15,21 1 * * root /caminho/para/script/security.sh</code>.</p>
+
+              <h4 id="IMPORTANTE">
+                <a name="IMPORTANTE" href="#IMPORTANTE"></a>IMPORTANTE
+              </h4>
+            
+<p>Os <em>scripts</em> a serem executados no exemplo acima pelo crontab, <strong>precisam</strong> estar definidos como executáveis no seu Shell. Para isso, certifique-se de que o comando <code>chmod +x /caminho/para/script/seuscript.sh</code> foi executado previamente. Do contrário, utilize o operador <code>&amp;&amp;</code> para compactar uma instrução no momento da execução do script. Como faremos isso?</p>
+
+<p>Veja o exemplo abaixo:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a># Tarefas:
+<a name="line-2"></a>00 6 * * 1 /caminho/para/script &amp;&amp; bash status.sh
+<a name="line-3"></a>00 12 5 * * /caminho/para/script &amp;&amp; bash temp.sh
+<a name="line-4"></a>30 23 * * * /caminho/para/script &amp;&amp; bash backup.sh
+</code></pre></div>
+<blockquote>
+<p><strong>Notas:</strong></p>
+
+<p>Usar <code>bash</code> ou <code>sh</code> para executar o seu script, vai depender do seu Shell.</p>
+
+<p>Não esqueça que para tornar um <em>script</em> executável, é preciso definir um <a href="http://pt.wikipedia.org/wiki/Shebang">shebang</a>.</p>
+</blockquote>
+
+              <h2 id="-15-Gerenciando-suas-tarefas-programadas">
+                <a name="-15-Gerenciando-suas-tarefas-programadas" href="#-15-Gerenciando-suas-tarefas-programadas"></a>[][15]Gerenciando suas tarefas programadas
+              </h2>
+            
+<p>Utilize o seguintes comandos para gerir as suas tarefas no crontab:</p>
+
+<ul>
+<li><strong>crontab -e</strong>: editar o arquivo atual ou criar um, caso não exista</li>
+<li><strong>crontab -l</strong>: listar suas tarefas programadas</li>
+<li><strong>crontab -r</strong>: remover uma tarefa programada</li>
+</ul>
+
+<blockquote>
+<p><strong>Nota:</strong> algumas empresas de hospedagem, disponibilizam o serviço para Crontab. Entre em contato com o atendimento da empresa para saber se este serviço está disponível para você.</p>
+</blockquote>
+
+              <h2 id="Indo-além">
+                <a name="Indo-além" href="#Indo-além"></a>Indo além
+              </h2>
+            
+<p>Existem algumas maneiras para facilitar ainda mais o uso do crontab.</p>
+
+              <h3 id="Palavras-especiais">
+                <a name="Palavras-especiais" href="#Palavras-especiais"></a>Palavras especiais
+              </h3>
+            
+<p>O crontab fornece alguns atalhos para definirmos nossas tarefas, veja abaixo:
+Atalho
+Significado</p>
+
+<p>@reboot
+Será executado na inicialização do sistema.</p>
+
+<p>@yearly
+Será executado uma vez ao ano, &quot;0 0 1 1 *&quot;.</p>
+
+<p>@annually
+O mesmo que @yearly</p>
+
+<p>@monthly
+Será executado a cada mês, &quot;0 0 1 * *&quot;.</p>
+
+<p>@weekly
+Será executado uma vez por semana, &quot;0 0 * * 0&quot;.</p>
+
+<p>@daily
+Será executado uma vez por dia, &quot;0 0 * * *&quot;.</p>
+
+<p>@midnight
+O mesmo que @daily</p>
+
+<p>@hourly
+Será executado a cada hora, &quot;0 * * * *&quot;.</p>
+
+<blockquote>
+<p><strong>Importante:</strong> sempre aponte para os arquivos utilizando caminhos absolutos, pois o <em>crontab</em> não lê as variáveis de ambiente do Shell.</p>
+</blockquote>
+
+              <h3 id="Carregar-suas-tarefas-em-um-único-arquivo">
+                <a name="Carregar-suas-tarefas-em-um-único-arquivo" href="#Carregar-suas-tarefas-em-um-único-arquivo"></a>Carregar suas tarefas em um único arquivo
+              </h3>
+            
+<p>Você pode definir todas as suas tarefas em um único arquivo e chamá-lo com o <code>crontab</code>. Veja o exemplo abaixo:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a># 1. Crie o arquivo jobs.txt com o conteúdo abaixo:
+<a name="line-2"></a>
+<a name="line-3"></a>00 6 * * 1 [comando ou script para executar]
+<a name="line-4"></a>00 12 5 * * [comando ou script para executar]
+<a name="line-5"></a>30 23 * * * [comando ou script para executar]
+<a name="line-6"></a>
+<a name="line-7"></a># 2. Execute o comando: crontab jobs.txt
+</code></pre></div>
+<blockquote>
+<p><strong>Nota:</strong></p>
+
+<p>O processo vai substituir qualquer tarefa anterior com o conteúdo que estiver neste arquivo, sem qualquer aviso.</p>
+
+<p>Fica a seu critério como nomear e categorizar as suas tarefas.</p>
+</blockquote>
+
+<p>Até a próxima! =]</p>
+
+            </section>
+
+        </article>
+
+        <section class="box">
+    <div class="span3">
+        <img class="box-thumb" src="http://www.vitorbritto.com.br/blog/assets/images/avatar.jpg">
+    </div>
+    <div class="span9">
+        <section class="box-details">
+            <h3>Vitor Britto</h3>
+            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+        </section>
+    </div>
+</section>
+
+        <div class="box">
+    <div class="newsletter-wrapper">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=vitorbritto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <h3 class="newsletter-title">Receba os artigos no seu e-mail</h3>
+        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
+        <input class="input" type="email" name="email" placeholder="Digite o seu email"/>
+        <input type="hidden" value="vitorbritto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn-newsletter" type="submit" value="Assinar Newsletter" />
+    </form>
+    </div>
+</div>
+
+
+        <div class="line"></div>
+
+        
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+    var disqus_shortname = 'blogvitorbritto'; // shortname
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Por favor, habilite o JavaScript para ver os <a href="http://disqus.com/?ref_noscript">comentários</a> deste artigo.</noscript>
+
+
+
+    </div>
+
+        <div class="line"></div>
+
+        <div class="row">
+            <footer class="footer">
+                    <p class="footer-text">Desenvolvido por Vitor Britto. Feito com <a href="http://jekyllrb.com/" title="Jekyll" target="_blank">Jekyll</a>, <i class="icon-coffee"></i> e <i class="icon-heart"></i>.</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://www.vitorbritto.com.br/blog/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src='http://www.vitorbritto.com.br/blog/assets/js/app.min.js'></script>
+
+    <!-- Google Analytics -->
+    <script>
+    var _gaq=[['_setAccount','UA-12808940-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Compactando o seu Gruntfile</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Desenvolvedor Web" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="Compactando o seu Gruntfile"/>
+    <meta property="og:site_name" content="Blog - Vitor Britto"/>
+    <meta property="og:url" content="http://www.vitorbritto.com.br/blog/compactando-o-seu-gruntfile/"/>
+    <meta property="og:image" content="http://www.vitorbritto.com.br/blog/assets/images/fb.jpg"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="Imagine que você está desenvolvendo um aplicativo web e que envolve uma série de tarefas padrão. Ter de colocar todas essas tarefas no seu Gruntfile poderá lhe render um arquivo muito extenso. Para isso, vamos criar um novo arquivo JSON que terá uma requisição no Gruntfile."/>
+
+    <link rel="shortcut icon" href="http://www.vitorbritto.com.br/blog/assets/images/favicon.png" type="image/x-icon">
+    <link href="http://feeds.feedburner.com/vitorbritto" rel="alternate" type="application/rss+xml">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <link href="http://www.vitorbritto.com.br/blog/assets/css/style.css" rel="stylesheet" id="theme-css"/>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <header class="header">
+
+                <div class="span4">
+                    <div class="header-info">
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h4 class="header-description">Desenvolvedor Web</h4>
+                    </div>
+                </div>
+
+                <div class="span5">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/">Início</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/about">Sobre</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/projects">Projetos</a></li>
+    </ul>
+</nav>
+
+                </div>
+
+                <div class="span3">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item">
+            <a href="https://www.facebook.com/vbwebstudio" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://twitter.com/vitorbritto" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://github.com/vitorbritto" title="Github" target="_blank"><i class="icon-github"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="mailto:contato@vitorbritto.com.br"><i class="icon-envelope-alt"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="http://feeds.feedburner.com/vitorbritto" title="RSS Feed" target="_blank"><i class="icon-rss"></i></a>
+        </li>
+    </ul>
+</nav>
+
+                </div>
+
+            </header>
+        </div>
+
+        <div class="line"></div>
+
+
+
+<!-- Switch Theme -->
+<div class="theme-wrapper">
+    <p class="theme-text">Tema:</p>
+    <span class="theme-btn light" id="theme-light"></span>
+    <span class="theme-btn dark" id="theme-dark"></span>
+</div>
+
+    <div class="row">
+
+        <article class="article">
+
+            <img class="article-img" src="http://www.vitorbritto.com.br/blog/assets/images/posts/post-compactando-gruntfile.jpg">
+            <h2 class="article-title">Compactando o seu Gruntfile</h2>
+            <span class="article-date">Publicado em: 13/10/2013 | Por: Vitor Britto</span>
+            <div class="line"></div>
+
+            <section class="article-entry">
+                <p><strong>UPDATE - 14/10/2013:</strong> removida a requisição do arquivo <code>grunt-config.json</code> em favor do uso do método <code>grunt.file.readJSON()</code> da API do Grunt.</p>
+
+<p>Saudações!</p>
+
+<p>Compartilho uma dica rápida para você que possui um projeto com o Grunt e que, ao final da sua configuração, o <code>Gruntfile</code> fica muito extenso.</p>
+
+<p>É muito importante utilizar os plugins adequados, ler a documentação de cada um deles e extrair ao máximo as suas funcionalidades. Assim, teremos uma configuração compacta e eficaz.</p>
+
+<p>Porém, é válido mencionar que nem sempre é possível deixar o arquivo <code>Gruntfile</code> enxuto. Existem cenários distintos no desenvolvimento para web, e soluções também.</p>
+
+              <h3 id="Problema-enfrentado">
+                <a name="Problema-enfrentado" href="#Problema-enfrentado"></a>Problema enfrentado
+              </h3>
+            
+<p>Imagine que você está desenvolvendo um aplicativo web e que envolve uma série de tarefas padrão. Por exemplo: compilação, minificação, concatenação, <em>linting</em>, iniciar um servidor estático, <em>livereload</em>, copiar e apagar arquivos, executar um comando shell e etc. Ter de colocar todas essas tarefas no seu <code>Gruntfile</code> poderá lhe render um arquivo muito extenso.</p>
+
+              <h3 id="Solução">
+                <a name="Solução" href="#Solução"></a>Solução
+              </h3>
+            
+<p>Para isso, vamos criar um novo arquivo <code>JSON</code> que terá uma requisição no <code>Gruntfile</code>.</p>
+
+<p><strong>Nota:</strong> perceba que com este método, passamos a tratar as configurações das tarefas no arquivo <code>grunt-config.json</code> e o seu <code>Gruntfile</code> ficará mais compacto e com uma leitura mais eficaz.</p>
+
+<p>Execute os seguintes passos:</p>
+
+<p>Crie um arquivo chamado <code>grunt-config.json</code> e transfira a configuração das suas tarefas para ele (tudo o que está envolvido no método <code>grunt.initConfig()</code>).</p>
+
+<p><strong>Nota:</strong> lembre-se que você estará lidando com a sintaxe <code>JSON</code>.</p>
+
+<p>Confira no exemplo:</p>
+<div class="highlight"><pre><code class="json language-json" data-lang="json"><a name="line-1"></a><span class="p">{</span>
+<a name="line-2"></a>    <span class="nt">&quot;watch&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-3"></a>        <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-4"></a>            <span class="nt">&quot;livereload&quot;</span><span class="p">:</span> <span class="kc">true</span>
+<a name="line-5"></a>        <span class="p">},</span>
+<a name="line-6"></a>        <span class="nt">&quot;css&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-7"></a>            <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="s2">&quot;sass/{,*/}*.{scss,sass}&quot;</span><span class="p">,</span>
+<a name="line-8"></a>            <span class="nt">&quot;tasks&quot;</span><span class="p">:</span> <span class="s2">&quot;compass&quot;</span>
+<a name="line-9"></a>        <span class="p">},</span>
+<a name="line-10"></a>        <span class="nt">&quot;js&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-11"></a>            <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;%= jshint.all %&gt;&quot;</span><span class="p">,</span>
+<a name="line-12"></a>            <span class="nt">&quot;tasks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;jshint&quot;</span><span class="p">,</span> <span class="s2">&quot;uglify&quot;</span><span class="p">]</span>
+<a name="line-13"></a>        <span class="p">},</span>
+<a name="line-14"></a>        <span class="nt">&quot;html&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-15"></a>            <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;/*.{html,htm,shtml,shtm,xhtml,php,jsp,asp,aspx,erb,ctp}&quot;</span> <span class="p">]</span>
+<a name="line-16"></a>        <span class="p">}</span>
+<a name="line-17"></a>    <span class="p">},</span>
+<a name="line-18"></a>    <span class="nt">&quot;connect&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-19"></a>        <span class="nt">&quot;server&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-20"></a>        <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-21"></a>                <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">9000</span><span class="p">,</span>
+<a name="line-22"></a>                <span class="nt">&quot;base&quot;</span><span class="p">:</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span>
+<a name="line-23"></a>                <span class="nt">&quot;hostname&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+<a name="line-24"></a>                <span class="nt">&quot;livereload&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<a name="line-25"></a>                <span class="nt">&quot;open&quot;</span><span class="p">:</span> <span class="kc">true</span>
+<a name="line-26"></a>            <span class="p">}</span>
+<a name="line-27"></a>        <span class="p">}</span>
+<a name="line-28"></a>    <span class="p">},</span>
+<a name="line-29"></a>    <span class="nt">&quot;jshint&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-30"></a>        <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-31"></a>            <span class="nt">&quot;jshintrc&quot;</span><span class="p">:</span> <span class="s2">&quot;.jshintrc&quot;</span>
+<a name="line-32"></a>        <span class="p">},</span>
+<a name="line-33"></a>        <span class="nt">&quot;all&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;Gruntfile.js&quot;</span><span class="p">,</span> <span class="s2">&quot;js/main.js&quot;</span> <span class="p">]</span>
+<a name="line-34"></a>    <span class="p">},</span>
+<a name="line-35"></a>    <span class="nt">&quot;uglify&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-36"></a>        <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-37"></a>            <span class="nt">&quot;mangle&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<a name="line-38"></a>        <span class="p">},</span>
+<a name="line-39"></a>        <span class="nt">&quot;dist&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-40"></a>            <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-41"></a>                <span class="nt">&quot;js/main.min.js&quot;</span><span class="p">:</span> <span class="p">[</span>
+<a name="line-42"></a>                <span class="s2">&quot;js/main.js&quot;</span>
+<a name="line-43"></a>                <span class="p">],</span>
+<a name="line-44"></a>                <span class="nt">&quot;js/plugins.min.js&quot;</span><span class="p">:</span> <span class="p">[</span>
+<a name="line-45"></a>                <span class="s2">&quot;js/plugins.js&quot;</span>
+<a name="line-46"></a>                <span class="p">]</span>
+<a name="line-47"></a>            <span class="p">}</span>
+<a name="line-48"></a>        <span class="p">}</span>
+<a name="line-49"></a>    <span class="p">},</span>
+<a name="line-50"></a>    <span class="nt">&quot;compass&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-51"></a>        <span class="nt">&quot;dist&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-52"></a>            <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a name="line-53"></a>                <span class="nt">&quot;force&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<a name="line-54"></a>                <span class="nt">&quot;config&quot;</span><span class="p">:</span> <span class="s2">&quot;config.rb&quot;</span>
+<a name="line-55"></a>            <span class="p">}</span>
+<a name="line-56"></a>        <span class="p">}</span>
+<a name="line-57"></a>    <span class="p">}</span>
+<a name="line-58"></a><span class="p">}</span>
+</code></pre></div>
+<p>Com isso, o seu <code>Gruntfile</code> ficará assim:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">grunt</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-2"></a>
+<a name="line-3"></a>    <span class="s2">&quot;use strict&quot;</span>
+<a name="line-4"></a>
+<a name="line-5"></a>    <span class="c1">// Carregando os plugins</span>
+<a name="line-6"></a>    <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-uglify&#39;</span><span class="p">);</span>
+<a name="line-7"></a>    <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-jshint&#39;</span><span class="p">);</span>
+<a name="line-8"></a>    <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-compass&#39;</span><span class="p">);</span>
+<a name="line-9"></a>    <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-watch&#39;</span><span class="p">);</span>
+<a name="line-10"></a>    <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-connect&#39;</span><span class="p">);</span>
+<a name="line-11"></a>
+<a name="line-12"></a>    <span class="c1">// Utilizamos o método grunt.file para fazer o parse do grunt-config.json</span>
+<a name="line-13"></a>    <span class="kd">var</span> <span class="nx">gruntConfig</span> <span class="o">=</span> <span class="nx">grunt</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">readJSON</span><span class="p">(</span><span class="s2">&quot;./grunt-config.json&quot;</span><span class="p">);</span>
+<a name="line-14"></a>    <span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">(</span><span class="nx">gruntConfig</span><span class="p">);</span>
+<a name="line-15"></a>
+<a name="line-16"></a>    <span class="c1">// Registra a tarefa padrão</span>
+<a name="line-17"></a>    <span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;connect&quot;</span><span class="p">,</span> <span class="s2">&quot;watch&quot;</span><span class="p">]);</span>
+<a name="line-18"></a>    <span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="s2">&quot;build&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;compass&quot;</span><span class="p">,</span> <span class="s2">&quot;jshint&quot;</span><span class="p">,</span> <span class="s2">&quot;uglify&quot;</span><span class="p">]);</span>
+<a name="line-19"></a><span class="p">};</span>
+</code></pre></div>
+<p>Perceba que estamos carregando cada tarefa pelo método <code>.loadNpmTasks()</code>. Podemos otimizar mais ainda esse cara.</p>
+
+<p>Para isso, vamos utilizar um plugin chamado <a href="https://github.com/sindresorhus/load-grunt-tasks">load-grunt-tasks</a>, que fará o carregamento automático dos plugins relacionados no arquivo <code>package.json</code>.</p>
+
+<p>Agora, o seu <code>Gruntfile</code> ficará assim:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">grunt</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-2"></a>
+<a name="line-3"></a>    <span class="s2">&quot;use strict&quot;</span>
+<a name="line-4"></a>
+<a name="line-5"></a>    <span class="c1">// Carrega os plugins relacionados no package.json</span>
+<a name="line-6"></a>    <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;load-grunt-tasks&#39;</span><span class="p">)(</span><span class="nx">grunt</span><span class="p">);</span>
+<a name="line-7"></a>
+<a name="line-8"></a>    <span class="c1">// Utilizamos o método grunt.file para fazer o parse do grunt-config.json</span>
+<a name="line-9"></a>    <span class="kd">var</span> <span class="nx">gruntConfig</span> <span class="o">=</span> <span class="nx">grunt</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">readJSON</span><span class="p">(</span><span class="s2">&quot;./grunt-config.json&quot;</span><span class="p">);</span>
+<a name="line-10"></a>    <span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">(</span><span class="nx">gruntConfig</span><span class="p">);</span>
+<a name="line-11"></a>
+<a name="line-12"></a>    <span class="c1">// Registra a tarefa padrão</span>
+<a name="line-13"></a>    <span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;connect&quot;</span><span class="p">,</span> <span class="s2">&quot;watch&quot;</span><span class="p">]);</span>
+<a name="line-14"></a>    <span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="s2">&quot;build&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;compass&quot;</span><span class="p">,</span> <span class="s2">&quot;jshint&quot;</span><span class="p">,</span> <span class="s2">&quot;uglify&quot;</span><span class="p">]);</span>
+<a name="line-15"></a><span class="p">};</span>
+</code></pre></div>
+<p>O código completo encontra-se neste <a href="https://gist.github.com/vitorbritto/6967478">Gists</a></p>
+
+<p>Espero que tenha sido útil para você!</p>
+
+<p>Até a próxima! =]</p>
+
+            </section>
+
+        </article>
+
+        <section class="box">
+    <div class="span3">
+        <img class="box-thumb" src="http://www.vitorbritto.com.br/blog/assets/images/avatar.jpg">
+    </div>
+    <div class="span9">
+        <section class="box-details">
+            <h3>Vitor Britto</h3>
+            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+        </section>
+    </div>
+</section>
+
+        <div class="box">
+    <div class="newsletter-wrapper">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=vitorbritto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <h3 class="newsletter-title">Receba os artigos no seu e-mail</h3>
+        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
+        <input class="input" type="email" name="email" placeholder="Digite o seu email"/>
+        <input type="hidden" value="vitorbritto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn-newsletter" type="submit" value="Assinar Newsletter" />
+    </form>
+    </div>
+</div>
+
+
+        <div class="line"></div>
+
+        
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+    var disqus_shortname = 'blogvitorbritto'; // shortname
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Por favor, habilite o JavaScript para ver os <a href="http://disqus.com/?ref_noscript">comentários</a> deste artigo.</noscript>
+
+
+
+    </div>
+
+        <div class="line"></div>
+
+        <div class="row">
+            <footer class="footer">
+                    <p class="footer-text">Desenvolvido por Vitor Britto. Feito com <a href="http://jekyllrb.com/" title="Jekyll" target="_blank">Jekyll</a>, <i class="icon-coffee"></i> e <i class="icon-heart"></i>.</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://www.vitorbritto.com.br/blog/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src='http://www.vitorbritto.com.br/blog/assets/js/app.min.js'></script>
+
+    <!-- Google Analytics -->
+    <script>
+    var _gaq=[['_setAccount','UA-12808940-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

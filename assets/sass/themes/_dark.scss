@@ -77,15 +77,15 @@ $table-border:                   #ddd                       !default; // table a
 // -------------------------
 $input-background:               $white                     !default;
 $input-border:                   $gray-light                !default;
-$input-border-hover:             darken($blue-light, 10%)   !default;
+$input-border-hover:             darken($gray-light, 10%)   !default;
 $input-border-radius:            $base-border-radius        !default;
 $input-disabled-background:      $gray-lighter              !default;
 $form-actions-background:        #f5f5f5                    !default;
 $placeholder-text:               $gray-light                !default;
-$input-height:                   $base-line-height + 10px   !default;
+$input-height:                   $base-line-height + 20px   !default;
 
 
 // Misc
 // -------------------------
-$hr-border:                      $gray                      !default;
+$hr-border:                      $gray-lighter              !default;
 $horizontal-component-offset:    180px                      !default;

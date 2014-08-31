@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Gerenciando dependências Front-end no seu projeto"
-link: "http://vitorbritto.com/blog/gerenciando-dependencias-front-end-no-seu-projeto/"
+description: Imagine ter de instalar e gerenciar bibliotecas de terceiros toda vez que iniciar um novo projeto. Já pensou nas etapas que você terá de realizar? Com o Bower, o gerenciamento de suas dependências se torna ágil, prático e inteligente.
+link: "http://vitorbritto.com.br/blog/gerenciando-dependencias-front-end-no-seu-projeto/"
 date: 2013-10-11
 cover: "assets/images/posts/post-bower.jpg"
 avatar: "assets/images/avatar.jpg"
 author: Vitor Britto
-bio: Desenvolvedor Web e Designer, extremamente apaixonado pelo seu trabalho. Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, projetos colaborativos, desenvolvimento de projetos pessoais e escrever os artigos aqui publicados.
-description: Imagine ter de instalar e gerenciar bibliotecas de terceiros toda vez que iniciar um novo projeto. Já pensou nas etapas que você terá de realizar? Com o Bower, o gerenciamento de suas dependências se torna ágil, prático e inteligente.
+bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true
 ---
 
@@ -377,8 +377,11 @@ Agora que você está familiarizado com o Bower, está na hora de criar um proje
 
 ### E chegamos ao fim…
 
-Espero que este artigo tenha sido útil para você e que o Bower agregue produtividade ao seu Workflow. Recomendo a leitura da documentação e a prática constante. Até a próxima!
+Espero que este artigo tenha sido útil para você e que o Bower agregue produtividade ao seu Workflow. Recomendo a leitura da documentação e a prática constante.
+
+Até a próxima! =]
 
 
 ##### Referências
-Parte deste material foi traduzido da [documentação original do Bower](http://bower.io/) e adaptada neste artigo.
+
+- [Documentação original do Bower](http://bower.io/)

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Criando bons programas em Shell Script</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Desenvolvedor Web" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="Criando bons programas em Shell Script"/>
+    <meta property="og:site_name" content="Blog - Vitor Britto"/>
+    <meta property="og:url" content="http://www.vitorbritto.com.br/blog/criando-bons-programas-em-shell-script/"/>
+    <meta property="og:image" content="http://www.vitorbritto.com.br/blog/assets/images/fb.jpg"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="Neste artigo relaciono algumas dicas mais do que úteis para quem trabalha com Shell Script."/>
+
+    <link rel="shortcut icon" href="http://www.vitorbritto.com.br/blog/assets/images/favicon.png" type="image/x-icon">
+    <link href="http://feeds.feedburner.com/vitorbritto" rel="alternate" type="application/rss+xml">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <link href="http://www.vitorbritto.com.br/blog/assets/css/style.css" rel="stylesheet" id="theme-css"/>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <header class="header">
+
+                <div class="span4">
+                    <div class="header-info">
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h4 class="header-description">Desenvolvedor Web</h4>
+                    </div>
+                </div>
+
+                <div class="span5">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/">Início</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/about">Sobre</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/projects">Projetos</a></li>
+    </ul>
+</nav>
+
+                </div>
+
+                <div class="span3">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item">
+            <a href="https://www.facebook.com/vbwebstudio" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://twitter.com/vitorbritto" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://github.com/vitorbritto" title="Github" target="_blank"><i class="icon-github"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="mailto:contato@vitorbritto.com.br"><i class="icon-envelope-alt"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="http://feeds.feedburner.com/vitorbritto" title="RSS Feed" target="_blank"><i class="icon-rss"></i></a>
+        </li>
+    </ul>
+</nav>
+
+                </div>
+
+            </header>
+        </div>
+
+        <div class="line"></div>
+
+
+
+<!-- Switch Theme -->
+<div class="theme-wrapper">
+    <p class="theme-text">Tema:</p>
+    <span class="theme-btn light" id="theme-light"></span>
+    <span class="theme-btn dark" id="theme-dark"></span>
+</div>
+
+    <div class="row">
+
+        <article class="article">
+
+            <img class="article-img" src="http://www.vitorbritto.com.br/blog/assets/images/posts/post-shell-script.jpg">
+            <h2 class="article-title">Criando bons programas em Shell Script</h2>
+            <span class="article-date">Publicado em: 15/02/2014 | Por: Vitor Britto</span>
+            <div class="line"></div>
+
+            <section class="article-entry">
+                <p><strong>UPDATE - 16/02/2014:</strong> dicas 7 e 8 adicionadas.</p>
+
+<p>Saudações!</p>
+
+<p>Há algumas semanas atrás, escrevi um artigo com <a href="http://www.vitorbritto.com.br/blog/dicas-uteis-para-quem-utiliza-gruntjs/">dicas úteis</a> para quem utiliza o Grunt no ambiente de trabalho.</p>
+
+<p>Hoje, estarei publicando um artigo com dicas mais do que úteis para quem trabalha com Shell Script. Estas dicas fazem parte de estudos e experiências que vivenciei há um bom tempo trabalhando com esta linguagem sensacional. São dicas que favorecem na construção de bons programas com Shell Script.</p>
+
+              <h2 id="Shell-Script-o-que-é-isso-">
+                <a name="Shell-Script-o-que-é-isso-" href="#Shell-Script-o-que-é-isso-"></a>Shell Script, o que é isso?
+              </h2>
+            
+<p>Se você não faz idéia do que é Shell Script, estas dicas podem não ser tão úteis para você. De toda forma, não desanime! Eu recomendo que você estude e se familiarize com esta poderosa linguagem. Segue um <a href="http://www.vitorbritto.com.br/blog/unix-a-base-de-tudo/">artigo</a> para você ter uma base.</p>
+
+              <h2 id="Chega-de-conversa-vamos-ao-que-interessa">
+                <a name="Chega-de-conversa-vamos-ao-que-interessa" href="#Chega-de-conversa-vamos-ao-que-interessa"></a>Chega de conversa, vamos ao que interessa
+              </h2>
+            
+<ol>
+<li>Sempre utilize aspas para declarações de variáveis, argumentos e referências (para as variáveis) nos seus programas em Shell Script.</li>
+<li>Sempre que possível, utilize comandos compactos com os operadores <code>&amp;&amp;</code> e <code>||</code> (ex.: mkdir novoprojeto &amp;&amp; cd novoprojeto &amp;&amp; touch README.md).</li>
+<li>Entenda quais as possibilidades para se utilizar algum comando em determinado sistema. Para isso, leia a <em>man pages</em> dos comandos básicos (grep, cut, sed, cat e etc) de outros sistemas.</li>
+<li>Acostume-se a ler o código-fonte de outros programas em Shell Script. Alguns ensinamentos são melhor compreendidos com um exemplo funcional.</li>
+<li>Analise quando você deve utilizar o comando <code>cat</code>, assim como o <code>sed</code>, <code>awk</code>, <code>cut</code> e <code>grep</code>.</li>
+<li>Faça um bom proveito de <em>pipes</em>, <em>redirects</em> e <em>lists</em> nos seus programas.</li>
+<li>Deixe o seu programa sempre com um cabeçalho inicial (veja o <a href="https://gist.github.com/vitorbritto/9036467">exemplo</a>). Não importa se o cabeçalho ficar maior que o programa em sí. Comentários são ignorados pelo interpretador e isso não influência em nada no desempenho do programa. Um código bem documentado é útil até mesmo para você.</li>
+<li>Utilize quebra de linha, linhas em branco para separar determinados blocos do seu código e alinhamento para uma boa legibilidade e leiturabilidade do seu programa.</li>
+<li>Se você sempre quis saber porque alguns programas em Shell Script iniciando com um <code>#!/bin/bash</code> ou <code>#!/bin/sh</code>, isso se chama <em>shebang</em>. Com este cara, é possível tornar o seu <em>script</em> executável, como um programa. Com isso, ao executar o comando <code>chmod u+x meuscript.sh</code> você estará solicitando ao seu sistema que dê permissão àquele script para ser parseado e interpretado como um programa e, por fim, ser executado como <code>./meuscript.sh</code>.</li>
+</ol>
+
+<p>Por hoje é só. Estarei atualizando este espaço a medida em que novas experiências e situações acontecerem. Fique atento para novas dicas.</p>
+
+<p>Até a próxima! =]</p>
+
+            </section>
+
+        </article>
+
+        <section class="box">
+    <div class="span3">
+        <img class="box-thumb" src="http://www.vitorbritto.com.br/blog/assets/images/avatar.jpg">
+    </div>
+    <div class="span9">
+        <section class="box-details">
+            <h3>Vitor Britto</h3>
+            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+        </section>
+    </div>
+</section>
+
+        <div class="box">
+    <div class="newsletter-wrapper">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=vitorbritto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <h3 class="newsletter-title">Receba os artigos no seu e-mail</h3>
+        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
+        <input class="input" type="email" name="email" placeholder="Digite o seu email"/>
+        <input type="hidden" value="vitorbritto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn-newsletter" type="submit" value="Assinar Newsletter" />
+    </form>
+    </div>
+</div>
+
+
+        <div class="line"></div>
+
+        
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+    var disqus_shortname = 'blogvitorbritto'; // shortname
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Por favor, habilite o JavaScript para ver os <a href="http://disqus.com/?ref_noscript">comentários</a> deste artigo.</noscript>
+
+
+
+    </div>
+
+        <div class="line"></div>
+
+        <div class="row">
+            <footer class="footer">
+                    <p class="footer-text">Desenvolvido por Vitor Britto. Feito com <a href="http://jekyllrb.com/" title="Jekyll" target="_blank">Jekyll</a>, <i class="icon-coffee"></i> e <i class="icon-heart"></i>.</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://www.vitorbritto.com.br/blog/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src='http://www.vitorbritto.com.br/blog/assets/js/app.min.js'></script>
+
+    <!-- Google Analytics -->
+    <script>
+    var _gaq=[['_setAccount','UA-12808940-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

@@ -16,3 +16,55 @@
 .radius-large   { @include border-radius($border-radius-large); }
 .radius-small   { @include border-radius($border-radius-small); }
 .round          { @include border-radius(50%); }
+
+// Box
+.box {
+    @include border-radius($base-border-radius);
+    @include row;
+    margin: 20px auto;
+    background-color: lighten($gray-darker, 2%);
+    border: 1px solid darken($gray-dark, 10%);
+}
+.box-thumb {
+    margin: 8px auto;
+    @include border-radius($base-border-radius);
+    border: 1px solid darken($gray-dark, 3%);
+    vertical-align: middle;
+}
+.box-details {
+    h3 {
+        color: $red;
+    }
+    h3, p {
+        font-weight: 300;
+        line-height: $base-line-height * 1.25;
+    }
+}
+
+// Newsletter
+.newsletter-wrapper {
+    margin: 0 auto;
+    width: 80%;
+    display: block;
+}
+.newsletter-title,
+.newsletter-text { text-align: center; }
+.newsletter-title { line-height: normal; }
+.input { line-height: 32px !important; }
+.input,
+.btn-newsletter {
+    @include border-radius($base-border-radius);
+    width: 100% !important;
+    display: block;
+    margin: 0 auto;
+    padding: 14px 8px;
+}
+.btn-newsletter {
+    @include button-structure($base-border-radius, $base-font-size);
+    @include button-gradient("flat", darken($red, 2%));
+    text-transform: uppercase;
+    text-align: center;
+    &:hover, &:visited, &:active {
+        color: $white;
+    }
+}

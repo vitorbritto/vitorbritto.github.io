@@ -1,19 +1,19 @@
 ---
 layout: post
-title: "A nova geração Web: estrelando DocPad"
-link: "http://vitorbritto.com/blog/a-nova-geracao-web-estrelando-docpad/"
-date: 2013-12-01 16:37:26
+title: "A nova geração Web: estrelando o DocPad"
+description: O DocPad é um gerador estático, onde os autores desta excelente ferramenta o descrevem como a nova geração da arquitetura web; permitindo o gerenciamento de conteúdo atráves do sistema de arquivos, compilação através de plugins e que conta com alguns métodos para colocar o seu website em produção de maneira ágil.
+link: "http://vitorbritto.com.br/blog/a-nova-geracao-web-estrelando-docpad/"
+date: 2013-12-01
 cover: "assets/images/posts/post-docpad.jpg"
 avatar: "assets/images/avatar.jpg"
 author: Vitor Britto
-bio: Desenvolvedor Web e Designer, extremamente apaixonado pelo seu trabalho. Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, projetos colaborativos, desenvolvimento de projetos pessoais e escrever os artigos aqui publicados.
-description: Quando um novo projeto é iniciado, muitas alterações são realizadas durante a sua produção. Sendo assim, é preciso atualizar o navegador manualmente toda vez que estas alterações são feitas. Para evitar isso, temos um recurso muito interessante chamado Live Reload, que atualiza o browser automaticamente toda a vez que uma alteração no projeto é realizada.
+bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true
 ---
 
-Saudações!
+**UPDATE - 27/07/2014**: atualmente estou utilizando o [HarpJS](http://harpjs.com/) e não mais o DocPad.
 
-Finalmente resolvi colocar o site do [Coffee & Code](https://www.facebook.com/coffeeandcodeproject) em desenvolvimento. Para resolver este processo de forma prática e eficaz, adotei o [DocPad](http://docpad.org/) para esta tarefa.
+Saudações!
 
 O DocPad é um gerador estático, onde os autores desta excelente ferramenta o descrevem como a nova geração da arquitetura web; permitindo o gerenciamento de conteúdo atráves do sistema de arquivos, compilação através de plugins e que conta com alguns métodos para *deploy*.
 
@@ -536,4 +536,4 @@ Existem alguns métodos para realizar o *deploy* do seu projeto, mas neste exemp
 
 Então, é isso! Agora você está pronto para utilizar o DocPad nos seus projetos. Mas, lembre-se de elaborar um planejamento antes de iniciar qualquer projeto e avaliar a real necessidade do uso desta ferramenta no seu projeto.
 
-Até a próxima! :)
+Até a próxima! =]

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Iniciando os estudos com JavaScript</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Desenvolvedor Web" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="Iniciando os estudos com JavaScript"/>
+    <meta property="og:site_name" content="Blog - Vitor Britto"/>
+    <meta property="og:url" content="http://www.vitorbritto.com.br/blog/iniciando-os-estudos-com-javascript/"/>
+    <meta property="og:image" content="http://www.vitorbritto.com.br/blog/assets/images/fb.jpg"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="Estarei compartilhando um método simples e eficaz para que você inicie os estudos com a linguagem JavaScript."/>
+
+    <link rel="shortcut icon" href="http://www.vitorbritto.com.br/blog/assets/images/favicon.png" type="image/x-icon">
+    <link href="http://feeds.feedburner.com/vitorbritto" rel="alternate" type="application/rss+xml">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <link href="http://www.vitorbritto.com.br/blog/assets/css/style.css" rel="stylesheet" id="theme-css"/>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <header class="header">
+
+                <div class="span4">
+                    <div class="header-info">
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h4 class="header-description">Desenvolvedor Web</h4>
+                    </div>
+                </div>
+
+                <div class="span5">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/">Início</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/about">Sobre</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/projects">Projetos</a></li>
+    </ul>
+</nav>
+
+                </div>
+
+                <div class="span3">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item">
+            <a href="https://www.facebook.com/vbwebstudio" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://twitter.com/vitorbritto" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://github.com/vitorbritto" title="Github" target="_blank"><i class="icon-github"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="mailto:contato@vitorbritto.com.br"><i class="icon-envelope-alt"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="http://feeds.feedburner.com/vitorbritto" title="RSS Feed" target="_blank"><i class="icon-rss"></i></a>
+        </li>
+    </ul>
+</nav>
+
+                </div>
+
+            </header>
+        </div>
+
+        <div class="line"></div>
+
+
+
+<!-- Switch Theme -->
+<div class="theme-wrapper">
+    <p class="theme-text">Tema:</p>
+    <span class="theme-btn light" id="theme-light"></span>
+    <span class="theme-btn dark" id="theme-dark"></span>
+</div>
+
+    <div class="row">
+
+        <article class="article">
+
+            <img class="article-img" src="http://www.vitorbritto.com.br/blog/assets/images/posts/post-iniciando-js.jpg">
+            <h2 class="article-title">Iniciando os estudos com JavaScript</h2>
+            <span class="article-date">Publicado em: 28/08/2014 | Por: Vitor Britto</span>
+            <div class="line"></div>
+
+            <section class="article-entry">
+                <p>Saudações!</p>
+
+<p>Estarei compartilhando um método simples e eficaz para que você inicie os estudos com a linguagem JavaScript. Entretanto, antes mesmo que você continue a leitura deste artigo, me permita fazer um pequeno <strong>disclaimer</strong>. </p>
+
+<p>O idioma inglês se faz necessário para executar os passos a seguir e será utilizado o Firefox para executar/praticar os códigos. De toda forma, fique a vontade para utilizar o navegador de sua preferência. O importante é que os códigos sejam praticados. Ok?</p>
+
+<p>Vale frisar também que, mesmo com o esforço em contribuir com <a href="http://cerebrobr.github.io/cerebro/">materiais em português</a>, o idioma inglês é muito importante na área de TI, assim como para o desenvolvedor/programador que esteja em busca do constante crescimento na sua profissão. </p>
+
+<p>Se você pretende ingressar nesta área, entenda que o idioma dominante é o inglês e você precisa dele para ser bem sucedido.</p>
+
+<p>Dito isso, podemos prosseguir?</p>
+
+              <h2 id="Uma-breve-história">
+                <a name="Uma-breve-história" href="#Uma-breve-história"></a>Uma breve história
+              </h2>
+            
+<p>Quando tive o primeiro contato com a Internet, em meados de 1994, fiquei fascinado. Logo, meu vício era:</p>
+
+<ul>
+<li>Criar Scripts para mIRC;</li>
+<li>jogar Duke Nukem Online;</li>
+<li>e navegar na Web.</li>
+</ul>
+
+              <h3 id="Até-que-o-JavaScript-apareceu-na-minha-vida">
+                <a name="Até-que-o-JavaScript-apareceu-na-minha-vida" href="#Até-que-o-JavaScript-apareceu-na-minha-vida"></a>Até que o JavaScript apareceu na minha vida
+              </h3>
+            
+<p>No final do ano de 1997, &quot;conheci&quot; o JavaScript. </p>
+
+<p>Confesso que foi por acaso! Visitei uma homepage e a janela começou a tremer. Resolvi comentar com alguns amigos sobre o ocorrido, e um deles (o mais Nerd de todos) disse ser <strong>o DHTML</strong>. O mesmo me falou para clicar com o botão direito do mouse na janela do navegador (já na tal homepage) e selecionar a opção <em>&quot;View Source Code&quot;</em>. </p>
+
+<p>Então, chegando em casa, fiz exatamente o que o colega me falou. Um emaranhado de números e letras surgiram na minha frente e, é claro, tive o meu primeiro contato com o HTML, CSS e <strong>JavaScript</strong>.</p>
+
+<p>Obviamente, eu não sabia o que eram esses caras. Eu não entendia como aquilo funcionava. Não sabia porque a tela tremia, porque um alerta era exibido, porque o cursor do mouse deixava rastros coloridos ou porque tantos outros comportamentos interessantes e &quot;estranhos&quot; no browser aconteciam.</p>
+
+<p>A única coisa que eu tinha em mente era: &quot;Eu quero aprender a fazer isso!&quot;. </p>
+
+              <h3 id="Foi-difícil-no-começo-mas-eu-não-desisti">
+                <a name="Foi-difícil-no-começo-mas-eu-não-desisti" href="#Foi-difícil-no-começo-mas-eu-não-desisti"></a>Foi difícil no começo, mas eu não desisti
+              </h3>
+            
+<p>Um dos motivos em compartilhar o conhecimento que obtive durante todo esse tempo, é porque entendo como é complicado iniciar os estudos na área da programação, sem ter a menor ideia de como funciona ou ter algum contato prévio com disciplinas que tratam especificamente da lógica, dos algoritmos e da estrutura de dados. </p>
+
+<p>Na minha época, o material era o código fonte. Livro? Rede social? Curso online? Esqueça! Sem falar que os materiais eram dispersos e difíceis de encontrar. Notepad e Netscape eram meus melhores amigos nesta jornada. Somente depois de alguns meses, encontrei o <a href="http://www.javascriptkit.com/">JavaScript Kit</a>.</p>
+
+              <h3 id="Alguns-anos-se-passaram">
+                <a name="Alguns-anos-se-passaram" href="#Alguns-anos-se-passaram"></a>Alguns anos se passaram
+              </h3>
+            
+<p>Ingressei na faculdade de Análise de Sistemas e, com o <em>networking</em>, ficou mais fácil dar continuidade aos estudos. Tudo começou a fazer mais sentido. Não somente, conhecer o Unix e a linguagem C foram fatores importantes para o meu crescimento.</p>
+
+<p>Você deve estar se perguntando: &quot;E cadê o JavaScript?&quot;.</p>
+
+<p>Calma jovem Jedi! Eu percorri todo esse caminho para lhe mostrar que, há 17 anos, era muito difícil encontrar material relacionado ao JavaScript. Diferente de hoje, onde existem muitas possibilidades e meios de pesquisa à sua volta para garantir um aprendizado sólido e eficaz com esta linguagem. </p>
+
+              <h2 id="Iniciando-a-sua-jornada-com-JavaScript">
+                <a name="Iniciando-a-sua-jornada-com-JavaScript" href="#Iniciando-a-sua-jornada-com-JavaScript"></a>Iniciando a sua jornada com JavaScript
+              </h2>
+            
+<p>Eu darei o mapa e você vai se aventurar para encontrar o tesouro. Vai depender exclusivamente de você para garantir o sucesso no aprendizado. Ok?</p>
+
+<p>Pois bem! Vou listar um programa de 4 passos para você que deseja iniciar os estudos em JavaScript. </p>
+
+<p>Não faremos um caminho cansativo e complicado, não haverá leitura de livros ou artigos. Será o <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">Guia do MDN</a>, o <a href="https://www.mozilla.org/pt-BR/firefox/new/">Firefox</a> (ou o seu navegador preferido) e você! </p>
+
+<blockquote>
+<p><strong>Regra básica e obrigatória:</strong> é preciso disciplina e força de vontade.</p>
+</blockquote>
+
+<p>Então, vamos as etapas envolvidas neste processo.</p>
+
+<ol>
+<li>Estabeleça uma metodologia</li>
+<li>Prepare o ambiente de estudos</li>
+<li>Não tenha medo de errar</li>
+<li>Compartilhe a sua evolução</li>
+</ol>
+
+              <h3 id="Estabeleça-uma-metodologia">
+                <a name="Estabeleça-uma-metodologia" href="#Estabeleça-uma-metodologia"></a>Estabeleça uma metodologia
+              </h3>
+            
+<p>No artigo <a href="http://www.vitorbritto.com.br/blog/experimente-experimentar/">&quot;Experimente Experimentar&quot;</a>, menciono uma metodologia que estou utilizando há algum tempo para exercitar, experimentar e praticar conceitos novos e antigos com relação às linguagens de programação, as quais fazem parte da minha rotina de trabalho e experimentos. O importante é que você estabeleça uma metodologia própria para os seus estudos e que esteja de acordo com a sua rotina. Não atropele as demais atividades do dia e nem deixe que estas atividades atropelem os seus estudos.</p>
+
+              <h3 id="Prepare-o-ambiente-de-estudos">
+                <a name="Prepare-o-ambiente-de-estudos" href="#Prepare-o-ambiente-de-estudos"></a>Prepare o ambiente de estudos
+              </h3>
+            
+<ul>
+<li>Reserve um espaço tranquilo e que mantenha você concentrado. </li>
+<li>Salve uma playlist com músicas do seu agrado e deixe a caneca de café por perto <em>(opcional)</em>.</li>
+<li>Faça o download da última versão do <a href="https://www.mozilla.org/pt-BR/firefox/new/">Firefox</a> e instale-o <em>(opcional)</em>.</li>
+<li>Acesse o <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">Guia do MDN</a>.</li>
+</ul>
+
+              <h3 id="Não-tenha-medo-de-errar">
+                <a name="Não-tenha-medo-de-errar" href="#Não-tenha-medo-de-errar"></a>Não tenha medo de errar
+              </h3>
+            
+<p>Realizou os procedimentos acima? Então comece a ler o material e pratique <strong>TODOS</strong> os códigos dos exemplos <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/About#Tips_for_learning_JavaScript">de acordo com as dicas do Guia MDN</a> ou da maneira que se sentir mais confortável no seu navegador preferido!</p>
+
+<p><strong>O mais importante:</strong> não tenha medo de errar e TESTE novas possibilidades. Não fique somente no feijão com arroz.</p>
+
+              <h3 id="Compartilhe-sua-evolução">
+                <a name="Compartilhe-sua-evolução" href="#Compartilhe-sua-evolução"></a>Compartilhe sua evolução
+              </h3>
+            
+<p>Compartilhe o que aprendeu e solicite o feedback de outros colegas. Afinal, é válido buscar outras opiniões e possíveis soluções. Entretanto, quando o fizer, deixe pública a sua dúvida. Nem sempre &quot;aquele colega experiente&quot; estará disponível para lhe dar um feedback via <em>inbox</em>. </p>
+
+<p>Deixando sua dúvida em um grupo ou fórum, as chances em obter mais feedbacks é bem maior. Não concorda?</p>
+
+<p>Não fique com receio em alguém lhe dizer algo mais ríspido ou que se torne frustrante para você. Seja paciente e acredite na sua capacidade. Assim como você, todos eles também começaram do zero. Inclusíve eu (como você pôde perceber mais acima)! </p>
+
+<p>Errar é um processo natural e que eleva o nível de aprendizado. Confie em você e no seu potêncial!</p>
+
+              <h2 id="Seja-parceiro-do-JavaScript">
+                <a name="Seja-parceiro-do-JavaScript" href="#Seja-parceiro-do-JavaScript"></a>Seja parceiro do JavaScript
+              </h2>
+            
+<p>Se você quer aprender JavaScript, deve esquecer o jQuery e qualquer outra ferramenta que atue como um elemento &quot;facilitador&quot; no início da jornada. Dê um passo de cada vez e mantenha os estudos constantes. Uma vez que você entenda o universo JavaScript, fica muito mais fácil para manusear e explorar no futuro as suas libs, plugins, frameworks e afins. </p>
+
+<p>Bons estudos e até a próxima! =]</p>
+
+            </section>
+
+        </article>
+
+        <section class="box">
+    <div class="span3">
+        <img class="box-thumb" src="http://www.vitorbritto.com.br/blog/assets/images/avatar.jpg">
+    </div>
+    <div class="span9">
+        <section class="box-details">
+            <h3>Vitor Britto</h3>
+            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+        </section>
+    </div>
+</section>
+
+        <div class="box">
+    <div class="newsletter-wrapper">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=vitorbritto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <h3 class="newsletter-title">Receba os artigos no seu e-mail</h3>
+        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
+        <input class="input" type="email" name="email" placeholder="Digite o seu email"/>
+        <input type="hidden" value="vitorbritto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn-newsletter" type="submit" value="Assinar Newsletter" />
+    </form>
+    </div>
+</div>
+
+
+        <div class="line"></div>
+
+        
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+    var disqus_shortname = 'blogvitorbritto'; // shortname
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Por favor, habilite o JavaScript para ver os <a href="http://disqus.com/?ref_noscript">comentários</a> deste artigo.</noscript>
+
+
+
+    </div>
+
+        <div class="line"></div>
+
+        <div class="row">
+            <footer class="footer">
+                    <p class="footer-text">Desenvolvido por Vitor Britto. Feito com <a href="http://jekyllrb.com/" title="Jekyll" target="_blank">Jekyll</a>, <i class="icon-coffee"></i> e <i class="icon-heart"></i>.</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://www.vitorbritto.com.br/blog/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src='http://www.vitorbritto.com.br/blog/assets/js/app.min.js'></script>
+
+    <!-- Google Analytics -->
+    <script>
+    var _gaq=[['_setAccount','UA-12808940-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

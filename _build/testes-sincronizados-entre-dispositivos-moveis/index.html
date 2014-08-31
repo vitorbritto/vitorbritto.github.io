@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Testes sincronizados entre dispositivos móveis</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Desenvolvedor Web" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="Testes sincronizados entre dispositivos móveis"/>
+    <meta property="og:site_name" content="Blog - Vitor Britto"/>
+    <meta property="og:url" content="http://www.vitorbritto.com.br/blog/testes-sincronizados-entre-dispositivos-moveis/"/>
+    <meta property="og:image" content="http://www.vitorbritto.com.br/blog/assets/images/fb.jpg"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="Alguns procedimentos são valiosos para agregar eficiência em determinadas tarefas no decorrer de um projeto. Entre elas, podemos frisar as tarefas para observar mudanças dos nossos arquivos a medida em que forem modificados, atualizar o browser automaticamente quando as modificações ocorrerem e sincronizar (simulando comportamentos também) os dispositívos móveis a fim de avaliarmos e testarmos a consistência e eficiência da nossa aplicação."/>
+
+    <link rel="shortcut icon" href="http://www.vitorbritto.com.br/blog/assets/images/favicon.png" type="image/x-icon">
+    <link href="http://feeds.feedburner.com/vitorbritto" rel="alternate" type="application/rss+xml">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <link href="http://www.vitorbritto.com.br/blog/assets/css/style.css" rel="stylesheet" id="theme-css"/>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <header class="header">
+
+                <div class="span4">
+                    <div class="header-info">
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h4 class="header-description">Desenvolvedor Web</h4>
+                    </div>
+                </div>
+
+                <div class="span5">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/">Início</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/about">Sobre</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/projects">Projetos</a></li>
+    </ul>
+</nav>
+
+                </div>
+
+                <div class="span3">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item">
+            <a href="https://www.facebook.com/vbwebstudio" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://twitter.com/vitorbritto" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://github.com/vitorbritto" title="Github" target="_blank"><i class="icon-github"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="mailto:contato@vitorbritto.com.br"><i class="icon-envelope-alt"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="http://feeds.feedburner.com/vitorbritto" title="RSS Feed" target="_blank"><i class="icon-rss"></i></a>
+        </li>
+    </ul>
+</nav>
+
+                </div>
+
+            </header>
+        </div>
+
+        <div class="line"></div>
+
+
+
+<!-- Switch Theme -->
+<div class="theme-wrapper">
+    <p class="theme-text">Tema:</p>
+    <span class="theme-btn light" id="theme-light"></span>
+    <span class="theme-btn dark" id="theme-dark"></span>
+</div>
+
+    <div class="row">
+
+        <article class="article">
+
+            <img class="article-img" src="http://www.vitorbritto.com.br/blog/assets/images/posts/post-sync-test.jpg">
+            <h2 class="article-title">Testes sincronizados entre dispositivos móveis</h2>
+            <span class="article-date">Publicado em: 15/12/2013 | Por: Vitor Britto</span>
+            <div class="line"></div>
+
+            <section class="article-entry">
+                <p>Saudações!</p>
+
+<p>Vivemos em um momento onde o conceito responsivo, mais precisamente o Responsive Web Design, está em evidência. Agregar este conceito a um projeto web é muito importante. Não só para a experiência do usuário, mas também para valorizar o ambiente visual (interface gráfica) do projeto.</p>
+
+<p>Alguns procedimentos são valiosos para agregar eficiência em determinadas tarefas no decorrer de um projeto. Entre elas, podemos frisar as tarefas para observar mudanças dos nossos arquivos a medida em que forem modificados, atualizar o <em>browser</em> automaticamente quando as modificações ocorrerem e sincronizar (simulando comportamentos também) os dispositívos móveis a fim de avaliarmos e testarmos a consistência e eficiência da nossa aplicação.</p>
+
+              <h2 id="Adentrando-ao-cenário">
+                <a name="Adentrando-ao-cenário" href="#Adentrando-ao-cenário"></a>Adentrando ao cenário
+              </h2>
+            
+<p>Pois bem! Recentemente, o Addy Osmani escreveu um <a href="http://www.html5rocks.com/en/tutorials/tooling/synchronized-cross-device-testing/">artigo</a> no <a href="http://www.html5rocks.com/">HTML5Rocks</a> sobre <em>Synchronized Cross-device Testing</em> (testes sincronizados entre dispositivos móveis).</p>
+
+<p>Algumas ferramentas e métodos foram apresentados de forma muito bem detalhada, uma delas é o aplicativo <a href="http://vanamco.com/ghostlab/">GhostLab</a> que oferece uma experiência completa, possibilitando que você realize testes cross-browser/device de forma sincronizada (até mesmo com a ação de scrolls, navegação e preenchimento de dados em formulários), além de possuir uma UI (user interface) muito elegante e prática para manusear. Entretanto, é uma ferramenta disponível apenas para <strong>Mac</strong> e é pago. Esse último ponto não é um problema. Se a ferramenta estiver bem avaliada no seu conceito para o uso, trate-a como um investimento.</p>
+
+<p>Sou obcecado por eficiência e produtividade em ambiente de trabalho e, para a minha felicidade, eis que no início desta semana descubro mais uma ferramenta a partir de outro <a href="http://addyosmani.com/blog/browser-sync/">artigo</a> do Addy Osmani.</p>
+
+<p>Eu estou falando do <a href="https://github.com/shakyShane/browser-sync">Browser-Sync</a>, criado e mantido pelo <a href="https://github.com/shakyShane">Shane Osbourne</a>, o qual é um módulo para Node e que possui um plugin para o Grunt também.</p>
+
+<p>Vamos conhecer melhor o que está ferramenta pode fazer pelo nosso Workflow.</p>
+
+              <h2 id="O-que-seria-exatamente-o-Browser-Sync-">
+                <a name="O-que-seria-exatamente-o-Browser-Sync-" href="#O-que-seria-exatamente-o-Browser-Sync-"></a>O que seria exatamente o Browser-Sync?
+              </h2>
+            
+<p>O Browser-Sync é uma ferramenta capaz de realizar testes sincronizados em diversos dispositivos móveis, onde é possível simular as ações de <em>scrolls</em>, <em>clicks</em> e <em>input de dados</em> em formulários também.</p>
+
+<p>Veja algumas <em>features</em> desse cara:</p>
+
+<ul>
+<li>Permite a integração com o <strong>grunt-contrib-watch</strong></li>
+<li>Possui <em>LiveReload</em> integrado</li>
+<li>Observa as mudanças em seus arquivos</li>
+<li>Permite que você inicie um web server</li>
+</ul>
+
+<p>Mas, o melhor de tudo? Trata-se de um projeto open-source e que funciona nas plataformas Windows, Mac e Linux.</p>
+
+              <h2 id="Como-posso-utilizá-lo-no-meu-projeto-">
+                <a name="Como-posso-utilizá-lo-no-meu-projeto-" href="#Como-posso-utilizá-lo-no-meu-projeto-"></a>Como posso utilizá-lo no meu projeto?
+              </h2>
+            
+<p>Você pode utilizar este cara de duas formas:</p>
+
+<ul>
+<li>como um módulo para node: <code>npm install -g browser-sync</code>;</li>
+<li>ou como um plugin do grunt: <code>npm install grunt-browser-sync --save-dev</code>.</li>
+</ul>
+
+<p>Neste artigo, vou demonstrar como utilizá-lo no <strong>Grunt</strong>.</p>
+
+              <h3 id="Antes-de-começar">
+                <a name="Antes-de-começar" href="#Antes-de-começar"></a>Antes de começar
+              </h3>
+            
+<p>Antes de iniciar o nosso exemplo prático, confira alguns pontos importantes sobre o plugin <code>grunt-browser-sync</code>:</p>
+
+<ul>
+<li>O <em>browser-sync</em> possibilita a integração da tarefa <em>watch</em> para que você possa observar as mudanças nos seus arquivos. Para isso, basta definir a opção <code>watchTask</code> como <code>true</code>.</li>
+<li>Você pode iniciar um servidor web para servir arquivos estáticos (HTML, CSS e JS), e também utilizar as configurações de um <em>Virtual Host</em>.</li>
+<li>Caso você esteja utilizando a opção <em>proxy</em> (por conta de algum arquivo PHP), basta copiar e colar, logo antes da tag <code>&lt;/body&gt;</code>, o trecho de código que será apresentado (no bash/shell) após você executar a tarefa do <em>browser-sync</em>.</li>
+<li>O <em>browser-sync</em> tentará descorbir o IP utilizado na sua rede. Possivelmente, isto pode não dar certo. Por isso, declare-o na opcão <code>host</code>. Você deve estar se perguntando: &quot;Por que eu devo atribuir o meu IP a está opção?&quot; Eu respondo. O fato é que a mágica do <em>browser-sync</em> está em se conectar a diversos dispositivos móveis, e isto só é possível com um IP declarado. Ao invés de utilizar <code>localhost</code>, você pode verificar o seu IP (no mac execute <code>ifconfig</code>, no Windows <code>ipconfig</code>) e executar o procedimento acima.</li>
+<li>A opção <code>ghostMode</code> está em fase experimental, porém já permite a utilização de forma bem tranquila. Está opção nos permite sincronizar alguns comportamentos (*scrolls*, navegação e preenchimento de dados em formulários) e acompanhar os eventos disparados nos dispositivos conectados.</li>
+</ul>
+
+              <h3 id="Enfim-lá-vamos-nós-">
+                <a name="Enfim-lá-vamos-nós-" href="#Enfim-lá-vamos-nós-"></a>Enfim, lá vamos nós!
+              </h3>
+            
+<p>Você precisa ter o <a href="http://nodejs.org/">NodeJS</a> e o <a href="http://gruntjs.com/">Grunt-CLI</a> instalados na sua máquina para começar a brincar com o <a href="https://github.com/shakyShane/grunt-browser-sync">browser-sync</a>.</p>
+
+<p>Confira abaixo as etapas que vamos realizar neste exemplo prático:</p>
+
+<ul>
+<li>Definir a estrutura do projeto</li>
+<li>Criar o arquivo <code>package.json</code> utilizando o <code>npm init</code></li>
+<li>Instalar o Grunt e os plugins necessários no projeto</li>
+<li>Configurar o arquivo <code>Gruntfile.js</code></li>
+<li>Executar a tarefa</li>
+<li>Iniciar o teste</li>
+</ul>
+
+<blockquote>
+<p><strong>Nota importante:</strong> quaisquer dúvidas sobre a instalação do <strong>NodeJS</strong> ou <strong>Grunt</strong>, consulte este <a href="http://www.vitorbritto.com/blog/automacao-de-tarefas-com-gruntjs-parte-1/">artigo</a>.</p>
+</blockquote>
+
+<p>Neste exemplo, utilizaremos os seguintes plugins:</p>
+
+<ul>
+<li><a href="https://github.com/gruntjs/grunt-contrib-compass">grunt-contrib-compass</a> - responsável pela compilação (e minificação) do arquivo CSS.</li>
+<li><a href="https://github.com/gruntjs/grunt-contrib-watch">grunt-contrib-watch</a> - responsável por observar as mudanças nos arquivos.</li>
+<li><a href="https://github.com/shakyShane/grunt-browser-sync">grunt-browser-sync</a> - responsável pelo Live Reload, testes sincronizados em nossos dispositívos móveis, iniciar um servidor web estático e integrar a tarefa <em>watch</em>.</li>
+</ul>
+
+              <h4 id="Definindo-a-estrutura-do-projeto">
+                <a name="Definindo-a-estrutura-do-projeto" href="#Definindo-a-estrutura-do-projeto"></a>Definindo a estrutura do projeto
+              </h4>
+            
+<p>Teremos uma estrutura simples, e você pode criar essa estrutura através do terminal ou da forma como achar mais conveniente.</p>
+
+<p>A estrutura inicial deverá ficar assim:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>.projeto/
+<a name="line-2"></a>├── assets/
+<a name="line-3"></a>│   └── sass/
+<a name="line-4"></a>│       └── style.scss
+<a name="line-5"></a>├── index.html
+<a name="line-6"></a>├── Gruntfile.js
+<a name="line-7"></a>└── package.json
+</code></pre></div>
+              <h4 id="Criando-o-arquivo-<code>package-json<-code>">
+                <a name="Criando-o-arquivo-<code>package-json<-code>" href="#Criando-o-arquivo-<code>package-json<-code>"></a>Criando o arquivo <code>package.json</code>
+              </h4>
+            
+<p>Você pode criar um arquivo <code>package.json</code> de forma dinâmica, para isso execute o comando <code>npm init</code> e responda apropriadamente as perguntas que lhe forem apresentadas.</p>
+
+<p>Para este exemplo, o estado inicial do nosso arquivo <code>package.json</code> deverá ficar assim:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>{
+<a name="line-2"></a>    &quot;name&quot;: &quot;browser-sync-project&quot;,
+<a name="line-3"></a>    &quot;version&quot;: &quot;0.1.0&quot;,
+<a name="line-4"></a>    &quot;title&quot;: &quot;Projeto Browser Sync&quot;,
+<a name="line-5"></a>    &quot;description&quot;: &quot;Exemplo prático do Grunt com o Browser Sync&quot;,
+<a name="line-6"></a>    &quot;license&quot;: &quot;MIT&quot;
+<a name="line-7"></a>}
+</code></pre></div>
+              <h4 id="Instalando-o-grunt-e-os-plugins-necessários">
+                <a name="Instalando-o-grunt-e-os-plugins-necessários" href="#Instalando-o-grunt-e-os-plugins-necessários"></a>Instalando o grunt e os plugins necessários
+              </h4>
+            
+<p>Em seguida, vamos instalar o Grunt e os plugins necessários para realizar as tarefas esperadas no nosso projeto. Para isso, execute o comando abaixo</p>
+
+<blockquote>
+<p><strong>Nota:</strong> lembre-se de que você deve executar este comando no diretório do projeto.</p>
+</blockquote>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>npm i grunt grunt-contrib-compass grunt-contrib-watch grunt-browser-sync --save-dev
+</code></pre></div>
+<blockquote>
+<p><strong>Nota:</strong> perceba que estamos executando um comando extenso, porém em uma linha somente e com o <em>alias</em> para a opção <strong>install</strong> (i). Com um único comando, podemos instalar o Grunt e os plugins que utilizaremos no nosso projeto. Poderíamos executar essas instalações uma a uma, mas, como já sabemos os plugins que queremos utilizar, fica muito mais prático executar desta forma.</p>
+</blockquote>
+
+<p>Com o grunt e os plugins instalados o arquivo <code>package.json</code> ficará assim:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>{
+<a name="line-2"></a>    &quot;name&quot;: &quot;browser-sync-project&quot;,
+<a name="line-3"></a>    &quot;version&quot;: &quot;0.1.0&quot;,
+<a name="line-4"></a>    &quot;title&quot;: &quot;Projeto Browser Sync&quot;,
+<a name="line-5"></a>    &quot;description&quot;: &quot;Exemplo prático do Grunt com o Browser Sync&quot;,
+<a name="line-6"></a>    &quot;license&quot;: &quot;MIT&quot;,
+<a name="line-7"></a>    &quot;devDependencies&quot;: {
+<a name="line-8"></a>        &quot;grunt&quot;: &quot;~0.4.2&quot;,
+<a name="line-9"></a>        &quot;grunt-contrib-compass&quot;: &quot;~0.6.0&quot;,
+<a name="line-10"></a>        &quot;grunt-contrib-watch&quot;: &quot;~0.4.4&quot;,
+<a name="line-11"></a>        &quot;grunt-browser-sync&quot;: &quot;~0.3.0&quot;
+<a name="line-12"></a>    }
+<a name="line-13"></a>}
+</code></pre></div>
+              <h4 id="Configurando-o-<code>Gruntfile-js<-code>">
+                <a name="Configurando-o-<code>Gruntfile-js<-code>" href="#Configurando-o-<code>Gruntfile-js<-code>"></a>Configurando o <code>Gruntfile.js</code>
+              </h4>
+            
+<p>Abra o arquivo <code>Gruntfile.js</code>, localizado na pasta raiz do seu projeto, com o seu editor preferido. Em seguida, <strong>copie e cole</strong> o conteúdo abaixo:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>module.exports = function (grunt) {
+<a name="line-2"></a>
+<a name="line-3"></a>    &quot;use strict&quot;;
+<a name="line-4"></a>
+<a name="line-5"></a>    // Iniciando a configuração das tarefas
+<a name="line-6"></a>    grunt.initConfig({
+<a name="line-7"></a>
+<a name="line-8"></a>        watch: {
+<a name="line-9"></a>            files: &quot;assets/sass/*.scss&quot;,
+<a name="line-10"></a>            tasks: &#39;compass&#39;,
+<a name="line-11"></a>        },
+<a name="line-12"></a>
+<a name="line-13"></a>        compass: {
+<a name="line-14"></a>            dist: {
+<a name="line-15"></a>                options: {
+<a name="line-16"></a>                    sassDir: &#39;assets/sass&#39;,
+<a name="line-17"></a>                    cssDir: &#39;assets/css&#39;,
+<a name="line-18"></a>                    outputStyle: &#39;compressed&#39;
+<a name="line-19"></a>                },
+<a name="line-20"></a>            },
+<a name="line-21"></a>        },
+<a name="line-22"></a>
+<a name="line-23"></a>        browser_sync: {
+<a name="line-24"></a>            files: {
+<a name="line-25"></a>
+<a name="line-26"></a>                // Aplicando o recurso de Live Reload nos seguintes arquivos
+<a name="line-27"></a>                src : [
+<a name="line-28"></a>                    &#39;assets/css/*.css&#39;,
+<a name="line-29"></a>                    &#39;**/*.html&#39;
+<a name="line-30"></a>                ],
+<a name="line-31"></a>
+<a name="line-32"></a>            },
+<a name="line-33"></a>            options: {
+<a name="line-34"></a>
+<a name="line-35"></a>                // Definindo um IP manualmente
+<a name="line-36"></a>                host : &quot;192.168.0.1&quot;,
+<a name="line-37"></a>
+<a name="line-38"></a>                // Atribuíndo um diretório base
+<a name="line-39"></a>                server: {
+<a name="line-40"></a>                    baseDir: &quot;.&quot;
+<a name="line-41"></a>                },
+<a name="line-42"></a>
+<a name="line-43"></a>                // Integrando com a tarefa &quot;watch&quot;
+<a name="line-44"></a>                watchTask: true,
+<a name="line-45"></a>
+<a name="line-46"></a>                // Sincronizando os eventos entre os dispositívos
+<a name="line-47"></a>                ghostMode: {
+<a name="line-48"></a>                    scroll: true,
+<a name="line-49"></a>                    links: true,
+<a name="line-50"></a>                    forms: true
+<a name="line-51"></a>                }
+<a name="line-52"></a>            },
+<a name="line-53"></a>        }
+<a name="line-54"></a>    });
+<a name="line-55"></a>
+<a name="line-56"></a>    // Carregando os plugins
+<a name="line-57"></a>    grunt.loadNpmTasks(&#39;grunt-contrib-compass&#39;);
+<a name="line-58"></a>    grunt.loadNpmTasks(&#39;grunt-contrib-watch&#39;);
+<a name="line-59"></a>    grunt.loadNpmTasks(&#39;grunt-browser-sync&#39;);
+<a name="line-60"></a>
+<a name="line-61"></a>    // Registrando tarefas customizadas
+<a name="line-62"></a>    grunt.registerTask(&#39;default&#39;, [&quot;browser_sync&quot;, &quot;watch&quot;]);
+<a name="line-63"></a>};
+</code></pre></div>
+<p>Perceba que o código está comentado para facilitar o entendimento, mas vamos quebrá-lo em partes para que você entenda o resultado final.</p>
+
+              <h5 id="Escopo-Global">
+                <a name="Escopo-Global" href="#Escopo-Global"></a>Escopo Global
+              </h5>
+            
+<p>Nesta parte, temos uma função global que funciona como <em>wrapper</em> para os 3 (três) métodos responsáveis pela <strong>configuração de tarefas</strong>, <strong>carregamento dos plugins</strong> e <strong>registro de tarefas customizadas</strong> respectivamente no Grunt.</p>
+
+<p>Confira:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>module.exports = function (grunt) {
+<a name="line-2"></a>
+<a name="line-3"></a>    &quot;use strict&quot;;
+<a name="line-4"></a>
+<a name="line-5"></a>     // Configurando as tarefas
+<a name="line-6"></a>    grunt.initConfig({});
+<a name="line-7"></a>
+<a name="line-8"></a>    // Carregando os plugins
+<a name="line-9"></a>    grunt.loadNpmTasks();
+<a name="line-10"></a>
+<a name="line-11"></a>    // Registrando tarefas customizadas
+<a name="line-12"></a>    grunt.registerTask();
+<a name="line-13"></a>};
+</code></pre></div>
+              <h5 id="Configurando-as-tarefas">
+                <a name="Configurando-as-tarefas" href="#Configurando-as-tarefas"></a>Configurando as tarefas
+              </h5>
+            
+<p>As configurações das nossas tarefas no Grunt serão declaradas no método <code>initConfig()</code>.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>grunt.initConfig({
+<a name="line-2"></a>    // As configurações das tarefas serão definidas aqui
+<a name="line-3"></a>});
+</code></pre></div>
+<p><strong>Configuração da tarefa <code>watch</code></strong></p>
+
+<p>Está tarefa será responsável por observar alterações nos arquivos.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>watch: {
+<a name="line-2"></a>    files: &quot;assets/sass/*.scss&quot;, // Definimos os arquivos que queremos &quot;observar&quot;
+<a name="line-3"></a>    tasks: &#39;compass&#39;,            // Declaramos em qual tarefa esta observação será realizada
+<a name="line-4"></a>},
+</code></pre></div>
+<p><strong>Configuração da tarefa <code>compass</code></strong></p>
+
+<p>Está tarefa é responsável pela compilação (e minificação) do arquivo pré-compilado.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>compass: {
+<a name="line-2"></a>    dist: {
+<a name="line-3"></a>        options: {
+<a name="line-4"></a>            sassDir: &#39;assets/sass&#39;,   // Definimos o diretório de origem dos arquivos a serem compilados
+<a name="line-5"></a>            cssDir: &#39;assets/css&#39;,     // Definimos o diretório de saída dos arquivos que foram compilados
+<a name="line-6"></a>            outputStyle: &#39;compressed&#39; // Definimos o tipo de compressão que os nossos arquivos vão sofrer
+<a name="line-7"></a>        },
+<a name="line-8"></a>    },
+<a name="line-9"></a>},
+</code></pre></div>
+<p><strong>Configuração da tarefa <code>browser_sync</code></strong></p>
+
+<p>Está tarefa é responsável pela configuração dos testes sincronizados em nossos dispositívos móveis, integração do recurso <em>Live Reload</em>, iniciar um servidor web estático e se comunicar com a tarefa <em>watch</em>.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>browser_sync: {
+<a name="line-2"></a>    files: {
+<a name="line-3"></a>
+<a name="line-4"></a>        // Aplicamos o recurso de Live Reload nos seguintes arquivos
+<a name="line-5"></a>        src : [
+<a name="line-6"></a>            &#39;assets/css/*.css&#39;,
+<a name="line-7"></a>            &#39;**/*.html&#39;
+<a name="line-8"></a>        ],
+<a name="line-9"></a>
+<a name="line-10"></a>    },
+<a name="line-11"></a>    options: {
+<a name="line-12"></a>
+<a name="line-13"></a>        // Definimos um IP manualmente. Verifique o seu IP com:
+<a name="line-14"></a>        // - ifconfig(mac/linux)
+<a name="line-15"></a>        // - ipconfig(win)
+<a name="line-16"></a>        host : &quot;192.168.0.1&quot;,
+<a name="line-17"></a>
+<a name="line-18"></a>        // Atribuímos um diretório base
+<a name="line-19"></a>        server: {
+<a name="line-20"></a>            baseDir: &quot;.&quot;
+<a name="line-21"></a>        },
+<a name="line-22"></a>
+<a name="line-23"></a>        // Integramos com a tarefa &quot;watch&quot;
+<a name="line-24"></a>        watchTask: true,
+<a name="line-25"></a>
+<a name="line-26"></a>        // Sincronizamos os eventos entre os dispositívos
+<a name="line-27"></a>        ghostMode: {
+<a name="line-28"></a>            scroll: true, // Ativamos a sincronização para scrolls
+<a name="line-29"></a>            links: true,  // Ativamos a sincronização para a navegação
+<a name="line-30"></a>            forms: true   // Ativamos a sincronização para o preenchimento de dados em formulários
+<a name="line-31"></a>        }
+<a name="line-32"></a>    },
+<a name="line-33"></a>}
+</code></pre></div>
+              <h5 id="Carregamento-dos-plugins">
+                <a name="Carregamento-dos-plugins" href="#Carregamento-dos-plugins"></a>Carregamento dos plugins
+              </h5>
+            
+<p>Para que as nossas tarefas sejam executadas, precisamos declarar o nome dos plugins através do método <code>loadNpmTasks()</code>.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>// Carregando os plugins
+<a name="line-2"></a>grunt.loadNpmTasks(&#39;grunt-contrib-compass&#39;);
+<a name="line-3"></a>grunt.loadNpmTasks(&#39;grunt-contrib-watch&#39;);
+<a name="line-4"></a>grunt.loadNpmTasks(&#39;grunt-browser-sync&#39;);
+</code></pre></div>
+              <h5 id="Registrando-as-tarefas-customizadas">
+                <a name="Registrando-as-tarefas-customizadas" href="#Registrando-as-tarefas-customizadas"></a>Registrando as tarefas customizadas
+              </h5>
+            
+<p>Por fim, configuramos uma tarefa customizada no método <code>registerTask()</code> para iniciar as tarefas <code>browser_sync</code> e <code>watch</code>.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>grunt.registerTask(&#39;default&#39;, [&quot;browser_sync&quot;, &quot;watch&quot;]);
+</code></pre></div>
+              <h4 id="Executando-a-tarefa">
+                <a name="Executando-a-tarefa" href="#Executando-a-tarefa"></a>Executando a tarefa
+              </h4>
+            
+<p>Com a estrutura e arquivos criados, o <code>package.json</code> e <code>Gruntfile.js</code> configurados, basta executarmos a tarefa customizada <code>default</code>. Por se tratar de uma tarefa padrão, não é necessário executar <code>grunt default</code>. Apenas digite no seu bash/shell o comando <code>grunt</code> para que está tarefa seja executada.</p>
+
+              <h4 id="Iniciando-o-teste">
+                <a name="Iniciando-o-teste" href="#Iniciando-o-teste"></a>Iniciando o teste
+              </h4>
+            
+<p>Pronto! Acesse os dispositivos/browsers através do <strong>IP</strong> e <strong>PORT</strong> (ex.: <a href="http://192.168.0.1:8000">http://192.168.0.1:8000</a>) declarados na opção da sua tarefa <code>browser_sync</code>, faça algumas mudanças no arquivo <code>style.scss</code> e veja a mágica acontecer.</p>
+
+<p>Veja no exemplo abaixo o plugin em ação!</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>vitorbritto at Vitor Britto in ~/temp/grunt/misc
+<a name="line-2"></a>$ grunt
+<a name="line-3"></a>Running &quot;browser_sync:files&quot; (browser_sync) task
+<a name="line-4"></a>
+<a name="line-5"></a>Running &quot;watch&quot; task
+<a name="line-6"></a>Waiting...   info  - socket.io started
+<a name="line-7"></a>
+<a name="line-8"></a>OK, Server running at http://xxx.xxx.xxx.xxx:3001
+<a name="line-9"></a>Serving files from:  /Users/vitorbritto/temp/grunt/misc
+<a name="line-10"></a>
+<a name="line-11"></a>Load a browser &amp; check back here. If you set up everything correctly, you&#39;ll see a &#39;Browser Connected&#39;  message
+<a name="line-12"></a>
+<a name="line-13"></a>Watching the following:
+<a name="line-14"></a>assets/css/style.css
+<a name="line-15"></a>index.html
+<a name="line-16"></a>node_modules/grunt-browser-sync/node_modules/browser-sync/node_modules/connect/lib/public/directory.html
+<a name="line-17"></a>node_modules/grunt-browser-sync/node_modules/browser-sync/node_modules/connect/lib/public/error.html
+<a name="line-18"></a>node_modules/grunt-browser-sync/node_modules/browser-sync/node_modules/http-proxy/node_modules/colors/example.html
+<a name="line-19"></a>node_modules/grunt-browser-sync/node_modules/browser-sync/node_modules/http-proxy/node_modules/pkginfo/docs/pkginfo.html
+<a name="line-20"></a>node_modules/grunt-browser-sync/node_modules/browser-sync/node_modules/portscanner/node_modules/async/test/test.html
+<a name="line-21"></a>node_modules/grunt-browser-sync/node_modules/browser-sync/node_modules/socket.io/node_modules/policyfile/doc/index.html
+<a name="line-22"></a>node_modules/grunt-browser-sync/node_modules/browser-sync/node_modules/socket.io/node_modules/socket.io-client/lib/vendor/web-socket-js/sample.html
+<a name="line-23"></a>node_modules/grunt-browser-sync/node_modules/browser-sync/node_modules/socket.io/node_modules/socket.io-client/node_modules/active-x-obfuscator/node_modules/zeparser/benchmark.html
+<a name="line-24"></a>Plus more...
+<a name="line-25"></a>
+<a name="line-26"></a>Browser Connected! (Chrome, version: 33.0.1734.2)
+</code></pre></div>
+<p>Espero que esta ferramenta seja útil para o desenvolvimento dos seus projetos e que torne o seu ambiente de trabalho mais eficiente e produtivo.</p>
+
+<p>Até a próxima!</p>
+
+<hr>
+
+<p><strong>Referências:</strong></p>
+
+<ul>
+<li><a href="http://addyosmani.com/blog/browser-sync/">Browser-Sync: Sync Scrolls, Clicks, Forms And Edits In Multiple Browsers For Free</a></li>
+<li><a href="https://github.com/shakyShane/grunt-browser-sync">Github: grunt-browser-sync</a></li>
+<li><a href="https://github.com/shakyShane/grunt-browser-sync">Github: browser-sync</a></li>
+</ul>
+
+<hr>
+
+            </section>
+
+        </article>
+
+        <section class="box">
+    <div class="span3">
+        <img class="box-thumb" src="http://www.vitorbritto.com.br/blog/assets/images/avatar.jpg">
+    </div>
+    <div class="span9">
+        <section class="box-details">
+            <h3>Vitor Britto</h3>
+            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+        </section>
+    </div>
+</section>
+
+        <div class="box">
+    <div class="newsletter-wrapper">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=vitorbritto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <h3 class="newsletter-title">Receba os artigos no seu e-mail</h3>
+        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
+        <input class="input" type="email" name="email" placeholder="Digite o seu email"/>
+        <input type="hidden" value="vitorbritto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn-newsletter" type="submit" value="Assinar Newsletter" />
+    </form>
+    </div>
+</div>
+
+
+        <div class="line"></div>
+
+        
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+    var disqus_shortname = 'blogvitorbritto'; // shortname
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Por favor, habilite o JavaScript para ver os <a href="http://disqus.com/?ref_noscript">comentários</a> deste artigo.</noscript>
+
+
+
+    </div>
+
+        <div class="line"></div>
+
+        <div class="row">
+            <footer class="footer">
+                    <p class="footer-text">Desenvolvido por Vitor Britto. Feito com <a href="http://jekyllrb.com/" title="Jekyll" target="_blank">Jekyll</a>, <i class="icon-coffee"></i> e <i class="icon-heart"></i>.</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://www.vitorbritto.com.br/blog/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src='http://www.vitorbritto.com.br/blog/assets/js/app.min.js'></script>
+
+    <!-- Google Analytics -->
+    <script>
+    var _gaq=[['_setAccount','UA-12808940-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

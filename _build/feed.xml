@@ -1,0 +1,1989 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vitor Britto</title>
+    <description>Desenvolvedor Web</description>
+    <link>http://www.vitorbritto.com.br/blog</link>
+    <atom:link href="http://www.vitorbritto.com.br/blog/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Iniciando os estudos com JavaScript</title>
+        <description>&lt;p&gt;Saudações!&lt;/p&gt;
+
+&lt;p&gt;Estarei compartilhando um método simples e eficaz para que você inicie os estudos com a linguagem JavaScript. Entretanto, antes mesmo que você continue a leitura deste artigo, me permita fazer um pequeno &lt;strong&gt;disclaimer&lt;/strong&gt;. &lt;/p&gt;
+
+&lt;p&gt;O idioma inglês se faz necessário para executar os passos a seguir e será utilizado o Firefox para executar/praticar os códigos. De toda forma, fique a vontade para utilizar o navegador de sua preferência. O importante é que os códigos sejam praticados. Ok?&lt;/p&gt;
+
+&lt;p&gt;Vale frisar também que, mesmo com o esforço em contribuir com &lt;a href=&quot;http://cerebrobr.github.io/cerebro/&quot;&gt;materiais em português&lt;/a&gt;, o idioma inglês é muito importante na área de TI, assim como para o desenvolvedor/programador que esteja em busca do constante crescimento na sua profissão. &lt;/p&gt;
+
+&lt;p&gt;Se você pretende ingressar nesta área, entenda que o idioma dominante é o inglês e você precisa dele para ser bem sucedido.&lt;/p&gt;
+
+&lt;p&gt;Dito isso, podemos prosseguir?&lt;/p&gt;
+
+              &lt;h2 id=&quot;Uma-breve-história&quot;&gt;
+                &lt;a name=&quot;Uma-breve-história&quot; href=&quot;#Uma-breve-história&quot;&gt;&lt;/a&gt;Uma breve história
+              &lt;/h2&gt;
+            
+&lt;p&gt;Quando tive o primeiro contato com a Internet, em meados de 1994, fiquei fascinado. Logo, meu vício era:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Criar Scripts para mIRC;&lt;/li&gt;
+&lt;li&gt;jogar Duke Nukem Online;&lt;/li&gt;
+&lt;li&gt;e navegar na Web.&lt;/li&gt;
+&lt;/ul&gt;
+
+              &lt;h3 id=&quot;Até-que-o-JavaScript-apareceu-na-minha-vida&quot;&gt;
+                &lt;a name=&quot;Até-que-o-JavaScript-apareceu-na-minha-vida&quot; href=&quot;#Até-que-o-JavaScript-apareceu-na-minha-vida&quot;&gt;&lt;/a&gt;Até que o JavaScript apareceu na minha vida
+              &lt;/h3&gt;
+            
+&lt;p&gt;No final do ano de 1997, &amp;quot;conheci&amp;quot; o JavaScript. &lt;/p&gt;
+
+&lt;p&gt;Confesso que foi por acaso! Visitei uma homepage e a janela começou a tremer. Resolvi comentar com alguns amigos sobre o ocorrido, e um deles (o mais Nerd de todos) disse ser &lt;strong&gt;o DHTML&lt;/strong&gt;. O mesmo me falou para clicar com o botão direito do mouse na janela do navegador (já na tal homepage) e selecionar a opção &lt;em&gt;&amp;quot;View Source Code&amp;quot;&lt;/em&gt;. &lt;/p&gt;
+
+&lt;p&gt;Então, chegando em casa, fiz exatamente o que o colega me falou. Um emaranhado de números e letras surgiram na minha frente e, é claro, tive o meu primeiro contato com o HTML, CSS e &lt;strong&gt;JavaScript&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Obviamente, eu não sabia o que eram esses caras. Eu não entendia como aquilo funcionava. Não sabia porque a tela tremia, porque um alerta era exibido, porque o cursor do mouse deixava rastros coloridos ou porque tantos outros comportamentos interessantes e &amp;quot;estranhos&amp;quot; no browser aconteciam.&lt;/p&gt;
+
+&lt;p&gt;A única coisa que eu tinha em mente era: &amp;quot;Eu quero aprender a fazer isso!&amp;quot;. &lt;/p&gt;
+
+              &lt;h3 id=&quot;Foi-difícil-no-começo-mas-eu-não-desisti&quot;&gt;
+                &lt;a name=&quot;Foi-difícil-no-começo-mas-eu-não-desisti&quot; href=&quot;#Foi-difícil-no-começo-mas-eu-não-desisti&quot;&gt;&lt;/a&gt;Foi difícil no começo, mas eu não desisti
+              &lt;/h3&gt;
+            
+&lt;p&gt;Um dos motivos em compartilhar o conhecimento que obtive durante todo esse tempo, é porque entendo como é complicado iniciar os estudos na área da programação, sem ter a menor ideia de como funciona ou ter algum contato prévio com disciplinas que tratam especificamente da lógica, dos algoritmos e da estrutura de dados. &lt;/p&gt;
+
+&lt;p&gt;Na minha época, o material era o código fonte. Livro? Rede social? Curso online? Esqueça! Sem falar que os materiais eram dispersos e difíceis de encontrar. Notepad e Netscape eram meus melhores amigos nesta jornada. Somente depois de alguns meses, encontrei o &lt;a href=&quot;http://www.javascriptkit.com/&quot;&gt;JavaScript Kit&lt;/a&gt;.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Alguns-anos-se-passaram&quot;&gt;
+                &lt;a name=&quot;Alguns-anos-se-passaram&quot; href=&quot;#Alguns-anos-se-passaram&quot;&gt;&lt;/a&gt;Alguns anos se passaram
+              &lt;/h3&gt;
+            
+&lt;p&gt;Ingressei na faculdade de Análise de Sistemas e, com o &lt;em&gt;networking&lt;/em&gt;, ficou mais fácil dar continuidade aos estudos. Tudo começou a fazer mais sentido. Não somente, conhecer o Unix e a linguagem C foram fatores importantes para o meu crescimento.&lt;/p&gt;
+
+&lt;p&gt;Você deve estar se perguntando: &amp;quot;E cadê o JavaScript?&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;Calma jovem Jedi! Eu percorri todo esse caminho para lhe mostrar que, há 17 anos, era muito difícil encontrar material relacionado ao JavaScript. Diferente de hoje, onde existem muitas possibilidades e meios de pesquisa à sua volta para garantir um aprendizado sólido e eficaz com esta linguagem. &lt;/p&gt;
+
+              &lt;h2 id=&quot;Iniciando-a-sua-jornada-com-JavaScript&quot;&gt;
+                &lt;a name=&quot;Iniciando-a-sua-jornada-com-JavaScript&quot; href=&quot;#Iniciando-a-sua-jornada-com-JavaScript&quot;&gt;&lt;/a&gt;Iniciando a sua jornada com JavaScript
+              &lt;/h2&gt;
+            
+&lt;p&gt;Eu darei o mapa e você vai se aventurar para encontrar o tesouro. Vai depender exclusivamente de você para garantir o sucesso no aprendizado. Ok?&lt;/p&gt;
+
+&lt;p&gt;Pois bem! Vou listar um programa de 4 passos para você que deseja iniciar os estudos em JavaScript. &lt;/p&gt;
+
+&lt;p&gt;Não faremos um caminho cansativo e complicado, não haverá leitura de livros ou artigos. Será o &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide&quot;&gt;Guia do MDN&lt;/a&gt;, o &lt;a href=&quot;https://www.mozilla.org/pt-BR/firefox/new/&quot;&gt;Firefox&lt;/a&gt; (ou o seu navegador preferido) e você! &lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Regra básica e obrigatória:&lt;/strong&gt; é preciso disciplina e força de vontade.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Então, vamos as etapas envolvidas neste processo.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Estabeleça uma metodologia&lt;/li&gt;
+&lt;li&gt;Prepare o ambiente de estudos&lt;/li&gt;
+&lt;li&gt;Não tenha medo de errar&lt;/li&gt;
+&lt;li&gt;Compartilhe a sua evolução&lt;/li&gt;
+&lt;/ol&gt;
+
+              &lt;h3 id=&quot;Estabeleça-uma-metodologia&quot;&gt;
+                &lt;a name=&quot;Estabeleça-uma-metodologia&quot; href=&quot;#Estabeleça-uma-metodologia&quot;&gt;&lt;/a&gt;Estabeleça uma metodologia
+              &lt;/h3&gt;
+            
+&lt;p&gt;No artigo &lt;a href=&quot;http://www.vitorbritto.com.br/blog/experimente-experimentar/&quot;&gt;&amp;quot;Experimente Experimentar&amp;quot;&lt;/a&gt;, menciono uma metodologia que estou utilizando há algum tempo para exercitar, experimentar e praticar conceitos novos e antigos com relação às linguagens de programação, as quais fazem parte da minha rotina de trabalho e experimentos. O importante é que você estabeleça uma metodologia própria para os seus estudos e que esteja de acordo com a sua rotina. Não atropele as demais atividades do dia e nem deixe que estas atividades atropelem os seus estudos.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Prepare-o-ambiente-de-estudos&quot;&gt;
+                &lt;a name=&quot;Prepare-o-ambiente-de-estudos&quot; href=&quot;#Prepare-o-ambiente-de-estudos&quot;&gt;&lt;/a&gt;Prepare o ambiente de estudos
+              &lt;/h3&gt;
+            
+&lt;ul&gt;
+&lt;li&gt;Reserve um espaço tranquilo e que mantenha você concentrado. &lt;/li&gt;
+&lt;li&gt;Salve uma playlist com músicas do seu agrado e deixe a caneca de café por perto &lt;em&gt;(opcional)&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Faça o download da última versão do &lt;a href=&quot;https://www.mozilla.org/pt-BR/firefox/new/&quot;&gt;Firefox&lt;/a&gt; e instale-o &lt;em&gt;(opcional)&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Acesse o &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide&quot;&gt;Guia do MDN&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+              &lt;h3 id=&quot;Não-tenha-medo-de-errar&quot;&gt;
+                &lt;a name=&quot;Não-tenha-medo-de-errar&quot; href=&quot;#Não-tenha-medo-de-errar&quot;&gt;&lt;/a&gt;Não tenha medo de errar
+              &lt;/h3&gt;
+            
+&lt;p&gt;Realizou os procedimentos acima? Então comece a ler o material e pratique &lt;strong&gt;TODOS&lt;/strong&gt; os códigos dos exemplos &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/About#Tips_for_learning_JavaScript&quot;&gt;de acordo com as dicas do Guia MDN&lt;/a&gt; ou da maneira que se sentir mais confortável no seu navegador preferido!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;O mais importante:&lt;/strong&gt; não tenha medo de errar e TESTE novas possibilidades. Não fique somente no feijão com arroz.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Compartilhe-sua-evolução&quot;&gt;
+                &lt;a name=&quot;Compartilhe-sua-evolução&quot; href=&quot;#Compartilhe-sua-evolução&quot;&gt;&lt;/a&gt;Compartilhe sua evolução
+              &lt;/h3&gt;
+            
+&lt;p&gt;Compartilhe o que aprendeu e solicite o feedback de outros colegas. Afinal, é válido buscar outras opiniões e possíveis soluções. Entretanto, quando o fizer, deixe pública a sua dúvida. Nem sempre &amp;quot;aquele colega experiente&amp;quot; estará disponível para lhe dar um feedback via &lt;em&gt;inbox&lt;/em&gt;. &lt;/p&gt;
+
+&lt;p&gt;Deixando sua dúvida em um grupo ou fórum, as chances em obter mais feedbacks é bem maior. Não concorda?&lt;/p&gt;
+
+&lt;p&gt;Não fique com receio em alguém lhe dizer algo mais ríspido ou que se torne frustrante para você. Seja paciente e acredite na sua capacidade. Assim como você, todos eles também começaram do zero. Inclusíve eu (como você pôde perceber mais acima)! &lt;/p&gt;
+
+&lt;p&gt;Errar é um processo natural e que eleva o nível de aprendizado. Confie em você e no seu potêncial!&lt;/p&gt;
+
+              &lt;h2 id=&quot;Seja-parceiro-do-JavaScript&quot;&gt;
+                &lt;a name=&quot;Seja-parceiro-do-JavaScript&quot; href=&quot;#Seja-parceiro-do-JavaScript&quot;&gt;&lt;/a&gt;Seja parceiro do JavaScript
+              &lt;/h2&gt;
+            
+&lt;p&gt;Se você quer aprender JavaScript, deve esquecer o jQuery e qualquer outra ferramenta que atue como um elemento &amp;quot;facilitador&amp;quot; no início da jornada. Dê um passo de cada vez e mantenha os estudos constantes. Uma vez que você entenda o universo JavaScript, fica muito mais fácil para manusear e explorar no futuro as suas libs, plugins, frameworks e afins. &lt;/p&gt;
+
+&lt;p&gt;Bons estudos e até a próxima! =]&lt;/p&gt;
+</description>
+        <pubDate>Thu, 28 Aug 2014 00:00:00 -0300</pubDate>
+        <link>http://www.vitorbritto.com.br/blog/iniciando-os-estudos-com-javascript/</link>
+        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/iniciando-os-estudos-com-javascript/</guid>
+      </item>
+    
+      <item>
+        <title>Experimente Experimentar</title>
+        <description>&lt;p&gt;Saudações!&lt;/p&gt;
+
+&lt;p&gt;Redundâncias a parte, me responda o seguinte:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Você tem o costume de praticar/replicar o código que lê em determinado artigo ou livro?&lt;/li&gt;
+&lt;li&gt;E o que aprendeu há alguns anos?&lt;/li&gt;
+&lt;li&gt;Aqueles conceitos mais básico, lembra deles ainda?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pois bem, algo que aprendi na minha profissão é que a experiência vem com a prática e em como aplicamos o nosso conhecimento no dia a dia.&lt;/p&gt;
+
+&lt;p&gt;Neste artigo, veremos como a prática pode ser usada para potencializar a experiência e fixar determinado conhecimento. Em específico, estaremos tratando das linguagens de programação. Então, vamos em frente.&lt;/p&gt;
+
+              &lt;h2 id=&quot;O-conhecimento-é-inesgotável-&quot;&gt;
+                &lt;a name=&quot;O-conhecimento-é-inesgotável-&quot; href=&quot;#O-conhecimento-é-inesgotável-&quot;&gt;&lt;/a&gt;O conhecimento é inesgotável...
+              &lt;/h2&gt;
+            
+&lt;p&gt;Durante as duas semanas que se passaram, tenho exercitado bastante (mais do que o normal) as técnicas adquiridas e àquelas que adquiri há muitos anos! Não importa o nível de complexidade, estou aplicando gradativamente desde o nível mais básico.&lt;/p&gt;
+
+&lt;p&gt;Com isso, pude perceber que alguns conceitos simples estavam perdidos no tempo e, com esta revisão, consegui injetá-los novamente.&lt;/p&gt;
+
+&lt;p&gt;Ainda esta semana, tomei a decisão de abandonar projetos que envolvam PHP no desenvolvimento Back-End e me dedicar exclusivamente ao Ruby. Você pode conferir o artigo sobre esta decisão &lt;a href=&quot;http://www.vitorbritto.com.br/blog/aprendi-a-dizer-adeus/&quot;&gt;aqui&lt;/a&gt;, mas adianto que o motivo foi por adaptação e frustrações passadas com o PHP.&lt;/p&gt;
+
+&lt;p&gt;Enfim, sem #mimimis, página virada. Vamos em frente.&lt;/p&gt;
+
+&lt;p&gt;Quando se é Freelancer e dono do próprio negócio (meu caso), você precisa ser autodidata. IMHO, isso passa a ser uma obrigação pois, o seu &lt;em&gt;networking&lt;/em&gt; é quase nulo e, a não ser pelos eventos e encontros (meet ups) realizados pela comunidade, você ficará restrito a um ambiente isolado de outros profissionais na sua rotina de trabalho. Dito isso, é preciso manter um alto nível de disciplina e buscar o conhecimento, seja discutindo ou debatendo sobre determinado tema nas redes sociais, fazendo a leitura de artigos, livros ou &lt;strong&gt;praticando&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Adquirir o conceito e entender como uma linguagem funciona é essencial. Saber a sua sintaxe e os termos técnicos envolvidos nesta linguagem, ajudam na comunicação com outros desenvolvedores. De toda forma, isso não se torna suficiente e é aí que a prática entra em campo para fazer a diferença.&lt;/p&gt;
+
+&lt;p&gt;Afinal, mesmo o conhecimento sendo inesgotável...&lt;/p&gt;
+
+              &lt;h2 id=&quot;-ele-pode-ser-esquecido-se-não-praticado-&quot;&gt;
+                &lt;a name=&quot;-ele-pode-ser-esquecido-se-não-praticado-&quot; href=&quot;#-ele-pode-ser-esquecido-se-não-praticado-&quot;&gt;&lt;/a&gt;… ele pode ser esquecido, se não praticado.
+              &lt;/h2&gt;
+            
+&lt;p&gt;Ao ponto em que pode ser esquecido, precisamos nos doutrinar para que a prática seja uma constante em nossa profissão. A partir do momento em que você pratica o que aprendeu (fazendo disso um hábito), seja qual for o tema, você consegue fixar mais detalhes e entender melhor o cenário em questão.&lt;/p&gt;
+
+&lt;p&gt;Se eu te perguntar o que é uma função imediata no JavaScript (alguns a chamam de função auto-executável), você pode até saber do que se trata. Entretanto, se você nunca &amp;quot;pôs a mão na massa&amp;quot; e desenvolveu alguma solução com a &lt;a href=&quot;http://benalman.com/news/2010/11/immediately-invoked-function-expression/&quot;&gt;IIFE&lt;/a&gt;, como saberá o mecânismo que atua por trás dela? O que faz ela ser imediata? Lembra como ela deve ser aplicada?  ¯\ &lt;em&gt;(ツ)&lt;/em&gt; /¯&lt;/p&gt;
+
+              &lt;h2 id=&quot;O-que-eu-fiz-&quot;&gt;
+                &lt;a name=&quot;O-que-eu-fiz-&quot; href=&quot;#O-que-eu-fiz-&quot;&gt;&lt;/a&gt;O que eu fiz?
+              &lt;/h2&gt;
+            
+&lt;p&gt;Pratiquei. Ou seja, Rock and Roll baby! \m/ (&amp;gt;_&amp;lt;) \m/&lt;/p&gt;
+
+&lt;p&gt;Desde de que entrei no universo dos códigos, venho praticando e procurando entender as questões envolvida em cada problema. A curiosidade, disciplina e força de vontade foram fatores decisivos. Então, para atingir um resultado satisfatório, foi preciso manter a ordem e fazer com que o meu progresso fosse constante e &lt;strong&gt;necessário&lt;/strong&gt;.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Primeiro-coloque-ordem-na-casa&quot;&gt;
+                &lt;a name=&quot;Primeiro-coloque-ordem-na-casa&quot; href=&quot;#Primeiro-coloque-ordem-na-casa&quot;&gt;&lt;/a&gt;Primeiro... coloque ordem na casa
+              &lt;/h3&gt;
+            
+&lt;p&gt;Bom, antes de começar a aplicar o que aprendeu é preciso um planejamento e disciplina. No meu caso, orientei meus estudos para o turno noturno, em um período diário de 2 horas. De preferência, acompanhado de uma boa música (no meu caso, um bom Death Metal, Metallica, Pantera ou Black Sabbath).&lt;/p&gt;
+
+&lt;p&gt;Feito este planejamento, basta se doutrinar e agir conforme o escopo estabelecido previamente. Se você estabeleceu seu horário de estudos entre 20:00 e 22:00, cumpra-o! Se por algum motivo você não pôde estudar no horário pré-estabelecido, remaneje para mais cedo ou mais tarde. Mas, fique atento! Não faça com que estas mudanças de horário se tornem uma rotina.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Segundo-Registre-sua-evolução&quot;&gt;
+                &lt;a name=&quot;Segundo-Registre-sua-evolução&quot; href=&quot;#Segundo-Registre-sua-evolução&quot;&gt;&lt;/a&gt;Segundo… Registre sua evolução
+              &lt;/h3&gt;
+            
+&lt;p&gt;É importante que os seus experimentos, e tudo o que você está aprendendo, seja registrado. Fique tranquilo e esqueça questões de performance e padrões no início. Estes aspectos e as boas práticas serão alcançadas/modificadas à medida em que você for refatorando os pontos necessários de cada experimento. Para os meus experimentos, criei um repositório entitulado &lt;a href=&quot;https://github.com/vitorbritto/labs&quot;&gt;&lt;strong&gt;LABS&lt;/strong&gt;&lt;/a&gt; no GitHub.&lt;/p&gt;
+
+&lt;p&gt;Uma boa organização é muito importante também. No meu caso, estou dividindo os experimentos em quatro pontos/partes:&lt;/p&gt;
+
+&lt;p&gt;1 - Anotações Gerais
+2 - Guia Geral
+3 - Passo a Passo
+4 - Problemas Comuns&lt;/p&gt;
+
+              &lt;h4 id=&quot;Anotações-Gerais&quot;&gt;
+                &lt;a name=&quot;Anotações-Gerais&quot; href=&quot;#Anotações-Gerais&quot;&gt;&lt;/a&gt;Anotações Gerais
+              &lt;/h4&gt;
+            
+&lt;p&gt;Estas anotações referem-se ao experimento proposto. Então, por exemplo, se você está praticando com &lt;em&gt;strings&lt;/em&gt; no JavaScript, procure dar uma breve descrição de como este cara se comporta na linguagem, quais as suas funções/métodos e faça um &lt;em&gt;overview&lt;/em&gt; sobre alguns aspectos gerais para utilizá-lo.&lt;/p&gt;
+
+              &lt;h4 id=&quot;Guia-Geral&quot;&gt;
+                &lt;a name=&quot;Guia-Geral&quot; href=&quot;#Guia-Geral&quot;&gt;&lt;/a&gt;Guia Geral
+              &lt;/h4&gt;
+            
+&lt;p&gt;Ainda com relação às &lt;em&gt;strings&lt;/em&gt;, temos alguns métodos como: &lt;code&gt;trim()&lt;/code&gt;, &lt;code&gt;toUpperCase()&lt;/code&gt;, &lt;code&gt;toLowerCase()&lt;/code&gt;. Neste ponto/parte, aplique de forma mais direta. Veja o exemplo abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;js language-js&quot; data-lang=&quot;js&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;I love JavaScript  &amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;trim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toUpperCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; você pode encadear estes caras, criando um &lt;em&gt;&lt;a href=&quot;http://javascriptissexy.com/beautiful-javascript-easily-create-chainable-cascading-methods-for-expressiveness/&quot;&gt;chain method&lt;/a&gt;&lt;/em&gt;. Desta forma, você evita a repetição da variável &lt;code&gt;str&lt;/code&gt; e refatora o código para que fique mais legível criando um estilo de cascata para os métodos a serem utilizados.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h4 id=&quot;Passo-a-passo&quot;&gt;
+                &lt;a name=&quot;Passo-a-passo&quot; href=&quot;#Passo-a-passo&quot;&gt;&lt;/a&gt;Passo a passo
+              &lt;/h4&gt;
+            
+&lt;p&gt;Esta parte é onde você dá o primeiro passo, o mais básico possível, para o elemento que você está experimentando/praticando. O grau de complexidade vai aumentando gradativamete.&lt;/p&gt;
+
+&lt;p&gt;Pense como um jogo, sem macetes, onde você começa com um mínimo de &lt;em&gt;life&lt;/em&gt;, pouca munição e uma arma bem básica. A cada missão cumprida, essa complexidade aumenta no próximo nível e, consequentemente, novas armas, municação e &lt;em&gt;life&lt;/em&gt; são (e podem ser) adquiridos. Ou seja, &lt;strong&gt;complexidade&lt;/strong&gt; e &lt;strong&gt;prática&lt;/strong&gt; se tornam &lt;strong&gt;diretamente&lt;/strong&gt; proporcionais logo no início. Porém, se tornam &lt;strong&gt;inversamente&lt;/strong&gt; proporcionais com o tempo.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Resumindo:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ao iniciar:&lt;/strong&gt; complexidade tende a aumentar -&amp;gt; a prática também&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Com o tempo&lt;/strong&gt; dificuldade começa a diminuir -&amp;gt; a prática continua aumentado&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Savvy? =]&lt;/p&gt;
+
+              &lt;h4 id=&quot;Problemas-Comuns&quot;&gt;
+                &lt;a name=&quot;Problemas-Comuns&quot; href=&quot;#Problemas-Comuns&quot;&gt;&lt;/a&gt;Problemas Comuns
+              &lt;/h4&gt;
+            
+&lt;p&gt;Nesta parte, não há limites. Aqui, serão colocadas experiências ou relatos de colegas que enfretaram problemas e que são comuns na nossa área. Por exemplo, ainda se tratando de &lt;em&gt;strings&lt;/em&gt;: como podem ser concatenadas no JavaScript?&lt;/p&gt;
+
+              &lt;h2 id=&quot;Um-passo-de-cada-vez&quot;&gt;
+                &lt;a name=&quot;Um-passo-de-cada-vez&quot; href=&quot;#Um-passo-de-cada-vez&quot;&gt;&lt;/a&gt;Um passo de cada vez
+              &lt;/h2&gt;
+            
+&lt;ul&gt;
+&lt;li&gt;Não espere saber tudo e da melhor forma possível sempre.&lt;/li&gt;
+&lt;li&gt;Não exija muito de você. Seja sensato, disciplinado e &lt;em&gt;take your time&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Ninguém nasce sabendo! Existe uma evolução natural e constante para conseguir determinado conhecimento.&lt;/li&gt;
+&lt;li&gt;Haverão momentos onde o erro vai persistir por algum tempo até você encontrar uma solução. Está solução pode ser encontrada com uma gambiarra ou não.&lt;/li&gt;
+&lt;li&gt;Gambiarra não significa &lt;strong&gt;errar&lt;/strong&gt;! Veja como um &amp;quot;processo criativo&amp;quot;, mas que precisa, necessariamente, ser adaptado e otimizado.&lt;/li&gt;
+&lt;li&gt;Faça a leitura dos códigos de outros desenvolvedores para agregar conhecimento e desvendar os mistérios de uma linguagem.&lt;/li&gt;
+&lt;li&gt;Tome a leitura destes códigos como parte importante para aguçar o seu raciocínio lógico.&lt;/li&gt;
+&lt;li&gt;Busque sempre novos desafios e meios para construir novas soluções.&lt;/li&gt;
+&lt;li&gt;Você pode e tem capacidade para chegar lá. Basta querer e praticar!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Até a próxima! =]&lt;/p&gt;
+</description>
+        <pubDate>Sat, 23 Aug 2014 00:00:00 -0300</pubDate>
+        <link>http://www.vitorbritto.com.br/blog/experimente-experimentar/</link>
+        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/experimente-experimentar/</guid>
+      </item>
+    
+      <item>
+        <title>Aprendi a dizer adeus</title>
+        <description>&lt;p&gt;Saudações!&lt;/p&gt;
+
+&lt;p&gt;Despedir-se do passado é o primeiro passo para viver novas histórias. Este passo, nos traz um grau de amadurecimento e abre espaço para novos desafios. Nem sempre as decisões são fáceis. Escolher um novo caminho para trilhar é uma tarefa a ser analisada com bastante critério.&lt;/p&gt;
+
+&lt;p&gt;Enfim, chegou um desses momentos…&lt;/p&gt;
+
+              &lt;h2 id=&quot;Desembucha-cara-&quot;&gt;
+                &lt;a name=&quot;Desembucha-cara-&quot; href=&quot;#Desembucha-cara-&quot;&gt;&lt;/a&gt;Desembucha cara...
+              &lt;/h2&gt;
+            
+&lt;p&gt;Estou sendo dramático, não é? LOL! Tudo bem, vamos ao que interessa.&lt;/p&gt;
+
+&lt;p&gt;Bom, essa é uma decisão que venho prolongando há um bom tempo e a decisão está mais do que certa agora. Sempre falava para mim mesmo que iria parar de trabalhar com esse cara, mas eis que chega ao fim a minha parceria com o PHP.&lt;/p&gt;
+
+&lt;p&gt;Pois é. O PHP já foi a minha grande paixão, como linguagem de programação. Só que a vida segue uma evolução natural e não para. É algo contínuo. A medida em que você vai estudando e se dedicando a determinadas tecnologias, acaba por deixar de lado outras tecnologias. No meu caso, é impossível manter contínua e sucessivamente os estudos com todas as tecnologias que eu aprecio e admiro.&lt;/p&gt;
+
+&lt;p&gt;Mas, por que isso Vitor?&lt;/p&gt;
+
+              &lt;h2 id=&quot;Então-senta-que-lá-vem-a-história&quot;&gt;
+                &lt;a name=&quot;Então-senta-que-lá-vem-a-história&quot; href=&quot;#Então-senta-que-lá-vem-a-história&quot;&gt;&lt;/a&gt;Então, senta que lá vem a história
+              &lt;/h2&gt;
+            
+&lt;p&gt;Quem me conhece, sabe o quanto sou &lt;strong&gt;viciado&lt;/strong&gt; em programação e tecnologia. Por um tempo esse vício ficou escondido e deu lugar a outro vício, a música. Mas parece que o destino queria mesmo que eu fosse um &lt;strong&gt;Code Geek&lt;/strong&gt;. LOL!&lt;/p&gt;
+
+&lt;p&gt;Enfim, cá estou, tomando uma decisão importante e que me dará mais tempo e &lt;strong&gt;foco&lt;/strong&gt; para estudar as linguagens que considero mais apropriadas e prioritárias atualmente (JavaScript e Ruby).&lt;/p&gt;
+
+&lt;p&gt;Como tudo na minha vida, a curiosidade sempre foi meu ponto forte. Com o PHP, não foi diferente. Estudei e me empenhei em aprendar a linguagem e tudo o que rodeava a mesma durante o tempo em que estive em contato com ela (por conta própria). E o engraçado disso tudo é que eu não aturava Ruby e não queria largar do PHP. Loucura, não é?&lt;/p&gt;
+
+&lt;p&gt;As lembranças de quando comecei a estudar PHP ainda na faculdade, onde a maioria dos colegas queria estudar ASP, vai ficar na memória para sempre. De um lado era a turma que curtia Linux (PHP), do outro lado a turma que curtia o Windows (ASP).&lt;/p&gt;
+
+&lt;p&gt;Não reprimo a linguagem e AINDA BEM que optei por estudá-la. Tive uma compreensão muito maior sobre OOP, MVC, Design Patterns, Arquitetura e tantos outros aspéctos para um bom desenvolvimento de projetos web graças ao PHP.&lt;/p&gt;
+
+&lt;p&gt;Mas, como já diz o ditado: &amp;quot;Nada é para sempre&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;Aprendi a amar Ruby e, com isso, o PHP foi ficando para trás. Há muito tempo não me empenho nos estudos para com o PHP. Perdi o tesão em levar os estudos para frente. O único resquício será por conta do WordPress, o qual continuarei a trabalhar como CMS para alguns projetos até ser substituído por uma solução própria em Ruby. Eu, sinceramente, pensei que o Laravel seria capaz de reacender essa vontade em trabalhar com PHP novamente. Só que não foi o suficiente, apesar de ser um excelente framework (assim como o Zend e cakePHP, os quais tive oportunidade em trabalhar por algum tempo).&lt;/p&gt;
+
+&lt;p&gt;Pois bem! Daqui pra frente, o caminho será Ruby e JavaScript. Obviamente, incluindo as tecnologias envolvidas e as quais já utilizo com estas duas linguagens de programação que sou extremamente apaixonado.&lt;/p&gt;
+
+              &lt;h2 id=&quot;E-os-experimentos-Vitor-&quot;&gt;
+                &lt;a name=&quot;E-os-experimentos-Vitor-&quot; href=&quot;#E-os-experimentos-Vitor-&quot;&gt;&lt;/a&gt;E os experimentos, Vitor?
+              &lt;/h2&gt;
+            
+&lt;p&gt;Alguns experimentos continuarão. Seja com Haskell, Go e Erlang. Caso você se interesse, poderá seguir todos os experimentos que realizo com as linguagens que estou envolvido atualmente, &lt;a href=&quot;https://github.com/vitorbritto/labs&quot;&gt;neste repositório&lt;/a&gt;. Por outro lado, terei de adiar os experimentos com a robótica (RasPI + NodeJS) por mais algum tempo. Segue &lt;a href=&quot;https://github.com/vitorbritto/robotscripts&quot;&gt;outro repositório&lt;/a&gt;, com muito material interessante relacionado ao tema.&lt;/p&gt;
+
+              &lt;h2 id=&quot;E-lembre-se-&quot;&gt;
+                &lt;a name=&quot;E-lembre-se-&quot; href=&quot;#E-lembre-se-&quot;&gt;&lt;/a&gt;E lembre-se...
+              &lt;/h2&gt;
+            
+&lt;p&gt;Essa escolha foi baseada em experiências que obtive durante os anos em contato com o PHP. Ponderei as frustrações e satisfações, pesei o seu uso quanto a minha rotina de trabalho e qual impacto isso traria para o meu Workflow. Não foi pelo simples fato de &amp;quot;não gostar&amp;quot;. Não! Levei em consideração muitos fatores para chegar nessa decisão. E, posso dizer que, não foi fácil!&lt;/p&gt;
+
+&lt;p&gt;Mas, para todos os efeitos, o Ruby se mostrou mais presente e promissor. Isso significa que Ruby é melhor que PHP? Não! O Ruby se adaptou melhor a maneira como trabalho e aos projetos que desenvolvo atualmente. E por que faço questão em deixar isso claro?&lt;/p&gt;
+
+&lt;p&gt;Bom, se tem algo que sou contra é quando alguém faz cultos de adoração à determinadas tecnologias. Isso é pior que religião. Traçar &amp;quot;vantagens x desvantagens&amp;quot; e fazer comparativos infantis é pior que o apocalipse. IMHO, é preciso estudar e entender quais as vantagens e desvantagens com base nos seus conceitos. Ou seja meu caro, tire suas próprias conclusões!&lt;/p&gt;
+
+&lt;p&gt;A sua opinião sobre linguagem X, pode ser completamente diferente da minha (e vice-versa). E quem está certo ou errado? Nenhum dos dois está certo e ambos estarão errados se for para gerar opiniões tendenciosas e/ou uma discussão sem fim.&lt;/p&gt;
+
+&lt;p&gt;Você precisa estar preparado para três pontos importantes:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Estudar as possibilidades existentes, dentro da sua realidade e necessidade, e decidir por sí só qual deve utilizar.&lt;/li&gt;
+&lt;li&gt;Estar preparado para conviver com opiniões alheias e que não refletem o seu ponto de vista.&lt;/li&gt;
+&lt;li&gt;Entender que não existe &lt;strong&gt;melhor&lt;/strong&gt; ou &lt;strong&gt;pior&lt;/strong&gt;, &lt;strong&gt;certo&lt;/strong&gt; ou &lt;strong&gt;errado&lt;/strong&gt;. É o melhor e certo &lt;strong&gt;para você&lt;/strong&gt;! Savvy?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Agradeço por ler o meu relato. Até a próxima! =]&lt;/p&gt;
+</description>
+        <pubDate>Tue, 19 Aug 2014 00:00:00 -0300</pubDate>
+        <link>http://www.vitorbritto.com.br/blog/aprendi-a-dizer-adeus/</link>
+        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/aprendi-a-dizer-adeus/</guid>
+      </item>
+    
+      <item>
+        <title>Controlando processos no UNIX</title>
+        <description>&lt;p&gt;Saudações!&lt;/p&gt;
+
+&lt;p&gt;Vamos combinar que é muito chato quando um programa/aplicação trava ou você não é possível finalizar um procedimento por conta da lentidão na execução de uma terafa no sistema. Para contornar esta situação e conseguirmos manipular os programas, vamos entender o que são os processos no Unix.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Processando&quot;&gt;
+                &lt;a name=&quot;Processando&quot; href=&quot;#Processando&quot;&gt;&lt;/a&gt;Processando
+              &lt;/h3&gt;
+            
+&lt;p&gt;No Unix, é possível iniciar e interromper processos, enviar sinais aos programas em execução, verificar informações dos processos que estão sendo executados e muito mais. Mas, antes de entendermos como fazer isso, é preciso entender o que é um processo.&lt;/p&gt;
+
+&lt;p&gt;De forma simplificada, um processo é uma instância de um programa em execução. Logo ao iniciar o seu sistema, um processo chamado &lt;em&gt;init&lt;/em&gt; é executado com um PID de número &lt;strong&gt;1&lt;/strong&gt;. Para cada programa iniciado é atribuido um identificador único, o qual denominamos &lt;em&gt;PID&lt;/em&gt;(process identifier). Não vou entrar em detalhes sobre como cada processo é iniciado por debaixo dos panos. Para isto, leia &lt;a href=&quot;http://en.wikipedia.org/wiki/Process_identifier&quot;&gt;este material&lt;/a&gt; que pode ser encontrado no Wikipedia.&lt;/p&gt;
+
+&lt;p&gt;Sendo assim, ao executar um comando no prompt do Unix shell ou inicializar um programa/aplicativo você está iniciando um processo.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Quais-processos-estão-em-execução-&quot;&gt;
+                &lt;a name=&quot;Quais-processos-estão-em-execução-&quot; href=&quot;#Quais-processos-estão-em-execução-&quot;&gt;&lt;/a&gt;Quais processos estão em execução?
+              &lt;/h3&gt;
+            
+&lt;p&gt;Para verificar quais processos estão em execução, basta executar o comando &lt;em&gt;ps&lt;/em&gt; (process status). Quando declarado sem qualquer argumento, o comando &lt;em&gt;ps&lt;/em&gt; exibe todos os processos vinculados com a sessão atual do seu sistema.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Confira o exemplo abaixo:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;  PID TTY           TIME CMD
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt; 2092 ttys000    0:00.97 -bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Note que neste exemplo, o comando &lt;em&gt;ps&lt;/em&gt; exibe o ID do processo, em qual terminal o processo está vinculado, o tempo acumulado que este processo encontra-se em execução e o comando para este processo respectivamente.&lt;/p&gt;
+
+&lt;p&gt;Além disso, este comando é muito útil para verificar quais processos estão sendo executados em um sistema e quais consomem mais memória ou estão exigindo um uso excessivo da CPU.&lt;/p&gt;
+
+&lt;p&gt;Então, vamos entender melhor a mecânica por trás do comando &lt;em&gt;ps&lt;/em&gt;.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Um-passo-de-cada-vez&quot;&gt;
+                &lt;a name=&quot;Um-passo-de-cada-vez&quot; href=&quot;#Um-passo-de-cada-vez&quot;&gt;&lt;/a&gt;Um passo de cada vez
+              &lt;/h3&gt;
+            
+&lt;p&gt;O comando &lt;em&gt;ps&lt;/em&gt; é um dos mais comuns e utilizados no/pelo Unix, mas oferece algumas diferenças de sintaxe para renderizar o output em seus variantes (flavors). A melhor maneira de entender como a sintaxe do &lt;em&gt;process status&lt;/em&gt; funciona no seu sistema, é utilizando o &lt;strong&gt;man pages&lt;/strong&gt;. Para facilitar a leitura, adicione e utilize o &lt;em&gt;alias&lt;/em&gt; abaixo para ler em formato PDF o manual do &lt;em&gt;ps&lt;/em&gt;. Se preferir, execute da maneira mais prática e convencional com: &lt;code&gt;man ps&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# Insira no .bashrc:&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;manpdf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;man -t $1 | pstopdf -i -o $1.pdf&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# Execute com:&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;manpdf ps
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Importante:&lt;/strong&gt; o arquivo PDF para o man page do &lt;em&gt;ps&lt;/em&gt; será registrado no diretório corrente do terminal onde o &lt;em&gt;alias&lt;/em&gt; for executado.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Aí esta! Uma maneira prática para ler a respeito dos detalhes sobre o comando &lt;em&gt;ps&lt;/em&gt; no seu sistema. E outros comandos também, por que não? :)&lt;/p&gt;
+
+              &lt;h3 id=&quot;Mergulhando-nos-processos&quot;&gt;
+                &lt;a name=&quot;Mergulhando-nos-processos&quot; href=&quot;#Mergulhando-nos-processos&quot;&gt;&lt;/a&gt;Mergulhando nos processos
+              &lt;/h3&gt;
+            
+&lt;p&gt;Daqui para frente, vamos percorrer os seguintes tópicos:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;States (estados)&lt;/li&gt;
+&lt;li&gt;System process (processos do sistema)&lt;/li&gt;
+&lt;li&gt;Attributes (atributos)&lt;/li&gt;
+&lt;li&gt;Kill Process (matar processo)&lt;/li&gt;
+&lt;li&gt;Tree Process (árvore de processos)&lt;/li&gt;
+&lt;li&gt;Comando &lt;code&gt;top&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota Importante:&lt;/strong&gt; estou usando o Bash. :)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h4 id=&quot;Estados&quot;&gt;
+                &lt;a name=&quot;Estados&quot; href=&quot;#Estados&quot;&gt;&lt;/a&gt;Estados
+              &lt;/h4&gt;
+            
+&lt;p&gt;Para saber em qual estado o seu sistema se encontra, utilize o comando &lt;code&gt;ps&lt;/code&gt; com o argumento &lt;code&gt;u&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Confira o exemplo abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps u
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;USER         PID    %CPU %MEM VSZ       RSS  TTY   STAT STARTED   TIME COMMAND
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;vitorbritto  2092   0.0  0.1  2437540   2924 s000  S     5:39PM   0:01.20 -bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Perceba que o comando retorna uma série de informações a respeito do sistema no output (terminal), como:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;O usuário que executa o processo (USER)&lt;/li&gt;
+&lt;li&gt;O identificador do processo (PID)&lt;/li&gt;
+&lt;li&gt;A percentagem de uso do CPU (%CPU)&lt;/li&gt;
+&lt;li&gt;A percentagem de uso real da memória (%MEM)&lt;/li&gt;
+&lt;li&gt;O tamanho da memória virtual em KBs (VSZ)&lt;/li&gt;
+&lt;li&gt;O tamanho de memória física usada (RSS)&lt;/li&gt;
+&lt;li&gt;O terminal que o processo esá conectado (TTY)&lt;/li&gt;
+&lt;li&gt;Os estados atrelados ao processo (STAT)&lt;/li&gt;
+&lt;li&gt;Quando o processo foi iniciado (STARTED)&lt;/li&gt;
+&lt;li&gt;A quantidade de tempo utilizado pelo processo no CPU (TIME)&lt;/li&gt;
+&lt;li&gt;E o nome do comando (COMMAND)&lt;/li&gt;
+&lt;/ul&gt;
+
+              &lt;h4 id=&quot;Processos-do-Sistema&quot;&gt;
+                &lt;a name=&quot;Processos-do-Sistema&quot; href=&quot;#Processos-do-Sistema&quot;&gt;&lt;/a&gt;Processos do Sistema
+              &lt;/h4&gt;
+            
+&lt;p&gt;Por padrão, o seu sistema possui diversos processos em execução, para conferir uma lista detalhada de quais processos encontram-se em execução neste exato momento no seu sistema, digite: &lt;code&gt;ps ax&lt;/code&gt;. Para o nosso exemplo, vamos digitar o seguinte: &lt;code&gt;ps ax | wc -l&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Show de bola, Vitor! Digitei o comando e me retornou um número.&lt;/p&gt;
+
+&lt;p&gt;Pois bem! Este número representa a quantidade de processos em execução no seu sistema. Agora, vamos desmembrar este comando para que você possa entender o propósito de cada elemento nele.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;O argumento &lt;code&gt;a&lt;/code&gt; do comando &lt;code&gt;ps&lt;/code&gt; retorna informações dos processos de todos os usuários.&lt;/li&gt;
+&lt;li&gt;O argumento &lt;code&gt;x&lt;/code&gt; do comando &lt;code&gt;ps&lt;/code&gt; renderiza informações a respeito dos processos sem controlar o terminal.&lt;/li&gt;
+&lt;li&gt;O caracter &lt;code&gt;|&lt;/code&gt; é o que chamamos de &lt;em&gt;pipe&lt;/em&gt;. É um operador capaz de repassar uma informação a partir do &lt;em&gt;output&lt;/em&gt; de um comando para o &lt;em&gt;input&lt;/em&gt; de outro comando.&lt;/li&gt;
+&lt;li&gt;O segundo comando &lt;code&gt;wc -l&lt;/code&gt; é responsável por renderizar o total de processos em execução no seu sistema.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Já que este artigo não se trata do operador &lt;code&gt;|&lt;/code&gt; (pipe) e do comando &lt;code&gt;wc&lt;/code&gt; (e seus respectivos argumentos), recomendo a leitura de suas man pages. É uma ótima oportunidade para gerar um PDF, não é? :)&lt;/p&gt;
+
+&lt;p&gt;Pois bem. Os procesos são programas em execução e que lidam com aspectos essenciais de manipulação e manutenção no seu sistema. Muitos destes processos são, convencionalmente, chamados de &lt;em&gt;daemons&lt;/em&gt; e eles executam algumas rotinas. Digite o comando a seguir para visualizar quais processos estão em execução no seu sistema:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps ax
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Será retornada uma lista similar a esta:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps ax
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;  PID   TT  STAT      TIME COMMAND
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    1   ??  Ss     0:48.81 /sbin/launchd
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;   10   ??  Ss     0:01.99 /usr/libexec/kextd
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;   11   ??  Ss     0:02.91 /usr/libexec/UserEventAgent -l System
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;   12   ??  Ss     0:03.60 /usr/sbin/notifyd
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;   14   ??  Ss     0:06.54 /usr/sbin/ntpd -c /private/etc/ntp-restrict.conf -n -g -p /var/run/ntpd.pid -f /var/db/ntp.drift
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;   17   ??  SNs    0:00.92 /usr/libexec/warmd
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;   ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; a lista acima foi renderizada em um Mac OSX.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h4 id=&quot;Atributos-do-Processo&quot;&gt;
+                &lt;a name=&quot;Atributos-do-Processo&quot; href=&quot;#Atributos-do-Processo&quot;&gt;&lt;/a&gt;Atributos do Processo
+              &lt;/h4&gt;
+            
+&lt;p&gt;Cada processo possui um ambiente com diversos atributos, assim como argumentos para a linha de comando, variáveis do ambiente, descrição dos arquivos, mascara para criação de arquivos e muito mais.&lt;/p&gt;
+
+&lt;p&gt;Para verificar determinados atributos dos processos, você pode executar o comando &lt;em&gt;ps&lt;/em&gt; com a flag &lt;code&gt;-o&lt;/code&gt; e os atributos desejados. Veja o exemplo abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps -o user,pid,stime,comm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E será renderizado isto:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps -o user,pid,stime,comm
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;USER          PID     STIME COMM
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;vitorbritto  2092   0:00.54 -bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Confira uma tabela dos atributos mais comuns disponíveis no Unix.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; alguns destes atributos foram mencionados no tópico &lt;a href=&quot;#estados&quot;&gt;estados&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;user&lt;/td&gt;
+&lt;td&gt;Usuário do processo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pid&lt;/td&gt;
+&lt;td&gt;ID do processo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ppid&lt;/td&gt;
+&lt;td&gt;ID do processo filho&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pcpu&lt;/td&gt;
+&lt;td&gt;Percentagem de uso do CPU&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;rss&lt;/td&gt;
+&lt;td&gt;Tamanho de memória física usada (em kilobytes)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pmem&lt;/td&gt;
+&lt;td&gt;Percentagem de uso real da memória&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;vsz&lt;/td&gt;
+&lt;td&gt;Tamanho da memória virtual em KBs&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;tty&lt;/td&gt;
+&lt;td&gt;Terminal que o processo esá conectado&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;state (ou s)&lt;/td&gt;
+&lt;td&gt;Estado atrelado ao processo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;stime&lt;/td&gt;
+&lt;td&gt;Quando o processo foi iniciado&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;time&lt;/td&gt;
+&lt;td&gt;Quantidade de tempo utilizado pelo processo no CPU&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;command (ou comm)&lt;/td&gt;
+&lt;td&gt;Nome do comando&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+              &lt;h4 id=&quot;Finalizando-um-processo&quot;&gt;
+                &lt;a name=&quot;Finalizando-um-processo&quot; href=&quot;#Finalizando-um-processo&quot;&gt;&lt;/a&gt;Finalizando um processo
+              &lt;/h4&gt;
+            
+&lt;p&gt;É possível finalizar um processo de algumas maneiras. O utilitário padrão para &amp;quot;matar&amp;quot; um processo, chama-se &lt;em&gt;kill&lt;/em&gt;. Tecnicamente, o comando &lt;code&gt;kill&lt;/code&gt; não interrompe ou finaliza o processo, isto é feito através de um sinal emitido para o processo. Os sinais (signals) são muito utilizados para a comunicação entre os processos. Cada sinal é responsável por uma ação do &lt;strong&gt;processo&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;O sinal padrão para o comando &lt;code&gt;kill&lt;/code&gt; é o &lt;em&gt;SIGTERM&lt;/em&gt; (terminar).&lt;/p&gt;
+
+&lt;p&gt;Para finalizar um processo, basta inserir o PID (identificador do processo). Veja o exemplo abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Primeiro, buscamos o PID que queremos finalizar.
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# Digamos que o processo a ser finalizado seja o navegador Firefox.
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;# No comando abaixo, passo a flag -o par retornar um output customizado
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;# com o comando e o identificador do processo (PID). Logo após uso o pipe (|)
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;# para repassar a informação com o grep, que funciona como um regex e realizar
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;# uma comparação com a string &amp;quot;firefox&amp;quot;.
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;vitorbritto at ~
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;$ ps axww -o pid,comm | grep firefox
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;  787 /Applications/Firefox.app/Contents/MacOS/firefox
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;# Verificamos que o PID deste comando é 787.
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;# Agora, vamos executar o comando kill para finalizar
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;# este processo utilizando o sinal padrão (SIGTERM).
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;$ kill 787
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Com o comando &lt;code&gt;kill -l&lt;/code&gt;, é possível renderizar no terminal os possíveis sinais com os seus respectivos números. Veja um exemplo abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;$ kill -l
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt; 1) SIGHUP       2) SIGINT       3) SIGQUI       4) SIGILL
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt; 5) SIGTRAP      6) SIGABRT      7) SIGEMT       8) SIGFPE
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt; 9) SIGKILL     10) SIGBUS      11) SIGSEGV     12) SIGSYS
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;13) SIGPIPE     14) SIGALRM     15) SIGTERM     16) SIGURG
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;17) SIGSTOP     18) SIGTSTP     19) SIGCONT     20) SIGCHLD
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;21) SIGTTIN     22) SIGTTOU     23) SIGIO       24) SIGXCPU
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;25) SIGXFSZ     26) SIGVTALRM   27) SIGPROF     28) SIGWINCH
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;29) SIGINFO     30) SIGUSR1     31) SIGUSR2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Muitos sistemas Unix fornecem alternativas ao comando &lt;code&gt;kill&lt;/code&gt; e que podem ser utilizados com o nome do comando ao invés do PID, como:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pgrep&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pkill&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;killall&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Em alguns sistemas, o &lt;code&gt;killall&lt;/code&gt; é utilizado para enviar sinais aos processos através de nomes. Tenha cuidado ao utilizar este cara, recomendo o uso do &lt;code&gt;pkill&lt;/code&gt;. Desta forma, ao invés de utilizar o ID do processo (PID), você utilizaria o nome do processo.
+Veja abaixo um exemplo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pkill firefox
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;O argumento utilizado no &lt;code&gt;pkill&lt;/code&gt; é uma simples expressão regular a ser comparada. Mesmo assim, antes de usar o &lt;code&gt;pkill&lt;/code&gt;, certifique-se de que a expressão existe com o &lt;code&gt;pgrep&lt;/code&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; no Mac OSX, tais comandos não são nativos. Você pode usar o homebrew para instalar o &lt;a href=&quot;http://proctools.sourceforge.net/&quot;&gt;proctools&lt;/a&gt; com o comando &lt;code&gt;brew install proctools&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h4 id=&quot;Árvore-de-Processos&quot;&gt;
+                &lt;a name=&quot;Árvore-de-Processos&quot; href=&quot;#Árvore-de-Processos&quot;&gt;&lt;/a&gt;Árvore de Processos
+              &lt;/h4&gt;
+            
+&lt;p&gt;Sem dúvidas, este é um dos comandos mais interessantes sobre processos. O &lt;code&gt;pstree&lt;/code&gt; permite que uma estrutura hierárquica seja renderizada no terminal, onde cada processo filho (child process) é relacionado ao seu processo pai (parent process).&lt;/p&gt;
+
+&lt;p&gt;Infelizmente, no OSX é preciso instalar este utilitário também. Veja o exemplo abaixo como podemos instalar este camarada com o &lt;em&gt;homebrew&lt;/em&gt; e a sua posterior visualização no terminal:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# 1. Instale com:&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew install pstree
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# 2. Execute com:&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pstree
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# 3. O resultado (parcial) será:&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;vitorbritto at ~
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pstree
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;-+&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 00001 root /sbin/launchd
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt; |--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 00010 root /usr/libexec/kextd
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt; |--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 00011 root /usr/libexec/UserEventAgent -l System
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt; |--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 00012 root /usr/sbin/notifyd
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt; |--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 00014 root /usr/sbin/ntpd -c /private/etc/ntp-restrict.conf -n -g -p /var/run/ntpd.pid -f /var/db/ntp.drift
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt; |--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 00017 nobody /usr/libexec/warmd
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt; |--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 00018 _usbmuxd /System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/Resources/usbmuxd -launchd
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt; |--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 00020 root /usr/sbin/syslogd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Certamente, é possível escrever um programa em Shell Script para renderizar uma &lt;code&gt;tree&lt;/code&gt; de acordo com as suas necessidades. Não entraremos em detalhes sobre como realizar este procedimento, para não perdermos o foco deste artigo, mas fique a vontade para realizar algumas pesquisas. Ok?&lt;/p&gt;
+
+              &lt;h4 id=&quot;Comando-&lt;code&gt;top&lt;-code&gt;&quot;&gt;
+                &lt;a name=&quot;Comando-&lt;code&gt;top&lt;-code&gt;&quot; href=&quot;#Comando-&lt;code&gt;top&lt;-code&gt;&quot;&gt;&lt;/a&gt;Comando &lt;code&gt;top&lt;/code&gt;
+              &lt;/h4&gt;
+            
+&lt;p&gt;Este é outro comando muito interessante. Principalmente para administradores Unix.&lt;/p&gt;
+
+&lt;p&gt;Com o comando &lt;code&gt;top&lt;/code&gt; é possível iniciar um utilitário interativo para análise dos processos, os quais são atualizados frequentemente e mostram informações físicas e virtuais da memória, CPU e processos lentos/travados (&lt;a href=&quot;http://en.wikipedia.org/wiki/Zombie_process&quot;&gt;Zombie Process&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Confira um exemplo abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;Processes: 75 total, 4 running, 2 stuck, 69 sleeping, 494 threads                                                                                            03:35:56
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;Load Avg: 3.99, 3.51, 3.28  CPU usage: 66.8% user, 24.56% sys, 9.34% idle    SharedLibs: 2472K resident, 2260K data, 0B linkedit.
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;MemRegions: 34948 total, 642M resident, 17M private, 272M shared. PhysMem: 330M wired, 869M active, 834M inactive, 2034M used, 14M free.
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;VM: 187G vsize, 1101M framework vsize, 858219&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; pageins, 546183&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; pageouts. Networks: packets: 2578121/4689M in, 2119681/2093M out.
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;Disks: 564676/9683M &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt;, 289083/12G written.
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;PID   COMMAND      %CPU  TIME     &lt;span class=&quot;c&quot;&gt;#TH  #WQ  #POR #MREGS RPRVT  RSHRD  RSIZE  VPRVT  VSIZE  PGRP PPID STATE    UID  FAULTS     COW      MSGSENT    MSGRECV&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;3495  top          16.9  00:04.34 1/1  0    28   29     1368K  216K   2076K  17M    2378M  3495 2092 running  0    9727+      85       1294936+   647425+
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;3494  taskgated    0.0   00:00.03 2    0    31   40     380K   272K   1740K  20M    2381M  3494 1    sleeping 0    577        106      116        48
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;3479  ocspd        0.0   00:00.04 1    0    28   29     676K   276K   2100K  26M    2387M  3479 1    sleeping 0    749        98       185        77
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;3377  distnoted    0.0   00:00.01 2    1    40   46     392K   240K   1012K  22M    2383M  3377 3374 sleeping 89   413        83       255        124
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;3376  mdworker     0.0   00:00.36 3    1    54   71     1492K  3748K  5632K  23M    2412M  3376 3374 sleeping 89   2623       203      1702       757
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;3374  launchd      0.0   00:00.02 2    0    53   45     368K   416K   784K   38M    2399M  3374 1    sleeping 89   602        179      1254       523
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;2482  Mou          0.0   22:13.93 7    1    174  480    10M    12M    31M    301M   19G    2482 137  sleeping 501  369777     596      4043593+   2069826+
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;2447- node-webkit  17.6  69:54.83 4/2  1    78   472    10M+   40M-   39M+   75M+   807M   2443 2443 running  501  138640191+ 690      2239122+   1119229+
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;2445- node-webkit  110.2 06:01:21 28/1 1    137- 913-   145M+  36M    410M+  687M-  1426M- 2443 2443 running  501  1889563+   838      259273383+ 133231723+
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;2443- node-webkit  10.9  43:43.71 42   1    266  382    3204K  37M    19M+   341M   1102M  2443 137  stuck    501  168935+    1219     41720371+  16962182+
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;2421  Preview      0.0   01:35.89 6    1    185  895    12M    24M    34M    222M   3708M  2421 137  sleeping 501  196129     745      380311     187637
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;2092  bash         0.0   00:01.46 1    0    20   26     1268K  216K   1668K  19M    2380M  2092 2091 sleeping 501  15364      4346     491        237
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;2091  login        0.0   00:00.03 2    1    34   58     0B     216K   432K   22M    2391M  2091 2089 sleeping 0    748        121      292        138
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;2089  Terminal     1.5   01:04.90 7    3    135  330    7376K  9412K  23M    32M    2538M  2089 137  sleeping 501  115422     539      342779+    165218+
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;1034  mdworker     0.0   00:47.94 4    1    55   98     3096K  4116K  8244K  29M    2418M  1034 137  sleeping 501  126235     278      427269     174393
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;992   Sparrow      0.0   18:16.79 17   4    309  1955   51M    17M    67M    418M   3779M  992  137  sleeping 501  1391524    1828     6624660+   3008127+
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;885   plugin-conta 0.0   30:46.44 8    1    487  1344   1356K  28M    5816K  56M    2725M  787  787  sleeping 501  51300527   6662     17404742+  8400203+
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;787   firefox      11.0  04:42:22 74   1    339  19088  281M   34M    374M   514M   3563M  787  137  sleeping 501  11793724   2573162  498594082+ 245596606+
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;7
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Com este &lt;em&gt;overview&lt;/em&gt; sobre processos no Unix, podemos seguir adiante e percorrer alguns aspectos para gerir tais processos. Para isto, vamos entender o que é e como funciona o comando &lt;code&gt;jobs&lt;/code&gt;.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Controlando-os-processos&quot;&gt;
+                &lt;a name=&quot;Controlando-os-processos&quot; href=&quot;#Controlando-os-processos&quot;&gt;&lt;/a&gt;Controlando os processos
+              &lt;/h3&gt;
+            
+&lt;p&gt;Com o comando &lt;code&gt;jobs&lt;/code&gt;, é possível executar programas em &lt;em&gt;background&lt;/em&gt;. Isso possibilita a execução de múltiplos programas ao mesmo tempo e em paralelo, a suspensão e reinício de determinados comandos também.&lt;/p&gt;
+
+&lt;p&gt;Mas, como posso executar isso Vitor?&lt;/p&gt;
+
+              &lt;h4 id=&quot;Entendendo-melhor-o-comando-jobs&quot;&gt;
+                &lt;a name=&quot;Entendendo-melhor-o-comando-jobs&quot; href=&quot;#Entendendo-melhor-o-comando-jobs&quot;&gt;&lt;/a&gt;Entendendo melhor o comando jobs
+              &lt;/h4&gt;
+            
+&lt;p&gt;Você pode, simplesmente, inserir o operador &lt;code&gt;&amp;amp;&lt;/code&gt; ao final do comando que deseja executar. Com isso, o seu processo será executado em &lt;em&gt;background&lt;/em&gt; e o seu &lt;em&gt;prompt&lt;/em&gt; não será travado. Confira o exemplo abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm search zip &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Neste exemplo, o &lt;code&gt;npm&lt;/code&gt; fará uma busca pelos módulos com o termo &lt;em&gt;zip&lt;/em&gt; e o seu prompt ficará livre para continuar executando demais comandos. Faça um teste. :)&lt;/p&gt;
+
+              &lt;h4 id=&quot;Manipulando-os-processos-em-execução&quot;&gt;
+                &lt;a name=&quot;Manipulando-os-processos-em-execução&quot; href=&quot;#Manipulando-os-processos-em-execução&quot;&gt;&lt;/a&gt;Manipulando os processos em execução
+              &lt;/h4&gt;
+            
+&lt;p&gt;Para verificar os processos em execução no &lt;em&gt;background&lt;/em&gt;, basta digitar no terminal o comando &lt;code&gt;jobs&lt;/code&gt;. Será exibida uma lista semelhante a que você verá abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;jobs&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;+ Running        npm search zip &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;É possível mover um processo para o &lt;em&gt;foreground&lt;/em&gt;, mas vale lembrar que este procedimento fará com que o prompt seja travado. Isso impossibilita qualquer ação do usuário até que o processo seja finalizado. Para ver como funciona, execute o seguinte comando no processo em &lt;em&gt;background&lt;/em&gt; recém-criado:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# Colocar no foreground o processo de número 1&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;fg &lt;/span&gt;1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; se houverem muitos jobs em execução no &lt;em&gt;background&lt;/em&gt;, é possível passar o número do &lt;em&gt;job&lt;/em&gt; como argumento. Exemplo: &lt;code&gt;fg &amp;lt;número do processo em background&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h4 id=&quot;Acabando-com-a-festa&quot;&gt;
+                &lt;a name=&quot;Acabando-com-a-festa&quot; href=&quot;#Acabando-com-a-festa&quot;&gt;&lt;/a&gt;Acabando com a festa
+              &lt;/h4&gt;
+            
+&lt;p&gt;No nosso exemplo temos um processo em execução, no qual está buscando os módulos do node com o termo &lt;em&gt;zip&lt;/em&gt; para renderizar no output (terminal). Entretanto, digamos que este processo esteja atrapalhando o desempenho do seu sistema ou que você não queira que ele prossiga. Para isso, podemos utilizar dois métodos para interromper este processo.&lt;/p&gt;
+
+&lt;p&gt;No primeiro método, tratando-se de um processo no &lt;em&gt;foreground&lt;/em&gt;, é possível suspender o mesmo com a combinação &lt;code&gt;CTRL+Z&lt;/code&gt;. Do contrário, se for um processo no &lt;em&gt;background&lt;/em&gt;, execute o comando &lt;code&gt;kill&lt;/code&gt; adicionando o caracter &lt;code&gt;%&lt;/code&gt; precedido do número do &lt;em&gt;job&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Por exemplo: &lt;code&gt;kill -18 %2&lt;/code&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; vale lembrar que o &lt;code&gt;-18&lt;/code&gt; não é um número negativo, e sim a representação do sinal a ser passado para o processo. neste caso, o sinal de número 18 (SIGTSTP - Signal Stop).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h3 id=&quot;Por-enquanto-é-isso&quot;&gt;
+                &lt;a name=&quot;Por-enquanto-é-isso&quot; href=&quot;#Por-enquanto-é-isso&quot;&gt;&lt;/a&gt;Por enquanto é isso
+              &lt;/h3&gt;
+            
+&lt;p&gt;Podemos perceber o quão importante os processos são em um sistema e como podemos manipular/generenciar estes caras a fim de manter um bom desempenho neste ambiente.&lt;/p&gt;
+
+&lt;p&gt;Vimos também que:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Processos são simples inicializações de programas com uma única referência ao processo por um ID (PID).&lt;/li&gt;
+&lt;li&gt;Os processos possuem processos pai e processos filho (parent e child process).&lt;/li&gt;
+&lt;li&gt;As informações de um processo podem ser renderizadas no terminal com o comando &lt;code&gt;ps&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Podemos realizar diagnósticos em tempo real com o comando &lt;code&gt;top&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Conseguimos uma visualização mais elegante dos processos com o utilitário &lt;code&gt;pstree&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Sinais são utilizados como métodos para estabelecer uma comunicação entre os processos.&lt;/li&gt;
+&lt;li&gt;O comando &lt;code&gt;kill&lt;/code&gt; é o utilitário padrão para finalizar processos a partir de sinais. O sinal padrão é o &lt;strong&gt;SIGTERM&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;O Unix shell fornece uma maneira simples para realizar multi-tarefas em &lt;em&gt;background&lt;/em&gt; e em paralelo, adicionando um caracter &lt;code&gt;&amp;amp;&lt;/code&gt; (ampersand) ao final do comando.&lt;/li&gt;
+&lt;li&gt;Podemos gerenciar os procesos em &lt;em&gt;background&lt;/em&gt; com o comando &lt;code&gt;jobs&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Com o comando &lt;code&gt;kill&lt;/code&gt;, podemos suspender um processo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Para facilitar em futuras pesquisas, segue uma lista com alguns dos termos relacionados/utilizados neste artigo:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Comandos:&lt;/strong&gt; &lt;code&gt;ps&lt;/code&gt;, &lt;code&gt;kill&lt;/code&gt;, &lt;code&gt;killall&lt;/code&gt;, &lt;code&gt;|&lt;/code&gt;, &lt;code&gt;pgrep&lt;/code&gt;, &lt;code&gt;pkill&lt;/code&gt;, &lt;code&gt;grep&lt;/code&gt;, &lt;code&gt;wc&lt;/code&gt;, &lt;code&gt;top&lt;/code&gt;, &lt;code&gt;pstree&lt;/code&gt;, &lt;code&gt;jobs&lt;/code&gt;, &lt;code&gt;bg&lt;/code&gt;, &lt;code&gt;fg&lt;/code&gt;, &lt;code&gt;&amp;amp;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Processos:&lt;/strong&gt; Child Process &lt;strong&gt;e&lt;/strong&gt; Parent Process.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Atributos:&lt;/strong&gt; UID, PID, RSS, STAT, COMM, etc.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sinais:&lt;/strong&gt; SIGTERM, SIGKILL, SIGSTP, etc.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Jobs:&lt;/strong&gt; &lt;em&gt;background&lt;/em&gt; e &lt;em&gt;foreground&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+              &lt;h3 id=&quot;Mas-não-para-por-aí-&quot;&gt;
+                &lt;a name=&quot;Mas-não-para-por-aí-&quot; href=&quot;#Mas-não-para-por-aí-&quot;&gt;&lt;/a&gt;Mas não para por aí!
+              &lt;/h3&gt;
+            
+&lt;p&gt;Lembre-se de que este artigo não cobre todos os detalhes sobre processos. A ideia foi passar um &lt;em&gt;overview&lt;/em&gt;, mas com um certo nível de detalhes sobre processos no Unix. Recomendo a leitura do livro &lt;a href=&quot;http://www.jstorimer.com/products/working-with-unix-processes&quot;&gt;Working with UNIX Processes&lt;/a&gt; do Jesse Storimer.&lt;/p&gt;
+
+&lt;p&gt;Além disso, para injetarmos um pouco de JavaScript nesta caminhada, farei uma continuação deste artigo sobre como os processos e sinais podem ser executados no NodeJS. Assim, veremos como os módulos nativos e os objetos existentes nesta plataforma podem ser úteis para controlar/manipular melhor a nossa aplicação. Combinado?&lt;/p&gt;
+
+&lt;p&gt;Até a próxima! =]&lt;/p&gt;
+</description>
+        <pubDate>Sun, 27 Jul 2014 00:00:00 -0300</pubDate>
+        <link>http://www.vitorbritto.com.br/blog/controlando-processos-no-unix/</link>
+        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/controlando-processos-no-unix/</guid>
+      </item>
+    
+      <item>
+        <title>Adicionando caminhos na variável de ambiente PATH</title>
+        <description>&lt;p&gt;Saudações!&lt;/p&gt;
+
+&lt;p&gt;É comum instalarmos novos programas/plataformas em nosso sistema e precisarmos inicializar o seu binário através da variável de ambiente PATH no Shell. Certamente, inserir este caminho precisará de um pequeno esforço manual/braçal para que o programa seja iniciado corretamente.&lt;/p&gt;
+
+&lt;p&gt;A seguir, mostro como adicionar novos &lt;em&gt;paths&lt;/em&gt; ao Shell e, para exemplificar este cenário, estarei utilizando como base o &lt;strong&gt;Bash&lt;/strong&gt;.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Entendendo-o-cenário&quot;&gt;
+                &lt;a name=&quot;Entendendo-o-cenário&quot; href=&quot;#Entendendo-o-cenário&quot;&gt;&lt;/a&gt;Entendendo o cenário
+              &lt;/h3&gt;
+            
+&lt;p&gt;Para que o caminho (path) seja adicionado a variável de ambiente PATH, podemos fazê-lo por dois meios:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;append&lt;/em&gt;: &lt;code&gt;PATH=$PATH:~/opt/bin&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;prepend&lt;/em&gt;: &lt;code&gt;PATH=~/opt/bin:$PATH&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Qual seria a diferença entre eles?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Basicamente, ao fazer um &lt;code&gt;append&lt;/code&gt; no PATH, o caminho será procurado depois de todos os outros diretórios. É indicado para o caso de haver um programa com o mesmo nome em vários diretórios. E, ao fazer um &lt;code&gt;prepend&lt;/code&gt; no PATH, o caminho será pesquisado antes de todos os outros diretórios.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; você pode conferir mais detalhes sobre &lt;code&gt;append&lt;/code&gt; e &lt;code&gt;prepend&lt;/code&gt; no PATH, &lt;a href=&quot;http://www.troubleshooters.com/linux/prepostpath.htm&quot;&gt;neste artigo (em inglês)&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;É possível também adicionar várias entradas ao mesmo tempo.&lt;/p&gt;
+
+&lt;p&gt;Veja no exemplo abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;:~/opt/bin:~/opt/node/bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Perceba que o caracter &lt;code&gt;:&lt;/code&gt; demarca o fim/início de cada caminho.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Registrando-meus-&lt;em&gt;paths&lt;-em&gt;&quot;&gt;
+                &lt;a name=&quot;Registrando-meus-&lt;em&gt;paths&lt;-em&gt;&quot; href=&quot;#Registrando-meus-&lt;em&gt;paths&lt;-em&gt;&quot;&gt;&lt;/a&gt;Registrando meus &lt;em&gt;paths&lt;/em&gt;
+              &lt;/h3&gt;
+            
+&lt;p&gt;Bom, você pode registrar os seus caminhos tanto no arquivo &lt;code&gt;~/.bash_profile&lt;/code&gt; quanto no arquivo &lt;code&gt;~/.bashrc&lt;/code&gt;. Entrentanto, vale entender as diferenças entre eles e porque, em alguns casos, os seus &lt;em&gt;paths&lt;/em&gt; não são iniciados.&lt;/p&gt;
+
+&lt;p&gt;O arquivo &lt;code&gt;.bash_profile&lt;/code&gt; é executado para shells com usuários autenticados. Já o &lt;code&gt;.bashrc&lt;/code&gt; é executado em shells interativos e usuários não autenticados.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Agora me perdi, explica melhor?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Vamos lá. Quando você faz uma autenticação (digitando o usuário e senha) através do console, seja local ou remoto (via SSH), o arquivo &lt;code&gt;.bash_profile&lt;/code&gt; é utilizado para configurar o shell antes do prompt ser inicializado. Entretanto, se você já estiver logado no sistema e abrir um novo terminal, então o &lt;code&gt;.bashrc&lt;/code&gt; será executado. O arquivo &lt;code&gt;.bashrc&lt;/code&gt; é também iniciado quando você executa uma nova instância bash no terminal (não autenticado), digitando &lt;code&gt;/bin/bash&lt;/code&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Importante:&lt;/strong&gt; vale lembrar que temos uma exceção no OSX onde, por padrão, cada nova instância iniciada no terminal executa o shell com usuário autenticado, chamando o &lt;code&gt;.bash_profile&lt;/code&gt; ao invés do &lt;code&gt;.bashrc&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Ficou mais claro agora?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Se pensarmos um pouco, podemos chegar a conclusão de que os dois arquivos são úteis para adicionarmos os novos &lt;em&gt;paths&lt;/em&gt;, mas por que utilizar dois arquivos?&lt;/p&gt;
+
+&lt;p&gt;Sendo assim, recomendo que registre os novos &lt;em&gt;paths&lt;/em&gt; no arquivo &lt;code&gt;~/.bash_profile&lt;/code&gt; e exponha o mesmo através do &lt;code&gt;source&lt;/code&gt; no arquivo &lt;code&gt;.bashrc&lt;/code&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; entenda mais sobre o &lt;code&gt;source&lt;/code&gt; &lt;a href=&quot;http://en.wikipedia.org/wiki/Source_%28command%29&quot;&gt;aqui (em inglês)&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h3 id=&quot;E-como-faremos-isso-&quot;&gt;
+                &lt;a name=&quot;E-como-faremos-isso-&quot; href=&quot;#E-como-faremos-isso-&quot;&gt;&lt;/a&gt;E como faremos isso?
+              &lt;/h3&gt;
+            
+&lt;p&gt;Confira abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# arquivo .bashrc&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -n &lt;span class=&quot;s2&quot;&gt;&amp;quot;$PS1&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bash_profile;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# arquivo .bash_profile&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# paths&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;:~/seu/caminho:~/outro/caminho
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# aliases&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;la&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ls -la&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# functions&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;apepath &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -z &lt;span class=&quot;s2&quot;&gt;&amp;quot;${!1}&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$2&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;${!1}:$2&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h4 id=&quot;A-título-de-conhecimento&quot;&gt;
+                &lt;a name=&quot;A-título-de-conhecimento&quot; href=&quot;#A-título-de-conhecimento&quot;&gt;&lt;/a&gt;A título de conhecimento
+              &lt;/h4&gt;
+            
+&lt;p&gt;Perceba que temos um &lt;code&gt;[ -n &amp;quot;$PS1&amp;quot; ] &amp;amp;&amp;amp;&lt;/code&gt; antes do &lt;code&gt;source&lt;/code&gt;. Você deve estar se pergunta o que é isso. Pois bem. Este trecho do código retorna o prompt do terminal em formato &lt;em&gt;string&lt;/em&gt;. Por exemplo, no meu terminal, é renderizado:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ao digitar &lt;code&gt;echo $PS1&lt;/code&gt;, será retornado:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;\[\033]0;\w\007\]\n\[\]\u\[\] at \[\]\w$(prompt_git)\n\[\]$ \[\]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Já o operador &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; é utlizado para combinar dois ou mais comandos em uma linha compacta no Unix.&lt;/p&gt;
+
+&lt;p&gt;Perceba também que, além dos &lt;em&gt;paths&lt;/em&gt;, estamos registrando os nossos atalhos (_aliases_), funções bash, configurações do prompt e demais recursos que pretendemos utilizar no terminal, no &lt;code&gt;.bash_profile&lt;/code&gt;.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Dando-uma-mãozinha&quot;&gt;
+                &lt;a name=&quot;Dando-uma-mãozinha&quot; href=&quot;#Dando-uma-mãozinha&quot;&gt;&lt;/a&gt;Dando uma mãozinha
+              &lt;/h3&gt;
+            
+&lt;p&gt;Podemos usar funções para facilitar a inclusão de novos caminhos (_paths_) na variável global PATH.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# append para novo caminho&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;apepath&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -z &lt;span class=&quot;s2&quot;&gt;&amp;quot;${!1}&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$2&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;${!1}:$2&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# prepend para novo caminho&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;prepath&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -z &lt;span class=&quot;s2&quot;&gt;&amp;quot;${!1}&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$2&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$2:${!1}&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# Executamos as funções da seguinte forma:&lt;/span&gt;
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;apepath PATH &lt;span class=&quot;s2&quot;&gt;&amp;quot;/seu/novo/caminho/aqui&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;OU
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;prepath PATH &lt;span class=&quot;s2&quot;&gt;&amp;quot;/seu/novo/caminho/aqui&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Você pode conferir um exemplo mais completo sobre como trabalho e configuro o meu shell, &lt;a href=&quot;https://github.com/vitorbritto/forcefiles&quot;&gt;neste repositório&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Até a próxima! :)&lt;/p&gt;
+</description>
+        <pubDate>Mon, 14 Jul 2014 00:00:00 -0300</pubDate>
+        <link>http://www.vitorbritto.com.br/blog/adicionando-caminhos-na-variavel-de-ambiente-PATH/</link>
+        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/adicionando-caminhos-na-variavel-de-ambiente-PATH/</guid>
+      </item>
+    
+      <item>
+        <title>Substituindo o Bower pelo Napa</title>
+        <description>&lt;p&gt;Saudações!&lt;/p&gt;
+
+&lt;p&gt;Depois de quase 3 anos utilizando o &lt;strong&gt;Backbone&lt;/strong&gt; como &lt;em&gt;JavaScript framework&lt;/em&gt; para a arquitetura e modularização em minhas aplicações web, resolvi arriscar, estudar e realizar alguns experimentos com o &lt;strong&gt;AngularJS&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Não somente, resolvi migrar também para o padrão CommonJS e usar o &lt;a href=&quot;http://browserify.org/&quot;&gt;Browserify&lt;/a&gt; em meus projetos. Posso dizer que estou bastante satisfeito com o resultado e que atende perfeitamente as minhas necessidades. Não que o padrão AMD, com requireJS, não atendesse estas necessidades, mas, por estar muito próximo ao NodeJS atualmente, percebi que seria mais sensato realizar esta migração. Seja pela sintaxe, uso de módulos do npm no browser-side ou a padronização do meu código. Porém, isto não significa que o novo padrão adotado seja a solução para todos os cenários. Cada caso é um caso.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Entendendo-o-cenário&quot;&gt;
+                &lt;a name=&quot;Entendendo-o-cenário&quot; href=&quot;#Entendendo-o-cenário&quot;&gt;&lt;/a&gt;Entendendo o cenário
+              &lt;/h3&gt;
+            
+&lt;p&gt;Em meio aos experimentos, resolvi iniciar um boilerplate para o &lt;strong&gt;MEAN Stack&lt;/strong&gt; e encontrei o &lt;a href=&quot;https://www.npmjs.org/package/napa&quot;&gt;Napa&lt;/a&gt;. A solução que este cara nos dá, é um método alternativo para consumir módulos arbitrários.&lt;/p&gt;
+
+&lt;p&gt;Até o momento desconheço módulos oficiais do Angular no &lt;em&gt;npm&lt;/em&gt;, mas, com o &lt;em&gt;napa&lt;/em&gt;, é possível instalar módulos do Angular e injetá-los no nosso manifesto JSON &lt;code&gt;package.json&lt;/code&gt; sem problemas.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Como-faremos-isso-&quot;&gt;
+                &lt;a name=&quot;Como-faremos-isso-&quot; href=&quot;#Como-faremos-isso-&quot;&gt;&lt;/a&gt;Como faremos isso?
+              &lt;/h3&gt;
+            
+&lt;p&gt;O processo é bem prático, confira abaixo:&lt;/p&gt;
+
+&lt;p&gt;1 - Realize a instalação do &lt;strong&gt;napa&lt;/strong&gt;: &lt;code&gt;npm i napa --save-dev&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;2 - Insira o código abaixo no seu manifesto &lt;code&gt;package.json&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&amp;quot;scripts&amp;quot;: {
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    &amp;quot;install&amp;quot;: &amp;quot;napa&amp;quot;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;},
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&amp;quot;napa&amp;quot;: {
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;    &amp;quot;angular&amp;quot;: &amp;quot;angular/bower-angular&amp;quot;,
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;    &amp;quot;angular-route&amp;quot;: &amp;quot;angular/bower-angular-route&amp;quot;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;3 - Insira a função &lt;code&gt;require()&lt;/code&gt; dos módulos no script principal (ex.: &lt;code&gt;app.js&lt;/code&gt;):&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;require(&amp;#39;angular/angular&amp;#39;);
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;require(&amp;#39;angular-route/angular-route&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;4 - Coloque o Angular na brincadeira:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;angular.module(&amp;#39;myApp&amp;#39;, [&amp;#39;ngRoute&amp;#39;]).config([&amp;#39;$routeProvider&amp;#39;, function($routeProvider) {
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    // Declare suas rotas
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    $routeProvider.when(&amp;#39;/view1&amp;#39;, {templateUrl: &amp;#39;partials/partial1.html&amp;#39;});
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    $routeProvider.when(&amp;#39;/view2&amp;#39;, {templateUrl: &amp;#39;partials/partial2.html&amp;#39;});
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;    $routeProvider.otherwise({redirectTo: &amp;#39;/view1&amp;#39;});
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;}]);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;5 - Profit! :)&lt;/p&gt;
+
+&lt;p&gt;Perceba que foi criado um objeto JSON de nome &lt;code&gt;napa&lt;/code&gt;, que vai conter os módulos necessários para a aplicação. Basta apontar para o caminho relativo do &lt;a href=&quot;https://github.com/angular&quot;&gt;repositório do Angular no Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Mas, e o objeto &lt;code&gt;scripts&lt;/code&gt;?&lt;/p&gt;
+
+&lt;p&gt;Bom, no manifesto JSON &lt;code&gt;package.json&lt;/code&gt; podemos executar &lt;em&gt;scripts&lt;/em&gt;. Neste cenário, estamos declarando que &lt;code&gt;npm install&lt;/code&gt; vai executar a instalação dos módulos contidos no objeto &lt;code&gt;napa&lt;/code&gt; também. Show de bola, não é? =]&lt;/p&gt;
+
+              &lt;h3 id=&quot;Resumindo-&quot;&gt;
+                &lt;a name=&quot;Resumindo-&quot; href=&quot;#Resumindo-&quot;&gt;&lt;/a&gt;Resumindo...
+              &lt;/h3&gt;
+            
+&lt;p&gt;Conseguimos instalar as dependências necessárias sem a necessidade de colocar o &lt;strong&gt;Bower&lt;/strong&gt; na jogada, além de centralizar estes caras em um único manifesto JSON (_package.json_). Lembre-se que estou utilizando o padrão CommonJS, e o Browserify é o responsável por tratar/compilar os scripts da aplicação.&lt;/p&gt;
+
+&lt;p&gt;Confira a documentação do napa &lt;a href=&quot;https://github.com/shama/napa&quot;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Até a próxima! =]&lt;/p&gt;
+</description>
+        <pubDate>Wed, 11 Jun 2014 00:00:00 -0300</pubDate>
+        <link>http://www.vitorbritto.com.br/blog/substituindo-o-bower-pelo-napa/</link>
+        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/substituindo-o-bower-pelo-napa/</guid>
+      </item>
+    
+      <item>
+        <title>Agendando tarefas com o Crontab</title>
+        <description>&lt;p&gt;Saudações!&lt;/p&gt;
+
+&lt;p&gt;Para os usuários UNIX, segue uma dica interessante para agendar tarefas com o comando crontab. Este cara, permite que você realize o agendamento de tarefas em determinados períodos.&lt;/p&gt;
+
+              &lt;h2 id=&quot;Cenário&quot;&gt;
+                &lt;a name=&quot;Cenário&quot; href=&quot;#Cenário&quot;&gt;&lt;/a&gt;Cenário
+              &lt;/h2&gt;
+            
+&lt;p&gt;Digamos que você possua um script para realizar um procedimento em um determinado intervalo de tempo. Seja para o backup de arquivos mais obsoletos em projetos que você realizou há algum tempo e, por algum motivo, não optou pelo seu versionamento ou um simples backup de um banco de dados.&lt;/p&gt;
+
+&lt;p&gt;No que se refere a &lt;strong&gt;backups&lt;/strong&gt;, existem duas formas para transitar estes dados:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Entre ambientes locais.&lt;/li&gt;
+&lt;li&gt;De um ambiente local para um remoto (e vice-versa).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Além disso, podemos utilizar os comandos &lt;a href=&quot;http://ss64.com/bash/scp.html&quot;&gt;&lt;code&gt;scp&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;http://ss64.com/bash/rsync.html&quot;&gt;&lt;code&gt;rsync&lt;/code&gt;&lt;/a&gt; ou &lt;a href=&quot;http://ss64.com/bash/cp.html&quot;&gt;&lt;code&gt;cp&lt;/code&gt;&lt;/a&gt; para realizar a transferência destes arquivos.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Lembre-se de armazenar os seus arquivos em um local seguro no momento do &lt;em&gt;backup&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h2 id=&quot;Entendendo-o-crontab&quot;&gt;
+                &lt;a name=&quot;Entendendo-o-crontab&quot; href=&quot;#Entendendo-o-crontab&quot;&gt;&lt;/a&gt;Entendendo o crontab
+              &lt;/h2&gt;
+            
+&lt;p&gt;O formato para o &lt;em&gt;crontab&lt;/em&gt; é o seguinte:
+Campo
+Função
+Valores&lt;/p&gt;
+
+&lt;p&gt;1
+Minuto
+0-59&lt;/p&gt;
+
+&lt;p&gt;2
+Hora
+0-23&lt;/p&gt;
+
+&lt;p&gt;3
+Dia do mês
+1-31&lt;/p&gt;
+
+&lt;p&gt;4
+Mês
+1-12&lt;/p&gt;
+
+&lt;p&gt;5
+Dia da semana
+0-6&lt;/p&gt;
+
+&lt;p&gt;6
+Programa para execução
+comando ou script&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;O dia da semana começa a contar no &lt;strong&gt;domingo&lt;/strong&gt; (0).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Confira abaixo como podemos criar as nossas tarefas:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Cada linha representa uma tarefa no crontab
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;00 6 * * 1 /caminho/para/script/status.sh
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;00 12 5 * * /caminho/para/script/temp.sh
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;30 23 * * * /caminho/para/script/backup.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Perceba que, estamos programando a execução de 3 &lt;em&gt;scripts&lt;/em&gt; em Shell nas datas selecionadas e os mesmos farão o seguinte:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;status.sh&lt;/code&gt;: realizar o procedimento contido neste script toda segunda, às 6:00 da manhã.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;temp.sh&lt;/code&gt;: realizar o procedimento contido neste script no dia 5 de cada mês, às 12:00.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;backup.sh&lt;/code&gt;: realizar o procedimento contido neste script todos os dias, às 23:30 da noite.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Você ainda pode adicionar um 7 (sétimo) campo, onde o sexto campo será substituído pelo nome do usuário no sistema e o sétimo campo adicionado com o programa a ser executado. Veja o exemplo a seguir:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Execute esta tarefa a cada três horas, no dia 1 (um) de cada mês com o usuário root.
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;00 */3 1 * * root /caminho/para/script/security.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Perceba que estamos utilizando um novo método para definir o período desta tarefa, o &lt;code&gt;*/3&lt;/code&gt;. Este trecho faz com que a tarefa seja executa em intervalos de 3 horas. Você poderia ainda definir os horários que esta tarefa seria executada, utilizando uma &lt;code&gt;,&lt;/code&gt; (vírgula) para cada horário. Por exemplo: &lt;code&gt;00 3,9,15,21 1 * * root /caminho/para/script/security.sh&lt;/code&gt;.&lt;/p&gt;
+
+              &lt;h4 id=&quot;IMPORTANTE&quot;&gt;
+                &lt;a name=&quot;IMPORTANTE&quot; href=&quot;#IMPORTANTE&quot;&gt;&lt;/a&gt;IMPORTANTE
+              &lt;/h4&gt;
+            
+&lt;p&gt;Os &lt;em&gt;scripts&lt;/em&gt; a serem executados no exemplo acima pelo crontab, &lt;strong&gt;precisam&lt;/strong&gt; estar definidos como executáveis no seu Shell. Para isso, certifique-se de que o comando &lt;code&gt;chmod +x /caminho/para/script/seuscript.sh&lt;/code&gt; foi executado previamente. Do contrário, utilize o operador &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; para compactar uma instrução no momento da execução do script. Como faremos isso?&lt;/p&gt;
+
+&lt;p&gt;Veja o exemplo abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Tarefas:
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;00 6 * * 1 /caminho/para/script &amp;amp;&amp;amp; bash status.sh
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;00 12 5 * * /caminho/para/script &amp;amp;&amp;amp; bash temp.sh
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;30 23 * * * /caminho/para/script &amp;amp;&amp;amp; bash backup.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Notas:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Usar &lt;code&gt;bash&lt;/code&gt; ou &lt;code&gt;sh&lt;/code&gt; para executar o seu script, vai depender do seu Shell.&lt;/p&gt;
+
+&lt;p&gt;Não esqueça que para tornar um &lt;em&gt;script&lt;/em&gt; executável, é preciso definir um &lt;a href=&quot;http://pt.wikipedia.org/wiki/Shebang&quot;&gt;shebang&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h2 id=&quot;-15-Gerenciando-suas-tarefas-programadas&quot;&gt;
+                &lt;a name=&quot;-15-Gerenciando-suas-tarefas-programadas&quot; href=&quot;#-15-Gerenciando-suas-tarefas-programadas&quot;&gt;&lt;/a&gt;[][15]Gerenciando suas tarefas programadas
+              &lt;/h2&gt;
+            
+&lt;p&gt;Utilize o seguintes comandos para gerir as suas tarefas no crontab:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;crontab -e&lt;/strong&gt;: editar o arquivo atual ou criar um, caso não exista&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;crontab -l&lt;/strong&gt;: listar suas tarefas programadas&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;crontab -r&lt;/strong&gt;: remover uma tarefa programada&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; algumas empresas de hospedagem, disponibilizam o serviço para Crontab. Entre em contato com o atendimento da empresa para saber se este serviço está disponível para você.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h2 id=&quot;Indo-além&quot;&gt;
+                &lt;a name=&quot;Indo-além&quot; href=&quot;#Indo-além&quot;&gt;&lt;/a&gt;Indo além
+              &lt;/h2&gt;
+            
+&lt;p&gt;Existem algumas maneiras para facilitar ainda mais o uso do crontab.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Palavras-especiais&quot;&gt;
+                &lt;a name=&quot;Palavras-especiais&quot; href=&quot;#Palavras-especiais&quot;&gt;&lt;/a&gt;Palavras especiais
+              &lt;/h3&gt;
+            
+&lt;p&gt;O crontab fornece alguns atalhos para definirmos nossas tarefas, veja abaixo:
+Atalho
+Significado&lt;/p&gt;
+
+&lt;p&gt;@reboot
+Será executado na inicialização do sistema.&lt;/p&gt;
+
+&lt;p&gt;@yearly
+Será executado uma vez ao ano, &amp;quot;0 0 1 1 *&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;@annually
+O mesmo que @yearly&lt;/p&gt;
+
+&lt;p&gt;@monthly
+Será executado a cada mês, &amp;quot;0 0 1 * *&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;@weekly
+Será executado uma vez por semana, &amp;quot;0 0 * * 0&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;@daily
+Será executado uma vez por dia, &amp;quot;0 0 * * *&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;@midnight
+O mesmo que @daily&lt;/p&gt;
+
+&lt;p&gt;@hourly
+Será executado a cada hora, &amp;quot;0 * * * *&amp;quot;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Importante:&lt;/strong&gt; sempre aponte para os arquivos utilizando caminhos absolutos, pois o &lt;em&gt;crontab&lt;/em&gt; não lê as variáveis de ambiente do Shell.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h3 id=&quot;Carregar-suas-tarefas-em-um-único-arquivo&quot;&gt;
+                &lt;a name=&quot;Carregar-suas-tarefas-em-um-único-arquivo&quot; href=&quot;#Carregar-suas-tarefas-em-um-único-arquivo&quot;&gt;&lt;/a&gt;Carregar suas tarefas em um único arquivo
+              &lt;/h3&gt;
+            
+&lt;p&gt;Você pode definir todas as suas tarefas em um único arquivo e chamá-lo com o &lt;code&gt;crontab&lt;/code&gt;. Veja o exemplo abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# 1. Crie o arquivo jobs.txt com o conteúdo abaixo:
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;00 6 * * 1 [comando ou script para executar]
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;00 12 5 * * [comando ou script para executar]
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;30 23 * * * [comando ou script para executar]
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;# 2. Execute o comando: crontab jobs.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;O processo vai substituir qualquer tarefa anterior com o conteúdo que estiver neste arquivo, sem qualquer aviso.&lt;/p&gt;
+
+&lt;p&gt;Fica a seu critério como nomear e categorizar as suas tarefas.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Até a próxima! =]&lt;/p&gt;
+</description>
+        <pubDate>Tue, 04 Mar 2014 00:00:00 -0300</pubDate>
+        <link>http://www.vitorbritto.com.br/blog/agendando-tarefas-com-crontab/</link>
+        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/agendando-tarefas-com-crontab/</guid>
+      </item>
+    
+      <item>
+        <title>A Evolução na Automação de Tarefas</title>
+        <description>&lt;p&gt;&lt;strong&gt;UPDATE 27-07-2014:&lt;/strong&gt; o &lt;a href=&quot;http://vitorbritto.github.io/just/&quot;&gt;just&lt;/a&gt; encontra-se em nova versão. Confira o &lt;em&gt;source code&lt;/em&gt; e documentação &lt;a href=&quot;https://github.com/vitorbritto/just&quot;&gt;aqui&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Saudações!&lt;/p&gt;
+
+&lt;p&gt;Há uns 4 meses, uma nova ferramenta veio ao conhecimento dos Desenvolvedores Front-end. Foi o maior rebuliço por conta da eficiência na execução de tarefas, da sua &amp;quot;semelhança&amp;quot; com o NodeJS e entre outras qualidades notáveis.&lt;/p&gt;
+
+&lt;p&gt;Você já deve estar ciente que estou falando do Gulp.&lt;/p&gt;
+
+&lt;p&gt;Tudo o que eu disse anteriormente, procede. O Gulp é uma ferramenta que prima por um encadeamento de tarefas mais compreensivo e organizado, fornecendo uma maneira muito prática para criar suas tarefas. Mas, você sabe o porquê dessa eficiência e como é possível esse encadeamento?&lt;/p&gt;
+
+&lt;p&gt;Neste artigo, vou cobrir alguns pontos históricos, teóricos e mecânicos, que foram (e continuam sendo) cruciais para as ferramentas de automação utilizadas nos dias de hoje.&lt;/p&gt;
+
+              &lt;h2 id=&quot;Me-acompanhe-nesta-jornada&quot;&gt;
+                &lt;a name=&quot;Me-acompanhe-nesta-jornada&quot; href=&quot;#Me-acompanhe-nesta-jornada&quot;&gt;&lt;/a&gt;Me acompanhe nesta jornada
+              &lt;/h2&gt;
+            
+&lt;p&gt;Para quem acompanha os artigos aqui publicados, sabe que estou fazendo muitos convites para voltar no tempo. Serei obrigado a fazer este convite mais uma vez para falarmos sobre alguns aspectos importantes do UNIX (e seus utilitários) e Shell, até chegarmos ao NodeJS.&lt;/p&gt;
+
+&lt;p&gt;Preparado? Então, vamos lá.&lt;/p&gt;
+
+              &lt;h3 id=&quot;UNIX-nosso-de-cada-dia&quot;&gt;
+                &lt;a name=&quot;UNIX-nosso-de-cada-dia&quot; href=&quot;#UNIX-nosso-de-cada-dia&quot;&gt;&lt;/a&gt;UNIX nosso de cada dia
+              &lt;/h3&gt;
+            
+&lt;p&gt;Entre os anos 60 e 80, a história da programação estava sendo redesenhada. Fosse Dennis Ritchie e Ken Thompson com o UNIX e a linguagem B/C, Douglas Engelbart com sua genialidade para criar ferramentas e recursos excitantes (o que lhe rendeu o título de &lt;a href=&quot;http://www.youtube.com/watch?v=VScVgXM7lQQ&amp;amp;list=PL76DBC8D6718B8FD3&quot;&gt;&amp;quot;The Mother of all Demos&amp;quot;&lt;/a&gt;) ou Alan Kay, Dan Ingalls e Adele Goldberg com o SmallTalk e seu paradigma orientado a objetos.&lt;/p&gt;
+
+&lt;p&gt;Todos eles possuíam um objetivo em comum: tornar a portabilidade entre máquinas e sistemas operacionais viável e construir programas estruturados.&lt;/p&gt;
+
+&lt;p&gt;O grande responsável por trás de tudo isso, foi o UNIX (e continua sendo). Com ele, veio a linguagem C, o Shell (com &lt;em&gt;pipes&lt;/em&gt;, &lt;em&gt;redirections&lt;/em&gt; e suas ferramentas), &lt;em&gt;Streams&lt;/em&gt;, o utilitário &lt;em&gt;Make&lt;/em&gt; e outras &lt;em&gt;features&lt;/em&gt; que ajudaram (e ainda ajudam) na automação de tarefas, execução de processos e diversas rotinas.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; &lt;a href=&quot;http://www.vitorbritto.com.br/blog/unix-a-base-de-tudo/&quot;&gt;neste artigo&lt;/a&gt;, abordo alguns pontos sobre a história do UNIX, sua filosofia e importância.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h3 id=&quot;Chamando-o-Shell-Script-para-a-brincadeira&quot;&gt;
+                &lt;a name=&quot;Chamando-o-Shell-Script-para-a-brincadeira&quot; href=&quot;#Chamando-o-Shell-Script-para-a-brincadeira&quot;&gt;&lt;/a&gt;Chamando o Shell Script para a brincadeira
+              &lt;/h3&gt;
+            
+&lt;p&gt;O Shell Script sempre foi um grande aliado para os administradores UNIX. Além de ser uma caixinha de ferramentas poderosa para executar rotinas, possibilitava uma experiência muito boa com o usuário. Com ele, é possível criar pequenos programas para realizar &lt;em&gt;backup&lt;/em&gt;, transferir arquivos de um sistema (local-&amp;gt;local ou local-&amp;gt;remoto), fazer consultas em extensos relatórios e muito mais.&lt;/p&gt;
+
+&lt;p&gt;Mas, como podemos tornar isso útil no desenvolvimento de um projeto web?&lt;/p&gt;
+
+&lt;p&gt;Me permita mostrar um exemplo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;#!/bin/bash
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;# Programa: scaffolding.sh
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;# Autor: Vitor Britto
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;# Descrição:
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;# Este script será responsável pela criação
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;# de uma estrutura para novos projetos.
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;# Uso: chmod u+x scaffolding.sh &amp;amp;&amp;amp; ./scaffolding.sh
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;# Declarando as variáveis
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;FILES=&amp;quot;index.html robots.txt humans.txt .editorconfig assets/styles/style.css assets/scripts/main.js&amp;quot;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;PATHS=&amp;quot;assets/scripts assets/styles assets/images assets/fonts&amp;quot;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;# Iniciando a interação com o usuário
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;echo -n &amp;quot;→ Digite o nome do projeto (sem espaços): &amp;quot;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;read PROJECT
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;# Criando estrutura do projeto
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;echo -e &amp;quot;→ Criando Estrutura&amp;quot;
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;mkdir -p $PROJECT &amp;amp;&amp;amp; cd $_
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;mkdir -p $PATHS
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;touch $FILES
+&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;# Mensagem final
+&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;echo -e &amp;quot;\n✔ Processo finalizado!\n&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Neste programa, montamos uma estrutura inicial para um novo projeto.&lt;/p&gt;
+
+&lt;p&gt;Agora, confira o arquivo &lt;code&gt;build.sh&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;#!/bin/bash
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;# Programa: build.sh
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;# Autor: Vitor Britto
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;# Descrição:
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;# Este script será responsável pelo build do projeto, o qual
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;# fará o processo de minificação e concatenação dos arquivos
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;# e preparação dos arquivos a serem colocados em produção.
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;# Uso: chmod u+x build.sh &amp;amp;&amp;amp; ./build.sh
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;# Declarando as variáveis
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;DIST=&amp;quot;_build&amp;quot;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;IGNORE=(
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;    &amp;quot;assets/styles/style.css&amp;quot;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;    &amp;quot;assets/scripts/main.js&amp;quot;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;    &amp;quot;.editorconfig&amp;quot;
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;)
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;STYLE=&amp;quot;assets/styles&amp;quot;
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;SCRIPT=&amp;quot;assets/scripts&amp;quot;
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;# Minificar JS
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;echo -e &amp;quot;→ Minificando JS&amp;quot;
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;curl -X POST -s --data-urlencode &amp;quot;input@${SCRIPT}/main.js&amp;quot; http://javascript-minifier.com/raw &amp;gt; ${SCRIPT}/main.min.js
+&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;# Minificar CSS
+&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;echo -e &amp;quot;→ Minificando CSS&amp;quot;
+&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;curl -X POST -s --data-urlencode &amp;quot;input@${STYLE}/style.css&amp;quot; http://cssminifier.com/raw &amp;gt; ${STYLE}/style.min.css
+&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-33&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-34&quot;&gt;&lt;/a&gt;# Copiar arquivos para pasta de destino
+&lt;a name=&quot;line-35&quot;&gt;&lt;/a&gt;echo -e &amp;quot;→ Colocando arquivos em produção&amp;quot;
+&lt;a name=&quot;line-36&quot;&gt;&lt;/a&gt;if [[ ! -d ${DIST} ]]; then
+&lt;a name=&quot;line-37&quot;&gt;&lt;/a&gt;    mkdir ${DIST}
+&lt;a name=&quot;line-38&quot;&gt;&lt;/a&gt;fi
+&lt;a name=&quot;line-39&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-40&quot;&gt;&lt;/a&gt;cp ./* ${DIST}
+&lt;a name=&quot;line-41&quot;&gt;&lt;/a&gt;rm -rf ${IGNORE}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Já este programa, fica responsável pela automação de nossas tarefas. Nele, estamos executando tarefas para minificar e concatenar arquivos CSS e JavaScript, além de realizar uma cópia dos arquivos a serem colocados em produção.&lt;/p&gt;
+
+&lt;p&gt;Entretanto, podemos agregar uma maior utilidade para este &lt;em&gt;build script&lt;/em&gt; com mais alguns recursos interessantes. Podemos utilizar um pré-processador para fazer o trabalho &lt;strong&gt;3 em 1&lt;/strong&gt; (compilação, concatenação e minificação), integrar o &lt;em&gt;uglifyjs&lt;/em&gt; para trabalharmos melhor com nossos &lt;em&gt;scripts&lt;/em&gt;, viabilizar o uso do &lt;em&gt;rsync&lt;/em&gt;, integrar o Grunt, Bower, Travis CI e torná-lo um repositório Git, além de possibilitar a execução de tarefas específicas para cada momento da automação. Muito melhor, não é?&lt;/p&gt;
+
+&lt;p&gt;Poderíamos fazer isso com Shell Script, mas o &lt;em&gt;Makefile&lt;/em&gt; se encaixa melhor neste cenário. E, é sobre ele que vamos falar agora.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Fazendo-um-&lt;em&gt;upgrade&lt;-em&gt;-no-nosso-processo-de-automação&quot;&gt;
+                &lt;a name=&quot;Fazendo-um-&lt;em&gt;upgrade&lt;-em&gt;-no-nosso-processo-de-automação&quot; href=&quot;#Fazendo-um-&lt;em&gt;upgrade&lt;-em&gt;-no-nosso-processo-de-automação&quot;&gt;&lt;/a&gt;Fazendo um &lt;em&gt;upgrade&lt;/em&gt; no nosso processo de automação
+              &lt;/h3&gt;
+            
+&lt;p&gt;Alguns Desenvolvedores tem um péssimo hábito em injetar plug-ins de forma frenética nos seus projetos, sem considerar uma leitura prévia na documentação da ferramenta que está utilizando, entre outras alternativas para se trabalhar com as tarefas desejadas. Lembre-se que devemos usar o bom senso e que a pesquisa é fundamental para o desenvolvimento de um projeto.&lt;/p&gt;
+
+&lt;p&gt;Nesta etapa, estaremos utilizando o &lt;em&gt;Make&lt;/em&gt;. Caso você já o conheça, prossiga para o exemplo a seguir. Se você não o conhece, me permita apresentá-lo.&lt;/p&gt;
+
+              &lt;h4 id=&quot;Make-my-day&quot;&gt;
+                &lt;a name=&quot;Make-my-day&quot; href=&quot;#Make-my-day&quot;&gt;&lt;/a&gt;Make my day
+              &lt;/h4&gt;
+            
+&lt;p&gt;O propósito do utilitário &lt;em&gt;Make&lt;/em&gt; é automatizar determinados trechos de um programa mais robusto. Este cara lhe permite administrar de forma mais prática a automação no seu projeto, lhe dando acesso aos recursos do Shell. Vale frisar que, a sua utilidade não deve ser negligenciada por conta de outras ferramentas.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Tanto o Shell quanto o Make estão disponíveis apenas em sistemas &lt;strong&gt;UNIX&lt;/strong&gt; (OSX, BSD e Linux). Caso você esteja utilizando o Windows, será possível executar este cara com a ajuda do &lt;a href=&quot;http://www.cygwin.com/&quot;&gt;CygWin&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h4 id=&quot;Colocando-em-prática&quot;&gt;
+                &lt;a name=&quot;Colocando-em-prática&quot; href=&quot;#Colocando-em-prática&quot;&gt;&lt;/a&gt;Colocando em prática
+              &lt;/h4&gt;
+            
+&lt;p&gt;Para utilizar o &lt;em&gt;make&lt;/em&gt;, você deve criar um arquivo &lt;code&gt;makefile&lt;/code&gt; e executá-lo com o comando &lt;code&gt;make [tarefa que você quer executar]&lt;/code&gt; no UNIX Shell.&lt;/p&gt;
+
+&lt;p&gt;Confira o exemplo abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# MAKEFILE
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;# Autor: Vitor Britto
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;# Versão: 0.1.0
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;# Descrição:
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;# Arquivo para gerar um estrutura inicial para
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;# novos projetos e realizar tarefas de automação
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;# Tarefas Disponíveis:
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;#    make        -&amp;gt; Inicializa processo de Build
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;#    make create -&amp;gt; Criar a estrutura do projeto
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;#    make copy   -&amp;gt; Copia os arquivos para a pasta &amp;quot;public&amp;quot;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;#    make zip    -&amp;gt; Compacta os arquivos da pasta &amp;quot;public&amp;quot; e versiona com a data e hora atual
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;# Uso: make [nome da tarefa que deseja executar]
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;# Caminhos de Origem
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;JS_IN    = ./assets/scripts
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;CSS_IN   = ./assets/styles
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;IMG_IN   = ./assets/images
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;# Caminhos de Destino
+&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;DIST     = ./public
+&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;JS_OUT   = ./public/assets/scripts
+&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;CSS_OUT  = ./public/assets/styles
+&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;IMG_IN   = ./public/assets/images
+&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-33&quot;&gt;&lt;/a&gt;# Configurações Gerais
+&lt;a name=&quot;line-34&quot;&gt;&lt;/a&gt;CHECK    = \033[32m✔\033[39m
+&lt;a name=&quot;line-35&quot;&gt;&lt;/a&gt;HR       = -----------------------------------------------------
+&lt;a name=&quot;line-36&quot;&gt;&lt;/a&gt;IGNORE   = (&amp;quot;assets/styles/style.css&amp;quot; &amp;quot;assets/scripts/main.js&amp;quot; &amp;quot;package.json&amp;quot; &amp;quot;bower.json&amp;quot; &amp;quot;.gitignore&amp;quot; &amp;quot;.git&amp;quot; &amp;quot;.travis.yml&amp;quot; &amp;quot;.editorconfig&amp;quot;)
+&lt;a name=&quot;line-37&quot;&gt;&lt;/a&gt;NODE     = ./node_modules/.bin
+&lt;a name=&quot;line-38&quot;&gt;&lt;/a&gt;PACKAGE  = pkg_projeto
+&lt;a name=&quot;line-39&quot;&gt;&lt;/a&gt;VERSION  = date &amp;quot;+%Y.%m.%d&amp;quot;
+&lt;a name=&quot;line-40&quot;&gt;&lt;/a&gt;RELEASE  = $(PACKAGE)-$(VERSION)
+&lt;a name=&quot;line-41&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-42&quot;&gt;&lt;/a&gt;# Inicializar processo de Build
+&lt;a name=&quot;line-43&quot;&gt;&lt;/a&gt;all: init styles scripts
+&lt;a name=&quot;line-44&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-45&quot;&gt;&lt;/a&gt;help:
+&lt;a name=&quot;line-46&quot;&gt;&lt;/a&gt;    @cat help.txt
+&lt;a name=&quot;line-47&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-48&quot;&gt;&lt;/a&gt;# Mensagem de Inicialização
+&lt;a name=&quot;line-49&quot;&gt;&lt;/a&gt;init:
+&lt;a name=&quot;line-50&quot;&gt;&lt;/a&gt;    @echo &amp;quot;\n$(HR)&amp;quot;
+&lt;a name=&quot;line-51&quot;&gt;&lt;/a&gt;    @echo &amp;quot;→ Iniciando processo de Build&amp;quot;
+&lt;a name=&quot;line-52&quot;&gt;&lt;/a&gt;    @echo &amp;quot;$(HR)\n&amp;quot;
+&lt;a name=&quot;line-53&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-54&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-55&quot;&gt;&lt;/a&gt;# Criar Estrutura para novos projetos
+&lt;a name=&quot;line-56&quot;&gt;&lt;/a&gt;create:
+&lt;a name=&quot;line-57&quot;&gt;&lt;/a&gt;    @echo &amp;quot;→ Iniciando download&amp;quot;
+&lt;a name=&quot;line-58&quot;&gt;&lt;/a&gt;    @echo &amp;quot;\n&amp;quot;
+&lt;a name=&quot;line-59&quot;&gt;&lt;/a&gt;    @curl -fsSL https://gist.githubusercontent.com/vitorbritto/9128566/raw/bf3d531d39afc7fec5a034f968569fc7883f0c2e/create.sh &amp;gt; create.sh
+&lt;a name=&quot;line-60&quot;&gt;&lt;/a&gt;    @chmod u+x create.sh &amp;amp;&amp;amp; ./create.sh
+&lt;a name=&quot;line-61&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-62&quot;&gt;&lt;/a&gt;    @mkdir -p $(DIST)
+&lt;a name=&quot;line-63&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-64&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-65&quot;&gt;&lt;/a&gt;# Tarefa para Estilos
+&lt;a name=&quot;line-66&quot;&gt;&lt;/a&gt;styles:
+&lt;a name=&quot;line-67&quot;&gt;&lt;/a&gt;    @$(NODE)/stylus -c &amp;lt; $(CSS_IN)/style.styl &amp;gt; $(CSS_OUT)/style.css
+&lt;a name=&quot;line-68&quot;&gt;&lt;/a&gt;    @echo &amp;quot;→ Compilando CSS              $(CHECK) Feito!&amp;quot;
+&lt;a name=&quot;line-69&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-70&quot;&gt;&lt;/a&gt;# Tarefa para Scripts
+&lt;a name=&quot;line-71&quot;&gt;&lt;/a&gt;scripts:
+&lt;a name=&quot;line-72&quot;&gt;&lt;/a&gt;    @$(NODE)/uglifyjs -o $(JS_IN)/main.js &amp;gt; $(JS_OUT)/main.min.js
+&lt;a name=&quot;line-73&quot;&gt;&lt;/a&gt;    @echo &amp;quot;→ Minificando Scripts         $(CHECK) Feito!&amp;quot;
+&lt;a name=&quot;line-74&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-75&quot;&gt;&lt;/a&gt;# Copiar arquivos para a pasta &amp;quot;public&amp;quot; via Rsync
+&lt;a name=&quot;line-76&quot;&gt;&lt;/a&gt;copy:
+&lt;a name=&quot;line-77&quot;&gt;&lt;/a&gt;    @echo &amp;quot;→ Copiando arquivos&amp;quot;
+&lt;a name=&quot;line-78&quot;&gt;&lt;/a&gt;    @rsync -aq --exclude=&amp;quot;$(IGNORE)&amp;quot; $(DIST)
+&lt;a name=&quot;line-79&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-80&quot;&gt;&lt;/a&gt;# Compactar arquivos na pasta &amp;quot;public&amp;quot;
+&lt;a name=&quot;line-81&quot;&gt;&lt;/a&gt;zip:
+&lt;a name=&quot;line-82&quot;&gt;&lt;/a&gt;    @echo &amp;quot;→ Compactando arquivos&amp;quot; \
+&lt;a name=&quot;line-83&quot;&gt;&lt;/a&gt;    @zip -r $(RELEASE) $(DIST)/*
+&lt;a name=&quot;line-84&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-85&quot;&gt;&lt;/a&gt;# Instalar dependências
+&lt;a name=&quot;line-86&quot;&gt;&lt;/a&gt;modules:
+&lt;a name=&quot;line-87&quot;&gt;&lt;/a&gt;    @echo &amp;quot;→ Instalando dependências&amp;quot; \
+&lt;a name=&quot;line-88&quot;&gt;&lt;/a&gt;    @npm install
+&lt;a name=&quot;line-89&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-90&quot;&gt;&lt;/a&gt;# Execute all with &amp;quot;make&amp;quot;
+&lt;a name=&quot;line-91&quot;&gt;&lt;/a&gt;.PHONY: all copy zip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Neste arquivo &lt;code&gt;makefile&lt;/code&gt;, temos duas tarefas principais:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Criar uma estrutura inicial para o projeto&lt;/li&gt;
+&lt;li&gt;Executar tarefas de automação no nosso projeto&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;O que foi feito?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Perceba que para gerar o &lt;em&gt;scaffolding&lt;/em&gt;, estamos utilzando o &lt;a href=&quot;http://curl.haxx.se/&quot;&gt;cURL&lt;/a&gt; com &lt;a href=&quot;http://www.gnu.org/software/bash/manual/html_node/Redirections.html&quot;&gt;&lt;em&gt;redirections&lt;/em&gt;&lt;/a&gt;. Com isso, deixamos o nosso &lt;code&gt;makefile&lt;/code&gt; mais enxuto e objetivo.&lt;/li&gt;
+&lt;li&gt;Integramos um gerenciador de pacotes (Bower) e iniciamos um repositório local com o Git.&lt;/li&gt;
+&lt;li&gt;Incluímos um arquivo para que seja possível realizar a Integração Contínua com o Travis CI.&lt;/li&gt;
+&lt;li&gt;Estamos utilizando os módulos &lt;a href=&quot;https://www.npmjs.org/package/uglify-js&quot;&gt;&lt;em&gt;uglify-js&lt;/em&gt;&lt;/a&gt; e &lt;a href=&quot;https://www.npmjs.org/package/stylus&quot;&gt;&lt;em&gt;stylus&lt;/em&gt;&lt;/a&gt;, instalados via &lt;strong&gt;npm&lt;/strong&gt;, para trabalhar com os arquivos de formatação (CSS) e comportamento (JavaScript).&lt;/li&gt;
+&lt;li&gt;Agora, a cópia dos nossos arquivos é feita através do &lt;a href=&quot;http://rsync.samba.org/&quot;&gt;&lt;em&gt;rsync&lt;/em&gt;&lt;/a&gt;, o que possibilita a sincronização e cópia apenas para arquivos novos/modificados.&lt;/li&gt;
+&lt;li&gt;Incluímos uma tarefa para versionar o projeto, com a compressão de arquivos em formato ZIP, composta pelo nome do projeto e data em que foi criado.&lt;/li&gt;
+&lt;li&gt;Criamos o arquivo &lt;code&gt;help.txt&lt;/code&gt; para instruções de uso e descrição das tarefas. Confira abaixo:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;-------------------------------------------------------------
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;Tarefas Disponíveis:
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    make        -&amp;gt; Tarefa padrão (all + copy + zip)
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    make all    -&amp;gt; Inicializa processo de Build
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;    make create -&amp;gt; Criar a estrutura do projeto
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;    make copy   -&amp;gt; Copia os arquivos para a pasta &amp;quot;public&amp;quot;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    make zip    -&amp;gt; Comprime os arquivos da pasta &amp;quot;public&amp;quot;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;                    e versiona com a data e hora atual
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;Uso: 
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;    make [nome da tarefa que deseja executar]
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;-------------------------------------------------------------
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h4 id=&quot;Entretanto-&quot;&gt;
+                &lt;a name=&quot;Entretanto-&quot; href=&quot;#Entretanto-&quot;&gt;&lt;/a&gt;Entretanto...
+              &lt;/h4&gt;
+            
+&lt;p&gt;Para quem trabalha com Desenvolvimento Front-End, este escopo de automação pode não se enquadrar muito bem na sua realidade. E, por que? Ora, pois a camada que lida com os comportamentos no Front-End é o JavaScript. Logo, nada mais sensato que utilizar está linguagem para criar um &lt;em&gt;build script&lt;/em&gt; e executar a automação de tarefas no projeto. Não concorda?&lt;/p&gt;
+
+&lt;p&gt;Entretanto, você percebeu quantas ferramentas e métodos conseguimos utilizar com o &lt;em&gt;Shell Script&lt;/em&gt; e &lt;em&gt;Makefile&lt;/em&gt;, sem o uso de plugins, Grunt ou Gulp?&lt;/p&gt;
+
+&lt;p&gt;Pois! Com isso, você viu que podemos realizar a cópia de arquivos através do &lt;em&gt;Rsync&lt;/em&gt; ou com um simples comando &lt;code&gt;cp&lt;/code&gt;. Que podemos utilizar o comando &lt;code&gt;zip&lt;/code&gt; para a compressão de arquivos e versionamento. Que podemos executar comandos diretamente no Shell para trabalhar com arquivos CSS e JavaScript, além de criar uma estrutura para um novo projeto.&lt;/p&gt;
+
+              &lt;h2 id=&quot;Automação-nos-dias-de-hoje&quot;&gt;
+                &lt;a name=&quot;Automação-nos-dias-de-hoje&quot; href=&quot;#Automação-nos-dias-de-hoje&quot;&gt;&lt;/a&gt;Automação nos dias de hoje
+              &lt;/h2&gt;
+            
+&lt;p&gt;Não há dúvidas de que o Ryan Dahl teve uma grande inspiração no UNIX e linguagem C para criar o NodeJS. É perceptível, pelo fato de que o C está ligado diretamente ao UNIX e NodeJS lida com processos, fluxo de dados (input/output, read/write) e eventos, o que nos leva de volta ao UNIX.&lt;/p&gt;
+
+&lt;p&gt;Mas, o que faz o NodeJS ser tão interessante?&lt;/p&gt;
+
+              &lt;h3 id=&quot;Utilizar-JavaScript-quot-em-todo-os-lados-quot-&quot;&gt;
+                &lt;a name=&quot;Utilizar-JavaScript-quot-em-todo-os-lados-quot-&quot; href=&quot;#Utilizar-JavaScript-quot-em-todo-os-lados-quot-&quot;&gt;&lt;/a&gt;Utilizar JavaScript &amp;quot;em todo os lados&amp;quot;
+              &lt;/h3&gt;
+            
+&lt;p&gt;O NodeJS possibilita que você desenvolva aplicações com JavaScript no &lt;em&gt;server-side&lt;/em&gt;!&lt;/p&gt;
+
+&lt;p&gt;Agora sim, Vitor! Você está falando minha língua!&lt;/p&gt;
+
+&lt;p&gt;Pois é, meu caro. E, se você ligou todos os pontos, percebeu que podemos criar uma ferramenta de automação em cima do NodeJS também (sem Gulp ou Grunt).&lt;/p&gt;
+
+&lt;p&gt;E como faremos isso?&lt;/p&gt;
+
+              &lt;h3 id=&quot;Talk-is-cheap-show-me-the-code-&quot;&gt;
+                &lt;a name=&quot;Talk-is-cheap-show-me-the-code-&quot; href=&quot;#Talk-is-cheap-show-me-the-code-&quot;&gt;&lt;/a&gt;Talk is cheap, show me the code!
+              &lt;/h3&gt;
+            
+&lt;p&gt;Para comprovar que Unix, Shell e NodeJS estão interligados, utilizaremos os seguintes módulos:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.org/package/commander&quot;&gt;Commander&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.org/package/shelljs&quot;&gt;ShellJS&lt;/a&gt; - &lt;em&gt;Sweet!&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.org/package/cli-color&quot;&gt;Cli-color&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Confira o exemplo abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;// Configuracão
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;var config = require(&amp;#39;./config&amp;#39;);
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;// Dependências
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;var cli   = require(&amp;#39;commander&amp;#39;),
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;    sh    = require(&amp;#39;shelljs&amp;#39;),
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    color = require(&amp;#39;cli-color&amp;#39;);
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;// Mensagens
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;var error    = color.red.bold,
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;    warn     = color.yellow,
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;    info     = color.grey,
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    notice   = color.cyan,
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;    success  = color.green;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;// Comandos
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;cli
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;    .command(&amp;#39;init&amp;#39;)
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;    .description(&amp;#39;Inicializar o processo de Build.&amp;#39;)
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;    .action(build);
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;cli.parse(process.argv);
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;// Compilar arquivos Sass para CSS
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;function initCompile(){
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;    if (!sh.which(&amp;#39;stylus&amp;#39;)) {
+&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;        sh.echo(error(&amp;#39;✖ Você precisa ter o &amp;quot;stylus&amp;quot; instalado globalmente no seu sistema.&amp;#39;));
+&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;        sh.echo(warn(&amp;#39;Instalação: npm install stylus -g&amp;#39;));
+&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;        exit(1);
+&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;    }
+&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;    sh.echo(notice(&amp;#39;→ Compilando arquivos&amp;#39;));
+&lt;a name=&quot;line-33&quot;&gt;&lt;/a&gt;    sh.exec(&amp;#39;stylus -c &amp;lt;&amp;#39; + config.paths.src.css + &amp;#39;style.styl&amp;gt; &amp;#39; + config.paths.out.css + &amp;#39;style.css&amp;#39;);
+&lt;a name=&quot;line-34&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-35&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-36&quot;&gt;&lt;/a&gt;// Validar Scripts
+&lt;a name=&quot;line-37&quot;&gt;&lt;/a&gt;function initValidate() {
+&lt;a name=&quot;line-38&quot;&gt;&lt;/a&gt;    if (!sh.which(&amp;#39;jshint&amp;#39;)) {
+&lt;a name=&quot;line-39&quot;&gt;&lt;/a&gt;        sh.echo(error(&amp;#39;✖ Você precisa ter o &amp;quot;jshint&amp;quot; instalado globalmente no seu sistema&amp;#39;));
+&lt;a name=&quot;line-40&quot;&gt;&lt;/a&gt;        sh.echo(warn(&amp;#39;Instalação: npm install jshint -g&amp;#39;));
+&lt;a name=&quot;line-41&quot;&gt;&lt;/a&gt;        exit(1);
+&lt;a name=&quot;line-42&quot;&gt;&lt;/a&gt;    }
+&lt;a name=&quot;line-43&quot;&gt;&lt;/a&gt;    sh.echo(notice(&amp;#39;→ Validando scripts&amp;#39;));
+&lt;a name=&quot;line-44&quot;&gt;&lt;/a&gt;    sh.exec(&amp;#39;jshint &amp;#39; + config.paths.src.js + &amp;#39;main.js&amp;#39;);
+&lt;a name=&quot;line-45&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-46&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-47&quot;&gt;&lt;/a&gt;// Concatenar e minificar Scripts
+&lt;a name=&quot;line-48&quot;&gt;&lt;/a&gt;function initMinify() {
+&lt;a name=&quot;line-49&quot;&gt;&lt;/a&gt;    if (!sh.which(&amp;#39;uglifyjs&amp;#39;)) {
+&lt;a name=&quot;line-50&quot;&gt;&lt;/a&gt;        sh.echo(error(&amp;#39;✖ Você precisa ter o &amp;quot;uglify-js&amp;quot; instalado globalmente no seu sistema&amp;#39;));
+&lt;a name=&quot;line-51&quot;&gt;&lt;/a&gt;        sh.echo(warn(&amp;#39;Instalação: npm install uglify-js -g&amp;#39;));
+&lt;a name=&quot;line-52&quot;&gt;&lt;/a&gt;        exit(1);
+&lt;a name=&quot;line-53&quot;&gt;&lt;/a&gt;    }
+&lt;a name=&quot;line-54&quot;&gt;&lt;/a&gt;    sh.echo(notice(&amp;#39;→ Minificando scripts&amp;#39;));
+&lt;a name=&quot;line-55&quot;&gt;&lt;/a&gt;    sh.exec(&amp;#39;cat &amp;#39;+ config.paths.src.js +&amp;#39; main.js | uglifyjs -o &amp;#39;+ config.paths.out.js +&amp;#39;main.min.js&amp;#39;);
+&lt;a name=&quot;line-56&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-57&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-58&quot;&gt;&lt;/a&gt;// Apagar arquivos remanescentes
+&lt;a name=&quot;line-59&quot;&gt;&lt;/a&gt;function initClean(){
+&lt;a name=&quot;line-60&quot;&gt;&lt;/a&gt;    sh.echo(notice(&amp;#39;→ Removendo arquivos remanescentes&amp;#39;));
+&lt;a name=&quot;line-61&quot;&gt;&lt;/a&gt;    sh.rm(&amp;#39;-rf&amp;#39;, [config.paths.out.main, config.paths.out.css, config.paths.out.js, config.paths.out.img]);
+&lt;a name=&quot;line-62&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-63&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-64&quot;&gt;&lt;/a&gt;// Criar estrutura
+&lt;a name=&quot;line-65&quot;&gt;&lt;/a&gt;function initScaffolding() {
+&lt;a name=&quot;line-66&quot;&gt;&lt;/a&gt;    sh.echo(notice(&amp;#39;→ Criando estrutura do projeto&amp;#39;));
+&lt;a name=&quot;line-67&quot;&gt;&lt;/a&gt;    sh.mkdir(&amp;#39;-p&amp;#39;, [config.paths.out.main, config.paths.out.css, config.paths.out.js, config.paths.out.img]);
+&lt;a name=&quot;line-68&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-69&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-70&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-71&quot;&gt;&lt;/a&gt;// Iniciar proceso de Build
+&lt;a name=&quot;line-72&quot;&gt;&lt;/a&gt;function build(){
+&lt;a name=&quot;line-73&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-74&quot;&gt;&lt;/a&gt;    sh.echo(notice(&amp;#39;→ Inicializando o processo de Build&amp;#39;));
+&lt;a name=&quot;line-75&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-76&quot;&gt;&lt;/a&gt;    initClean();
+&lt;a name=&quot;line-77&quot;&gt;&lt;/a&gt;    initScaffolding();
+&lt;a name=&quot;line-78&quot;&gt;&lt;/a&gt;    initCompile();
+&lt;a name=&quot;line-79&quot;&gt;&lt;/a&gt;    initValidate();
+&lt;a name=&quot;line-80&quot;&gt;&lt;/a&gt;    initMinify();
+&lt;a name=&quot;line-81&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-82&quot;&gt;&lt;/a&gt;    sh.echo(success(&amp;#39;✔ Feito!&amp;#39;));
+&lt;a name=&quot;line-83&quot;&gt;&lt;/a&gt;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;O arquivo acima foi retirado do projeto &lt;a href=&quot;http://managers.vitorbritto.com.br/&quot;&gt;Managers&lt;/a&gt;. Outros arquivos fazem parte desta &lt;em&gt;Build Tool&lt;/em&gt;, mas a intenção é mostrar como é possível utilizar o poder do NodeJS para realizarmos a automação de tarefas também. Perceba que ainda não utilizamos o Grunt ou Gulp e já temos 3 (três) métodos para realizarmos estes procedimentos/rotinas.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Confira os arquivos do exemplo acima, &lt;a href=&quot;https://github.com/vitorbritto/node-managers/tree/master/templates/node&quot;&gt;neste link&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Percebeu como integramos os comandos do Shell no NodeJS também? Show de bola, não? =]&lt;/p&gt;
+
+&lt;p&gt;Ainda assim, poderíamos ter utilizado o módulo &lt;code&gt;async&lt;/code&gt; ou &lt;em&gt;promises&lt;/em&gt; para trabalhar melhor o fluxo de dados, já que o NodeJS trabalha de forma não-bloqueante e assíncrona.&lt;/p&gt;
+
+&lt;p&gt;Outra opção seria integrar os &lt;em&gt;core modules&lt;/em&gt;: &lt;code&gt;streams&lt;/code&gt;, &lt;code&gt;events&lt;/code&gt;, &lt;code&gt;fs&lt;/code&gt;, &lt;code&gt;path&lt;/code&gt; e &lt;code&gt;child_process&lt;/code&gt;. Entretanto, ao utilizar o módulo &lt;em&gt;ShellJS&lt;/em&gt;, poupamos esforços e tornamos mais real ainda o propósito deste artigo, o qual é mostrar que o Shell é extremamente útil e que lhe oferece inúmeras possibilidades para executar processos de automação.&lt;/p&gt;
+
+              &lt;h3 id=&quot;De-um-lado-o-Grunt&quot;&gt;
+                &lt;a name=&quot;De-um-lado-o-Grunt&quot; href=&quot;#De-um-lado-o-Grunt&quot;&gt;&lt;/a&gt;De um lado o Grunt
+              &lt;/h3&gt;
+            
+&lt;p&gt;Um &lt;em&gt;Task Runner&lt;/em&gt; para automação de tarefas que depende do NodeJS e utiliza o JavaScript como base para que você construa as suas tarefas. Uma ferramenta, onde muitos passaram a criticar por conta da sua performance e excesso de linhas para configurar as tarefas.&lt;/p&gt;
+
+&lt;p&gt;Pois bem, este cenário pode ser contornado se configurarmos nossas tarefas de maneira adequada, utilizando os gargalos da API, evitando o uso desenfreado de plug-ins e buscando novas soluções.&lt;/p&gt;
+
+&lt;p&gt;Recentemente, publiquei algumas &lt;a href=&quot;http://www.vitorbritto.com.br/blog/dicas-uteis-para-quem-utiliza-gruntjs/&quot;&gt;dicas para quem utiliza o Grunt&lt;/a&gt; e estarei atualizando a medida em que novas ideias forem surgindo.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Do-outro-lado-o-Gulp&quot;&gt;
+                &lt;a name=&quot;Do-outro-lado-o-Gulp&quot; href=&quot;#Do-outro-lado-o-Gulp&quot;&gt;&lt;/a&gt;Do outro lado o Gulp
+              &lt;/h3&gt;
+            
+&lt;p&gt;Também um ferramenta de automação que depende do NodeJS e utiliza o JavaScript para construir tarefas. A diferença? O Gulp faz uso de &lt;em&gt;pipes&lt;/em&gt; e &lt;em&gt;redirections&lt;/em&gt;, os quais fazem parte de &lt;em&gt;Streams&lt;/em&gt; e, por sua vez, está no NodeJS por conta do UNIX. Isso torna a sua performance (comparado ao Grunt) mais &amp;quot;aceitável&amp;quot;. Além disso, o Gulp tem uma sintaxe &lt;em&gt;node-like&lt;/em&gt;, o que aproxima a criação do seu criador.&lt;/p&gt;
+
+              &lt;h3 id=&quot;No-fim-das-contas&quot;&gt;
+                &lt;a name=&quot;No-fim-das-contas&quot; href=&quot;#No-fim-das-contas&quot;&gt;&lt;/a&gt;No fim das contas
+              &lt;/h3&gt;
+            
+&lt;p&gt;O Grunt e o Gulp são excelente ferramentas de automação e uma não vai tomar o lugar da outra! O que se torna preocupante é que muitos ainda utilizam estas ferramentas sem entender que estamos lidando com JavaScript e que podemos chamar o NodeJS para a brincadeira também. Afinal, estes caras foram desenvolvidos em cima do NodeJS, o qual utiliza a linguagem JavaScript.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Não-vamos-nos-limitar&quot;&gt;
+                &lt;a name=&quot;Não-vamos-nos-limitar&quot; href=&quot;#Não-vamos-nos-limitar&quot;&gt;&lt;/a&gt;Não vamos nos limitar
+              &lt;/h3&gt;
+            
+&lt;p&gt;É preciso trilhar novos caminhos e testar novas ferramentas. Assim, saberemos quais delas devemos/podemos nos aprofundar e apostamos em uma melhora significativa no nosso ambiente de desenvolvimento. Se negarmos esta oportunidade, corremos o risco em não deixar o nosso Workflow mais eficiência e produtivo com uma ferramenta mais atual, objetiva e/ou prática.&lt;/p&gt;
+
+&lt;p&gt;Vivemos em um momento onde as ferramentas são criadas de forma desenfreada, mas o ser humano tem um instinto natural para se adaptar a esta evolução também. Entretanto, não podemos perder o foco. Devemos manter o equilíbrio entre a utilização de ferramentas que já fazem parte do nosso Workflow, com o bom senso em até quando está sendo útil investir em novas ferramentas.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Uma-pequena-demonstração&quot;&gt;
+                &lt;a name=&quot;Uma-pequena-demonstração&quot; href=&quot;#Uma-pequena-demonstração&quot;&gt;&lt;/a&gt;Uma pequena demonstração
+              &lt;/h3&gt;
+            
+&lt;p&gt;Recentemente, criei um &lt;em&gt;task runner&lt;/em&gt; muito simples, chamado &lt;a href=&quot;http://vitorbritto.github.io/just/&quot;&gt;Just&lt;/a&gt;, para um experimento pessoal. Porém, acabou sendo muito útil para 2 projetos de pequeno porte. Resolvi torná-lo &lt;em&gt;open-source&lt;/em&gt; e espero que seja útil para você. Fique a vontade para contribuir e deixar sugestões sobre o projeto.&lt;/p&gt;
+
+&lt;p&gt;Nesta ferramenta, estou utilizando o &lt;a href=&quot;https://www.npmjs.org/package/shelljs&quot;&gt;&lt;em&gt;ShellJS&lt;/em&gt;&lt;/a&gt; para manipulação de arquivos e execução de comandos no Shell, o módulo &lt;a href=&quot;https://www.npmjs.org/package/commander&quot;&gt;&lt;em&gt;Commander&lt;/em&gt;&lt;/a&gt; para que eu consiga passar argumentos e tratar esta ferramenta como uma &lt;em&gt;CLI Tool&lt;/em&gt; e o módulo &lt;a href=&quot;https://www.npmjs.org/package/orchestrator&quot;&gt;&lt;em&gt;Orchestrator&lt;/em&gt;&lt;/a&gt;, o qual é a base para a construção das tarefas no &lt;strong&gt;Gulp&lt;/strong&gt; e que será, possivelmente, utilizado no &lt;a href=&quot;https://github.com/gruntjs/grunt-next&quot;&gt;Grunt v.1.0 alpha&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Veja abaixo o arquivo principal do &lt;strong&gt;Just&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;#!/usr/bin/env node
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;// =====================================================
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;// Initial Configuration
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;// =====================================================
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;// Modules
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;var sh     = require(&amp;#39;shelljs&amp;#39;),
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;    cmd    = require(&amp;#39;commander&amp;#39;),
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;    config = require(&amp;#39;./config&amp;#39;),
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;    Just   = require(&amp;#39;orchestrator&amp;#39;),
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;    just   = new Just();
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;require(&amp;#39;colors&amp;#39;);
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;// =====================================================
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;// CLI Commands
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;// =====================================================
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;cmd
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;    .command(&amp;#39;run&amp;#39;)
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;    .description(&amp;#39;Run lint, minify and compile tasks&amp;#39;)
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;    .action(build);
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;cmd
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;    .command(&amp;#39;watch&amp;#39;)
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;    .description(&amp;#39;Run build tasks and watch for changes&amp;#39;)
+&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;    .action(watch);
+&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;// Config
+&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;cmd.parse(process.argv);
+&lt;a name=&quot;line-33&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-34&quot;&gt;&lt;/a&gt;if (process.argv.length === 2) {
+&lt;a name=&quot;line-35&quot;&gt;&lt;/a&gt;    cmd.help();
+&lt;a name=&quot;line-36&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-37&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-38&quot;&gt;&lt;/a&gt;// =====================================================
+&lt;a name=&quot;line-39&quot;&gt;&lt;/a&gt;// Build Task
+&lt;a name=&quot;line-40&quot;&gt;&lt;/a&gt;// =====================================================
+&lt;a name=&quot;line-41&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-42&quot;&gt;&lt;/a&gt;function build() {
+&lt;a name=&quot;line-43&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-44&quot;&gt;&lt;/a&gt;    sh.echo(&amp;#39;→ Runnning&amp;#39;.cyan);
+&lt;a name=&quot;line-45&quot;&gt;&lt;/a&gt;    sh.echo(&amp;#39;&amp;#39;);
+&lt;a name=&quot;line-46&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-47&quot;&gt;&lt;/a&gt;    // Script task
+&lt;a name=&quot;line-48&quot;&gt;&lt;/a&gt;    just.add(&amp;#39;build&amp;#39;, function() {
+&lt;a name=&quot;line-49&quot;&gt;&lt;/a&gt;        config.jshint();
+&lt;a name=&quot;line-50&quot;&gt;&lt;/a&gt;        config.minify();
+&lt;a name=&quot;line-51&quot;&gt;&lt;/a&gt;        config.compile();
+&lt;a name=&quot;line-52&quot;&gt;&lt;/a&gt;    });
+&lt;a name=&quot;line-53&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-54&quot;&gt;&lt;/a&gt;    // Run tasks
+&lt;a name=&quot;line-55&quot;&gt;&lt;/a&gt;    just.start([&amp;#39;build&amp;#39;]);
+&lt;a name=&quot;line-56&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-57&quot;&gt;&lt;/a&gt;    sh.echo(&amp;#39;✔ done&amp;#39;.green);
+&lt;a name=&quot;line-58&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-59&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-60&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-61&quot;&gt;&lt;/a&gt;// =====================================================
+&lt;a name=&quot;line-62&quot;&gt;&lt;/a&gt;// Watch Task
+&lt;a name=&quot;line-63&quot;&gt;&lt;/a&gt;// =====================================================
+&lt;a name=&quot;line-64&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-65&quot;&gt;&lt;/a&gt;function watch() {
+&lt;a name=&quot;line-66&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-67&quot;&gt;&lt;/a&gt;    // Watch task
+&lt;a name=&quot;line-68&quot;&gt;&lt;/a&gt;    just.add(&amp;#39;watch&amp;#39;, function() {
+&lt;a name=&quot;line-69&quot;&gt;&lt;/a&gt;        config.refresh();
+&lt;a name=&quot;line-70&quot;&gt;&lt;/a&gt;    });
+&lt;a name=&quot;line-71&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-72&quot;&gt;&lt;/a&gt;    // Watch task must be complete before this one begins
+&lt;a name=&quot;line-73&quot;&gt;&lt;/a&gt;    just.add(&amp;#39;build&amp;#39;, [&amp;#39;watch&amp;#39;], function() {
+&lt;a name=&quot;line-74&quot;&gt;&lt;/a&gt;        config.jshint();
+&lt;a name=&quot;line-75&quot;&gt;&lt;/a&gt;        config.minify();
+&lt;a name=&quot;line-76&quot;&gt;&lt;/a&gt;        config.compile();
+&lt;a name=&quot;line-77&quot;&gt;&lt;/a&gt;    });
+&lt;a name=&quot;line-78&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-79&quot;&gt;&lt;/a&gt;    // Run tasks
+&lt;a name=&quot;line-80&quot;&gt;&lt;/a&gt;    just.start([&amp;#39;watch&amp;#39;, &amp;#39;build&amp;#39;]);
+&lt;a name=&quot;line-81&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-82&quot;&gt;&lt;/a&gt;    sh.echo(&amp;#39;→ Watching for changes...&amp;#39;.cyan);
+&lt;a name=&quot;line-83&quot;&gt;&lt;/a&gt;    sh.echo(&amp;#39;&amp;#39;);
+&lt;a name=&quot;line-84&quot;&gt;&lt;/a&gt;    sh.echo(&amp;#39;→ Press CTRL+C to exit&amp;#39;.yellow);
+&lt;a name=&quot;line-85&quot;&gt;&lt;/a&gt;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;O código completo você encontra &lt;a href=&quot;https://github.com/vitorbritto/just&quot;&gt;aqui&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h2 id=&quot;As-possibilidades-são-infinitas&quot;&gt;
+                &lt;a name=&quot;As-possibilidades-são-infinitas&quot; href=&quot;#As-possibilidades-são-infinitas&quot;&gt;&lt;/a&gt;As possibilidades são infinitas
+              &lt;/h2&gt;
+            
+&lt;p&gt;O processo de &lt;em&gt;build&lt;/em&gt; não é nenhuma novidade. Você deve ter percebido isso por conta do &lt;em&gt;Make&lt;/em&gt;. O &lt;em&gt;build&lt;/em&gt; é uma prática que foi adotada há muito tempo na Engenharia de Softwares, sendo utilizada a favor das metodologias ágeis. É com este processo que automatizamos tarefas e garantimos um alto nível de qualidade em nossos projetos.&lt;/p&gt;
+
+&lt;p&gt;Mas, fora isso, você notou a quantidade de ferramentas e alguns possíveis métodos que podemos utilizar para realizar a automação de tarefas em nossos projetos?&lt;/p&gt;
+
+&lt;p&gt;Perceba que, não falamos sobre o &lt;em&gt;Rake&lt;/em&gt; (RIP Jim Weirich), o qual possui uma base muito sólida em &lt;em&gt;Make&lt;/em&gt;, nem do &lt;em&gt;Maven&lt;/em&gt;, &lt;em&gt;Ant&lt;/em&gt;, &lt;em&gt;Cake&lt;/em&gt;, &lt;em&gt;Factory&lt;/em&gt; e &lt;em&gt;Phing&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Todas estas ferramentas beberam da mesma fonte, o UNIX!&lt;/p&gt;
+
+&lt;p&gt;Não fique limitado ao uso do Gulp ou Grunt &lt;strong&gt;com plugins&lt;/strong&gt;. Procure utilizar os &lt;em&gt;core modules&lt;/em&gt; do NodeJS e brincar com a API destes caras também. O mais divertido de tudo na programação, desenvolvimento web e o que for que envolva lógica de programação, é tornar possível novos desafios. E superá-los!&lt;/p&gt;
+
+&lt;p&gt;Torne esses momentos possíveis! Você vai se divertir.&lt;/p&gt;
+
+&lt;p&gt;Até a próxima!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 22 Feb 2014 00:00:00 -0300</pubDate>
+        <link>http://www.vitorbritto.com.br/blog/evolucao-automacao-de-tarefas/</link>
+        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/evolucao-automacao-de-tarefas/</guid>
+      </item>
+    
+      <item>
+        <title>Fluxo de Dados</title>
+        <description>&lt;p&gt;Saudações!&lt;/p&gt;
+
+&lt;p&gt;Neste artigo veremos porque &lt;em&gt;pipes&lt;/em&gt;, &lt;em&gt;redirections&lt;/em&gt; e &lt;em&gt;lists&lt;/em&gt; (Unix) são tão importantes para as tecnologias atuais que utilizam fluxo de dados (leitura/escrita, entrada/saída). Convido você a voltar no tempo para entender como estes caras podem ser úteis e eficientes no seu Workflow. Para ser mais exato, na execução de rotinas e procedimentos de automação.&lt;/p&gt;
+
+              &lt;h2 id=&quot;O-passado-o-presente-e-o-futuro&quot;&gt;
+                &lt;a name=&quot;O-passado-o-presente-e-o-futuro&quot; href=&quot;#O-passado-o-presente-e-o-futuro&quot;&gt;&lt;/a&gt;O passado, o presente e o futuro
+              &lt;/h2&gt;
+            
+&lt;p&gt;O que você precisa saber, para começo de conversa, é que estes caras existem há um bom tempo e não é nenhuma novidade. Se você utiliza NodeJS, já deve ter ouvido alguém falar (ou visto alguém comentar) em &lt;em&gt;Streams&lt;/em&gt;. Certo?&lt;/p&gt;
+
+&lt;p&gt;Bom, se você ainda não sabe do que estou falando, pode contribuir com a tradução deste excelente material sobre [_Streams_][9], criado pelo James Halliday (SubStack), e utilizá-lo como fonte de leitura para os seus estudos também.&lt;/p&gt;
+
+&lt;p&gt;Se você já utiliza este cara nos seus aplicativos em NodeJS e sabe qual a sua funcionalidade, deduzo também que saiba o seu conceito. Porém, caso não saiba, &lt;em&gt;Stream&lt;/em&gt; é um fluxo de dados em um sistema. Logo, &lt;em&gt;Streams&lt;/em&gt; é um conjunto de fluxo de dados.&lt;/p&gt;
+
+&lt;p&gt;Trocando em miúdos, quando você abre um arquivo para editá-lo, o sistema fará alguns procedimentos por debaixo dos panos para armazenar os dados na memória, permitindo que você realize as alterações necessárias. Os dados serão lidos, gravados e, só assim, será encerrada a sua &amp;quot;comunicação&amp;quot; com o sistema.&lt;/p&gt;
+
+&lt;p&gt;Certo, mas e o tal do &lt;em&gt;pipes&lt;/em&gt;, &lt;em&gt;redirections&lt;/em&gt; e &lt;em&gt;lists&lt;/em&gt;?&lt;/p&gt;
+
+&lt;p&gt;Bom, é aí que a diversão começa. Utilizando estes 3 camaradas de maneira eficiente, você constrói um fluxo de dados que vão partir de uma origem (entrada padrão &lt;code&gt;STDIN&lt;/code&gt;) para um destino (saída padrão &lt;code&gt;STDOUT&lt;/code&gt;), caso não ocorra algum erro (o que fará com que &lt;code&gt;STDERR&lt;/code&gt; entre na brincadeira).&lt;/p&gt;
+
+&lt;p&gt;Cara, STD... Anh?&lt;/p&gt;
+
+&lt;p&gt;Calma, jovem Jedi! Vou explicar.&lt;/p&gt;
+
+              &lt;h2 id=&quot;Entrando-na-capsula-do-tempo&quot;&gt;
+                &lt;a name=&quot;Entrando-na-capsula-do-tempo&quot; href=&quot;#Entrando-na-capsula-do-tempo&quot;&gt;&lt;/a&gt;Entrando na capsula do tempo
+              &lt;/h2&gt;
+            
+&lt;p&gt;Alguns programas ou comandos no UNIX fazem apenas a leitura de entradas, outros somente a escrita na saída, enquanto outros fazem ambos os processos.&lt;/p&gt;
+
+&lt;p&gt;Além disso, os programas ou comandos podem ser lidos a partir do que é digitado no terminal e escritos quando renderizados na tela deste mesmo terminal. Sendo que, algumas vezes, a leitura e escrita fica por conta da entrada e saída de dados em um arquivo.&lt;/p&gt;
+
+&lt;p&gt;Quando um usuário digita um comando a partir do seu teclado, se algum erro ocorre, o fluxo deste comando sofrerá uma mudança e uma mensagem será renderizada.&lt;/p&gt;
+
+&lt;p&gt;No UNIX Shell, temos três canais:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;STDIN&lt;/code&gt; (canal 0): é a entrada padrão ou origem.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;STDOUT&lt;/code&gt; (canal 1): é a saída padrão ou destino.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;STDERR&lt;/code&gt; (canal 2): é a saída padrão utilizada para retornar uma mensagem de erro.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Para exemplificar, observe o comando abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;$ ls ~/.vim &amp;gt; estrutura.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Neste exemplo, passamos um comando para listar todos os arquivos presentes no diretório &lt;code&gt;~/.vim&lt;/code&gt;, o qual será lido, redirecionado e escrito no arquivo &lt;code&gt;estrutura.md&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Neste caso, a entrada padrão (&lt;code&gt;STDIN&lt;/code&gt;) é o processo que o comando &lt;code&gt;ls ~/.vim &amp;gt; estrutura.md&lt;/code&gt; fará ao ser executado no Shell, onde será redirecionado por conta do operador &lt;code&gt;&amp;gt;&lt;/code&gt; e terá como saída padrão (&lt;code&gt;STDOUT&lt;/code&gt;) os dados gerados no arquivo &lt;code&gt;estrutura.md&lt;/code&gt;. No final das contas, fizemos um fluxo de dados partindo da leitura de um ponto inicial para a sua escrita em um ponto final, utilizando um redirecionamento.&lt;/p&gt;
+
+&lt;p&gt;Mas, e o &lt;code&gt;STDERR&lt;/code&gt;?&lt;/p&gt;
+
+&lt;p&gt;Nós podemos dizer ao programa para redirecionar qualquer saída padrão que retorne um erro (&lt;code&gt;STDERR&lt;/code&gt;) para um arquivo diferente. Confira o exemplo abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;$ ls ~/.vim &amp;gt;&amp;gt; estrutura.md 2&amp;gt;notfound.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Lembra-se dos canais 0, 1 e 2 que mencionei acima?&lt;/p&gt;
+
+&lt;p&gt;Aqui, estamos utilizando este trecho do código (&lt;code&gt;2&amp;gt;&lt;/code&gt;) para dizer ao programa que utilize o canal 2 (&lt;code&gt;STDERR&lt;/code&gt;) para redirecionar a sua saída ao arquivo &lt;code&gt;notfound.md&lt;/code&gt;, caso existam quaisquer erros.&lt;/p&gt;
+
+&lt;p&gt;Poderíamos ainda, fazer da seguinte forma:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;$ ls ~/.vim &amp;gt;&amp;gt; estrutura.md 2&amp;gt;&amp;amp;1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Você arrisca dizer o que isso faria?&lt;/p&gt;
+
+&lt;p&gt;10...
+9...
+8...
+7...
+6...
+5...
+4...
+3...
+2...
+1...&lt;/p&gt;
+
+&lt;p&gt;Digitando &lt;code&gt;2&amp;gt;&amp;amp;1&lt;/code&gt;, estamos dizendo ao programa que redirecione a saída padrão de erro em &lt;code&gt;STDERR&lt;/code&gt; para a saída padrão em &lt;code&gt;STDOUT&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;No início pode parecer confuso entender como funciona esse processo, por isso aconselho que pesquise sobre o assunto. Ok?&lt;/p&gt;
+
+&lt;p&gt;Vamos em frente!&lt;/p&gt;
+
+              &lt;h2 id=&quot;Iniciando-a-sequência-de-lançamento&quot;&gt;
+                &lt;a name=&quot;Iniciando-a-sequência-de-lançamento&quot; href=&quot;#Iniciando-a-sequência-de-lançamento&quot;&gt;&lt;/a&gt;Iniciando a sequência de lançamento
+              &lt;/h2&gt;
+            
+&lt;p&gt;Agora que você já tem em mente o conceito de &lt;em&gt;Stream&lt;/em&gt;, já sabe o que são os 3 canais (&lt;code&gt;STDIN&lt;/code&gt;, &lt;code&gt;STDOUT&lt;/code&gt;, &lt;code&gt;STDERR&lt;/code&gt;) e para o que servem, vamos analisar mais a fundo sobre &lt;em&gt;pipes&lt;/em&gt;, &lt;em&gt;redirections&lt;/em&gt; e &lt;em&gt;lists&lt;/em&gt;. Você está preparado? Então, vamos lá.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Pipe-line-&quot;&gt;
+                &lt;a name=&quot;Pipe-line-&quot; href=&quot;#Pipe-line-&quot;&gt;&lt;/a&gt;Pipe(line)
+              &lt;/h3&gt;
+            
+&lt;p&gt;A Filosofia UNIX preza pela criação de pequenos programas, mas altamente focados e que podem ser usados ​​em conjunto para executar tarefas complexas. Assim, aprender a encadear uma série de pequenos comandos na linha de comando é uma parte intrínseca de se sentir confortável ao escrever códigos no Shell. Para fazer isso, nós direcionamos a saída padrão de um programa para a entrada padrão de outro programa, mas não usamos &lt;em&gt;redirections&lt;/em&gt; como nos exemplos acima, usamos o operador &lt;em&gt;pipe&lt;/em&gt; (&lt;code&gt;|&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;No UNIX, os processos ligados por &lt;em&gt;pipe&lt;/em&gt; são executados dinamicamente, a medida em que o fluxo de dados entre eles acontecem. &lt;em&gt;Pipe&lt;/em&gt; é uma característica UNIX que permite conectar vários comandos em uma linha e passar dados de um para o outro.&lt;/p&gt;
+
+&lt;p&gt;Fazendo uma breve analogia. Quando era adolescente (14~15 anos), havia um jogo chamado &lt;em&gt;Pipe Dreams&lt;/em&gt; (Windows 95, o melhor OS da Microsoft na minha opinião) e o objetivo era conectar os canos em um determinado tempo até que a água começasse a ser bombeada. Era necessário conectar uma boa quantidade de canos para que o fluxo dessa água ficasse devagar o suficiente ao chegar no último cano e não houvesse uma tragédia.&lt;/p&gt;
+
+&lt;p&gt;A idéia do &lt;em&gt;pipe&lt;/em&gt;, no UNIX, é a mesma. Você constrói uma cadeia de comandos (conectando canos) até que satisfaça o fluxo de dados (com uma boa quantidade de canos), evitando que ocorra algum problema (evitando o estouro no último cano).&lt;/p&gt;
+
+&lt;p&gt;Mesmo que tenhamos 5 comandos conectados por &lt;em&gt;pipes&lt;/em&gt;, estamos lidando com uma entrada de dados e uma saída de dados. Para exemplificar, veja o código abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;$ ls -al | sort -r -k 5 | head -10
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;No exemplo, perceba que utilizamos o operador &lt;code&gt;|&lt;/code&gt; (pipe) para fazer a listagem dos arquivos no diretório atual, ordená-los e, por fim, exibir os 10 arquivos mais &amp;quot;peso-pesados&amp;quot; na tela.&lt;/p&gt;
+
+              &lt;h4 id=&quot;-quot-Eu-acho-que-ví-um-gatinho-quot-&quot;&gt;
+                &lt;a name=&quot;-quot-Eu-acho-que-ví-um-gatinho-quot-&quot; href=&quot;#-quot-Eu-acho-que-ví-um-gatinho-quot-&quot;&gt;&lt;/a&gt;&amp;quot;Eu acho que ví um gatinho&amp;quot;
+              &lt;/h4&gt;
+            
+&lt;p&gt;Isso te lembra alguma coisa no NodeJS? E no Gulp?&lt;/p&gt;
+
+&lt;p&gt;Para não perdermos o foco deste artigo e a essência dos conceitos que estão sendo passados aqui, deixarei como lição de casa para que você analise a [API do GulpJS][14] e as seções [_process_][15], [_child_process_][16] e [_Streams_][17] da API do NodeJS.&lt;/p&gt;
+
+&lt;p&gt;Entenda a lógica utilizada nestes caras e verifique se existe alguma semelhança com o que estamos abordando neste artigo. Combinado?&lt;/p&gt;
+
+              &lt;h3 id=&quot;Lists&quot;&gt;
+                &lt;a name=&quot;Lists&quot; href=&quot;#Lists&quot;&gt;&lt;/a&gt;Lists
+              &lt;/h3&gt;
+            
+&lt;p&gt;Seguindo em frente, vamos falar de &lt;em&gt;lists&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Estes caras se parecem com o &lt;em&gt;pipe&lt;/em&gt;, embora o operador &lt;code&gt;|&lt;/code&gt; é substituído por um dos operadores abaixo:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;;&lt;/code&gt;: representa o fim de um comando&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;&lt;/code&gt;: executa de modo assíncrono ao seu precedente no &lt;em&gt;pipe(line)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;: executa somente se o comando precedente obtiver uma saída positiva&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;||&lt;/code&gt;: executa somente se o comando precedente obtiver uma saída negativa&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Veja o exemplo abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;$ test -d /tests/ || mkdir tests &amp;amp;&amp;amp; cd $_ | ls &amp;gt; README.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;No exemplo acima, declaramos um comando compacto para um estrutura condicional, a qual fará a verificacão se o diretório &lt;code&gt;tests&lt;/code&gt; já existe. Se (&lt;code&gt;||&lt;/code&gt;) não existir, o diretório será criado com o comando &lt;code&gt;mkdir&lt;/code&gt;, e (&lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;) acessado com o comando &lt;code&gt;cd&lt;/code&gt;. Em seguida, com essa lista de comandos executados, passaremos para o próximo comando com a ajuda do &lt;em&gt;pipe&lt;/em&gt; (&lt;code&gt;|&lt;/code&gt;), onde vamos redirecionar (&lt;code&gt;&amp;gt;&lt;/code&gt;) a lista de diretório e arquivos no diretório atual para o nosso novo arquivo &lt;code&gt;README.md&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Perceba que estamos utilizando um novo camarada, o &lt;code&gt;$_&lt;/code&gt;. Este cara é uma referência para o último argumento que passamos no comando anterior (&lt;code&gt;mkdir&lt;/code&gt;). Então, ao invés de digitarmos o nome do novo diretório a ser criado, apenas fazemos uma referência com &lt;code&gt;$_&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Vamos em frente!&lt;/p&gt;
+
+              &lt;h3 id=&quot;Redirections&quot;&gt;
+                &lt;a name=&quot;Redirections&quot; href=&quot;#Redirections&quot;&gt;&lt;/a&gt;Redirections
+              &lt;/h3&gt;
+            
+&lt;p&gt;&lt;em&gt;Redirections&lt;/em&gt; seguem o mesmo princípio que &lt;em&gt;Pipes&lt;/em&gt;: realizar o fluxo de dados. Entretanto, &lt;em&gt;redirections&lt;/em&gt; trabalham com arquivos, não com comandos.&lt;/p&gt;
+
+&lt;p&gt;Existem algumas diferenças quanto a sua sintaxe e o modo como o UNIX o executa. É importante lembrar que, os comandos sempre são declarados primeiro.&lt;/p&gt;
+
+&lt;p&gt;Vamos entender alguns dos operadores utilizados para redirecionar os dados.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Para mais detalhes sobre os operadores utilizados em redirecionamentos, [confira este material][20].&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;&lt;/code&gt;: redireciona a saída de um comando &lt;strong&gt;no disco&lt;/strong&gt;. &lt;em&gt;!&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;: redireciona a saída de um comando para um arquivo no disco. Se o arquivo já existir, ele será apagado e escrito novamente.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;&amp;lt;&lt;/code&gt;: redireciona a saída de um comando para um arquivo e posiciona os dados ao início do mesmo (anexo).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt;: redireciona a saída de um comando para um arquivo e posiciona os dados ao final do mesmo (anexo).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2&amp;gt;&amp;gt;&lt;/code&gt;: redireciona a saída de erro e posiciona os dados ao final do mesmo (anexo).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2&amp;gt;&amp;amp;1&lt;/code&gt;: conecta a saída de erro na saída padrão.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;&amp;amp;2&lt;/code&gt;: conecta a saída padrão na saída de erro.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;&amp;lt;EOF&lt;/code&gt;: anexa dados a entrada padrão&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;&amp;lt;-EOF&lt;/code&gt;: anexa dados a entrada padrão, cortando as &lt;code&gt;TABs&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;! Cuidado com este comando. Se você digitar por engano &lt;code&gt;&amp;gt;&lt;/code&gt;, o conteúdo do arquivo em questão será apagado.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Confira alguns exemplos.&lt;/p&gt;
+
+              &lt;h5 id=&quot;Listar-todos-os-arquivos&quot;&gt;
+                &lt;a name=&quot;Listar-todos-os-arquivos&quot; href=&quot;#Listar-todos-os-arquivos&quot;&gt;&lt;/a&gt;Listar todos os arquivos
+              &lt;/h5&gt;
+            
+&lt;p&gt;Digamos que você queira listar todos os arquivos (incluindo diretórios e sub-diretórios) das dependências instaladas em um aplicativo NodeJS (&lt;code&gt;node_modules&lt;/code&gt;), salvando-os em um arquivo para futura análise. Você pode executar este procedimento com:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;find . -type f &amp;gt; lista_node_modules.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h5 id=&quot;Criar-um-documento&quot;&gt;
+                &lt;a name=&quot;Criar-um-documento&quot; href=&quot;#Criar-um-documento&quot;&gt;&lt;/a&gt;Criar um documento
+              &lt;/h5&gt;
+            
+&lt;p&gt;Podemos criar um documento onde será renderizado um texto inicial e a estrutura do diretório logo em seguida.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;{ echo &amp;quot;# Estrutura do Projeto&amp;quot;; echo &amp;quot;&amp;quot;; ls; } &amp;gt;&amp;gt; estrutura.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Perceba que estou utilizando &lt;code&gt;echo&lt;/code&gt;, pois trata-se de 2 linhas apenas. Entretanto, se fosse necessário inserir uma série de linhas, ficaria inviável com um comando repleto de &lt;code&gt;echo&lt;/code&gt;. Para estas situações, é aconselhável o uso do &lt;code&gt;cat&lt;/code&gt; ou &lt;code&gt;tee&lt;/code&gt;, juntamento com o &lt;code&gt;heredoc&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# Exemplo com cat e EOF
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;$ cat &amp;gt;&amp;gt; arquivo_saida.md &amp;lt;&amp;lt; EOF
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&amp;gt; Título vem aqui
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&amp;gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&amp;gt; Primeira linha com algum texto
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&amp;gt; Segunda linha com mais texto
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&amp;gt; Terceira linha para encerrar o arquivo
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;&amp;gt; EOF
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Note também, que foram utilizados &lt;em&gt;braces&lt;/em&gt; (&lt;code&gt;{ }&lt;/code&gt;) para agrupar os comandos e, os mesmos foram separados com &lt;em&gt;semicolon&lt;/em&gt; (&lt;code&gt;;&lt;/code&gt;), no primeiro exemplo.&lt;/p&gt;
+
+              &lt;h5 id=&quot;Redirecionamento-de-entradas-e-saídas&quot;&gt;
+                &lt;a name=&quot;Redirecionamento-de-entradas-e-saídas&quot; href=&quot;#Redirecionamento-de-entradas-e-saídas&quot;&gt;&lt;/a&gt;Redirecionamento de entradas e saídas
+              &lt;/h5&gt;
+            
+&lt;p&gt;Além disso, o redirecionamento pode ocorrer também com a entrada e saída padrão.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;ls -l  logs/*.log &amp;gt; bkp-log.txt 2&amp;gt;&amp;amp;1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Neste exemplo, estamos redirecionando a saída padrão de erro (&lt;code&gt;STDERR&lt;/code&gt;) para a saída padrão (&lt;code&gt;STDOUT&lt;/code&gt;), que neste caso é o arquivo &lt;code&gt;bkp-log.txt&lt;/code&gt;.&lt;/p&gt;
+
+              &lt;h2 id=&quot;Chegamos-ao-fim&quot;&gt;
+                &lt;a name=&quot;Chegamos-ao-fim&quot; href=&quot;#Chegamos-ao-fim&quot;&gt;&lt;/a&gt;Chegamos ao fim
+              &lt;/h2&gt;
+            
+&lt;p&gt;Bom, espero que com esta pequena introdução sobre estas poderosas &lt;em&gt;features&lt;/em&gt; do UNIX, você possa ir mais a fundo nos seus estudos e realizar algumas tarefas com o próprio Shell, evitando o uso desnecessário de ferramentas e/ou dependências.&lt;/p&gt;
+
+&lt;p&gt;É lógico que existem outros aspectos para cobrir sobre &lt;em&gt;pipes&lt;/em&gt;, &lt;em&gt;streams&lt;/em&gt; e amigos, mas perceba que tudo começou com o UNIX. Estudá-lo, é essencial para entender o que acontece por debaixo dos panos nas modernas ferramentas e fazer um melhor uso das mesmas.&lt;/p&gt;
+
+&lt;p&gt;Até a próxima!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 18 Feb 2014 00:00:00 -0300</pubDate>
+        <link>http://www.vitorbritto.com.br/blog/fluxo-de-dados/</link>
+        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/fluxo-de-dados/</guid>
+      </item>
+    
+      <item>
+        <title>Criando bons programas em Shell Script</title>
+        <description>&lt;p&gt;&lt;strong&gt;UPDATE - 16/02/2014:&lt;/strong&gt; dicas 7 e 8 adicionadas.&lt;/p&gt;
+
+&lt;p&gt;Saudações!&lt;/p&gt;
+
+&lt;p&gt;Há algumas semanas atrás, escrevi um artigo com &lt;a href=&quot;http://www.vitorbritto.com.br/blog/dicas-uteis-para-quem-utiliza-gruntjs/&quot;&gt;dicas úteis&lt;/a&gt; para quem utiliza o Grunt no ambiente de trabalho.&lt;/p&gt;
+
+&lt;p&gt;Hoje, estarei publicando um artigo com dicas mais do que úteis para quem trabalha com Shell Script. Estas dicas fazem parte de estudos e experiências que vivenciei há um bom tempo trabalhando com esta linguagem sensacional. São dicas que favorecem na construção de bons programas com Shell Script.&lt;/p&gt;
+
+              &lt;h2 id=&quot;Shell-Script-o-que-é-isso-&quot;&gt;
+                &lt;a name=&quot;Shell-Script-o-que-é-isso-&quot; href=&quot;#Shell-Script-o-que-é-isso-&quot;&gt;&lt;/a&gt;Shell Script, o que é isso?
+              &lt;/h2&gt;
+            
+&lt;p&gt;Se você não faz idéia do que é Shell Script, estas dicas podem não ser tão úteis para você. De toda forma, não desanime! Eu recomendo que você estude e se familiarize com esta poderosa linguagem. Segue um &lt;a href=&quot;http://www.vitorbritto.com.br/blog/unix-a-base-de-tudo/&quot;&gt;artigo&lt;/a&gt; para você ter uma base.&lt;/p&gt;
+
+              &lt;h2 id=&quot;Chega-de-conversa-vamos-ao-que-interessa&quot;&gt;
+                &lt;a name=&quot;Chega-de-conversa-vamos-ao-que-interessa&quot; href=&quot;#Chega-de-conversa-vamos-ao-que-interessa&quot;&gt;&lt;/a&gt;Chega de conversa, vamos ao que interessa
+              &lt;/h2&gt;
+            
+&lt;ol&gt;
+&lt;li&gt;Sempre utilize aspas para declarações de variáveis, argumentos e referências (para as variáveis) nos seus programas em Shell Script.&lt;/li&gt;
+&lt;li&gt;Sempre que possível, utilize comandos compactos com os operadores &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; e &lt;code&gt;||&lt;/code&gt; (ex.: mkdir novoprojeto &amp;amp;&amp;amp; cd novoprojeto &amp;amp;&amp;amp; touch README.md).&lt;/li&gt;
+&lt;li&gt;Entenda quais as possibilidades para se utilizar algum comando em determinado sistema. Para isso, leia a &lt;em&gt;man pages&lt;/em&gt; dos comandos básicos (grep, cut, sed, cat e etc) de outros sistemas.&lt;/li&gt;
+&lt;li&gt;Acostume-se a ler o código-fonte de outros programas em Shell Script. Alguns ensinamentos são melhor compreendidos com um exemplo funcional.&lt;/li&gt;
+&lt;li&gt;Analise quando você deve utilizar o comando &lt;code&gt;cat&lt;/code&gt;, assim como o &lt;code&gt;sed&lt;/code&gt;, &lt;code&gt;awk&lt;/code&gt;, &lt;code&gt;cut&lt;/code&gt; e &lt;code&gt;grep&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Faça um bom proveito de &lt;em&gt;pipes&lt;/em&gt;, &lt;em&gt;redirects&lt;/em&gt; e &lt;em&gt;lists&lt;/em&gt; nos seus programas.&lt;/li&gt;
+&lt;li&gt;Deixe o seu programa sempre com um cabeçalho inicial (veja o &lt;a href=&quot;https://gist.github.com/vitorbritto/9036467&quot;&gt;exemplo&lt;/a&gt;). Não importa se o cabeçalho ficar maior que o programa em sí. Comentários são ignorados pelo interpretador e isso não influência em nada no desempenho do programa. Um código bem documentado é útil até mesmo para você.&lt;/li&gt;
+&lt;li&gt;Utilize quebra de linha, linhas em branco para separar determinados blocos do seu código e alinhamento para uma boa legibilidade e leiturabilidade do seu programa.&lt;/li&gt;
+&lt;li&gt;Se você sempre quis saber porque alguns programas em Shell Script iniciando com um &lt;code&gt;#!/bin/bash&lt;/code&gt; ou &lt;code&gt;#!/bin/sh&lt;/code&gt;, isso se chama &lt;em&gt;shebang&lt;/em&gt;. Com este cara, é possível tornar o seu &lt;em&gt;script&lt;/em&gt; executável, como um programa. Com isso, ao executar o comando &lt;code&gt;chmod u+x meuscript.sh&lt;/code&gt; você estará solicitando ao seu sistema que dê permissão àquele script para ser parseado e interpretado como um programa e, por fim, ser executado como &lt;code&gt;./meuscript.sh&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Por hoje é só. Estarei atualizando este espaço a medida em que novas experiências e situações acontecerem. Fique atento para novas dicas.&lt;/p&gt;
+
+&lt;p&gt;Até a próxima! =]&lt;/p&gt;
+</description>
+        <pubDate>Sat, 15 Feb 2014 00:00:00 -0200</pubDate>
+        <link>http://www.vitorbritto.com.br/blog/criando-bons-programas-em-shell-script/</link>
+        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/criando-bons-programas-em-shell-script/</guid>
+      </item>
+    
+  </channel>
+</rss>

@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Automação de Tarefas com o Grunt JS - Parte I"
-link: "http://vitorbritto.com/blog/automacao-de-tarefas-com-gruntjs-parte-1/"
+description: Neste artigo vou falar sobre uma ferramenta muito importante para tornar o ambiente de trabalho mais àgil e produtivo. Esta ferramenta se chama Grunt! O que é o Grunt? Por que devo utilizá-lo? Como usá-lo? Irei responder estas e outras perguntas neste artigo.
+link: "http://vitorbritto.com.br/blog/automacao-de-tarefas-com-gruntjs-parte-1/"
 date: 2013-10-06
 cover: "assets/images/posts/post-gruntjs.jpg"
 avatar: "assets/images/avatar.jpg"
 author: Vitor Britto
-bio: Desenvolvedor Web e Designer, extremamente apaixonado pelo seu trabalho. Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, projetos colaborativos, desenvolvimento de projetos pessoais e escrever os artigos aqui publicados.
-description: Neste artigo vou falar sobre uma ferramenta muito importante para tornar o ambiente de trabalho mais àgil e produtivo. Esta ferramenta se chama Grunt! O que é o Grunt? Por que devo utilizá-lo? Como usá-lo? Irei responder estas e outras perguntas neste artigo.
+bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true
 ---
 
@@ -194,4 +194,6 @@ Neste primeiro momento procurei passar os conceitos do Grunt e uma breve introdu
 
 ### É isso!
 
-Como pode ver, o Grunt é uma ferramenta muito poderosa e que aumenta a produtividade em nosso fluxo de trabalho. Espero que o Grunt seja útil para o seu Workflow, assim como tem sido para o meu. Até a próxima!
+Como pode ver, o Grunt é uma ferramenta muito poderosa e que aumenta a produtividade em nosso fluxo de trabalho. Espero que o Grunt seja útil para o seu Workflow, assim como tem sido para o meu.
+
+Até a próxima! =]

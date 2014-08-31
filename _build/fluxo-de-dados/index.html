@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Fluxo de Dados</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Desenvolvedor Web" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="Fluxo de Dados"/>
+    <meta property="og:site_name" content="Blog - Vitor Britto"/>
+    <meta property="og:url" content="http://www.vitorbritto.com.br/blog/fluxo-de-dados/"/>
+    <meta property="og:image" content="http://www.vitorbritto.com.br/blog/assets/images/fb.jpg"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="Neste artigo veremos porque pipes, redirections e lists (Unix) são tão importantes para as tecnologias atuais que utilizam fluxo de dados (leitura/escrita, entrada/saída). Convido você a voltar no tempo para entender como estes caras podem ser úteis e eficientes no seu Workflow. Para ser mais exato, na execução de rotinas e procedimentos de automação."/>
+
+    <link rel="shortcut icon" href="http://www.vitorbritto.com.br/blog/assets/images/favicon.png" type="image/x-icon">
+    <link href="http://feeds.feedburner.com/vitorbritto" rel="alternate" type="application/rss+xml">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <link href="http://www.vitorbritto.com.br/blog/assets/css/style.css" rel="stylesheet" id="theme-css"/>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <header class="header">
+
+                <div class="span4">
+                    <div class="header-info">
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h4 class="header-description">Desenvolvedor Web</h4>
+                    </div>
+                </div>
+
+                <div class="span5">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/">Início</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/about">Sobre</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/projects">Projetos</a></li>
+    </ul>
+</nav>
+
+                </div>
+
+                <div class="span3">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item">
+            <a href="https://www.facebook.com/vbwebstudio" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://twitter.com/vitorbritto" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://github.com/vitorbritto" title="Github" target="_blank"><i class="icon-github"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="mailto:contato@vitorbritto.com.br"><i class="icon-envelope-alt"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="http://feeds.feedburner.com/vitorbritto" title="RSS Feed" target="_blank"><i class="icon-rss"></i></a>
+        </li>
+    </ul>
+</nav>
+
+                </div>
+
+            </header>
+        </div>
+
+        <div class="line"></div>
+
+
+
+<!-- Switch Theme -->
+<div class="theme-wrapper">
+    <p class="theme-text">Tema:</p>
+    <span class="theme-btn light" id="theme-light"></span>
+    <span class="theme-btn dark" id="theme-dark"></span>
+</div>
+
+    <div class="row">
+
+        <article class="article">
+
+            <img class="article-img" src="http://www.vitorbritto.com.br/blog/assets/images/posts/post-fluxo-de-dados.jpg">
+            <h2 class="article-title">Fluxo de Dados</h2>
+            <span class="article-date">Publicado em: 18/02/2014 | Por: Vitor Britto</span>
+            <div class="line"></div>
+
+            <section class="article-entry">
+                <p>Saudações!</p>
+
+<p>Neste artigo veremos porque <em>pipes</em>, <em>redirections</em> e <em>lists</em> (Unix) são tão importantes para as tecnologias atuais que utilizam fluxo de dados (leitura/escrita, entrada/saída). Convido você a voltar no tempo para entender como estes caras podem ser úteis e eficientes no seu Workflow. Para ser mais exato, na execução de rotinas e procedimentos de automação.</p>
+
+              <h2 id="O-passado-o-presente-e-o-futuro">
+                <a name="O-passado-o-presente-e-o-futuro" href="#O-passado-o-presente-e-o-futuro"></a>O passado, o presente e o futuro
+              </h2>
+            
+<p>O que você precisa saber, para começo de conversa, é que estes caras existem há um bom tempo e não é nenhuma novidade. Se você utiliza NodeJS, já deve ter ouvido alguém falar (ou visto alguém comentar) em <em>Streams</em>. Certo?</p>
+
+<p>Bom, se você ainda não sabe do que estou falando, pode contribuir com a tradução deste excelente material sobre [_Streams_][9], criado pelo James Halliday (SubStack), e utilizá-lo como fonte de leitura para os seus estudos também.</p>
+
+<p>Se você já utiliza este cara nos seus aplicativos em NodeJS e sabe qual a sua funcionalidade, deduzo também que saiba o seu conceito. Porém, caso não saiba, <em>Stream</em> é um fluxo de dados em um sistema. Logo, <em>Streams</em> é um conjunto de fluxo de dados.</p>
+
+<p>Trocando em miúdos, quando você abre um arquivo para editá-lo, o sistema fará alguns procedimentos por debaixo dos panos para armazenar os dados na memória, permitindo que você realize as alterações necessárias. Os dados serão lidos, gravados e, só assim, será encerrada a sua &quot;comunicação&quot; com o sistema.</p>
+
+<p>Certo, mas e o tal do <em>pipes</em>, <em>redirections</em> e <em>lists</em>?</p>
+
+<p>Bom, é aí que a diversão começa. Utilizando estes 3 camaradas de maneira eficiente, você constrói um fluxo de dados que vão partir de uma origem (entrada padrão <code>STDIN</code>) para um destino (saída padrão <code>STDOUT</code>), caso não ocorra algum erro (o que fará com que <code>STDERR</code> entre na brincadeira).</p>
+
+<p>Cara, STD... Anh?</p>
+
+<p>Calma, jovem Jedi! Vou explicar.</p>
+
+              <h2 id="Entrando-na-capsula-do-tempo">
+                <a name="Entrando-na-capsula-do-tempo" href="#Entrando-na-capsula-do-tempo"></a>Entrando na capsula do tempo
+              </h2>
+            
+<p>Alguns programas ou comandos no UNIX fazem apenas a leitura de entradas, outros somente a escrita na saída, enquanto outros fazem ambos os processos.</p>
+
+<p>Além disso, os programas ou comandos podem ser lidos a partir do que é digitado no terminal e escritos quando renderizados na tela deste mesmo terminal. Sendo que, algumas vezes, a leitura e escrita fica por conta da entrada e saída de dados em um arquivo.</p>
+
+<p>Quando um usuário digita um comando a partir do seu teclado, se algum erro ocorre, o fluxo deste comando sofrerá uma mudança e uma mensagem será renderizada.</p>
+
+<p>No UNIX Shell, temos três canais:</p>
+
+<ul>
+<li><code>STDIN</code> (canal 0): é a entrada padrão ou origem.</li>
+<li><code>STDOUT</code> (canal 1): é a saída padrão ou destino.</li>
+<li><code>STDERR</code> (canal 2): é a saída padrão utilizada para retornar uma mensagem de erro.</li>
+</ul>
+
+<p>Para exemplificar, observe o comando abaixo:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>$ ls ~/.vim &gt; estrutura.md
+</code></pre></div>
+<p>Neste exemplo, passamos um comando para listar todos os arquivos presentes no diretório <code>~/.vim</code>, o qual será lido, redirecionado e escrito no arquivo <code>estrutura.md</code>.</p>
+
+<p>Neste caso, a entrada padrão (<code>STDIN</code>) é o processo que o comando <code>ls ~/.vim &gt; estrutura.md</code> fará ao ser executado no Shell, onde será redirecionado por conta do operador <code>&gt;</code> e terá como saída padrão (<code>STDOUT</code>) os dados gerados no arquivo <code>estrutura.md</code>. No final das contas, fizemos um fluxo de dados partindo da leitura de um ponto inicial para a sua escrita em um ponto final, utilizando um redirecionamento.</p>
+
+<p>Mas, e o <code>STDERR</code>?</p>
+
+<p>Nós podemos dizer ao programa para redirecionar qualquer saída padrão que retorne um erro (<code>STDERR</code>) para um arquivo diferente. Confira o exemplo abaixo:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>$ ls ~/.vim &gt;&gt; estrutura.md 2&gt;notfound.md
+</code></pre></div>
+<p>Lembra-se dos canais 0, 1 e 2 que mencionei acima?</p>
+
+<p>Aqui, estamos utilizando este trecho do código (<code>2&gt;</code>) para dizer ao programa que utilize o canal 2 (<code>STDERR</code>) para redirecionar a sua saída ao arquivo <code>notfound.md</code>, caso existam quaisquer erros.</p>
+
+<p>Poderíamos ainda, fazer da seguinte forma:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>$ ls ~/.vim &gt;&gt; estrutura.md 2&gt;&amp;1
+</code></pre></div>
+<p>Você arrisca dizer o que isso faria?</p>
+
+<p>10...
+9...
+8...
+7...
+6...
+5...
+4...
+3...
+2...
+1...</p>
+
+<p>Digitando <code>2&gt;&amp;1</code>, estamos dizendo ao programa que redirecione a saída padrão de erro em <code>STDERR</code> para a saída padrão em <code>STDOUT</code>.</p>
+
+<p>No início pode parecer confuso entender como funciona esse processo, por isso aconselho que pesquise sobre o assunto. Ok?</p>
+
+<p>Vamos em frente!</p>
+
+              <h2 id="Iniciando-a-sequência-de-lançamento">
+                <a name="Iniciando-a-sequência-de-lançamento" href="#Iniciando-a-sequência-de-lançamento"></a>Iniciando a sequência de lançamento
+              </h2>
+            
+<p>Agora que você já tem em mente o conceito de <em>Stream</em>, já sabe o que são os 3 canais (<code>STDIN</code>, <code>STDOUT</code>, <code>STDERR</code>) e para o que servem, vamos analisar mais a fundo sobre <em>pipes</em>, <em>redirections</em> e <em>lists</em>. Você está preparado? Então, vamos lá.</p>
+
+              <h3 id="Pipe-line-">
+                <a name="Pipe-line-" href="#Pipe-line-"></a>Pipe(line)
+              </h3>
+            
+<p>A Filosofia UNIX preza pela criação de pequenos programas, mas altamente focados e que podem ser usados ​​em conjunto para executar tarefas complexas. Assim, aprender a encadear uma série de pequenos comandos na linha de comando é uma parte intrínseca de se sentir confortável ao escrever códigos no Shell. Para fazer isso, nós direcionamos a saída padrão de um programa para a entrada padrão de outro programa, mas não usamos <em>redirections</em> como nos exemplos acima, usamos o operador <em>pipe</em> (<code>|</code>).</p>
+
+<p>No UNIX, os processos ligados por <em>pipe</em> são executados dinamicamente, a medida em que o fluxo de dados entre eles acontecem. <em>Pipe</em> é uma característica UNIX que permite conectar vários comandos em uma linha e passar dados de um para o outro.</p>
+
+<p>Fazendo uma breve analogia. Quando era adolescente (14~15 anos), havia um jogo chamado <em>Pipe Dreams</em> (Windows 95, o melhor OS da Microsoft na minha opinião) e o objetivo era conectar os canos em um determinado tempo até que a água começasse a ser bombeada. Era necessário conectar uma boa quantidade de canos para que o fluxo dessa água ficasse devagar o suficiente ao chegar no último cano e não houvesse uma tragédia.</p>
+
+<p>A idéia do <em>pipe</em>, no UNIX, é a mesma. Você constrói uma cadeia de comandos (conectando canos) até que satisfaça o fluxo de dados (com uma boa quantidade de canos), evitando que ocorra algum problema (evitando o estouro no último cano).</p>
+
+<p>Mesmo que tenhamos 5 comandos conectados por <em>pipes</em>, estamos lidando com uma entrada de dados e uma saída de dados. Para exemplificar, veja o código abaixo:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>$ ls -al | sort -r -k 5 | head -10
+</code></pre></div>
+<p>No exemplo, perceba que utilizamos o operador <code>|</code> (pipe) para fazer a listagem dos arquivos no diretório atual, ordená-los e, por fim, exibir os 10 arquivos mais &quot;peso-pesados&quot; na tela.</p>
+
+              <h4 id="-quot-Eu-acho-que-ví-um-gatinho-quot-">
+                <a name="-quot-Eu-acho-que-ví-um-gatinho-quot-" href="#-quot-Eu-acho-que-ví-um-gatinho-quot-"></a>&quot;Eu acho que ví um gatinho&quot;
+              </h4>
+            
+<p>Isso te lembra alguma coisa no NodeJS? E no Gulp?</p>
+
+<p>Para não perdermos o foco deste artigo e a essência dos conceitos que estão sendo passados aqui, deixarei como lição de casa para que você analise a [API do GulpJS][14] e as seções [_process_][15], [_child_process_][16] e [_Streams_][17] da API do NodeJS.</p>
+
+<p>Entenda a lógica utilizada nestes caras e verifique se existe alguma semelhança com o que estamos abordando neste artigo. Combinado?</p>
+
+              <h3 id="Lists">
+                <a name="Lists" href="#Lists"></a>Lists
+              </h3>
+            
+<p>Seguindo em frente, vamos falar de <em>lists</em>.</p>
+
+<p>Estes caras se parecem com o <em>pipe</em>, embora o operador <code>|</code> é substituído por um dos operadores abaixo:</p>
+
+<ul>
+<li><code>;</code>: representa o fim de um comando</li>
+<li><code>&amp;</code>: executa de modo assíncrono ao seu precedente no <em>pipe(line)</em></li>
+<li><code>&amp;&amp;</code>: executa somente se o comando precedente obtiver uma saída positiva</li>
+<li><code>||</code>: executa somente se o comando precedente obtiver uma saída negativa</li>
+</ul>
+
+<p>Veja o exemplo abaixo:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>$ test -d /tests/ || mkdir tests &amp;&amp; cd $_ | ls &gt; README.md
+</code></pre></div>
+<p>No exemplo acima, declaramos um comando compacto para um estrutura condicional, a qual fará a verificacão se o diretório <code>tests</code> já existe. Se (<code>||</code>) não existir, o diretório será criado com o comando <code>mkdir</code>, e (<code>&amp;&amp;</code>) acessado com o comando <code>cd</code>. Em seguida, com essa lista de comandos executados, passaremos para o próximo comando com a ajuda do <em>pipe</em> (<code>|</code>), onde vamos redirecionar (<code>&gt;</code>) a lista de diretório e arquivos no diretório atual para o nosso novo arquivo <code>README.md</code>.</p>
+
+<p>Perceba que estamos utilizando um novo camarada, o <code>$_</code>. Este cara é uma referência para o último argumento que passamos no comando anterior (<code>mkdir</code>). Então, ao invés de digitarmos o nome do novo diretório a ser criado, apenas fazemos uma referência com <code>$_</code>.</p>
+
+<p>Vamos em frente!</p>
+
+              <h3 id="Redirections">
+                <a name="Redirections" href="#Redirections"></a>Redirections
+              </h3>
+            
+<p><em>Redirections</em> seguem o mesmo princípio que <em>Pipes</em>: realizar o fluxo de dados. Entretanto, <em>redirections</em> trabalham com arquivos, não com comandos.</p>
+
+<p>Existem algumas diferenças quanto a sua sintaxe e o modo como o UNIX o executa. É importante lembrar que, os comandos sempre são declarados primeiro.</p>
+
+<p>Vamos entender alguns dos operadores utilizados para redirecionar os dados.</p>
+
+<blockquote>
+<p>Para mais detalhes sobre os operadores utilizados em redirecionamentos, [confira este material][20].</p>
+</blockquote>
+
+<ul>
+<li><code>&lt;</code>: redireciona a saída de um comando <strong>no disco</strong>. <em>!</em></li>
+<li><code>&gt;</code>: redireciona a saída de um comando para um arquivo no disco. Se o arquivo já existir, ele será apagado e escrito novamente.</li>
+<li><code>&lt;&lt;</code>: redireciona a saída de um comando para um arquivo e posiciona os dados ao início do mesmo (anexo).</li>
+<li><code>&gt;&gt;</code>: redireciona a saída de um comando para um arquivo e posiciona os dados ao final do mesmo (anexo).</li>
+<li><code>2&gt;&gt;</code>: redireciona a saída de erro e posiciona os dados ao final do mesmo (anexo).</li>
+<li><code>2&gt;&amp;1</code>: conecta a saída de erro na saída padrão.</li>
+<li><code>&gt;&amp;2</code>: conecta a saída padrão na saída de erro.</li>
+<li><code>&lt;&lt;EOF</code>: anexa dados a entrada padrão</li>
+<li><code>&lt;&lt;-EOF</code>: anexa dados a entrada padrão, cortando as <code>TABs</code>.</li>
+</ul>
+
+<blockquote>
+<p>! Cuidado com este comando. Se você digitar por engano <code>&gt;</code>, o conteúdo do arquivo em questão será apagado.</p>
+</blockquote>
+
+<p>Confira alguns exemplos.</p>
+
+              <h5 id="Listar-todos-os-arquivos">
+                <a name="Listar-todos-os-arquivos" href="#Listar-todos-os-arquivos"></a>Listar todos os arquivos
+              </h5>
+            
+<p>Digamos que você queira listar todos os arquivos (incluindo diretórios e sub-diretórios) das dependências instaladas em um aplicativo NodeJS (<code>node_modules</code>), salvando-os em um arquivo para futura análise. Você pode executar este procedimento com:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>find . -type f &gt; lista_node_modules.md
+</code></pre></div>
+              <h5 id="Criar-um-documento">
+                <a name="Criar-um-documento" href="#Criar-um-documento"></a>Criar um documento
+              </h5>
+            
+<p>Podemos criar um documento onde será renderizado um texto inicial e a estrutura do diretório logo em seguida.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>{ echo &quot;# Estrutura do Projeto&quot;; echo &quot;&quot;; ls; } &gt;&gt; estrutura.md
+</code></pre></div>
+<p>Perceba que estou utilizando <code>echo</code>, pois trata-se de 2 linhas apenas. Entretanto, se fosse necessário inserir uma série de linhas, ficaria inviável com um comando repleto de <code>echo</code>. Para estas situações, é aconselhável o uso do <code>cat</code> ou <code>tee</code>, juntamento com o <code>heredoc</code>.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>#
+<a name="line-2"></a># Exemplo com cat e EOF
+<a name="line-3"></a>#
+<a name="line-4"></a>$ cat &gt;&gt; arquivo_saida.md &lt;&lt; EOF
+<a name="line-5"></a>&gt; Título vem aqui
+<a name="line-6"></a>&gt;
+<a name="line-7"></a>&gt; Primeira linha com algum texto
+<a name="line-8"></a>&gt; Segunda linha com mais texto
+<a name="line-9"></a>&gt; Terceira linha para encerrar o arquivo
+<a name="line-10"></a>&gt; EOF
+</code></pre></div>
+<p>Note também, que foram utilizados <em>braces</em> (<code>{ }</code>) para agrupar os comandos e, os mesmos foram separados com <em>semicolon</em> (<code>;</code>), no primeiro exemplo.</p>
+
+              <h5 id="Redirecionamento-de-entradas-e-saídas">
+                <a name="Redirecionamento-de-entradas-e-saídas" href="#Redirecionamento-de-entradas-e-saídas"></a>Redirecionamento de entradas e saídas
+              </h5>
+            
+<p>Além disso, o redirecionamento pode ocorrer também com a entrada e saída padrão.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>ls -l  logs/*.log &gt; bkp-log.txt 2&gt;&amp;1
+</code></pre></div>
+<p>Neste exemplo, estamos redirecionando a saída padrão de erro (<code>STDERR</code>) para a saída padrão (<code>STDOUT</code>), que neste caso é o arquivo <code>bkp-log.txt</code>.</p>
+
+              <h2 id="Chegamos-ao-fim">
+                <a name="Chegamos-ao-fim" href="#Chegamos-ao-fim"></a>Chegamos ao fim
+              </h2>
+            
+<p>Bom, espero que com esta pequena introdução sobre estas poderosas <em>features</em> do UNIX, você possa ir mais a fundo nos seus estudos e realizar algumas tarefas com o próprio Shell, evitando o uso desnecessário de ferramentas e/ou dependências.</p>
+
+<p>É lógico que existem outros aspectos para cobrir sobre <em>pipes</em>, <em>streams</em> e amigos, mas perceba que tudo começou com o UNIX. Estudá-lo, é essencial para entender o que acontece por debaixo dos panos nas modernas ferramentas e fazer um melhor uso das mesmas.</p>
+
+<p>Até a próxima!</p>
+
+            </section>
+
+        </article>
+
+        <section class="box">
+    <div class="span3">
+        <img class="box-thumb" src="http://www.vitorbritto.com.br/blog/assets/images/avatar.jpg">
+    </div>
+    <div class="span9">
+        <section class="box-details">
+            <h3>Vitor Britto</h3>
+            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+        </section>
+    </div>
+</section>
+
+        <div class="box">
+    <div class="newsletter-wrapper">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=vitorbritto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <h3 class="newsletter-title">Receba os artigos no seu e-mail</h3>
+        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
+        <input class="input" type="email" name="email" placeholder="Digite o seu email"/>
+        <input type="hidden" value="vitorbritto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn-newsletter" type="submit" value="Assinar Newsletter" />
+    </form>
+    </div>
+</div>
+
+
+        <div class="line"></div>
+
+        
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+    var disqus_shortname = 'blogvitorbritto'; // shortname
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Por favor, habilite o JavaScript para ver os <a href="http://disqus.com/?ref_noscript">comentários</a> deste artigo.</noscript>
+
+
+
+    </div>
+
+        <div class="line"></div>
+
+        <div class="row">
+            <footer class="footer">
+                    <p class="footer-text">Desenvolvido por Vitor Britto. Feito com <a href="http://jekyllrb.com/" title="Jekyll" target="_blank">Jekyll</a>, <i class="icon-coffee"></i> e <i class="icon-heart"></i>.</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://www.vitorbritto.com.br/blog/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src='http://www.vitorbritto.com.br/blog/assets/js/app.min.js'></script>
+
+    <!-- Google Analytics -->
+    <script>
+    var _gaq=[['_setAccount','UA-12808940-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

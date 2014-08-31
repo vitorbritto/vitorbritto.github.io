@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>A Evolução na Automação de Tarefas</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Desenvolvedor Web" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="A Evolução na Automação de Tarefas"/>
+    <meta property="og:site_name" content="Blog - Vitor Britto"/>
+    <meta property="og:url" content="http://www.vitorbritto.com.br/blog/evolucao-automacao-de-tarefas/"/>
+    <meta property="og:image" content="http://www.vitorbritto.com.br/blog/assets/images/fb.jpg"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="Neste artigo, vou cobrir alguns pontos históricos, teóricos e mecânicos que foram (e continuam sendo) cruciais para as ferramentas de automação utilizadas nos dias de hoje."/>
+
+    <link rel="shortcut icon" href="http://www.vitorbritto.com.br/blog/assets/images/favicon.png" type="image/x-icon">
+    <link href="http://feeds.feedburner.com/vitorbritto" rel="alternate" type="application/rss+xml">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <link href="http://www.vitorbritto.com.br/blog/assets/css/style.css" rel="stylesheet" id="theme-css"/>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <header class="header">
+
+                <div class="span4">
+                    <div class="header-info">
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h4 class="header-description">Desenvolvedor Web</h4>
+                    </div>
+                </div>
+
+                <div class="span5">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/">Início</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/about">Sobre</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/projects">Projetos</a></li>
+    </ul>
+</nav>
+
+                </div>
+
+                <div class="span3">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item">
+            <a href="https://www.facebook.com/vbwebstudio" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://twitter.com/vitorbritto" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://github.com/vitorbritto" title="Github" target="_blank"><i class="icon-github"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="mailto:contato@vitorbritto.com.br"><i class="icon-envelope-alt"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="http://feeds.feedburner.com/vitorbritto" title="RSS Feed" target="_blank"><i class="icon-rss"></i></a>
+        </li>
+    </ul>
+</nav>
+
+                </div>
+
+            </header>
+        </div>
+
+        <div class="line"></div>
+
+
+
+<!-- Switch Theme -->
+<div class="theme-wrapper">
+    <p class="theme-text">Tema:</p>
+    <span class="theme-btn light" id="theme-light"></span>
+    <span class="theme-btn dark" id="theme-dark"></span>
+</div>
+
+    <div class="row">
+
+        <article class="article">
+
+            <img class="article-img" src="http://www.vitorbritto.com.br/blog/assets/images/posts/post-evolucao-automacao-de-tarefas.jpg">
+            <h2 class="article-title">A Evolução na Automação de Tarefas</h2>
+            <span class="article-date">Publicado em: 22/02/2014 | Por: Vitor Britto</span>
+            <div class="line"></div>
+
+            <section class="article-entry">
+                <p><strong>UPDATE 27-07-2014:</strong> o <a href="http://vitorbritto.github.io/just/">just</a> encontra-se em nova versão. Confira o <em>source code</em> e documentação <a href="https://github.com/vitorbritto/just">aqui</a></p>
+
+<p>Saudações!</p>
+
+<p>Há uns 4 meses, uma nova ferramenta veio ao conhecimento dos Desenvolvedores Front-end. Foi o maior rebuliço por conta da eficiência na execução de tarefas, da sua &quot;semelhança&quot; com o NodeJS e entre outras qualidades notáveis.</p>
+
+<p>Você já deve estar ciente que estou falando do Gulp.</p>
+
+<p>Tudo o que eu disse anteriormente, procede. O Gulp é uma ferramenta que prima por um encadeamento de tarefas mais compreensivo e organizado, fornecendo uma maneira muito prática para criar suas tarefas. Mas, você sabe o porquê dessa eficiência e como é possível esse encadeamento?</p>
+
+<p>Neste artigo, vou cobrir alguns pontos históricos, teóricos e mecânicos, que foram (e continuam sendo) cruciais para as ferramentas de automação utilizadas nos dias de hoje.</p>
+
+              <h2 id="Me-acompanhe-nesta-jornada">
+                <a name="Me-acompanhe-nesta-jornada" href="#Me-acompanhe-nesta-jornada"></a>Me acompanhe nesta jornada
+              </h2>
+            
+<p>Para quem acompanha os artigos aqui publicados, sabe que estou fazendo muitos convites para voltar no tempo. Serei obrigado a fazer este convite mais uma vez para falarmos sobre alguns aspectos importantes do UNIX (e seus utilitários) e Shell, até chegarmos ao NodeJS.</p>
+
+<p>Preparado? Então, vamos lá.</p>
+
+              <h3 id="UNIX-nosso-de-cada-dia">
+                <a name="UNIX-nosso-de-cada-dia" href="#UNIX-nosso-de-cada-dia"></a>UNIX nosso de cada dia
+              </h3>
+            
+<p>Entre os anos 60 e 80, a história da programação estava sendo redesenhada. Fosse Dennis Ritchie e Ken Thompson com o UNIX e a linguagem B/C, Douglas Engelbart com sua genialidade para criar ferramentas e recursos excitantes (o que lhe rendeu o título de <a href="http://www.youtube.com/watch?v=VScVgXM7lQQ&amp;list=PL76DBC8D6718B8FD3">&quot;The Mother of all Demos&quot;</a>) ou Alan Kay, Dan Ingalls e Adele Goldberg com o SmallTalk e seu paradigma orientado a objetos.</p>
+
+<p>Todos eles possuíam um objetivo em comum: tornar a portabilidade entre máquinas e sistemas operacionais viável e construir programas estruturados.</p>
+
+<p>O grande responsável por trás de tudo isso, foi o UNIX (e continua sendo). Com ele, veio a linguagem C, o Shell (com <em>pipes</em>, <em>redirections</em> e suas ferramentas), <em>Streams</em>, o utilitário <em>Make</em> e outras <em>features</em> que ajudaram (e ainda ajudam) na automação de tarefas, execução de processos e diversas rotinas.</p>
+
+<blockquote>
+<p><strong>Nota:</strong> <a href="http://www.vitorbritto.com.br/blog/unix-a-base-de-tudo/">neste artigo</a>, abordo alguns pontos sobre a história do UNIX, sua filosofia e importância.</p>
+</blockquote>
+
+              <h3 id="Chamando-o-Shell-Script-para-a-brincadeira">
+                <a name="Chamando-o-Shell-Script-para-a-brincadeira" href="#Chamando-o-Shell-Script-para-a-brincadeira"></a>Chamando o Shell Script para a brincadeira
+              </h3>
+            
+<p>O Shell Script sempre foi um grande aliado para os administradores UNIX. Além de ser uma caixinha de ferramentas poderosa para executar rotinas, possibilitava uma experiência muito boa com o usuário. Com ele, é possível criar pequenos programas para realizar <em>backup</em>, transferir arquivos de um sistema (local-&gt;local ou local-&gt;remoto), fazer consultas em extensos relatórios e muito mais.</p>
+
+<p>Mas, como podemos tornar isso útil no desenvolvimento de um projeto web?</p>
+
+<p>Me permita mostrar um exemplo:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>#!/bin/bash
+<a name="line-2"></a>
+<a name="line-3"></a>#
+<a name="line-4"></a># Programa: scaffolding.sh
+<a name="line-5"></a># Autor: Vitor Britto
+<a name="line-6"></a>#
+<a name="line-7"></a># Descrição:
+<a name="line-8"></a># Este script será responsável pela criação
+<a name="line-9"></a># de uma estrutura para novos projetos.
+<a name="line-10"></a>#
+<a name="line-11"></a># Uso: chmod u+x scaffolding.sh &amp;&amp; ./scaffolding.sh
+<a name="line-12"></a>#
+<a name="line-13"></a>
+<a name="line-14"></a># Declarando as variáveis
+<a name="line-15"></a>FILES=&quot;index.html robots.txt humans.txt .editorconfig assets/styles/style.css assets/scripts/main.js&quot;
+<a name="line-16"></a>PATHS=&quot;assets/scripts assets/styles assets/images assets/fonts&quot;
+<a name="line-17"></a>
+<a name="line-18"></a># Iniciando a interação com o usuário
+<a name="line-19"></a>echo -n &quot;→ Digite o nome do projeto (sem espaços): &quot;
+<a name="line-20"></a>read PROJECT
+<a name="line-21"></a>
+<a name="line-22"></a># Criando estrutura do projeto
+<a name="line-23"></a>echo -e &quot;→ Criando Estrutura&quot;
+<a name="line-24"></a>
+<a name="line-25"></a>mkdir -p $PROJECT &amp;&amp; cd $_
+<a name="line-26"></a>mkdir -p $PATHS
+<a name="line-27"></a>touch $FILES
+<a name="line-28"></a>
+<a name="line-29"></a># Mensagem final
+<a name="line-30"></a>echo -e &quot;\n✔ Processo finalizado!\n&quot;
+</code></pre></div>
+<p>Neste programa, montamos uma estrutura inicial para um novo projeto.</p>
+
+<p>Agora, confira o arquivo <code>build.sh</code>:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>#!/bin/bash
+<a name="line-2"></a>
+<a name="line-3"></a>#
+<a name="line-4"></a># Programa: build.sh
+<a name="line-5"></a># Autor: Vitor Britto
+<a name="line-6"></a>#
+<a name="line-7"></a># Descrição:
+<a name="line-8"></a># Este script será responsável pelo build do projeto, o qual
+<a name="line-9"></a># fará o processo de minificação e concatenação dos arquivos
+<a name="line-10"></a># e preparação dos arquivos a serem colocados em produção.
+<a name="line-11"></a>#
+<a name="line-12"></a># Uso: chmod u+x build.sh &amp;&amp; ./build.sh
+<a name="line-13"></a>#
+<a name="line-14"></a>
+<a name="line-15"></a># Declarando as variáveis
+<a name="line-16"></a>DIST=&quot;_build&quot;
+<a name="line-17"></a>IGNORE=(
+<a name="line-18"></a>    &quot;assets/styles/style.css&quot;
+<a name="line-19"></a>    &quot;assets/scripts/main.js&quot;
+<a name="line-20"></a>    &quot;.editorconfig&quot;
+<a name="line-21"></a>)
+<a name="line-22"></a>STYLE=&quot;assets/styles&quot;
+<a name="line-23"></a>SCRIPT=&quot;assets/scripts&quot;
+<a name="line-24"></a>
+<a name="line-25"></a># Minificar JS
+<a name="line-26"></a>echo -e &quot;→ Minificando JS&quot;
+<a name="line-27"></a>curl -X POST -s --data-urlencode &quot;input@${SCRIPT}/main.js&quot; http://javascript-minifier.com/raw &gt; ${SCRIPT}/main.min.js
+<a name="line-28"></a>
+<a name="line-29"></a># Minificar CSS
+<a name="line-30"></a>echo -e &quot;→ Minificando CSS&quot;
+<a name="line-31"></a>curl -X POST -s --data-urlencode &quot;input@${STYLE}/style.css&quot; http://cssminifier.com/raw &gt; ${STYLE}/style.min.css
+<a name="line-32"></a>
+<a name="line-33"></a>
+<a name="line-34"></a># Copiar arquivos para pasta de destino
+<a name="line-35"></a>echo -e &quot;→ Colocando arquivos em produção&quot;
+<a name="line-36"></a>if [[ ! -d ${DIST} ]]; then
+<a name="line-37"></a>    mkdir ${DIST}
+<a name="line-38"></a>fi
+<a name="line-39"></a>
+<a name="line-40"></a>cp ./* ${DIST}
+<a name="line-41"></a>rm -rf ${IGNORE}
+</code></pre></div>
+<p>Já este programa, fica responsável pela automação de nossas tarefas. Nele, estamos executando tarefas para minificar e concatenar arquivos CSS e JavaScript, além de realizar uma cópia dos arquivos a serem colocados em produção.</p>
+
+<p>Entretanto, podemos agregar uma maior utilidade para este <em>build script</em> com mais alguns recursos interessantes. Podemos utilizar um pré-processador para fazer o trabalho <strong>3 em 1</strong> (compilação, concatenação e minificação), integrar o <em>uglifyjs</em> para trabalharmos melhor com nossos <em>scripts</em>, viabilizar o uso do <em>rsync</em>, integrar o Grunt, Bower, Travis CI e torná-lo um repositório Git, além de possibilitar a execução de tarefas específicas para cada momento da automação. Muito melhor, não é?</p>
+
+<p>Poderíamos fazer isso com Shell Script, mas o <em>Makefile</em> se encaixa melhor neste cenário. E, é sobre ele que vamos falar agora.</p>
+
+              <h3 id="Fazendo-um-<em>upgrade<-em>-no-nosso-processo-de-automação">
+                <a name="Fazendo-um-<em>upgrade<-em>-no-nosso-processo-de-automação" href="#Fazendo-um-<em>upgrade<-em>-no-nosso-processo-de-automação"></a>Fazendo um <em>upgrade</em> no nosso processo de automação
+              </h3>
+            
+<p>Alguns Desenvolvedores tem um péssimo hábito em injetar plug-ins de forma frenética nos seus projetos, sem considerar uma leitura prévia na documentação da ferramenta que está utilizando, entre outras alternativas para se trabalhar com as tarefas desejadas. Lembre-se que devemos usar o bom senso e que a pesquisa é fundamental para o desenvolvimento de um projeto.</p>
+
+<p>Nesta etapa, estaremos utilizando o <em>Make</em>. Caso você já o conheça, prossiga para o exemplo a seguir. Se você não o conhece, me permita apresentá-lo.</p>
+
+              <h4 id="Make-my-day">
+                <a name="Make-my-day" href="#Make-my-day"></a>Make my day
+              </h4>
+            
+<p>O propósito do utilitário <em>Make</em> é automatizar determinados trechos de um programa mais robusto. Este cara lhe permite administrar de forma mais prática a automação no seu projeto, lhe dando acesso aos recursos do Shell. Vale frisar que, a sua utilidade não deve ser negligenciada por conta de outras ferramentas.</p>
+
+<blockquote>
+<p>Tanto o Shell quanto o Make estão disponíveis apenas em sistemas <strong>UNIX</strong> (OSX, BSD e Linux). Caso você esteja utilizando o Windows, será possível executar este cara com a ajuda do <a href="http://www.cygwin.com/">CygWin</a></p>
+</blockquote>
+
+              <h4 id="Colocando-em-prática">
+                <a name="Colocando-em-prática" href="#Colocando-em-prática"></a>Colocando em prática
+              </h4>
+            
+<p>Para utilizar o <em>make</em>, você deve criar um arquivo <code>makefile</code> e executá-lo com o comando <code>make [tarefa que você quer executar]</code> no UNIX Shell.</p>
+
+<p>Confira o exemplo abaixo:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a># MAKEFILE
+<a name="line-2"></a>#
+<a name="line-3"></a># Autor: Vitor Britto
+<a name="line-4"></a># Versão: 0.1.0
+<a name="line-5"></a>#
+<a name="line-6"></a>#
+<a name="line-7"></a># Descrição:
+<a name="line-8"></a># Arquivo para gerar um estrutura inicial para
+<a name="line-9"></a># novos projetos e realizar tarefas de automação
+<a name="line-10"></a>#
+<a name="line-11"></a>#
+<a name="line-12"></a># Tarefas Disponíveis:
+<a name="line-13"></a>#    make        -&gt; Inicializa processo de Build
+<a name="line-14"></a>#    make create -&gt; Criar a estrutura do projeto
+<a name="line-15"></a>#    make copy   -&gt; Copia os arquivos para a pasta &quot;public&quot;
+<a name="line-16"></a>#    make zip    -&gt; Compacta os arquivos da pasta &quot;public&quot; e versiona com a data e hora atual
+<a name="line-17"></a>#
+<a name="line-18"></a>#
+<a name="line-19"></a># Uso: make [nome da tarefa que deseja executar]
+<a name="line-20"></a>#
+<a name="line-21"></a>
+<a name="line-22"></a># Caminhos de Origem
+<a name="line-23"></a>JS_IN    = ./assets/scripts
+<a name="line-24"></a>CSS_IN   = ./assets/styles
+<a name="line-25"></a>IMG_IN   = ./assets/images
+<a name="line-26"></a>
+<a name="line-27"></a># Caminhos de Destino
+<a name="line-28"></a>DIST     = ./public
+<a name="line-29"></a>JS_OUT   = ./public/assets/scripts
+<a name="line-30"></a>CSS_OUT  = ./public/assets/styles
+<a name="line-31"></a>IMG_IN   = ./public/assets/images
+<a name="line-32"></a>
+<a name="line-33"></a># Configurações Gerais
+<a name="line-34"></a>CHECK    = \033[32m✔\033[39m
+<a name="line-35"></a>HR       = -----------------------------------------------------
+<a name="line-36"></a>IGNORE   = (&quot;assets/styles/style.css&quot; &quot;assets/scripts/main.js&quot; &quot;package.json&quot; &quot;bower.json&quot; &quot;.gitignore&quot; &quot;.git&quot; &quot;.travis.yml&quot; &quot;.editorconfig&quot;)
+<a name="line-37"></a>NODE     = ./node_modules/.bin
+<a name="line-38"></a>PACKAGE  = pkg_projeto
+<a name="line-39"></a>VERSION  = date &quot;+%Y.%m.%d&quot;
+<a name="line-40"></a>RELEASE  = $(PACKAGE)-$(VERSION)
+<a name="line-41"></a>
+<a name="line-42"></a># Inicializar processo de Build
+<a name="line-43"></a>all: init styles scripts
+<a name="line-44"></a>
+<a name="line-45"></a>help:
+<a name="line-46"></a>    @cat help.txt
+<a name="line-47"></a>
+<a name="line-48"></a># Mensagem de Inicialização
+<a name="line-49"></a>init:
+<a name="line-50"></a>    @echo &quot;\n$(HR)&quot;
+<a name="line-51"></a>    @echo &quot;→ Iniciando processo de Build&quot;
+<a name="line-52"></a>    @echo &quot;$(HR)\n&quot;
+<a name="line-53"></a>
+<a name="line-54"></a>
+<a name="line-55"></a># Criar Estrutura para novos projetos
+<a name="line-56"></a>create:
+<a name="line-57"></a>    @echo &quot;→ Iniciando download&quot;
+<a name="line-58"></a>    @echo &quot;\n&quot;
+<a name="line-59"></a>    @curl -fsSL https://gist.githubusercontent.com/vitorbritto/9128566/raw/bf3d531d39afc7fec5a034f968569fc7883f0c2e/create.sh &gt; create.sh
+<a name="line-60"></a>    @chmod u+x create.sh &amp;&amp; ./create.sh
+<a name="line-61"></a>
+<a name="line-62"></a>    @mkdir -p $(DIST)
+<a name="line-63"></a>
+<a name="line-64"></a>
+<a name="line-65"></a># Tarefa para Estilos
+<a name="line-66"></a>styles:
+<a name="line-67"></a>    @$(NODE)/stylus -c &lt; $(CSS_IN)/style.styl &gt; $(CSS_OUT)/style.css
+<a name="line-68"></a>    @echo &quot;→ Compilando CSS              $(CHECK) Feito!&quot;
+<a name="line-69"></a>
+<a name="line-70"></a># Tarefa para Scripts
+<a name="line-71"></a>scripts:
+<a name="line-72"></a>    @$(NODE)/uglifyjs -o $(JS_IN)/main.js &gt; $(JS_OUT)/main.min.js
+<a name="line-73"></a>    @echo &quot;→ Minificando Scripts         $(CHECK) Feito!&quot;
+<a name="line-74"></a>
+<a name="line-75"></a># Copiar arquivos para a pasta &quot;public&quot; via Rsync
+<a name="line-76"></a>copy:
+<a name="line-77"></a>    @echo &quot;→ Copiando arquivos&quot;
+<a name="line-78"></a>    @rsync -aq --exclude=&quot;$(IGNORE)&quot; $(DIST)
+<a name="line-79"></a>
+<a name="line-80"></a># Compactar arquivos na pasta &quot;public&quot;
+<a name="line-81"></a>zip:
+<a name="line-82"></a>    @echo &quot;→ Compactando arquivos&quot; \
+<a name="line-83"></a>    @zip -r $(RELEASE) $(DIST)/*
+<a name="line-84"></a>
+<a name="line-85"></a># Instalar dependências
+<a name="line-86"></a>modules:
+<a name="line-87"></a>    @echo &quot;→ Instalando dependências&quot; \
+<a name="line-88"></a>    @npm install
+<a name="line-89"></a>
+<a name="line-90"></a># Execute all with &quot;make&quot;
+<a name="line-91"></a>.PHONY: all copy zip
+</code></pre></div>
+<p>Neste arquivo <code>makefile</code>, temos duas tarefas principais:</p>
+
+<ol>
+<li>Criar uma estrutura inicial para o projeto</li>
+<li>Executar tarefas de automação no nosso projeto</li>
+</ol>
+
+<p><strong>O que foi feito?</strong></p>
+
+<ul>
+<li>Perceba que para gerar o <em>scaffolding</em>, estamos utilzando o <a href="http://curl.haxx.se/">cURL</a> com <a href="http://www.gnu.org/software/bash/manual/html_node/Redirections.html"><em>redirections</em></a>. Com isso, deixamos o nosso <code>makefile</code> mais enxuto e objetivo.</li>
+<li>Integramos um gerenciador de pacotes (Bower) e iniciamos um repositório local com o Git.</li>
+<li>Incluímos um arquivo para que seja possível realizar a Integração Contínua com o Travis CI.</li>
+<li>Estamos utilizando os módulos <a href="https://www.npmjs.org/package/uglify-js"><em>uglify-js</em></a> e <a href="https://www.npmjs.org/package/stylus"><em>stylus</em></a>, instalados via <strong>npm</strong>, para trabalhar com os arquivos de formatação (CSS) e comportamento (JavaScript).</li>
+<li>Agora, a cópia dos nossos arquivos é feita através do <a href="http://rsync.samba.org/"><em>rsync</em></a>, o que possibilita a sincronização e cópia apenas para arquivos novos/modificados.</li>
+<li>Incluímos uma tarefa para versionar o projeto, com a compressão de arquivos em formato ZIP, composta pelo nome do projeto e data em que foi criado.</li>
+<li>Criamos o arquivo <code>help.txt</code> para instruções de uso e descrição das tarefas. Confira abaixo:</li>
+</ul>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>-------------------------------------------------------------
+<a name="line-2"></a>Tarefas Disponíveis:
+<a name="line-3"></a>    make        -&gt; Tarefa padrão (all + copy + zip)
+<a name="line-4"></a>    make all    -&gt; Inicializa processo de Build
+<a name="line-5"></a>    make create -&gt; Criar a estrutura do projeto
+<a name="line-6"></a>    make copy   -&gt; Copia os arquivos para a pasta &quot;public&quot;
+<a name="line-7"></a>    make zip    -&gt; Comprime os arquivos da pasta &quot;public&quot;
+<a name="line-8"></a>                    e versiona com a data e hora atual
+<a name="line-9"></a>Uso: 
+<a name="line-10"></a>    make [nome da tarefa que deseja executar]
+<a name="line-11"></a>-------------------------------------------------------------
+</code></pre></div>
+              <h4 id="Entretanto-">
+                <a name="Entretanto-" href="#Entretanto-"></a>Entretanto...
+              </h4>
+            
+<p>Para quem trabalha com Desenvolvimento Front-End, este escopo de automação pode não se enquadrar muito bem na sua realidade. E, por que? Ora, pois a camada que lida com os comportamentos no Front-End é o JavaScript. Logo, nada mais sensato que utilizar está linguagem para criar um <em>build script</em> e executar a automação de tarefas no projeto. Não concorda?</p>
+
+<p>Entretanto, você percebeu quantas ferramentas e métodos conseguimos utilizar com o <em>Shell Script</em> e <em>Makefile</em>, sem o uso de plugins, Grunt ou Gulp?</p>
+
+<p>Pois! Com isso, você viu que podemos realizar a cópia de arquivos através do <em>Rsync</em> ou com um simples comando <code>cp</code>. Que podemos utilizar o comando <code>zip</code> para a compressão de arquivos e versionamento. Que podemos executar comandos diretamente no Shell para trabalhar com arquivos CSS e JavaScript, além de criar uma estrutura para um novo projeto.</p>
+
+              <h2 id="Automação-nos-dias-de-hoje">
+                <a name="Automação-nos-dias-de-hoje" href="#Automação-nos-dias-de-hoje"></a>Automação nos dias de hoje
+              </h2>
+            
+<p>Não há dúvidas de que o Ryan Dahl teve uma grande inspiração no UNIX e linguagem C para criar o NodeJS. É perceptível, pelo fato de que o C está ligado diretamente ao UNIX e NodeJS lida com processos, fluxo de dados (input/output, read/write) e eventos, o que nos leva de volta ao UNIX.</p>
+
+<p>Mas, o que faz o NodeJS ser tão interessante?</p>
+
+              <h3 id="Utilizar-JavaScript-quot-em-todo-os-lados-quot-">
+                <a name="Utilizar-JavaScript-quot-em-todo-os-lados-quot-" href="#Utilizar-JavaScript-quot-em-todo-os-lados-quot-"></a>Utilizar JavaScript &quot;em todo os lados&quot;
+              </h3>
+            
+<p>O NodeJS possibilita que você desenvolva aplicações com JavaScript no <em>server-side</em>!</p>
+
+<p>Agora sim, Vitor! Você está falando minha língua!</p>
+
+<p>Pois é, meu caro. E, se você ligou todos os pontos, percebeu que podemos criar uma ferramenta de automação em cima do NodeJS também (sem Gulp ou Grunt).</p>
+
+<p>E como faremos isso?</p>
+
+              <h3 id="Talk-is-cheap-show-me-the-code-">
+                <a name="Talk-is-cheap-show-me-the-code-" href="#Talk-is-cheap-show-me-the-code-"></a>Talk is cheap, show me the code!
+              </h3>
+            
+<p>Para comprovar que Unix, Shell e NodeJS estão interligados, utilizaremos os seguintes módulos:</p>
+
+<ul>
+<li><a href="https://www.npmjs.org/package/commander">Commander</a></li>
+<li><a href="https://www.npmjs.org/package/shelljs">ShellJS</a> - <em>Sweet!</em></li>
+<li><a href="https://www.npmjs.org/package/cli-color">Cli-color</a></li>
+</ul>
+
+<p>Confira o exemplo abaixo:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>// Configuracão
+<a name="line-2"></a>var config = require(&#39;./config&#39;);
+<a name="line-3"></a>
+<a name="line-4"></a>// Dependências
+<a name="line-5"></a>var cli   = require(&#39;commander&#39;),
+<a name="line-6"></a>    sh    = require(&#39;shelljs&#39;),
+<a name="line-7"></a>    color = require(&#39;cli-color&#39;);
+<a name="line-8"></a>
+<a name="line-9"></a>// Mensagens
+<a name="line-10"></a>var error    = color.red.bold,
+<a name="line-11"></a>    warn     = color.yellow,
+<a name="line-12"></a>    info     = color.grey,
+<a name="line-13"></a>    notice   = color.cyan,
+<a name="line-14"></a>    success  = color.green;
+<a name="line-15"></a>
+<a name="line-16"></a>
+<a name="line-17"></a>// Comandos
+<a name="line-18"></a>cli
+<a name="line-19"></a>    .command(&#39;init&#39;)
+<a name="line-20"></a>    .description(&#39;Inicializar o processo de Build.&#39;)
+<a name="line-21"></a>    .action(build);
+<a name="line-22"></a>
+<a name="line-23"></a>cli.parse(process.argv);
+<a name="line-24"></a>
+<a name="line-25"></a>// Compilar arquivos Sass para CSS
+<a name="line-26"></a>function initCompile(){
+<a name="line-27"></a>    if (!sh.which(&#39;stylus&#39;)) {
+<a name="line-28"></a>        sh.echo(error(&#39;✖ Você precisa ter o &quot;stylus&quot; instalado globalmente no seu sistema.&#39;));
+<a name="line-29"></a>        sh.echo(warn(&#39;Instalação: npm install stylus -g&#39;));
+<a name="line-30"></a>        exit(1);
+<a name="line-31"></a>    }
+<a name="line-32"></a>    sh.echo(notice(&#39;→ Compilando arquivos&#39;));
+<a name="line-33"></a>    sh.exec(&#39;stylus -c &lt;&#39; + config.paths.src.css + &#39;style.styl&gt; &#39; + config.paths.out.css + &#39;style.css&#39;);
+<a name="line-34"></a>}
+<a name="line-35"></a>
+<a name="line-36"></a>// Validar Scripts
+<a name="line-37"></a>function initValidate() {
+<a name="line-38"></a>    if (!sh.which(&#39;jshint&#39;)) {
+<a name="line-39"></a>        sh.echo(error(&#39;✖ Você precisa ter o &quot;jshint&quot; instalado globalmente no seu sistema&#39;));
+<a name="line-40"></a>        sh.echo(warn(&#39;Instalação: npm install jshint -g&#39;));
+<a name="line-41"></a>        exit(1);
+<a name="line-42"></a>    }
+<a name="line-43"></a>    sh.echo(notice(&#39;→ Validando scripts&#39;));
+<a name="line-44"></a>    sh.exec(&#39;jshint &#39; + config.paths.src.js + &#39;main.js&#39;);
+<a name="line-45"></a>}
+<a name="line-46"></a>
+<a name="line-47"></a>// Concatenar e minificar Scripts
+<a name="line-48"></a>function initMinify() {
+<a name="line-49"></a>    if (!sh.which(&#39;uglifyjs&#39;)) {
+<a name="line-50"></a>        sh.echo(error(&#39;✖ Você precisa ter o &quot;uglify-js&quot; instalado globalmente no seu sistema&#39;));
+<a name="line-51"></a>        sh.echo(warn(&#39;Instalação: npm install uglify-js -g&#39;));
+<a name="line-52"></a>        exit(1);
+<a name="line-53"></a>    }
+<a name="line-54"></a>    sh.echo(notice(&#39;→ Minificando scripts&#39;));
+<a name="line-55"></a>    sh.exec(&#39;cat &#39;+ config.paths.src.js +&#39; main.js | uglifyjs -o &#39;+ config.paths.out.js +&#39;main.min.js&#39;);
+<a name="line-56"></a>}
+<a name="line-57"></a>
+<a name="line-58"></a>// Apagar arquivos remanescentes
+<a name="line-59"></a>function initClean(){
+<a name="line-60"></a>    sh.echo(notice(&#39;→ Removendo arquivos remanescentes&#39;));
+<a name="line-61"></a>    sh.rm(&#39;-rf&#39;, [config.paths.out.main, config.paths.out.css, config.paths.out.js, config.paths.out.img]);
+<a name="line-62"></a>}
+<a name="line-63"></a>
+<a name="line-64"></a>// Criar estrutura
+<a name="line-65"></a>function initScaffolding() {
+<a name="line-66"></a>    sh.echo(notice(&#39;→ Criando estrutura do projeto&#39;));
+<a name="line-67"></a>    sh.mkdir(&#39;-p&#39;, [config.paths.out.main, config.paths.out.css, config.paths.out.js, config.paths.out.img]);
+<a name="line-68"></a>}
+<a name="line-69"></a>
+<a name="line-70"></a>
+<a name="line-71"></a>// Iniciar proceso de Build
+<a name="line-72"></a>function build(){
+<a name="line-73"></a>
+<a name="line-74"></a>    sh.echo(notice(&#39;→ Inicializando o processo de Build&#39;));
+<a name="line-75"></a>
+<a name="line-76"></a>    initClean();
+<a name="line-77"></a>    initScaffolding();
+<a name="line-78"></a>    initCompile();
+<a name="line-79"></a>    initValidate();
+<a name="line-80"></a>    initMinify();
+<a name="line-81"></a>
+<a name="line-82"></a>    sh.echo(success(&#39;✔ Feito!&#39;));
+<a name="line-83"></a>}
+</code></pre></div>
+<p>O arquivo acima foi retirado do projeto <a href="http://managers.vitorbritto.com.br/">Managers</a>. Outros arquivos fazem parte desta <em>Build Tool</em>, mas a intenção é mostrar como é possível utilizar o poder do NodeJS para realizarmos a automação de tarefas também. Perceba que ainda não utilizamos o Grunt ou Gulp e já temos 3 (três) métodos para realizarmos estes procedimentos/rotinas.</p>
+
+<blockquote>
+<p>Confira os arquivos do exemplo acima, <a href="https://github.com/vitorbritto/node-managers/tree/master/templates/node">neste link</a>.</p>
+</blockquote>
+
+<p>Percebeu como integramos os comandos do Shell no NodeJS também? Show de bola, não? =]</p>
+
+<p>Ainda assim, poderíamos ter utilizado o módulo <code>async</code> ou <em>promises</em> para trabalhar melhor o fluxo de dados, já que o NodeJS trabalha de forma não-bloqueante e assíncrona.</p>
+
+<p>Outra opção seria integrar os <em>core modules</em>: <code>streams</code>, <code>events</code>, <code>fs</code>, <code>path</code> e <code>child_process</code>. Entretanto, ao utilizar o módulo <em>ShellJS</em>, poupamos esforços e tornamos mais real ainda o propósito deste artigo, o qual é mostrar que o Shell é extremamente útil e que lhe oferece inúmeras possibilidades para executar processos de automação.</p>
+
+              <h3 id="De-um-lado-o-Grunt">
+                <a name="De-um-lado-o-Grunt" href="#De-um-lado-o-Grunt"></a>De um lado o Grunt
+              </h3>
+            
+<p>Um <em>Task Runner</em> para automação de tarefas que depende do NodeJS e utiliza o JavaScript como base para que você construa as suas tarefas. Uma ferramenta, onde muitos passaram a criticar por conta da sua performance e excesso de linhas para configurar as tarefas.</p>
+
+<p>Pois bem, este cenário pode ser contornado se configurarmos nossas tarefas de maneira adequada, utilizando os gargalos da API, evitando o uso desenfreado de plug-ins e buscando novas soluções.</p>
+
+<p>Recentemente, publiquei algumas <a href="http://www.vitorbritto.com.br/blog/dicas-uteis-para-quem-utiliza-gruntjs/">dicas para quem utiliza o Grunt</a> e estarei atualizando a medida em que novas ideias forem surgindo.</p>
+
+              <h3 id="Do-outro-lado-o-Gulp">
+                <a name="Do-outro-lado-o-Gulp" href="#Do-outro-lado-o-Gulp"></a>Do outro lado o Gulp
+              </h3>
+            
+<p>Também um ferramenta de automação que depende do NodeJS e utiliza o JavaScript para construir tarefas. A diferença? O Gulp faz uso de <em>pipes</em> e <em>redirections</em>, os quais fazem parte de <em>Streams</em> e, por sua vez, está no NodeJS por conta do UNIX. Isso torna a sua performance (comparado ao Grunt) mais &quot;aceitável&quot;. Além disso, o Gulp tem uma sintaxe <em>node-like</em>, o que aproxima a criação do seu criador.</p>
+
+              <h3 id="No-fim-das-contas">
+                <a name="No-fim-das-contas" href="#No-fim-das-contas"></a>No fim das contas
+              </h3>
+            
+<p>O Grunt e o Gulp são excelente ferramentas de automação e uma não vai tomar o lugar da outra! O que se torna preocupante é que muitos ainda utilizam estas ferramentas sem entender que estamos lidando com JavaScript e que podemos chamar o NodeJS para a brincadeira também. Afinal, estes caras foram desenvolvidos em cima do NodeJS, o qual utiliza a linguagem JavaScript.</p>
+
+              <h3 id="Não-vamos-nos-limitar">
+                <a name="Não-vamos-nos-limitar" href="#Não-vamos-nos-limitar"></a>Não vamos nos limitar
+              </h3>
+            
+<p>É preciso trilhar novos caminhos e testar novas ferramentas. Assim, saberemos quais delas devemos/podemos nos aprofundar e apostamos em uma melhora significativa no nosso ambiente de desenvolvimento. Se negarmos esta oportunidade, corremos o risco em não deixar o nosso Workflow mais eficiência e produtivo com uma ferramenta mais atual, objetiva e/ou prática.</p>
+
+<p>Vivemos em um momento onde as ferramentas são criadas de forma desenfreada, mas o ser humano tem um instinto natural para se adaptar a esta evolução também. Entretanto, não podemos perder o foco. Devemos manter o equilíbrio entre a utilização de ferramentas que já fazem parte do nosso Workflow, com o bom senso em até quando está sendo útil investir em novas ferramentas.</p>
+
+              <h3 id="Uma-pequena-demonstração">
+                <a name="Uma-pequena-demonstração" href="#Uma-pequena-demonstração"></a>Uma pequena demonstração
+              </h3>
+            
+<p>Recentemente, criei um <em>task runner</em> muito simples, chamado <a href="http://vitorbritto.github.io/just/">Just</a>, para um experimento pessoal. Porém, acabou sendo muito útil para 2 projetos de pequeno porte. Resolvi torná-lo <em>open-source</em> e espero que seja útil para você. Fique a vontade para contribuir e deixar sugestões sobre o projeto.</p>
+
+<p>Nesta ferramenta, estou utilizando o <a href="https://www.npmjs.org/package/shelljs"><em>ShellJS</em></a> para manipulação de arquivos e execução de comandos no Shell, o módulo <a href="https://www.npmjs.org/package/commander"><em>Commander</em></a> para que eu consiga passar argumentos e tratar esta ferramenta como uma <em>CLI Tool</em> e o módulo <a href="https://www.npmjs.org/package/orchestrator"><em>Orchestrator</em></a>, o qual é a base para a construção das tarefas no <strong>Gulp</strong> e que será, possivelmente, utilizado no <a href="https://github.com/gruntjs/grunt-next">Grunt v.1.0 alpha</a>.</p>
+
+<p>Veja abaixo o arquivo principal do <strong>Just</strong>:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>#!/usr/bin/env node
+<a name="line-2"></a>
+<a name="line-3"></a>// =====================================================
+<a name="line-4"></a>// Initial Configuration
+<a name="line-5"></a>// =====================================================
+<a name="line-6"></a>
+<a name="line-7"></a>// Modules
+<a name="line-8"></a>var sh     = require(&#39;shelljs&#39;),
+<a name="line-9"></a>    cmd    = require(&#39;commander&#39;),
+<a name="line-10"></a>    config = require(&#39;./config&#39;),
+<a name="line-11"></a>    Just   = require(&#39;orchestrator&#39;),
+<a name="line-12"></a>    just   = new Just();
+<a name="line-13"></a>
+<a name="line-14"></a>require(&#39;colors&#39;);
+<a name="line-15"></a>
+<a name="line-16"></a>// =====================================================
+<a name="line-17"></a>// CLI Commands
+<a name="line-18"></a>// =====================================================
+<a name="line-19"></a>
+<a name="line-20"></a>cmd
+<a name="line-21"></a>    .command(&#39;run&#39;)
+<a name="line-22"></a>    .description(&#39;Run lint, minify and compile tasks&#39;)
+<a name="line-23"></a>    .action(build);
+<a name="line-24"></a>
+<a name="line-25"></a>cmd
+<a name="line-26"></a>    .command(&#39;watch&#39;)
+<a name="line-27"></a>    .description(&#39;Run build tasks and watch for changes&#39;)
+<a name="line-28"></a>    .action(watch);
+<a name="line-29"></a>
+<a name="line-30"></a>
+<a name="line-31"></a>// Config
+<a name="line-32"></a>cmd.parse(process.argv);
+<a name="line-33"></a>
+<a name="line-34"></a>if (process.argv.length === 2) {
+<a name="line-35"></a>    cmd.help();
+<a name="line-36"></a>}
+<a name="line-37"></a>
+<a name="line-38"></a>// =====================================================
+<a name="line-39"></a>// Build Task
+<a name="line-40"></a>// =====================================================
+<a name="line-41"></a>
+<a name="line-42"></a>function build() {
+<a name="line-43"></a>
+<a name="line-44"></a>    sh.echo(&#39;→ Runnning&#39;.cyan);
+<a name="line-45"></a>    sh.echo(&#39;&#39;);
+<a name="line-46"></a>
+<a name="line-47"></a>    // Script task
+<a name="line-48"></a>    just.add(&#39;build&#39;, function() {
+<a name="line-49"></a>        config.jshint();
+<a name="line-50"></a>        config.minify();
+<a name="line-51"></a>        config.compile();
+<a name="line-52"></a>    });
+<a name="line-53"></a>
+<a name="line-54"></a>    // Run tasks
+<a name="line-55"></a>    just.start([&#39;build&#39;]);
+<a name="line-56"></a>
+<a name="line-57"></a>    sh.echo(&#39;✔ done&#39;.green);
+<a name="line-58"></a>}
+<a name="line-59"></a>
+<a name="line-60"></a>
+<a name="line-61"></a>// =====================================================
+<a name="line-62"></a>// Watch Task
+<a name="line-63"></a>// =====================================================
+<a name="line-64"></a>
+<a name="line-65"></a>function watch() {
+<a name="line-66"></a>
+<a name="line-67"></a>    // Watch task
+<a name="line-68"></a>    just.add(&#39;watch&#39;, function() {
+<a name="line-69"></a>        config.refresh();
+<a name="line-70"></a>    });
+<a name="line-71"></a>
+<a name="line-72"></a>    // Watch task must be complete before this one begins
+<a name="line-73"></a>    just.add(&#39;build&#39;, [&#39;watch&#39;], function() {
+<a name="line-74"></a>        config.jshint();
+<a name="line-75"></a>        config.minify();
+<a name="line-76"></a>        config.compile();
+<a name="line-77"></a>    });
+<a name="line-78"></a>
+<a name="line-79"></a>    // Run tasks
+<a name="line-80"></a>    just.start([&#39;watch&#39;, &#39;build&#39;]);
+<a name="line-81"></a>
+<a name="line-82"></a>    sh.echo(&#39;→ Watching for changes...&#39;.cyan);
+<a name="line-83"></a>    sh.echo(&#39;&#39;);
+<a name="line-84"></a>    sh.echo(&#39;→ Press CTRL+C to exit&#39;.yellow);
+<a name="line-85"></a>}
+</code></pre></div>
+<blockquote>
+<p>O código completo você encontra <a href="https://github.com/vitorbritto/just">aqui</a></p>
+</blockquote>
+
+              <h2 id="As-possibilidades-são-infinitas">
+                <a name="As-possibilidades-são-infinitas" href="#As-possibilidades-são-infinitas"></a>As possibilidades são infinitas
+              </h2>
+            
+<p>O processo de <em>build</em> não é nenhuma novidade. Você deve ter percebido isso por conta do <em>Make</em>. O <em>build</em> é uma prática que foi adotada há muito tempo na Engenharia de Softwares, sendo utilizada a favor das metodologias ágeis. É com este processo que automatizamos tarefas e garantimos um alto nível de qualidade em nossos projetos.</p>
+
+<p>Mas, fora isso, você notou a quantidade de ferramentas e alguns possíveis métodos que podemos utilizar para realizar a automação de tarefas em nossos projetos?</p>
+
+<p>Perceba que, não falamos sobre o <em>Rake</em> (RIP Jim Weirich), o qual possui uma base muito sólida em <em>Make</em>, nem do <em>Maven</em>, <em>Ant</em>, <em>Cake</em>, <em>Factory</em> e <em>Phing</em>.</p>
+
+<p>Todas estas ferramentas beberam da mesma fonte, o UNIX!</p>
+
+<p>Não fique limitado ao uso do Gulp ou Grunt <strong>com plugins</strong>. Procure utilizar os <em>core modules</em> do NodeJS e brincar com a API destes caras também. O mais divertido de tudo na programação, desenvolvimento web e o que for que envolva lógica de programação, é tornar possível novos desafios. E superá-los!</p>
+
+<p>Torne esses momentos possíveis! Você vai se divertir.</p>
+
+<p>Até a próxima!</p>
+
+            </section>
+
+        </article>
+
+        <section class="box">
+    <div class="span3">
+        <img class="box-thumb" src="http://www.vitorbritto.com.br/blog/assets/images/avatar.jpg">
+    </div>
+    <div class="span9">
+        <section class="box-details">
+            <h3>Vitor Britto</h3>
+            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+        </section>
+    </div>
+</section>
+
+        <div class="box">
+    <div class="newsletter-wrapper">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=vitorbritto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <h3 class="newsletter-title">Receba os artigos no seu e-mail</h3>
+        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
+        <input class="input" type="email" name="email" placeholder="Digite o seu email"/>
+        <input type="hidden" value="vitorbritto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn-newsletter" type="submit" value="Assinar Newsletter" />
+    </form>
+    </div>
+</div>
+
+
+        <div class="line"></div>
+
+        
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+    var disqus_shortname = 'blogvitorbritto'; // shortname
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Por favor, habilite o JavaScript para ver os <a href="http://disqus.com/?ref_noscript">comentários</a> deste artigo.</noscript>
+
+
+
+    </div>
+
+        <div class="line"></div>
+
+        <div class="row">
+            <footer class="footer">
+                    <p class="footer-text">Desenvolvido por Vitor Britto. Feito com <a href="http://jekyllrb.com/" title="Jekyll" target="_blank">Jekyll</a>, <i class="icon-coffee"></i> e <i class="icon-heart"></i>.</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://www.vitorbritto.com.br/blog/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src='http://www.vitorbritto.com.br/blog/assets/js/app.min.js'></script>
+
+    <!-- Google Analytics -->
+    <script>
+    var _gaq=[['_setAccount','UA-12808940-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

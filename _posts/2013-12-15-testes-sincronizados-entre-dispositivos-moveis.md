@@ -1,12 +1,13 @@
 ---
 layout: post
 title: "Testes sincronizados entre dispositivos móveis"
-link: "http://vitorbritto.com/blog/testes-sincronizados-entre-dispositivos-moveis/"
+description: Alguns procedimentos são valiosos para agregar eficiência em determinadas tarefas no decorrer de um projeto. Entre elas, podemos frisar as tarefas para observar mudanças dos nossos arquivos a medida em que forem modificados, atualizar o browser automaticamente quando as modificações ocorrerem e sincronizar (simulando comportamentos também) os dispositívos móveis a fim de avaliarmos e testarmos a consistência e eficiência da nossa aplicação.
+link: "http://vitorbritto.com.br/blog/testes-sincronizados-entre-dispositivos-moveis/"
 date: 2013-12-15
 cover: "assets/images/posts/post-sync-test.jpg"
 avatar: "assets/images/avatar.jpg"
 author: Vitor Britto
-bio: Desenvolvedor Web e Designer, extremamente apaixonado pelo seu trabalho. Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, projetos colaborativos, desenvolvimento de projetos pessoais e escrever os artigos aqui publicados.
+bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true
 ---
 

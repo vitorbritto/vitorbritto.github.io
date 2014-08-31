@@ -15,23 +15,9 @@
 @import "mixins/buttons";
 
 // GENERAL
-@import "general/grid/grid";
-
-@import "general/base/scaffolding";
-@import "general/base/types";
-@import "general/base/links";
-@import "general/base/lists";
-@import "general/base/images";
-@import "general/base/misc";
-@import "general/base/tables";
-@import "general/base/forms";
-
-@import "general/responsive/mobile";
-@import "general/responsive/tablet";
-@import "general/responsive/tvscreen";
-
-@import "general/legacy/icons";
-@import "general/legacy/modernizr";
+@import "general/grid";
+@import "general/base";
+@import "general/responsive";
 
 // OBJECTS
 @import "objects/global";

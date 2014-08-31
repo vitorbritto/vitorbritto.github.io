@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Adicionando caminhos na variável de ambiente PATH</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Desenvolvedor Web" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="Adicionando caminhos na variável de ambiente PATH"/>
+    <meta property="og:site_name" content="Blog - Vitor Britto"/>
+    <meta property="og:url" content="http://www.vitorbritto.com.br/blog/adicionando-caminhos-na-variavel-de-ambiente-PATH/"/>
+    <meta property="og:image" content="http://www.vitorbritto.com.br/blog/assets/images/fb.jpg"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="É comum instalarmos novos programas/plataformas em nosso sistema e precisarmos inicializar o seu binário através da variável global PATH no Shell. Certamente, inserir este caminho precisará de um pequeno esforço manual/braçal para que o programa seja iniciado corretamente."/>
+
+    <link rel="shortcut icon" href="http://www.vitorbritto.com.br/blog/assets/images/favicon.png" type="image/x-icon">
+    <link href="http://feeds.feedburner.com/vitorbritto" rel="alternate" type="application/rss+xml">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <link href="http://www.vitorbritto.com.br/blog/assets/css/style.css" rel="stylesheet" id="theme-css"/>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <header class="header">
+
+                <div class="span4">
+                    <div class="header-info">
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h4 class="header-description">Desenvolvedor Web</h4>
+                    </div>
+                </div>
+
+                <div class="span5">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/">Início</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/about">Sobre</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/projects">Projetos</a></li>
+    </ul>
+</nav>
+
+                </div>
+
+                <div class="span3">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item">
+            <a href="https://www.facebook.com/vbwebstudio" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://twitter.com/vitorbritto" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://github.com/vitorbritto" title="Github" target="_blank"><i class="icon-github"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="mailto:contato@vitorbritto.com.br"><i class="icon-envelope-alt"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="http://feeds.feedburner.com/vitorbritto" title="RSS Feed" target="_blank"><i class="icon-rss"></i></a>
+        </li>
+    </ul>
+</nav>
+
+                </div>
+
+            </header>
+        </div>
+
+        <div class="line"></div>
+
+
+
+<!-- Switch Theme -->
+<div class="theme-wrapper">
+    <p class="theme-text">Tema:</p>
+    <span class="theme-btn light" id="theme-light"></span>
+    <span class="theme-btn dark" id="theme-dark"></span>
+</div>
+
+    <div class="row">
+
+        <article class="article">
+
+            <img class="article-img" src="http://www.vitorbritto.com.br/blog/assets/images/posts/post-bash-path.jpg">
+            <h2 class="article-title">Adicionando caminhos na variável de ambiente PATH</h2>
+            <span class="article-date">Publicado em: 14/07/2014 | Por: Vitor Britto</span>
+            <div class="line"></div>
+
+            <section class="article-entry">
+                <p>Saudações!</p>
+
+<p>É comum instalarmos novos programas/plataformas em nosso sistema e precisarmos inicializar o seu binário através da variável de ambiente PATH no Shell. Certamente, inserir este caminho precisará de um pequeno esforço manual/braçal para que o programa seja iniciado corretamente.</p>
+
+<p>A seguir, mostro como adicionar novos <em>paths</em> ao Shell e, para exemplificar este cenário, estarei utilizando como base o <strong>Bash</strong>.</p>
+
+              <h3 id="Entendendo-o-cenário">
+                <a name="Entendendo-o-cenário" href="#Entendendo-o-cenário"></a>Entendendo o cenário
+              </h3>
+            
+<p>Para que o caminho (path) seja adicionado a variável de ambiente PATH, podemos fazê-lo por dois meios:</p>
+
+<ul>
+<li><em>append</em>: <code>PATH=$PATH:~/opt/bin</code></li>
+<li><em>prepend</em>: <code>PATH=~/opt/bin:$PATH</code></li>
+</ul>
+
+<p><strong>Qual seria a diferença entre eles?</strong></p>
+
+<p>Basicamente, ao fazer um <code>append</code> no PATH, o caminho será procurado depois de todos os outros diretórios. É indicado para o caso de haver um programa com o mesmo nome em vários diretórios. E, ao fazer um <code>prepend</code> no PATH, o caminho será pesquisado antes de todos os outros diretórios.</p>
+
+<blockquote>
+<p><strong>Nota:</strong> você pode conferir mais detalhes sobre <code>append</code> e <code>prepend</code> no PATH, <a href="http://www.troubleshooters.com/linux/prepostpath.htm">neste artigo (em inglês)</a>.</p>
+</blockquote>
+
+<p>É possível também adicionar várias entradas ao mesmo tempo.</p>
+
+<p>Veja no exemplo abaixo:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/opt/bin:~/opt/node/bin
+</code></pre></div>
+<p>Perceba que o caracter <code>:</code> demarca o fim/início de cada caminho.</p>
+
+              <h3 id="Registrando-meus-<em>paths<-em>">
+                <a name="Registrando-meus-<em>paths<-em>" href="#Registrando-meus-<em>paths<-em>"></a>Registrando meus <em>paths</em>
+              </h3>
+            
+<p>Bom, você pode registrar os seus caminhos tanto no arquivo <code>~/.bash_profile</code> quanto no arquivo <code>~/.bashrc</code>. Entrentanto, vale entender as diferenças entre eles e porque, em alguns casos, os seus <em>paths</em> não são iniciados.</p>
+
+<p>O arquivo <code>.bash_profile</code> é executado para shells com usuários autenticados. Já o <code>.bashrc</code> é executado em shells interativos e usuários não autenticados.</p>
+
+<p><strong>Agora me perdi, explica melhor?</strong></p>
+
+<p>Vamos lá. Quando você faz uma autenticação (digitando o usuário e senha) através do console, seja local ou remoto (via SSH), o arquivo <code>.bash_profile</code> é utilizado para configurar o shell antes do prompt ser inicializado. Entretanto, se você já estiver logado no sistema e abrir um novo terminal, então o <code>.bashrc</code> será executado. O arquivo <code>.bashrc</code> é também iniciado quando você executa uma nova instância bash no terminal (não autenticado), digitando <code>/bin/bash</code>.</p>
+
+<blockquote>
+<p><strong>Importante:</strong> vale lembrar que temos uma exceção no OSX onde, por padrão, cada nova instância iniciada no terminal executa o shell com usuário autenticado, chamando o <code>.bash_profile</code> ao invés do <code>.bashrc</code>.</p>
+</blockquote>
+
+<p><strong>Ficou mais claro agora?</strong></p>
+
+<p>Se pensarmos um pouco, podemos chegar a conclusão de que os dois arquivos são úteis para adicionarmos os novos <em>paths</em>, mas por que utilizar dois arquivos?</p>
+
+<p>Sendo assim, recomendo que registre os novos <em>paths</em> no arquivo <code>~/.bash_profile</code> e exponha o mesmo através do <code>source</code> no arquivo <code>.bashrc</code>.</p>
+
+<blockquote>
+<p><strong>Nota:</strong> entenda mais sobre o <code>source</code> <a href="http://en.wikipedia.org/wiki/Source_%28command%29">aqui (em inglês)</a>.</p>
+</blockquote>
+
+              <h3 id="E-como-faremos-isso-">
+                <a name="E-como-faremos-isso-" href="#E-como-faremos-isso-"></a>E como faremos isso?
+              </h3>
+            
+<p>Confira abaixo:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># arquivo .bashrc</span>
+<a name="line-2"></a><span class="o">[</span> -n <span class="s2">&quot;$PS1&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bash_profile;
+</code></pre></div><div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># arquivo .bash_profile</span>
+<a name="line-2"></a><span class="c"># paths</span>
+<a name="line-3"></a><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/seu/caminho:~/outro/caminho
+<a name="line-4"></a><span class="c"># aliases</span>
+<a name="line-5"></a><span class="nb">alias </span><span class="nv">la</span><span class="o">=</span><span class="s2">&quot;ls -la&quot;</span>
+<a name="line-6"></a><span class="c"># functions</span>
+<a name="line-7"></a><span class="k">function </span>apepath <span class="o">{</span>
+<a name="line-8"></a>    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;${!1}&quot;</span> <span class="o">]</span>; <span class="k">then</span>
+<a name="line-9"></a><span class="k">        </span><span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;$2&quot;</span>
+<a name="line-10"></a>    <span class="k">else</span>
+<a name="line-11"></a><span class="k">        </span><span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;${!1}:$2&quot;</span>
+<a name="line-12"></a>    <span class="k">fi</span>
+<a name="line-13"></a><span class="o">}</span>
+<a name="line-14"></a>...
+</code></pre></div>
+              <h4 id="A-título-de-conhecimento">
+                <a name="A-título-de-conhecimento" href="#A-título-de-conhecimento"></a>A título de conhecimento
+              </h4>
+            
+<p>Perceba que temos um <code>[ -n &quot;$PS1&quot; ] &amp;&amp;</code> antes do <code>source</code>. Você deve estar se pergunta o que é isso. Pois bem. Este trecho do código retorna o prompt do terminal em formato <em>string</em>. Por exemplo, no meu terminal, é renderizado:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>vitorbritto at ~
+</code></pre></div>
+<p>Ao digitar <code>echo $PS1</code>, será retornado:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>\[\033]0;\w\007\]\n\[\]\u\[\] at \[\]\w$(prompt_git)\n\[\]$ \[\]
+</code></pre></div>
+<p>Já o operador <code>&amp;&amp;</code> é utlizado para combinar dois ou mais comandos em uma linha compacta no Unix.</p>
+
+<p>Perceba também que, além dos <em>paths</em>, estamos registrando os nossos atalhos (_aliases_), funções bash, configurações do prompt e demais recursos que pretendemos utilizar no terminal, no <code>.bash_profile</code>.</p>
+
+              <h3 id="Dando-uma-mãozinha">
+                <a name="Dando-uma-mãozinha" href="#Dando-uma-mãozinha"></a>Dando uma mãozinha
+              </h3>
+            
+<p>Podemos usar funções para facilitar a inclusão de novos caminhos (_paths_) na variável global PATH.</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># append para novo caminho</span>
+<a name="line-2"></a>apepath<span class="o">()</span> <span class="o">{</span>
+<a name="line-3"></a>    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;${!1}&quot;</span> <span class="o">]</span>; <span class="k">then</span>
+<a name="line-4"></a><span class="k">        </span><span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;$2&quot;</span>
+<a name="line-5"></a>    <span class="k">else</span>
+<a name="line-6"></a><span class="k">        </span><span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;${!1}:$2&quot;</span>
+<a name="line-7"></a>    <span class="k">fi</span>
+<a name="line-8"></a><span class="o">}</span>
+<a name="line-9"></a><span class="c"># prepend para novo caminho</span>
+<a name="line-10"></a>prepath<span class="o">()</span> <span class="o">{</span>
+<a name="line-11"></a>    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;${!1}&quot;</span> <span class="o">]</span>; <span class="k">then</span>
+<a name="line-12"></a><span class="k">        </span><span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;$2&quot;</span>
+<a name="line-13"></a>    <span class="k">else</span>
+<a name="line-14"></a><span class="k">        </span><span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;$2:${!1}&quot;</span>
+<a name="line-15"></a>    <span class="k">fi</span>
+<a name="line-16"></a><span class="o">}</span>
+<a name="line-17"></a><span class="c"># Executamos as funções da seguinte forma:</span>
+<a name="line-18"></a><span class="nv">$ </span>apepath PATH <span class="s2">&quot;/seu/novo/caminho/aqui&quot;</span>
+<a name="line-19"></a>OU
+<a name="line-20"></a><span class="nv">$ </span>prepath PATH <span class="s2">&quot;/seu/novo/caminho/aqui&quot;</span>
+</code></pre></div>
+<p>Você pode conferir um exemplo mais completo sobre como trabalho e configuro o meu shell, <a href="https://github.com/vitorbritto/forcefiles">neste repositório</a>.</p>
+
+<p>Até a próxima! :)</p>
+
+            </section>
+
+        </article>
+
+        <section class="box">
+    <div class="span3">
+        <img class="box-thumb" src="http://www.vitorbritto.com.br/blog/assets/images/avatar.jpg">
+    </div>
+    <div class="span9">
+        <section class="box-details">
+            <h3>Vitor Britto</h3>
+            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+        </section>
+    </div>
+</section>
+
+        <div class="box">
+    <div class="newsletter-wrapper">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=vitorbritto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <h3 class="newsletter-title">Receba os artigos no seu e-mail</h3>
+        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
+        <input class="input" type="email" name="email" placeholder="Digite o seu email"/>
+        <input type="hidden" value="vitorbritto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn-newsletter" type="submit" value="Assinar Newsletter" />
+    </form>
+    </div>
+</div>
+
+
+        <div class="line"></div>
+
+        
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+    var disqus_shortname = 'blogvitorbritto'; // shortname
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Por favor, habilite o JavaScript para ver os <a href="http://disqus.com/?ref_noscript">comentários</a> deste artigo.</noscript>
+
+
+
+    </div>
+
+        <div class="line"></div>
+
+        <div class="row">
+            <footer class="footer">
+                    <p class="footer-text">Desenvolvido por Vitor Britto. Feito com <a href="http://jekyllrb.com/" title="Jekyll" target="_blank">Jekyll</a>, <i class="icon-coffee"></i> e <i class="icon-heart"></i>.</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://www.vitorbritto.com.br/blog/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src='http://www.vitorbritto.com.br/blog/assets/js/app.min.js'></script>
+
+    <!-- Google Analytics -->
+    <script>
+    var _gaq=[['_setAccount','UA-12808940-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+
