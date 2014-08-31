@@ -2,23 +2,23 @@
 
 My personal blog built with [Jekyll](http://jekyllrb.com/).
 
-## Run locally
+## Usage
 
 Run this blog in your local host with the following steps:
 
-- [Git](http://git-scm.com/downloads) and [Ruby](http://www.ruby-lang.org/pt/downloads/) are required.
-- Install [Jekyll](http://jekyllrb.com/): `gem install jekyll`
-- Clone this repository and access the generated folder: `git clone git@github.com:vitorbritto/vitorbritto.github.io.git && cd $_`
-
-- Comment the bellow lines in `_config.yml` file:
-
 ```
+1. [Git](http://git-scm.com/downloads) and [Ruby](http://www.ruby-lang.org/pt/downloads/) are required.
+2. Install [Jekyll](http://jekyllrb.com/): `gem install jekyll`
+3. Clone this repository and access the generated folder: `git clone git@github.com:vitorbritto/vitorbritto.github.io.git && cd $_`
+
+4. Comment the bellow lines in `_config.yml` file:
+
 url:         http://www.vitorbritto.com.br/blog
 baseurl:     http://www.vitorbritto.com.br/blog/
-```
-- Install dependencies: `npm install`
-- Start the static web server: `rake`
-- Open your favorited browser at `http://localhost:4000`.
+
+5. Install dependencies: `npm install`
+6. Start the static web server: `rake`
+7. Open your favorited browser at `http://localhost:4000`.
 
 ## Structure
 
@@ -56,36 +56,44 @@ baseurl:     http://www.vitorbritto.com.br/blog/
 └── robots.txt
 ```
 
-### [_includes](https://github.com/vitorbritto/blog/tree/master/_includes)
+#### [_includes](https://github.com/vitorbritto/vitorbritto.github.io/tree/master/_includes)
 
-Coe blocks to generate the main content ([index.html](https://github.com/vitorbritto/blog/blob/master/index.html)).
+Code blocks to generate the main content ([index.html](https://github.com/vitorbritto/vitorbritto.github.io/blob/master/index.html)).
 
-### [_plugins](https://github.com/vitorbritto/blog/tree/master/_plugins)
+#### [_plugins](https://github.com/vitorbritto/vitorbritto.github.io/tree/master/_plugins)
 
 Plugins used on this projects.
 
-### [_posts](https://github.com/vitorbritto/blog/tree/master/_posts)
+#### [_posts](https://github.com/vitorbritto/vitorbritto.github.io/tree/master/_posts)
 
 Published posts.
 
-### [_layouts](https://github.com/vitorbritto/blog/tree/master/_layouts)
+#### [_layouts](https://github.com/vitorbritto/vitorbritto.github.io/tree/master/_layouts)
 
 Default templates.
 
-### _build
+#### _build
 
 Output folder for compiled files.
 
-### [assets](https://github.com/vitorbritto/blog/tree/master/assets)
+#### [assets](https://github.com/vitorbritto/vitorbritto.github.io/tree/master/assets)
 
 All assets available on this blog.
 
-### [_config.yml](https://github.com/vitorbritto/blog/blob/master/_config.yml)
+#### [_config.yml](https://github.com/vitorbritto/vitorbritto.github.io/blob/master/_config.yml)
 
 The main configuration file for Jekyll.
 
-### [index.html](https://github.com/vitorbritto/blog/blob/master/index.html)
+#### [index.html](https://github.com/vitorbritto/vitorbritto.github.io/blob/master/index.html)
 
 The main file.
 
-*More information about Jekyll structure, [click here](https://github.com/mojombo/jekyll/wiki/Usage).*
+
+## Contribute
+Feel free to [contribute](https://github.com/vitorbritto/vitorbritto.github.io/pulls) with this project or leave a [suggestion](https://github.com/vitorbritto/vitorbritto.github.io/issues).
+
+
+## License
+
+[MIT License](http://vitorbritto.mit-license.org/) © Vitor Britto
+
