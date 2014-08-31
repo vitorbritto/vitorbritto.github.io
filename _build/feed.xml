@@ -10,11 +10,11 @@
         <title>Iniciando os estudos com JavaScript</title>
         <description>&lt;p&gt;Saudações!&lt;/p&gt;
 
-&lt;p&gt;Estarei compartilhando um método simples e eficaz para que você inicie os estudos com a linguagem JavaScript. Entretanto, antes mesmo que você continue a leitura deste artigo, me permita fazer um pequeno &lt;strong&gt;disclaimer&lt;/strong&gt;. &lt;/p&gt;
+&lt;p&gt;Estarei compartilhando um método simples e eficaz para que você inicie os estudos com a linguagem JavaScript. Entretanto, antes mesmo que você continue a leitura deste artigo, me permita fazer um pequeno &lt;strong&gt;disclaimer&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;O idioma inglês se faz necessário para executar os passos a seguir e será utilizado o Firefox para executar/praticar os códigos. De toda forma, fique a vontade para utilizar o navegador de sua preferência. O importante é que os códigos sejam praticados. Ok?&lt;/p&gt;
 
-&lt;p&gt;Vale frisar também que, mesmo com o esforço em contribuir com &lt;a href=&quot;http://cerebrobr.github.io/cerebro/&quot;&gt;materiais em português&lt;/a&gt;, o idioma inglês é muito importante na área de TI, assim como para o desenvolvedor/programador que esteja em busca do constante crescimento na sua profissão. &lt;/p&gt;
+&lt;p&gt;Vale frisar também que, mesmo com o esforço em contribuir com &lt;a href=&quot;http://cerebrobr.github.io/cerebro/&quot;&gt;materiais em português&lt;/a&gt;, o idioma inglês é muito importante na área de TI, assim como para o desenvolvedor/programador que esteja em busca do constante crescimento na sua profissão.&lt;/p&gt;
 
 &lt;p&gt;Se você pretende ingressar nesta área, entenda que o idioma dominante é o inglês e você precisa dele para ser bem sucedido.&lt;/p&gt;
 
@@ -36,21 +36,21 @@
                 &lt;a name=&quot;Até-que-o-JavaScript-apareceu-na-minha-vida&quot; href=&quot;#Até-que-o-JavaScript-apareceu-na-minha-vida&quot;&gt;&lt;/a&gt;Até que o JavaScript apareceu na minha vida
               &lt;/h3&gt;
             
-&lt;p&gt;No final do ano de 1997, &amp;quot;conheci&amp;quot; o JavaScript. &lt;/p&gt;
+&lt;p&gt;No final do ano de 1997, &amp;quot;conheci&amp;quot; o JavaScript.&lt;/p&gt;
 
-&lt;p&gt;Confesso que foi por acaso! Visitei uma homepage e a janela começou a tremer. Resolvi comentar com alguns amigos sobre o ocorrido, e um deles (o mais Nerd de todos) disse ser &lt;strong&gt;o DHTML&lt;/strong&gt;. O mesmo me falou para clicar com o botão direito do mouse na janela do navegador (já na tal homepage) e selecionar a opção &lt;em&gt;&amp;quot;View Source Code&amp;quot;&lt;/em&gt;. &lt;/p&gt;
+&lt;p&gt;Confesso que foi por acaso! Visitei uma homepage e a janela começou a tremer. Resolvi comentar com alguns amigos sobre o ocorrido, e um deles (o mais Nerd de todos) disse ser &lt;strong&gt;o DHTML&lt;/strong&gt;. O mesmo me falou para clicar com o botão direito do mouse na janela do navegador (já na tal homepage) e selecionar a opção &lt;em&gt;&amp;quot;View Source Code&amp;quot;&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Então, chegando em casa, fiz exatamente o que o colega me falou. Um emaranhado de números e letras surgiram na minha frente e, é claro, tive o meu primeiro contato com o HTML, CSS e &lt;strong&gt;JavaScript&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;Obviamente, eu não sabia o que eram esses caras. Eu não entendia como aquilo funcionava. Não sabia porque a tela tremia, porque um alerta era exibido, porque o cursor do mouse deixava rastros coloridos ou porque tantos outros comportamentos interessantes e &amp;quot;estranhos&amp;quot; no browser aconteciam.&lt;/p&gt;
 
-&lt;p&gt;A única coisa que eu tinha em mente era: &amp;quot;Eu quero aprender a fazer isso!&amp;quot;. &lt;/p&gt;
+&lt;p&gt;A única coisa que eu tinha em mente era: &amp;quot;Eu quero aprender a fazer isso!&amp;quot;.&lt;/p&gt;
 
               &lt;h3 id=&quot;Foi-difícil-no-começo-mas-eu-não-desisti&quot;&gt;
                 &lt;a name=&quot;Foi-difícil-no-começo-mas-eu-não-desisti&quot; href=&quot;#Foi-difícil-no-começo-mas-eu-não-desisti&quot;&gt;&lt;/a&gt;Foi difícil no começo, mas eu não desisti
               &lt;/h3&gt;
             
-&lt;p&gt;Um dos motivos em compartilhar o conhecimento que obtive durante todo esse tempo, é porque entendo como é complicado iniciar os estudos na área da programação, sem ter a menor ideia de como funciona ou ter algum contato prévio com disciplinas que tratam especificamente da lógica, dos algoritmos e da estrutura de dados. &lt;/p&gt;
+&lt;p&gt;Um dos motivos em compartilhar o conhecimento que obtive durante todo esse tempo, é porque entendo como é complicado iniciar os estudos na área da programação, sem ter a menor ideia de como funciona ou ter algum contato prévio com disciplinas que tratam especificamente da lógica, dos algoritmos e da estrutura de dados.&lt;/p&gt;
 
 &lt;p&gt;Na minha época, o material era o código fonte. Livro? Rede social? Curso online? Esqueça! Sem falar que os materiais eram dispersos e difíceis de encontrar. Notepad e Netscape eram meus melhores amigos nesta jornada. Somente depois de alguns meses, encontrei o &lt;a href=&quot;http://www.javascriptkit.com/&quot;&gt;JavaScript Kit&lt;/a&gt;.&lt;/p&gt;
 
@@ -62,7 +62,7 @@
 
 &lt;p&gt;Você deve estar se perguntando: &amp;quot;E cadê o JavaScript?&amp;quot;.&lt;/p&gt;
 
-&lt;p&gt;Calma jovem Jedi! Eu percorri todo esse caminho para lhe mostrar que, há 17 anos, era muito difícil encontrar material relacionado ao JavaScript. Diferente de hoje, onde existem muitas possibilidades e meios de pesquisa à sua volta para garantir um aprendizado sólido e eficaz com esta linguagem. &lt;/p&gt;
+&lt;p&gt;Calma jovem Jedi! Eu percorri todo esse caminho para lhe mostrar que, há 17 anos, era muito difícil encontrar material relacionado ao JavaScript. Diferente de hoje, onde existem muitas possibilidades e meios de pesquisa à sua volta para garantir um aprendizado sólido e eficaz com esta linguagem.&lt;/p&gt;
 
               &lt;h2 id=&quot;Iniciando-a-sua-jornada-com-JavaScript&quot;&gt;
                 &lt;a name=&quot;Iniciando-a-sua-jornada-com-JavaScript&quot; href=&quot;#Iniciando-a-sua-jornada-com-JavaScript&quot;&gt;&lt;/a&gt;Iniciando a sua jornada com JavaScript
@@ -70,9 +70,9 @@
             
 &lt;p&gt;Eu darei o mapa e você vai se aventurar para encontrar o tesouro. Vai depender exclusivamente de você para garantir o sucesso no aprendizado. Ok?&lt;/p&gt;
 
-&lt;p&gt;Pois bem! Vou listar um programa de 4 passos para você que deseja iniciar os estudos em JavaScript. &lt;/p&gt;
+&lt;p&gt;Pois bem! Vou listar um programa de 4 passos para você que deseja iniciar os estudos em JavaScript.&lt;/p&gt;
 
-&lt;p&gt;Não faremos um caminho cansativo e complicado, não haverá leitura de livros ou artigos. Será o &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide&quot;&gt;Guia do MDN&lt;/a&gt;, o &lt;a href=&quot;https://www.mozilla.org/pt-BR/firefox/new/&quot;&gt;Firefox&lt;/a&gt; (ou o seu navegador preferido) e você! &lt;/p&gt;
+&lt;p&gt;Não faremos um caminho cansativo e complicado, não haverá leitura de livros ou artigos. Será o &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide&quot;&gt;Guia do MDN&lt;/a&gt;, o &lt;a href=&quot;https://www.mozilla.org/pt-BR/firefox/new/&quot;&gt;Firefox&lt;/a&gt; (ou o seu navegador preferido) e você!&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Regra básica e obrigatória:&lt;/strong&gt; é preciso disciplina e força de vontade.&lt;/p&gt;
@@ -98,7 +98,7 @@
               &lt;/h3&gt;
             
 &lt;ul&gt;
-&lt;li&gt;Reserve um espaço tranquilo e que mantenha você concentrado. &lt;/li&gt;
+&lt;li&gt;Reserve um espaço tranquilo e que mantenha você concentrado.&lt;/li&gt;
 &lt;li&gt;Salve uma playlist com músicas do seu agrado e deixe a caneca de café por perto &lt;em&gt;(opcional)&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;Faça o download da última versão do &lt;a href=&quot;https://www.mozilla.org/pt-BR/firefox/new/&quot;&gt;Firefox&lt;/a&gt; e instale-o &lt;em&gt;(opcional)&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;Acesse o &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide&quot;&gt;Guia do MDN&lt;/a&gt;.&lt;/li&gt;
@@ -116,11 +116,11 @@
                 &lt;a name=&quot;Compartilhe-sua-evolução&quot; href=&quot;#Compartilhe-sua-evolução&quot;&gt;&lt;/a&gt;Compartilhe sua evolução
               &lt;/h3&gt;
             
-&lt;p&gt;Compartilhe o que aprendeu e solicite o feedback de outros colegas. Afinal, é válido buscar outras opiniões e possíveis soluções. Entretanto, quando o fizer, deixe pública a sua dúvida. Nem sempre &amp;quot;aquele colega experiente&amp;quot; estará disponível para lhe dar um feedback via &lt;em&gt;inbox&lt;/em&gt;. &lt;/p&gt;
+&lt;p&gt;Compartilhe o que aprendeu e solicite o feedback de outros colegas. Afinal, é válido buscar outras opiniões e possíveis soluções. Entretanto, quando o fizer, deixe pública a sua dúvida. Nem sempre &amp;quot;aquele colega experiente&amp;quot; estará disponível para lhe dar um feedback via &lt;em&gt;inbox&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Deixando sua dúvida em um grupo ou fórum, as chances em obter mais feedbacks é bem maior. Não concorda?&lt;/p&gt;
 
-&lt;p&gt;Não fique com receio em alguém lhe dizer algo mais ríspido ou que se torne frustrante para você. Seja paciente e acredite na sua capacidade. Assim como você, todos eles também começaram do zero. Inclusíve eu (como você pôde perceber mais acima)! &lt;/p&gt;
+&lt;p&gt;Não fique com receio em alguém lhe dizer algo mais ríspido ou que se torne frustrante para você. Seja paciente e acredite na sua capacidade. Assim como você, todos eles também começaram do zero. Inclusíve eu (como você pôde perceber mais acima)!&lt;/p&gt;
 
 &lt;p&gt;Errar é um processo natural e que eleva o nível de aprendizado. Confie em você e no seu potêncial!&lt;/p&gt;
 
@@ -128,7 +128,7 @@
                 &lt;a name=&quot;Seja-parceiro-do-JavaScript&quot; href=&quot;#Seja-parceiro-do-JavaScript&quot;&gt;&lt;/a&gt;Seja parceiro do JavaScript
               &lt;/h2&gt;
             
-&lt;p&gt;Se você quer aprender JavaScript, deve esquecer o jQuery e qualquer outra ferramenta que atue como um elemento &amp;quot;facilitador&amp;quot; no início da jornada. Dê um passo de cada vez e mantenha os estudos constantes. Uma vez que você entenda o universo JavaScript, fica muito mais fácil para manusear e explorar no futuro as suas libs, plugins, frameworks e afins. &lt;/p&gt;
+&lt;p&gt;Se você quer aprender JavaScript, deve esquecer o jQuery e qualquer outra ferramenta que atue como um elemento &amp;quot;facilitador&amp;quot; no início da jornada. Dê um passo de cada vez e mantenha os estudos constantes. Uma vez que você entenda o universo JavaScript, fica muito mais fácil para manusear e explorar no futuro as suas libs, plugins, frameworks e afins.&lt;/p&gt;
 
 &lt;p&gt;Bons estudos e até a próxima! =]&lt;/p&gt;
 </description>
