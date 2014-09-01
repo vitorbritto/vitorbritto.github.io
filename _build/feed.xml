@@ -7,6 +7,63 @@
     <atom:link href="http://www.vitorbritto.com.br/blog/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Um universo de APIs</title>
+        <description>&lt;p&gt;Saudações!&lt;/p&gt;
+
+&lt;p&gt;Assim como a prática na programação ajuda os desenvolvedores a evoluírem suas habilidades, a pesquisa é uma ação que também necessita de prática. Criando o hábito da pesquisa, encontrar soluções para possíveis problemas tornam-se muito mais fáceis.&lt;/p&gt;
+
+&lt;p&gt;Sempre indico o &lt;a href=&quot;https://developer.mozilla.org/en-US/&quot;&gt;MDN&lt;/a&gt; para consultas, estudos e referências. É uma excelente e confiável fonte para estudos de tecnologias voltadas para a web.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; Recentemente desenvolvi um &lt;a href=&quot;https://github.com/vitorbritto/gomdn&quot;&gt;módulo para Node&lt;/a&gt; onde é possível realizar consultas no MDN. Não preciso comentar que contribuições e sugestões são bem vindas, não é? Ops, comentei! =P&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Quando estamos lidando com o JavaScript no &lt;em&gt;client-side&lt;/em&gt;, diversas APIs estão a nossa disposição. Neste artigo, darei algumas dicas sobre como consultar e estudar tais APIs.&lt;/p&gt;
+
+              &lt;h2 id=&quot;Então-vamos-as-dicas&quot;&gt;
+                &lt;a name=&quot;Então-vamos-as-dicas&quot; href=&quot;#Então-vamos-as-dicas&quot;&gt;&lt;/a&gt;Então, vamos as dicas
+              &lt;/h2&gt;
+            
+&lt;p&gt;Mesmo antes de consultar uma documentação, é importante saber como funciona o mecânismo de busca e o padrão utilizado para sua organização. Do contrário, você pode se perder no meio do caminho. Apesar de ser muito difícil que isso aconteça no MDN (se perder), não custa dar uma breve orientação.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Realizando-uma-consulta-rápida&quot;&gt;
+                &lt;a name=&quot;Realizando-uma-consulta-rápida&quot; href=&quot;#Realizando-uma-consulta-rápida&quot;&gt;&lt;/a&gt;Realizando uma consulta rápida
+              &lt;/h3&gt;
+            
+&lt;p&gt;Se a sua intenção é realizar uma consulta rápida para uma determinada API, o MDN dispõe de um &lt;strong&gt;index&lt;/strong&gt; com todas as APIs disponíveis, não padronizadas, experimentais e, até mesmo, as obsoletas.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Visite:&lt;/strong&gt; &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/API&lt;/a&gt;&lt;/p&gt;
+
+              &lt;h3 id=&quot;Análises-direcionadas-para-um-conjunto-de-APIs&quot;&gt;
+                &lt;a name=&quot;Análises-direcionadas-para-um-conjunto-de-APIs&quot; href=&quot;#Análises-direcionadas-para-um-conjunto-de-APIs&quot;&gt;&lt;/a&gt;Análises direcionadas para um conjunto de APIs
+              &lt;/h3&gt;
+            
+&lt;p&gt;Se pretende orientar seus estudos/análises a um conjunto de APIs, o MDN também facilita a sua pesquisa para este caso.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Visite:&lt;/strong&gt; &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Reference/API&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/Reference/API&lt;/a&gt;&lt;/p&gt;
+
+              &lt;h3 id=&quot;Centralizando-as-consultas-em-um-local&quot;&gt;
+                &lt;a name=&quot;Centralizando-as-consultas-em-um-local&quot; href=&quot;#Centralizando-as-consultas-em-um-local&quot;&gt;&lt;/a&gt;Centralizando as consultas em um local
+              &lt;/h3&gt;
+            
+&lt;p&gt;Por alguns meses utilizei o Dash. É uma excelente ferramenta (App Mac only) para consultas de documentações e obteve um crescimento surpreendente com a nova versão. Infelizmente, ele não se deu bem com o meu querido MacBook White (2009). Sendo assim, voltei para o &lt;a href=&quot;http://devdocs.io&quot;&gt;DevDocs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;O DevDocs não deixa a desejar e quebra um galho tremendo nas minhas consultas diárias. Além disso, oferece um index com todas as APIs e uma relação destas APIs agrupadas por casos de uso.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; há algum tempo desenvolvi um simples &lt;a href=&quot;https://github.com/vitorbritto/sublime-devdocs&quot;&gt;plugin&lt;/a&gt; para realizar pesquisas no DevDocs através do Sublime 2/3. Fique a vontade para… já sabe o resto né? =P&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Visite:&lt;/strong&gt; &lt;a href=&quot;http://devdocs.io/dom/&quot;&gt;http://devdocs.io/dom/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Bons estudos e até a próxima! =]&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Sep 2014 00:00:00 -0300</pubDate>
+        <link>http://www.vitorbritto.com.br/blog/um-universo-de-apis/</link>
+        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/um-universo-de-apis/</guid>
+      </item>
+    
+      <item>
         <title>Iniciando os estudos com JavaScript</title>
         <description>&lt;p&gt;Saudações!&lt;/p&gt;
 
@@ -1942,47 +1999,6 @@ Será executado a cada hora, &amp;quot;0 * * * *&amp;quot;.&lt;/p&gt;
         <pubDate>Tue, 18 Feb 2014 00:00:00 -0300</pubDate>
         <link>http://www.vitorbritto.com.br/blog/fluxo-de-dados/</link>
         <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/fluxo-de-dados/</guid>
-      </item>
-    
-      <item>
-        <title>Criando bons programas em Shell Script</title>
-        <description>&lt;p&gt;&lt;strong&gt;UPDATE - 16/02/2014:&lt;/strong&gt; dicas 7 e 8 adicionadas.&lt;/p&gt;
-
-&lt;p&gt;Saudações!&lt;/p&gt;
-
-&lt;p&gt;Há algumas semanas atrás, escrevi um artigo com &lt;a href=&quot;http://www.vitorbritto.com.br/blog/dicas-uteis-para-quem-utiliza-gruntjs/&quot;&gt;dicas úteis&lt;/a&gt; para quem utiliza o Grunt no ambiente de trabalho.&lt;/p&gt;
-
-&lt;p&gt;Hoje, estarei publicando um artigo com dicas mais do que úteis para quem trabalha com Shell Script. Estas dicas fazem parte de estudos e experiências que vivenciei há um bom tempo trabalhando com esta linguagem sensacional. São dicas que favorecem na construção de bons programas com Shell Script.&lt;/p&gt;
-
-              &lt;h2 id=&quot;Shell-Script-o-que-é-isso-&quot;&gt;
-                &lt;a name=&quot;Shell-Script-o-que-é-isso-&quot; href=&quot;#Shell-Script-o-que-é-isso-&quot;&gt;&lt;/a&gt;Shell Script, o que é isso?
-              &lt;/h2&gt;
-            
-&lt;p&gt;Se você não faz idéia do que é Shell Script, estas dicas podem não ser tão úteis para você. De toda forma, não desanime! Eu recomendo que você estude e se familiarize com esta poderosa linguagem. Segue um &lt;a href=&quot;http://www.vitorbritto.com.br/blog/unix-a-base-de-tudo/&quot;&gt;artigo&lt;/a&gt; para você ter uma base.&lt;/p&gt;
-
-              &lt;h2 id=&quot;Chega-de-conversa-vamos-ao-que-interessa&quot;&gt;
-                &lt;a name=&quot;Chega-de-conversa-vamos-ao-que-interessa&quot; href=&quot;#Chega-de-conversa-vamos-ao-que-interessa&quot;&gt;&lt;/a&gt;Chega de conversa, vamos ao que interessa
-              &lt;/h2&gt;
-            
-&lt;ol&gt;
-&lt;li&gt;Sempre utilize aspas para declarações de variáveis, argumentos e referências (para as variáveis) nos seus programas em Shell Script.&lt;/li&gt;
-&lt;li&gt;Sempre que possível, utilize comandos compactos com os operadores &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; e &lt;code&gt;||&lt;/code&gt; (ex.: mkdir novoprojeto &amp;amp;&amp;amp; cd novoprojeto &amp;amp;&amp;amp; touch README.md).&lt;/li&gt;
-&lt;li&gt;Entenda quais as possibilidades para se utilizar algum comando em determinado sistema. Para isso, leia a &lt;em&gt;man pages&lt;/em&gt; dos comandos básicos (grep, cut, sed, cat e etc) de outros sistemas.&lt;/li&gt;
-&lt;li&gt;Acostume-se a ler o código-fonte de outros programas em Shell Script. Alguns ensinamentos são melhor compreendidos com um exemplo funcional.&lt;/li&gt;
-&lt;li&gt;Analise quando você deve utilizar o comando &lt;code&gt;cat&lt;/code&gt;, assim como o &lt;code&gt;sed&lt;/code&gt;, &lt;code&gt;awk&lt;/code&gt;, &lt;code&gt;cut&lt;/code&gt; e &lt;code&gt;grep&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Faça um bom proveito de &lt;em&gt;pipes&lt;/em&gt;, &lt;em&gt;redirects&lt;/em&gt; e &lt;em&gt;lists&lt;/em&gt; nos seus programas.&lt;/li&gt;
-&lt;li&gt;Deixe o seu programa sempre com um cabeçalho inicial (veja o &lt;a href=&quot;https://gist.github.com/vitorbritto/9036467&quot;&gt;exemplo&lt;/a&gt;). Não importa se o cabeçalho ficar maior que o programa em sí. Comentários são ignorados pelo interpretador e isso não influência em nada no desempenho do programa. Um código bem documentado é útil até mesmo para você.&lt;/li&gt;
-&lt;li&gt;Utilize quebra de linha, linhas em branco para separar determinados blocos do seu código e alinhamento para uma boa legibilidade e leiturabilidade do seu programa.&lt;/li&gt;
-&lt;li&gt;Se você sempre quis saber porque alguns programas em Shell Script iniciando com um &lt;code&gt;#!/bin/bash&lt;/code&gt; ou &lt;code&gt;#!/bin/sh&lt;/code&gt;, isso se chama &lt;em&gt;shebang&lt;/em&gt;. Com este cara, é possível tornar o seu &lt;em&gt;script&lt;/em&gt; executável, como um programa. Com isso, ao executar o comando &lt;code&gt;chmod u+x meuscript.sh&lt;/code&gt; você estará solicitando ao seu sistema que dê permissão àquele script para ser parseado e interpretado como um programa e, por fim, ser executado como &lt;code&gt;./meuscript.sh&lt;/code&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Por hoje é só. Estarei atualizando este espaço a medida em que novas experiências e situações acontecerem. Fique atento para novas dicas.&lt;/p&gt;
-
-&lt;p&gt;Até a próxima! =]&lt;/p&gt;
-</description>
-        <pubDate>Sat, 15 Feb 2014 00:00:00 -0200</pubDate>
-        <link>http://www.vitorbritto.com.br/blog/criando-bons-programas-em-shell-script/</link>
-        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/criando-bons-programas-em-shell-script/</guid>
       </item>
     
   </channel>

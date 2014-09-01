@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Um universo de APIs</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Desenvolvedor Web" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="Um universo de APIs"/>
+    <meta property="og:site_name" content="Blog - Vitor Britto"/>
+    <meta property="og:url" content="http://www.vitorbritto.com.br/blog/um-universo-de-apis/"/>
+    <meta property="og:image" content="http://www.vitorbritto.com.br/blog/assets/images/fb.jpg"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="Assim como a prática na programação ajuda os desenvolvedores a evoluírem suas habilidades, a pesquisa é uma ação que também necessita de prática. Criando o hábito da pesquisa, encontrar soluções para possíveis problemas tornam-se muito mais fáceis. Quando estamos lidando com o JavaScript no client-side, diversas APIs estão a nossa disposição. Neste artigo, darei algumas dicas sobre como consultar e estudar tais APIs."/>
+
+    <link rel="shortcut icon" href="http://www.vitorbritto.com.br/blog/assets/images/favicon.png" type="image/x-icon">
+    <link href="http://feeds.feedburner.com/vitorbritto" rel="alternate" type="application/rss+xml">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <link href="http://www.vitorbritto.com.br/blog/assets/css/style.css" rel="stylesheet" id="theme-css"/>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <header class="header">
+
+                <div class="span4">
+                    <div class="header-info">
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h4 class="header-description">Desenvolvedor Web</h4>
+                    </div>
+                </div>
+
+                <div class="span5">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/">Início</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/about">Sobre</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/projects">Projetos</a></li>
+    </ul>
+</nav>
+
+                </div>
+
+                <div class="span3">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item">
+            <a href="https://www.facebook.com/vbwebstudio" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://twitter.com/vitorbritto" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://github.com/vitorbritto" title="Github" target="_blank"><i class="icon-github"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="mailto:contato@vitorbritto.com.br"><i class="icon-envelope-alt"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="http://feeds.feedburner.com/vitorbritto" title="RSS Feed" target="_blank"><i class="icon-rss"></i></a>
+        </li>
+    </ul>
+</nav>
+
+                </div>
+
+            </header>
+        </div>
+
+        <div class="line"></div>
+
+
+
+<!-- Switch Theme -->
+<div class="theme-wrapper">
+    <p class="theme-text">Tema:</p>
+    <span class="theme-btn light" id="theme-light"></span>
+    <span class="theme-btn dark" id="theme-dark"></span>
+</div>
+
+    <div class="row">
+
+        <article class="article">
+
+            <img class="article-img" src="http://www.vitorbritto.com.br/blog/assets/images/posts/post-universo-apis.jpg">
+            <h2 class="article-title">Um universo de APIs</h2>
+            <span class="article-date">Publicado em: 01/09/2014 | Por: Vitor Britto</span>
+            <div class="line"></div>
+
+            <section class="article-entry">
+                <p>Saudações!</p>
+
+<p>Assim como a prática na programação ajuda os desenvolvedores a evoluírem suas habilidades, a pesquisa é uma ação que também necessita de prática. Criando o hábito da pesquisa, encontrar soluções para possíveis problemas tornam-se muito mais fáceis.</p>
+
+<p>Sempre indico o <a href="https://developer.mozilla.org/en-US/">MDN</a> para consultas, estudos e referências. É uma excelente e confiável fonte para estudos de tecnologias voltadas para a web.</p>
+
+<blockquote>
+<p><strong>Nota:</strong> Recentemente desenvolvi um <a href="https://github.com/vitorbritto/gomdn">módulo para Node</a> onde é possível realizar consultas no MDN. Não preciso comentar que contribuições e sugestões são bem vindas, não é? Ops, comentei! =P</p>
+</blockquote>
+
+<p>Quando estamos lidando com o JavaScript no <em>client-side</em>, diversas APIs estão a nossa disposição. Neste artigo, darei algumas dicas sobre como consultar e estudar tais APIs.</p>
+
+              <h2 id="Então-vamos-as-dicas">
+                <a name="Então-vamos-as-dicas" href="#Então-vamos-as-dicas"></a>Então, vamos as dicas
+              </h2>
+            
+<p>Mesmo antes de consultar uma documentação, é importante saber como funciona o mecânismo de busca e o padrão utilizado para sua organização. Do contrário, você pode se perder no meio do caminho. Apesar de ser muito difícil que isso aconteça no MDN (se perder), não custa dar uma breve orientação.</p>
+
+              <h3 id="Realizando-uma-consulta-rápida">
+                <a name="Realizando-uma-consulta-rápida" href="#Realizando-uma-consulta-rápida"></a>Realizando uma consulta rápida
+              </h3>
+            
+<p>Se a sua intenção é realizar uma consulta rápida para uma determinada API, o MDN dispõe de um <strong>index</strong> com todas as APIs disponíveis, não padronizadas, experimentais e, até mesmo, as obsoletas.</p>
+
+<p><strong>Visite:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/API">https://developer.mozilla.org/en-US/docs/Web/API</a></p>
+
+              <h3 id="Análises-direcionadas-para-um-conjunto-de-APIs">
+                <a name="Análises-direcionadas-para-um-conjunto-de-APIs" href="#Análises-direcionadas-para-um-conjunto-de-APIs"></a>Análises direcionadas para um conjunto de APIs
+              </h3>
+            
+<p>Se pretende orientar seus estudos/análises a um conjunto de APIs, o MDN também facilita a sua pesquisa para este caso.</p>
+
+<p><strong>Visite:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/Reference/API">https://developer.mozilla.org/en-US/docs/Web/Reference/API</a></p>
+
+              <h3 id="Centralizando-as-consultas-em-um-local">
+                <a name="Centralizando-as-consultas-em-um-local" href="#Centralizando-as-consultas-em-um-local"></a>Centralizando as consultas em um local
+              </h3>
+            
+<p>Por alguns meses utilizei o Dash. É uma excelente ferramenta (App Mac only) para consultas de documentações e obteve um crescimento surpreendente com a nova versão. Infelizmente, ele não se deu bem com o meu querido MacBook White (2009). Sendo assim, voltei para o <a href="http://devdocs.io">DevDocs</a>.</p>
+
+<p>O DevDocs não deixa a desejar e quebra um galho tremendo nas minhas consultas diárias. Além disso, oferece um index com todas as APIs e uma relação destas APIs agrupadas por casos de uso.</p>
+
+<blockquote>
+<p><strong>Nota:</strong> há algum tempo desenvolvi um simples <a href="https://github.com/vitorbritto/sublime-devdocs">plugin</a> para realizar pesquisas no DevDocs através do Sublime 2/3. Fique a vontade para… já sabe o resto né? =P</p>
+</blockquote>
+
+<p><strong>Visite:</strong> <a href="http://devdocs.io/dom/">http://devdocs.io/dom/</a></p>
+
+<p>Bons estudos e até a próxima! =]</p>
+
+            </section>
+
+        </article>
+
+        <section class="box">
+    <div class="span3">
+        <img class="box-thumb" src="http://www.vitorbritto.com.br/blog/assets/images/avatar.jpg">
+    </div>
+    <div class="span9">
+        <section class="box-details">
+            <h3>Vitor Britto</h3>
+            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+        </section>
+    </div>
+</section>
+
+        <div class="box">
+    <div class="newsletter-wrapper">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=vitorbritto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <h3 class="newsletter-title">Receba os artigos no seu e-mail</h3>
+        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
+        <input class="input" type="email" name="email" placeholder="Digite o seu email"/>
+        <input type="hidden" value="vitorbritto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn-newsletter" type="submit" value="Assinar Newsletter" />
+    </form>
+    </div>
+</div>
+
+
+        <div class="line"></div>
+
+        
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+    var disqus_shortname = 'blogvitorbritto'; // shortname
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Por favor, habilite o JavaScript para ver os <a href="http://disqus.com/?ref_noscript">comentários</a> deste artigo.</noscript>
+
+
+
+    </div>
+
+        <div class="line"></div>
+
+        <div class="row">
+            <footer class="footer">
+                    <p class="footer-text">Desenvolvido por Vitor Britto. Feito com <a href="http://jekyllrb.com/" title="Jekyll" target="_blank">Jekyll</a>, <i class="icon-coffee"></i> e <i class="icon-heart"></i>.</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://www.vitorbritto.com.br/blog/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src='http://www.vitorbritto.com.br/blog/assets/js/app.min.js'></script>
+
+    <!-- Google Analytics -->
+    <script>
+    var _gaq=[['_setAccount','UA-12808940-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+
