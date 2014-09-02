@@ -7,6 +7,215 @@
     <atom:link href="http://www.vitorbritto.com.br/blog/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>The book is on the table</title>
+        <description>&lt;p&gt;Saudações! &lt;/p&gt;
+
+&lt;p&gt;É muito comum surgirem perguntas na comunidade sobre quais os livros mais adequados e recomendados para quem está iniciando (ou não) com programação em JavaScript. &lt;/p&gt;
+
+&lt;p&gt;Por isso, vou compartilhar uma relação de livros que tive a oportunidade de ler, deixando uma breve descrição e algumas considerações. &lt;/p&gt;
+
+&lt;p&gt;Vamos percorrer os seguintes tópicos:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Olá, eu sou o JavaScript&lt;/li&gt;
+&lt;li&gt;O treinamento Jedi&lt;/li&gt;
+&lt;li&gt;Fique atento para alguns pontos&lt;/li&gt;
+&lt;li&gt;Mais alguma consideração?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Então, vamos lá. &lt;/p&gt;
+
+              &lt;h2 id=&quot;Olá-eu-sou-o-JavaScript&quot;&gt;
+                &lt;a name=&quot;Olá-eu-sou-o-JavaScript&quot; href=&quot;#Olá-eu-sou-o-JavaScript&quot;&gt;&lt;/a&gt;Olá, eu sou o JavaScript
+              &lt;/h2&gt;
+            
+&lt;p&gt;Criada por Brendan Eich há quase 20 anos, a linguagem de programação JavaScript se tornou muito popular nos últimos anos e mostrou-se extremamente poderosa. Trata-se de uma linguagem de alto nível, dinâmica, interpretada e não tipada, além de englobar paradigmas de orientação de objetos e funcional. Possui uma sintaxe herdada do &lt;em&gt;Java&lt;/em&gt;, aspectos funcionais do &lt;em&gt;Scheme&lt;/em&gt; e suas caracteristicas orientadas a objetos do &lt;em&gt;Self&lt;/em&gt;. Atualmente, está linguagem que foi mal compreendida por um bom tempo, se faz presente tanto no &lt;strong&gt;client-side&lt;/strong&gt; (DOM) quanto no &lt;strong&gt;server-side&lt;/strong&gt; (NodeJS). &lt;/p&gt;
+
+&lt;p&gt;Se você está vindo do Java ou PHP, vale frisar que o JavaScript não possui classes. O JavaScript possui funções de primeira classe (objetos que herdam métodos e propriedades) e sua herança se baseia em protótipos.&lt;/p&gt;
+
+&lt;p&gt;Está é uma breve (brevíssima) introdução. Caso você esteja começando do zero, &lt;a href=&quot;https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/JavaScript_Vis%C3%A3o_Geral&quot;&gt;sugiro que leia este material&lt;/a&gt; do MDN para entender mais sobre o JavaScript. Ok?&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTA:&lt;/strong&gt; recentemente escrevi um artigo para quem está iniciando com o JavaScript. &lt;a href=&quot;http://www.vitorbritto.com.br/blog/iniciando-os-estudos-com-javascript/&quot;&gt;Confira aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h2 id=&quot;O-treinamento-Jedi&quot;&gt;
+                &lt;a name=&quot;O-treinamento-Jedi&quot; href=&quot;#O-treinamento-Jedi&quot;&gt;&lt;/a&gt;O treinamento Jedi
+              &lt;/h2&gt;
+            
+&lt;p&gt;Antes de iniciar os seus estudos, lembre-se que a disciplina e força de vontade são elementos necessários para obter sucesso no seu aprendizado. Reserve um horário tranquilo para que você possa estudar de maneira constante. Não se esqueça que praticar os códigos do livro e testar novas possibilidades são muito importantes para fixar o conhecimento obtido.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Iniciando-o-treinamento&quot;&gt;
+                &lt;a name=&quot;Iniciando-o-treinamento&quot; href=&quot;#Iniciando-o-treinamento&quot;&gt;&lt;/a&gt;Iniciando o treinamento
+              &lt;/h3&gt;
+            
+&lt;p&gt;Pois bem, antes de mais nada, a relação abaixo segue um ordem com base em minhas experiências e leituras prévias. Espero que você se identifique de alguma forma e seja útil para os seus estudos.&lt;/p&gt;
+
+&lt;p&gt;Vamos em frente.&lt;/p&gt;
+
+              &lt;h4 id=&quot;JavaScript-O-Guia-Definitivo&quot;&gt;
+                &lt;a name=&quot;JavaScript-O-Guia-Definitivo&quot; href=&quot;#JavaScript-O-Guia-Definitivo&quot;&gt;&lt;/a&gt;JavaScript: O Guia Definitivo
+              &lt;/h4&gt;
+            
+&lt;p&gt;O livro conta com muitos detalhes a respeito do JavaScript básico e do seu comportamento no Client Side. Um breve capítulo é reservado para o JavaScript no Server Side (NodeJS), assim como capítulos direcionados para HTTP, APIs e HTML5, gráficos (Canvas e SVG) e a biblioteca jQuery. Além disso, conta com uma parte exclusiva para referências e consultas (a qual deveria ser uma parte separada do livro para facilitar a consulta rápida, algo como um &lt;em&gt;pocket book&lt;/em&gt;).&lt;/p&gt;
+
+              &lt;h4 id=&quot;JavaScript-O-Guia-do-Programador&quot;&gt;
+                &lt;a name=&quot;JavaScript-O-Guia-do-Programador&quot; href=&quot;#JavaScript-O-Guia-do-Programador&quot;&gt;&lt;/a&gt;JavaScript: O Guia do Programador
+              &lt;/h4&gt;
+            
+&lt;p&gt;Um excelente livro! O Maujor destrincha de forma caprichosa cada um dos elementos do JavaScript básico (e no client-side também), aplicando, logo em seguida, um exemplo prático do respectivo elemento tratado. É uma ótima maneira de absorver o conceito e aplicá-lo logo em seguida. &lt;/p&gt;
+
+              &lt;h4 id=&quot;jQuery-A-biblioteca-do-programador-JavaScript&quot;&gt;
+                &lt;a name=&quot;jQuery-A-biblioteca-do-programador-JavaScript&quot; href=&quot;#jQuery-A-biblioteca-do-programador-JavaScript&quot;&gt;&lt;/a&gt;jQuery: A biblioteca do programador JavaScript
+              &lt;/h4&gt;
+            
+&lt;p&gt;Infelizmente, a edição que possuo não reflete a API atual do jQuery. De toda forma, o livro cobre em detalhes a bilioteca e segue a mesma metodologia do livro anterior (JavaScript: O Guia do Programador). Recomendo que leia este livro somente depois que você possuir um entendimento razoável do JavaScript.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Se-tornando-um-Jedi&quot;&gt;
+                &lt;a name=&quot;Se-tornando-um-Jedi&quot; href=&quot;#Se-tornando-um-Jedi&quot;&gt;&lt;/a&gt;Se tornando um Jedi
+              &lt;/h3&gt;
+            
+&lt;p&gt;A partir deste momento, considero que você já possua um conhecimento considerável com relação ao JavaScript.&lt;/p&gt;
+
+              &lt;h4 id=&quot;O-melhor-do-JavaScript&quot;&gt;
+                &lt;a name=&quot;O-melhor-do-JavaScript&quot; href=&quot;#O-melhor-do-JavaScript&quot;&gt;&lt;/a&gt;O melhor do JavaScript
+              &lt;/h4&gt;
+            
+&lt;p&gt;Apesar de muitos pensarem que trata-se de um livro para iniciantes, não é. Até porque, é difícil você compreender a linguagem com uma versão minificada das suas características. &lt;/p&gt;
+
+&lt;p&gt;Este livro é um compilação feita pelo Douglas Crockford, o qual revela as boas partes, belas características e partes ruins da linguagem de programação JavaScript. A leitura deste livro exige um prévio conhecimento sobre funções, métodos, objetos e arrays no JavaScript.&lt;/p&gt;
+
+&lt;p&gt;Para que fique mais fácil o entendimento: o &amp;quot;JavaScript: Guia Definitivo&amp;quot; prepara o terreno para que você aprenda esta linguagem de programação da melhor maneira possível, já o &amp;quot;O Melhor do JavaScript&amp;quot; é um convite para entender que &amp;quot;nem tudo são flores&amp;quot;, mas que tem jeito. E as soluções que oferecem melhorias às suas aplicações é compartilhado no livro &amp;quot;Padrões JavaScript&amp;quot;.&lt;/p&gt;
+
+              &lt;h4 id=&quot;Padrões-JavaScript&quot;&gt;
+                &lt;a name=&quot;Padrões-JavaScript&quot; href=&quot;#Padrões-JavaScript&quot;&gt;&lt;/a&gt;Padrões JavaScript
+              &lt;/h4&gt;
+            
+&lt;p&gt;Aqui, começa a ficar interessante e suas aplicações agradecem. Você entenderá porque trilhar um caminho com padrões e boas práticas são úteis para que suas aplicações mantenham coerência, qualidade, escalabilidade e um código manutenível. &lt;/p&gt;
+
+&lt;p&gt;Neste livro, Stoyan faz uma breve introdução sobre os conceitos mais importantes orientados ao JavaScript, detalha os padrões básicos para tornar a sua aplicação mais sólida e performática (apontando anti-padrões e possíveis armadilhas), além de relacionar padrões para funções, na criação de objetos, reutilização de código, padrões de projeto e no browser. &lt;/p&gt;
+
+              &lt;h4 id=&quot;JavaScript-de-Alto-Desempenho&quot;&gt;
+                &lt;a name=&quot;JavaScript-de-Alto-Desempenho&quot; href=&quot;#JavaScript-de-Alto-Desempenho&quot;&gt;&lt;/a&gt;JavaScript de Alto Desempenho
+              &lt;/h4&gt;
+            
+&lt;p&gt;Neste livro, o Nicholas Zakas mantém o foco em quais métodos podem ser utilizados para construir aplicações com boa performance e desempenho. Alguns pontos que foram apontados no livro anterior (Padrões JavaScript) podem ser revisados aqui.&lt;/p&gt;
+
+              &lt;h4 id=&quot;Segredos-do-Ninja-JavaScript&quot;&gt;
+                &lt;a name=&quot;Segredos-do-Ninja-JavaScript&quot; href=&quot;#Segredos-do-Ninja-JavaScript&quot;&gt;&lt;/a&gt;Segredos do Ninja JavaScript
+              &lt;/h4&gt;
+            
+&lt;p&gt;IMHO, este livro é o &amp;quot;JavaScript: Guia Definitivo&amp;quot; para quem conhece e já possui alguma experiência com o JavaScript, além de denotar uma compilação do &amp;quot;Padrões JavaScript&amp;quot; e &amp;quot;JavaScript de Alto Desempenho&amp;quot; com uma excelente análise sobre testes unitários.&lt;/p&gt;
+
+              &lt;h4 id=&quot;Javascript-Enlightenment&quot;&gt;
+                &lt;a name=&quot;Javascript-Enlightenment&quot; href=&quot;#Javascript-Enlightenment&quot;&gt;&lt;/a&gt;Javascript Enlightenment
+              &lt;/h4&gt;
+            
+&lt;p&gt;O livro não é sobre padrões, não menciona paradigmas de OO (orientação a objetos) no JavaScript, muito menos quais são os aspectos bons ou ruins. Trata-se de elementos importantes no JavaScript (funções, objetos, arrays, closures, escopos em detalhes) e o porquê do seu conhecimeto e importância. &lt;/p&gt;
+
+&lt;p&gt;Além disso, recomendo para quem prefere iniciar com jQuery à JavaScript. Como a própria chamada do livro se refere: &amp;quot;De um usuário de bibliotecas para um programador em JavaScript&amp;quot;.&lt;/p&gt;
+
+              &lt;h3 id=&quot;May-the-force-be-with-you&quot;&gt;
+                &lt;a name=&quot;May-the-force-be-with-you&quot; href=&quot;#May-the-force-be-with-you&quot;&gt;&lt;/a&gt;May the force be with you
+              &lt;/h3&gt;
+            
+&lt;p&gt;Daqui para diante, deduzo que você já possua uma boa experiência com o JavaScript e queira adquirir conhecimentos avançados sobre a linguagem e em tópicos específicos.&lt;/p&gt;
+
+              &lt;h4 id=&quot;JavaScript-Web-Applications&quot;&gt;
+                &lt;a name=&quot;JavaScript-Web-Applications&quot; href=&quot;#JavaScript-Web-Applications&quot;&gt;&lt;/a&gt;JavaScript Web Applications
+              &lt;/h4&gt;
+            
+&lt;p&gt;Um livro recheado de conceitos, que ajuda você a desenvolver habilidades na criação de aplicações web, garantindo um boa arquitetura, código manutenível e boas práticas.&lt;/p&gt;
+
+              &lt;h4 id=&quot;Testable-JavaScript&quot;&gt;
+                &lt;a name=&quot;Testable-JavaScript&quot; href=&quot;#Testable-JavaScript&quot;&gt;&lt;/a&gt;Testable JavaScript
+              &lt;/h4&gt;
+            
+&lt;p&gt;Um ótimo livro focado em testes no JavaScript. Cobre pontos conceituais, boas práticas, padrões e métodos para tornar o desenvolvimento da sua aplicação manutenível. Além disso, aborda cenários para automação, inspeção e &lt;a href=&quot;http://en.wikipedia.org/wiki/Continuous_delivery&quot;&gt;entrega do seu código com qualidade&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;Apesar do livro ser bem detalhado, recomendo fortemente que você já possua um contato prévio com testes unitários e &lt;a href=&quot;http://en.wikipedia.org/wiki/Software_design_pattern&quot;&gt;design patterns&lt;/a&gt;.&lt;/p&gt;
+
+              &lt;h4 id=&quot;Functional-JavaScript&quot;&gt;
+                &lt;a name=&quot;Functional-JavaScript&quot; href=&quot;#Functional-JavaScript&quot;&gt;&lt;/a&gt;Functional JavaScript
+              &lt;/h4&gt;
+            
+&lt;p&gt;Leitura em andamento, mas posso dizer que me supreendo a cada página. A programação funcional no JavaScript é algo mágico! Em paralelo, estou realizando alguns experimentos com o &lt;a href=&quot;http://www.haskell.org/haskellwiki/Haskell&quot;&gt;Haskell&lt;/a&gt;. Sugiro que dê uma olhada nesta linguagem. Vai mudar a sua vida!&lt;/p&gt;
+
+              &lt;h2 id=&quot;Fique-atento-para-alguns-pontos&quot;&gt;
+                &lt;a name=&quot;Fique-atento-para-alguns-pontos&quot; href=&quot;#Fique-atento-para-alguns-pontos&quot;&gt;&lt;/a&gt;Fique atento para alguns pontos
+              &lt;/h2&gt;
+            
+&lt;p&gt;É muito comum a tradução de termos técnicos em livros de Algortimos, Lógica de Programação e linguagens mais antigas. Esse péssimo hábito foi herdado nos livros sobre JavaScript também. Por isso, vou listar alguns termos que sofreram traduções equivocadas e/ou desnecessárias:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fechamento -&amp;gt; &lt;strong&gt;Closure&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Içamento -&amp;gt; &lt;strong&gt;Hoisting&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Chamada de retorno -&amp;gt; &lt;strong&gt;Callback&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Nó -&amp;gt; &lt;strong&gt;Node&lt;/strong&gt; (DOM)&lt;/li&gt;
+&lt;li&gt;marca -&amp;gt; &lt;strong&gt;tag&lt;/strong&gt; (HTML) &lt;/li&gt;
+&lt;li&gt;matriz/vetor -&amp;gt; &lt;strong&gt;Array&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;sequência de caracteres -&amp;gt; &lt;strong&gt;Strings&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Em alguns momentos, funções são traduzidos como métodos e vice-versa. Fique atento! Métodos são funções, mas esta nomenclatura se dá quando consta como parte integrada de um objeto.&lt;/p&gt;
+
+&lt;p&gt;Exemplo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;function fn() {} // função declarativa
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;var fn = function() {}; // função literal
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;function() {} // função anônima
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;var objeto = {
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;    propriedade: &amp;#39;valor&amp;#39;,
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    metodo: function() {
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;        // é uma função, mas chamamos de método por fazer parte de um objeto
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;    }
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Além disso, relaciono alguns nomes e siglas importantes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;CommonJS&lt;/strong&gt;, &lt;strong&gt;AMD&lt;/strong&gt;, &lt;strong&gt;UMD&lt;/strong&gt;: padrões para modularização e carregamento de arquivos&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RequireJS&lt;/strong&gt;, &lt;strong&gt;BrowserifyJS&lt;/strong&gt;: ferramentas utilizadas no padrão AMD e CommonJS respectivamente&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DOM&lt;/strong&gt;: Document Object Model&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;BOM&lt;/strong&gt;: Browser Object Model&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;QUnit&lt;/strong&gt;, &lt;strong&gt;Jasmine&lt;/strong&gt;, &lt;strong&gt;Mocha&lt;/strong&gt;, &lt;strong&gt;Nodeunit&lt;/strong&gt;: ferramentas para testes unitários no JavaScript&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TDD&lt;/strong&gt;, &lt;strong&gt;BDD&lt;/strong&gt;: métodos para testes&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SPA&lt;/strong&gt;: Single Page Application&lt;/li&gt;
+&lt;/ul&gt;
+
+              &lt;h2 id=&quot;Mais-alguma-consideração-&quot;&gt;
+                &lt;a name=&quot;Mais-alguma-consideração-&quot; href=&quot;#Mais-alguma-consideração-&quot;&gt;&lt;/a&gt;Mais alguma consideração?
+              &lt;/h2&gt;
+            
+&lt;p&gt;Existem muitos outros títulos excelentes sobre JavaScript, mas procurei listar os que já tive a oportunidade em ler para que pudesse dar um feedback e um contexto geral sobre cada um.&lt;/p&gt;
+
+&lt;p&gt;Além disso, existem algumas considerações interessantes para aprofundar os seus estudos:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Leitura do códigos de terceiros:&lt;/strong&gt; observe como os desenvolvedores, que estão há mais tempo lidando com a linguagem, criam seus códigos e organizam os mesmos;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ler artigos:&lt;/strong&gt; a leitura de artigos ajuda a solucionar possíveis problemas já enfrentados por outros desenvolvedores, além de conhecer como aplicar determinada solução para um dado cenário.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Praticar:&lt;/strong&gt; pratique os códigos expostos em um artigo, livro ou qualquer outro documento! Com a prática vem a experiência. &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Assistir palestras:&lt;/strong&gt; existem diversos vídeos de palestras disponíveis no Youtube sobre novos tópicos relacionados ao JavaScript. É importante estar atenado e saber o que está acontecendo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Participe dos eventos:&lt;/strong&gt; temos muitos eventos no Brasil, que tratam de temas relacionados ao JavaScript. Além disso, o &lt;em&gt;networking&lt;/em&gt; será importante para a troca de experiências e conhecimento com demais colegas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Além de algumas leituras complementares:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://eloquentjavascript.net/&quot;&gt;Eloquent JavaScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://addyosmani.com/resources/essentialjsdesignpatterns/book/&quot;&gt;Learning JavaScript Design Patterns&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;E você, tem mais alguma consideração para acrescentar aqui? &lt;/p&gt;
+
+&lt;p&gt;Bons estudos e até a próxima! =]&lt;/p&gt;
+</description>
+        <pubDate>Tue, 02 Sep 2014 00:00:00 -0300</pubDate>
+        <link>http://www.vitorbritto.com.br/blog/the-book-is-on-the-table/</link>
+        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/the-book-is-on-the-table/</guid>
+      </item>
+    
+      <item>
         <title>Um universo de APIs</title>
         <description>&lt;p&gt;Saudações!&lt;/p&gt;
 
@@ -1776,229 +1985,6 @@ Será executado a cada hora, &amp;quot;0 * * * *&amp;quot;.&lt;/p&gt;
         <pubDate>Sat, 22 Feb 2014 00:00:00 -0300</pubDate>
         <link>http://www.vitorbritto.com.br/blog/evolucao-automacao-de-tarefas/</link>
         <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/evolucao-automacao-de-tarefas/</guid>
-      </item>
-    
-      <item>
-        <title>Fluxo de Dados</title>
-        <description>&lt;p&gt;Saudações!&lt;/p&gt;
-
-&lt;p&gt;Neste artigo veremos porque &lt;em&gt;pipes&lt;/em&gt;, &lt;em&gt;redirections&lt;/em&gt; e &lt;em&gt;lists&lt;/em&gt; (Unix) são tão importantes para as tecnologias atuais que utilizam fluxo de dados (leitura/escrita, entrada/saída). Convido você a voltar no tempo para entender como estes caras podem ser úteis e eficientes no seu Workflow. Para ser mais exato, na execução de rotinas e procedimentos de automação.&lt;/p&gt;
-
-              &lt;h2 id=&quot;O-passado-o-presente-e-o-futuro&quot;&gt;
-                &lt;a name=&quot;O-passado-o-presente-e-o-futuro&quot; href=&quot;#O-passado-o-presente-e-o-futuro&quot;&gt;&lt;/a&gt;O passado, o presente e o futuro
-              &lt;/h2&gt;
-            
-&lt;p&gt;O que você precisa saber, para começo de conversa, é que estes caras existem há um bom tempo e não é nenhuma novidade. Se você utiliza NodeJS, já deve ter ouvido alguém falar (ou visto alguém comentar) em &lt;em&gt;Streams&lt;/em&gt;. Certo?&lt;/p&gt;
-
-&lt;p&gt;Bom, se você ainda não sabe do que estou falando, pode contribuir com a tradução deste excelente material sobre [_Streams_][9], criado pelo James Halliday (SubStack), e utilizá-lo como fonte de leitura para os seus estudos também.&lt;/p&gt;
-
-&lt;p&gt;Se você já utiliza este cara nos seus aplicativos em NodeJS e sabe qual a sua funcionalidade, deduzo também que saiba o seu conceito. Porém, caso não saiba, &lt;em&gt;Stream&lt;/em&gt; é um fluxo de dados em um sistema. Logo, &lt;em&gt;Streams&lt;/em&gt; é um conjunto de fluxo de dados.&lt;/p&gt;
-
-&lt;p&gt;Trocando em miúdos, quando você abre um arquivo para editá-lo, o sistema fará alguns procedimentos por debaixo dos panos para armazenar os dados na memória, permitindo que você realize as alterações necessárias. Os dados serão lidos, gravados e, só assim, será encerrada a sua &amp;quot;comunicação&amp;quot; com o sistema.&lt;/p&gt;
-
-&lt;p&gt;Certo, mas e o tal do &lt;em&gt;pipes&lt;/em&gt;, &lt;em&gt;redirections&lt;/em&gt; e &lt;em&gt;lists&lt;/em&gt;?&lt;/p&gt;
-
-&lt;p&gt;Bom, é aí que a diversão começa. Utilizando estes 3 camaradas de maneira eficiente, você constrói um fluxo de dados que vão partir de uma origem (entrada padrão &lt;code&gt;STDIN&lt;/code&gt;) para um destino (saída padrão &lt;code&gt;STDOUT&lt;/code&gt;), caso não ocorra algum erro (o que fará com que &lt;code&gt;STDERR&lt;/code&gt; entre na brincadeira).&lt;/p&gt;
-
-&lt;p&gt;Cara, STD... Anh?&lt;/p&gt;
-
-&lt;p&gt;Calma, jovem Jedi! Vou explicar.&lt;/p&gt;
-
-              &lt;h2 id=&quot;Entrando-na-capsula-do-tempo&quot;&gt;
-                &lt;a name=&quot;Entrando-na-capsula-do-tempo&quot; href=&quot;#Entrando-na-capsula-do-tempo&quot;&gt;&lt;/a&gt;Entrando na capsula do tempo
-              &lt;/h2&gt;
-            
-&lt;p&gt;Alguns programas ou comandos no UNIX fazem apenas a leitura de entradas, outros somente a escrita na saída, enquanto outros fazem ambos os processos.&lt;/p&gt;
-
-&lt;p&gt;Além disso, os programas ou comandos podem ser lidos a partir do que é digitado no terminal e escritos quando renderizados na tela deste mesmo terminal. Sendo que, algumas vezes, a leitura e escrita fica por conta da entrada e saída de dados em um arquivo.&lt;/p&gt;
-
-&lt;p&gt;Quando um usuário digita um comando a partir do seu teclado, se algum erro ocorre, o fluxo deste comando sofrerá uma mudança e uma mensagem será renderizada.&lt;/p&gt;
-
-&lt;p&gt;No UNIX Shell, temos três canais:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;STDIN&lt;/code&gt; (canal 0): é a entrada padrão ou origem.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;STDOUT&lt;/code&gt; (canal 1): é a saída padrão ou destino.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;STDERR&lt;/code&gt; (canal 2): é a saída padrão utilizada para retornar uma mensagem de erro.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Para exemplificar, observe o comando abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;$ ls ~/.vim &amp;gt; estrutura.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Neste exemplo, passamos um comando para listar todos os arquivos presentes no diretório &lt;code&gt;~/.vim&lt;/code&gt;, o qual será lido, redirecionado e escrito no arquivo &lt;code&gt;estrutura.md&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Neste caso, a entrada padrão (&lt;code&gt;STDIN&lt;/code&gt;) é o processo que o comando &lt;code&gt;ls ~/.vim &amp;gt; estrutura.md&lt;/code&gt; fará ao ser executado no Shell, onde será redirecionado por conta do operador &lt;code&gt;&amp;gt;&lt;/code&gt; e terá como saída padrão (&lt;code&gt;STDOUT&lt;/code&gt;) os dados gerados no arquivo &lt;code&gt;estrutura.md&lt;/code&gt;. No final das contas, fizemos um fluxo de dados partindo da leitura de um ponto inicial para a sua escrita em um ponto final, utilizando um redirecionamento.&lt;/p&gt;
-
-&lt;p&gt;Mas, e o &lt;code&gt;STDERR&lt;/code&gt;?&lt;/p&gt;
-
-&lt;p&gt;Nós podemos dizer ao programa para redirecionar qualquer saída padrão que retorne um erro (&lt;code&gt;STDERR&lt;/code&gt;) para um arquivo diferente. Confira o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;$ ls ~/.vim &amp;gt;&amp;gt; estrutura.md 2&amp;gt;notfound.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Lembra-se dos canais 0, 1 e 2 que mencionei acima?&lt;/p&gt;
-
-&lt;p&gt;Aqui, estamos utilizando este trecho do código (&lt;code&gt;2&amp;gt;&lt;/code&gt;) para dizer ao programa que utilize o canal 2 (&lt;code&gt;STDERR&lt;/code&gt;) para redirecionar a sua saída ao arquivo &lt;code&gt;notfound.md&lt;/code&gt;, caso existam quaisquer erros.&lt;/p&gt;
-
-&lt;p&gt;Poderíamos ainda, fazer da seguinte forma:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;$ ls ~/.vim &amp;gt;&amp;gt; estrutura.md 2&amp;gt;&amp;amp;1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Você arrisca dizer o que isso faria?&lt;/p&gt;
-
-&lt;p&gt;10...
-9...
-8...
-7...
-6...
-5...
-4...
-3...
-2...
-1...&lt;/p&gt;
-
-&lt;p&gt;Digitando &lt;code&gt;2&amp;gt;&amp;amp;1&lt;/code&gt;, estamos dizendo ao programa que redirecione a saída padrão de erro em &lt;code&gt;STDERR&lt;/code&gt; para a saída padrão em &lt;code&gt;STDOUT&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;No início pode parecer confuso entender como funciona esse processo, por isso aconselho que pesquise sobre o assunto. Ok?&lt;/p&gt;
-
-&lt;p&gt;Vamos em frente!&lt;/p&gt;
-
-              &lt;h2 id=&quot;Iniciando-a-sequência-de-lançamento&quot;&gt;
-                &lt;a name=&quot;Iniciando-a-sequência-de-lançamento&quot; href=&quot;#Iniciando-a-sequência-de-lançamento&quot;&gt;&lt;/a&gt;Iniciando a sequência de lançamento
-              &lt;/h2&gt;
-            
-&lt;p&gt;Agora que você já tem em mente o conceito de &lt;em&gt;Stream&lt;/em&gt;, já sabe o que são os 3 canais (&lt;code&gt;STDIN&lt;/code&gt;, &lt;code&gt;STDOUT&lt;/code&gt;, &lt;code&gt;STDERR&lt;/code&gt;) e para o que servem, vamos analisar mais a fundo sobre &lt;em&gt;pipes&lt;/em&gt;, &lt;em&gt;redirections&lt;/em&gt; e &lt;em&gt;lists&lt;/em&gt;. Você está preparado? Então, vamos lá.&lt;/p&gt;
-
-              &lt;h3 id=&quot;Pipe-line-&quot;&gt;
-                &lt;a name=&quot;Pipe-line-&quot; href=&quot;#Pipe-line-&quot;&gt;&lt;/a&gt;Pipe(line)
-              &lt;/h3&gt;
-            
-&lt;p&gt;A Filosofia UNIX preza pela criação de pequenos programas, mas altamente focados e que podem ser usados ​​em conjunto para executar tarefas complexas. Assim, aprender a encadear uma série de pequenos comandos na linha de comando é uma parte intrínseca de se sentir confortável ao escrever códigos no Shell. Para fazer isso, nós direcionamos a saída padrão de um programa para a entrada padrão de outro programa, mas não usamos &lt;em&gt;redirections&lt;/em&gt; como nos exemplos acima, usamos o operador &lt;em&gt;pipe&lt;/em&gt; (&lt;code&gt;|&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p&gt;No UNIX, os processos ligados por &lt;em&gt;pipe&lt;/em&gt; são executados dinamicamente, a medida em que o fluxo de dados entre eles acontecem. &lt;em&gt;Pipe&lt;/em&gt; é uma característica UNIX que permite conectar vários comandos em uma linha e passar dados de um para o outro.&lt;/p&gt;
-
-&lt;p&gt;Fazendo uma breve analogia. Quando era adolescente (14~15 anos), havia um jogo chamado &lt;em&gt;Pipe Dreams&lt;/em&gt; (Windows 95, o melhor OS da Microsoft na minha opinião) e o objetivo era conectar os canos em um determinado tempo até que a água começasse a ser bombeada. Era necessário conectar uma boa quantidade de canos para que o fluxo dessa água ficasse devagar o suficiente ao chegar no último cano e não houvesse uma tragédia.&lt;/p&gt;
-
-&lt;p&gt;A idéia do &lt;em&gt;pipe&lt;/em&gt;, no UNIX, é a mesma. Você constrói uma cadeia de comandos (conectando canos) até que satisfaça o fluxo de dados (com uma boa quantidade de canos), evitando que ocorra algum problema (evitando o estouro no último cano).&lt;/p&gt;
-
-&lt;p&gt;Mesmo que tenhamos 5 comandos conectados por &lt;em&gt;pipes&lt;/em&gt;, estamos lidando com uma entrada de dados e uma saída de dados. Para exemplificar, veja o código abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;$ ls -al | sort -r -k 5 | head -10
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;No exemplo, perceba que utilizamos o operador &lt;code&gt;|&lt;/code&gt; (pipe) para fazer a listagem dos arquivos no diretório atual, ordená-los e, por fim, exibir os 10 arquivos mais &amp;quot;peso-pesados&amp;quot; na tela.&lt;/p&gt;
-
-              &lt;h4 id=&quot;-quot-Eu-acho-que-ví-um-gatinho-quot-&quot;&gt;
-                &lt;a name=&quot;-quot-Eu-acho-que-ví-um-gatinho-quot-&quot; href=&quot;#-quot-Eu-acho-que-ví-um-gatinho-quot-&quot;&gt;&lt;/a&gt;&amp;quot;Eu acho que ví um gatinho&amp;quot;
-              &lt;/h4&gt;
-            
-&lt;p&gt;Isso te lembra alguma coisa no NodeJS? E no Gulp?&lt;/p&gt;
-
-&lt;p&gt;Para não perdermos o foco deste artigo e a essência dos conceitos que estão sendo passados aqui, deixarei como lição de casa para que você analise a [API do GulpJS][14] e as seções [_process_][15], [_child_process_][16] e [_Streams_][17] da API do NodeJS.&lt;/p&gt;
-
-&lt;p&gt;Entenda a lógica utilizada nestes caras e verifique se existe alguma semelhança com o que estamos abordando neste artigo. Combinado?&lt;/p&gt;
-
-              &lt;h3 id=&quot;Lists&quot;&gt;
-                &lt;a name=&quot;Lists&quot; href=&quot;#Lists&quot;&gt;&lt;/a&gt;Lists
-              &lt;/h3&gt;
-            
-&lt;p&gt;Seguindo em frente, vamos falar de &lt;em&gt;lists&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Estes caras se parecem com o &lt;em&gt;pipe&lt;/em&gt;, embora o operador &lt;code&gt;|&lt;/code&gt; é substituído por um dos operadores abaixo:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;;&lt;/code&gt;: representa o fim de um comando&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;amp;&lt;/code&gt;: executa de modo assíncrono ao seu precedente no &lt;em&gt;pipe(line)&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;: executa somente se o comando precedente obtiver uma saída positiva&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;||&lt;/code&gt;: executa somente se o comando precedente obtiver uma saída negativa&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Veja o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;$ test -d /tests/ || mkdir tests &amp;amp;&amp;amp; cd $_ | ls &amp;gt; README.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;No exemplo acima, declaramos um comando compacto para um estrutura condicional, a qual fará a verificacão se o diretório &lt;code&gt;tests&lt;/code&gt; já existe. Se (&lt;code&gt;||&lt;/code&gt;) não existir, o diretório será criado com o comando &lt;code&gt;mkdir&lt;/code&gt;, e (&lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;) acessado com o comando &lt;code&gt;cd&lt;/code&gt;. Em seguida, com essa lista de comandos executados, passaremos para o próximo comando com a ajuda do &lt;em&gt;pipe&lt;/em&gt; (&lt;code&gt;|&lt;/code&gt;), onde vamos redirecionar (&lt;code&gt;&amp;gt;&lt;/code&gt;) a lista de diretório e arquivos no diretório atual para o nosso novo arquivo &lt;code&gt;README.md&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Perceba que estamos utilizando um novo camarada, o &lt;code&gt;$_&lt;/code&gt;. Este cara é uma referência para o último argumento que passamos no comando anterior (&lt;code&gt;mkdir&lt;/code&gt;). Então, ao invés de digitarmos o nome do novo diretório a ser criado, apenas fazemos uma referência com &lt;code&gt;$_&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Vamos em frente!&lt;/p&gt;
-
-              &lt;h3 id=&quot;Redirections&quot;&gt;
-                &lt;a name=&quot;Redirections&quot; href=&quot;#Redirections&quot;&gt;&lt;/a&gt;Redirections
-              &lt;/h3&gt;
-            
-&lt;p&gt;&lt;em&gt;Redirections&lt;/em&gt; seguem o mesmo princípio que &lt;em&gt;Pipes&lt;/em&gt;: realizar o fluxo de dados. Entretanto, &lt;em&gt;redirections&lt;/em&gt; trabalham com arquivos, não com comandos.&lt;/p&gt;
-
-&lt;p&gt;Existem algumas diferenças quanto a sua sintaxe e o modo como o UNIX o executa. É importante lembrar que, os comandos sempre são declarados primeiro.&lt;/p&gt;
-
-&lt;p&gt;Vamos entender alguns dos operadores utilizados para redirecionar os dados.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Para mais detalhes sobre os operadores utilizados em redirecionamentos, [confira este material][20].&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;&lt;/code&gt;: redireciona a saída de um comando &lt;strong&gt;no disco&lt;/strong&gt;. &lt;em&gt;!&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;: redireciona a saída de um comando para um arquivo no disco. Se o arquivo já existir, ele será apagado e escrito novamente.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;&amp;lt;&lt;/code&gt;: redireciona a saída de um comando para um arquivo e posiciona os dados ao início do mesmo (anexo).&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt;: redireciona a saída de um comando para um arquivo e posiciona os dados ao final do mesmo (anexo).&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;2&amp;gt;&amp;gt;&lt;/code&gt;: redireciona a saída de erro e posiciona os dados ao final do mesmo (anexo).&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;2&amp;gt;&amp;amp;1&lt;/code&gt;: conecta a saída de erro na saída padrão.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;gt;&amp;amp;2&lt;/code&gt;: conecta a saída padrão na saída de erro.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;&amp;lt;EOF&lt;/code&gt;: anexa dados a entrada padrão&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;&amp;lt;-EOF&lt;/code&gt;: anexa dados a entrada padrão, cortando as &lt;code&gt;TABs&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;! Cuidado com este comando. Se você digitar por engano &lt;code&gt;&amp;gt;&lt;/code&gt;, o conteúdo do arquivo em questão será apagado.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Confira alguns exemplos.&lt;/p&gt;
-
-              &lt;h5 id=&quot;Listar-todos-os-arquivos&quot;&gt;
-                &lt;a name=&quot;Listar-todos-os-arquivos&quot; href=&quot;#Listar-todos-os-arquivos&quot;&gt;&lt;/a&gt;Listar todos os arquivos
-              &lt;/h5&gt;
-            
-&lt;p&gt;Digamos que você queira listar todos os arquivos (incluindo diretórios e sub-diretórios) das dependências instaladas em um aplicativo NodeJS (&lt;code&gt;node_modules&lt;/code&gt;), salvando-os em um arquivo para futura análise. Você pode executar este procedimento com:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;find . -type f &amp;gt; lista_node_modules.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-              &lt;h5 id=&quot;Criar-um-documento&quot;&gt;
-                &lt;a name=&quot;Criar-um-documento&quot; href=&quot;#Criar-um-documento&quot;&gt;&lt;/a&gt;Criar um documento
-              &lt;/h5&gt;
-            
-&lt;p&gt;Podemos criar um documento onde será renderizado um texto inicial e a estrutura do diretório logo em seguida.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;{ echo &amp;quot;# Estrutura do Projeto&amp;quot;; echo &amp;quot;&amp;quot;; ls; } &amp;gt;&amp;gt; estrutura.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Perceba que estou utilizando &lt;code&gt;echo&lt;/code&gt;, pois trata-se de 2 linhas apenas. Entretanto, se fosse necessário inserir uma série de linhas, ficaria inviável com um comando repleto de &lt;code&gt;echo&lt;/code&gt;. Para estas situações, é aconselhável o uso do &lt;code&gt;cat&lt;/code&gt; ou &lt;code&gt;tee&lt;/code&gt;, juntamento com o &lt;code&gt;heredoc&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# Exemplo com cat e EOF
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;$ cat &amp;gt;&amp;gt; arquivo_saida.md &amp;lt;&amp;lt; EOF
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&amp;gt; Título vem aqui
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&amp;gt;
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&amp;gt; Primeira linha com algum texto
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&amp;gt; Segunda linha com mais texto
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&amp;gt; Terceira linha para encerrar o arquivo
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;&amp;gt; EOF
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Note também, que foram utilizados &lt;em&gt;braces&lt;/em&gt; (&lt;code&gt;{ }&lt;/code&gt;) para agrupar os comandos e, os mesmos foram separados com &lt;em&gt;semicolon&lt;/em&gt; (&lt;code&gt;;&lt;/code&gt;), no primeiro exemplo.&lt;/p&gt;
-
-              &lt;h5 id=&quot;Redirecionamento-de-entradas-e-saídas&quot;&gt;
-                &lt;a name=&quot;Redirecionamento-de-entradas-e-saídas&quot; href=&quot;#Redirecionamento-de-entradas-e-saídas&quot;&gt;&lt;/a&gt;Redirecionamento de entradas e saídas
-              &lt;/h5&gt;
-            
-&lt;p&gt;Além disso, o redirecionamento pode ocorrer também com a entrada e saída padrão.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;ls -l  logs/*.log &amp;gt; bkp-log.txt 2&amp;gt;&amp;amp;1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Neste exemplo, estamos redirecionando a saída padrão de erro (&lt;code&gt;STDERR&lt;/code&gt;) para a saída padrão (&lt;code&gt;STDOUT&lt;/code&gt;), que neste caso é o arquivo &lt;code&gt;bkp-log.txt&lt;/code&gt;.&lt;/p&gt;
-
-              &lt;h2 id=&quot;Chegamos-ao-fim&quot;&gt;
-                &lt;a name=&quot;Chegamos-ao-fim&quot; href=&quot;#Chegamos-ao-fim&quot;&gt;&lt;/a&gt;Chegamos ao fim
-              &lt;/h2&gt;
-            
-&lt;p&gt;Bom, espero que com esta pequena introdução sobre estas poderosas &lt;em&gt;features&lt;/em&gt; do UNIX, você possa ir mais a fundo nos seus estudos e realizar algumas tarefas com o próprio Shell, evitando o uso desnecessário de ferramentas e/ou dependências.&lt;/p&gt;
-
-&lt;p&gt;É lógico que existem outros aspectos para cobrir sobre &lt;em&gt;pipes&lt;/em&gt;, &lt;em&gt;streams&lt;/em&gt; e amigos, mas perceba que tudo começou com o UNIX. Estudá-lo, é essencial para entender o que acontece por debaixo dos panos nas modernas ferramentas e fazer um melhor uso das mesmas.&lt;/p&gt;
-
-&lt;p&gt;Até a próxima!&lt;/p&gt;
-</description>
-        <pubDate>Tue, 18 Feb 2014 00:00:00 -0300</pubDate>
-        <link>http://www.vitorbritto.com.br/blog/fluxo-de-dados/</link>
-        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/fluxo-de-dados/</guid>
       </item>
     
   </channel>
