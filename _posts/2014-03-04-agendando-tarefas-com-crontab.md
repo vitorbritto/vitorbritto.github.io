@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "Agendando tarefas com o Crontab"
+title: Agendando tarefas com o Crontab
 description: Para os usuários UNIX, segue uma dica interessante para agendar tarefas com o comando crontab. Este cara, permite que você realize o agendamento de tarefas em determinados períodos.
-link: "http://vitorbritto.com.br/blog/agendando-tarefas-com-crontab/"
+link: http://vitorbritto.com.br/blog/agendando-tarefas-com-crontab/
 date: 2014-03-04
-cover: "assets/images/posts/post-crontab.jpg"
-avatar: "assets/images/avatar.jpg"
+path: 2014-03-04-agendando-tarefas-com-crontab.md
+cover: assets/images/posts/post-crontab.jpg
+avatar: assets/images/avatar.jpg
 author: Vitor Britto
 bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true

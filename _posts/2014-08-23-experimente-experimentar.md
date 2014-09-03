@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "Experimente Experimentar"
-link: "http://vitorbritto.com/blog/experimente-experimentar/"
-description: "Redundâncias a parte, me responda o seguinte: Você tem o costume de praticar/replicar o código que lê em determinado artigo ou livro? E o que aprendeu há alguns anos? Aqueles conceitos mais básico, lembra deles ainda?"
+title: Experimente Experimentar
+link: http://vitorbritto.com/blog/experimente-experimentar/
+description: "Redundância a parte, me responda o seguinte: Você tem o costume de praticar/replicar o código que lê em determinado artigo ou livro? E o que aprendeu há alguns anos? Aqueles conceitos mais básico, lembra deles ainda?"
 date: 2014-08-23
-cover: "assets/images/posts/post-experimente.jpg"
-avatar: "assets/images/avatar.jpg"
+path: 2014-08-23-experimente-experimentar.md
+cover: assets/images/posts/post-experimente.jpg
+avatar: assets/images/avatar.jpg
 author: Vitor Britto
 bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true
@@ -13,7 +14,7 @@ comments: true
 
 Saudações!
 
-Redundâncias a parte, me responda o seguinte:
+Redundância a parte, me responda o seguinte:
 
 - Você tem o costume de praticar/replicar o código que lê em determinado artigo ou livro?
 - E o que aprendeu há alguns anos?

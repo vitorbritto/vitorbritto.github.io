@@ -4,6 +4,7 @@ title: "Automação de Tarefas no Jekyll"
 description: O Jekyll é uma ferramenta fantástica. Como um gerador estático, ele possibilita a criação de um projeto web de forma ágil e bem prática. Porém, nem tudo pode sair como o planejado. É nessas horas que devemos utilizar as soluções mais acessíveis, adequadas e pertinentes para o projeto. Confira a minha dica sobre a automação de tarefas com Jekyll, neste artigo.
 link: "http://vitorbritto.com.br/blog/automacao-de-tarefas-no-jekyll/"
 date: 2013-10-09
+path: 2013-10-09-automacao-de-tarefas-no-jekyll.md
 cover: "assets/images/posts/post-jekyll.jpg"
 avatar: "assets/images/avatar.jpg"
 author: Vitor Britto

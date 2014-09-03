@@ -1,6 +1,5 @@
 {% include header.html %}
 
-
 <!-- Switch Theme -->
 <div class="theme-wrapper">
     <p class="theme-text">Tema:</p>
@@ -14,7 +13,16 @@
 
             <img class="article-img" src="{{ site.baseurl }}{{ page.cover }}">
             <h2 class="article-title">{{ page.title }}</h2>
-            <span class="article-date">Publicado em: {{ page.date | date:"%d/%m/%Y" }} | Por: {{ page.author }}</span>
+
+            <ul class="article-info">
+                {% if page.path %}
+                <li><a href="https://github.com/vitorbritto/vitorbritto.github.io/blob/master/_posts/{{ page.path }}" title="Github" target="_blank"><i class="icon-github"></i> Editar este post</a></li>
+                {% endif %}
+                <li>Publicado em: {{ page.date | date: "%d/%m/%Y" }} | </li>
+                <li>{% if page.reading_time %}{{ page.reading_time }}{% else %}{{ page.content | reading_time }}{% endif %}</li>
+
+            </ul>
+
             <div class="line"></div>
 
             <section class="article-entry">

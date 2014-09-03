@@ -4,6 +4,7 @@ title: "Controlando processos no UNIX"
 description: Neste artigo vamos entender o que são os processos. Como iniciar e interromper processos, enviar sinais aos programas em execução, verificar informações dos processos que estão sendo executados e muito mais.
 link: "http://vitorbritto.com.br/blog/controlando-processos-no-unix/"
 date: 2014-07-27
+path: 2014-07-27-controlando-processos-no-unix.md
 cover: "assets/images/posts/post-processos-unix.jpg"
 avatar: "assets/images/avatar.jpg"
 author: Vitor Britto

@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "Substituindo o Bower pelo Napa"
+title: Substituindo o Bower pelo Napa
 description: Depois de quase 3 anos utilizando o Backbone como o principal framework em JavaScript para a arquitetura e modularização em minhas aplicações web, resolvi arriscar, estudar e realizar alguns experimentos com o AngularJS. Neste artigo, mostro como é possível instalar módulos do Angular e injetá-los no nosso manifesto JSON sem problemas com o napa.
-link: "http://vitorbritto.com.br/blog/substituindo-o-bower-pelo-napa/"
+link: http://vitorbritto.com.br/blog/substituindo-o-bower-pelo-napa/
 date: 2014-06-11
-cover: "assets/images/posts/post-napa.jpg"
-avatar: "assets/images/avatar.jpg"
+path: 2014-06-11-substituindo-o-bower-pelo-napa.md
+cover: assets/images/posts/post-napa.jpg
+avatar: assets/images/avatar.jpg
 author: Vitor Britto
 bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true

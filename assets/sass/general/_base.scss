@@ -41,7 +41,7 @@ body {
 #{headings()} {
     margin: ($base-line-height / 2) 0;
     font-family: $headings-font-family;
-    font-weight: $headings-font-weight;
+    font-weight: $base-font-weight;
     line-height: $base-line-height;
     color: $headings-color;
     text-rendering: optimizelegibility; // Fix the character spacing for headings
@@ -76,6 +76,7 @@ h4 small { font-size: $base-font-size; }
 p {
     margin: 0 0 $base-line-height / 2;
     line-height: $base-line-height;
+    font-weight: $base-font-weight;
 }
 
 
@@ -89,6 +90,7 @@ a {
     @include transition(all linear 0.2s);
     @include link-colors($link-color, $link-color-hover, $link-color-active, $link-color-visited, $link-color-focus);
     text-decoration: none;
+    font-weight: $base-font-weight;
     &:hover {
         text-decoration: none;
     }
@@ -108,7 +110,10 @@ ul ul,
 ul ol,
 ol ol,
 ol ul { margin-bottom: 0; }
-li { line-height: $base-line-height; }
+li {
+    font-weight: $base-font-weight;
+    line-height: $base-line-height;
+}
 
 // Description Lists
 dl { margin-bottom: $base-line-height; }

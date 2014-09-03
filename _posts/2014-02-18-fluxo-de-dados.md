@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "Fluxo de Dados"
+title: Fluxo de Dados
 description: Neste artigo veremos porque pipes, redirections e lists (Unix) são tão importantes para as tecnologias atuais que utilizam fluxo de dados (leitura/escrita, entrada/saída). Convido você a voltar no tempo para entender como estes caras podem ser úteis e eficientes no seu Workflow. Para ser mais exato, na execução de rotinas e procedimentos de automação.
-link: "http://vitorbritto.com.br/blog/fluxo-de-dados/"
+link: http://vitorbritto.com.br/blog/fluxo-de-dados/
 date: 2014-02-18
-cover: "assets/images/posts/post-fluxo-de-dados.jpg"
-avatar: "assets/images/avatar.jpg"
+path: 2014-02-18-fluxo-de-dados.md
+cover: assets/images/posts/post-fluxo-de-dados.jpg
+avatar: assets/images/avatar.jpg
 author: Vitor Britto
 bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true

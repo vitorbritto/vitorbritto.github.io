@@ -4,6 +4,7 @@ title: "Gerenciando dependências Front-end no seu projeto"
 description: Imagine ter de instalar e gerenciar bibliotecas de terceiros toda vez que iniciar um novo projeto. Já pensou nas etapas que você terá de realizar? Com o Bower, o gerenciamento de suas dependências se torna ágil, prático e inteligente.
 link: "http://vitorbritto.com.br/blog/gerenciando-dependencias-front-end-no-seu-projeto/"
 date: 2013-10-11
+path: 2013-10-11-gerenciando-dependencias-front-end-no-seu-projeto.md
 cover: "assets/images/posts/post-bower.jpg"
 avatar: "assets/images/avatar.jpg"
 author: Vitor Britto
@@ -59,7 +60,7 @@ Para encontrar pacotes registrados no Bower, execute:
 
 Confira o exemplo:
 
-~~~bash
+```bash
 $ bower search socket
 Search results:
 
@@ -69,7 +70,7 @@ Search results:
     web-socket-js git://github.com/gimite/web-socket-js.git
     socketio-file-upload git://github.com/vote539/socketio-file-upload.git
     simplesocket git://github.com/mkuklis/simplesocket.git
-~~~
+```
 
 **Nota:** utilizando somente `bower search`, todos os pacotes serão listados.
 
@@ -77,7 +78,7 @@ Search results:
 
 O Bower oferece diversas possibilidades para instalar as dependências no seu projeto:
 
-~~~bash
+```bash
 # Através das dependências encontradas no diretório onde consta o arquivo bower.json
 bower install
 
@@ -89,7 +90,7 @@ bower install <pacote>#<versão>
 
 # Através de um nome customizado e uma versão específica do pacote
 bower install <nome>=<pacote>#<versão>
-~~~
+```
 
 Onde `<pacote>` possui as seguintes possbilidades:
 
@@ -101,7 +102,7 @@ Onde `<pacote>` possui as seguintes possbilidades:
 
 Confira o exemplo:
 
-~~~bash
+```bash
 $ bower install socket.io
 bower socket.io#*           not-cached git://github.com/LearnBoost/socket.io.git#*
 bower socket.io#*              resolve git://github.com/LearnBoost/socket.io.git#*
@@ -111,7 +112,7 @@ bower socket.io#*             resolved git://github.com/LearnBoost/socket.io.git
 bower socket.io#~0.9.15        install socket.io#0.9.15
 
 socket.io#0.9.15 components/socket.io
-~~~
+```
 
 > **Nota 1:** todos os conteúdos do pacote serão instalados no diretório `bower_components` por padrão. Você nunca deve modificar diretamente o conteúdo deste diretório.
 >
@@ -137,14 +138,14 @@ Se você declarar a opção `--paths` no comando `list` do Bower, você terá um
 
 Confira o exemplo:
 
-~~~bash
+```bash
 $ bower list --paths
 {
   "backbone": "components/backbone/index.js",
   "jquery": "components/jquery/index.js",
   "underscore": "components/underscore/index.js"
 }
-~~~
+```
 
 Como alternativa, todos os comandos suportam a opcão `--json` que gera uma saída em JSON. Os comandos com resultados de saída terão `stdout` como destino, já os erros e logs terão como destino o `stderr`.
 
@@ -157,11 +158,11 @@ Existem duas formas para atualizar as dependências do seu pacote:
 
 Confira o exemplo:
 
-~~~bash
+```bash
 $ bower update
 bower socket.io#~0.9.15         cached git://github.com/LearnBoost/socket.io.git#0.9.15
 bower socket.io#~0.9.15       validate 0.9.15 against git://github.com/LearnBoost/socket.io.git#~0.9.15
-~~~
+```
 
 #### Removendo as dependências
 
@@ -169,10 +170,10 @@ Para remover uma dependência local, execute: `bower uninstall <dependência>`
 
 Confira o exemplo:
 
-~~~bash
+```bash
 $ bower uninstall socket.io
 bower uninstall     socket.io
-~~~
+```
 
 #### Outros comandos para as dependências
 
@@ -184,12 +185,12 @@ Com o `bower list` é possível mostrar as dependências instaladas localmente n
 
 Confira o exemplo:
 
-~~~bash
+```bash
 $ bower list
 bower check-new     Checking for new versions of the project dependencies..
 bower#0.0.0 /Users/vitorbritto/temp/managers/bower
 └── socket.io#0.9.15 extraneous
-~~~
+```
 
 **Nota:** perceba que ao executar este comando, o Bower verifica se existe uma nova versão das dependências instaladas.
 
@@ -197,16 +198,16 @@ bower#0.0.0 /Users/vitorbritto/temp/managers/bower
 
 Com o `bower lookup` é possível verificar a *url* de uma dependência.
 
-~~~bash
+```bash
 $ bower lookup jquery
 jquery git://github.com/components/jquery.git
-~~~
+```
 
 ##### bower info
 
 Com o `bower info` é possível verificar as versões disponíveis de uma dependência.
 
-~~~bash
+```bash
 $ bower info modernizr
 bower modernizr#*               cached git://github.com/Modernizr/Modernizr.git#2.6.2
 bower modernizr#*             validate 2.6.2 against git://github.com/Modernizr/Modernizr.git#*
@@ -226,17 +227,17 @@ Available versions:
   - 2.0.6
 
 You can request info for a specific version with 'bower info modernizr#<version>'
-~~~
+```
 
 ##### bower cache clean
 
 Com o `bower cache clean` é possível remover todos os pacotes mantidos em cache pelo Bower.
 
-~~~bash
+```bash
 $ bower cache clean
 bower deleted       Cached package jquery: /Users/vitorbritto/.cache/bower/packages/29cb4373d29144ca260ac7c3997f4381/2.0.3
 bower deleted       Cached package modernizr: /Users/vitorbritto/.cache/bower/packages/49c1c17a4ec1b92db2a4728ece50773a/2.6.2
-~~~
+```
 
 ### Definindo um pacote
 
@@ -254,7 +255,7 @@ O `bower.json` define uma série de opções, entre elas:
 * `devDependencies` [hash]: dependências para desenvolvimento.
 * `private` [boolean]: define se o pacote será privado e/ou terá permissão para registro no futuro (mais a respeito sobre registro de pacotes, na seção **Registrando um pacote no Bower**).
 
-~~~json
+```json
 {
   "name": "meu-projeto",
   "version": "1.0.0",
@@ -272,7 +273,7 @@ O `bower.json` define uma série de opções, entre elas:
     "<test-framework-name>": "<version>"
   }
 }
-~~~
+```
 
 Mas, eu terei de criar esse arquivo manualmente?
 
@@ -280,7 +281,7 @@ Não! Você pode criar o arquivo `bower.json` dinamicamente com o comando: `bowe
 
 Confira o exemplo:
 
-~~~bash
+```bash
 $ bower init
 [?] name: projeto-bower
 [?] version: 1.0.0
@@ -312,7 +313,7 @@ $ bower init
     'tests'
   ]
 }
-~~~
+```
 
 ### O que mais o Bower pode me oferece?
 
@@ -320,7 +321,7 @@ O Bower também possui uma API muito poderosa. Todos os comandos podem ser acess
 
 Confira:
 
-~~~javascript
+```javascript
 var bower = require('bower');
 
 bower.commands
@@ -334,7 +335,7 @@ bower.commands
 .on('end', function (results) {
     console.log(results);
 });
-~~~
+```
 
 `Commands` transmite quatro tipos de eventos: `log`, `prompt`, `end`, `error`.
 
@@ -348,7 +349,7 @@ Para se ter uma ideia de como este cara trabalha, é uma boa ideia você checar 
 Quando se utiliza o Bower programaticamente, o alerta é desabilitado por padrão. Embora você possa habilitá-lo ao chamar comandos com `interactive: true` na configuração. Isso requer que você espere pelo evento `prompt` e manuseie-o do seu jeito.
 O jeito mais fácil é utilizando o módulo NPM [inquirer](https://npmjs.org/package/inquirer).
 
-~~~javascript
+```javascript
 var inquirer =  require('inquirer');
 
 bower.commands
@@ -357,7 +358,7 @@ bower.commands
 .on('prompt', function (prompts, callback) {
     inquirer.prompt(prompts, callback);
 });
-~~~
+```
 
 ### Colocando a mão na massa
 

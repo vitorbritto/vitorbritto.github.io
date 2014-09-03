@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "Um universo de APIs"
+title: Um universo de APIs
 description: Assim como a prática na programação ajuda os desenvolvedores a evoluírem suas habilidades, a pesquisa é uma ação que também necessita de prática. Criando o hábito da pesquisa, encontrar soluções para possíveis problemas tornam-se muito mais fáceis. Quando estamos lidando com o JavaScript no client-side, diversas APIs estão a nossa disposição. Neste artigo, darei algumas dicas sobre como consultar e estudar tais APIs.
-link: "http://vitorbritto.com.br/blog/um-universo-de-apis/"
+link: http://vitorbritto.com.br/blog/um-universo-de-apis/
 date: 2014-09-01
-cover: "assets/images/posts/post-universo-apis.jpg"
-avatar: "assets/images/avatar.jpg"
+path: 2014-09-01-um-universo-de-apis.md
+cover: assets/images/posts/post-universo-apis.jpg
+avatar: assets/images/avatar.jpg
 author: Vitor Britto
 bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true

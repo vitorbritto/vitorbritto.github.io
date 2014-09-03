@@ -8,11 +8,11 @@
     
       <item>
         <title>The book is on the table</title>
-        <description>&lt;p&gt;Saudações! &lt;/p&gt;
+        <description>&lt;p&gt;Saudações!&lt;/p&gt;
 
-&lt;p&gt;É muito comum surgirem perguntas na comunidade sobre quais os livros mais adequados e recomendados para quem está iniciando (ou não) com programação em JavaScript. &lt;/p&gt;
+&lt;p&gt;É muito comum surgirem perguntas na comunidade sobre quais os livros mais adequados e recomendados para quem está iniciando (ou não) com programação em JavaScript.&lt;/p&gt;
 
-&lt;p&gt;Por isso, vou compartilhar uma relação de livros que tive a oportunidade de ler, deixando uma breve descrição e algumas considerações. &lt;/p&gt;
+&lt;p&gt;Por isso, vou compartilhar uma relação de livros que tive a oportunidade de ler, deixando uma breve descrição e algumas considerações.&lt;/p&gt;
 
 &lt;p&gt;Vamos percorrer os seguintes tópicos:&lt;/p&gt;
 
@@ -23,13 +23,13 @@
 &lt;li&gt;Mais alguma consideração?&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Então, vamos lá. &lt;/p&gt;
+&lt;p&gt;Então, vamos lá.&lt;/p&gt;
 
               &lt;h2 id=&quot;Olá-eu-sou-o-JavaScript&quot;&gt;
                 &lt;a name=&quot;Olá-eu-sou-o-JavaScript&quot; href=&quot;#Olá-eu-sou-o-JavaScript&quot;&gt;&lt;/a&gt;Olá, eu sou o JavaScript
               &lt;/h2&gt;
             
-&lt;p&gt;Criada por Brendan Eich há quase 20 anos, a linguagem de programação JavaScript se tornou muito popular nos últimos anos e mostrou-se extremamente poderosa. Trata-se de uma linguagem de alto nível, dinâmica, interpretada e não tipada, além de englobar paradigmas de orientação de objetos e funcional. Possui uma sintaxe herdada do &lt;em&gt;Java&lt;/em&gt;, aspectos funcionais do &lt;em&gt;Scheme&lt;/em&gt; e suas caracteristicas orientadas a objetos do &lt;em&gt;Self&lt;/em&gt;. Atualmente, está linguagem que foi mal compreendida por um bom tempo, se faz presente tanto no &lt;strong&gt;client-side&lt;/strong&gt; (DOM) quanto no &lt;strong&gt;server-side&lt;/strong&gt; (NodeJS). &lt;/p&gt;
+&lt;p&gt;Criada por Brendan Eich há quase 20 anos, a linguagem de programação JavaScript se tornou muito popular nos últimos anos e mostrou-se extremamente poderosa. Trata-se de uma linguagem de alto nível, dinâmica, interpretada e não tipada, além de englobar paradigmas de orientação de objetos e funcional. Possui uma sintaxe herdada do &lt;em&gt;Java&lt;/em&gt;, aspectos funcionais do &lt;em&gt;Scheme&lt;/em&gt; e suas caracteristicas orientadas a objetos do &lt;em&gt;Self&lt;/em&gt;. Atualmente, está linguagem que foi mal compreendida por um bom tempo, se faz presente tanto no &lt;strong&gt;client-side&lt;/strong&gt; (DOM) quanto no &lt;strong&gt;server-side&lt;/strong&gt; (NodeJS).&lt;/p&gt;
 
 &lt;p&gt;Se você está vindo do Java ou PHP, vale frisar que o JavaScript não possui classes. O JavaScript possui funções de primeira classe (objetos que herdam métodos e propriedades) e sua herança se baseia em protótipos.&lt;/p&gt;
 
@@ -63,7 +63,7 @@
                 &lt;a name=&quot;JavaScript-O-Guia-do-Programador&quot; href=&quot;#JavaScript-O-Guia-do-Programador&quot;&gt;&lt;/a&gt;JavaScript: O Guia do Programador
               &lt;/h4&gt;
             
-&lt;p&gt;Um excelente livro! O Maujor destrincha de forma caprichosa cada um dos elementos do JavaScript básico (e no client-side também), aplicando, logo em seguida, um exemplo prático do respectivo elemento tratado. É uma ótima maneira de absorver o conceito e aplicá-lo logo em seguida. &lt;/p&gt;
+&lt;p&gt;Um excelente livro! O Maujor destrincha de forma caprichosa cada um dos elementos do JavaScript básico (e no client-side também), aplicando, logo em seguida, um exemplo prático do respectivo elemento tratado. É uma ótima maneira de absorver o conceito e aplicá-lo logo em seguida.&lt;/p&gt;
 
               &lt;h4 id=&quot;jQuery-A-biblioteca-do-programador-JavaScript&quot;&gt;
                 &lt;a name=&quot;jQuery-A-biblioteca-do-programador-JavaScript&quot; href=&quot;#jQuery-A-biblioteca-do-programador-JavaScript&quot;&gt;&lt;/a&gt;jQuery: A biblioteca do programador JavaScript
@@ -81,7 +81,7 @@
                 &lt;a name=&quot;O-melhor-do-JavaScript&quot; href=&quot;#O-melhor-do-JavaScript&quot;&gt;&lt;/a&gt;O melhor do JavaScript
               &lt;/h4&gt;
             
-&lt;p&gt;Apesar de muitos pensarem que trata-se de um livro para iniciantes, não é. Até porque, é difícil você compreender a linguagem com uma versão minificada das suas características. &lt;/p&gt;
+&lt;p&gt;Apesar de muitos pensarem que trata-se de um livro para iniciantes, não é. Até porque, é difícil você compreender a linguagem com uma versão minificada das suas características.&lt;/p&gt;
 
 &lt;p&gt;Este livro é um compilação feita pelo Douglas Crockford, o qual revela as boas partes, belas características e partes ruins da linguagem de programação JavaScript. A leitura deste livro exige um prévio conhecimento sobre funções, métodos, objetos e arrays no JavaScript.&lt;/p&gt;
 
@@ -91,9 +91,9 @@
                 &lt;a name=&quot;Padrões-JavaScript&quot; href=&quot;#Padrões-JavaScript&quot;&gt;&lt;/a&gt;Padrões JavaScript
               &lt;/h4&gt;
             
-&lt;p&gt;Aqui, começa a ficar interessante e suas aplicações agradecem. Você entenderá porque trilhar um caminho com padrões e boas práticas são úteis para que suas aplicações mantenham coerência, qualidade, escalabilidade e um código manutenível. &lt;/p&gt;
+&lt;p&gt;Aqui, começa a ficar interessante e suas aplicações agradecem. Você entenderá porque trilhar um caminho com padrões e boas práticas são úteis para que suas aplicações mantenham coerência, qualidade, escalabilidade e um código manutenível.&lt;/p&gt;
 
-&lt;p&gt;Neste livro, Stoyan faz uma breve introdução sobre os conceitos mais importantes orientados ao JavaScript, detalha os padrões básicos para tornar a sua aplicação mais sólida e performática (apontando anti-padrões e possíveis armadilhas), além de relacionar padrões para funções, na criação de objetos, reutilização de código, padrões de projeto e no browser. &lt;/p&gt;
+&lt;p&gt;Neste livro, Stoyan faz uma breve introdução sobre os conceitos mais importantes orientados ao JavaScript, detalha os padrões básicos para tornar a sua aplicação mais sólida e performática (apontando anti-padrões e possíveis armadilhas), além de relacionar padrões para funções, na criação de objetos, reutilização de código, padrões de projeto e no browser.&lt;/p&gt;
 
               &lt;h4 id=&quot;JavaScript-de-Alto-Desempenho&quot;&gt;
                 &lt;a name=&quot;JavaScript-de-Alto-Desempenho&quot; href=&quot;#JavaScript-de-Alto-Desempenho&quot;&gt;&lt;/a&gt;JavaScript de Alto Desempenho
@@ -111,7 +111,7 @@
                 &lt;a name=&quot;Javascript-Enlightenment&quot; href=&quot;#Javascript-Enlightenment&quot;&gt;&lt;/a&gt;Javascript Enlightenment
               &lt;/h4&gt;
             
-&lt;p&gt;O livro não é sobre padrões, não menciona paradigmas de OO (orientação a objetos) no JavaScript, muito menos quais são os aspectos bons ou ruins. Trata-se de elementos importantes no JavaScript (funções, objetos, arrays, closures, escopos em detalhes) e o porquê do seu conhecimeto e importância. &lt;/p&gt;
+&lt;p&gt;O livro não é sobre padrões, não menciona paradigmas de OO (orientação a objetos) no JavaScript, muito menos quais são os aspectos bons ou ruins. Trata-se de elementos importantes no JavaScript (funções, objetos, arrays, closures, escopos em detalhes) e o porquê do seu conhecimeto e importância.&lt;/p&gt;
 
 &lt;p&gt;Além disso, recomendo para quem prefere iniciar com jQuery à JavaScript. Como a própria chamada do livro se refere: &amp;quot;De um usuário de bibliotecas para um programador em JavaScript&amp;quot;.&lt;/p&gt;
 
@@ -119,7 +119,7 @@
                 &lt;a name=&quot;May-the-force-be-with-you&quot; href=&quot;#May-the-force-be-with-you&quot;&gt;&lt;/a&gt;May the force be with you
               &lt;/h3&gt;
             
-&lt;p&gt;Daqui para diante, deduzo que você já possua uma boa experiência com o JavaScript e queira adquirir conhecimentos avançados sobre a linguagem e em tópicos específicos.&lt;/p&gt;
+&lt;p&gt;Daqui pra frente, deduzo que você já possua uma boa experiência com o JavaScript e queira adquirir conhecimentos avançados sobre a linguagem ou sobre tópicos mais específicos.&lt;/p&gt;
 
               &lt;h4 id=&quot;JavaScript-Web-Applications&quot;&gt;
                 &lt;a name=&quot;JavaScript-Web-Applications&quot; href=&quot;#JavaScript-Web-Applications&quot;&gt;&lt;/a&gt;JavaScript Web Applications
@@ -131,7 +131,7 @@
                 &lt;a name=&quot;Testable-JavaScript&quot; href=&quot;#Testable-JavaScript&quot;&gt;&lt;/a&gt;Testable JavaScript
               &lt;/h4&gt;
             
-&lt;p&gt;Um ótimo livro focado em testes no JavaScript. Cobre pontos conceituais, boas práticas, padrões e métodos para tornar o desenvolvimento da sua aplicação manutenível. Além disso, aborda cenários para automação, inspeção e &lt;a href=&quot;http://en.wikipedia.org/wiki/Continuous_delivery&quot;&gt;entrega do seu código com qualidade&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Um ótimo livro para adquirir um conhecimento sólido em testes no JavaScript. Cobre pontos conceituais, boas práticas, padrões e métodos para tornar o desenvolvimento da sua aplicação manutenível. Além disso, aborda cenários para automação, inspeção e &lt;a href=&quot;http://en.wikipedia.org/wiki/Continuous_delivery&quot;&gt;entrega do seu código com qualidade&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Apesar do livro ser bem detalhado, recomendo fortemente que você já possua um contato prévio com testes unitários e &lt;a href=&quot;http://en.wikipedia.org/wiki/Software_design_pattern&quot;&gt;design patterns&lt;/a&gt;.&lt;/p&gt;
 
@@ -152,7 +152,7 @@
 &lt;li&gt;Içamento -&amp;gt; &lt;strong&gt;Hoisting&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Chamada de retorno -&amp;gt; &lt;strong&gt;Callback&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Nó -&amp;gt; &lt;strong&gt;Node&lt;/strong&gt; (DOM)&lt;/li&gt;
-&lt;li&gt;marca -&amp;gt; &lt;strong&gt;tag&lt;/strong&gt; (HTML) &lt;/li&gt;
+&lt;li&gt;marca -&amp;gt; &lt;strong&gt;tag&lt;/strong&gt; (HTML)&lt;/li&gt;
 &lt;li&gt;matriz/vetor -&amp;gt; &lt;strong&gt;Array&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;sequência de caracteres -&amp;gt; &lt;strong&gt;Strings&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -194,7 +194,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Leitura do códigos de terceiros:&lt;/strong&gt; observe como os desenvolvedores, que estão há mais tempo lidando com a linguagem, criam seus códigos e organizam os mesmos;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Ler artigos:&lt;/strong&gt; a leitura de artigos ajuda a solucionar possíveis problemas já enfrentados por outros desenvolvedores, além de conhecer como aplicar determinada solução para um dado cenário.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Praticar:&lt;/strong&gt; pratique os códigos expostos em um artigo, livro ou qualquer outro documento! Com a prática vem a experiência. &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Praticar:&lt;/strong&gt; pratique os códigos expostos em um artigo, livro ou qualquer outro documento! Com a prática vem a experiência.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Assistir palestras:&lt;/strong&gt; existem diversos vídeos de palestras disponíveis no Youtube sobre novos tópicos relacionados ao JavaScript. É importante estar atenado e saber o que está acontecendo.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Participe dos eventos:&lt;/strong&gt; temos muitos eventos no Brasil, que tratam de temas relacionados ao JavaScript. Além disso, o &lt;em&gt;networking&lt;/em&gt; será importante para a troca de experiências e conhecimento com demais colegas.&lt;/li&gt;
 &lt;/ul&gt;
@@ -206,7 +206,7 @@
 &lt;li&gt;&lt;a href=&quot;http://addyosmani.com/resources/essentialjsdesignpatterns/book/&quot;&gt;Learning JavaScript Design Patterns&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;E você, tem mais alguma consideração para acrescentar aqui? &lt;/p&gt;
+&lt;p&gt;E você, tem mais alguma consideração para acrescentar aqui?&lt;/p&gt;
 
 &lt;p&gt;Bons estudos e até a próxima! =]&lt;/p&gt;
 </description>
@@ -284,27 +284,25 @@
 
 &lt;p&gt;Se você pretende ingressar nesta área, entenda que o idioma dominante é o inglês e você precisa dele para ser bem sucedido.&lt;/p&gt;
 
-&lt;p&gt;Dito isso, podemos prosseguir?&lt;/p&gt;
+&lt;p&gt;Podemos prosseguir?&lt;/p&gt;
 
               &lt;h2 id=&quot;Uma-breve-história&quot;&gt;
                 &lt;a name=&quot;Uma-breve-história&quot; href=&quot;#Uma-breve-história&quot;&gt;&lt;/a&gt;Uma breve história
               &lt;/h2&gt;
             
-&lt;p&gt;Quando tive o primeiro contato com a Internet, em meados de 1994, fiquei fascinado. Logo, meu vício era:&lt;/p&gt;
+&lt;p&gt;Quando tive o primeiro contato com a Internet, em meados de 1994, fiquei fascinado. Logo meus vícios eram:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Criar Scripts para mIRC;&lt;/li&gt;
-&lt;li&gt;jogar Duke Nukem Online;&lt;/li&gt;
+&lt;li&gt;jogar Duke Nukem online;&lt;/li&gt;
 &lt;li&gt;e navegar na Web.&lt;/li&gt;
 &lt;/ul&gt;
 
-              &lt;h3 id=&quot;Até-que-o-JavaScript-apareceu-na-minha-vida&quot;&gt;
-                &lt;a name=&quot;Até-que-o-JavaScript-apareceu-na-minha-vida&quot; href=&quot;#Até-que-o-JavaScript-apareceu-na-minha-vida&quot;&gt;&lt;/a&gt;Até que o JavaScript apareceu na minha vida
+              &lt;h3 id=&quot;Então-o-JavaScript-apareceu-na-minha-vida&quot;&gt;
+                &lt;a name=&quot;Então-o-JavaScript-apareceu-na-minha-vida&quot; href=&quot;#Então-o-JavaScript-apareceu-na-minha-vida&quot;&gt;&lt;/a&gt;Então o JavaScript apareceu na minha vida
               &lt;/h3&gt;
             
-&lt;p&gt;No final do ano de 1997, &amp;quot;conheci&amp;quot; o JavaScript.&lt;/p&gt;
-
-&lt;p&gt;Confesso que foi por acaso! Visitei uma homepage e a janela começou a tremer. Resolvi comentar com alguns amigos sobre o ocorrido, e um deles (o mais Nerd de todos) disse ser &lt;strong&gt;o DHTML&lt;/strong&gt;. O mesmo me falou para clicar com o botão direito do mouse na janela do navegador (já na tal homepage) e selecionar a opção &lt;em&gt;&amp;quot;View Source Code&amp;quot;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;No final do ano de 1997 &amp;quot;conheci&amp;quot; o JavaScript. Confesso que foi por acaso! Visitei uma homepage e a janela começou a tremer. Resolvi comentar com alguns amigos sobre o ocorrido e um deles (o mais Nerd de todos) disse ser &lt;strong&gt;o DHTML&lt;/strong&gt;. O mesmo me falou para clicar com o botão direito do mouse na janela do navegador (já na tal homepage) e selecionar a opção &lt;em&gt;View Source Code&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Então, chegando em casa, fiz exatamente o que o colega me falou. Um emaranhado de números e letras surgiram na minha frente e, é claro, tive o meu primeiro contato com o HTML, CSS e &lt;strong&gt;JavaScript&lt;/strong&gt;.&lt;/p&gt;
 
@@ -407,7 +405,7 @@
         <title>Experimente Experimentar</title>
         <description>&lt;p&gt;Saudações!&lt;/p&gt;
 
-&lt;p&gt;Redundâncias a parte, me responda o seguinte:&lt;/p&gt;
+&lt;p&gt;Redundância a parte, me responda o seguinte:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Você tem o costume de praticar/replicar o código que lê em determinado artigo ou livro?&lt;/li&gt;
@@ -1692,7 +1690,7 @@ Será executado a cada hora, &amp;quot;0 * * * *&amp;quot;.&lt;/p&gt;
 &lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;    make copy   -&amp;gt; Copia os arquivos para a pasta &amp;quot;public&amp;quot;
 &lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    make zip    -&amp;gt; Comprime os arquivos da pasta &amp;quot;public&amp;quot;
 &lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;                    e versiona com a data e hora atual
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;Uso: 
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;Uso:
 &lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;    make [nome da tarefa que deseja executar]
 &lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;-------------------------------------------------------------
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;

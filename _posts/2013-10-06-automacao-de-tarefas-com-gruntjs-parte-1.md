@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "Automação de Tarefas com o Grunt JS - Parte I"
+title: Automação de Tarefas com o Grunt JS - Parte I
 description: Neste artigo vou falar sobre uma ferramenta muito importante para tornar o ambiente de trabalho mais àgil e produtivo. Esta ferramenta se chama Grunt! O que é o Grunt? Por que devo utilizá-lo? Como usá-lo? Irei responder estas e outras perguntas neste artigo.
-link: "http://vitorbritto.com.br/blog/automacao-de-tarefas-com-gruntjs-parte-1/"
+link: http://vitorbritto.com.br/blog/automacao-de-tarefas-com-gruntjs-parte-1/
 date: 2013-10-06
-cover: "assets/images/posts/post-gruntjs.jpg"
-avatar: "assets/images/avatar.jpg"
+path: 2013-10-06-automacao-de-tarefas-com-gruntjs-parte-1.md
+cover: assets/images/posts/post-gruntjs.jpg
+avatar: assets/images/avatar.jpg
 author: Vitor Britto
 bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true
@@ -105,7 +106,7 @@ Para novos projetos, serão executados os seguintes passos:
 
 Essa é uma possível estrutura inicial de um arquivo `package.json`:
 
-~~~json
+```json
 {
 	"name": "blog",
 	"version": "0.1.0",
@@ -116,7 +117,7 @@ Essa é uma possível estrutura inicial de um arquivo `package.json`:
 		"url": "http://www.vitorbritto.com"
 	}
 }
-~~~
+```
 
 Onde temos:
 
@@ -136,7 +137,7 @@ Você pode estar se perguntando qual a necessidade em se fazer isso. Simples. To
 
 Depois que o Grunt for instalado como dependência no seu projeto, o `package.json` ficará assim:
 
-~~~json
+```json
 {
 	"name": "project-name",
 	"version": "0.1.0",
@@ -150,7 +151,7 @@ Depois que o Grunt for instalado como dependência no seu projeto, o `package.js
 		"grunt": "~0.4.0"
 	}
 }
-~~~
+```
 
 Agora, o nosso arquivo `package.json` possui o objeto JSON `devDependencies` onde as dependências serão listadas. Com o Grunt instalado localmente no seu projeto, basta instalar os [plugins](http://gruntjs.com/plugins) necessários.
 
@@ -167,7 +168,7 @@ O arquivo `Gruntfile.js` é envolvido por uma função global e possui 3 método
 Confira:
 
 
-~~~javascript
+```javascript
 "use strict";
 
 module.exports = function( grunt ) {
@@ -186,7 +187,7 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'nome-tarefa', [ 'tarefa' ] );
 
 };
-~~~
+```
 
 ### E na prática, como fica?
 

@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "Adicionando caminhos na variável de ambiente PATH"
+title: Adicionando caminhos na variável de ambiente PATH
 description: É comum instalarmos novos programas/plataformas em nosso sistema e precisarmos inicializar o seu binário através da variável global PATH no Shell. Certamente, inserir este caminho precisará de um pequeno esforço manual/braçal para que o programa seja iniciado corretamente.
-link: "http://vitorbritto.com.br/blog/adicionando-caminhos-na-variavel-de-ambiente-PATH/"
+link: http://vitorbritto.com.br/blog/adicionando-caminhos-na-variavel-de-ambiente-PATH/
 date: 2014-07-14
-cover: "assets/images/posts/post-bash-path.jpg"
-avatar: "assets/images/avatar.jpg"
+path: 2014-07-14-adicionando-caminhos-na-variavel-de-ambiente-PATH.md
+cover: assets/images/posts/post-bash-path.jpg
+avatar: assets/images/avatar.jpg
 author: Vitor Britto
 bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true

@@ -106,13 +106,6 @@
         }
     }
 }
-// .nav {
-//     li > a {
-//         &:hover {
-//             border-bottom: 1px solid $gray-lighter;
-//         }
-//     }
-// }
 
 // HOME
 .posts { margin: 10px auto 0 auto; }
@@ -136,7 +129,6 @@
     margin: 10px auto;
     font-size: $base-font-size + 2;
     line-height: 21px;
-    font-weight: 300;
 }
 
 .btn-archive {
@@ -156,7 +148,6 @@
 .page-title {
     font-size: $base-font-size * 2;
     margin-bottom: 20px;
-    font-weight: 300;
 }
 
 // ARTICLES
@@ -168,16 +159,24 @@
 .article-title {
     color: $red;
     font-size: $base-font-size * 2;
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
-.article-date {
-    color: $gray-light;
-    font-size: $base-font-size - 2;
+.article-info {
+    @include horizontal-list;
+    li {
+        color: $gray-light;
+        font-size: $base-font-size - 2;
+        font-weight: $base-font-weight;
+        a {
+            padding: 6px 12px;
+            background: $red;
+            color: $white;
+        }
+    }
 }
 .article-entry {
     margin: 10px auto;
     #{headings()} { color: $red; }
-    #{headings(5,6)} { font-weight: 300; }
 }
 
 // ARCHIVES
@@ -193,7 +192,6 @@
     font-size: $base-font-size + 2;
     margin-top: 0;
     margin-bottom: 8px;
-    font-weight: 300;
 }
 .archive-date {
     font-size: $base-font-size - 4;
@@ -205,7 +203,6 @@
 .footer { margin: 0 auto; }
 .footer-text {
     color: lighten($gray, 12%);
-    font-weight: 300;
     text-align: center;
     font-size: $base-font-size - 2;
     i {

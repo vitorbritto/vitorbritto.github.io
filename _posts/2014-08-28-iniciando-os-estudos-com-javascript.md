@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "Iniciando os estudos com JavaScript"
+title: Iniciando os estudos com JavaScript
 description: Estarei compartilhando um método simples e eficaz para que você inicie os estudos com a linguagem JavaScript.
-link: "http://vitorbritto.com.br/blog/iniciando-os-estudos-com-javascript/"
+link: http://vitorbritto.com.br/blog/iniciando-os-estudos-com-javascript/
 date: 2014-08-28
-cover: "assets/images/posts/post-iniciando-js.jpg"
-avatar: "assets/images/avatar.jpg"
+path: 2014-08-28-iniciando-os-estudos-com-javascript.md
+cover: assets/images/posts/post-iniciando-js.jpg
+avatar: assets/images/avatar.jpg
 author: Vitor Britto
 bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true
@@ -21,21 +22,19 @@ Vale frisar também que, mesmo com o esforço em contribuir com [materiais em po
 
 Se você pretende ingressar nesta área, entenda que o idioma dominante é o inglês e você precisa dele para ser bem sucedido.
 
-Dito isso, podemos prosseguir?
+Podemos prosseguir?
 
 ## Uma breve história
 
-Quando tive o primeiro contato com a Internet, em meados de 1994, fiquei fascinado. Logo, meu vício era:
+Quando tive o primeiro contato com a Internet, em meados de 1994, fiquei fascinado. Logo meus vícios eram:
 
 - Criar Scripts para mIRC;
-- jogar Duke Nukem Online;
+- jogar Duke Nukem online;
 - e navegar na Web.
 
-### Até que o JavaScript apareceu na minha vida
+### Então o JavaScript apareceu na minha vida
 
-No final do ano de 1997, "conheci" o JavaScript.
-
-Confesso que foi por acaso! Visitei uma homepage e a janela começou a tremer. Resolvi comentar com alguns amigos sobre o ocorrido, e um deles (o mais Nerd de todos) disse ser **o DHTML**. O mesmo me falou para clicar com o botão direito do mouse na janela do navegador (já na tal homepage) e selecionar a opção _"View Source Code"_.
+No final do ano de 1997 "conheci" o JavaScript. Confesso que foi por acaso! Visitei uma homepage e a janela começou a tremer. Resolvi comentar com alguns amigos sobre o ocorrido e um deles (o mais Nerd de todos) disse ser **o DHTML**. O mesmo me falou para clicar com o botão direito do mouse na janela do navegador (já na tal homepage) e selecionar a opção _View Source Code_.
 
 Então, chegando em casa, fiz exatamente o que o colega me falou. Um emaranhado de números e letras surgiram na minha frente e, é claro, tive o meu primeiro contato com o HTML, CSS e **JavaScript**.
 

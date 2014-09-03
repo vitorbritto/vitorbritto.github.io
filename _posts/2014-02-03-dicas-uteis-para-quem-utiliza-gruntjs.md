@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "Dicas úteis para quem utiliza o GruntJS"
+title: Dicas úteis para quem utiliza o GruntJS
 description: Algumas dicas que podem ser úteis aos desenvolvedores que utilizam o GruntJS.
-link: "http://vitorbritto.com.br/blog/dicas-uteis-para-o-grunt/"
+link: http://vitorbritto.com.br/blog/dicas-uteis-para-quem-utiliza-grunt/
 date: 2014-02-03
-cover: "assets/images/posts/post-dicas-gruntjs.jpg"
-avatar: "assets/images/avatar.jpg"
+path: 2014-02-03-dicas-uteis-para-quem-utiliza-grunt.md
+cover: assets/images/posts/post-dicas-gruntjs.jpg
+avatar: assets/images/avatar.jpg
 author: Vitor Britto
 bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true

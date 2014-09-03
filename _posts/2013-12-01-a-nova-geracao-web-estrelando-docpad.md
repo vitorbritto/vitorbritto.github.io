@@ -1,11 +1,12 @@
 ---
 layout: post
 title: "A nova geração Web: estrelando o DocPad"
-description: O DocPad é um gerador estático, onde os autores desta excelente ferramenta o descrevem como a nova geração da arquitetura web; permitindo o gerenciamento de conteúdo atráves do sistema de arquivos, compilação através de plugins e que conta com alguns métodos para colocar o seu website em produção de maneira ágil.
-link: "http://vitorbritto.com.br/blog/a-nova-geracao-web-estrelando-docpad/"
+description: "O DocPad é um gerador estático, onde os autores desta excelente ferramenta o descrevem como a nova geração da arquitetura web; permitindo o gerenciamento de conteúdo atráves do sistema de arquivos, compilação através de plugins e que conta com alguns métodos para colocar o seu website em produção de maneira ágil."
+link: http://vitorbritto.com.br/blog/a-nova-geracao-web-estrelando-docpad/
 date: 2013-12-01
-cover: "assets/images/posts/post-docpad.jpg"
-avatar: "assets/images/avatar.jpg"
+path: 2013-12-01-a-nova-geracao-web-estrelando-docpad.md
+cover: assets/images/posts/post-docpad.jpg
+avatar: assets/images/avatar.jpg
 author: Vitor Britto
 bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true

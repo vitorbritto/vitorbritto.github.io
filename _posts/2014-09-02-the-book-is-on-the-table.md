@@ -4,6 +4,7 @@ title: "The book is on the table"
 description: É muito comum surgirem perguntas na comunidade sobre quais os livros mais adequados e recomendados para quem está iniciando (ou não) com programação em JavaScript. Por isso, vou compartilhar uma relação de livros que tive a oportunidade de ler, deixando uma breve descrição e algumas considerações.
 link: "http://vitorbritto.com.br/blog/the-book-is-on-the-table/"
 date: 2014-09-02
+path: 2014-09-02-the-book-is-on-the-table.md
 cover: "assets/images/posts/post-livros-js.jpg"
 avatar: "assets/images/avatar.jpg"
 author: Vitor Britto
@@ -11,11 +12,11 @@ bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix
 comments: true
 ---
 
-Saudações! 
+Saudações!
 
-É muito comum surgirem perguntas na comunidade sobre quais os livros mais adequados e recomendados para quem está iniciando (ou não) com programação em JavaScript. 
+É muito comum surgirem perguntas na comunidade sobre quais os livros mais adequados e recomendados para quem está iniciando (ou não) com programação em JavaScript.
 
-Por isso, vou compartilhar uma relação de livros que tive a oportunidade de ler, deixando uma breve descrição e algumas considerações. 
+Por isso, vou compartilhar uma relação de livros que tive a oportunidade de ler, deixando uma breve descrição e algumas considerações.
 
 Vamos percorrer os seguintes tópicos:
 
@@ -24,11 +25,11 @@ Vamos percorrer os seguintes tópicos:
 3. Fique atento para alguns pontos
 4. Mais alguma consideração?
 
-Então, vamos lá. 
+Então, vamos lá.
 
 ## Olá, eu sou o JavaScript
 
-Criada por Brendan Eich há quase 20 anos, a linguagem de programação JavaScript se tornou muito popular nos últimos anos e mostrou-se extremamente poderosa. Trata-se de uma linguagem de alto nível, dinâmica, interpretada e não tipada, além de englobar paradigmas de orientação de objetos e funcional. Possui uma sintaxe herdada do *Java*, aspectos funcionais do *Scheme* e suas caracteristicas orientadas a objetos do *Self*. Atualmente, está linguagem que foi mal compreendida por um bom tempo, se faz presente tanto no **client-side** (DOM) quanto no **server-side** (NodeJS). 
+Criada por Brendan Eich há quase 20 anos, a linguagem de programação JavaScript se tornou muito popular nos últimos anos e mostrou-se extremamente poderosa. Trata-se de uma linguagem de alto nível, dinâmica, interpretada e não tipada, além de englobar paradigmas de orientação de objetos e funcional. Possui uma sintaxe herdada do *Java*, aspectos funcionais do *Scheme* e suas caracteristicas orientadas a objetos do *Self*. Atualmente, está linguagem que foi mal compreendida por um bom tempo, se faz presente tanto no **client-side** (DOM) quanto no **server-side** (NodeJS).
 
 Se você está vindo do Java ou PHP, vale frisar que o JavaScript não possui classes. O JavaScript possui funções de primeira classe (objetos que herdam métodos e propriedades) e sua herança se baseia em protótipos.
 
@@ -52,7 +53,7 @@ O livro conta com muitos detalhes a respeito do JavaScript básico e do seu comp
 
 #### JavaScript: O Guia do Programador
 
-Um excelente livro! O Maujor destrincha de forma caprichosa cada um dos elementos do JavaScript básico (e no client-side também), aplicando, logo em seguida, um exemplo prático do respectivo elemento tratado. É uma ótima maneira de absorver o conceito e aplicá-lo logo em seguida. 
+Um excelente livro! O Maujor destrincha de forma caprichosa cada um dos elementos do JavaScript básico (e no client-side também), aplicando, logo em seguida, um exemplo prático do respectivo elemento tratado. É uma ótima maneira de absorver o conceito e aplicá-lo logo em seguida.
 
 #### jQuery: A biblioteca do programador JavaScript
 
@@ -64,7 +65,7 @@ A partir deste momento, considero que você já possua um conhecimento consider�
 
 #### O melhor do JavaScript
 
-Apesar de muitos pensarem que trata-se de um livro para iniciantes, não é. Até porque, é difícil você compreender a linguagem com uma versão minificada das suas características. 
+Apesar de muitos pensarem que trata-se de um livro para iniciantes, não é. Até porque, é difícil você compreender a linguagem com uma versão minificada das suas características.
 
 Este livro é um compilação feita pelo Douglas Crockford, o qual revela as boas partes, belas características e partes ruins da linguagem de programação JavaScript. A leitura deste livro exige um prévio conhecimento sobre funções, métodos, objetos e arrays no JavaScript.
 
@@ -72,9 +73,9 @@ Para que fique mais fácil o entendimento: o "JavaScript: Guia Definitivo" prepa
 
 #### Padrões JavaScript
 
-Aqui, começa a ficar interessante e suas aplicações agradecem. Você entenderá porque trilhar um caminho com padrões e boas práticas são úteis para que suas aplicações mantenham coerência, qualidade, escalabilidade e um código manutenível. 
+Aqui, começa a ficar interessante e suas aplicações agradecem. Você entenderá porque trilhar um caminho com padrões e boas práticas são úteis para que suas aplicações mantenham coerência, qualidade, escalabilidade e um código manutenível.
 
-Neste livro, Stoyan faz uma breve introdução sobre os conceitos mais importantes orientados ao JavaScript, detalha os padrões básicos para tornar a sua aplicação mais sólida e performática (apontando anti-padrões e possíveis armadilhas), além de relacionar padrões para funções, na criação de objetos, reutilização de código, padrões de projeto e no browser. 
+Neste livro, Stoyan faz uma breve introdução sobre os conceitos mais importantes orientados ao JavaScript, detalha os padrões básicos para tornar a sua aplicação mais sólida e performática (apontando anti-padrões e possíveis armadilhas), além de relacionar padrões para funções, na criação de objetos, reutilização de código, padrões de projeto e no browser.
 
 #### JavaScript de Alto Desempenho
 
@@ -86,13 +87,13 @@ IMHO, este livro é o "JavaScript: Guia Definitivo" para quem conhece e já poss
 
 #### Javascript Enlightenment
 
-O livro não é sobre padrões, não menciona paradigmas de OO (orientação a objetos) no JavaScript, muito menos quais são os aspectos bons ou ruins. Trata-se de elementos importantes no JavaScript (funções, objetos, arrays, closures, escopos em detalhes) e o porquê do seu conhecimeto e importância. 
+O livro não é sobre padrões, não menciona paradigmas de OO (orientação a objetos) no JavaScript, muito menos quais são os aspectos bons ou ruins. Trata-se de elementos importantes no JavaScript (funções, objetos, arrays, closures, escopos em detalhes) e o porquê do seu conhecimeto e importância.
 
 Além disso, recomendo para quem prefere iniciar com jQuery à JavaScript. Como a própria chamada do livro se refere: "De um usuário de bibliotecas para um programador em JavaScript".
 
 ### May the force be with you
 
-Daqui para diante, deduzo que você já possua uma boa experiência com o JavaScript e queira adquirir conhecimentos avançados sobre a linguagem e em tópicos específicos.
+Daqui pra frente, deduzo que você já possua uma boa experiência com o JavaScript e queira adquirir conhecimentos avançados sobre a linguagem ou sobre tópicos mais específicos.
 
 #### JavaScript Web Applications
 
@@ -100,7 +101,7 @@ Um livro recheado de conceitos, que ajuda você a desenvolver habilidades na cri
 
 #### Testable JavaScript
 
-Um ótimo livro focado em testes no JavaScript. Cobre pontos conceituais, boas práticas, padrões e métodos para tornar o desenvolvimento da sua aplicação manutenível. Além disso, aborda cenários para automação, inspeção e [entrega do seu código com qualidade](http://en.wikipedia.org/wiki/Continuous_delivery). 
+Um ótimo livro para adquirir um conhecimento sólido em testes no JavaScript. Cobre pontos conceituais, boas práticas, padrões e métodos para tornar o desenvolvimento da sua aplicação manutenível. Além disso, aborda cenários para automação, inspeção e [entrega do seu código com qualidade](http://en.wikipedia.org/wiki/Continuous_delivery).
 
 Apesar do livro ser bem detalhado, recomendo fortemente que você já possua um contato prévio com testes unitários e [design patterns](http://en.wikipedia.org/wiki/Software_design_pattern).
 
@@ -116,7 +117,7 @@ Leitura em andamento, mas posso dizer que me supreendo a cada página. A program
 - Içamento -> **Hoisting**
 - Chamada de retorno -> **Callback**
 - Nó -> **Node** (DOM)
-- marca -> **tag** (HTML) 
+- marca -> **tag** (HTML)
 - matriz/vetor -> **Array**
 - sequência de caracteres -> **Strings**
 
@@ -155,7 +156,7 @@ Além disso, existem algumas considerações interessantes para aprofundar os se
 
 - **Leitura do códigos de terceiros:** observe como os desenvolvedores, que estão há mais tempo lidando com a linguagem, criam seus códigos e organizam os mesmos;
 - **Ler artigos:** a leitura de artigos ajuda a solucionar possíveis problemas já enfrentados por outros desenvolvedores, além de conhecer como aplicar determinada solução para um dado cenário.
-- **Praticar:** pratique os códigos expostos em um artigo, livro ou qualquer outro documento! Com a prática vem a experiência. 
+- **Praticar:** pratique os códigos expostos em um artigo, livro ou qualquer outro documento! Com a prática vem a experiência.
 - **Assistir palestras:** existem diversos vídeos de palestras disponíveis no Youtube sobre novos tópicos relacionados ao JavaScript. É importante estar atenado e saber o que está acontecendo.
 - **Participe dos eventos:** temos muitos eventos no Brasil, que tratam de temas relacionados ao JavaScript. Além disso, o _networking_ será importante para a troca de experiências e conhecimento com demais colegas.
 
@@ -164,6 +165,6 @@ Além de algumas leituras complementares:
 - [Eloquent JavaScript](http://eloquentjavascript.net/)
 - [Learning JavaScript Design Patterns](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)
 
-E você, tem mais alguma consideração para acrescentar aqui? 
+E você, tem mais alguma consideração para acrescentar aqui?
 
 Bons estudos e até a próxima! =]
