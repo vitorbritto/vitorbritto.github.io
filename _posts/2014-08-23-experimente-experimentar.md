@@ -84,7 +84,7 @@ console.log(str.toUpperCase());
 console.log(str.toLowerCase());
 ```
 
-> **Nota:** você pode encadear estes caras, criando um _[chain method](http://javascriptissexy.com/beautiful-javascript-easily-create-chainable-cascading-methods-for-expressiveness/)_. Desta forma, você evita a repetição da variável `str` e refatora o código para que fique mais legível criando um estilo de cascata para os métodos a serem utilizados.
+> **Nota:** você pode encadear estes caras, criando um _[method chaining](http://javascriptissexy.com/beautiful-javascript-easily-create-chainable-cascading-methods-for-expressiveness/)_. Desta forma, você evita a repetição da variável `str` e refatora o código para que fique mais legível criando um estilo de cascata para os métodos a serem utilizados.
 
 #### Passo a passo
 
