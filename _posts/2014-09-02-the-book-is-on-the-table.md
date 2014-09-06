@@ -33,17 +33,17 @@ Criada por Brendan Eich há quase 20 anos, a linguagem de programação JavaScri
 
 Se você está vindo do Java ou PHP, vale frisar que o JavaScript não possui classes. O JavaScript possui funções de primeira classe (objetos que herdam métodos e propriedades) e sua herança se baseia em protótipos.
 
-Está é uma breve (brevíssima) introdução. Caso você esteja começando do zero, [sugiro que leia este material](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/JavaScript_Vis%C3%A3o_Geral) do MDN para entender mais sobre o JavaScript. Ok?
+Esta é uma breve (brevíssima) introdução. Caso você esteja começando do zero, [sugiro que leia este material](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/JavaScript_Vis%C3%A3o_Geral) do MDN para entender mais sobre o JavaScript. Ok?
 
 > **NOTA:** recentemente escrevi um artigo para quem está iniciando com o JavaScript. [Confira aqui](http://www.vitorbritto.com.br/blog/iniciando-os-estudos-com-javascript/).
 
 ## O treinamento Jedi
 
-Antes de iniciar os seus estudos, lembre-se que a disciplina e força de vontade são elementos necessários para obter sucesso no seu aprendizado. Reserve um horário tranquilo para que você possa estudar de maneira constante. Não se esqueça que praticar os códigos do livro e testar novas possibilidades são muito importantes para fixar o conhecimento obtido.
+Antes de iniciar os seus estudos, lembre-se que a disciplina e a força de vontade são elementos necessários para obter sucesso no seu aprendizado. Reserve um horário tranquilo para que você possa estudar de maneira constante. Não se esqueça que praticar os códigos do livro e testar novas possibilidades são muito importantes para fixar o conhecimento obtido.
 
 ### Iniciando o treinamento
 
-Pois bem, antes de mais nada, a relação abaixo segue um ordem com base em minhas experiências e leituras prévias. Espero que você se identifique de alguma forma e seja útil para os seus estudos.
+Pois bem, antes de mais nada, a relação abaixo segue uma ordem com base em minhas experiências e leituras prévias. Espero que você se identifique de alguma forma e seja útil para os seus estudos.
 
 Vamos em frente.
 
@@ -57,7 +57,7 @@ Um excelente livro! O Maujor destrincha de forma caprichosa cada um dos elemento
 
 #### jQuery: A biblioteca do programador JavaScript
 
-Infelizmente, a edição que possuo não reflete a API atual do jQuery. De toda forma, o livro cobre em detalhes a bilioteca e segue a mesma metodologia do livro anterior (JavaScript: O Guia do Programador). Recomendo que leia este livro somente depois que você possuir um entendimento razoável do JavaScript.
+Infelizmente, a edição que possuo não reflete a API atual do jQuery. De qualquer forma, o livro cobre em detalhes a bilioteca e segue a mesma metodologia do livro anterior (JavaScript: O Guia do Programador). Recomendo que leia este livro somente depois que você possuir um entendimento razoável do JavaScript.
 
 ### Se tornando um Jedi
 
@@ -69,7 +69,7 @@ Apesar de muitos pensarem que trata-se de um livro para iniciantes, não é. At�
 
 Este livro é um compilação feita pelo Douglas Crockford, o qual revela as boas partes, belas características e partes ruins da linguagem de programação JavaScript. A leitura deste livro exige um prévio conhecimento sobre funções, métodos, objetos e arrays no JavaScript.
 
-Para que fique mais fácil o entendimento: o "JavaScript: Guia Definitivo" prepara o terreno para que você aprenda esta linguagem de programação da melhor maneira possível, já o "O Melhor do JavaScript" é um convite para entender que "nem tudo são flores", mas que tem jeito. E as soluções que oferecem melhorias às suas aplicações é compartilhado no livro "Padrões JavaScript".
+Para que fique mais fácil o entendimento: o "JavaScript: Guia Definitivo" prepara o terreno para que você aprenda esta linguagem de programação da melhor maneira possível, já o "O Melhor do JavaScript" é um convite para entender que "nem tudo são flores", mas que tem jeito. E as soluções que oferecem melhorias às suas aplicações são compartilhadas no livro "Padrões JavaScript".
 
 #### Padrões JavaScript
 
@@ -115,13 +115,13 @@ Leitura em andamento, mas posso dizer que me supreendo a cada página. A program
 
 - Fechamento -> **Closure**
 - Içamento -> **Hoisting**
-- Chamada de retorno -> **Callback**
+- Função de chamada de retorno -> **Callback**
 - Nó -> **Node** (DOM)
 - marca -> **tag** (HTML)
 - matriz/vetor -> **Array**
 - sequência de caracteres -> **Strings**
 
-Em alguns momentos, funções são traduzidos como métodos e vice-versa. Fique atento! Métodos são funções, mas esta nomenclatura se dá quando consta como parte integrada de um objeto.
+Em alguns momentos, funções são traduzidas como métodos e vice-versa. Fique atento! Métodos são funções, mas esta nomenclatura se dá quando consta como parte integrada em um objeto.
 
 Exemplo:
 
@@ -150,7 +150,7 @@ Além disso, relaciono alguns nomes e siglas importantes:
 
 ## Mais alguma consideração?
 
-Existem muitos outros títulos excelentes sobre JavaScript, mas procurei listar os que já tive a oportunidade em ler para que pudesse dar um feedback e um contexto geral sobre cada um.
+Existem muitos outros títulos excelentes sobre JavaScript, mas procurei listar os que já tive a oportunidade em ler para que pudesse dar um feedback e um contexto geral de cada um.
 
 Além disso, existem algumas considerações interessantes para aprofundar os seus estudos:
 

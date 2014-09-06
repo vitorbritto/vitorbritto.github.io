@@ -33,7 +33,7 @@
 
 &lt;p&gt;Se você está vindo do Java ou PHP, vale frisar que o JavaScript não possui classes. O JavaScript possui funções de primeira classe (objetos que herdam métodos e propriedades) e sua herança se baseia em protótipos.&lt;/p&gt;
 
-&lt;p&gt;Está é uma breve (brevíssima) introdução. Caso você esteja começando do zero, &lt;a href=&quot;https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/JavaScript_Vis%C3%A3o_Geral&quot;&gt;sugiro que leia este material&lt;/a&gt; do MDN para entender mais sobre o JavaScript. Ok?&lt;/p&gt;
+&lt;p&gt;Esta é uma breve (brevíssima) introdução. Caso você esteja começando do zero, &lt;a href=&quot;https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/JavaScript_Vis%C3%A3o_Geral&quot;&gt;sugiro que leia este material&lt;/a&gt; do MDN para entender mais sobre o JavaScript. Ok?&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;NOTA:&lt;/strong&gt; recentemente escrevi um artigo para quem está iniciando com o JavaScript. &lt;a href=&quot;http://www.vitorbritto.com.br/blog/iniciando-os-estudos-com-javascript/&quot;&gt;Confira aqui&lt;/a&gt;.&lt;/p&gt;
@@ -43,13 +43,13 @@
                 &lt;a name=&quot;O-treinamento-Jedi&quot; href=&quot;#O-treinamento-Jedi&quot;&gt;&lt;/a&gt;O treinamento Jedi
               &lt;/h2&gt;
             
-&lt;p&gt;Antes de iniciar os seus estudos, lembre-se que a disciplina e força de vontade são elementos necessários para obter sucesso no seu aprendizado. Reserve um horário tranquilo para que você possa estudar de maneira constante. Não se esqueça que praticar os códigos do livro e testar novas possibilidades são muito importantes para fixar o conhecimento obtido.&lt;/p&gt;
+&lt;p&gt;Antes de iniciar os seus estudos, lembre-se que a disciplina e a força de vontade são elementos necessários para obter sucesso no seu aprendizado. Reserve um horário tranquilo para que você possa estudar de maneira constante. Não se esqueça que praticar os códigos do livro e testar novas possibilidades são muito importantes para fixar o conhecimento obtido.&lt;/p&gt;
 
               &lt;h3 id=&quot;Iniciando-o-treinamento&quot;&gt;
                 &lt;a name=&quot;Iniciando-o-treinamento&quot; href=&quot;#Iniciando-o-treinamento&quot;&gt;&lt;/a&gt;Iniciando o treinamento
               &lt;/h3&gt;
             
-&lt;p&gt;Pois bem, antes de mais nada, a relação abaixo segue um ordem com base em minhas experiências e leituras prévias. Espero que você se identifique de alguma forma e seja útil para os seus estudos.&lt;/p&gt;
+&lt;p&gt;Pois bem, antes de mais nada, a relação abaixo segue uma ordem com base em minhas experiências e leituras prévias. Espero que você se identifique de alguma forma e seja útil para os seus estudos.&lt;/p&gt;
 
 &lt;p&gt;Vamos em frente.&lt;/p&gt;
 
@@ -69,7 +69,7 @@
                 &lt;a name=&quot;jQuery-A-biblioteca-do-programador-JavaScript&quot; href=&quot;#jQuery-A-biblioteca-do-programador-JavaScript&quot;&gt;&lt;/a&gt;jQuery: A biblioteca do programador JavaScript
               &lt;/h4&gt;
             
-&lt;p&gt;Infelizmente, a edição que possuo não reflete a API atual do jQuery. De toda forma, o livro cobre em detalhes a bilioteca e segue a mesma metodologia do livro anterior (JavaScript: O Guia do Programador). Recomendo que leia este livro somente depois que você possuir um entendimento razoável do JavaScript.&lt;/p&gt;
+&lt;p&gt;Infelizmente, a edição que possuo não reflete a API atual do jQuery. De qualquer forma, o livro cobre em detalhes a bilioteca e segue a mesma metodologia do livro anterior (JavaScript: O Guia do Programador). Recomendo que leia este livro somente depois que você possuir um entendimento razoável do JavaScript.&lt;/p&gt;
 
               &lt;h3 id=&quot;Se-tornando-um-Jedi&quot;&gt;
                 &lt;a name=&quot;Se-tornando-um-Jedi&quot; href=&quot;#Se-tornando-um-Jedi&quot;&gt;&lt;/a&gt;Se tornando um Jedi
@@ -85,7 +85,7 @@
 
 &lt;p&gt;Este livro é um compilação feita pelo Douglas Crockford, o qual revela as boas partes, belas características e partes ruins da linguagem de programação JavaScript. A leitura deste livro exige um prévio conhecimento sobre funções, métodos, objetos e arrays no JavaScript.&lt;/p&gt;
 
-&lt;p&gt;Para que fique mais fácil o entendimento: o &amp;quot;JavaScript: Guia Definitivo&amp;quot; prepara o terreno para que você aprenda esta linguagem de programação da melhor maneira possível, já o &amp;quot;O Melhor do JavaScript&amp;quot; é um convite para entender que &amp;quot;nem tudo são flores&amp;quot;, mas que tem jeito. E as soluções que oferecem melhorias às suas aplicações é compartilhado no livro &amp;quot;Padrões JavaScript&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Para que fique mais fácil o entendimento: o &amp;quot;JavaScript: Guia Definitivo&amp;quot; prepara o terreno para que você aprenda esta linguagem de programação da melhor maneira possível, já o &amp;quot;O Melhor do JavaScript&amp;quot; é um convite para entender que &amp;quot;nem tudo são flores&amp;quot;, mas que tem jeito. E as soluções que oferecem melhorias às suas aplicações são compartilhadas no livro &amp;quot;Padrões JavaScript&amp;quot;.&lt;/p&gt;
 
               &lt;h4 id=&quot;Padrões-JavaScript&quot;&gt;
                 &lt;a name=&quot;Padrões-JavaScript&quot; href=&quot;#Padrões-JavaScript&quot;&gt;&lt;/a&gt;Padrões JavaScript
@@ -150,14 +150,14 @@
 &lt;ul&gt;
 &lt;li&gt;Fechamento -&amp;gt; &lt;strong&gt;Closure&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Içamento -&amp;gt; &lt;strong&gt;Hoisting&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Chamada de retorno -&amp;gt; &lt;strong&gt;Callback&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Função de chamada de retorno -&amp;gt; &lt;strong&gt;Callback&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Nó -&amp;gt; &lt;strong&gt;Node&lt;/strong&gt; (DOM)&lt;/li&gt;
 &lt;li&gt;marca -&amp;gt; &lt;strong&gt;tag&lt;/strong&gt; (HTML)&lt;/li&gt;
 &lt;li&gt;matriz/vetor -&amp;gt; &lt;strong&gt;Array&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;sequência de caracteres -&amp;gt; &lt;strong&gt;Strings&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Em alguns momentos, funções são traduzidos como métodos e vice-versa. Fique atento! Métodos são funções, mas esta nomenclatura se dá quando consta como parte integrada de um objeto.&lt;/p&gt;
+&lt;p&gt;Em alguns momentos, funções são traduzidas como métodos e vice-versa. Fique atento! Métodos são funções, mas esta nomenclatura se dá quando consta como parte integrada em um objeto.&lt;/p&gt;
 
 &lt;p&gt;Exemplo:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;function fn() {} // função declarativa
@@ -187,7 +187,7 @@
                 &lt;a name=&quot;Mais-alguma-consideração-&quot; href=&quot;#Mais-alguma-consideração-&quot;&gt;&lt;/a&gt;Mais alguma consideração?
               &lt;/h2&gt;
             
-&lt;p&gt;Existem muitos outros títulos excelentes sobre JavaScript, mas procurei listar os que já tive a oportunidade em ler para que pudesse dar um feedback e um contexto geral sobre cada um.&lt;/p&gt;
+&lt;p&gt;Existem muitos outros títulos excelentes sobre JavaScript, mas procurei listar os que já tive a oportunidade em ler para que pudesse dar um feedback e um contexto geral de cada um.&lt;/p&gt;
 
 &lt;p&gt;Além disso, existem algumas considerações interessantes para aprofundar os seus estudos:&lt;/p&gt;
 
@@ -489,7 +489,7 @@
 &lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; você pode encadear estes caras, criando um &lt;em&gt;&lt;a href=&quot;http://javascriptissexy.com/beautiful-javascript-easily-create-chainable-cascading-methods-for-expressiveness/&quot;&gt;chain method&lt;/a&gt;&lt;/em&gt;. Desta forma, você evita a repetição da variável &lt;code&gt;str&lt;/code&gt; e refatora o código para que fique mais legível criando um estilo de cascata para os métodos a serem utilizados.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; você pode encadear estes caras, criando um &lt;em&gt;&lt;a href=&quot;http://javascriptissexy.com/beautiful-javascript-easily-create-chainable-cascading-methods-for-expressiveness/&quot;&gt;method chaining&lt;/a&gt;&lt;/em&gt;. Desta forma, você evita a repetição da variável &lt;code&gt;str&lt;/code&gt; e refatora o código para que fique mais legível criando um estilo de cascata para os métodos a serem utilizados.&lt;/p&gt;
 &lt;/blockquote&gt;
 
               &lt;h4 id=&quot;Passo-a-passo&quot;&gt;
