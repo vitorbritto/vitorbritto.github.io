@@ -8,7 +8,7 @@ description: Lista com todos os artigos publicados neste Blog.
     {% for post in site.posts %}
     <div class="archive">
         <span class="archive-date">Publicado em: {{ post.date | date:"%d/%m/%Y" }}</span>
-        <h4 class="archive-title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h4>
+        <h4 class="archive-title"><a href="{{ site.fullurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h4>
     </div>
     {% endfor %}
 </section>
