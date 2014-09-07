@@ -5,10 +5,7 @@ description: O Jekyll é uma ferramenta fantástica. Como um gerador estático, 
 link: "http://vitorbritto.com.br/blog/automacao-de-tarefas-no-jekyll/"
 date: 2013-10-09
 path: 2013-10-09-automacao-de-tarefas-no-jekyll.md
-cover: "assets/images/posts/post-jekyll.jpg"
-avatar: "assets/images/avatar.jpg"
-author: Vitor Britto
-bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
+cover: assets/images/posts/post-jekyll.jpg
 comments: true
 ---
 

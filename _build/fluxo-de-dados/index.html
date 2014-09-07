@@ -33,7 +33,7 @@
 
                 <div class="span4">
                     <div class="header-info">
-                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog">Vitor Britto</a></h1>
                         <h4 class="header-description">Desenvolvedor Web</h4>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
             
 <p>O que você precisa saber, para começo de conversa, é que estes caras existem há um bom tempo e não é nenhuma novidade. Se você utiliza NodeJS, já deve ter ouvido alguém falar (ou visto alguém comentar) em <em>Streams</em>. Certo?</p>
 
-<p>Bom, se você ainda não sabe do que estou falando, pode contribuir com a tradução deste excelente material sobre [_Streams_][9], criado pelo James Halliday (SubStack), e utilizá-lo como fonte de leitura para os seus estudos também.</p>
+<p>Bom, se você ainda não sabe do que estou falando, pode contribuir com a tradução deste excelente material sobre [<em>Streams</em>][9], criado pelo James Halliday (SubStack), e utilizá-lo como fonte de leitura para os seus estudos também.</p>
 
 <p>Se você já utiliza este cara nos seus aplicativos em NodeJS e sabe qual a sua funcionalidade, deduzo também que saiba o seu conceito. Porém, caso não saiba, <em>Stream</em> é um fluxo de dados em um sistema. Logo, <em>Streams</em> é um conjunto de fluxo de dados.</p>
 
@@ -147,7 +147,7 @@
 </ul>
 
 <p>Para exemplificar, observe o comando abaixo:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>$ ls ~/.vim &gt; estrutura.md
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>$ ls ~/.vim &gt; estrutura.md
 </code></pre></div>
 <p>Neste exemplo, passamos um comando para listar todos os arquivos presentes no diretório <code>~/.vim</code>, o qual será lido, redirecionado e escrito no arquivo <code>estrutura.md</code>.</p>
 
@@ -156,14 +156,14 @@
 <p>Mas, e o <code>STDERR</code>?</p>
 
 <p>Nós podemos dizer ao programa para redirecionar qualquer saída padrão que retorne um erro (<code>STDERR</code>) para um arquivo diferente. Confira o exemplo abaixo:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>$ ls ~/.vim &gt;&gt; estrutura.md 2&gt;notfound.md
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>$ ls ~/.vim &gt;&gt; estrutura.md 2&gt;notfound.md
 </code></pre></div>
 <p>Lembra-se dos canais 0, 1 e 2 que mencionei acima?</p>
 
 <p>Aqui, estamos utilizando este trecho do código (<code>2&gt;</code>) para dizer ao programa que utilize o canal 2 (<code>STDERR</code>) para redirecionar a sua saída ao arquivo <code>notfound.md</code>, caso existam quaisquer erros.</p>
 
 <p>Poderíamos ainda, fazer da seguinte forma:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>$ ls ~/.vim &gt;&gt; estrutura.md 2&gt;&amp;1
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>$ ls ~/.vim &gt;&gt; estrutura.md 2&gt;&amp;1
 </code></pre></div>
 <p>Você arrisca dizer o que isso faria?</p>
 
@@ -203,7 +203,7 @@
 <p>A idéia do <em>pipe</em>, no UNIX, é a mesma. Você constrói uma cadeia de comandos (conectando canos) até que satisfaça o fluxo de dados (com uma boa quantidade de canos), evitando que ocorra algum problema (evitando o estouro no último cano).</p>
 
 <p>Mesmo que tenhamos 5 comandos conectados por <em>pipes</em>, estamos lidando com uma entrada de dados e uma saída de dados. Para exemplificar, veja o código abaixo:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>$ ls -al | sort -r -k 5 | head -10
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>$ ls -al | sort -r -k 5 | head -10
 </code></pre></div>
 <p>No exemplo, perceba que utilizamos o operador <code>|</code> (pipe) para fazer a listagem dos arquivos no diretório atual, ordená-los e, por fim, exibir os 10 arquivos mais &quot;peso-pesados&quot; na tela.</p>
 
@@ -213,7 +213,7 @@
             
 <p>Isso te lembra alguma coisa no NodeJS? E no Gulp?</p>
 
-<p>Para não perdermos o foco deste artigo e a essência dos conceitos que estão sendo passados aqui, deixarei como lição de casa para que você analise a [API do GulpJS][14] e as seções [_process_][15], [_child_process_][16] e [_Streams_][17] da API do NodeJS.</p>
+<p>Para não perdermos o foco deste artigo e a essência dos conceitos que estão sendo passados aqui, deixarei como lição de casa para que você analise a [API do GulpJS][14] e as seções [<em>process</em>][15], [<em>child_process</em>][16] e [<em>Streams</em>][17] da API do NodeJS.</p>
 
 <p>Entenda a lógica utilizada nestes caras e verifique se existe alguma semelhança com o que estamos abordando neste artigo. Combinado?</p>
 
@@ -233,7 +233,7 @@
 </ul>
 
 <p>Veja o exemplo abaixo:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>$ test -d /tests/ || mkdir tests &amp;&amp; cd $_ | ls &gt; README.md
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>$ test -d /tests/ || mkdir tests &amp;&amp; cd $_ | ls &gt; README.md
 </code></pre></div>
 <p>No exemplo acima, declaramos um comando compacto para um estrutura condicional, a qual fará a verificacão se o diretório <code>tests</code> já existe. Se (<code>||</code>) não existir, o diretório será criado com o comando <code>mkdir</code>, e (<code>&amp;&amp;</code>) acessado com o comando <code>cd</code>. Em seguida, com essa lista de comandos executados, passaremos para o próximo comando com a ajuda do <em>pipe</em> (<code>|</code>), onde vamos redirecionar (<code>&gt;</code>) a lista de diretório e arquivos no diretório atual para o nosso novo arquivo <code>README.md</code>.</p>
 
@@ -278,17 +278,17 @@
               </h5>
             
 <p>Digamos que você queira listar todos os arquivos (incluindo diretórios e sub-diretórios) das dependências instaladas em um aplicativo NodeJS (<code>node_modules</code>), salvando-os em um arquivo para futura análise. Você pode executar este procedimento com:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>find . -type f &gt; lista_node_modules.md
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>find . -type f &gt; lista_node_modules.md
 </code></pre></div>
               <h5 id="Criar-um-documento">
                 <a name="Criar-um-documento" href="#Criar-um-documento"></a>Criar um documento
               </h5>
             
 <p>Podemos criar um documento onde será renderizado um texto inicial e a estrutura do diretório logo em seguida.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>{ echo &quot;# Estrutura do Projeto&quot;; echo &quot;&quot;; ls; } &gt;&gt; estrutura.md
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>{ echo &quot;# Estrutura do Projeto&quot;; echo &quot;&quot;; ls; } &gt;&gt; estrutura.md
 </code></pre></div>
 <p>Perceba que estou utilizando <code>echo</code>, pois trata-se de 2 linhas apenas. Entretanto, se fosse necessário inserir uma série de linhas, ficaria inviável com um comando repleto de <code>echo</code>. Para estas situações, é aconselhável o uso do <code>cat</code> ou <code>tee</code>, juntamento com o <code>heredoc</code>.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>#
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>#
 <a name="line-2"></a># Exemplo com cat e EOF
 <a name="line-3"></a>#
 <a name="line-4"></a>$ cat &gt;&gt; arquivo_saida.md &lt;&lt; EOF
@@ -306,7 +306,7 @@
               </h5>
             
 <p>Além disso, o redirecionamento pode ocorrer também com a entrada e saída padrão.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>ls -l  logs/*.log &gt; bkp-log.txt 2&gt;&amp;1
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>ls -l  logs/*.log &gt; bkp-log.txt 2&gt;&amp;1
 </code></pre></div>
 <p>Neste exemplo, estamos redirecionando a saída padrão de erro (<code>STDERR</code>) para a saída padrão (<code>STDOUT</code>), que neste caso é o arquivo <code>bkp-log.txt</code>.</p>
 
@@ -331,7 +331,7 @@
     <div class="span9">
         <section class="box-details">
             <h3>Vitor Britto</h3>
-            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+            <p>Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
         </section>
     </div>
 </section>

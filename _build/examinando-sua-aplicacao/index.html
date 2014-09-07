@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Examinando sua aplicação</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Desenvolvedor Web" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="Examinando sua aplicação"/>
+    <meta property="og:site_name" content="Blog - Vitor Britto"/>
+    <meta property="og:url" content="http://www.vitorbritto.com.br/blog/examinando-sua-aplicacao/"/>
+    <meta property="og:image" content="http://www.vitorbritto.com.br/blog/assets/images/fb.jpg"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="Desenvolvedor Web"/>
+
+    <link rel="shortcut icon" href="http://www.vitorbritto.com.br/blog/assets/images/favicon.png" type="image/x-icon">
+    <link href="http://feeds.feedburner.com/vitorbritto" rel="alternate" type="application/rss+xml">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <link href="http://www.vitorbritto.com.br/blog/assets/css/style.css" rel="stylesheet" id="theme-css"/>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <header class="header">
+
+                <div class="span4">
+                    <div class="header-info">
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog">Vitor Britto</a></h1>
+                        <h4 class="header-description">Desenvolvedor Web</h4>
+                    </div>
+                </div>
+
+                <div class="span5">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/">Início</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/about">Sobre</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/projects">Projetos</a></li>
+    </ul>
+</nav>
+
+                </div>
+
+                <div class="span3">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item">
+            <a href="https://www.facebook.com/vbwebstudio" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://twitter.com/vitorbritto" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://github.com/vitorbritto" title="Github" target="_blank"><i class="icon-github"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="mailto:contato@vitorbritto.com.br"><i class="icon-envelope-alt"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="http://feeds.feedburner.com/vitorbritto" title="RSS Feed" target="_blank"><i class="icon-rss"></i></a>
+        </li>
+    </ul>
+</nav>
+
+                </div>
+
+            </header>
+        </div>
+
+        <div class="line"></div>
+
+
+<!-- Switch Theme -->
+<div class="theme-wrapper">
+    <p class="theme-text">Tema:</p>
+    <span class="theme-btn light" id="theme-light"></span>
+    <span class="theme-btn dark" id="theme-dark"></span>
+</div>
+
+    <div class="row">
+
+        <article class="article">
+
+            <img class="article-img" src="http://www.vitorbritto.com.br/blog/assets/images/posts/post-console.jpg">
+            <h2 class="article-title">Examinando sua aplicação</h2>
+
+            <ul class="article-info">
+                
+                <li><a href="https://github.com/vitorbritto/vitorbritto.github.io/blob/master/_posts/2014-09-07-examinando-a-sua-aplicacao.md" title="Github" target="_blank"><i class="icon-github"></i> Editar este post</a></li>
+                
+                <li>Publicado em: 07/09/2014 | </li>
+                <li>Leia em: 10  minutos</li>
+
+            </ul>
+
+            <div class="line"></div>
+
+            <section class="article-entry">
+                <p>Saudações!</p>
+
+<p>Na minha rotina de trabalho, examinar/analisar o código é via de regra para evitar que meus cabelos fiquem brancos muito cedo. Procuro realizar depurações, inspeções e testes para deixar a aplicação o mais consistente possível. Isso reduz drasticamente a possibilidade que erros bobos aconteçam.</p>
+
+<p>Pois bem! Um método prático para depurar o seu código, é utilizando o objeto <code>console</code>. Este objeto não faz parte do JavaScript, e sim das engines dos browsers (Firefox, Chrome, Safari e IE). São encontrados, especificamente, nas ferramentas de <em>debug</em> (DevTools, Web Console e Firebug).</p>
+
+<blockquote>
+<p><strong>IMPORTANTE:</strong> os testes foram realizados no <strong>Firefox</strong> e <strong>Firebug</strong>. Alguns métodos podem não estar presentes nos cenários ilustrados abaixo! De qualquer forma, colocarei uma lista com os métodos existentes. Ok? =]</p>
+</blockquote>
+
+              <h2 id="Quais-as-minhas-opções-para-o-debug-">
+                <a name="Quais-as-minhas-opções-para-o-debug-" href="#Quais-as-minhas-opções-para-o-debug-"></a>Quais as minhas opções para o debug?
+              </h2>
+            
+<p>A API do objeto <code>console</code> possui diversos métodos. Entender quando e como utilizá-los, pode poupar tempo e auxiliar na depuração do seu codigo.</p>
+
+<p>Vamos conferir quais são estes métodos e para o que eles servem.</p>
+
+              <h3 id="Lista-geral-de-métodos">
+                <a name="Lista-geral-de-métodos" href="#Lista-geral-de-métodos"></a>Lista geral de métodos
+              </h3>
+            
+<ul>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.assert">console.assert()</a>: verifica se uma expressão possui o valor <em>true</em>. Caso seja <em>false</em>, uma mensagem será renderizada no console juntamente com uma exceção (exception);</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.clear">console.clear()</a>: limpa o console;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.count">console.count()</a>: exibe no console quantas vezes determinada <code>label</code> foi executada no código;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.debug">console.debug()</a>: realiza a mesma ação do método <code>console.log()</code>;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.dir">console.dir()</a>: exibe uma lista interativa das propriedades de um determinado objeto;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.dirxml">console.dirxml()</a>: exibe uma estrutura de um nó (node) HTML ou XML;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.exception">console.exception()</a>: um atalho para <code>console.error()</code>;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.group">console.group()</a>: inicia o agrupamento de determinadas mensagens a serem exebidas no console;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.groupCollapsed">console.groupCollapsed()</a>: semelhante ao <code>console.group()</code>, porém as informações estarão ocultas inicialmente;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.groupEnd">console.groupEnd()</a>: encerra o agrupamento de determinadas mensagens a serem exibidas no console;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.log">console.log()</a>: exibe uma mensagem no console;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.error">console.error()</a>: exibe uma mensagem (de erro) no console com características próprias do método;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.warn">console.warn()</a>: exibe uma mensagem (de alerta) no console com características próprias do método;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.info">console.info()</a>: exibe uma mensagem (de informação) no console com características próprias do método;</li>
+<li><a href="">console.markTimeline()</a>: o mesmo que <code>console.timeStamp()</code> e disponível somente no Safari;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.profile">console.profile()</a>: inicia o <a href="https://developer.mozilla.org/en-US/docs/Tools/Profiler">JavaScript profiler</a>;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.profileEnd">console.profileEnd()</a>: interrompe o <a href="https://developer.mozilla.org/en-US/docs/Tools/Profiler">JavaScript profiler</a>;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.table">console.table()</a>: renderiza no console os dados em formato de tabela;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.time">console.time()</a>: inicia um contador para uma ação a ser executada. Deve ser utilizado juntamente com <code>console.timeEnd()</code>;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.timeEnd">console.timeEnd()</a>: interrompe o contador especificado anteriormente em <code>console.time()</code>;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.timeStamp">console.timeStamp()</a>: pode ser utilizado para analisar o tempo de execução no tráfego de dados;</li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console.trace">console.trace()</a>: renderiza o caminho percorrido, tomando como ponto inicial o local onde este método for colocado.</li>
+</ul>
+
+<blockquote>
+<p><strong>NOTA 1:</strong> o uso mais frequente do objeto <code>console</code> é para renderizar log e outros dados. Existem 4 métodos possíveis para dar saída a estes <code>logs</code>, são eles: <code>console.log()</code>, <code>console.info()</code>, <code>console.warn()</code> e <code>console.error()</code>. Cada um destes métodos possui um estilo diferenciado e você pode utilizar controles de filtros provenientes no seu browser para exibir apenas os que interessam em determinada situação na sua depuração.</p>
+
+<p><strong>NOTA 2:</strong> nem todos os métodos foram utilizados nos exemplos deste artigo. Para mais informações, clique no <em>link</em> do respectivo método na lista acima.</p>
+</blockquote>
+
+              <h2 id="Ampliando-o-uso-do-console">
+                <a name="Ampliando-o-uso-do-console" href="#Ampliando-o-uso-do-console"></a>Ampliando o uso do console
+              </h2>
+            
+<p>Me permita apresentar algumas funcionalidades interessantes e que podem ser úteis para sua depuração.</p>
+
+              <h3 id="O-método-<code>console-clear-<-code>">
+                <a name="O-método-<code>console-clear-<-code>" href="#O-método-<code>console-clear-<-code>"></a>O método <code>console.clear()</code>
+              </h3>
+            
+<p>Utilize este método para limpar o console quando necessário. Você possui duas opções:</p>
+
+<ul>
+<li>digitando no seu console <code>clear()</code>;</li>
+<li>ou utilizando os atalhos <code>cmd+K</code> ou <code>ctrl+L</code> (Mac), <code>ctrl+L</code> (Windows and Linux).</li>
+</ul>
+
+              <h3 id="Utilizar-diretivas-na-substituição-de-<em>strings<-em>">
+                <a name="Utilizar-diretivas-na-substituição-de-<em>strings<-em>" href="#Utilizar-diretivas-na-substituição-de-<em>strings<-em>"></a>Utilizar diretivas na substituição de <em>strings</em>
+              </h3>
+            
+<p>Para quem programa na linguagem C ou utiliza o NodeJS, esta <em>feature</em> lhe será familiar. Você pode interpolar uma <em>string</em> com um tipo de saída e passar as suas respectivas referências para uma expressão.</p>
+
+<p><strong>Exemplo:</strong></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>console.log(&#39;Meu nome é %s e tenho %d anos!&#39;, &#39;Vitor Britto&#39;, 34);
+<a name="line-2"></a>&gt;&gt; Meu nome é Vitor Britto e tenho 34 anos!
+</code></pre></div>
+<p>Confira abaixo uma tabela com os tipos de saída disponíveis:</p>
+
+<table><thead>
+<tr>
+<th>Tipo de saída</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>%o</td>
+<td>Renderiza um link.</td>
+</tr>
+<tr>
+<td>%d ou %i</td>
+<td>Renderiza um número inteiro.</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>Renderiza uma <em>string</em>.</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>Renderiza um número real (float).</td>
+</tr>
+</tbody></table>
+
+              <h3 id="Formatar-o-output-com-CSS">
+                <a name="Formatar-o-output-com-CSS" href="#Formatar-o-output-com-CSS"></a>Formatar o output com CSS
+              </h3>
+            
+<p>É possível utilizar o tipo de saída <code>%c</code> para formatar a escrita no método <code>console.log()</code> com CSS.</p>
+
+<p><strong>Exemplo:</strong></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>// Simulando uma mensagem de erro
+<a name="line-2"></a>console.log(&quot;%cError Message!&quot;, &quot;color: red; font-style: italic&quot;);
+<a name="line-3"></a>// Simulando uma mensagem de alerta
+<a name="line-4"></a>console.log(&quot;%cWarning Message!&quot;, &quot;color: yellow; font-style: italic&quot;);
+<a name="line-5"></a>// Simulando uma mensagem de sucesso
+<a name="line-6"></a>console.log(&quot;%cSuccess Message!&quot;, &quot;color: lime; font-style: italic&quot;);
+</code></pre></div>
+              <h3 id="Legendas-para-alguns-métodos">
+                <a name="Legendas-para-alguns-métodos" href="#Legendas-para-alguns-métodos"></a>Legendas para alguns métodos
+              </h3>
+            
+<p>Utilizaremos as seguintes legendas para demonstrar os ícones renderizados no console:</p>
+
+<ul>
+<li><code>console.log()</code>: (sem ícone)</li>
+<li><code>console.info()</code>: (i)</li>
+<li><code>console.warn()</code>: /i\</li>
+<li><code>console.error()</code>: [x]</li>
+</ul>
+
+<p>Pronto? Então vamos em frente.</p>
+
+              <h2 id="Mergulhando-neste-mar-de-possibilidades">
+                <a name="Mergulhando-neste-mar-de-possibilidades" href="#Mergulhando-neste-mar-de-possibilidades"></a>Mergulhando neste mar de possibilidades
+              </h2>
+            
+<p>Bom, agora que você possui um <em>overview</em> do objeto <code>console</code> e de algumas <em>features</em> interessantes, vamos mergulhar um pouco mais fundo para entender em quais situações podemos utilizar os métodos existentes.</p>
+
+<blockquote>
+<p><strong>IMPORTANTE:</strong> os cenários abaixo são ilustrativos e cabe a você decidir quando e como utilizar cada método para o <em>debug</em> dos seus scripts.</p>
+</blockquote>
+
+              <h3 id="Para-renderizar-informações">
+                <a name="Para-renderizar-informações" href="#Para-renderizar-informações"></a>Para renderizar informações
+              </h3>
+            
+              <h5 id="<code>console-log-<-code>">
+                <a name="<code>console-log-<-code>" href="#<code>console-log-<-code>"></a><code>console.log()</code>
+              </h5>
+            
+<p><strong>Cenário:</strong> você deseja saber se determinado evento foi executado com sucesso.</p>
+
+<p><strong>Input:</strong></p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="kd">var</span> <span class="nx">myFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<a name="line-2"></a>    <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Ready to go...&#39;</span><span class="p">);</span>
+<a name="line-3"></a><span class="p">};</span>
+<a name="line-4"></a><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="nx">myFunction</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Output:</strong></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>&gt;&gt; &quot;Ready to go...&quot;
+</code></pre></div>
+              <h5 id="<code>console-error-<-code>">
+                <a name="<code>console-error-<-code>" href="#<code>console-error-<-code>"></a><code>console.error()</code>
+              </h5>
+            
+<p><strong>Cenário:</strong> você quer exibir uma mensagem de erro no console caso não seja passado um objeto <code>number</code> como argumento em uma função imediata (IIFE - Immediately-Invoked Function Expression).</p>
+
+<p><strong>Input:</strong></p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-2"></a>    <span class="k">try</span> <span class="p">{</span>
+<a name="line-3"></a>        <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">a</span> <span class="o">!==</span> <span class="s1">&#39;number&#39;</span> <span class="o">||</span> <span class="k">typeof</span> <span class="nx">b</span> <span class="o">!==</span> <span class="s1">&#39;number&#39;</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-4"></a>            <span class="k">throw</span> <span class="p">{</span>
+<a name="line-5"></a>                <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;TypeError&#39;</span><span class="p">,</span>
+<a name="line-6"></a>                <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The argument must be a number&#39;</span>
+<a name="line-7"></a>            <span class="p">};</span>
+<a name="line-8"></a>        <span class="p">}</span>
+<a name="line-9"></a>        <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<a name="line-10"></a>    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-11"></a>        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">&#39;: &#39;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<a name="line-12"></a>    <span class="p">}</span>
+<a name="line-13"></a><span class="p">}(</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;seven&#39;</span><span class="p">));</span>
+</code></pre></div>
+<p><strong>Output:</strong></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>&gt;&gt; [x] &quot;TypeError: The argument must be a number&quot;
+</code></pre></div>
+              <h5 id="<code>console-info-<-code>-e-<code>console-warn-<-code>">
+                <a name="<code>console-info-<-code>-e-<code>console-warn-<-code>" href="#<code>console-info-<-code>-e-<code>console-warn-<-code>"></a><code>console.info()</code> e <code>console.warn()</code>
+              </h5>
+            
+<p><strong>Cenário:</strong> você deseja depurar uma requisição HTTP.</p>
+
+<p><strong>Input:</strong></p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="kd">var</span> <span class="nx">XHRget</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-2"></a>    <span class="kd">var</span> <span class="nx">req</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<a name="line-3"></a>    <span class="nx">req</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<a name="line-4"></a>    <span class="nx">req</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<a name="line-5"></a>        <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">&#39;Sending request…&#39;</span><span class="p">);</span>
+<a name="line-6"></a>        <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">status</span> <span class="o">&gt;=</span> <span class="mi">200</span> <span class="o">&amp;&amp;</span> <span class="nx">req</span><span class="p">.</span><span class="nx">status</span> <span class="o">&lt;</span> <span class="mi">400</span><span class="p">){</span>
+<a name="line-7"></a>            <span class="kd">var</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
+<a name="line-8"></a>            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Success!&#39;</span><span class="p">);</span>
+<a name="line-9"></a>        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-10"></a>            <span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s1">&#39;Server Error! Timeout!&#39;</span><span class="p">);</span>
+<a name="line-11"></a>        <span class="p">}</span>
+<a name="line-12"></a>    <span class="p">};</span>
+<a name="line-13"></a>    <span class="nx">req</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<a name="line-14"></a>        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error on connection!&#39;</span><span class="p">);</span>
+<a name="line-15"></a>    <span class="p">};</span>
+<a name="line-16"></a>    <span class="nx">req</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+<a name="line-17"></a><span class="p">};</span>
+</code></pre></div>
+<p><strong>Output:</strong></p>
+
+<p>Para ilustrar as 3 possibilidades decorrentes deste script, vamos utilizar os métodos <code>console.info()</code>, <code>console.log()</code>, <code>console.error()</code> e <code>console.warn()</code> para emitir cada estado desta requisição.</p>
+
+<ul>
+<li>Na primeira tentativa, efetuamos a requisição com sucesso;</li>
+<li>Na segunda tentativa, a comunicação foi interrompida por conta de um <code>timeout</code>;</li>
+<li>Na terceira tentativa, não foi possível estabelecer uma comunicação com o servidor;</li>
+</ul>
+
+<p>Confira abaixo:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>&gt;&gt; XHRget(&#39;http://www.vitorbritto.com.br/blog/&#39;);
+<a name="line-2"></a>&gt;&gt; (i) &quot;Sending request…&quot;
+<a name="line-3"></a>&gt;&gt; &quot;Success!&quot;
+<a name="line-4"></a>&gt;&gt;
+<a name="line-5"></a>&gt;&gt; XHRget(&#39;http://www.vitorbritto.com.br/foo/&#39;);
+<a name="line-6"></a>&gt;&gt; (i) &quot;Sending request…&quot;
+<a name="line-7"></a>&gt;&gt; /x\ &quot;Server Error! Timeout!&quot;
+<a name="line-8"></a>&gt;&gt;
+<a name="line-9"></a>&gt;&gt; XHRget(&#39;http://www.vitorbritto.com.br/blog/&#39;);
+<a name="line-10"></a>&gt;&gt; (i) &quot;Sending request…&quot;
+<a name="line-11"></a>&gt;&gt; [x] &quot;Error on connection!&quot;
+</code></pre></div>
+              <h3 id="Para-extender-as-inspeções">
+                <a name="Para-extender-as-inspeções" href="#Para-extender-as-inspeções"></a>Para extender as inspeções
+              </h3>
+            
+              <h5 id="<code>console-assert-<-code>">
+                <a name="<code>console-assert-<-code>" href="#<code>console-assert-<-code>"></a><code>console.assert()</code>
+              </h5>
+            
+<p><strong>Cenário:</strong> você deseja verificar se o argumento passado em uma função é do tipo <em>string</em>.</p>
+
+<p><strong>Input:</strong></p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="p">(</span><span class="kd">function</span> <span class="nx">testString</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-2"></a>    <span class="nx">console</span><span class="p">.</span><span class="nx">assert</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">str</span> <span class="o">===</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;Not a String!&#39;</span><span class="p">);</span>
+<a name="line-3"></a>    <span class="k">return</span> <span class="nx">str</span><span class="p">;</span>
+<a name="line-4"></a><span class="p">}(</span><span class="mi">555</span><span class="p">));</span>
+</code></pre></div>
+<p><strong>Output:</strong></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>&gt;&gt; [x] &quot;Not a String!&quot;
+</code></pre></div>
+              <h5 id="<code>console-count-<-code>">
+                <a name="<code>console-count-<-code>" href="#<code>console-count-<-code>"></a><code>console.count()</code>
+              </h5>
+            
+<p><strong>Cenário:</strong> você deseja examinar quantas vezes o método <code>console.log()</code> foi executado no seu script.</p>
+
+<p><strong>Input:</strong></p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">method</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-2"></a>    <span class="k">this</span><span class="p">.</span><span class="nx">prototype</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="nx">fn</span><span class="p">;</span>
+<a name="line-3"></a>    <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+<a name="line-4"></a><span class="p">};</span>
+<a name="line-5"></a><span class="nb">Number</span><span class="p">.</span><span class="nx">method</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+<a name="line-6"></a>    <span class="k">return</span> <span class="nb">Math</span><span class="p">[</span><span class="k">this</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="s1">&#39;ceil&#39;</span> <span class="o">:</span> <span class="s1">&#39;floor&#39;</span><span class="p">](</span><span class="k">this</span><span class="p">);</span>
+<a name="line-7"></a><span class="p">});</span>
+<a name="line-8"></a><span class="nb">String</span><span class="p">.</span><span class="nx">method</span><span class="p">(</span><span class="s1">&#39;trim&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<a name="line-9"></a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^\s+|\s+$/g</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+<a name="line-10"></a><span class="p">});</span>
+<a name="line-11"></a><span class="nx">console</span><span class="p">.</span><span class="nx">count</span><span class="p">(</span><span class="s1">&#39;console&#39;</span><span class="p">);</span>
+<a name="line-12"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="o">-</span><span class="mi">10</span><span class="o">/</span><span class="mi">3</span><span class="p">).</span><span class="kr">int</span><span class="p">());</span>
+<a name="line-13"></a><span class="nx">console</span><span class="p">.</span><span class="nx">count</span><span class="p">(</span><span class="s1">&#39;console&#39;</span><span class="p">);</span>
+<a name="line-14"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="o">-</span><span class="mi">20</span><span class="o">/</span><span class="mi">3</span><span class="p">).</span><span class="kr">int</span><span class="p">());</span>
+<a name="line-15"></a><span class="nx">console</span><span class="p">.</span><span class="nx">count</span><span class="p">(</span><span class="s1">&#39;console&#39;</span><span class="p">);</span>
+<a name="line-16"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;   Vitor Britto   &#39;</span><span class="p">.</span><span class="nx">trim</span><span class="p">());</span>
+</code></pre></div>
+<p><strong>Output:</strong></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>&gt;&gt; &quot;console: 1&quot;
+<a name="line-2"></a>&gt;&gt; -3
+<a name="line-3"></a>&gt;&gt; &quot;console: 2&quot;
+<a name="line-4"></a>&gt;&gt; -6
+<a name="line-5"></a>&gt;&gt; &quot;console: 3&quot;
+<a name="line-6"></a>&gt;&gt; &quot;Vitor Britto&quot;
+</code></pre></div>
+              <h3 id="Para-organizar-os-resultados">
+                <a name="Para-organizar-os-resultados" href="#Para-organizar-os-resultados"></a>Para organizar os resultados
+              </h3>
+            
+              <h5 id="<code>console-trace-<-code>">
+                <a name="<code>console-trace-<-code>" href="#<code>console-trace-<-code>"></a><code>console.trace()</code>
+              </h5>
+            
+<p><strong>Cenário:</strong> você deseja verificar o caminho percorrido na execução de um trecho do seu código.</p>
+
+<p><strong>Input:</strong></p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+<a name="line-2"></a>    <span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span> <span class="p">{</span>
+<a name="line-3"></a>        <span class="kd">function</span> <span class="nx">baz</span><span class="p">()</span> <span class="p">{</span>
+<a name="line-4"></a>            <span class="nx">console</span><span class="p">.</span><span class="nx">trace</span><span class="p">();</span>
+<a name="line-5"></a>        <span class="p">}</span>
+<a name="line-6"></a>        <span class="nx">baz</span><span class="p">();</span>
+<a name="line-7"></a>    <span class="p">}</span>
+<a name="line-8"></a>    <span class="nx">bar</span><span class="p">();</span>
+<a name="line-9"></a><span class="p">}</span>
+<a name="line-10"></a><span class="nx">foo</span><span class="p">();</span>
+</code></pre></div>
+<p><strong>Output:</strong></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>console.trace():
+<a name="line-2"></a>baz()                 debugger eval code:6
+<a name="line-3"></a>bar()                 debugger eval code:8
+<a name="line-4"></a>foo()                 debugger eval code:10
+<a name="line-5"></a>&lt;anonymous&gt;           debugger eval code:12
+</code></pre></div>
+              <h5 id="<code>console-dir-<-code>">
+                <a name="<code>console-dir-<-code>" href="#<code>console-dir-<-code>"></a><code>console.dir()</code>
+              </h5>
+            
+<p><strong>Cenário:</strong> você deseja visualizar a estrutura de um determinado objeto.</p>
+
+<p><strong>Input:</strong></p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="kd">var</span> <span class="nx">javascript</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-2"></a>    <span class="nx">influences</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;Self&#39;</span><span class="p">,</span> <span class="s1">&#39;Scheme&#39;</span><span class="p">,</span> <span class="s1">&#39;Java&#39;</span><span class="p">],</span>
+<a name="line-3"></a>    <span class="nx">developer</span><span class="o">:</span> <span class="s1">&#39;Brendan Eich&#39;</span><span class="p">,</span>
+<a name="line-4"></a>    <span class="nx">created</span><span class="o">:</span> <span class="mi">1995</span>
+<a name="line-5"></a><span class="p">};</span>
+<a name="line-6"></a><span class="kd">var</span> <span class="nx">clang</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-7"></a>    <span class="nx">influences</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;ALGOL 68&#39;</span><span class="p">,</span> <span class="s1">&#39;PL/I&#39;</span><span class="p">],</span>
+<a name="line-8"></a>    <span class="nx">developer</span><span class="o">:</span> <span class="s1">&#39;Dennis Ritchie&#39;</span><span class="p">,</span>
+<a name="line-9"></a>    <span class="nx">created</span><span class="o">:</span> <span class="mi">1972</span>
+<a name="line-10"></a><span class="p">};</span>
+<a name="line-11"></a><span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">javascript</span><span class="p">);</span>
+<a name="line-12"></a><span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">clang</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Output:</strong></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>&gt;&gt; {influences: Array[3], developer: &quot;Brendan Eich&quot;, created: 1995}
+<a name="line-2"></a>------------------------------------------------------------------------
+<a name="line-3"></a>created: 1995
+<a name="line-4"></a>developer: &quot;Brendan Eich&quot;
+<a name="line-5"></a>influences: Array[3]
+<a name="line-6"></a>0: &quot;Self&quot;
+<a name="line-7"></a>1: &quot;Scheme&quot;
+<a name="line-8"></a>2: &quot;Java&quot;
+<a name="line-9"></a>length: 3
+<a name="line-10"></a>__proto__: Object
+<a name="line-11"></a>------------------------------------------------------------------------
+<a name="line-12"></a>&gt;&gt;
+<a name="line-13"></a>&gt;&gt; {influences: Array[3], developer: &quot;Dennis Ritchie&quot;, created: 1972}
+<a name="line-14"></a>------------------------------------------------------------------------
+<a name="line-15"></a>created: 1972
+<a name="line-16"></a>developer: &quot;Dennis Ritchie&quot;
+<a name="line-17"></a>influences: Array[3]
+<a name="line-18"></a>0: &quot;B&quot;
+<a name="line-19"></a>1: &quot;ALGOL 68&quot;
+<a name="line-20"></a>2: &quot;PL/I&quot;
+<a name="line-21"></a>length: 3
+<a name="line-22"></a>__proto__: Object
+<a name="line-23"></a>------------------------------------------------------------------------
+</code></pre></div>
+              <h5 id="<code>console-group-<-code>-<code>console-groupCollapsed-<-code>-e-<code>console-groupEnd-<-code>">
+                <a name="<code>console-group-<-code>-<code>console-groupCollapsed-<-code>-e-<code>console-groupEnd-<-code>" href="#<code>console-group-<-code>-<code>console-groupCollapsed-<-code>-e-<code>console-groupEnd-<-code>"></a><code>console.group()</code>, <code>console.groupCollapsed()</code> e <code>console.groupEnd()</code>
+              </h5>
+            
+<p><strong>Cenário:</strong> você deseja agrupar determinadas mensagens a serem renderizadas no console.</p>
+
+<p><strong>Input:</strong></p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">group</span><span class="p">(</span><span class="s2">&quot;Group of log messages&quot;</span><span class="p">);</span>
+<a name="line-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;%cError Message!&quot;</span><span class="p">,</span> <span class="s2">&quot;color: red; font-style: italic&quot;</span><span class="p">);</span>
+<a name="line-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;%cWarning Message!&quot;</span><span class="p">,</span> <span class="s2">&quot;color: yellow; font-style: italic&quot;</span><span class="p">);</span>
+<a name="line-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;%cSuccess Message!&quot;</span><span class="p">,</span> <span class="s2">&quot;color: lime; font-style: italic&quot;</span><span class="p">);</span>
+<a name="line-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">groupEnd</span><span class="p">();</span>
+</code></pre></div>
+<p><strong>Output:</strong></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>&gt;&gt; Group of log messages
+<a name="line-2"></a>&gt;&gt;   &quot;Error Message!&quot;
+<a name="line-3"></a>&gt;&gt;   &quot;Warning Message!&quot;
+<a name="line-4"></a>&gt;&gt;   &quot;Success Message!&quot;
+</code></pre></div>
+              <h5 id="<code>console-table-<-code>">
+                <a name="<code>console-table-<-code>" href="#<code>console-table-<-code>"></a><code>console.table()</code>
+              </h5>
+            
+<p><strong>Cenário:</strong> você deseja visualizar a estrutura de um objeto ou array literal.</p>
+
+<p><strong>Input:</strong></p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="kd">var</span> <span class="nx">multi</span> <span class="o">=</span> <span class="p">[</span>
+<a name="line-2"></a>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+<a name="line-3"></a>    <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+<a name="line-4"></a>    <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<a name="line-5"></a><span class="p">];</span>
+<a name="line-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">table</span><span class="p">(</span><span class="nx">multi</span><span class="p">);</span>
+<a name="line-7"></a><span class="kd">var</span> <span class="nx">tools</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-8"></a>    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span>
+<a name="line-9"></a>    <span class="nx">ext</span><span class="o">:</span> <span class="s1">&#39;.foo&#39;</span><span class="p">,</span>
+<a name="line-10"></a>    <span class="nx">usage</span><span class="o">:</span> <span class="s1">&#39;bar baz&#39;</span>
+<a name="line-11"></a><span class="p">};</span>
+<a name="line-12"></a><span class="nx">console</span><span class="p">.</span><span class="nx">table</span><span class="p">(</span><span class="nx">tools</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Output:</strong></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>&gt;&gt; -----
+<a name="line-2"></a>&gt;&gt; 0 | 1
+<a name="line-3"></a>&gt;&gt; -----
+<a name="line-4"></a>&gt;&gt; 1 | 2
+<a name="line-5"></a>&gt;&gt; 3 | 4
+<a name="line-6"></a>&gt;&gt; 5 | 6
+<a name="line-7"></a>&gt;&gt; -----
+<a name="line-8"></a>&gt;&gt;
+<a name="line-9"></a>&gt;&gt; ----------------------------------
+<a name="line-10"></a>&gt;&gt; Object Properties       Values
+<a name="line-11"></a>&gt;&gt; ----------------------------------
+<a name="line-12"></a>&gt;&gt; &quot;name&quot;                  &quot;foo&quot;
+<a name="line-13"></a>&gt;&gt; &quot;ext&quot;                   &quot;.foo&quot;
+<a name="line-14"></a>&gt;&gt; &quot;usage&quot;                 &quot;bar baz&quot;
+<a name="line-15"></a>&gt;&gt; ----------------------------------
+</code></pre></div>
+              <h3 id="Para-analisar-os-resultados">
+                <a name="Para-analisar-os-resultados" href="#Para-analisar-os-resultados"></a>Para analisar os resultados
+              </h3>
+            
+              <h5 id="<code>console-profile-<-code>-e-<code>console-profileEnd-<-code>">
+                <a name="<code>console-profile-<-code>-e-<code>console-profileEnd-<-code>" href="#<code>console-profile-<-code>-e-<code>console-profileEnd-<-code>"></a><code>console.profile()</code> e <code>console.profileEnd()</code>
+              </h5>
+            
+<p><strong>Cenário:</strong> você deseja realizar comparativos de performance.</p>
+
+<p><strong>Input:</strong></p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="kd">function</span> <span class="nx">id</span><span class="p">(</span><span class="nx">selector</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-2"></a>    <span class="k">return</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">selector</span><span class="p">);</span>
+<a name="line-3"></a><span class="p">}</span>
+<a name="line-4"></a><span class="kd">function</span> <span class="nx">query</span><span class="p">(</span><span class="nx">selector</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-5"></a>    <span class="k">return</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">selector</span><span class="p">);</span>
+<a name="line-6"></a><span class="p">}</span>
+<a name="line-7"></a><span class="kd">var</span> <span class="nx">performs</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<a name="line-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">profile</span><span class="p">(</span><span class="s1">&#39;getElementById() vs. querySelector()&#39;</span><span class="p">);</span>
+<a name="line-9"></a><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">performs</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-10"></a>    <span class="nx">id</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">);</span>
+<a name="line-11"></a><span class="p">}</span>
+<a name="line-12"></a><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">performs</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-13"></a>    <span class="nx">query</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">);</span>
+<a name="line-14"></a><span class="p">}</span>
+<a name="line-15"></a><span class="nx">console</span><span class="p">.</span><span class="nx">profileEnd</span><span class="p">();</span>
+</code></pre></div>
+<p><strong>Output:</strong> confira mais detalhes <a href="https://developer.mozilla.org/en-US/docs/Tools/Profiler">aqui</a>.</p>
+
+              <h5 id="<code>console-time-<-code>-e-<code>console-timeEnd-<-code>">
+                <a name="<code>console-time-<-code>-e-<code>console-timeEnd-<-code>" href="#<code>console-time-<-code>-e-<code>console-timeEnd-<-code>"></a><code>console.time();</code> e <code>console.timeEnd();</code>
+              </h5>
+            
+<p><strong>Cenário:</strong> você deseja analisar/redenrizar o tempo de execução para um determinado bloco de código no seu script.</p>
+
+<p><strong>Input:</strong></p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">time</span><span class="p">(</span><span class="s1">&#39;Iterate Array&#39;</span><span class="p">);</span>
+<a name="line-2"></a><span class="kd">var</span> <span class="nx">len</span>  <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+<a name="line-3"></a>    <span class="nx">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">len</span><span class="p">);</span>
+<a name="line-4"></a><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">l</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">l</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-5"></a>    <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">len</span><span class="p">);</span>
+<a name="line-6"></a><span class="p">}</span>
+<a name="line-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">timeEnd</span><span class="p">(</span><span class="s1">&#39;Iterate Array&#39;</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Output:</strong></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>&gt;&gt; Iterate Array: timer started
+<a name="line-2"></a>&gt;&gt; Iterate Array: 0.08ms
+</code></pre></div>
+              <h2 id="Não-deixe-a-depuração-e-inspeção-de-lado">
+                <a name="Não-deixe-a-depuração-e-inspeção-de-lado" href="#Não-deixe-a-depuração-e-inspeção-de-lado"></a>Não deixe a depuração e inspeção de lado
+              </h2>
+            
+<p>Perceba como o processo de <em>debug</em> se torna amigável quando sabemos como lidar com os métodos do objeto <code>console</code>. Não somente, asseguramos uma inspeção mais rígida para possíveis erros e problemas no código.</p>
+
+<p>Outro ponto importante é realizar testes unitários e ter cuidado para que o seu código não fique repleto de <code>console.log</code> e outros métodos desta API. Sugiro que use-a com bom senso, estude uma solução para equilibrar os testes e as depurações/inspeções, além de desenvolver uma metodologia para lidar com estes processos analíticos nos seus scripts.</p>
+
+<p>Até a próxima! =]</p>
+
+              <h4 id="Referências">
+                <a name="Referências" href="#Referências"></a>Referências
+              </h4>
+            
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/console">MDN</a></li>
+<li><a href="https://getfirebug.com/wiki/index.php/Console_API">Firebug</a></li>
+<li><a href="https://developer.chrome.com/devtools/docs/console-api">Chrome</a></li>
+<li><a href="http://nodejs.org/api/stdio.html">NodeJS</a></li>
+</ul>
+
+            </section>
+
+        </article>
+
+        <section class="box">
+    <div class="span3">
+        <img class="box-thumb" src="http://www.vitorbritto.com.br/blog/assets/images/avatar.jpg">
+    </div>
+    <div class="span9">
+        <section class="box-details">
+            <h3>Vitor Britto</h3>
+            <p>Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+        </section>
+    </div>
+</section>
+
+        <div class="box">
+    <div class="newsletter-wrapper">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=vitorbritto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <h3 class="newsletter-title">Receba os artigos no seu e-mail</h3>
+        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
+        <input class="input" type="email" name="email" placeholder="Digite o seu email"/>
+        <input type="hidden" value="vitorbritto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn-newsletter" type="submit" value="Assinar Newsletter" />
+    </form>
+    </div>
+</div>
+
+
+        <div class="line"></div>
+
+        
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+    var disqus_shortname = 'blogvitorbritto'; // shortname
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Por favor, habilite o JavaScript para ver os <a href="http://disqus.com/?ref_noscript">comentários</a> deste artigo.</noscript>
+
+
+
+    </div>
+
+        <div class="line"></div>
+
+        <div class="row">
+            <footer class="footer">
+                    <p class="footer-text">Desenvolvido por Vitor Britto. Feito com <a href="http://jekyllrb.com/" title="Jekyll" target="_blank">Jekyll</a>, <i class="icon-coffee"></i> e <i class="icon-heart"></i>.</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://www.vitorbritto.com.br/blog/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src='http://www.vitorbritto.com.br/blog/assets/js/app.min.js'></script>
+
+    <!-- Google Analytics -->
+    <script>
+    var _gaq=[['_setAccount','UA-12808940-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

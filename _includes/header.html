@@ -12,15 +12,15 @@
     <!-- Facebook -->
     <meta property="og:title" content="{{ page.title }}"/>
     <meta property="og:site_name" content="Blog - Vitor Britto"/>
-    <meta property="og:url" content="{{ site.url }}{% if page.url != 'index.html' %}{{ page.url }}{% endif %}"/>
-    <meta property="og:image" content="{{ site.baseurl }}assets/images/fb.jpg"/>
+    <meta property="og:url" content="{{ site.fullurl }}{% if page.url != 'index.html' %}{{ page.url }}{% endif %}"/>
+    <meta property="og:image" content="{{ site.fullurl }}/assets/images/fb.jpg"/>
     <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}blog{% endif %}"/>
     <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"/>
 
-    <link rel="shortcut icon" href="{{ site.baseurl }}assets/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ site.fullurl }}/assets/images/favicon.png" type="image/x-icon">
     <link href="{{ site.rssfeed }}" rel="alternate" type="application/rss+xml">
     <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
-    <link href="{{ site.baseurl }}assets/css/style.css" rel="stylesheet" id="theme-css"/>
+    <link href="{{ site.fullurl }}/assets/css/style.css" rel="stylesheet" id="theme-css"/>
 
 </head>
 
@@ -33,7 +33,7 @@
 
                 <div class="span4">
                     <div class="header-info">
-                        <h1 class="header-name"><a href="{{ site.baseurl }}">{{ site.name }}</a></h1>
+                        <h1 class="header-name"><a href="{{ site.fullurl }}">{{ site.name }}</a></h1>
                         <h4 class="header-description">{{ site.description }}</h4>
                     </div>
                 </div>

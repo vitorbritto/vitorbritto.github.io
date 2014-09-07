@@ -6,9 +6,6 @@ link: "http://vitorbritto.com.br/blog/the-book-is-on-the-table/"
 date: 2014-09-02
 path: 2014-09-02-the-book-is-on-the-table.md
 cover: "assets/images/posts/post-livros-js.jpg"
-avatar: "assets/images/avatar.jpg"
-author: Vitor Britto
-bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true
 ---
 
@@ -29,9 +26,9 @@ Então, vamos lá.
 
 ## Olá, eu sou o JavaScript
 
-Criada por Brendan Eich há quase 20 anos, a linguagem de programação JavaScript se tornou muito popular nos últimos anos e mostrou-se extremamente poderosa. Trata-se de uma linguagem de alto nível, dinâmica, interpretada e não tipada, além de englobar paradigmas de orientação de objetos e funcional. Possui uma sintaxe herdada do *Java*, aspectos funcionais do *Scheme* e suas caracteristicas orientadas a objetos do *Self*. Atualmente, está linguagem que foi mal compreendida por um bom tempo, se faz presente tanto no **client-side** (DOM) quanto no **server-side** (NodeJS).
+Criada por Brendan Eich há quase 20 anos, a linguagem de programação JavaScript se tornou muito popular nos últimos anos e mostrou-se extremamente poderosa. Trata-se de uma linguagem de alto nível, dinâmica, interpretada, não tipada, além de englobar paradigmas de orientação à objetos e funcional. Possui uma sintaxe herdada do *Java*, aspectos funcionais do *Scheme* e caracteristicas orientadas a objetos do *Self*. Atualmente, está linguagem que foi mal compreendida por um bom tempo, se faz presente tanto no **client-side** (DOM) quanto no **server-side** (NodeJS).
 
-Se você está vindo do Java ou PHP, vale frisar que o JavaScript não possui classes. O JavaScript possui funções de primeira classe (objetos que herdam métodos e propriedades) e sua herança se baseia em protótipos.
+Se você está vindo do Java ou PHP, vale frisar que o JavaScript não possui classes. No JavaScript, as funções são tratadas como [objetos de primeira classe]() (first-class functions/objects) e sua [herança se baseia em protótipos](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain) (prototypal inheritance). Além disso, a linguagem possui [funções de ordem superior](http://en.wikipedia.org/wiki/Higher-order_function) (high-order Functions), como, por exemplo, os métodos `map`, `filter` e `forEach` do objeto Array.
 
 Esta é uma breve (brevíssima) introdução. Caso você esteja começando do zero, [sugiro que leia este material](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/JavaScript_Vis%C3%A3o_Geral) do MDN para entender mais sobre o JavaScript. Ok?
 
@@ -69,7 +66,7 @@ Apesar de muitos pensarem que trata-se de um livro para iniciantes, não é. At�
 
 Este livro é um compilação feita pelo Douglas Crockford, o qual revela as boas partes, belas características e partes ruins da linguagem de programação JavaScript. A leitura deste livro exige um prévio conhecimento sobre funções, métodos, objetos e arrays no JavaScript.
 
-Para que fique mais fácil o entendimento: o "JavaScript: Guia Definitivo" prepara o terreno para que você aprenda esta linguagem de programação da melhor maneira possível, já o "O Melhor do JavaScript" é um convite para entender que "nem tudo são flores", mas que tem jeito. E as soluções que oferecem melhorias às suas aplicações são compartilhadas no livro "Padrões JavaScript".
+Para que fique mais fácil o entendimento: o "JavaScript: Guia Definitivo" prepara o terreno para que você aprenda esta linguagem de programação da melhor maneira possível, já o "O Melhor do JavaScript" é um convite para entender que "nem tudo são flores", mas que tem jeito. Por fim, as soluções que oferecem melhorias às suas aplicações são compartilhadas no livro "Padrões JavaScript".
 
 #### Padrões JavaScript
 
@@ -87,9 +84,9 @@ IMHO, este livro é o "JavaScript: Guia Definitivo" para quem conhece e já poss
 
 #### Javascript Enlightenment
 
-O livro não é sobre padrões, não menciona paradigmas de OO (orientação a objetos) no JavaScript, muito menos quais são os aspectos bons ou ruins. Trata-se de elementos importantes no JavaScript (funções, objetos, arrays, closures, escopos em detalhes) e o porquê do seu conhecimeto e importância.
+O livro não é sobre padrões, não menciona paradigmas de OO (orientação a objetos) no JavaScript, muito menos quais são os aspectos bons ou ruins. Cody Lindley convida o leitor para mergulhar nos detalhes das funções, objetos, arrays, closures e outros elementos que fazem parte do JavaScript.
 
-Além disso, recomendo para quem prefere iniciar com jQuery à JavaScript. Como a própria chamada do livro se refere: "De um usuário de bibliotecas para um programador em JavaScript".
+Além disso, recomendo a leitura deste livro para quem prefere iniciar o desenvolvimento de projetos com jQuery à JavaScript. Como a própria chamada do livro se refere: "De um usuário de bibliotecas para um programador em JavaScript".
 
 ### May the force be with you
 
@@ -97,17 +94,17 @@ Daqui pra frente, deduzo que você já possua uma boa experiência com o JavaScr
 
 #### JavaScript Web Applications
 
-Um livro recheado de conceitos, que ajuda você a desenvolver habilidades na criação de aplicações web, garantindo um boa arquitetura, código manutenível e boas práticas.
+Um livro recheado de conceitos, que ajuda você a desenvolver habilidades na criação de aplicações web, garantindo uma boa arquitetura, código manutenível e boas práticas no seu projeto.
 
 #### Testable JavaScript
 
-Um ótimo livro para adquirir um conhecimento sólido em testes no JavaScript. Cobre pontos conceituais, boas práticas, padrões e métodos para tornar o desenvolvimento da sua aplicação manutenível. Além disso, aborda cenários para automação, inspeção e [entrega do seu código com qualidade](http://en.wikipedia.org/wiki/Continuous_delivery).
+Um ótimo livro para adquirir um conhecimento sólido em testes com JavaScript. Cobre pontos conceituais, boas práticas, padrões e métodos para tornar o desenvolvimento da sua aplicação manutenível. Além disso, aborda cenários para automação, inspeção e [entrega do seu código com qualidade](http://en.wikipedia.org/wiki/Continuous_delivery).
 
 Apesar do livro ser bem detalhado, recomendo fortemente que você já possua um contato prévio com testes unitários e [design patterns](http://en.wikipedia.org/wiki/Software_design_pattern).
 
 #### Functional JavaScript
 
-Leitura em andamento, mas posso dizer que me supreendo a cada página. A programação funcional no JavaScript é algo mágico! Em paralelo, estou realizando alguns experimentos com o [Haskell](http://www.haskell.org/haskellwiki/Haskell). Sugiro que dê uma olhada nesta linguagem. Vai mudar a sua vida!
+Leitura em andamento, mas posso dizer que me supreendo a cada página. A programação funcional no JavaScript é algo mágico! Em paralelo, estou realizando alguns experimentos com o [Haskell](http://www.haskell.org/haskellwiki/Haskell). Sugiro que dê uma olhada nesta linguagem. Vai mudar a sua vida e agregar conhecimento sobre funções.
 
 ## Fique atento para alguns pontos
 
@@ -158,7 +155,7 @@ Além disso, existem algumas considerações interessantes para aprofundar os se
 - **Ler artigos:** a leitura de artigos ajuda a solucionar possíveis problemas já enfrentados por outros desenvolvedores, além de conhecer como aplicar determinada solução para um dado cenário.
 - **Praticar:** pratique os códigos expostos em um artigo, livro ou qualquer outro documento! Com a prática vem a experiência.
 - **Assistir palestras:** existem diversos vídeos de palestras disponíveis no Youtube sobre novos tópicos relacionados ao JavaScript. É importante estar atenado e saber o que está acontecendo.
-- **Participe dos eventos:** temos muitos eventos no Brasil, que tratam de temas relacionados ao JavaScript. Além disso, o _networking_ será importante para a troca de experiências e conhecimento com demais colegas.
+- **Participar de eventos:** temos muitos eventos no Brasil, que tratam de temas relacionados ao JavaScript. Além disso, o _networking_ será importante para a troca de experiências e conhecimento com demais colegas.
 
 Além de algumas leituras complementares:
 

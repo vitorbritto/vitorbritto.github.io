@@ -6,9 +6,6 @@ description: "Redundância a parte, me responda o seguinte: Você tem o costume 
 date: 2014-08-23
 path: 2014-08-23-experimente-experimentar.md
 cover: assets/images/posts/post-experimente.jpg
-avatar: assets/images/avatar.jpg
-author: Vitor Britto
-bio: Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.
 comments: true
 ---
 

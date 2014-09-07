@@ -33,7 +33,7 @@
 
                 <div class="span4">
                     <div class="header-info">
-                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog">Vitor Britto</a></h1>
                         <h4 class="header-description">Desenvolvedor Web</h4>
                     </div>
                 </div>
@@ -165,7 +165,7 @@
 <li>Você pode iniciar um servidor web para servir arquivos estáticos (HTML, CSS e JS), e também utilizar as configurações de um <em>Virtual Host</em>.</li>
 <li>Caso você esteja utilizando a opção <em>proxy</em> (por conta de algum arquivo PHP), basta copiar e colar, logo antes da tag <code>&lt;/body&gt;</code>, o trecho de código que será apresentado (no bash/shell) após você executar a tarefa do <em>browser-sync</em>.</li>
 <li>O <em>browser-sync</em> tentará descorbir o IP utilizado na sua rede. Possivelmente, isto pode não dar certo. Por isso, declare-o na opcão <code>host</code>. Você deve estar se perguntando: &quot;Por que eu devo atribuir o meu IP a está opção?&quot; Eu respondo. O fato é que a mágica do <em>browser-sync</em> está em se conectar a diversos dispositivos móveis, e isto só é possível com um IP declarado. Ao invés de utilizar <code>localhost</code>, você pode verificar o seu IP (no mac execute <code>ifconfig</code>, no Windows <code>ipconfig</code>) e executar o procedimento acima.</li>
-<li>A opção <code>ghostMode</code> está em fase experimental, porém já permite a utilização de forma bem tranquila. Está opção nos permite sincronizar alguns comportamentos (*scrolls*, navegação e preenchimento de dados em formulários) e acompanhar os eventos disparados nos dispositivos conectados.</li>
+<li>A opção <code>ghostMode</code> está em fase experimental, porém já permite a utilização de forma bem tranquila. Está opção nos permite sincronizar alguns comportamentos (<em>scrolls</em>, navegação e preenchimento de dados em formulários) e acompanhar os eventos disparados nos dispositivos conectados.</li>
 </ul>
 
               <h3 id="Enfim-lá-vamos-nós-">
@@ -204,7 +204,7 @@
 <p>Teremos uma estrutura simples, e você pode criar essa estrutura através do terminal ou da forma como achar mais conveniente.</p>
 
 <p>A estrutura inicial deverá ficar assim:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>.projeto/
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>.projeto/
 <a name="line-2"></a>├── assets/
 <a name="line-3"></a>│   └── sass/
 <a name="line-4"></a>│       └── style.scss
@@ -219,7 +219,7 @@
 <p>Você pode criar um arquivo <code>package.json</code> de forma dinâmica, para isso execute o comando <code>npm init</code> e responda apropriadamente as perguntas que lhe forem apresentadas.</p>
 
 <p>Para este exemplo, o estado inicial do nosso arquivo <code>package.json</code> deverá ficar assim:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>{
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>{
 <a name="line-2"></a>    &quot;name&quot;: &quot;browser-sync-project&quot;,
 <a name="line-3"></a>    &quot;version&quot;: &quot;0.1.0&quot;,
 <a name="line-4"></a>    &quot;title&quot;: &quot;Projeto Browser Sync&quot;,
@@ -236,14 +236,14 @@
 <blockquote>
 <p><strong>Nota:</strong> lembre-se de que você deve executar este comando no diretório do projeto.</p>
 </blockquote>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>npm i grunt grunt-contrib-compass grunt-contrib-watch grunt-browser-sync --save-dev
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>npm i grunt grunt-contrib-compass grunt-contrib-watch grunt-browser-sync --save-dev
 </code></pre></div>
 <blockquote>
 <p><strong>Nota:</strong> perceba que estamos executando um comando extenso, porém em uma linha somente e com o <em>alias</em> para a opção <strong>install</strong> (i). Com um único comando, podemos instalar o Grunt e os plugins que utilizaremos no nosso projeto. Poderíamos executar essas instalações uma a uma, mas, como já sabemos os plugins que queremos utilizar, fica muito mais prático executar desta forma.</p>
 </blockquote>
 
 <p>Com o grunt e os plugins instalados o arquivo <code>package.json</code> ficará assim:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>{
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>{
 <a name="line-2"></a>    &quot;name&quot;: &quot;browser-sync-project&quot;,
 <a name="line-3"></a>    &quot;version&quot;: &quot;0.1.0&quot;,
 <a name="line-4"></a>    &quot;title&quot;: &quot;Projeto Browser Sync&quot;,
@@ -262,7 +262,7 @@
               </h4>
             
 <p>Abra o arquivo <code>Gruntfile.js</code>, localizado na pasta raiz do seu projeto, com o seu editor preferido. Em seguida, <strong>copie e cole</strong> o conteúdo abaixo:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>module.exports = function (grunt) {
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>module.exports = function (grunt) {
 <a name="line-2"></a>
 <a name="line-3"></a>    &quot;use strict&quot;;
 <a name="line-4"></a>
@@ -335,7 +335,7 @@
 <p>Nesta parte, temos uma função global que funciona como <em>wrapper</em> para os 3 (três) métodos responsáveis pela <strong>configuração de tarefas</strong>, <strong>carregamento dos plugins</strong> e <strong>registro de tarefas customizadas</strong> respectivamente no Grunt.</p>
 
 <p>Confira:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>module.exports = function (grunt) {
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>module.exports = function (grunt) {
 <a name="line-2"></a>
 <a name="line-3"></a>    &quot;use strict&quot;;
 <a name="line-4"></a>
@@ -354,14 +354,14 @@
               </h5>
             
 <p>As configurações das nossas tarefas no Grunt serão declaradas no método <code>initConfig()</code>.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>grunt.initConfig({
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>grunt.initConfig({
 <a name="line-2"></a>    // As configurações das tarefas serão definidas aqui
 <a name="line-3"></a>});
 </code></pre></div>
 <p><strong>Configuração da tarefa <code>watch</code></strong></p>
 
 <p>Está tarefa será responsável por observar alterações nos arquivos.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>watch: {
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>watch: {
 <a name="line-2"></a>    files: &quot;assets/sass/*.scss&quot;, // Definimos os arquivos que queremos &quot;observar&quot;
 <a name="line-3"></a>    tasks: &#39;compass&#39;,            // Declaramos em qual tarefa esta observação será realizada
 <a name="line-4"></a>},
@@ -369,7 +369,7 @@
 <p><strong>Configuração da tarefa <code>compass</code></strong></p>
 
 <p>Está tarefa é responsável pela compilação (e minificação) do arquivo pré-compilado.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>compass: {
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>compass: {
 <a name="line-2"></a>    dist: {
 <a name="line-3"></a>        options: {
 <a name="line-4"></a>            sassDir: &#39;assets/sass&#39;,   // Definimos o diretório de origem dos arquivos a serem compilados
@@ -382,7 +382,7 @@
 <p><strong>Configuração da tarefa <code>browser_sync</code></strong></p>
 
 <p>Está tarefa é responsável pela configuração dos testes sincronizados em nossos dispositívos móveis, integração do recurso <em>Live Reload</em>, iniciar um servidor web estático e se comunicar com a tarefa <em>watch</em>.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>browser_sync: {
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>browser_sync: {
 <a name="line-2"></a>    files: {
 <a name="line-3"></a>
 <a name="line-4"></a>        // Aplicamos o recurso de Live Reload nos seguintes arquivos
@@ -421,7 +421,7 @@
               </h5>
             
 <p>Para que as nossas tarefas sejam executadas, precisamos declarar o nome dos plugins através do método <code>loadNpmTasks()</code>.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>// Carregando os plugins
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>// Carregando os plugins
 <a name="line-2"></a>grunt.loadNpmTasks(&#39;grunt-contrib-compass&#39;);
 <a name="line-3"></a>grunt.loadNpmTasks(&#39;grunt-contrib-watch&#39;);
 <a name="line-4"></a>grunt.loadNpmTasks(&#39;grunt-browser-sync&#39;);
@@ -431,7 +431,7 @@
               </h5>
             
 <p>Por fim, configuramos uma tarefa customizada no método <code>registerTask()</code> para iniciar as tarefas <code>browser_sync</code> e <code>watch</code>.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>grunt.registerTask(&#39;default&#39;, [&quot;browser_sync&quot;, &quot;watch&quot;]);
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>grunt.registerTask(&#39;default&#39;, [&quot;browser_sync&quot;, &quot;watch&quot;]);
 </code></pre></div>
               <h4 id="Executando-a-tarefa">
                 <a name="Executando-a-tarefa" href="#Executando-a-tarefa"></a>Executando a tarefa
@@ -446,7 +446,7 @@
 <p>Pronto! Acesse os dispositivos/browsers através do <strong>IP</strong> e <strong>PORT</strong> (ex.: <a href="http://192.168.0.1:8000">http://192.168.0.1:8000</a>) declarados na opção da sua tarefa <code>browser_sync</code>, faça algumas mudanças no arquivo <code>style.scss</code> e veja a mágica acontecer.</p>
 
 <p>Veja no exemplo abaixo o plugin em ação!</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>vitorbritto at Vitor Britto in ~/temp/grunt/misc
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>vitorbritto at Vitor Britto in ~/temp/grunt/misc
 <a name="line-2"></a>$ grunt
 <a name="line-3"></a>Running &quot;browser_sync:files&quot; (browser_sync) task
 <a name="line-4"></a>
@@ -500,7 +500,7 @@
     <div class="span9">
         <section class="box-details">
             <h3>Vitor Britto</h3>
-            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+            <p>Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
         </section>
     </div>
 </section>

@@ -33,7 +33,7 @@
 
                 <div class="span4">
                     <div class="header-info">
-                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog">Vitor Britto</a></h1>
                         <h4 class="header-description">Desenvolvedor Web</h4>
                     </div>
                 </div>
@@ -163,7 +163,7 @@
 <p><code>bower search [&lt;nome&gt;]</code></p>
 
 <p>Confira o exemplo:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower search socket
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower search socket
 <a name="line-2"></a>Search results:
 <a name="line-3"></a>
 <a name="line-4"></a>    socket.io-client git://github.com/LearnBoost/socket.io-client.git
@@ -180,7 +180,7 @@
               </h4>
             
 <p>O Bower oferece diversas possibilidades para instalar as dependências no seu projeto:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># Através das dependências encontradas no diretório onde consta o arquivo bower.json</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># Através das dependências encontradas no diretório onde consta o arquivo bower.json</span>
 <a name="line-2"></a>bower install
 <a name="line-3"></a>
 <a name="line-4"></a><span class="c"># Através de um pacote local ou remoto</span>
@@ -203,7 +203,7 @@
 </ul>
 
 <p>Confira o exemplo:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower install socket.io
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower install socket.io
 <a name="line-2"></a>bower socket.io#*           not-cached git://github.com/LearnBoost/socket.io.git#*
 <a name="line-3"></a>bower socket.io#*              resolve git://github.com/LearnBoost/socket.io.git#*
 <a name="line-4"></a>bower socket.io#*             download https://github.com/LearnBoost/socket.io/archive/0.9.15.tar.gz
@@ -242,7 +242,7 @@
 <p>Se você declarar a opção <code>--paths</code> no comando <code>list</code> do Bower, você terá um mapeamento para cada dependência no seu <code>bower.json</code>.</p>
 
 <p>Confira o exemplo:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower list --paths
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower list --paths
 <a name="line-2"></a><span class="o">{</span>
 <a name="line-3"></a>  <span class="s2">&quot;backbone&quot;</span>: <span class="s2">&quot;components/backbone/index.js&quot;</span>,
 <a name="line-4"></a>  <span class="s2">&quot;jquery&quot;</span>: <span class="s2">&quot;components/jquery/index.js&quot;</span>,
@@ -263,7 +263,7 @@
 </ol>
 
 <p>Confira o exemplo:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower update
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower update
 <a name="line-2"></a>bower socket.io#~0.9.15         cached git://github.com/LearnBoost/socket.io.git#0.9.15
 <a name="line-3"></a>bower socket.io#~0.9.15       validate 0.9.15 against git://github.com/LearnBoost/socket.io.git#~0.9.15
 </code></pre></div>
@@ -274,7 +274,7 @@
 <p>Para remover uma dependência local, execute: <code>bower uninstall &lt;dependência&gt;</code></p>
 
 <p>Confira o exemplo:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower uninstall socket.io
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower uninstall socket.io
 <a name="line-2"></a>bower uninstall     socket.io
 </code></pre></div>
               <h4 id="Outros-comandos-para-as-dependências">
@@ -290,8 +290,8 @@
 <p>Com o <code>bower list</code> é possível mostrar as dependências instaladas localmente no seu pacote Bower.</p>
 
 <p>Confira o exemplo:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower list
-<a name="line-2"></a>bower check-new     Checking <span class="k">for </span>new versions of the project dependencies..
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower list
+<a name="line-2"></a>bower check-new     Checking <span class="k">for</span> new versions of the project dependencies..
 <a name="line-3"></a>bower#0.0.0 /Users/vitorbritto/temp/managers/bower
 <a name="line-4"></a>└── socket.io#0.9.15 extraneous
 </code></pre></div>
@@ -302,7 +302,7 @@
               </h5>
             
 <p>Com o <code>bower lookup</code> é possível verificar a <em>url</em> de uma dependência.</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower lookup jquery
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower lookup jquery
 <a name="line-2"></a>jquery git://github.com/components/jquery.git
 </code></pre></div>
               <h5 id="bower-info">
@@ -310,7 +310,7 @@
               </h5>
             
 <p>Com o <code>bower info</code> é possível verificar as versões disponíveis de uma dependência.</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower info modernizr
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower info modernizr
 <a name="line-2"></a>bower modernizr#*               cached git://github.com/Modernizr/Modernizr.git#2.6.2
 <a name="line-3"></a>bower modernizr#*             validate 2.6.2 against git://github.com/Modernizr/Modernizr.git#*
 <a name="line-4"></a>
@@ -328,14 +328,14 @@
 <a name="line-16"></a>  - 2.5.1
 <a name="line-17"></a>  - 2.0.6
 <a name="line-18"></a>
-<a name="line-19"></a>You can request info <span class="k">for </span>a specific version with <span class="s1">&#39;bower info modernizr#&lt;version&gt;&#39;</span>
+<a name="line-19"></a>You can request info <span class="k">for</span> a specific version with <span class="s1">&#39;bower info modernizr#&lt;version&gt;&#39;</span>
 </code></pre></div>
               <h5 id="bower-cache-clean">
                 <a name="bower-cache-clean" href="#bower-cache-clean"></a>bower cache clean
               </h5>
             
 <p>Com o <code>bower cache clean</code> é possível remover todos os pacotes mantidos em cache pelo Bower.</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower cache clean
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower cache clean
 <a name="line-2"></a>bower deleted       Cached package jquery: /Users/vitorbritto/.cache/bower/packages/29cb4373d29144ca260ac7c3997f4381/2.0.3
 <a name="line-3"></a>bower deleted       Cached package modernizr: /Users/vitorbritto/.cache/bower/packages/49c1c17a4ec1b92db2a4728ece50773a/2.6.2
 </code></pre></div>
@@ -358,7 +358,7 @@
 <li><code>devDependencies</code> [hash]: dependências para desenvolvimento.</li>
 <li><code>private</code> [boolean]: define se o pacote será privado e/ou terá permissão para registro no futuro (mais a respeito sobre registro de pacotes, na seção <strong>Registrando um pacote no Bower</strong>).</li>
 </ul>
-<div class="highlight"><pre><code class="json language-json" data-lang="json"><a name="line-1"></a><span class="p">{</span>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><a name="line-1"></a><span class="p">{</span>
 <a name="line-2"></a>  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;meu-projeto&quot;</span><span class="p">,</span>
 <a name="line-3"></a>  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
 <a name="line-4"></a>  <span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;caminho/para/index.js&quot;</span><span class="p">,</span>
@@ -381,13 +381,13 @@
 <p>Não! Você pode criar o arquivo <code>bower.json</code> dinamicamente com o comando: <code>bower init</code>.</p>
 
 <p>Confira o exemplo:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower init
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>bower init
 <a name="line-2"></a><span class="o">[</span>?<span class="o">]</span> name: projeto-bower
 <a name="line-3"></a><span class="o">[</span>?<span class="o">]</span> version: 1.0.0
 <a name="line-4"></a><span class="o">[</span>?<span class="o">]</span> description: Meu primeiro projeto com Bower
 <a name="line-5"></a><span class="o">[</span>?<span class="o">]</span> main file:
 <a name="line-6"></a><span class="o">[</span>?<span class="o">]</span> keywords:
-<a name="line-7"></a><span class="o">[</span>?<span class="o">]</span> authors: Nome <span class="k">do </span>Autor &lt;email@dominio.com.br&gt;
+<a name="line-7"></a><span class="o">[</span>?<span class="o">]</span> authors: Nome <span class="k">do</span> Autor &lt;email@dominio.com.br&gt;
 <a name="line-8"></a><span class="o">[</span>?<span class="o">]</span> license: MIT
 <a name="line-9"></a><span class="o">[</span>?<span class="o">]</span> homepage:
 <a name="line-10"></a><span class="o">[</span>?<span class="o">]</span> <span class="nb">set </span>currently installed components as dependencies? Yes
@@ -420,7 +420,7 @@
 <p>O Bower também possui uma API muito poderosa. Todos os comandos podem ser acessados através do objeto <code>bower.commands</code>.</p>
 
 <p>Confira:</p>
-<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="kd">var</span> <span class="nx">bower</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;bower&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="kd">var</span> <span class="nx">bower</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;bower&#39;</span><span class="p">);</span>
 <a name="line-2"></a>
 <a name="line-3"></a><span class="nx">bower</span><span class="p">.</span><span class="nx">commands</span>
 <a name="line-4"></a><span class="p">.</span><span class="nx">install</span><span class="p">([</span><span class="s1">&#39;jquery&#39;</span><span class="p">],</span> <span class="p">{</span> <span class="nx">save</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span> <span class="p">{</span> <span class="cm">/* configuração customizada */</span> <span class="p">})</span>
@@ -447,7 +447,7 @@
 
 <p>Quando se utiliza o Bower programaticamente, o alerta é desabilitado por padrão. Embora você possa habilitá-lo ao chamar comandos com <code>interactive: true</code> na configuração. Isso requer que você espere pelo evento <code>prompt</code> e manuseie-o do seu jeito.
 O jeito mais fácil é utilizando o módulo NPM <a href="https://npmjs.org/package/inquirer">inquirer</a>.</p>
-<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="kd">var</span> <span class="nx">inquirer</span> <span class="o">=</span>  <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;inquirer&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="kd">var</span> <span class="nx">inquirer</span> <span class="o">=</span>  <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;inquirer&#39;</span><span class="p">);</span>
 <a name="line-2"></a>
 <a name="line-3"></a><span class="nx">bower</span><span class="p">.</span><span class="nx">commands</span>
 <a name="line-4"></a><span class="p">.</span><span class="nx">install</span><span class="p">([</span><span class="s1">&#39;jquery&#39;</span><span class="p">],</span> <span class="p">{</span> <span class="nx">save</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">interactive</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
@@ -503,7 +503,7 @@ O jeito mais fácil é utilizando o módulo NPM <a href="https://npmjs.org/packa
     <div class="span9">
         <section class="box-details">
             <h3>Vitor Britto</h3>
-            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+            <p>Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
         </section>
     </div>
 </section>

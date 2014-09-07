@@ -15,7 +15,7 @@
     <meta property="og:url" content="http://www.vitorbritto.com.br/blog/dicas-uteis-para-quem-utiliza-gruntjs/"/>
     <meta property="og:image" content="http://www.vitorbritto.com.br/blog/assets/images/fb.jpg"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:description" content="Algumas dicas que podem ser úteis aos desenvolvedores que utilizam o GruntJS."/>
+    <meta property="og:description" content="Resolvi abrir um espaço no meu blog para listar algumas dicas que podem ser úteis aos desenvolvedores que utilizam o Grunt. Então, aí vai algumas dicas que acho interessantes e que são ótimas alternativas."/>
 
     <link rel="shortcut icon" href="http://www.vitorbritto.com.br/blog/assets/images/favicon.png" type="image/x-icon">
     <link href="http://feeds.feedburner.com/vitorbritto" rel="alternate" type="application/rss+xml">
@@ -33,7 +33,7 @@
 
                 <div class="span4">
                     <div class="header-info">
-                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog">Vitor Britto</a></h1>
                         <h4 class="header-description">Desenvolvedor Web</h4>
                     </div>
                 </div>
@@ -106,25 +106,19 @@
             <section class="article-entry">
                 <p>Saudações!</p>
 
-<p>Resolvi abrir um espaço no meu blog para listar algumas dicas que podem ser úteis aos desenvolvedores que utilizam o GruntJS. Tudo bem que o Gulp é a febre do momento, mas não vamos cuspir no prato em que já comemos, ok? =]</p>
-
-<p>Então, aí vai algumas dicas que acho interessantes e que são ótimas alternativas.</p>
+<p>Resolvi abrir um espaço no meu blog para listar algumas dicas que podem ser úteis aos desenvolvedores que utilizam o <a href="http://gruntjs.com">Grunt</a>. Então, aí vai algumas dicas que acho interessantes e que são ótimas alternativas.</p>
 
 <ol>
-<li>Você pode utilizar o <a href="http://documentup.com/arturadib/shelljs">ShellJS</a> para tarefas de leitura e escrita de arquivos. Assim, você substitue os possíveis plugins <em>grunt-contrib-copy</em>, <em>grunt-contrib-clean</em> e <em>grunt-exec</em> ou <em>grunt-shell</em>. Se preferir, e não desejar injetar qualquer dependência ou plugin, você pode utilizar o método <a href="http://gruntjs.com/api/grunt.file"><code>.file()</code></a> disponível na API do Grunt para tais rotinas.
-2.
-Você pode utilizar o módulo <em>browser-sync</em> (<a href="http://www.browsersync.io/">http://www.browsersync.io/</a>) ou o plugin <em>grunt-browser-sync</em>, no lugar do <em>grunt-contrib-connect</em>, <em>grunt-contrib-livereload</em> e/ou <em>grunt-php</em>. Além disso, você ganha integração com a tarefa <em>watch</em> e testes cross-devices/browser com sincronização de eventos em dispositivos reais.
-3.
-Cuidado com as tarefas que você executa por padrão (ou que estão sendo observadas com a tarefa <em>watch</em>) e os seus respectivos arquivos. Fazer o uso consciente do <a href="http://gruntjs.com/configuring-tasks#globbing-patterns"><em>glob pattern</em></a> ajuda também no momento do build/compilação.
-4.
-Procure fazer um breve planejamento de como será o <em>build script</em> do projeto em questão e quais tarefas vão constar nele. Uma folha de papel e um lápis são o suficiente. =P
-5.
-Você pode utilizar a função <code>require()</code> e o <em>module.exports</em> para exportar configurações globais. Com isso, você armazena estas configurações em um arquivo externo (ex.: <code>grunt-config.js</code>) e faz o <code>parser</code> através do método <a href="http://gruntjs.com/api/grunt.file#reading-and-writing"><code>.read()</code></a> no seu arquivo Gruntfile.js.</li>
+<li>Você pode utilizar o <a href="http://documentup.com/arturadib/shelljs">ShellJS</a> para tarefas de leitura e escrita de arquivos. Assim, você substitue os possíveis plugins <em>grunt-contrib-copy</em>, <em>grunt-contrib-clean</em> e <em>grunt-exec</em> ou <em>grunt-shell</em>. Se preferir, e não desejar injetar qualquer dependência ou plugin, você pode utilizar o método <a href="http://gruntjs.com/api/grunt.file"><code>.file()</code></a> disponível na API do Grunt para tais rotinas.</li>
+<li>Você pode utilizar o módulo <em>browser-sync</em> (<a href="http://www.browsersync.io/">http://www.browsersync.io/</a>) ou o plugin <em>grunt-browser-sync</em>, no lugar do <em>grunt-contrib-connect</em>, <em>grunt-contrib-livereload</em> e/ou <em>grunt-php</em>. Além disso, você ganha integração com a tarefa <em>watch</em> e testes cross-devices/browser com sincronização de eventos em dispositivos reais.</li>
+<li>Cuidado com as tarefas que você executa por padrão (ou que estão sendo observadas com a tarefa <em>watch</em>) e os seus respectivos arquivos. Fazer o uso consciente do <a href="http://gruntjs.com/configuring-tasks#globbing-patterns"><em>glob pattern</em></a> ajuda também no momento do build/compilação.</li>
+<li>Procure fazer um breve planejamento de como será o <em>build script</em> do projeto em questão e quais tarefas vão constar nele. Uma folha de papel e um lápis são o suficiente. =P</li>
+<li>Você pode utilizar a função <code>require()</code> e o <em>module.exports</em> para exportar configurações globais. Com isso, você armazena estas configurações em um arquivo externo (ex.: <code>grunt-config.js</code>) e faz o <code>parser</code> através do método <a href="http://gruntjs.com/api/grunt.file#reading-and-writing"><code>.read()</code></a> no seu arquivo Gruntfile.js.</li>
 </ol>
 
 <p>Então, é isso. A medida em que novas dicas forem surgindo, farei as devidas atualizações. Caso você saiba de alguma dica interessante, e que possa ser útil, compartilhe conosco.</p>
 
-<p>Espero que estas dicas sejam úteis para você. Até a próxima.</p>
+<p>Espero que estas dicas sejam úteis para você. Até a próxima! =]</p>
 
             </section>
 
@@ -137,7 +131,7 @@ Você pode utilizar a função <code>require()</code> e o <em>module.exports</em
     <div class="span9">
         <section class="box-details">
             <h3>Vitor Britto</h3>
-            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+            <p>Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
         </section>
     </div>
 </section>

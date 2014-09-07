@@ -33,7 +33,7 @@
 
                 <div class="span4">
                     <div class="header-info">
-                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog">Vitor Britto</a></h1>
                         <h4 class="header-description">Desenvolvedor Web</h4>
                     </div>
                 </div>
@@ -177,7 +177,7 @@
 <li>Sobre comando <code>docpad --help</code>, pois ele será o seu braço direito nessa jornada;</li>
 <li>Que você saiba como funciona a estrutura desta ferramenta. Isso vai facilitar o seu manuseio e entendimento. Confira:</li>
 </ol>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>projeto/
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>projeto/
 <a name="line-2"></a>├── out/
 <a name="line-3"></a>├── src/
 <a name="line-4"></a>│   ├── documents/ (pode ser nomeado como render/)
@@ -258,7 +258,7 @@
               </h3>
             
 <p>Antes de começarmos a desenvolver o nosso projeto, precisamos de uma estrutura para ele. Para isso, execute o seguinte comando:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>mkdir &lt;nome-do-seu-projeto&gt; &amp;&amp; cd $_ &amp;&amp; docpad run
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>mkdir &lt;nome-do-seu-projeto&gt; &amp;&amp; cd $_ &amp;&amp; docpad run
 </code></pre></div>
 <blockquote>
 <p>Perceba que estamos executando <strong>3 comandos</strong> na mesma linha. Neste caso, estamos utilizando o operador <code>&amp;&amp;</code> para executar uma instrução mais compacta, além da variável <code>$_</code> que está sendo utilizada como referência para o nome do diretório criado anteriormente.</p>
@@ -281,7 +281,7 @@
               </h4>
             
 <p>Dentro do diretório <code>/documents</code>, crie a página <code>index.html</code> e insira o conteúdo abaixo:</p>
-<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a><span class="cp">&lt;!doctype html&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><a name="line-1"></a><span class="cp">&lt;!doctype html&gt;</span>
 <a name="line-2"></a><span class="nt">&lt;html&gt;</span>
 <a name="line-3"></a><span class="nt">&lt;head&gt;</span>
 <a name="line-4"></a>    <span class="nt">&lt;title&gt;</span>Bem vindo! | Projeto com DocPad<span class="nt">&lt;/title&gt;</span>
@@ -297,7 +297,7 @@
 <p>Show de bola! Como pode ver, o DocPad gerou um novo arquivo para a página que acabamos de criar. Agora, vamos criar uma página interna e inserir um <em>layout</em> também.</p>
 
 <p>Para isso, vamos criar, no mesmo diretório anterior (<code>/documents</code>), um novo documento chamado <code>sobre.html</code> e inserir o conteúdo abaixo:</p>
-<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a><span class="cp">&lt;!doctype html&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><a name="line-1"></a><span class="cp">&lt;!doctype html&gt;</span>
 <a name="line-2"></a><span class="nt">&lt;html&gt;</span>
 <a name="line-3"></a><span class="nt">&lt;head&gt;</span>
 <a name="line-4"></a>    <span class="nt">&lt;title&gt;</span>Sobre | Projeto com DocPad<span class="nt">&lt;/title&gt;</span>
@@ -315,7 +315,7 @@
 <p>Veja como faremos isso:</p>
 
 <p><strong><code>src/layouts/default.html.eco</code></strong></p>
-<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a><span class="cp">&lt;!doctype html&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><a name="line-1"></a><span class="cp">&lt;!doctype html&gt;</span>
 <a name="line-2"></a><span class="nt">&lt;html&gt;</span>
 <a name="line-3"></a><span class="nt">&lt;head&gt;</span>
 <a name="line-4"></a>    <span class="nt">&lt;title&gt;</span><span class="err">&lt;</span>%= @document.title %&gt; | Projeto com DocPad<span class="nt">&lt;/title&gt;</span>
@@ -327,7 +327,7 @@
 <a name="line-10"></a><span class="nt">&lt;/html&gt;</span>
 </code></pre></div>
 <p><strong><code>src/documents/index.html</code></strong></p>
-<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a>---
+<div class="highlight"><pre><code class="language-html" data-lang="html"><a name="line-1"></a>---
 <a name="line-2"></a>title: &quot;Bem vindo!&quot;
 <a name="line-3"></a>layout: &quot;default&quot;
 <a name="line-4"></a>isPage: true
@@ -336,7 +336,7 @@
 <a name="line-7"></a><span class="nt">&lt;p&gt;</span>Este é o Projeto com DocPad!<span class="nt">&lt;/p&gt;</span>
 </code></pre></div>
 <p><strong><code>src/documents/sobre.html</code></strong></p>
-<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a>---
+<div class="highlight"><pre><code class="language-html" data-lang="html"><a name="line-1"></a>---
 <a name="line-2"></a>title: &quot;Sobre&quot;
 <a name="line-3"></a>layout: &quot;default&quot;
 <a name="line-4"></a>isPage: true
@@ -386,7 +386,7 @@
 <p>Para fixarmos esta nova informação, vamos adicionar alguns blocos no nosso <em>layout</em>, o qual foi chamado anteriormente de <code>default.html.eco</code>.</p>
 
 <p>O nosso layout ficará assim agora:</p>
-<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a><span class="nt">&lt;html&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><a name="line-1"></a><span class="nt">&lt;html&gt;</span>
 <a name="line-2"></a><span class="nt">&lt;head&gt;</span>
 <a name="line-3"></a>    <span class="nt">&lt;title&gt;</span><span class="err">&lt;</span>%= @document.title %&gt; | Projeto com DocPad<span class="nt">&lt;/title&gt;</span>
 <a name="line-4"></a>    <span class="err">&lt;</span>%- @getBlock(&quot;meta&quot;).toHTML() %&gt;
@@ -414,7 +414,7 @@
 <p>Vamos adicionar um logo no <code>header</code> do nosso projeto. O arquivo será colocado no diretório <code>files</code> em <code>src/files/images/logo.png</code> e posicionado no corpo do nosso layout para que seja chamado em cada documento:</p>
 
 <p><strong>default.html.eco</strong></p>
-<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a><span class="nt">&lt;body&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><a name="line-1"></a><span class="nt">&lt;body&gt;</span>
 <a name="line-2"></a>  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;/images/logo.gif&quot;</span> <span class="nt">/&gt;</span>
 <a name="line-3"></a>  <span class="nt">&lt;h1&gt;</span><span class="err">&lt;</span>%= @document.title %&gt;<span class="nt">&lt;/h1&gt;</span>
 <a name="line-4"></a>  <span class="err">&lt;</span>%- @content %&gt;
@@ -430,12 +430,12 @@
               </h5>
             
 <p>Agora, vamos adicionar um CSS básico no <code>h1</code> dos nossos documentos. Para isso, adicione o arquivo <code>style.css</code> em <code>src/documents/css/style.css</code> e insira:</p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><a name="line-1"></a><span class="nt">h1</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><a name="line-1"></a><span class="nt">h1</span> <span class="p">{</span>
 <a name="line-2"></a>    <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
 <a name="line-3"></a><span class="p">}</span>
 </code></pre></div>
 <p>depois, atualize o bloco <em>styles</em> no layout <code>default.html.eco</code>:</p>
-<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a><span class="err">&lt;</span>%- @getBlock(&quot;styles&quot;).add([&quot;/css/style.css&quot;]).toHTML() %&gt;
+<div class="highlight"><pre><code class="language-html" data-lang="html"><a name="line-1"></a><span class="err">&lt;</span>%- @getBlock(&quot;styles&quot;).add([&quot;/css/style.css&quot;]).toHTML() %&gt;
 </code></pre></div>
               <h5 id="Scripts">
                 <a name="Scripts" href="#Scripts"></a>Scripts
@@ -446,12 +446,12 @@
 <p>Primeiro, faça o download do <a href="http://code.jquery.com/jquery.js">jQuery</a> para este exemplo e coloque-o no diretório <code>files</code> em <code>src/files/js/vendor/jquery.js</code>.</p>
 
 <p>Agora que o jQuery já está incluso no projeto, vamos criar outro arquivo chamado <code>script.js</code> em <code>src/documents/js/script.js</code> e inserir o conteúdo abaixo:</p>
-<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
 <a name="line-2"></a>    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">().</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
 <a name="line-3"></a><span class="p">})();</span>
 </code></pre></div>
 <p>depois, atualize o bloco <em>script</em> no layout <code>default.html.eco</code>:</p>
-<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a><span class="err">&lt;</span>%- @getBlock(&quot;scripts&quot;).add([&quot;/js/vendor/jquery.js&quot;,&quot;/js/script.js&quot;]).toHTML() %&gt;
+<div class="highlight"><pre><code class="language-html" data-lang="html"><a name="line-1"></a><span class="err">&lt;</span>%- @getBlock(&quot;scripts&quot;).add([&quot;/js/vendor/jquery.js&quot;,&quot;/js/script.js&quot;]).toHTML() %&gt;
 </code></pre></div>
 <p>Pronto! Mas, o nosso método para carregar o <em>CSS</em> e <em>JavaScript</em> não é muito adequado e não favorece para a performance do nosso projeto. O que podemos fazer a respeito? Vamos conversar sobre pré-processadores. :)</p>
 
@@ -484,7 +484,7 @@
 <li>Renomei a página <code>sobre.html</code> para <code>sobre.html.md</code> (isto vai indicar que queremos compilar o arquivo Markdown em HTML).</li>
 <li>Abra o arquivo <code>sobre.html.md</code> e escreva o conteúdo abaixo com a sintaxe <em>markdown</em>:</li>
 </ol>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>Este é o meu primeiro projeto com o **fantástico gerador estático DocPad**.
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>Este é o meu primeiro projeto com o **fantástico gerador estático DocPad**.
 </code></pre></div>
               <h4 id="Stylus-gt-CSS">
                 <a name="Stylus-gt-CSS" href="#Stylus-gt-CSS"></a>Stylus -&gt; CSS
@@ -508,7 +508,7 @@
 <li>Renomei o arquivo <code>script.js</code> para <code>script.js.coffee</code> (isto vai indicar que queremos compilar o arquivo CoffeeScript em JavaScript).</li>
 <li>Abra o arquivo <code>script.js.coffee</code> e atualize o seu conteúdo para refletir o abaixo:</li>
 </ol>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>$(&quot;body&quot;).hide().fadeIn(1000)
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>$(&quot;body&quot;).hide().fadeIn(1000)
 </code></pre></div>
 <p>Nos três procedimentos anteriores, o resultado final será o mesmo. Entretanto, estaremos utilizando os benfícios do <em>markdown</em>, <em>stylus</em> e <em>coffeescript</em> a partir de agora. Execute o DocPad com o comando <code>docpad run</code> e faça alguns testes.</p>
 
@@ -552,7 +552,7 @@
 <li>Crie um arquivo <code>docpad.coffee</code> <em>(ou com uma das extensões supracitadas)</em></li>
 <li>Insira o conteúdo abaixo:</li>
 </ol>
-<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="err">#</span> <span class="nx">Configura</span><span class="err">çõ</span><span class="nx">es</span> <span class="k">do</span> <span class="nx">DocPad</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="err">#</span> <span class="nx">Configura</span><span class="err">çõ</span><span class="nx">es</span> <span class="k">do</span> <span class="nx">DocPad</span>
 <a name="line-2"></a><span class="nx">docpadConfig</span> <span class="o">=</span> <span class="p">{</span>
 <a name="line-3"></a>    <span class="err">#</span> <span class="p">...</span>
 <a name="line-4"></a><span class="p">}</span>
@@ -590,14 +590,14 @@
 <p>Tudo o que está disponível em nossos <em>templates</em> é chamado de <a href="http://docpad.org/docpad/template-data">TemplateData</a>. Por exemplo, <code>@document</code> é parte dos dados em nosso <em>template</em>. Para ser capaz de abstrair algo que nossos <em>templates</em> vão usar, teremos de estender os nossos dados. Nós podemos fazer isso, modificando o valor de uma propriedade. Vamos aplicar isso na prática para ver como fica.</p>
 
 <p>No seu arquivo de configuração <code>docpad.coffee</code>, atualize o conteúdo para refletir o seguinte:</p>
-<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">docpadConfig</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">docpadConfig</span> <span class="o">=</span> <span class="p">{</span>
 <a name="line-2"></a>    <span class="nx">templateData</span><span class="o">:</span>
 <a name="line-3"></a>        <span class="nx">site</span><span class="o">:</span>
 <a name="line-4"></a>            <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Projeto com DocPad&quot;</span>
 <a name="line-5"></a><span class="p">}</span>
 </code></pre></div>
 <p>Com isso, nosso título encontra-se abstraído e podemos atualizar a tag <code>&lt;title&gt;</code> no <em>template</em> <code>default.html.eco</code>:</p>
-<div class="highlight"><pre><code class="html language-html" data-lang="html"><a name="line-1"></a><span class="nt">&lt;title&gt;</span><span class="err">&lt;</span>%= if @document.title then &quot;#{@document.title} | #{@site.title}&quot; else @site.title %&gt;<span class="nt">&lt;/title&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><a name="line-1"></a><span class="nt">&lt;title&gt;</span><span class="err">&lt;</span>%= if @document.title then &quot;#{@document.title} | #{@site.title}&quot; else @site.title %&gt;<span class="nt">&lt;/title&gt;</span>
 </code></pre></div>
 <p>No entanto, podemos deixá-lo mais abstrato com o uso de uma função no nosso arquivo de configuração. É aí que o <em>Template Helpers</em> entra em ação.</p>
 
@@ -608,7 +608,7 @@
 <p>Quando utilizamos as extensões <code>.coffee</code> ou <code>js</code>, podemos definir funções. Com isso podemos utilizar funções para os dados do nosso <em>template</em>, o qual chamamos de <em>Template Helpers</em>.</p>
 
 <p>Assim, vamos atualizar o nosso arquivo de configuração:</p>
-<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">docpadConfig</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">docpadConfig</span> <span class="o">=</span> <span class="p">{</span>
 <a name="line-2"></a>    <span class="nx">templateData</span><span class="o">:</span>
 <a name="line-3"></a>        <span class="nx">site</span><span class="o">:</span>
 <a name="line-4"></a>            <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Projeto com DocPad&quot;</span>
@@ -617,7 +617,7 @@
 <a name="line-7"></a><span class="p">}</span>
 </code></pre></div>
 <p>e o título do nosso <em>template</em> <code>default.html.eco</code> para:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>&lt;title&gt;&lt;%= @getTitle() %&gt;&lt;/title&gt;
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>&lt;title&gt;&lt;%= @getTitle() %&gt;&lt;/title&gt;
 </code></pre></div>
 <blockquote>
 <p>Nota: para mais detalhes a respeito de <em>Template Data</em> e <em>Template Helpers</em>, <a href="http://docpad.org/docs/template-data">clique aqui</a></p>
@@ -639,7 +639,7 @@
 </ul>
 
 <p>Agora, vamos criar um menu para navegar no nosso projeto, mas, antes, vamos atualizar o nosso <em>layout</em> <code>default.html.eco</code> e inserir, logo após o <code>h1</code>, o conteúdo abaixo:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>&lt;ul&gt;
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>&lt;ul&gt;
 <a name="line-2"></a>    &lt;% for page in @getCollection(&quot;html&quot;).findAll({isPage:true}).toJSON(): %&gt;
 <a name="line-3"></a>        &lt;li class=&quot;&lt;%= if page.id is @document.id then &#39;active&#39; else &#39;inactive&#39; %&gt;&quot;&gt;
 <a name="line-4"></a>            &lt;a href=&quot;&lt;%= page.url %&gt;&quot;&gt;
@@ -662,14 +662,14 @@
 <p>O nosso menu está criado. Porém, executar essa consulta toda vez que renderizarmos o <em>layout</em> não é muito válido. Para isso, vamos atribuir um método capaz de executar esta consulta uma vez somente e fornecer o acesso aos resultados dessa <em>collection</em>.</p>
 
 <p>Abra o seu arquivo <code>docpad.coffee</code> e atualize-o com o conteúdo abaixo:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>docpadConfig = {
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>docpadConfig = {
 <a name="line-2"></a>    collections:
 <a name="line-3"></a>        pages: -&gt;
 <a name="line-4"></a>            @getCollection(&quot;html&quot;).findAllLive({isPage:true})
 <a name="line-5"></a>}
 </code></pre></div>
 <p>em seguida, substitua a linha do <em>Template Helper</em> <code>getCollection</code> no seu arquivo <code>default.html.eco</code> para:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>&lt;% for page in @getCollection(&quot;pages&quot;).toJSON(): %&gt;
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>&lt;% for page in @getCollection(&quot;pages&quot;).toJSON(): %&gt;
 </code></pre></div>
               <h2 id="Ampliando-os-horizontes">
                 <a name="Ampliando-os-horizontes" href="#Ampliando-os-horizontes"></a>Ampliando os horizontes
@@ -722,7 +722,7 @@
     <div class="span9">
         <section class="box-details">
             <h3>Vitor Britto</h3>
-            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+            <p>Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
         </section>
     </div>
 </section>

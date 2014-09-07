@@ -33,7 +33,7 @@
 
                 <div class="span4">
                     <div class="header-info">
-                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog">Vitor Britto</a></h1>
                         <h4 class="header-description">Desenvolvedor Web</h4>
                     </div>
                 </div>
@@ -140,7 +140,7 @@
               <h5 id="Tarefa-<code>watch<-code>">
                 <a name="Tarefa-<code>watch<-code>" href="#Tarefa-<code>watch<-code>"></a>Tarefa <code>watch</code>
               </h5>
-            <div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">watch</span><span class="o">:</span> <span class="p">{</span>
+            <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">watch</span><span class="o">:</span> <span class="p">{</span>
 <a name="line-2"></a>    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
 <a name="line-3"></a>        <span class="nx">livereload</span><span class="o">:</span> <span class="kc">true</span>
 <a name="line-4"></a>    <span class="p">},</span>
@@ -170,7 +170,7 @@
               <h5 id="Tarefa-<code>connect<-code>">
                 <a name="Tarefa-<code>connect<-code>" href="#Tarefa-<code>connect<-code>"></a>Tarefa <code>connect</code>
               </h5>
-            <div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">connect</span><span class="o">:</span> <span class="p">{</span>
+            <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">connect</span><span class="o">:</span> <span class="p">{</span>
 <a name="line-2"></a>    <span class="nx">server</span><span class="o">:</span> <span class="p">{</span>
 <a name="line-3"></a>        <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
 <a name="line-4"></a>            <span class="nx">port</span><span class="o">:</span> <span class="mi">9000</span><span class="p">,</span>
@@ -199,7 +199,7 @@
               </h3>
             
 <p>Agora que as suas tarefas estão configuradas, você precisa carregar os seus plugins no <code>Gruntfile</code>.</p>
-<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-watch&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-watch&#39;</span><span class="p">);</span>
 <a name="line-2"></a><span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-connect&#39;</span><span class="p">);</span>
 </code></pre></div>
 <p><strong>Nota:</strong> você pode utilizar um plugin chamado <a href="https://github.com/sindresorhus/load-grunt-tasks">load-grunt-tasks</a> para fazer uma requisição de todos os seus plugins instalados e carregá-los automaticamente no seu <code>Gruntfile</code> de forma bem simples.</p>
@@ -209,12 +209,12 @@
               </h3>
             
 <p>Com as tarefas configuradas e os plugins carregados, basta configurar uma tarefa customizada.</p>
-<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="p">[</span> <span class="s2">&quot;connect&quot;</span><span class="p">,</span> <span class="s2">&quot;watch&quot;</span> <span class="p">]);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="p">[</span> <span class="s2">&quot;connect&quot;</span><span class="p">,</span> <span class="s2">&quot;watch&quot;</span> <span class="p">]);</span>
 </code></pre></div>
               <h3 id="Resultado-final">
                 <a name="Resultado-final" href="#Resultado-final"></a>Resultado final
               </h3>
-            <div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">grunt</span><span class="p">)</span> <span class="p">{</span>
+            <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><a name="line-1"></a><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">grunt</span><span class="p">)</span> <span class="p">{</span>
 <a name="line-2"></a>
 <a name="line-3"></a>    <span class="s2">&quot;use strict&quot;</span>
 <a name="line-4"></a>
@@ -283,7 +283,7 @@
     <div class="span9">
         <section class="box-details">
             <h3>Vitor Britto</h3>
-            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+            <p>Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
         </section>
     </div>
 </section>

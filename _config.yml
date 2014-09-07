@@ -1,9 +1,24 @@
-# Info
+# ----------------------------------------------
+# GENERAL INFO
+# ----------------------------------------------
+
+# Author Info
 name:           Vitor Britto
 description:    Desenvolvedor Web
-url:            http://www.vitorbritto.com.br/blog
-baseurl:        http://www.vitorbritto.com.br/blog/
-domain:         vitorbritto.com.br
+avatar:         assets/images/avatar.jpg
+twitter:        https://twitter.com/vitorbritto
+facebook:       https://www.facebook.com/vbwebstudio
+github:         https://github.com/vitorbritto
+rssfeed:        http://feeds.feedburner.com/vitorbritto
+
+# Web Serve
+# fullurl:        'http://0.0.0.0:4000'                  # use this url for DEVELOPMENT
+fullurl:        'http://www.vitorbritto.com.br/blog'   # use this url for PRODUCTION
+
+
+# ----------------------------------------------
+# STRUCTURE AND FILES
+# ----------------------------------------------
 
 # Exclude directories and/or files
 exclude: [
@@ -18,7 +33,6 @@ exclude: [
 'Gemfile.lock',
 'sass',
 'node_modules',
-'legacy',
 'main.js',
 'README.md',
 ]
@@ -26,10 +40,17 @@ exclude: [
 # Main Config
 source:         .
 destination:    ./_build
-permalink:      /:title/
+plugins:        ./_plugins
+layouts:        ./_layouts
 
-# Plugins
+# Outputing
+permalink:      :title/
+
+# Conversion
 markdown:       redcarpet
+highlighter:    pygments
+
+# Markdown Processors
 redcarpet:
     extensions: [
         'no_intra_emphasis',
@@ -38,12 +59,3 @@ redcarpet:
         'tables',
         'with_toc_data'
     ]
-
-# Use Pygments to highlight code blocks
-pygments:       true
-
-# Social links
-twitter:        https://twitter.com/vitorbritto
-facebook:       https://www.facebook.com/vbwebstudio
-github:         https://github.com/vitorbritto
-rssfeed:        http://feeds.feedburner.com/vitorbritto

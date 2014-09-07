@@ -33,7 +33,7 @@
 
                 <div class="span4">
                     <div class="header-info">
-                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog">Vitor Britto</a></h1>
                         <h4 class="header-description">Desenvolvedor Web</h4>
                     </div>
                 </div>
@@ -132,7 +132,7 @@
 <p>É possível também adicionar várias entradas ao mesmo tempo.</p>
 
 <p>Veja no exemplo abaixo:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/opt/bin:~/opt/node/bin
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/opt/bin:~/opt/node/bin
 </code></pre></div>
 <p>Perceba que o caracter <code>:</code> demarca o fim/início de cada caminho.</p>
 
@@ -167,19 +167,19 @@
               </h3>
             
 <p>Confira abaixo:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># arquivo .bashrc</span>
-<a name="line-2"></a><span class="o">[</span> -n <span class="s2">&quot;$PS1&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bash_profile;
-</code></pre></div><div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># arquivo .bash_profile</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># arquivo .bashrc</span>
+<a name="line-2"></a><span class="o">[</span> -n <span class="s2">&quot;$PS1&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bash_profile<span class="p">;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># arquivo .bash_profile</span>
 <a name="line-2"></a><span class="c"># paths</span>
 <a name="line-3"></a><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/seu/caminho:~/outro/caminho
 <a name="line-4"></a><span class="c"># aliases</span>
 <a name="line-5"></a><span class="nb">alias </span><span class="nv">la</span><span class="o">=</span><span class="s2">&quot;ls -la&quot;</span>
 <a name="line-6"></a><span class="c"># functions</span>
-<a name="line-7"></a><span class="k">function </span>apepath <span class="o">{</span>
-<a name="line-8"></a>    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;${!1}&quot;</span> <span class="o">]</span>; <span class="k">then</span>
-<a name="line-9"></a><span class="k">        </span><span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;$2&quot;</span>
+<a name="line-7"></a><span class="k">function</span> apepath <span class="o">{</span>
+<a name="line-8"></a>    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;${!1}&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<a name="line-9"></a>        <span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;$2&quot;</span>
 <a name="line-10"></a>    <span class="k">else</span>
-<a name="line-11"></a><span class="k">        </span><span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;${!1}:$2&quot;</span>
+<a name="line-11"></a>        <span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;${!1}:$2&quot;</span>
 <a name="line-12"></a>    <span class="k">fi</span>
 <a name="line-13"></a><span class="o">}</span>
 <a name="line-14"></a>...
@@ -189,34 +189,34 @@
               </h4>
             
 <p>Perceba que temos um <code>[ -n &quot;$PS1&quot; ] &amp;&amp;</code> antes do <code>source</code>. Você deve estar se pergunta o que é isso. Pois bem. Este trecho do código retorna o prompt do terminal em formato <em>string</em>. Por exemplo, no meu terminal, é renderizado:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>vitorbritto at ~
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>vitorbritto at ~
 </code></pre></div>
 <p>Ao digitar <code>echo $PS1</code>, será retornado:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>\[\033]0;\w\007\]\n\[\]\u\[\] at \[\]\w$(prompt_git)\n\[\]$ \[\]
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>\[\033]0;\w\007\]\n\[\]\u\[\] at \[\]\w$(prompt_git)\n\[\]$ \[\]
 </code></pre></div>
 <p>Já o operador <code>&amp;&amp;</code> é utlizado para combinar dois ou mais comandos em uma linha compacta no Unix.</p>
 
-<p>Perceba também que, além dos <em>paths</em>, estamos registrando os nossos atalhos (_aliases_), funções bash, configurações do prompt e demais recursos que pretendemos utilizar no terminal, no <code>.bash_profile</code>.</p>
+<p>Perceba também que, além dos <em>paths</em>, estamos registrando os nossos atalhos (<em>aliases</em>), funções bash, configurações do prompt e demais recursos que pretendemos utilizar no terminal, no <code>.bash_profile</code>.</p>
 
               <h3 id="Dando-uma-mãozinha">
                 <a name="Dando-uma-mãozinha" href="#Dando-uma-mãozinha"></a>Dando uma mãozinha
               </h3>
             
-<p>Podemos usar funções para facilitar a inclusão de novos caminhos (_paths_) na variável global PATH.</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># append para novo caminho</span>
+<p>Podemos usar funções para facilitar a inclusão de novos caminhos (<em>paths</em>) na variável global PATH.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># append para novo caminho</span>
 <a name="line-2"></a>apepath<span class="o">()</span> <span class="o">{</span>
-<a name="line-3"></a>    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;${!1}&quot;</span> <span class="o">]</span>; <span class="k">then</span>
-<a name="line-4"></a><span class="k">        </span><span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;$2&quot;</span>
+<a name="line-3"></a>    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;${!1}&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<a name="line-4"></a>        <span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;$2&quot;</span>
 <a name="line-5"></a>    <span class="k">else</span>
-<a name="line-6"></a><span class="k">        </span><span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;${!1}:$2&quot;</span>
+<a name="line-6"></a>        <span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;${!1}:$2&quot;</span>
 <a name="line-7"></a>    <span class="k">fi</span>
 <a name="line-8"></a><span class="o">}</span>
 <a name="line-9"></a><span class="c"># prepend para novo caminho</span>
 <a name="line-10"></a>prepath<span class="o">()</span> <span class="o">{</span>
-<a name="line-11"></a>    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;${!1}&quot;</span> <span class="o">]</span>; <span class="k">then</span>
-<a name="line-12"></a><span class="k">        </span><span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;$2&quot;</span>
+<a name="line-11"></a>    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;${!1}&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<a name="line-12"></a>        <span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;$2&quot;</span>
 <a name="line-13"></a>    <span class="k">else</span>
-<a name="line-14"></a><span class="k">        </span><span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;$2:${!1}&quot;</span>
+<a name="line-14"></a>        <span class="nb">export</span> <span class="s2">&quot;$1&quot;</span><span class="o">=</span><span class="s2">&quot;$2:${!1}&quot;</span>
 <a name="line-15"></a>    <span class="k">fi</span>
 <a name="line-16"></a><span class="o">}</span>
 <a name="line-17"></a><span class="c"># Executamos as funções da seguinte forma:</span>
@@ -239,7 +239,7 @@
     <div class="span9">
         <section class="box-details">
             <h3>Vitor Britto</h3>
-            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+            <p>Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
         </section>
     </div>
 </section>

@@ -33,7 +33,7 @@
 
                 <div class="span4">
                     <div class="header-info">
-                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog">Vitor Britto</a></h1>
                         <h4 class="header-description">Desenvolvedor Web</h4>
                     </div>
                 </div>
@@ -125,10 +125,10 @@
 <p>Para verificar quais processos estão em execução, basta executar o comando <em>ps</em> (process status). Quando declarado sem qualquer argumento, o comando <em>ps</em> exibe todos os processos vinculados com a sessão atual do seu sistema.</p>
 
 <p><strong>Confira o exemplo abaixo:</strong></p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a>vitorbritto at ~
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a>vitorbritto at ~
 <a name="line-2"></a><span class="nv">$ </span>ps
 <a name="line-3"></a>  PID TTY           TIME CMD
-<a name="line-4"></a> 2092 ttys000    0:00.97 -bash
+<a name="line-4"></a> <span class="m">2092</span> ttys000    0:00.97 -bash
 </code></pre></div>
 <p>Note que neste exemplo, o comando <em>ps</em> exibe o ID do processo, em qual terminal o processo está vinculado, o tempo acumulado que este processo encontra-se em execução e o comando para este processo respectivamente.</p>
 
@@ -141,7 +141,7 @@
               </h3>
             
 <p>O comando <em>ps</em> é um dos mais comuns e utilizados no/pelo Unix, mas oferece algumas diferenças de sintaxe para renderizar o output em seus variantes (flavors). A melhor maneira de entender como a sintaxe do <em>process status</em> funciona no seu sistema, é utilizando o <strong>man pages</strong>. Para facilitar a leitura, adicione e utilize o <em>alias</em> abaixo para ler em formato PDF o manual do <em>ps</em>. Se preferir, execute da maneira mais prática e convencional com: <code>man ps</code>.</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># Insira no .bashrc:</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># Insira no .bashrc:</span>
 <a name="line-2"></a><span class="nb">alias </span><span class="nv">manpdf</span><span class="o">=</span><span class="s2">&quot;man -t $1 | pstopdf -i -o $1.pdf&quot;</span>
 <a name="line-3"></a><span class="c"># Execute com:</span>
 <a name="line-4"></a><span class="nv">$ </span>manpdf ps
@@ -178,10 +178,10 @@
 <p>Para saber em qual estado o seu sistema se encontra, utilize o comando <code>ps</code> com o argumento <code>u</code>.</p>
 
 <p>Confira o exemplo abaixo:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a>vitorbritto at ~
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a>vitorbritto at ~
 <a name="line-2"></a><span class="nv">$ </span>ps u
 <a name="line-3"></a>USER         PID    %CPU %MEM VSZ       RSS  TTY   STAT STARTED   TIME COMMAND
-<a name="line-4"></a>vitorbritto  2092   0.0  0.1  2437540   2924 s000  S     5:39PM   0:01.20 -bash
+<a name="line-4"></a>vitorbritto  <span class="m">2092</span>   0.0  0.1  <span class="m">2437540</span>   <span class="m">2924</span> s000  S     5:39PM   0:01.20 -bash
 </code></pre></div>
 <p>Perceba que o comando retorna uma série de informações a respeito do sistema no output (terminal), como:</p>
 
@@ -219,18 +219,18 @@
 <p>Já que este artigo não se trata do operador <code>|</code> (pipe) e do comando <code>wc</code> (e seus respectivos argumentos), recomendo a leitura de suas man pages. É uma ótima oportunidade para gerar um PDF, não é? :)</p>
 
 <p>Pois bem. Os procesos são programas em execução e que lidam com aspectos essenciais de manipulação e manutenção no seu sistema. Muitos destes processos são, convencionalmente, chamados de <em>daemons</em> e eles executam algumas rotinas. Digite o comando a seguir para visualizar quais processos estão em execução no seu sistema:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>ps ax
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>ps ax
 </code></pre></div>
 <p>Será retornada uma lista similar a esta:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a>vitorbritto at ~
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a>vitorbritto at ~
 <a name="line-2"></a><span class="nv">$ </span>ps ax
 <a name="line-3"></a>  PID   TT  STAT      TIME COMMAND
-<a name="line-4"></a>    1   ??  Ss     0:48.81 /sbin/launchd
-<a name="line-5"></a>   10   ??  Ss     0:01.99 /usr/libexec/kextd
-<a name="line-6"></a>   11   ??  Ss     0:02.91 /usr/libexec/UserEventAgent -l System
-<a name="line-7"></a>   12   ??  Ss     0:03.60 /usr/sbin/notifyd
-<a name="line-8"></a>   14   ??  Ss     0:06.54 /usr/sbin/ntpd -c /private/etc/ntp-restrict.conf -n -g -p /var/run/ntpd.pid -f /var/db/ntp.drift
-<a name="line-9"></a>   17   ??  SNs    0:00.92 /usr/libexec/warmd
+<a name="line-4"></a>    <span class="m">1</span>   ??  Ss     0:48.81 /sbin/launchd
+<a name="line-5"></a>   <span class="m">10</span>   ??  Ss     0:01.99 /usr/libexec/kextd
+<a name="line-6"></a>   <span class="m">11</span>   ??  Ss     0:02.91 /usr/libexec/UserEventAgent -l System
+<a name="line-7"></a>   <span class="m">12</span>   ??  Ss     0:03.60 /usr/sbin/notifyd
+<a name="line-8"></a>   <span class="m">14</span>   ??  Ss     0:06.54 /usr/sbin/ntpd -c /private/etc/ntp-restrict.conf -n -g -p /var/run/ntpd.pid -f /var/db/ntp.drift
+<a name="line-9"></a>   <span class="m">17</span>   ??  SNs    0:00.92 /usr/libexec/warmd
 <a name="line-10"></a>   ...
 </code></pre></div>
 <blockquote>
@@ -244,13 +244,13 @@
 <p>Cada processo possui um ambiente com diversos atributos, assim como argumentos para a linha de comando, variáveis do ambiente, descrição dos arquivos, mascara para criação de arquivos e muito mais.</p>
 
 <p>Para verificar determinados atributos dos processos, você pode executar o comando <em>ps</em> com a flag <code>-o</code> e os atributos desejados. Veja o exemplo abaixo:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>ps -o user,pid,stime,comm
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>ps -o user,pid,stime,comm
 </code></pre></div>
 <p>E será renderizado isto:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a>vitorbritto at ~
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a>vitorbritto at ~
 <a name="line-2"></a><span class="nv">$ </span>ps -o user,pid,stime,comm
 <a name="line-3"></a>USER          PID     STIME COMM
-<a name="line-4"></a>vitorbritto  2092   0:00.54 -bash
+<a name="line-4"></a>vitorbritto  <span class="m">2092</span>   0:00.54 -bash
 </code></pre></div>
 <p>Confira uma tabela dos atributos mais comuns disponíveis no Unix.</p>
 
@@ -323,7 +323,7 @@
 <p>O sinal padrão para o comando <code>kill</code> é o <em>SIGTERM</em> (terminar).</p>
 
 <p>Para finalizar um processo, basta inserir o PID (identificador do processo). Veja o exemplo abaixo:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a># Primeiro, buscamos o PID que queremos finalizar.
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a># Primeiro, buscamos o PID que queremos finalizar.
 <a name="line-2"></a># Digamos que o processo a ser finalizado seja o navegador Firefox.
 <a name="line-3"></a># No comando abaixo, passo a flag -o par retornar um output customizado
 <a name="line-4"></a># com o comando e o identificador do processo (PID). Logo após uso o pipe (|)
@@ -339,7 +339,7 @@
 <a name="line-14"></a>$ kill 787
 </code></pre></div>
 <p>Com o comando <code>kill -l</code>, é possível renderizar no terminal os possíveis sinais com os seus respectivos números. Veja um exemplo abaixo:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a>vitorbritto at ~
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>vitorbritto at ~
 <a name="line-2"></a>$ kill -l
 <a name="line-3"></a> 1) SIGHUP       2) SIGINT       3) SIGQUI       4) SIGILL
 <a name="line-4"></a> 5) SIGTRAP      6) SIGABRT      7) SIGEMT       8) SIGFPE
@@ -360,7 +360,7 @@
 
 <p>Em alguns sistemas, o <code>killall</code> é utilizado para enviar sinais aos processos através de nomes. Tenha cuidado ao utilizar este cara, recomendo o uso do <code>pkill</code>. Desta forma, ao invés de utilizar o ID do processo (PID), você utilizaria o nome do processo.
 Veja abaixo um exemplo:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>pkill firefox
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>pkill firefox
 </code></pre></div>
 <p>O argumento utilizado no <code>pkill</code> é uma simples expressão regular a ser comparada. Mesmo assim, antes de usar o <code>pkill</code>, certifique-se de que a expressão existe com o <code>pgrep</code>.</p>
 
@@ -375,21 +375,21 @@ Veja abaixo um exemplo:</p>
 <p>Sem dúvidas, este é um dos comandos mais interessantes sobre processos. O <code>pstree</code> permite que uma estrutura hierárquica seja renderizada no terminal, onde cada processo filho (child process) é relacionado ao seu processo pai (parent process).</p>
 
 <p>Infelizmente, no OSX é preciso instalar este utilitário também. Veja o exemplo abaixo como podemos instalar este camarada com o <em>homebrew</em> e a sua posterior visualização no terminal:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># 1. Instale com:</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># 1. Instale com:</span>
 <a name="line-2"></a><span class="nv">$ </span>brew install pstree
 <a name="line-3"></a><span class="c"># 2. Execute com:</span>
 <a name="line-4"></a><span class="nv">$ </span>pstree
 <a name="line-5"></a><span class="c"># 3. O resultado (parcial) será:</span>
 <a name="line-6"></a>vitorbritto at ~
 <a name="line-7"></a><span class="nv">$ </span>pstree
-<a name="line-8"></a>-+<span class="o">=</span> 00001 root /sbin/launchd
-<a name="line-9"></a> |--<span class="o">=</span> 00010 root /usr/libexec/kextd
-<a name="line-10"></a> |--<span class="o">=</span> 00011 root /usr/libexec/UserEventAgent -l System
-<a name="line-11"></a> |--<span class="o">=</span> 00012 root /usr/sbin/notifyd
-<a name="line-12"></a> |--<span class="o">=</span> 00014 root /usr/sbin/ntpd -c /private/etc/ntp-restrict.conf -n -g -p /var/run/ntpd.pid -f /var/db/ntp.drift
-<a name="line-13"></a> |--<span class="o">=</span> 00017 nobody /usr/libexec/warmd
-<a name="line-14"></a> |--<span class="o">=</span> 00018 _usbmuxd /System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/Resources/usbmuxd -launchd
-<a name="line-15"></a> |--<span class="o">=</span> 00020 root /usr/sbin/syslogd
+<a name="line-8"></a>-+<span class="o">=</span> <span class="m">00001</span> root /sbin/launchd
+<a name="line-9"></a> <span class="p">|</span>--<span class="o">=</span> <span class="m">00010</span> root /usr/libexec/kextd
+<a name="line-10"></a> <span class="p">|</span>--<span class="o">=</span> <span class="m">00011</span> root /usr/libexec/UserEventAgent -l System
+<a name="line-11"></a> <span class="p">|</span>--<span class="o">=</span> <span class="m">00012</span> root /usr/sbin/notifyd
+<a name="line-12"></a> <span class="p">|</span>--<span class="o">=</span> <span class="m">00014</span> root /usr/sbin/ntpd -c /private/etc/ntp-restrict.conf -n -g -p /var/run/ntpd.pid -f /var/db/ntp.drift
+<a name="line-13"></a> <span class="p">|</span>--<span class="o">=</span> <span class="m">00017</span> nobody /usr/libexec/warmd
+<a name="line-14"></a> <span class="p">|</span>--<span class="o">=</span> <span class="m">00018</span> _usbmuxd /System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/Resources/usbmuxd -launchd
+<a name="line-15"></a> <span class="p">|</span>--<span class="o">=</span> <span class="m">00020</span> root /usr/sbin/syslogd
 </code></pre></div>
 <p>Certamente, é possível escrever um programa em Shell Script para renderizar uma <code>tree</code> de acordo com as suas necessidades. Não entraremos em detalhes sobre como realizar este procedimento, para não perdermos o foco deste artigo, mas fique a vontade para realizar algumas pesquisas. Ok?</p>
 
@@ -402,31 +402,31 @@ Veja abaixo um exemplo:</p>
 <p>Com o comando <code>top</code> é possível iniciar um utilitário interativo para análise dos processos, os quais são atualizados frequentemente e mostram informações físicas e virtuais da memória, CPU e processos lentos/travados (<a href="http://en.wikipedia.org/wiki/Zombie_process">Zombie Process</a>).</p>
 
 <p>Confira um exemplo abaixo:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a>Processes: 75 total, 4 running, 2 stuck, 69 sleeping, 494 threads                                                                                            03:35:56
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a>Processes: <span class="m">75</span> total, <span class="m">4</span> running, <span class="m">2</span> stuck, <span class="m">69</span> sleeping, <span class="m">494</span> threads                                                                                            03:35:56
 <a name="line-2"></a>Load Avg: 3.99, 3.51, 3.28  CPU usage: 66.8% user, 24.56% sys, 9.34% idle    SharedLibs: 2472K resident, 2260K data, 0B linkedit.
-<a name="line-3"></a>MemRegions: 34948 total, 642M resident, 17M private, 272M shared. PhysMem: 330M wired, 869M active, 834M inactive, 2034M used, 14M free.
+<a name="line-3"></a>MemRegions: <span class="m">34948</span> total, 642M resident, 17M private, 272M shared. PhysMem: 330M wired, 869M active, 834M inactive, 2034M used, 14M free.
 <a name="line-4"></a>VM: 187G vsize, 1101M framework vsize, 858219<span class="o">(</span>1<span class="o">)</span> pageins, 546183<span class="o">(</span>0<span class="o">)</span> pageouts. Networks: packets: 2578121/4689M in, 2119681/2093M out.
 <a name="line-5"></a>Disks: 564676/9683M <span class="nb">read</span>, 289083/12G written.
 <a name="line-6"></a>
 <a name="line-7"></a>PID   COMMAND      %CPU  TIME     <span class="c">#TH  #WQ  #POR #MREGS RPRVT  RSHRD  RSIZE  VPRVT  VSIZE  PGRP PPID STATE    UID  FAULTS     COW      MSGSENT    MSGRECV</span>
-<a name="line-8"></a>3495  top          16.9  00:04.34 1/1  0    28   29     1368K  216K   2076K  17M    2378M  3495 2092 running  0    9727+      85       1294936+   647425+
-<a name="line-9"></a>3494  taskgated    0.0   00:00.03 2    0    31   40     380K   272K   1740K  20M    2381M  3494 1    sleeping 0    577        106      116        48
-<a name="line-10"></a>3479  ocspd        0.0   00:00.04 1    0    28   29     676K   276K   2100K  26M    2387M  3479 1    sleeping 0    749        98       185        77
-<a name="line-11"></a>3377  distnoted    0.0   00:00.01 2    1    40   46     392K   240K   1012K  22M    2383M  3377 3374 sleeping 89   413        83       255        124
-<a name="line-12"></a>3376  mdworker     0.0   00:00.36 3    1    54   71     1492K  3748K  5632K  23M    2412M  3376 3374 sleeping 89   2623       203      1702       757
-<a name="line-13"></a>3374  launchd      0.0   00:00.02 2    0    53   45     368K   416K   784K   38M    2399M  3374 1    sleeping 89   602        179      1254       523
-<a name="line-14"></a>2482  Mou          0.0   22:13.93 7    1    174  480    10M    12M    31M    301M   19G    2482 137  sleeping 501  369777     596      4043593+   2069826+
-<a name="line-15"></a>2447- node-webkit  17.6  69:54.83 4/2  1    78   472    10M+   40M-   39M+   75M+   807M   2443 2443 running  501  138640191+ 690      2239122+   1119229+
-<a name="line-16"></a>2445- node-webkit  110.2 06:01:21 28/1 1    137- 913-   145M+  36M    410M+  687M-  1426M- 2443 2443 running  501  1889563+   838      259273383+ 133231723+
-<a name="line-17"></a>2443- node-webkit  10.9  43:43.71 42   1    266  382    3204K  37M    19M+   341M   1102M  2443 137  stuck    501  168935+    1219     41720371+  16962182+
-<a name="line-18"></a>2421  Preview      0.0   01:35.89 6    1    185  895    12M    24M    34M    222M   3708M  2421 137  sleeping 501  196129     745      380311     187637
-<a name="line-19"></a>2092  bash         0.0   00:01.46 1    0    20   26     1268K  216K   1668K  19M    2380M  2092 2091 sleeping 501  15364      4346     491        237
-<a name="line-20"></a>2091  login        0.0   00:00.03 2    1    34   58     0B     216K   432K   22M    2391M  2091 2089 sleeping 0    748        121      292        138
-<a name="line-21"></a>2089  Terminal     1.5   01:04.90 7    3    135  330    7376K  9412K  23M    32M    2538M  2089 137  sleeping 501  115422     539      342779+    165218+
-<a name="line-22"></a>1034  mdworker     0.0   00:47.94 4    1    55   98     3096K  4116K  8244K  29M    2418M  1034 137  sleeping 501  126235     278      427269     174393
-<a name="line-23"></a>992   Sparrow      0.0   18:16.79 17   4    309  1955   51M    17M    67M    418M   3779M  992  137  sleeping 501  1391524    1828     6624660+   3008127+
-<a name="line-24"></a>885   plugin-conta 0.0   30:46.44 8    1    487  1344   1356K  28M    5816K  56M    2725M  787  787  sleeping 501  51300527   6662     17404742+  8400203+
-<a name="line-25"></a>787   firefox      11.0  04:42:22 74   1    339  19088  281M   34M    374M   514M   3563M  787  137  sleeping 501  11793724   2573162  498594082+ 245596606+
+<a name="line-8"></a><span class="m">3495</span>  top          16.9  00:04.34 1/1  <span class="m">0</span>    <span class="m">28</span>   <span class="m">29</span>     1368K  216K   2076K  17M    2378M  <span class="m">3495</span> <span class="m">2092</span> running  <span class="m">0</span>    9727+      <span class="m">85</span>       1294936+   647425+
+<a name="line-9"></a><span class="m">3494</span>  taskgated    0.0   00:00.03 <span class="m">2</span>    <span class="m">0</span>    <span class="m">31</span>   <span class="m">40</span>     380K   272K   1740K  20M    2381M  <span class="m">3494</span> <span class="m">1</span>    sleeping <span class="m">0</span>    <span class="m">577</span>        <span class="m">106</span>      <span class="m">116</span>        48
+<a name="line-10"></a><span class="m">3479</span>  ocspd        0.0   00:00.04 <span class="m">1</span>    <span class="m">0</span>    <span class="m">28</span>   <span class="m">29</span>     676K   276K   2100K  26M    2387M  <span class="m">3479</span> <span class="m">1</span>    sleeping <span class="m">0</span>    <span class="m">749</span>        <span class="m">98</span>       <span class="m">185</span>        77
+<a name="line-11"></a><span class="m">3377</span>  distnoted    0.0   00:00.01 <span class="m">2</span>    <span class="m">1</span>    <span class="m">40</span>   <span class="m">46</span>     392K   240K   1012K  22M    2383M  <span class="m">3377</span> <span class="m">3374</span> sleeping <span class="m">89</span>   <span class="m">413</span>        <span class="m">83</span>       <span class="m">255</span>        124
+<a name="line-12"></a><span class="m">3376</span>  mdworker     0.0   00:00.36 <span class="m">3</span>    <span class="m">1</span>    <span class="m">54</span>   <span class="m">71</span>     1492K  3748K  5632K  23M    2412M  <span class="m">3376</span> <span class="m">3374</span> sleeping <span class="m">89</span>   <span class="m">2623</span>       <span class="m">203</span>      <span class="m">1702</span>       757
+<a name="line-13"></a><span class="m">3374</span>  launchd      0.0   00:00.02 <span class="m">2</span>    <span class="m">0</span>    <span class="m">53</span>   <span class="m">45</span>     368K   416K   784K   38M    2399M  <span class="m">3374</span> <span class="m">1</span>    sleeping <span class="m">89</span>   <span class="m">602</span>        <span class="m">179</span>      <span class="m">1254</span>       523
+<a name="line-14"></a><span class="m">2482</span>  Mou          0.0   22:13.93 <span class="m">7</span>    <span class="m">1</span>    <span class="m">174</span>  <span class="m">480</span>    10M    12M    31M    301M   19G    <span class="m">2482</span> <span class="m">137</span>  sleeping <span class="m">501</span>  <span class="m">369777</span>     <span class="m">596</span>      4043593+   2069826+
+<a name="line-15"></a>2447- node-webkit  17.6  69:54.83 4/2  <span class="m">1</span>    <span class="m">78</span>   <span class="m">472</span>    10M+   40M-   39M+   75M+   807M   <span class="m">2443</span> <span class="m">2443</span> running  <span class="m">501</span>  138640191+ <span class="m">690</span>      2239122+   1119229+
+<a name="line-16"></a>2445- node-webkit  110.2 06:01:21 28/1 <span class="m">1</span>    137- 913-   145M+  36M    410M+  687M-  1426M- <span class="m">2443</span> <span class="m">2443</span> running  <span class="m">501</span>  1889563+   <span class="m">838</span>      259273383+ 133231723+
+<a name="line-17"></a>2443- node-webkit  10.9  43:43.71 <span class="m">42</span>   <span class="m">1</span>    <span class="m">266</span>  <span class="m">382</span>    3204K  37M    19M+   341M   1102M  <span class="m">2443</span> <span class="m">137</span>  stuck    <span class="m">501</span>  168935+    <span class="m">1219</span>     41720371+  16962182+
+<a name="line-18"></a><span class="m">2421</span>  Preview      0.0   01:35.89 <span class="m">6</span>    <span class="m">1</span>    <span class="m">185</span>  <span class="m">895</span>    12M    24M    34M    222M   3708M  <span class="m">2421</span> <span class="m">137</span>  sleeping <span class="m">501</span>  <span class="m">196129</span>     <span class="m">745</span>      <span class="m">380311</span>     187637
+<a name="line-19"></a><span class="m">2092</span>  bash         0.0   00:01.46 <span class="m">1</span>    <span class="m">0</span>    <span class="m">20</span>   <span class="m">26</span>     1268K  216K   1668K  19M    2380M  <span class="m">2092</span> <span class="m">2091</span> sleeping <span class="m">501</span>  <span class="m">15364</span>      <span class="m">4346</span>     <span class="m">491</span>        237
+<a name="line-20"></a><span class="m">2091</span>  login        0.0   00:00.03 <span class="m">2</span>    <span class="m">1</span>    <span class="m">34</span>   <span class="m">58</span>     0B     216K   432K   22M    2391M  <span class="m">2091</span> <span class="m">2089</span> sleeping <span class="m">0</span>    <span class="m">748</span>        <span class="m">121</span>      <span class="m">292</span>        138
+<a name="line-21"></a><span class="m">2089</span>  Terminal     1.5   01:04.90 <span class="m">7</span>    <span class="m">3</span>    <span class="m">135</span>  <span class="m">330</span>    7376K  9412K  23M    32M    2538M  <span class="m">2089</span> <span class="m">137</span>  sleeping <span class="m">501</span>  <span class="m">115422</span>     <span class="m">539</span>      342779+    165218+
+<a name="line-22"></a><span class="m">1034</span>  mdworker     0.0   00:47.94 <span class="m">4</span>    <span class="m">1</span>    <span class="m">55</span>   <span class="m">98</span>     3096K  4116K  8244K  29M    2418M  <span class="m">1034</span> <span class="m">137</span>  sleeping <span class="m">501</span>  <span class="m">126235</span>     <span class="m">278</span>      <span class="m">427269</span>     174393
+<a name="line-23"></a><span class="m">992</span>   Sparrow      0.0   18:16.79 <span class="m">17</span>   <span class="m">4</span>    <span class="m">309</span>  <span class="m">1955</span>   51M    17M    67M    418M   3779M  <span class="m">992</span>  <span class="m">137</span>  sleeping <span class="m">501</span>  <span class="m">1391524</span>    <span class="m">1828</span>     6624660+   3008127+
+<a name="line-24"></a><span class="m">885</span>   plugin-conta 0.0   30:46.44 <span class="m">8</span>    <span class="m">1</span>    <span class="m">487</span>  <span class="m">1344</span>   1356K  28M    5816K  56M    2725M  <span class="m">787</span>  <span class="m">787</span>  sleeping <span class="m">501</span>  <span class="m">51300527</span>   <span class="m">6662</span>     17404742+  8400203+
+<a name="line-25"></a><span class="m">787</span>   firefox      11.0  04:42:22 <span class="m">74</span>   <span class="m">1</span>    <span class="m">339</span>  <span class="m">19088</span>  281M   34M    374M   514M   3563M  <span class="m">787</span>  <span class="m">137</span>  sleeping <span class="m">501</span>  <span class="m">11793724</span>   <span class="m">2573162</span>  498594082+ 245596606+
 <a name="line-26"></a>7
 </code></pre></div>
 <p>Com este <em>overview</em> sobre processos no Unix, podemos seguir adiante e percorrer alguns aspectos para gerir tais processos. Para isto, vamos entender o que é e como funciona o comando <code>jobs</code>.</p>
@@ -444,7 +444,7 @@ Veja abaixo um exemplo:</p>
               </h4>
             
 <p>Você pode, simplesmente, inserir o operador <code>&amp;</code> ao final do comando que deseja executar. Com isso, o seu processo será executado em <em>background</em> e o seu <em>prompt</em> não será travado. Confira o exemplo abaixo:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>npm search zip &amp;
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span>npm search zip <span class="p">&amp;</span>
 </code></pre></div>
 <p>Neste exemplo, o <code>npm</code> fará uma busca pelos módulos com o termo <em>zip</em> e o seu prompt ficará livre para continuar executando demais comandos. Faça um teste. :)</p>
 
@@ -453,11 +453,11 @@ Veja abaixo um exemplo:</p>
               </h4>
             
 <p>Para verificar os processos em execução no <em>background</em>, basta digitar no terminal o comando <code>jobs</code>. Será exibida uma lista semelhante a que você verá abaixo:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span><span class="nb">jobs</span>
-<a name="line-2"></a><span class="o">[</span>1<span class="o">]</span>+ Running        npm search zip &amp;
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="nv">$ </span><span class="nb">jobs</span>
+<a name="line-2"></a><span class="o">[</span>1<span class="o">]</span>+ Running        npm search zip <span class="p">&amp;</span>
 </code></pre></div>
 <p>É possível mover um processo para o <em>foreground</em>, mas vale lembrar que este procedimento fará com que o prompt seja travado. Isso impossibilita qualquer ação do usuário até que o processo seja finalizado. Para ver como funciona, execute o seguinte comando no processo em <em>background</em> recém-criado:</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># Colocar no foreground o processo de número 1</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># Colocar no foreground o processo de número 1</span>
 <a name="line-2"></a><span class="nv">$ </span><span class="nb">fg </span>1
 </code></pre></div>
 <blockquote>
@@ -530,7 +530,7 @@ Veja abaixo um exemplo:</p>
     <div class="span9">
         <section class="box-details">
             <h3>Vitor Britto</h3>
-            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+            <p>Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
         </section>
     </div>
 </section>

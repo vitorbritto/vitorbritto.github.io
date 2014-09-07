@@ -33,7 +33,7 @@
 
                 <div class="span4">
                     <div class="header-info">
-                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog/">Vitor Britto</a></h1>
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog">Vitor Britto</a></h1>
                         <h4 class="header-description">Desenvolvedor Web</h4>
                     </div>
                 </div>
@@ -165,7 +165,7 @@ comando ou script</p>
 </blockquote>
 
 <p>Confira abaixo como podemos criar as nossas tarefas:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a># Cada linha representa uma tarefa no crontab
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a># Cada linha representa uma tarefa no crontab
 <a name="line-2"></a>00 6 * * 1 /caminho/para/script/status.sh
 <a name="line-3"></a>00 12 5 * * /caminho/para/script/temp.sh
 <a name="line-4"></a>30 23 * * * /caminho/para/script/backup.sh
@@ -179,7 +179,7 @@ comando ou script</p>
 </ul>
 
 <p>Você ainda pode adicionar um 7 (sétimo) campo, onde o sexto campo será substituído pelo nome do usuário no sistema e o sétimo campo adicionado com o programa a ser executado. Veja o exemplo a seguir:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a># Execute esta tarefa a cada três horas, no dia 1 (um) de cada mês com o usuário root.
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a># Execute esta tarefa a cada três horas, no dia 1 (um) de cada mês com o usuário root.
 <a name="line-2"></a>00 */3 1 * * root /caminho/para/script/security.sh
 </code></pre></div>
 <p>Perceba que estamos utilizando um novo método para definir o período desta tarefa, o <code>*/3</code>. Este trecho faz com que a tarefa seja executa em intervalos de 3 horas. Você poderia ainda definir os horários que esta tarefa seria executada, utilizando uma <code>,</code> (vírgula) para cada horário. Por exemplo: <code>00 3,9,15,21 1 * * root /caminho/para/script/security.sh</code>.</p>
@@ -191,7 +191,7 @@ comando ou script</p>
 <p>Os <em>scripts</em> a serem executados no exemplo acima pelo crontab, <strong>precisam</strong> estar definidos como executáveis no seu Shell. Para isso, certifique-se de que o comando <code>chmod +x /caminho/para/script/seuscript.sh</code> foi executado previamente. Do contrário, utilize o operador <code>&amp;&amp;</code> para compactar uma instrução no momento da execução do script. Como faremos isso?</p>
 
 <p>Veja o exemplo abaixo:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a># Tarefas:
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a># Tarefas:
 <a name="line-2"></a>00 6 * * 1 /caminho/para/script &amp;&amp; bash status.sh
 <a name="line-3"></a>00 12 5 * * /caminho/para/script &amp;&amp; bash temp.sh
 <a name="line-4"></a>30 23 * * * /caminho/para/script &amp;&amp; bash backup.sh
@@ -267,7 +267,7 @@ Será executado a cada hora, &quot;0 * * * *&quot;.</p>
               </h3>
             
 <p>Você pode definir todas as suas tarefas em um único arquivo e chamá-lo com o <code>crontab</code>. Veja o exemplo abaixo:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text"><a name="line-1"></a># 1. Crie o arquivo jobs.txt com o conteúdo abaixo:
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a># 1. Crie o arquivo jobs.txt com o conteúdo abaixo:
 <a name="line-2"></a>
 <a name="line-3"></a>00 6 * * 1 [comando ou script para executar]
 <a name="line-4"></a>00 12 5 * * [comando ou script para executar]
@@ -296,7 +296,7 @@ Será executado a cada hora, &quot;0 * * * *&quot;.</p>
     <div class="span9">
         <section class="box-details">
             <h3>Vitor Britto</h3>
-            <p> Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+            <p>Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
         </section>
     </div>
 </section>

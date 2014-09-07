@@ -6,7 +6,7 @@ title: Vitor Britto - Desenvolvedor Web
 <ul class="posts">
     {% for post in site.posts %}
     <li class="post span4">
-        <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">
+        <a href="{{ site.fullurl }}{{ post.url }}" title="{{ post.title }}">
             <img src="{{post.cover}}" alt="">
             <h4 class="post-title">{{ post.title }}</h4>
         </a>
@@ -17,5 +17,5 @@ title: Vitor Britto - Desenvolvedor Web
 
 <div class="clear"></div>
 
-<a href="{{ site.baseurl }}archive" title="Confira a lista completa de artigos" class="btn-archive">Confira a lista completa de artigos</a>
+<a href="{{ site.fullurl }}/archive" title="Confira a lista completa de artigos" class="btn-archive">Confira a lista completa de artigos</a>
 

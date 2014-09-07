@@ -4,21 +4,34 @@ My personal blog built with [Jekyll](http://jekyllrb.com/).
 
 ## Usage
 
+### Requirements
+
+- [Git](http://git-scm.com/downloads)
+- [Ruby](http://www.ruby-lang.org/pt/downloads/)
+- [Jekyll](http://jekyllrb.com/)
+
+### Build
 Run this blog in your local host with the following steps:
 
-```
-1. [Git](http://git-scm.com/downloads) and [Ruby](http://www.ruby-lang.org/pt/downloads/) are required.
-2. Install [Jekyll](http://jekyllrb.com/): `gem install jekyll`
-3. Clone this repository and access the generated folder: `git clone git@github.com:vitorbritto/vitorbritto.github.io.git && cd $_`
+```bash
+1. First, you need to execute the command bellow to:
+ - Clone the repository
+ - Access the generated folder
+ - Install npm dependencies
 
-4. Comment the bellow lines in `_config.yml` file:
+`git clone git@github.com:vitorbritto/vitorbritto.github.io.git && cd $_ && npm i`
 
-url:         http://www.vitorbritto.com.br/blog
-baseurl:     http://www.vitorbritto.com.br/blog/
+3. Then, edit the `_config.yml` file for:
 
-5. Install dependencies: `npm install`
-6. Start the static web server: `rake`
-7. Open your favorited browser at `http://localhost:4000`.
+# Start the static web serve at your machine for edit/update some file
+fullurl:        'http://0.0.0.0:4000/'
+
+# Build the project and deploy for production
+fullurl:        'http://www.vitorbritto.com.br/blog/'
+
+4. Start the web server with `rake && open -a http://0.0.0.0:4000`
+5. Start editing/updating.
+6. When you finish, change the `fullurl` to **build** the project and send the _pull request_. =]
 
 ## Structure
 

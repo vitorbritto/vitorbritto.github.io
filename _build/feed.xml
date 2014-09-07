@@ -7,6 +7,499 @@
     <atom:link href="http://www.vitorbritto.com.br/blog/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Examinando sua aplicação</title>
+        <description>&lt;p&gt;Saudações!&lt;/p&gt;
+
+&lt;p&gt;Na minha rotina de trabalho, examinar/analisar o código é via de regra para evitar que meus cabelos fiquem brancos muito cedo. Procuro realizar depurações, inspeções e testes para deixar a aplicação o mais consistente possível. Isso reduz drasticamente a possibilidade que erros bobos aconteçam.&lt;/p&gt;
+
+&lt;p&gt;Pois bem! Um método prático para depurar o seu código, é utilizando o objeto &lt;code&gt;console&lt;/code&gt;. Este objeto não faz parte do JavaScript, e sim das engines dos browsers (Firefox, Chrome, Safari e IE). São encontrados, especificamente, nas ferramentas de &lt;em&gt;debug&lt;/em&gt; (DevTools, Web Console e Firebug).&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;IMPORTANTE:&lt;/strong&gt; os testes foram realizados no &lt;strong&gt;Firefox&lt;/strong&gt; e &lt;strong&gt;Firebug&lt;/strong&gt;. Alguns métodos podem não estar presentes nos cenários ilustrados abaixo! De qualquer forma, colocarei uma lista com os métodos existentes. Ok? =]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h2 id=&quot;Quais-as-minhas-opções-para-o-debug-&quot;&gt;
+                &lt;a name=&quot;Quais-as-minhas-opções-para-o-debug-&quot; href=&quot;#Quais-as-minhas-opções-para-o-debug-&quot;&gt;&lt;/a&gt;Quais as minhas opções para o debug?
+              &lt;/h2&gt;
+            
+&lt;p&gt;A API do objeto &lt;code&gt;console&lt;/code&gt; possui diversos métodos. Entender quando e como utilizá-los, pode poupar tempo e auxiliar na depuração do seu codigo.&lt;/p&gt;
+
+&lt;p&gt;Vamos conferir quais são estes métodos e para o que eles servem.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Lista-geral-de-métodos&quot;&gt;
+                &lt;a name=&quot;Lista-geral-de-métodos&quot; href=&quot;#Lista-geral-de-métodos&quot;&gt;&lt;/a&gt;Lista geral de métodos
+              &lt;/h3&gt;
+            
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.assert&quot;&gt;console.assert()&lt;/a&gt;: verifica se uma expressão possui o valor &lt;em&gt;true&lt;/em&gt;. Caso seja &lt;em&gt;false&lt;/em&gt;, uma mensagem será renderizada no console juntamente com uma exceção (exception);&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.clear&quot;&gt;console.clear()&lt;/a&gt;: limpa o console;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.count&quot;&gt;console.count()&lt;/a&gt;: exibe no console quantas vezes determinada &lt;code&gt;label&lt;/code&gt; foi executada no código;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.debug&quot;&gt;console.debug()&lt;/a&gt;: realiza a mesma ação do método &lt;code&gt;console.log()&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.dir&quot;&gt;console.dir()&lt;/a&gt;: exibe uma lista interativa das propriedades de um determinado objeto;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.dirxml&quot;&gt;console.dirxml()&lt;/a&gt;: exibe uma estrutura de um nó (node) HTML ou XML;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.exception&quot;&gt;console.exception()&lt;/a&gt;: um atalho para &lt;code&gt;console.error()&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.group&quot;&gt;console.group()&lt;/a&gt;: inicia o agrupamento de determinadas mensagens a serem exebidas no console;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.groupCollapsed&quot;&gt;console.groupCollapsed()&lt;/a&gt;: semelhante ao &lt;code&gt;console.group()&lt;/code&gt;, porém as informações estarão ocultas inicialmente;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.groupEnd&quot;&gt;console.groupEnd()&lt;/a&gt;: encerra o agrupamento de determinadas mensagens a serem exibidas no console;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.log&quot;&gt;console.log()&lt;/a&gt;: exibe uma mensagem no console;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.error&quot;&gt;console.error()&lt;/a&gt;: exibe uma mensagem (de erro) no console com características próprias do método;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.warn&quot;&gt;console.warn()&lt;/a&gt;: exibe uma mensagem (de alerta) no console com características próprias do método;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.info&quot;&gt;console.info()&lt;/a&gt;: exibe uma mensagem (de informação) no console com características próprias do método;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;&quot;&gt;console.markTimeline()&lt;/a&gt;: o mesmo que &lt;code&gt;console.timeStamp()&lt;/code&gt; e disponível somente no Safari;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.profile&quot;&gt;console.profile()&lt;/a&gt;: inicia o &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Tools/Profiler&quot;&gt;JavaScript profiler&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.profileEnd&quot;&gt;console.profileEnd()&lt;/a&gt;: interrompe o &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Tools/Profiler&quot;&gt;JavaScript profiler&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.table&quot;&gt;console.table()&lt;/a&gt;: renderiza no console os dados em formato de tabela;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.time&quot;&gt;console.time()&lt;/a&gt;: inicia um contador para uma ação a ser executada. Deve ser utilizado juntamente com &lt;code&gt;console.timeEnd()&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.timeEnd&quot;&gt;console.timeEnd()&lt;/a&gt;: interrompe o contador especificado anteriormente em &lt;code&gt;console.time()&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.timeStamp&quot;&gt;console.timeStamp()&lt;/a&gt;: pode ser utilizado para analisar o tempo de execução no tráfego de dados;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console.trace&quot;&gt;console.trace()&lt;/a&gt;: renderiza o caminho percorrido, tomando como ponto inicial o local onde este método for colocado.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTA 1:&lt;/strong&gt; o uso mais frequente do objeto &lt;code&gt;console&lt;/code&gt; é para renderizar log e outros dados. Existem 4 métodos possíveis para dar saída a estes &lt;code&gt;logs&lt;/code&gt;, são eles: &lt;code&gt;console.log()&lt;/code&gt;, &lt;code&gt;console.info()&lt;/code&gt;, &lt;code&gt;console.warn()&lt;/code&gt; e &lt;code&gt;console.error()&lt;/code&gt;. Cada um destes métodos possui um estilo diferenciado e você pode utilizar controles de filtros provenientes no seu browser para exibir apenas os que interessam em determinada situação na sua depuração.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTA 2:&lt;/strong&gt; nem todos os métodos foram utilizados nos exemplos deste artigo. Para mais informações, clique no &lt;em&gt;link&lt;/em&gt; do respectivo método na lista acima.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h2 id=&quot;Ampliando-o-uso-do-console&quot;&gt;
+                &lt;a name=&quot;Ampliando-o-uso-do-console&quot; href=&quot;#Ampliando-o-uso-do-console&quot;&gt;&lt;/a&gt;Ampliando o uso do console
+              &lt;/h2&gt;
+            
+&lt;p&gt;Me permita apresentar algumas funcionalidades interessantes e que podem ser úteis para sua depuração.&lt;/p&gt;
+
+              &lt;h3 id=&quot;O-método-&lt;code&gt;console-clear-&lt;-code&gt;&quot;&gt;
+                &lt;a name=&quot;O-método-&lt;code&gt;console-clear-&lt;-code&gt;&quot; href=&quot;#O-método-&lt;code&gt;console-clear-&lt;-code&gt;&quot;&gt;&lt;/a&gt;O método &lt;code&gt;console.clear()&lt;/code&gt;
+              &lt;/h3&gt;
+            
+&lt;p&gt;Utilize este método para limpar o console quando necessário. Você possui duas opções:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;digitando no seu console &lt;code&gt;clear()&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;ou utilizando os atalhos &lt;code&gt;cmd+K&lt;/code&gt; ou &lt;code&gt;ctrl+L&lt;/code&gt; (Mac), &lt;code&gt;ctrl+L&lt;/code&gt; (Windows and Linux).&lt;/li&gt;
+&lt;/ul&gt;
+
+              &lt;h3 id=&quot;Utilizar-diretivas-na-substituição-de-&lt;em&gt;strings&lt;-em&gt;&quot;&gt;
+                &lt;a name=&quot;Utilizar-diretivas-na-substituição-de-&lt;em&gt;strings&lt;-em&gt;&quot; href=&quot;#Utilizar-diretivas-na-substituição-de-&lt;em&gt;strings&lt;-em&gt;&quot;&gt;&lt;/a&gt;Utilizar diretivas na substituição de &lt;em&gt;strings&lt;/em&gt;
+              &lt;/h3&gt;
+            
+&lt;p&gt;Para quem programa na linguagem C ou utiliza o NodeJS, esta &lt;em&gt;feature&lt;/em&gt; lhe será familiar. Você pode interpolar uma &lt;em&gt;string&lt;/em&gt; com um tipo de saída e passar as suas respectivas referências para uma expressão.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemplo:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;console.log(&amp;#39;Meu nome é %s e tenho %d anos!&amp;#39;, &amp;#39;Vitor Britto&amp;#39;, 34);
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; Meu nome é Vitor Britto e tenho 34 anos!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Confira abaixo uma tabela com os tipos de saída disponíveis:&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Tipo de saída&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;%o&lt;/td&gt;
+&lt;td&gt;Renderiza um link.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%d ou %i&lt;/td&gt;
+&lt;td&gt;Renderiza um número inteiro.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%s&lt;/td&gt;
+&lt;td&gt;Renderiza uma &lt;em&gt;string&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%f&lt;/td&gt;
+&lt;td&gt;Renderiza um número real (float).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+              &lt;h3 id=&quot;Formatar-o-output-com-CSS&quot;&gt;
+                &lt;a name=&quot;Formatar-o-output-com-CSS&quot; href=&quot;#Formatar-o-output-com-CSS&quot;&gt;&lt;/a&gt;Formatar o output com CSS
+              &lt;/h3&gt;
+            
+&lt;p&gt;É possível utilizar o tipo de saída &lt;code&gt;%c&lt;/code&gt; para formatar a escrita no método &lt;code&gt;console.log()&lt;/code&gt; com CSS.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemplo:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;// Simulando uma mensagem de erro
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;console.log(&amp;quot;%cError Message!&amp;quot;, &amp;quot;color: red; font-style: italic&amp;quot;);
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;// Simulando uma mensagem de alerta
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;console.log(&amp;quot;%cWarning Message!&amp;quot;, &amp;quot;color: yellow; font-style: italic&amp;quot;);
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;// Simulando uma mensagem de sucesso
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;console.log(&amp;quot;%cSuccess Message!&amp;quot;, &amp;quot;color: lime; font-style: italic&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h3 id=&quot;Legendas-para-alguns-métodos&quot;&gt;
+                &lt;a name=&quot;Legendas-para-alguns-métodos&quot; href=&quot;#Legendas-para-alguns-métodos&quot;&gt;&lt;/a&gt;Legendas para alguns métodos
+              &lt;/h3&gt;
+            
+&lt;p&gt;Utilizaremos as seguintes legendas para demonstrar os ícones renderizados no console:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;console.log()&lt;/code&gt;: (sem ícone)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;console.info()&lt;/code&gt;: (i)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;console.warn()&lt;/code&gt;: /i\&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;console.error()&lt;/code&gt;: [x]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pronto? Então vamos em frente.&lt;/p&gt;
+
+              &lt;h2 id=&quot;Mergulhando-neste-mar-de-possibilidades&quot;&gt;
+                &lt;a name=&quot;Mergulhando-neste-mar-de-possibilidades&quot; href=&quot;#Mergulhando-neste-mar-de-possibilidades&quot;&gt;&lt;/a&gt;Mergulhando neste mar de possibilidades
+              &lt;/h2&gt;
+            
+&lt;p&gt;Bom, agora que você possui um &lt;em&gt;overview&lt;/em&gt; do objeto &lt;code&gt;console&lt;/code&gt; e de algumas &lt;em&gt;features&lt;/em&gt; interessantes, vamos mergulhar um pouco mais fundo para entender em quais situações podemos utilizar os métodos existentes.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;IMPORTANTE:&lt;/strong&gt; os cenários abaixo são ilustrativos e cabe a você decidir quando e como utilizar cada método para o &lt;em&gt;debug&lt;/em&gt; dos seus scripts.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h3 id=&quot;Para-renderizar-informações&quot;&gt;
+                &lt;a name=&quot;Para-renderizar-informações&quot; href=&quot;#Para-renderizar-informações&quot;&gt;&lt;/a&gt;Para renderizar informações
+              &lt;/h3&gt;
+            
+              &lt;h5 id=&quot;&lt;code&gt;console-log-&lt;-code&gt;&quot;&gt;
+                &lt;a name=&quot;&lt;code&gt;console-log-&lt;-code&gt;&quot; href=&quot;#&lt;code&gt;console-log-&lt;-code&gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;console.log()&lt;/code&gt;
+              &lt;/h5&gt;
+            
+&lt;p&gt;&lt;strong&gt;Cenário:&lt;/strong&gt; você deseja saber se determinado evento foi executado com sucesso.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myFunction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Ready to go...&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;load&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; &amp;quot;Ready to go...&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h5 id=&quot;&lt;code&gt;console-error-&lt;-code&gt;&quot;&gt;
+                &lt;a name=&quot;&lt;code&gt;console-error-&lt;-code&gt;&quot; href=&quot;#&lt;code&gt;console-error-&lt;-code&gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;console.error()&lt;/code&gt;
+              &lt;/h5&gt;
+            
+&lt;p&gt;&lt;strong&gt;Cenário:&lt;/strong&gt; você quer exibir uma mensagem de erro no console caso não seja passado um objeto &lt;code&gt;number&lt;/code&gt; como argumento em uma função imediata (IIFE - Immediately-Invoked Function Expression).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;number&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;number&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;                &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;TypeError&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;                &lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;The argument must be a number&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;: &amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;seven&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; [x] &amp;quot;TypeError: The argument must be a number&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h5 id=&quot;&lt;code&gt;console-info-&lt;-code&gt;-e-&lt;code&gt;console-warn-&lt;-code&gt;&quot;&gt;
+                &lt;a name=&quot;&lt;code&gt;console-info-&lt;-code&gt;-e-&lt;code&gt;console-warn-&lt;-code&gt;&quot; href=&quot;#&lt;code&gt;console-info-&lt;-code&gt;-e-&lt;code&gt;console-warn-&lt;-code&gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;console.info()&lt;/code&gt; e &lt;code&gt;console.warn()&lt;/code&gt;
+              &lt;/h5&gt;
+            
+&lt;p&gt;&lt;strong&gt;Cenário:&lt;/strong&gt; você deseja depurar uma requisição HTTP.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;XHRget&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;XMLHttpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Sending request…&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;responseText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Success!&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;warn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Server Error! Timeout!&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onerror&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Error on connection!&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Para ilustrar as 3 possibilidades decorrentes deste script, vamos utilizar os métodos &lt;code&gt;console.info()&lt;/code&gt;, &lt;code&gt;console.log()&lt;/code&gt;, &lt;code&gt;console.error()&lt;/code&gt; e &lt;code&gt;console.warn()&lt;/code&gt; para emitir cada estado desta requisição.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Na primeira tentativa, efetuamos a requisição com sucesso;&lt;/li&gt;
+&lt;li&gt;Na segunda tentativa, a comunicação foi interrompida por conta de um &lt;code&gt;timeout&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;Na terceira tentativa, não foi possível estabelecer uma comunicação com o servidor;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Confira abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; XHRget(&amp;#39;http://www.vitorbritto.com.br/blog/&amp;#39;);
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; (i) &amp;quot;Sending request…&amp;quot;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; &amp;quot;Success!&amp;quot;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; XHRget(&amp;#39;http://www.vitorbritto.com.br/foo/&amp;#39;);
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; (i) &amp;quot;Sending request…&amp;quot;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; /x\ &amp;quot;Server Error! Timeout!&amp;quot;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; XHRget(&amp;#39;http://www.vitorbritto.com.br/blog/&amp;#39;);
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; (i) &amp;quot;Sending request…&amp;quot;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; [x] &amp;quot;Error on connection!&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h3 id=&quot;Para-extender-as-inspeções&quot;&gt;
+                &lt;a name=&quot;Para-extender-as-inspeções&quot; href=&quot;#Para-extender-as-inspeções&quot;&gt;&lt;/a&gt;Para extender as inspeções
+              &lt;/h3&gt;
+            
+              &lt;h5 id=&quot;&lt;code&gt;console-assert-&lt;-code&gt;&quot;&gt;
+                &lt;a name=&quot;&lt;code&gt;console-assert-&lt;-code&gt;&quot; href=&quot;#&lt;code&gt;console-assert-&lt;-code&gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;console.assert()&lt;/code&gt;
+              &lt;/h5&gt;
+            
+&lt;p&gt;&lt;strong&gt;Cenário:&lt;/strong&gt; você deseja verificar se o argumento passado em uma função é do tipo &lt;em&gt;string&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;testString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;assert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;string&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Not a String!&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;555&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; [x] &amp;quot;Not a String!&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h5 id=&quot;&lt;code&gt;console-count-&lt;-code&gt;&quot;&gt;
+                &lt;a name=&quot;&lt;code&gt;console-count-&lt;-code&gt;&quot; href=&quot;#&lt;code&gt;console-count-&lt;-code&gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;console.count()&lt;/code&gt;
+              &lt;/h5&gt;
+            
+&lt;p&gt;&lt;strong&gt;Cenário:&lt;/strong&gt; você deseja examinar quantas vezes o método &lt;code&gt;console.log()&lt;/code&gt; foi executado no seu script.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;Number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;int&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;ceil&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;floor&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;trim&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/^\s+|\s+$/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;console&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;console&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;console&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;   Vitor Britto   &amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;trim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; &amp;quot;console: 1&amp;quot;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; -3
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; &amp;quot;console: 2&amp;quot;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; -6
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; &amp;quot;console: 3&amp;quot;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; &amp;quot;Vitor Britto&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h3 id=&quot;Para-organizar-os-resultados&quot;&gt;
+                &lt;a name=&quot;Para-organizar-os-resultados&quot; href=&quot;#Para-organizar-os-resultados&quot;&gt;&lt;/a&gt;Para organizar os resultados
+              &lt;/h3&gt;
+            
+              &lt;h5 id=&quot;&lt;code&gt;console-trace-&lt;-code&gt;&quot;&gt;
+                &lt;a name=&quot;&lt;code&gt;console-trace-&lt;-code&gt;&quot; href=&quot;#&lt;code&gt;console-trace-&lt;-code&gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;console.trace()&lt;/code&gt;
+              &lt;/h5&gt;
+            
+&lt;p&gt;&lt;strong&gt;Cenário:&lt;/strong&gt; você deseja verificar o caminho percorrido na execução de um trecho do seu código.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;baz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;trace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;nx&quot;&gt;baz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;console.trace():
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;baz()                 debugger eval code:6
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;bar()                 debugger eval code:8
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;foo()                 debugger eval code:10
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&amp;lt;anonymous&amp;gt;           debugger eval code:12
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h5 id=&quot;&lt;code&gt;console-dir-&lt;-code&gt;&quot;&gt;
+                &lt;a name=&quot;&lt;code&gt;console-dir-&lt;-code&gt;&quot; href=&quot;#&lt;code&gt;console-dir-&lt;-code&gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;console.dir()&lt;/code&gt;
+              &lt;/h5&gt;
+            
+&lt;p&gt;&lt;strong&gt;Cenário:&lt;/strong&gt; você deseja visualizar a estrutura de um determinado objeto.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;javascript&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;influences&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Self&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Scheme&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Java&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;developer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Brendan Eich&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;created&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1995&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;clang&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;influences&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;ALGOL 68&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;PL/I&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;developer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Dennis Ritchie&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;created&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1972&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;javascript&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;clang&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; {influences: Array[3], developer: &amp;quot;Brendan Eich&amp;quot;, created: 1995}
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;------------------------------------------------------------------------
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;created: 1995
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;developer: &amp;quot;Brendan Eich&amp;quot;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;influences: Array[3]
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;0: &amp;quot;Self&amp;quot;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;1: &amp;quot;Scheme&amp;quot;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;2: &amp;quot;Java&amp;quot;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;length: 3
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;__proto__: Object
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;------------------------------------------------------------------------
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; {influences: Array[3], developer: &amp;quot;Dennis Ritchie&amp;quot;, created: 1972}
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;------------------------------------------------------------------------
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;created: 1972
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;developer: &amp;quot;Dennis Ritchie&amp;quot;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;influences: Array[3]
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;0: &amp;quot;B&amp;quot;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;1: &amp;quot;ALGOL 68&amp;quot;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;2: &amp;quot;PL/I&amp;quot;
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;length: 3
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;__proto__: Object
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;------------------------------------------------------------------------
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h5 id=&quot;&lt;code&gt;console-group-&lt;-code&gt;-&lt;code&gt;console-groupCollapsed-&lt;-code&gt;-e-&lt;code&gt;console-groupEnd-&lt;-code&gt;&quot;&gt;
+                &lt;a name=&quot;&lt;code&gt;console-group-&lt;-code&gt;-&lt;code&gt;console-groupCollapsed-&lt;-code&gt;-e-&lt;code&gt;console-groupEnd-&lt;-code&gt;&quot; href=&quot;#&lt;code&gt;console-group-&lt;-code&gt;-&lt;code&gt;console-groupCollapsed-&lt;-code&gt;-e-&lt;code&gt;console-groupEnd-&lt;-code&gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;console.group()&lt;/code&gt;, &lt;code&gt;console.groupCollapsed()&lt;/code&gt; e &lt;code&gt;console.groupEnd()&lt;/code&gt;
+              &lt;/h5&gt;
+            
+&lt;p&gt;&lt;strong&gt;Cenário:&lt;/strong&gt; você deseja agrupar determinadas mensagens a serem renderizadas no console.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Group of log messages&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;%cError Message!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;color: red; font-style: italic&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;%cWarning Message!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;color: yellow; font-style: italic&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;%cSuccess Message!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;color: lime; font-style: italic&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;groupEnd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; Group of log messages
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt;   &amp;quot;Error Message!&amp;quot;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt;   &amp;quot;Warning Message!&amp;quot;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt;   &amp;quot;Success Message!&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h5 id=&quot;&lt;code&gt;console-table-&lt;-code&gt;&quot;&gt;
+                &lt;a name=&quot;&lt;code&gt;console-table-&lt;-code&gt;&quot; href=&quot;#&lt;code&gt;console-table-&lt;-code&gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;console.table()&lt;/code&gt;
+              &lt;/h5&gt;
+            
+&lt;p&gt;&lt;strong&gt;Cenário:&lt;/strong&gt; você deseja visualizar a estrutura de um objeto ou array literal.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;multi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;multi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tools&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;foo&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;ext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;.foo&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;usage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;bar baz&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; -----
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; 0 | 1
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; -----
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; 1 | 2
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; 3 | 4
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; 5 | 6
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; -----
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; ----------------------------------
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; Object Properties       Values
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; ----------------------------------
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; &amp;quot;name&amp;quot;                  &amp;quot;foo&amp;quot;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; &amp;quot;ext&amp;quot;                   &amp;quot;.foo&amp;quot;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; &amp;quot;usage&amp;quot;                 &amp;quot;bar baz&amp;quot;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; ----------------------------------
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h3 id=&quot;Para-analisar-os-resultados&quot;&gt;
+                &lt;a name=&quot;Para-analisar-os-resultados&quot; href=&quot;#Para-analisar-os-resultados&quot;&gt;&lt;/a&gt;Para analisar os resultados
+              &lt;/h3&gt;
+            
+              &lt;h5 id=&quot;&lt;code&gt;console-profile-&lt;-code&gt;-e-&lt;code&gt;console-profileEnd-&lt;-code&gt;&quot;&gt;
+                &lt;a name=&quot;&lt;code&gt;console-profile-&lt;-code&gt;-e-&lt;code&gt;console-profileEnd-&lt;-code&gt;&quot; href=&quot;#&lt;code&gt;console-profile-&lt;-code&gt;-e-&lt;code&gt;console-profileEnd-&lt;-code&gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;console.profile()&lt;/code&gt; e &lt;code&gt;console.profileEnd()&lt;/code&gt;
+              &lt;/h5&gt;
+            
+&lt;p&gt;&lt;strong&gt;Cenário:&lt;/strong&gt; você deseja realizar comparativos de performance.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;performs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;profile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;getElementById() vs. querySelector()&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;performs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;test&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;performs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;test&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;profileEnd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; confira mais detalhes &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Tools/Profiler&quot;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+
+              &lt;h5 id=&quot;&lt;code&gt;console-time-&lt;-code&gt;-e-&lt;code&gt;console-timeEnd-&lt;-code&gt;&quot;&gt;
+                &lt;a name=&quot;&lt;code&gt;console-time-&lt;-code&gt;-e-&lt;code&gt;console-timeEnd-&lt;-code&gt;&quot; href=&quot;#&lt;code&gt;console-time-&lt;-code&gt;-e-&lt;code&gt;console-timeEnd-&lt;-code&gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;console.time();&lt;/code&gt; e &lt;code&gt;console.timeEnd();&lt;/code&gt;
+              &lt;/h5&gt;
+            
+&lt;p&gt;&lt;strong&gt;Cenário:&lt;/strong&gt; você deseja analisar/redenrizar o tempo de execução para um determinado bloco de código no seu script.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Iterate Array&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;len&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;timeEnd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Iterate Array&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; Iterate Array: timer started
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&amp;gt;&amp;gt; Iterate Array: 0.08ms
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h2 id=&quot;Não-deixe-a-depuração-e-inspeção-de-lado&quot;&gt;
+                &lt;a name=&quot;Não-deixe-a-depuração-e-inspeção-de-lado&quot; href=&quot;#Não-deixe-a-depuração-e-inspeção-de-lado&quot;&gt;&lt;/a&gt;Não deixe a depuração e inspeção de lado
+              &lt;/h2&gt;
+            
+&lt;p&gt;Perceba como o processo de &lt;em&gt;debug&lt;/em&gt; se torna amigável quando sabemos como lidar com os métodos do objeto &lt;code&gt;console&lt;/code&gt;. Não somente, asseguramos uma inspeção mais rígida para possíveis erros e problemas no código.&lt;/p&gt;
+
+&lt;p&gt;Outro ponto importante é realizar testes unitários e ter cuidado para que o seu código não fique repleto de &lt;code&gt;console.log&lt;/code&gt; e outros métodos desta API. Sugiro que use-a com bom senso, estude uma solução para equilibrar os testes e as depurações/inspeções, além de desenvolver uma metodologia para lidar com estes processos analíticos nos seus scripts.&lt;/p&gt;
+
+&lt;p&gt;Até a próxima! =]&lt;/p&gt;
+
+              &lt;h4 id=&quot;Referências&quot;&gt;
+                &lt;a name=&quot;Referências&quot; href=&quot;#Referências&quot;&gt;&lt;/a&gt;Referências
+              &lt;/h4&gt;
+            
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/console&quot;&gt;MDN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://getfirebug.com/wiki/index.php/Console_API&quot;&gt;Firebug&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.chrome.com/devtools/docs/console-api&quot;&gt;Chrome&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://nodejs.org/api/stdio.html&quot;&gt;NodeJS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 07 Sep 2014 00:00:00 -0300</pubDate>
+        <link>http://www.vitorbritto.com.br/blog/examinando-sua-aplicacao/</link>
+        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/examinando-sua-aplicacao/</guid>
+      </item>
+    
+      <item>
         <title>The book is on the table</title>
         <description>&lt;p&gt;Saudações!&lt;/p&gt;
 
@@ -29,9 +522,9 @@
                 &lt;a name=&quot;Olá-eu-sou-o-JavaScript&quot; href=&quot;#Olá-eu-sou-o-JavaScript&quot;&gt;&lt;/a&gt;Olá, eu sou o JavaScript
               &lt;/h2&gt;
             
-&lt;p&gt;Criada por Brendan Eich há quase 20 anos, a linguagem de programação JavaScript se tornou muito popular nos últimos anos e mostrou-se extremamente poderosa. Trata-se de uma linguagem de alto nível, dinâmica, interpretada e não tipada, além de englobar paradigmas de orientação de objetos e funcional. Possui uma sintaxe herdada do &lt;em&gt;Java&lt;/em&gt;, aspectos funcionais do &lt;em&gt;Scheme&lt;/em&gt; e suas caracteristicas orientadas a objetos do &lt;em&gt;Self&lt;/em&gt;. Atualmente, está linguagem que foi mal compreendida por um bom tempo, se faz presente tanto no &lt;strong&gt;client-side&lt;/strong&gt; (DOM) quanto no &lt;strong&gt;server-side&lt;/strong&gt; (NodeJS).&lt;/p&gt;
+&lt;p&gt;Criada por Brendan Eich há quase 20 anos, a linguagem de programação JavaScript se tornou muito popular nos últimos anos e mostrou-se extremamente poderosa. Trata-se de uma linguagem de alto nível, dinâmica, interpretada, não tipada, além de englobar paradigmas de orientação à objetos e funcional. Possui uma sintaxe herdada do &lt;em&gt;Java&lt;/em&gt;, aspectos funcionais do &lt;em&gt;Scheme&lt;/em&gt; e caracteristicas orientadas a objetos do &lt;em&gt;Self&lt;/em&gt;. Atualmente, está linguagem que foi mal compreendida por um bom tempo, se faz presente tanto no &lt;strong&gt;client-side&lt;/strong&gt; (DOM) quanto no &lt;strong&gt;server-side&lt;/strong&gt; (NodeJS).&lt;/p&gt;
 
-&lt;p&gt;Se você está vindo do Java ou PHP, vale frisar que o JavaScript não possui classes. O JavaScript possui funções de primeira classe (objetos que herdam métodos e propriedades) e sua herança se baseia em protótipos.&lt;/p&gt;
+&lt;p&gt;Se você está vindo do Java ou PHP, vale frisar que o JavaScript não possui classes. No JavaScript, as funções são tratadas como &lt;a href=&quot;&quot;&gt;objetos de primeira classe&lt;/a&gt; (first-class functions/objects) e sua &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain&quot;&gt;herança se baseia em protótipos&lt;/a&gt; (prototypal inheritance). Além disso, a linguagem possui &lt;a href=&quot;http://en.wikipedia.org/wiki/Higher-order_function&quot;&gt;funções de ordem superior&lt;/a&gt; (high-order Functions), como, por exemplo, os métodos &lt;code&gt;map&lt;/code&gt;, &lt;code&gt;filter&lt;/code&gt; e &lt;code&gt;forEach&lt;/code&gt; do objeto Array.&lt;/p&gt;
 
 &lt;p&gt;Esta é uma breve (brevíssima) introdução. Caso você esteja começando do zero, &lt;a href=&quot;https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/JavaScript_Vis%C3%A3o_Geral&quot;&gt;sugiro que leia este material&lt;/a&gt; do MDN para entender mais sobre o JavaScript. Ok?&lt;/p&gt;
 
@@ -85,7 +578,7 @@
 
 &lt;p&gt;Este livro é um compilação feita pelo Douglas Crockford, o qual revela as boas partes, belas características e partes ruins da linguagem de programação JavaScript. A leitura deste livro exige um prévio conhecimento sobre funções, métodos, objetos e arrays no JavaScript.&lt;/p&gt;
 
-&lt;p&gt;Para que fique mais fácil o entendimento: o &amp;quot;JavaScript: Guia Definitivo&amp;quot; prepara o terreno para que você aprenda esta linguagem de programação da melhor maneira possível, já o &amp;quot;O Melhor do JavaScript&amp;quot; é um convite para entender que &amp;quot;nem tudo são flores&amp;quot;, mas que tem jeito. E as soluções que oferecem melhorias às suas aplicações são compartilhadas no livro &amp;quot;Padrões JavaScript&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Para que fique mais fácil o entendimento: o &amp;quot;JavaScript: Guia Definitivo&amp;quot; prepara o terreno para que você aprenda esta linguagem de programação da melhor maneira possível, já o &amp;quot;O Melhor do JavaScript&amp;quot; é um convite para entender que &amp;quot;nem tudo são flores&amp;quot;, mas que tem jeito. Por fim, as soluções que oferecem melhorias às suas aplicações são compartilhadas no livro &amp;quot;Padrões JavaScript&amp;quot;.&lt;/p&gt;
 
               &lt;h4 id=&quot;Padrões-JavaScript&quot;&gt;
                 &lt;a name=&quot;Padrões-JavaScript&quot; href=&quot;#Padrões-JavaScript&quot;&gt;&lt;/a&gt;Padrões JavaScript
@@ -111,9 +604,9 @@
                 &lt;a name=&quot;Javascript-Enlightenment&quot; href=&quot;#Javascript-Enlightenment&quot;&gt;&lt;/a&gt;Javascript Enlightenment
               &lt;/h4&gt;
             
-&lt;p&gt;O livro não é sobre padrões, não menciona paradigmas de OO (orientação a objetos) no JavaScript, muito menos quais são os aspectos bons ou ruins. Trata-se de elementos importantes no JavaScript (funções, objetos, arrays, closures, escopos em detalhes) e o porquê do seu conhecimeto e importância.&lt;/p&gt;
+&lt;p&gt;O livro não é sobre padrões, não menciona paradigmas de OO (orientação a objetos) no JavaScript, muito menos quais são os aspectos bons ou ruins. Cody Lindley convida o leitor para mergulhar nos detalhes das funções, objetos, arrays, closures e outros elementos que fazem parte do JavaScript.&lt;/p&gt;
 
-&lt;p&gt;Além disso, recomendo para quem prefere iniciar com jQuery à JavaScript. Como a própria chamada do livro se refere: &amp;quot;De um usuário de bibliotecas para um programador em JavaScript&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Além disso, recomendo a leitura deste livro para quem prefere iniciar o desenvolvimento de projetos com jQuery à JavaScript. Como a própria chamada do livro se refere: &amp;quot;De um usuário de bibliotecas para um programador em JavaScript&amp;quot;.&lt;/p&gt;
 
               &lt;h3 id=&quot;May-the-force-be-with-you&quot;&gt;
                 &lt;a name=&quot;May-the-force-be-with-you&quot; href=&quot;#May-the-force-be-with-you&quot;&gt;&lt;/a&gt;May the force be with you
@@ -125,13 +618,13 @@
                 &lt;a name=&quot;JavaScript-Web-Applications&quot; href=&quot;#JavaScript-Web-Applications&quot;&gt;&lt;/a&gt;JavaScript Web Applications
               &lt;/h4&gt;
             
-&lt;p&gt;Um livro recheado de conceitos, que ajuda você a desenvolver habilidades na criação de aplicações web, garantindo um boa arquitetura, código manutenível e boas práticas.&lt;/p&gt;
+&lt;p&gt;Um livro recheado de conceitos, que ajuda você a desenvolver habilidades na criação de aplicações web, garantindo uma boa arquitetura, código manutenível e boas práticas no seu projeto.&lt;/p&gt;
 
               &lt;h4 id=&quot;Testable-JavaScript&quot;&gt;
                 &lt;a name=&quot;Testable-JavaScript&quot; href=&quot;#Testable-JavaScript&quot;&gt;&lt;/a&gt;Testable JavaScript
               &lt;/h4&gt;
             
-&lt;p&gt;Um ótimo livro para adquirir um conhecimento sólido em testes no JavaScript. Cobre pontos conceituais, boas práticas, padrões e métodos para tornar o desenvolvimento da sua aplicação manutenível. Além disso, aborda cenários para automação, inspeção e &lt;a href=&quot;http://en.wikipedia.org/wiki/Continuous_delivery&quot;&gt;entrega do seu código com qualidade&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Um ótimo livro para adquirir um conhecimento sólido em testes com JavaScript. Cobre pontos conceituais, boas práticas, padrões e métodos para tornar o desenvolvimento da sua aplicação manutenível. Além disso, aborda cenários para automação, inspeção e &lt;a href=&quot;http://en.wikipedia.org/wiki/Continuous_delivery&quot;&gt;entrega do seu código com qualidade&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Apesar do livro ser bem detalhado, recomendo fortemente que você já possua um contato prévio com testes unitários e &lt;a href=&quot;http://en.wikipedia.org/wiki/Software_design_pattern&quot;&gt;design patterns&lt;/a&gt;.&lt;/p&gt;
 
@@ -139,7 +632,7 @@
                 &lt;a name=&quot;Functional-JavaScript&quot; href=&quot;#Functional-JavaScript&quot;&gt;&lt;/a&gt;Functional JavaScript
               &lt;/h4&gt;
             
-&lt;p&gt;Leitura em andamento, mas posso dizer que me supreendo a cada página. A programação funcional no JavaScript é algo mágico! Em paralelo, estou realizando alguns experimentos com o &lt;a href=&quot;http://www.haskell.org/haskellwiki/Haskell&quot;&gt;Haskell&lt;/a&gt;. Sugiro que dê uma olhada nesta linguagem. Vai mudar a sua vida!&lt;/p&gt;
+&lt;p&gt;Leitura em andamento, mas posso dizer que me supreendo a cada página. A programação funcional no JavaScript é algo mágico! Em paralelo, estou realizando alguns experimentos com o &lt;a href=&quot;http://www.haskell.org/haskellwiki/Haskell&quot;&gt;Haskell&lt;/a&gt;. Sugiro que dê uma olhada nesta linguagem. Vai mudar a sua vida e agregar conhecimento sobre funções.&lt;/p&gt;
 
               &lt;h2 id=&quot;Fique-atento-para-alguns-pontos&quot;&gt;
                 &lt;a name=&quot;Fique-atento-para-alguns-pontos&quot; href=&quot;#Fique-atento-para-alguns-pontos&quot;&gt;&lt;/a&gt;Fique atento para alguns pontos
@@ -160,7 +653,7 @@
 &lt;p&gt;Em alguns momentos, funções são traduzidas como métodos e vice-versa. Fique atento! Métodos são funções, mas esta nomenclatura se dá quando consta como parte integrada em um objeto.&lt;/p&gt;
 
 &lt;p&gt;Exemplo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;function fn() {} // função declarativa
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;function fn() {} // função declarativa
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;var fn = function() {}; // função literal
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;function() {} // função anônima
 &lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;
@@ -196,7 +689,7 @@
 &lt;li&gt;&lt;strong&gt;Ler artigos:&lt;/strong&gt; a leitura de artigos ajuda a solucionar possíveis problemas já enfrentados por outros desenvolvedores, além de conhecer como aplicar determinada solução para um dado cenário.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Praticar:&lt;/strong&gt; pratique os códigos expostos em um artigo, livro ou qualquer outro documento! Com a prática vem a experiência.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Assistir palestras:&lt;/strong&gt; existem diversos vídeos de palestras disponíveis no Youtube sobre novos tópicos relacionados ao JavaScript. É importante estar atenado e saber o que está acontecendo.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Participe dos eventos:&lt;/strong&gt; temos muitos eventos no Brasil, que tratam de temas relacionados ao JavaScript. Além disso, o &lt;em&gt;networking&lt;/em&gt; será importante para a troca de experiências e conhecimento com demais colegas.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Participar de eventos:&lt;/strong&gt; temos muitos eventos no Brasil, que tratam de temas relacionados ao JavaScript. Além disso, o &lt;em&gt;networking&lt;/em&gt; será importante para a troca de experiências e conhecimento com demais colegas.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Além de algumas leituras complementares:&lt;/p&gt;
@@ -483,7 +976,7 @@
               &lt;/h4&gt;
             
 &lt;p&gt;Ainda com relação às &lt;em&gt;strings&lt;/em&gt;, temos alguns métodos como: &lt;code&gt;trim()&lt;/code&gt;, &lt;code&gt;toUpperCase()&lt;/code&gt;, &lt;code&gt;toLowerCase()&lt;/code&gt;. Neste ponto/parte, aplique de forma mais direta. Veja o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;js language-js&quot; data-lang=&quot;js&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;I love JavaScript  &amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;I love JavaScript  &amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;trim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toUpperCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
 &lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
@@ -634,10 +1127,10 @@
 &lt;p&gt;Para verificar quais processos estão em execução, basta executar o comando &lt;em&gt;ps&lt;/em&gt; (process status). Quando declarado sem qualquer argumento, o comando &lt;em&gt;ps&lt;/em&gt; exibe todos os processos vinculados com a sessão atual do seu sistema.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Confira o exemplo abaixo:&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;  PID TTY           TIME CMD
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt; 2092 ttys000    0:00.97 -bash
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt; &lt;span class=&quot;m&quot;&gt;2092&lt;/span&gt; ttys000    0:00.97 -bash
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Note que neste exemplo, o comando &lt;em&gt;ps&lt;/em&gt; exibe o ID do processo, em qual terminal o processo está vinculado, o tempo acumulado que este processo encontra-se em execução e o comando para este processo respectivamente.&lt;/p&gt;
 
@@ -650,7 +1143,7 @@
               &lt;/h3&gt;
             
 &lt;p&gt;O comando &lt;em&gt;ps&lt;/em&gt; é um dos mais comuns e utilizados no/pelo Unix, mas oferece algumas diferenças de sintaxe para renderizar o output em seus variantes (flavors). A melhor maneira de entender como a sintaxe do &lt;em&gt;process status&lt;/em&gt; funciona no seu sistema, é utilizando o &lt;strong&gt;man pages&lt;/strong&gt;. Para facilitar a leitura, adicione e utilize o &lt;em&gt;alias&lt;/em&gt; abaixo para ler em formato PDF o manual do &lt;em&gt;ps&lt;/em&gt;. Se preferir, execute da maneira mais prática e convencional com: &lt;code&gt;man ps&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# Insira no .bashrc:&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# Insira no .bashrc:&lt;/span&gt;
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;manpdf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;man -t $1 | pstopdf -i -o $1.pdf&amp;quot;&lt;/span&gt;
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# Execute com:&lt;/span&gt;
 &lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;manpdf ps
@@ -687,10 +1180,10 @@
 &lt;p&gt;Para saber em qual estado o seu sistema se encontra, utilize o comando &lt;code&gt;ps&lt;/code&gt; com o argumento &lt;code&gt;u&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Confira o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps u
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;USER         PID    %CPU %MEM VSZ       RSS  TTY   STAT STARTED   TIME COMMAND
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;vitorbritto  2092   0.0  0.1  2437540   2924 s000  S     5:39PM   0:01.20 -bash
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;vitorbritto  &lt;span class=&quot;m&quot;&gt;2092&lt;/span&gt;   0.0  0.1  &lt;span class=&quot;m&quot;&gt;2437540&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;2924&lt;/span&gt; s000  S     5:39PM   0:01.20 -bash
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Perceba que o comando retorna uma série de informações a respeito do sistema no output (terminal), como:&lt;/p&gt;
 
@@ -728,18 +1221,18 @@
 &lt;p&gt;Já que este artigo não se trata do operador &lt;code&gt;|&lt;/code&gt; (pipe) e do comando &lt;code&gt;wc&lt;/code&gt; (e seus respectivos argumentos), recomendo a leitura de suas man pages. É uma ótima oportunidade para gerar um PDF, não é? :)&lt;/p&gt;
 
 &lt;p&gt;Pois bem. Os procesos são programas em execução e que lidam com aspectos essenciais de manipulação e manutenção no seu sistema. Muitos destes processos são, convencionalmente, chamados de &lt;em&gt;daemons&lt;/em&gt; e eles executam algumas rotinas. Digite o comando a seguir para visualizar quais processos estão em execução no seu sistema:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps ax
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps ax
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Será retornada uma lista similar a esta:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps ax
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;  PID   TT  STAT      TIME COMMAND
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    1   ??  Ss     0:48.81 /sbin/launchd
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;   10   ??  Ss     0:01.99 /usr/libexec/kextd
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;   11   ??  Ss     0:02.91 /usr/libexec/UserEventAgent -l System
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;   12   ??  Ss     0:03.60 /usr/sbin/notifyd
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;   14   ??  Ss     0:06.54 /usr/sbin/ntpd -c /private/etc/ntp-restrict.conf -n -g -p /var/run/ntpd.pid -f /var/db/ntp.drift
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;   17   ??  SNs    0:00.92 /usr/libexec/warmd
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;   ??  Ss     0:48.81 /sbin/launchd
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;   &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;   ??  Ss     0:01.99 /usr/libexec/kextd
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;   &lt;span class=&quot;m&quot;&gt;11&lt;/span&gt;   ??  Ss     0:02.91 /usr/libexec/UserEventAgent -l System
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;   &lt;span class=&quot;m&quot;&gt;12&lt;/span&gt;   ??  Ss     0:03.60 /usr/sbin/notifyd
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;   &lt;span class=&quot;m&quot;&gt;14&lt;/span&gt;   ??  Ss     0:06.54 /usr/sbin/ntpd -c /private/etc/ntp-restrict.conf -n -g -p /var/run/ntpd.pid -f /var/db/ntp.drift
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;   &lt;span class=&quot;m&quot;&gt;17&lt;/span&gt;   ??  SNs    0:00.92 /usr/libexec/warmd
 &lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;   ...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;blockquote&gt;
@@ -753,13 +1246,13 @@
 &lt;p&gt;Cada processo possui um ambiente com diversos atributos, assim como argumentos para a linha de comando, variáveis do ambiente, descrição dos arquivos, mascara para criação de arquivos e muito mais.&lt;/p&gt;
 
 &lt;p&gt;Para verificar determinados atributos dos processos, você pode executar o comando &lt;em&gt;ps&lt;/em&gt; com a flag &lt;code&gt;-o&lt;/code&gt; e os atributos desejados. Veja o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps -o user,pid,stime,comm
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps -o user,pid,stime,comm
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;E será renderizado isto:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps -o user,pid,stime,comm
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;USER          PID     STIME COMM
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;vitorbritto  2092   0:00.54 -bash
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;vitorbritto  &lt;span class=&quot;m&quot;&gt;2092&lt;/span&gt;   0:00.54 -bash
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Confira uma tabela dos atributos mais comuns disponíveis no Unix.&lt;/p&gt;
 
@@ -832,7 +1325,7 @@
 &lt;p&gt;O sinal padrão para o comando &lt;code&gt;kill&lt;/code&gt; é o &lt;em&gt;SIGTERM&lt;/em&gt; (terminar).&lt;/p&gt;
 
 &lt;p&gt;Para finalizar um processo, basta inserir o PID (identificador do processo). Veja o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Primeiro, buscamos o PID que queremos finalizar.
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Primeiro, buscamos o PID que queremos finalizar.
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# Digamos que o processo a ser finalizado seja o navegador Firefox.
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;# No comando abaixo, passo a flag -o par retornar um output customizado
 &lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;# com o comando e o identificador do processo (PID). Logo após uso o pipe (|)
@@ -848,7 +1341,7 @@
 &lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;$ kill 787
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Com o comando &lt;code&gt;kill -l&lt;/code&gt;, é possível renderizar no terminal os possíveis sinais com os seus respectivos números. Veja um exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;$ kill -l
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt; 1) SIGHUP       2) SIGINT       3) SIGQUI       4) SIGILL
 &lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt; 5) SIGTRAP      6) SIGABRT      7) SIGEMT       8) SIGFPE
@@ -869,7 +1362,7 @@
 
 &lt;p&gt;Em alguns sistemas, o &lt;code&gt;killall&lt;/code&gt; é utilizado para enviar sinais aos processos através de nomes. Tenha cuidado ao utilizar este cara, recomendo o uso do &lt;code&gt;pkill&lt;/code&gt;. Desta forma, ao invés de utilizar o ID do processo (PID), você utilizaria o nome do processo.
 Veja abaixo um exemplo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pkill firefox
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pkill firefox
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;O argumento utilizado no &lt;code&gt;pkill&lt;/code&gt; é uma simples expressão regular a ser comparada. Mesmo assim, antes de usar o &lt;code&gt;pkill&lt;/code&gt;, certifique-se de que a expressão existe com o &lt;code&gt;pgrep&lt;/code&gt;.&lt;/p&gt;
 
@@ -884,21 +1377,21 @@ Veja abaixo um exemplo:&lt;/p&gt;
 &lt;p&gt;Sem dúvidas, este é um dos comandos mais interessantes sobre processos. O &lt;code&gt;pstree&lt;/code&gt; permite que uma estrutura hierárquica seja renderizada no terminal, onde cada processo filho (child process) é relacionado ao seu processo pai (parent process).&lt;/p&gt;
 
 &lt;p&gt;Infelizmente, no OSX é preciso instalar este utilitário também. Veja o exemplo abaixo como podemos instalar este camarada com o &lt;em&gt;homebrew&lt;/em&gt; e a sua posterior visualização no terminal:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# 1. Instale com:&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# 1. Instale com:&lt;/span&gt;
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew install pstree
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# 2. Execute com:&lt;/span&gt;
 &lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pstree
 &lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# 3. O resultado (parcial) será:&lt;/span&gt;
 &lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;vitorbritto at ~
 &lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pstree
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;-+&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 00001 root /sbin/launchd
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt; |--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 00010 root /usr/libexec/kextd
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt; |--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 00011 root /usr/libexec/UserEventAgent -l System
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt; |--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 00012 root /usr/sbin/notifyd
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt; |--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 00014 root /usr/sbin/ntpd -c /private/etc/ntp-restrict.conf -n -g -p /var/run/ntpd.pid -f /var/db/ntp.drift
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt; |--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 00017 nobody /usr/libexec/warmd
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt; |--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 00018 _usbmuxd /System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/Resources/usbmuxd -launchd
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt; |--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 00020 root /usr/sbin/syslogd
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;-+&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;00001&lt;/span&gt; root /sbin/launchd
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;00010&lt;/span&gt; root /usr/libexec/kextd
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;00011&lt;/span&gt; root /usr/libexec/UserEventAgent -l System
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;00012&lt;/span&gt; root /usr/sbin/notifyd
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;00014&lt;/span&gt; root /usr/sbin/ntpd -c /private/etc/ntp-restrict.conf -n -g -p /var/run/ntpd.pid -f /var/db/ntp.drift
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;00017&lt;/span&gt; nobody /usr/libexec/warmd
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;00018&lt;/span&gt; _usbmuxd /System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/Resources/usbmuxd -launchd
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;00020&lt;/span&gt; root /usr/sbin/syslogd
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Certamente, é possível escrever um programa em Shell Script para renderizar uma &lt;code&gt;tree&lt;/code&gt; de acordo com as suas necessidades. Não entraremos em detalhes sobre como realizar este procedimento, para não perdermos o foco deste artigo, mas fique a vontade para realizar algumas pesquisas. Ok?&lt;/p&gt;
 
@@ -911,31 +1404,31 @@ Veja abaixo um exemplo:&lt;/p&gt;
 &lt;p&gt;Com o comando &lt;code&gt;top&lt;/code&gt; é possível iniciar um utilitário interativo para análise dos processos, os quais são atualizados frequentemente e mostram informações físicas e virtuais da memória, CPU e processos lentos/travados (&lt;a href=&quot;http://en.wikipedia.org/wiki/Zombie_process&quot;&gt;Zombie Process&lt;/a&gt;).&lt;/p&gt;
 
 &lt;p&gt;Confira um exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;Processes: 75 total, 4 running, 2 stuck, 69 sleeping, 494 threads                                                                                            03:35:56
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;Processes: &lt;span class=&quot;m&quot;&gt;75&lt;/span&gt; total, &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; running, &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; stuck, &lt;span class=&quot;m&quot;&gt;69&lt;/span&gt; sleeping, &lt;span class=&quot;m&quot;&gt;494&lt;/span&gt; threads                                                                                            03:35:56
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;Load Avg: 3.99, 3.51, 3.28  CPU usage: 66.8% user, 24.56% sys, 9.34% idle    SharedLibs: 2472K resident, 2260K data, 0B linkedit.
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;MemRegions: 34948 total, 642M resident, 17M private, 272M shared. PhysMem: 330M wired, 869M active, 834M inactive, 2034M used, 14M free.
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;MemRegions: &lt;span class=&quot;m&quot;&gt;34948&lt;/span&gt; total, 642M resident, 17M private, 272M shared. PhysMem: 330M wired, 869M active, 834M inactive, 2034M used, 14M free.
 &lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;VM: 187G vsize, 1101M framework vsize, 858219&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; pageins, 546183&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; pageouts. Networks: packets: 2578121/4689M in, 2119681/2093M out.
 &lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;Disks: 564676/9683M &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt;, 289083/12G written.
 &lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;
 &lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;PID   COMMAND      %CPU  TIME     &lt;span class=&quot;c&quot;&gt;#TH  #WQ  #POR #MREGS RPRVT  RSHRD  RSIZE  VPRVT  VSIZE  PGRP PPID STATE    UID  FAULTS     COW      MSGSENT    MSGRECV&lt;/span&gt;
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;3495  top          16.9  00:04.34 1/1  0    28   29     1368K  216K   2076K  17M    2378M  3495 2092 running  0    9727+      85       1294936+   647425+
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;3494  taskgated    0.0   00:00.03 2    0    31   40     380K   272K   1740K  20M    2381M  3494 1    sleeping 0    577        106      116        48
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;3479  ocspd        0.0   00:00.04 1    0    28   29     676K   276K   2100K  26M    2387M  3479 1    sleeping 0    749        98       185        77
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;3377  distnoted    0.0   00:00.01 2    1    40   46     392K   240K   1012K  22M    2383M  3377 3374 sleeping 89   413        83       255        124
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;3376  mdworker     0.0   00:00.36 3    1    54   71     1492K  3748K  5632K  23M    2412M  3376 3374 sleeping 89   2623       203      1702       757
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;3374  launchd      0.0   00:00.02 2    0    53   45     368K   416K   784K   38M    2399M  3374 1    sleeping 89   602        179      1254       523
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;2482  Mou          0.0   22:13.93 7    1    174  480    10M    12M    31M    301M   19G    2482 137  sleeping 501  369777     596      4043593+   2069826+
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;2447- node-webkit  17.6  69:54.83 4/2  1    78   472    10M+   40M-   39M+   75M+   807M   2443 2443 running  501  138640191+ 690      2239122+   1119229+
-&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;2445- node-webkit  110.2 06:01:21 28/1 1    137- 913-   145M+  36M    410M+  687M-  1426M- 2443 2443 running  501  1889563+   838      259273383+ 133231723+
-&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;2443- node-webkit  10.9  43:43.71 42   1    266  382    3204K  37M    19M+   341M   1102M  2443 137  stuck    501  168935+    1219     41720371+  16962182+
-&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;2421  Preview      0.0   01:35.89 6    1    185  895    12M    24M    34M    222M   3708M  2421 137  sleeping 501  196129     745      380311     187637
-&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;2092  bash         0.0   00:01.46 1    0    20   26     1268K  216K   1668K  19M    2380M  2092 2091 sleeping 501  15364      4346     491        237
-&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;2091  login        0.0   00:00.03 2    1    34   58     0B     216K   432K   22M    2391M  2091 2089 sleeping 0    748        121      292        138
-&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;2089  Terminal     1.5   01:04.90 7    3    135  330    7376K  9412K  23M    32M    2538M  2089 137  sleeping 501  115422     539      342779+    165218+
-&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;1034  mdworker     0.0   00:47.94 4    1    55   98     3096K  4116K  8244K  29M    2418M  1034 137  sleeping 501  126235     278      427269     174393
-&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;992   Sparrow      0.0   18:16.79 17   4    309  1955   51M    17M    67M    418M   3779M  992  137  sleeping 501  1391524    1828     6624660+   3008127+
-&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;885   plugin-conta 0.0   30:46.44 8    1    487  1344   1356K  28M    5816K  56M    2725M  787  787  sleeping 501  51300527   6662     17404742+  8400203+
-&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;787   firefox      11.0  04:42:22 74   1    339  19088  281M   34M    374M   514M   3563M  787  137  sleeping 501  11793724   2573162  498594082+ 245596606+
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;3495&lt;/span&gt;  top          16.9  00:04.34 1/1  &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;28&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;29&lt;/span&gt;     1368K  216K   2076K  17M    2378M  &lt;span class=&quot;m&quot;&gt;3495&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2092&lt;/span&gt; running  &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    9727+      &lt;span class=&quot;m&quot;&gt;85&lt;/span&gt;       1294936+   647425+
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;3494&lt;/span&gt;  taskgated    0.0   00:00.03 &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;31&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;40&lt;/span&gt;     380K   272K   1740K  20M    2381M  &lt;span class=&quot;m&quot;&gt;3494&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    sleeping &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;577&lt;/span&gt;        &lt;span class=&quot;m&quot;&gt;106&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;116&lt;/span&gt;        48
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;3479&lt;/span&gt;  ocspd        0.0   00:00.04 &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;28&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;29&lt;/span&gt;     676K   276K   2100K  26M    2387M  &lt;span class=&quot;m&quot;&gt;3479&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    sleeping &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;749&lt;/span&gt;        &lt;span class=&quot;m&quot;&gt;98&lt;/span&gt;       &lt;span class=&quot;m&quot;&gt;185&lt;/span&gt;        77
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;3377&lt;/span&gt;  distnoted    0.0   00:00.01 &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;40&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;46&lt;/span&gt;     392K   240K   1012K  22M    2383M  &lt;span class=&quot;m&quot;&gt;3377&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3374&lt;/span&gt; sleeping &lt;span class=&quot;m&quot;&gt;89&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;413&lt;/span&gt;        &lt;span class=&quot;m&quot;&gt;83&lt;/span&gt;       &lt;span class=&quot;m&quot;&gt;255&lt;/span&gt;        124
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;3376&lt;/span&gt;  mdworker     0.0   00:00.36 &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;54&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;71&lt;/span&gt;     1492K  3748K  5632K  23M    2412M  &lt;span class=&quot;m&quot;&gt;3376&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3374&lt;/span&gt; sleeping &lt;span class=&quot;m&quot;&gt;89&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;2623&lt;/span&gt;       &lt;span class=&quot;m&quot;&gt;203&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;1702&lt;/span&gt;       757
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;3374&lt;/span&gt;  launchd      0.0   00:00.02 &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;53&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;45&lt;/span&gt;     368K   416K   784K   38M    2399M  &lt;span class=&quot;m&quot;&gt;3374&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    sleeping &lt;span class=&quot;m&quot;&gt;89&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;602&lt;/span&gt;        &lt;span class=&quot;m&quot;&gt;179&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;1254&lt;/span&gt;       523
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;2482&lt;/span&gt;  Mou          0.0   22:13.93 &lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;174&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;480&lt;/span&gt;    10M    12M    31M    301M   19G    &lt;span class=&quot;m&quot;&gt;2482&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;137&lt;/span&gt;  sleeping &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;369777&lt;/span&gt;     &lt;span class=&quot;m&quot;&gt;596&lt;/span&gt;      4043593+   2069826+
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;2447- node-webkit  17.6  69:54.83 4/2  &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;78&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;472&lt;/span&gt;    10M+   40M-   39M+   75M+   807M   &lt;span class=&quot;m&quot;&gt;2443&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2443&lt;/span&gt; running  &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  138640191+ &lt;span class=&quot;m&quot;&gt;690&lt;/span&gt;      2239122+   1119229+
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;2445- node-webkit  110.2 06:01:21 28/1 &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    137- 913-   145M+  36M    410M+  687M-  1426M- &lt;span class=&quot;m&quot;&gt;2443&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2443&lt;/span&gt; running  &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  1889563+   &lt;span class=&quot;m&quot;&gt;838&lt;/span&gt;      259273383+ 133231723+
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;2443- node-webkit  10.9  43:43.71 &lt;span class=&quot;m&quot;&gt;42&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;266&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;382&lt;/span&gt;    3204K  37M    19M+   341M   1102M  &lt;span class=&quot;m&quot;&gt;2443&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;137&lt;/span&gt;  stuck    &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  168935+    &lt;span class=&quot;m&quot;&gt;1219&lt;/span&gt;     41720371+  16962182+
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;2421&lt;/span&gt;  Preview      0.0   01:35.89 &lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;185&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;895&lt;/span&gt;    12M    24M    34M    222M   3708M  &lt;span class=&quot;m&quot;&gt;2421&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;137&lt;/span&gt;  sleeping &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;196129&lt;/span&gt;     &lt;span class=&quot;m&quot;&gt;745&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;380311&lt;/span&gt;     187637
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;2092&lt;/span&gt;  bash         0.0   00:01.46 &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;20&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;26&lt;/span&gt;     1268K  216K   1668K  19M    2380M  &lt;span class=&quot;m&quot;&gt;2092&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2091&lt;/span&gt; sleeping &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;15364&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;4346&lt;/span&gt;     &lt;span class=&quot;m&quot;&gt;491&lt;/span&gt;        237
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;2091&lt;/span&gt;  login        0.0   00:00.03 &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;34&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;58&lt;/span&gt;     0B     216K   432K   22M    2391M  &lt;span class=&quot;m&quot;&gt;2091&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2089&lt;/span&gt; sleeping &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;748&lt;/span&gt;        &lt;span class=&quot;m&quot;&gt;121&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;292&lt;/span&gt;        138
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;2089&lt;/span&gt;  Terminal     1.5   01:04.90 &lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;135&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;330&lt;/span&gt;    7376K  9412K  23M    32M    2538M  &lt;span class=&quot;m&quot;&gt;2089&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;137&lt;/span&gt;  sleeping &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;115422&lt;/span&gt;     &lt;span class=&quot;m&quot;&gt;539&lt;/span&gt;      342779+    165218+
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;1034&lt;/span&gt;  mdworker     0.0   00:47.94 &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;55&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;98&lt;/span&gt;     3096K  4116K  8244K  29M    2418M  &lt;span class=&quot;m&quot;&gt;1034&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;137&lt;/span&gt;  sleeping &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;126235&lt;/span&gt;     &lt;span class=&quot;m&quot;&gt;278&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;427269&lt;/span&gt;     174393
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;992&lt;/span&gt;   Sparrow      0.0   18:16.79 &lt;span class=&quot;m&quot;&gt;17&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;309&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;1955&lt;/span&gt;   51M    17M    67M    418M   3779M  &lt;span class=&quot;m&quot;&gt;992&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;137&lt;/span&gt;  sleeping &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;1391524&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;1828&lt;/span&gt;     6624660+   3008127+
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;885&lt;/span&gt;   plugin-conta 0.0   30:46.44 &lt;span class=&quot;m&quot;&gt;8&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;487&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;1344&lt;/span&gt;   1356K  28M    5816K  56M    2725M  &lt;span class=&quot;m&quot;&gt;787&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;787&lt;/span&gt;  sleeping &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;51300527&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;6662&lt;/span&gt;     17404742+  8400203+
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;787&lt;/span&gt;   firefox      11.0  04:42:22 &lt;span class=&quot;m&quot;&gt;74&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;339&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;19088&lt;/span&gt;  281M   34M    374M   514M   3563M  &lt;span class=&quot;m&quot;&gt;787&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;137&lt;/span&gt;  sleeping &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;11793724&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;2573162&lt;/span&gt;  498594082+ 245596606+
 &lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;7
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Com este &lt;em&gt;overview&lt;/em&gt; sobre processos no Unix, podemos seguir adiante e percorrer alguns aspectos para gerir tais processos. Para isto, vamos entender o que é e como funciona o comando &lt;code&gt;jobs&lt;/code&gt;.&lt;/p&gt;
@@ -953,7 +1446,7 @@ Veja abaixo um exemplo:&lt;/p&gt;
               &lt;/h4&gt;
             
 &lt;p&gt;Você pode, simplesmente, inserir o operador &lt;code&gt;&amp;amp;&lt;/code&gt; ao final do comando que deseja executar. Com isso, o seu processo será executado em &lt;em&gt;background&lt;/em&gt; e o seu &lt;em&gt;prompt&lt;/em&gt; não será travado. Confira o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm search zip &amp;amp;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm search zip &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Neste exemplo, o &lt;code&gt;npm&lt;/code&gt; fará uma busca pelos módulos com o termo &lt;em&gt;zip&lt;/em&gt; e o seu prompt ficará livre para continuar executando demais comandos. Faça um teste. :)&lt;/p&gt;
 
@@ -962,11 +1455,11 @@ Veja abaixo um exemplo:&lt;/p&gt;
               &lt;/h4&gt;
             
 &lt;p&gt;Para verificar os processos em execução no &lt;em&gt;background&lt;/em&gt;, basta digitar no terminal o comando &lt;code&gt;jobs&lt;/code&gt;. Será exibida uma lista semelhante a que você verá abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;jobs&lt;/span&gt;
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;+ Running        npm search zip &amp;amp;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;jobs&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;+ Running        npm search zip &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;É possível mover um processo para o &lt;em&gt;foreground&lt;/em&gt;, mas vale lembrar que este procedimento fará com que o prompt seja travado. Isso impossibilita qualquer ação do usuário até que o processo seja finalizado. Para ver como funciona, execute o seguinte comando no processo em &lt;em&gt;background&lt;/em&gt; recém-criado:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# Colocar no foreground o processo de número 1&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# Colocar no foreground o processo de número 1&lt;/span&gt;
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;fg &lt;/span&gt;1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;blockquote&gt;
@@ -1063,7 +1556,7 @@ Veja abaixo um exemplo:&lt;/p&gt;
 &lt;p&gt;É possível também adicionar várias entradas ao mesmo tempo.&lt;/p&gt;
 
 &lt;p&gt;Veja no exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;:~/opt/bin:~/opt/node/bin
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;:~/opt/bin:~/opt/node/bin
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Perceba que o caracter &lt;code&gt;:&lt;/code&gt; demarca o fim/início de cada caminho.&lt;/p&gt;
 
@@ -1098,19 +1591,19 @@ Veja abaixo um exemplo:&lt;/p&gt;
               &lt;/h3&gt;
             
 &lt;p&gt;Confira abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# arquivo .bashrc&lt;/span&gt;
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -n &lt;span class=&quot;s2&quot;&gt;&amp;quot;$PS1&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bash_profile;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# arquivo .bash_profile&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# arquivo .bashrc&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -n &lt;span class=&quot;s2&quot;&gt;&amp;quot;$PS1&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bash_profile&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# arquivo .bash_profile&lt;/span&gt;
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# paths&lt;/span&gt;
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;:~/seu/caminho:~/outro/caminho
 &lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# aliases&lt;/span&gt;
 &lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;la&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ls -la&amp;quot;&lt;/span&gt;
 &lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# functions&lt;/span&gt;
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;apepath &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -z &lt;span class=&quot;s2&quot;&gt;&amp;quot;${!1}&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$2&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; apepath &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -z &lt;span class=&quot;s2&quot;&gt;&amp;quot;${!1}&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$2&amp;quot;&lt;/span&gt;
 &lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;${!1}:$2&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;${!1}:$2&amp;quot;&lt;/span&gt;
 &lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
 &lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;...
@@ -1120,34 +1613,34 @@ Veja abaixo um exemplo:&lt;/p&gt;
               &lt;/h4&gt;
             
 &lt;p&gt;Perceba que temos um &lt;code&gt;[ -n &amp;quot;$PS1&amp;quot; ] &amp;amp;&amp;amp;&lt;/code&gt; antes do &lt;code&gt;source&lt;/code&gt;. Você deve estar se pergunta o que é isso. Pois bem. Este trecho do código retorna o prompt do terminal em formato &lt;em&gt;string&lt;/em&gt;. Por exemplo, no meu terminal, é renderizado:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Ao digitar &lt;code&gt;echo $PS1&lt;/code&gt;, será retornado:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;\[\033]0;\w\007\]\n\[\]\u\[\] at \[\]\w$(prompt_git)\n\[\]$ \[\]
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;\[\033]0;\w\007\]\n\[\]\u\[\] at \[\]\w$(prompt_git)\n\[\]$ \[\]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Já o operador &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; é utlizado para combinar dois ou mais comandos em uma linha compacta no Unix.&lt;/p&gt;
 
-&lt;p&gt;Perceba também que, além dos &lt;em&gt;paths&lt;/em&gt;, estamos registrando os nossos atalhos (_aliases_), funções bash, configurações do prompt e demais recursos que pretendemos utilizar no terminal, no &lt;code&gt;.bash_profile&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Perceba também que, além dos &lt;em&gt;paths&lt;/em&gt;, estamos registrando os nossos atalhos (&lt;em&gt;aliases&lt;/em&gt;), funções bash, configurações do prompt e demais recursos que pretendemos utilizar no terminal, no &lt;code&gt;.bash_profile&lt;/code&gt;.&lt;/p&gt;
 
               &lt;h3 id=&quot;Dando-uma-mãozinha&quot;&gt;
                 &lt;a name=&quot;Dando-uma-mãozinha&quot; href=&quot;#Dando-uma-mãozinha&quot;&gt;&lt;/a&gt;Dando uma mãozinha
               &lt;/h3&gt;
             
-&lt;p&gt;Podemos usar funções para facilitar a inclusão de novos caminhos (_paths_) na variável global PATH.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# append para novo caminho&lt;/span&gt;
+&lt;p&gt;Podemos usar funções para facilitar a inclusão de novos caminhos (&lt;em&gt;paths&lt;/em&gt;) na variável global PATH.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# append para novo caminho&lt;/span&gt;
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;apepath&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -z &lt;span class=&quot;s2&quot;&gt;&amp;quot;${!1}&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$2&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -z &lt;span class=&quot;s2&quot;&gt;&amp;quot;${!1}&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$2&amp;quot;&lt;/span&gt;
 &lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;${!1}:$2&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;${!1}:$2&amp;quot;&lt;/span&gt;
 &lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
 &lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# prepend para novo caminho&lt;/span&gt;
 &lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;prepath&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -z &lt;span class=&quot;s2&quot;&gt;&amp;quot;${!1}&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$2&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -z &lt;span class=&quot;s2&quot;&gt;&amp;quot;${!1}&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$2&amp;quot;&lt;/span&gt;
 &lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$2:${!1}&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$2:${!1}&amp;quot;&lt;/span&gt;
 &lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
 &lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# Executamos as funções da seguinte forma:&lt;/span&gt;
@@ -1189,7 +1682,7 @@ Veja abaixo um exemplo:&lt;/p&gt;
 &lt;p&gt;1 - Realize a instalação do &lt;strong&gt;napa&lt;/strong&gt;: &lt;code&gt;npm i napa --save-dev&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;2 - Insira o código abaixo no seu manifesto &lt;code&gt;package.json&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&amp;quot;scripts&amp;quot;: {
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&amp;quot;scripts&amp;quot;: {
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    &amp;quot;install&amp;quot;: &amp;quot;napa&amp;quot;
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;},
 &lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&amp;quot;napa&amp;quot;: {
@@ -1198,11 +1691,11 @@ Veja abaixo um exemplo:&lt;/p&gt;
 &lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;3 - Insira a função &lt;code&gt;require()&lt;/code&gt; dos módulos no script principal (ex.: &lt;code&gt;app.js&lt;/code&gt;):&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;require(&amp;#39;angular/angular&amp;#39;);
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;require(&amp;#39;angular/angular&amp;#39;);
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;require(&amp;#39;angular-route/angular-route&amp;#39;);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;4 - Coloque o Angular na brincadeira:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;angular.module(&amp;#39;myApp&amp;#39;, [&amp;#39;ngRoute&amp;#39;]).config([&amp;#39;$routeProvider&amp;#39;, function($routeProvider) {
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;angular.module(&amp;#39;myApp&amp;#39;, [&amp;#39;ngRoute&amp;#39;]).config([&amp;#39;$routeProvider&amp;#39;, function($routeProvider) {
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    // Declare suas rotas
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    $routeProvider.when(&amp;#39;/view1&amp;#39;, {templateUrl: &amp;#39;partials/partial1.html&amp;#39;});
 &lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    $routeProvider.when(&amp;#39;/view2&amp;#39;, {templateUrl: &amp;#39;partials/partial2.html&amp;#39;});
@@ -1295,7 +1788,7 @@ comando ou script&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Confira abaixo como podemos criar as nossas tarefas:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Cada linha representa uma tarefa no crontab
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Cada linha representa uma tarefa no crontab
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;00 6 * * 1 /caminho/para/script/status.sh
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;00 12 5 * * /caminho/para/script/temp.sh
 &lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;30 23 * * * /caminho/para/script/backup.sh
@@ -1309,7 +1802,7 @@ comando ou script&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Você ainda pode adicionar um 7 (sétimo) campo, onde o sexto campo será substituído pelo nome do usuário no sistema e o sétimo campo adicionado com o programa a ser executado. Veja o exemplo a seguir:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Execute esta tarefa a cada três horas, no dia 1 (um) de cada mês com o usuário root.
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Execute esta tarefa a cada três horas, no dia 1 (um) de cada mês com o usuário root.
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;00 */3 1 * * root /caminho/para/script/security.sh
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Perceba que estamos utilizando um novo método para definir o período desta tarefa, o &lt;code&gt;*/3&lt;/code&gt;. Este trecho faz com que a tarefa seja executa em intervalos de 3 horas. Você poderia ainda definir os horários que esta tarefa seria executada, utilizando uma &lt;code&gt;,&lt;/code&gt; (vírgula) para cada horário. Por exemplo: &lt;code&gt;00 3,9,15,21 1 * * root /caminho/para/script/security.sh&lt;/code&gt;.&lt;/p&gt;
@@ -1321,7 +1814,7 @@ comando ou script&lt;/p&gt;
 &lt;p&gt;Os &lt;em&gt;scripts&lt;/em&gt; a serem executados no exemplo acima pelo crontab, &lt;strong&gt;precisam&lt;/strong&gt; estar definidos como executáveis no seu Shell. Para isso, certifique-se de que o comando &lt;code&gt;chmod +x /caminho/para/script/seuscript.sh&lt;/code&gt; foi executado previamente. Do contrário, utilize o operador &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; para compactar uma instrução no momento da execução do script. Como faremos isso?&lt;/p&gt;
 
 &lt;p&gt;Veja o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Tarefas:
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Tarefas:
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;00 6 * * 1 /caminho/para/script &amp;amp;&amp;amp; bash status.sh
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;00 12 5 * * /caminho/para/script &amp;amp;&amp;amp; bash temp.sh
 &lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;30 23 * * * /caminho/para/script &amp;amp;&amp;amp; bash backup.sh
@@ -1397,7 +1890,7 @@ Será executado a cada hora, &amp;quot;0 * * * *&amp;quot;.&lt;/p&gt;
               &lt;/h3&gt;
             
 &lt;p&gt;Você pode definir todas as suas tarefas em um único arquivo e chamá-lo com o &lt;code&gt;crontab&lt;/code&gt;. Veja o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# 1. Crie o arquivo jobs.txt com o conteúdo abaixo:
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# 1. Crie o arquivo jobs.txt com o conteúdo abaixo:
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;00 6 * * 1 [comando ou script para executar]
 &lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;00 12 5 * * [comando ou script para executar]
@@ -1418,571 +1911,6 @@ Será executado a cada hora, &amp;quot;0 * * * *&amp;quot;.&lt;/p&gt;
         <pubDate>Tue, 04 Mar 2014 00:00:00 -0300</pubDate>
         <link>http://www.vitorbritto.com.br/blog/agendando-tarefas-com-crontab/</link>
         <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/agendando-tarefas-com-crontab/</guid>
-      </item>
-    
-      <item>
-        <title>A Evolução na Automação de Tarefas</title>
-        <description>&lt;p&gt;&lt;strong&gt;UPDATE 27-07-2014:&lt;/strong&gt; o &lt;a href=&quot;http://vitorbritto.github.io/just/&quot;&gt;just&lt;/a&gt; encontra-se em nova versão. Confira o &lt;em&gt;source code&lt;/em&gt; e documentação &lt;a href=&quot;https://github.com/vitorbritto/just&quot;&gt;aqui&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Saudações!&lt;/p&gt;
-
-&lt;p&gt;Há uns 4 meses, uma nova ferramenta veio ao conhecimento dos Desenvolvedores Front-end. Foi o maior rebuliço por conta da eficiência na execução de tarefas, da sua &amp;quot;semelhança&amp;quot; com o NodeJS e entre outras qualidades notáveis.&lt;/p&gt;
-
-&lt;p&gt;Você já deve estar ciente que estou falando do Gulp.&lt;/p&gt;
-
-&lt;p&gt;Tudo o que eu disse anteriormente, procede. O Gulp é uma ferramenta que prima por um encadeamento de tarefas mais compreensivo e organizado, fornecendo uma maneira muito prática para criar suas tarefas. Mas, você sabe o porquê dessa eficiência e como é possível esse encadeamento?&lt;/p&gt;
-
-&lt;p&gt;Neste artigo, vou cobrir alguns pontos históricos, teóricos e mecânicos, que foram (e continuam sendo) cruciais para as ferramentas de automação utilizadas nos dias de hoje.&lt;/p&gt;
-
-              &lt;h2 id=&quot;Me-acompanhe-nesta-jornada&quot;&gt;
-                &lt;a name=&quot;Me-acompanhe-nesta-jornada&quot; href=&quot;#Me-acompanhe-nesta-jornada&quot;&gt;&lt;/a&gt;Me acompanhe nesta jornada
-              &lt;/h2&gt;
-            
-&lt;p&gt;Para quem acompanha os artigos aqui publicados, sabe que estou fazendo muitos convites para voltar no tempo. Serei obrigado a fazer este convite mais uma vez para falarmos sobre alguns aspectos importantes do UNIX (e seus utilitários) e Shell, até chegarmos ao NodeJS.&lt;/p&gt;
-
-&lt;p&gt;Preparado? Então, vamos lá.&lt;/p&gt;
-
-              &lt;h3 id=&quot;UNIX-nosso-de-cada-dia&quot;&gt;
-                &lt;a name=&quot;UNIX-nosso-de-cada-dia&quot; href=&quot;#UNIX-nosso-de-cada-dia&quot;&gt;&lt;/a&gt;UNIX nosso de cada dia
-              &lt;/h3&gt;
-            
-&lt;p&gt;Entre os anos 60 e 80, a história da programação estava sendo redesenhada. Fosse Dennis Ritchie e Ken Thompson com o UNIX e a linguagem B/C, Douglas Engelbart com sua genialidade para criar ferramentas e recursos excitantes (o que lhe rendeu o título de &lt;a href=&quot;http://www.youtube.com/watch?v=VScVgXM7lQQ&amp;amp;list=PL76DBC8D6718B8FD3&quot;&gt;&amp;quot;The Mother of all Demos&amp;quot;&lt;/a&gt;) ou Alan Kay, Dan Ingalls e Adele Goldberg com o SmallTalk e seu paradigma orientado a objetos.&lt;/p&gt;
-
-&lt;p&gt;Todos eles possuíam um objetivo em comum: tornar a portabilidade entre máquinas e sistemas operacionais viável e construir programas estruturados.&lt;/p&gt;
-
-&lt;p&gt;O grande responsável por trás de tudo isso, foi o UNIX (e continua sendo). Com ele, veio a linguagem C, o Shell (com &lt;em&gt;pipes&lt;/em&gt;, &lt;em&gt;redirections&lt;/em&gt; e suas ferramentas), &lt;em&gt;Streams&lt;/em&gt;, o utilitário &lt;em&gt;Make&lt;/em&gt; e outras &lt;em&gt;features&lt;/em&gt; que ajudaram (e ainda ajudam) na automação de tarefas, execução de processos e diversas rotinas.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; &lt;a href=&quot;http://www.vitorbritto.com.br/blog/unix-a-base-de-tudo/&quot;&gt;neste artigo&lt;/a&gt;, abordo alguns pontos sobre a história do UNIX, sua filosofia e importância.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-              &lt;h3 id=&quot;Chamando-o-Shell-Script-para-a-brincadeira&quot;&gt;
-                &lt;a name=&quot;Chamando-o-Shell-Script-para-a-brincadeira&quot; href=&quot;#Chamando-o-Shell-Script-para-a-brincadeira&quot;&gt;&lt;/a&gt;Chamando o Shell Script para a brincadeira
-              &lt;/h3&gt;
-            
-&lt;p&gt;O Shell Script sempre foi um grande aliado para os administradores UNIX. Além de ser uma caixinha de ferramentas poderosa para executar rotinas, possibilitava uma experiência muito boa com o usuário. Com ele, é possível criar pequenos programas para realizar &lt;em&gt;backup&lt;/em&gt;, transferir arquivos de um sistema (local-&amp;gt;local ou local-&amp;gt;remoto), fazer consultas em extensos relatórios e muito mais.&lt;/p&gt;
-
-&lt;p&gt;Mas, como podemos tornar isso útil no desenvolvimento de um projeto web?&lt;/p&gt;
-
-&lt;p&gt;Me permita mostrar um exemplo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;#!/bin/bash
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;# Programa: scaffolding.sh
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;# Autor: Vitor Britto
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;# Descrição:
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;# Este script será responsável pela criação
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;# de uma estrutura para novos projetos.
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;# Uso: chmod u+x scaffolding.sh &amp;amp;&amp;amp; ./scaffolding.sh
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;# Declarando as variáveis
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;FILES=&amp;quot;index.html robots.txt humans.txt .editorconfig assets/styles/style.css assets/scripts/main.js&amp;quot;
-&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;PATHS=&amp;quot;assets/scripts assets/styles assets/images assets/fonts&amp;quot;
-&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;# Iniciando a interação com o usuário
-&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;echo -n &amp;quot;→ Digite o nome do projeto (sem espaços): &amp;quot;
-&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;read PROJECT
-&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;# Criando estrutura do projeto
-&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;echo -e &amp;quot;→ Criando Estrutura&amp;quot;
-&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;mkdir -p $PROJECT &amp;amp;&amp;amp; cd $_
-&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;mkdir -p $PATHS
-&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;touch $FILES
-&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;# Mensagem final
-&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;echo -e &amp;quot;\n✔ Processo finalizado!\n&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Neste programa, montamos uma estrutura inicial para um novo projeto.&lt;/p&gt;
-
-&lt;p&gt;Agora, confira o arquivo &lt;code&gt;build.sh&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;#!/bin/bash
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;# Programa: build.sh
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;# Autor: Vitor Britto
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;# Descrição:
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;# Este script será responsável pelo build do projeto, o qual
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;# fará o processo de minificação e concatenação dos arquivos
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;# e preparação dos arquivos a serem colocados em produção.
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;# Uso: chmod u+x build.sh &amp;amp;&amp;amp; ./build.sh
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;# Declarando as variáveis
-&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;DIST=&amp;quot;_build&amp;quot;
-&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;IGNORE=(
-&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;    &amp;quot;assets/styles/style.css&amp;quot;
-&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;    &amp;quot;assets/scripts/main.js&amp;quot;
-&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;    &amp;quot;.editorconfig&amp;quot;
-&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;)
-&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;STYLE=&amp;quot;assets/styles&amp;quot;
-&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;SCRIPT=&amp;quot;assets/scripts&amp;quot;
-&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;# Minificar JS
-&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;echo -e &amp;quot;→ Minificando JS&amp;quot;
-&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;curl -X POST -s --data-urlencode &amp;quot;input@${SCRIPT}/main.js&amp;quot; http://javascript-minifier.com/raw &amp;gt; ${SCRIPT}/main.min.js
-&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;# Minificar CSS
-&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;echo -e &amp;quot;→ Minificando CSS&amp;quot;
-&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;curl -X POST -s --data-urlencode &amp;quot;input@${STYLE}/style.css&amp;quot; http://cssminifier.com/raw &amp;gt; ${STYLE}/style.min.css
-&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-33&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-34&quot;&gt;&lt;/a&gt;# Copiar arquivos para pasta de destino
-&lt;a name=&quot;line-35&quot;&gt;&lt;/a&gt;echo -e &amp;quot;→ Colocando arquivos em produção&amp;quot;
-&lt;a name=&quot;line-36&quot;&gt;&lt;/a&gt;if [[ ! -d ${DIST} ]]; then
-&lt;a name=&quot;line-37&quot;&gt;&lt;/a&gt;    mkdir ${DIST}
-&lt;a name=&quot;line-38&quot;&gt;&lt;/a&gt;fi
-&lt;a name=&quot;line-39&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-40&quot;&gt;&lt;/a&gt;cp ./* ${DIST}
-&lt;a name=&quot;line-41&quot;&gt;&lt;/a&gt;rm -rf ${IGNORE}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Já este programa, fica responsável pela automação de nossas tarefas. Nele, estamos executando tarefas para minificar e concatenar arquivos CSS e JavaScript, além de realizar uma cópia dos arquivos a serem colocados em produção.&lt;/p&gt;
-
-&lt;p&gt;Entretanto, podemos agregar uma maior utilidade para este &lt;em&gt;build script&lt;/em&gt; com mais alguns recursos interessantes. Podemos utilizar um pré-processador para fazer o trabalho &lt;strong&gt;3 em 1&lt;/strong&gt; (compilação, concatenação e minificação), integrar o &lt;em&gt;uglifyjs&lt;/em&gt; para trabalharmos melhor com nossos &lt;em&gt;scripts&lt;/em&gt;, viabilizar o uso do &lt;em&gt;rsync&lt;/em&gt;, integrar o Grunt, Bower, Travis CI e torná-lo um repositório Git, além de possibilitar a execução de tarefas específicas para cada momento da automação. Muito melhor, não é?&lt;/p&gt;
-
-&lt;p&gt;Poderíamos fazer isso com Shell Script, mas o &lt;em&gt;Makefile&lt;/em&gt; se encaixa melhor neste cenário. E, é sobre ele que vamos falar agora.&lt;/p&gt;
-
-              &lt;h3 id=&quot;Fazendo-um-&lt;em&gt;upgrade&lt;-em&gt;-no-nosso-processo-de-automação&quot;&gt;
-                &lt;a name=&quot;Fazendo-um-&lt;em&gt;upgrade&lt;-em&gt;-no-nosso-processo-de-automação&quot; href=&quot;#Fazendo-um-&lt;em&gt;upgrade&lt;-em&gt;-no-nosso-processo-de-automação&quot;&gt;&lt;/a&gt;Fazendo um &lt;em&gt;upgrade&lt;/em&gt; no nosso processo de automação
-              &lt;/h3&gt;
-            
-&lt;p&gt;Alguns Desenvolvedores tem um péssimo hábito em injetar plug-ins de forma frenética nos seus projetos, sem considerar uma leitura prévia na documentação da ferramenta que está utilizando, entre outras alternativas para se trabalhar com as tarefas desejadas. Lembre-se que devemos usar o bom senso e que a pesquisa é fundamental para o desenvolvimento de um projeto.&lt;/p&gt;
-
-&lt;p&gt;Nesta etapa, estaremos utilizando o &lt;em&gt;Make&lt;/em&gt;. Caso você já o conheça, prossiga para o exemplo a seguir. Se você não o conhece, me permita apresentá-lo.&lt;/p&gt;
-
-              &lt;h4 id=&quot;Make-my-day&quot;&gt;
-                &lt;a name=&quot;Make-my-day&quot; href=&quot;#Make-my-day&quot;&gt;&lt;/a&gt;Make my day
-              &lt;/h4&gt;
-            
-&lt;p&gt;O propósito do utilitário &lt;em&gt;Make&lt;/em&gt; é automatizar determinados trechos de um programa mais robusto. Este cara lhe permite administrar de forma mais prática a automação no seu projeto, lhe dando acesso aos recursos do Shell. Vale frisar que, a sua utilidade não deve ser negligenciada por conta de outras ferramentas.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Tanto o Shell quanto o Make estão disponíveis apenas em sistemas &lt;strong&gt;UNIX&lt;/strong&gt; (OSX, BSD e Linux). Caso você esteja utilizando o Windows, será possível executar este cara com a ajuda do &lt;a href=&quot;http://www.cygwin.com/&quot;&gt;CygWin&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-              &lt;h4 id=&quot;Colocando-em-prática&quot;&gt;
-                &lt;a name=&quot;Colocando-em-prática&quot; href=&quot;#Colocando-em-prática&quot;&gt;&lt;/a&gt;Colocando em prática
-              &lt;/h4&gt;
-            
-&lt;p&gt;Para utilizar o &lt;em&gt;make&lt;/em&gt;, você deve criar um arquivo &lt;code&gt;makefile&lt;/code&gt; e executá-lo com o comando &lt;code&gt;make [tarefa que você quer executar]&lt;/code&gt; no UNIX Shell.&lt;/p&gt;
-
-&lt;p&gt;Confira o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# MAKEFILE
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;# Autor: Vitor Britto
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;# Versão: 0.1.0
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;# Descrição:
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;# Arquivo para gerar um estrutura inicial para
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;# novos projetos e realizar tarefas de automação
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;# Tarefas Disponíveis:
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;#    make        -&amp;gt; Inicializa processo de Build
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;#    make create -&amp;gt; Criar a estrutura do projeto
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;#    make copy   -&amp;gt; Copia os arquivos para a pasta &amp;quot;public&amp;quot;
-&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;#    make zip    -&amp;gt; Compacta os arquivos da pasta &amp;quot;public&amp;quot; e versiona com a data e hora atual
-&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;# Uso: make [nome da tarefa que deseja executar]
-&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;# Caminhos de Origem
-&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;JS_IN    = ./assets/scripts
-&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;CSS_IN   = ./assets/styles
-&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;IMG_IN   = ./assets/images
-&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;# Caminhos de Destino
-&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;DIST     = ./public
-&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;JS_OUT   = ./public/assets/scripts
-&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;CSS_OUT  = ./public/assets/styles
-&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;IMG_IN   = ./public/assets/images
-&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-33&quot;&gt;&lt;/a&gt;# Configurações Gerais
-&lt;a name=&quot;line-34&quot;&gt;&lt;/a&gt;CHECK    = \033[32m✔\033[39m
-&lt;a name=&quot;line-35&quot;&gt;&lt;/a&gt;HR       = -----------------------------------------------------
-&lt;a name=&quot;line-36&quot;&gt;&lt;/a&gt;IGNORE   = (&amp;quot;assets/styles/style.css&amp;quot; &amp;quot;assets/scripts/main.js&amp;quot; &amp;quot;package.json&amp;quot; &amp;quot;bower.json&amp;quot; &amp;quot;.gitignore&amp;quot; &amp;quot;.git&amp;quot; &amp;quot;.travis.yml&amp;quot; &amp;quot;.editorconfig&amp;quot;)
-&lt;a name=&quot;line-37&quot;&gt;&lt;/a&gt;NODE     = ./node_modules/.bin
-&lt;a name=&quot;line-38&quot;&gt;&lt;/a&gt;PACKAGE  = pkg_projeto
-&lt;a name=&quot;line-39&quot;&gt;&lt;/a&gt;VERSION  = date &amp;quot;+%Y.%m.%d&amp;quot;
-&lt;a name=&quot;line-40&quot;&gt;&lt;/a&gt;RELEASE  = $(PACKAGE)-$(VERSION)
-&lt;a name=&quot;line-41&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-42&quot;&gt;&lt;/a&gt;# Inicializar processo de Build
-&lt;a name=&quot;line-43&quot;&gt;&lt;/a&gt;all: init styles scripts
-&lt;a name=&quot;line-44&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-45&quot;&gt;&lt;/a&gt;help:
-&lt;a name=&quot;line-46&quot;&gt;&lt;/a&gt;    @cat help.txt
-&lt;a name=&quot;line-47&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-48&quot;&gt;&lt;/a&gt;# Mensagem de Inicialização
-&lt;a name=&quot;line-49&quot;&gt;&lt;/a&gt;init:
-&lt;a name=&quot;line-50&quot;&gt;&lt;/a&gt;    @echo &amp;quot;\n$(HR)&amp;quot;
-&lt;a name=&quot;line-51&quot;&gt;&lt;/a&gt;    @echo &amp;quot;→ Iniciando processo de Build&amp;quot;
-&lt;a name=&quot;line-52&quot;&gt;&lt;/a&gt;    @echo &amp;quot;$(HR)\n&amp;quot;
-&lt;a name=&quot;line-53&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-54&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-55&quot;&gt;&lt;/a&gt;# Criar Estrutura para novos projetos
-&lt;a name=&quot;line-56&quot;&gt;&lt;/a&gt;create:
-&lt;a name=&quot;line-57&quot;&gt;&lt;/a&gt;    @echo &amp;quot;→ Iniciando download&amp;quot;
-&lt;a name=&quot;line-58&quot;&gt;&lt;/a&gt;    @echo &amp;quot;\n&amp;quot;
-&lt;a name=&quot;line-59&quot;&gt;&lt;/a&gt;    @curl -fsSL https://gist.githubusercontent.com/vitorbritto/9128566/raw/bf3d531d39afc7fec5a034f968569fc7883f0c2e/create.sh &amp;gt; create.sh
-&lt;a name=&quot;line-60&quot;&gt;&lt;/a&gt;    @chmod u+x create.sh &amp;amp;&amp;amp; ./create.sh
-&lt;a name=&quot;line-61&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-62&quot;&gt;&lt;/a&gt;    @mkdir -p $(DIST)
-&lt;a name=&quot;line-63&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-64&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-65&quot;&gt;&lt;/a&gt;# Tarefa para Estilos
-&lt;a name=&quot;line-66&quot;&gt;&lt;/a&gt;styles:
-&lt;a name=&quot;line-67&quot;&gt;&lt;/a&gt;    @$(NODE)/stylus -c &amp;lt; $(CSS_IN)/style.styl &amp;gt; $(CSS_OUT)/style.css
-&lt;a name=&quot;line-68&quot;&gt;&lt;/a&gt;    @echo &amp;quot;→ Compilando CSS              $(CHECK) Feito!&amp;quot;
-&lt;a name=&quot;line-69&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-70&quot;&gt;&lt;/a&gt;# Tarefa para Scripts
-&lt;a name=&quot;line-71&quot;&gt;&lt;/a&gt;scripts:
-&lt;a name=&quot;line-72&quot;&gt;&lt;/a&gt;    @$(NODE)/uglifyjs -o $(JS_IN)/main.js &amp;gt; $(JS_OUT)/main.min.js
-&lt;a name=&quot;line-73&quot;&gt;&lt;/a&gt;    @echo &amp;quot;→ Minificando Scripts         $(CHECK) Feito!&amp;quot;
-&lt;a name=&quot;line-74&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-75&quot;&gt;&lt;/a&gt;# Copiar arquivos para a pasta &amp;quot;public&amp;quot; via Rsync
-&lt;a name=&quot;line-76&quot;&gt;&lt;/a&gt;copy:
-&lt;a name=&quot;line-77&quot;&gt;&lt;/a&gt;    @echo &amp;quot;→ Copiando arquivos&amp;quot;
-&lt;a name=&quot;line-78&quot;&gt;&lt;/a&gt;    @rsync -aq --exclude=&amp;quot;$(IGNORE)&amp;quot; $(DIST)
-&lt;a name=&quot;line-79&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-80&quot;&gt;&lt;/a&gt;# Compactar arquivos na pasta &amp;quot;public&amp;quot;
-&lt;a name=&quot;line-81&quot;&gt;&lt;/a&gt;zip:
-&lt;a name=&quot;line-82&quot;&gt;&lt;/a&gt;    @echo &amp;quot;→ Compactando arquivos&amp;quot; \
-&lt;a name=&quot;line-83&quot;&gt;&lt;/a&gt;    @zip -r $(RELEASE) $(DIST)/*
-&lt;a name=&quot;line-84&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-85&quot;&gt;&lt;/a&gt;# Instalar dependências
-&lt;a name=&quot;line-86&quot;&gt;&lt;/a&gt;modules:
-&lt;a name=&quot;line-87&quot;&gt;&lt;/a&gt;    @echo &amp;quot;→ Instalando dependências&amp;quot; \
-&lt;a name=&quot;line-88&quot;&gt;&lt;/a&gt;    @npm install
-&lt;a name=&quot;line-89&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-90&quot;&gt;&lt;/a&gt;# Execute all with &amp;quot;make&amp;quot;
-&lt;a name=&quot;line-91&quot;&gt;&lt;/a&gt;.PHONY: all copy zip
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Neste arquivo &lt;code&gt;makefile&lt;/code&gt;, temos duas tarefas principais:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Criar uma estrutura inicial para o projeto&lt;/li&gt;
-&lt;li&gt;Executar tarefas de automação no nosso projeto&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;O que foi feito?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Perceba que para gerar o &lt;em&gt;scaffolding&lt;/em&gt;, estamos utilzando o &lt;a href=&quot;http://curl.haxx.se/&quot;&gt;cURL&lt;/a&gt; com &lt;a href=&quot;http://www.gnu.org/software/bash/manual/html_node/Redirections.html&quot;&gt;&lt;em&gt;redirections&lt;/em&gt;&lt;/a&gt;. Com isso, deixamos o nosso &lt;code&gt;makefile&lt;/code&gt; mais enxuto e objetivo.&lt;/li&gt;
-&lt;li&gt;Integramos um gerenciador de pacotes (Bower) e iniciamos um repositório local com o Git.&lt;/li&gt;
-&lt;li&gt;Incluímos um arquivo para que seja possível realizar a Integração Contínua com o Travis CI.&lt;/li&gt;
-&lt;li&gt;Estamos utilizando os módulos &lt;a href=&quot;https://www.npmjs.org/package/uglify-js&quot;&gt;&lt;em&gt;uglify-js&lt;/em&gt;&lt;/a&gt; e &lt;a href=&quot;https://www.npmjs.org/package/stylus&quot;&gt;&lt;em&gt;stylus&lt;/em&gt;&lt;/a&gt;, instalados via &lt;strong&gt;npm&lt;/strong&gt;, para trabalhar com os arquivos de formatação (CSS) e comportamento (JavaScript).&lt;/li&gt;
-&lt;li&gt;Agora, a cópia dos nossos arquivos é feita através do &lt;a href=&quot;http://rsync.samba.org/&quot;&gt;&lt;em&gt;rsync&lt;/em&gt;&lt;/a&gt;, o que possibilita a sincronização e cópia apenas para arquivos novos/modificados.&lt;/li&gt;
-&lt;li&gt;Incluímos uma tarefa para versionar o projeto, com a compressão de arquivos em formato ZIP, composta pelo nome do projeto e data em que foi criado.&lt;/li&gt;
-&lt;li&gt;Criamos o arquivo &lt;code&gt;help.txt&lt;/code&gt; para instruções de uso e descrição das tarefas. Confira abaixo:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;-------------------------------------------------------------
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;Tarefas Disponíveis:
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    make        -&amp;gt; Tarefa padrão (all + copy + zip)
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    make all    -&amp;gt; Inicializa processo de Build
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;    make create -&amp;gt; Criar a estrutura do projeto
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;    make copy   -&amp;gt; Copia os arquivos para a pasta &amp;quot;public&amp;quot;
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    make zip    -&amp;gt; Comprime os arquivos da pasta &amp;quot;public&amp;quot;
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;                    e versiona com a data e hora atual
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;Uso:
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;    make [nome da tarefa que deseja executar]
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;-------------------------------------------------------------
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-              &lt;h4 id=&quot;Entretanto-&quot;&gt;
-                &lt;a name=&quot;Entretanto-&quot; href=&quot;#Entretanto-&quot;&gt;&lt;/a&gt;Entretanto...
-              &lt;/h4&gt;
-            
-&lt;p&gt;Para quem trabalha com Desenvolvimento Front-End, este escopo de automação pode não se enquadrar muito bem na sua realidade. E, por que? Ora, pois a camada que lida com os comportamentos no Front-End é o JavaScript. Logo, nada mais sensato que utilizar está linguagem para criar um &lt;em&gt;build script&lt;/em&gt; e executar a automação de tarefas no projeto. Não concorda?&lt;/p&gt;
-
-&lt;p&gt;Entretanto, você percebeu quantas ferramentas e métodos conseguimos utilizar com o &lt;em&gt;Shell Script&lt;/em&gt; e &lt;em&gt;Makefile&lt;/em&gt;, sem o uso de plugins, Grunt ou Gulp?&lt;/p&gt;
-
-&lt;p&gt;Pois! Com isso, você viu que podemos realizar a cópia de arquivos através do &lt;em&gt;Rsync&lt;/em&gt; ou com um simples comando &lt;code&gt;cp&lt;/code&gt;. Que podemos utilizar o comando &lt;code&gt;zip&lt;/code&gt; para a compressão de arquivos e versionamento. Que podemos executar comandos diretamente no Shell para trabalhar com arquivos CSS e JavaScript, além de criar uma estrutura para um novo projeto.&lt;/p&gt;
-
-              &lt;h2 id=&quot;Automação-nos-dias-de-hoje&quot;&gt;
-                &lt;a name=&quot;Automação-nos-dias-de-hoje&quot; href=&quot;#Automação-nos-dias-de-hoje&quot;&gt;&lt;/a&gt;Automação nos dias de hoje
-              &lt;/h2&gt;
-            
-&lt;p&gt;Não há dúvidas de que o Ryan Dahl teve uma grande inspiração no UNIX e linguagem C para criar o NodeJS. É perceptível, pelo fato de que o C está ligado diretamente ao UNIX e NodeJS lida com processos, fluxo de dados (input/output, read/write) e eventos, o que nos leva de volta ao UNIX.&lt;/p&gt;
-
-&lt;p&gt;Mas, o que faz o NodeJS ser tão interessante?&lt;/p&gt;
-
-              &lt;h3 id=&quot;Utilizar-JavaScript-quot-em-todo-os-lados-quot-&quot;&gt;
-                &lt;a name=&quot;Utilizar-JavaScript-quot-em-todo-os-lados-quot-&quot; href=&quot;#Utilizar-JavaScript-quot-em-todo-os-lados-quot-&quot;&gt;&lt;/a&gt;Utilizar JavaScript &amp;quot;em todo os lados&amp;quot;
-              &lt;/h3&gt;
-            
-&lt;p&gt;O NodeJS possibilita que você desenvolva aplicações com JavaScript no &lt;em&gt;server-side&lt;/em&gt;!&lt;/p&gt;
-
-&lt;p&gt;Agora sim, Vitor! Você está falando minha língua!&lt;/p&gt;
-
-&lt;p&gt;Pois é, meu caro. E, se você ligou todos os pontos, percebeu que podemos criar uma ferramenta de automação em cima do NodeJS também (sem Gulp ou Grunt).&lt;/p&gt;
-
-&lt;p&gt;E como faremos isso?&lt;/p&gt;
-
-              &lt;h3 id=&quot;Talk-is-cheap-show-me-the-code-&quot;&gt;
-                &lt;a name=&quot;Talk-is-cheap-show-me-the-code-&quot; href=&quot;#Talk-is-cheap-show-me-the-code-&quot;&gt;&lt;/a&gt;Talk is cheap, show me the code!
-              &lt;/h3&gt;
-            
-&lt;p&gt;Para comprovar que Unix, Shell e NodeJS estão interligados, utilizaremos os seguintes módulos:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.npmjs.org/package/commander&quot;&gt;Commander&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.npmjs.org/package/shelljs&quot;&gt;ShellJS&lt;/a&gt; - &lt;em&gt;Sweet!&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.npmjs.org/package/cli-color&quot;&gt;Cli-color&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Confira o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;// Configuracão
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;var config = require(&amp;#39;./config&amp;#39;);
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;// Dependências
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;var cli   = require(&amp;#39;commander&amp;#39;),
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;    sh    = require(&amp;#39;shelljs&amp;#39;),
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    color = require(&amp;#39;cli-color&amp;#39;);
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;// Mensagens
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;var error    = color.red.bold,
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;    warn     = color.yellow,
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;    info     = color.grey,
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    notice   = color.cyan,
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;    success  = color.green;
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;// Comandos
-&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;cli
-&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;    .command(&amp;#39;init&amp;#39;)
-&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;    .description(&amp;#39;Inicializar o processo de Build.&amp;#39;)
-&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;    .action(build);
-&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;cli.parse(process.argv);
-&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;// Compilar arquivos Sass para CSS
-&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;function initCompile(){
-&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;    if (!sh.which(&amp;#39;stylus&amp;#39;)) {
-&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;        sh.echo(error(&amp;#39;✖ Você precisa ter o &amp;quot;stylus&amp;quot; instalado globalmente no seu sistema.&amp;#39;));
-&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;        sh.echo(warn(&amp;#39;Instalação: npm install stylus -g&amp;#39;));
-&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;        exit(1);
-&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;    }
-&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;    sh.echo(notice(&amp;#39;→ Compilando arquivos&amp;#39;));
-&lt;a name=&quot;line-33&quot;&gt;&lt;/a&gt;    sh.exec(&amp;#39;stylus -c &amp;lt;&amp;#39; + config.paths.src.css + &amp;#39;style.styl&amp;gt; &amp;#39; + config.paths.out.css + &amp;#39;style.css&amp;#39;);
-&lt;a name=&quot;line-34&quot;&gt;&lt;/a&gt;}
-&lt;a name=&quot;line-35&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-36&quot;&gt;&lt;/a&gt;// Validar Scripts
-&lt;a name=&quot;line-37&quot;&gt;&lt;/a&gt;function initValidate() {
-&lt;a name=&quot;line-38&quot;&gt;&lt;/a&gt;    if (!sh.which(&amp;#39;jshint&amp;#39;)) {
-&lt;a name=&quot;line-39&quot;&gt;&lt;/a&gt;        sh.echo(error(&amp;#39;✖ Você precisa ter o &amp;quot;jshint&amp;quot; instalado globalmente no seu sistema&amp;#39;));
-&lt;a name=&quot;line-40&quot;&gt;&lt;/a&gt;        sh.echo(warn(&amp;#39;Instalação: npm install jshint -g&amp;#39;));
-&lt;a name=&quot;line-41&quot;&gt;&lt;/a&gt;        exit(1);
-&lt;a name=&quot;line-42&quot;&gt;&lt;/a&gt;    }
-&lt;a name=&quot;line-43&quot;&gt;&lt;/a&gt;    sh.echo(notice(&amp;#39;→ Validando scripts&amp;#39;));
-&lt;a name=&quot;line-44&quot;&gt;&lt;/a&gt;    sh.exec(&amp;#39;jshint &amp;#39; + config.paths.src.js + &amp;#39;main.js&amp;#39;);
-&lt;a name=&quot;line-45&quot;&gt;&lt;/a&gt;}
-&lt;a name=&quot;line-46&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-47&quot;&gt;&lt;/a&gt;// Concatenar e minificar Scripts
-&lt;a name=&quot;line-48&quot;&gt;&lt;/a&gt;function initMinify() {
-&lt;a name=&quot;line-49&quot;&gt;&lt;/a&gt;    if (!sh.which(&amp;#39;uglifyjs&amp;#39;)) {
-&lt;a name=&quot;line-50&quot;&gt;&lt;/a&gt;        sh.echo(error(&amp;#39;✖ Você precisa ter o &amp;quot;uglify-js&amp;quot; instalado globalmente no seu sistema&amp;#39;));
-&lt;a name=&quot;line-51&quot;&gt;&lt;/a&gt;        sh.echo(warn(&amp;#39;Instalação: npm install uglify-js -g&amp;#39;));
-&lt;a name=&quot;line-52&quot;&gt;&lt;/a&gt;        exit(1);
-&lt;a name=&quot;line-53&quot;&gt;&lt;/a&gt;    }
-&lt;a name=&quot;line-54&quot;&gt;&lt;/a&gt;    sh.echo(notice(&amp;#39;→ Minificando scripts&amp;#39;));
-&lt;a name=&quot;line-55&quot;&gt;&lt;/a&gt;    sh.exec(&amp;#39;cat &amp;#39;+ config.paths.src.js +&amp;#39; main.js | uglifyjs -o &amp;#39;+ config.paths.out.js +&amp;#39;main.min.js&amp;#39;);
-&lt;a name=&quot;line-56&quot;&gt;&lt;/a&gt;}
-&lt;a name=&quot;line-57&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-58&quot;&gt;&lt;/a&gt;// Apagar arquivos remanescentes
-&lt;a name=&quot;line-59&quot;&gt;&lt;/a&gt;function initClean(){
-&lt;a name=&quot;line-60&quot;&gt;&lt;/a&gt;    sh.echo(notice(&amp;#39;→ Removendo arquivos remanescentes&amp;#39;));
-&lt;a name=&quot;line-61&quot;&gt;&lt;/a&gt;    sh.rm(&amp;#39;-rf&amp;#39;, [config.paths.out.main, config.paths.out.css, config.paths.out.js, config.paths.out.img]);
-&lt;a name=&quot;line-62&quot;&gt;&lt;/a&gt;}
-&lt;a name=&quot;line-63&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-64&quot;&gt;&lt;/a&gt;// Criar estrutura
-&lt;a name=&quot;line-65&quot;&gt;&lt;/a&gt;function initScaffolding() {
-&lt;a name=&quot;line-66&quot;&gt;&lt;/a&gt;    sh.echo(notice(&amp;#39;→ Criando estrutura do projeto&amp;#39;));
-&lt;a name=&quot;line-67&quot;&gt;&lt;/a&gt;    sh.mkdir(&amp;#39;-p&amp;#39;, [config.paths.out.main, config.paths.out.css, config.paths.out.js, config.paths.out.img]);
-&lt;a name=&quot;line-68&quot;&gt;&lt;/a&gt;}
-&lt;a name=&quot;line-69&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-70&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-71&quot;&gt;&lt;/a&gt;// Iniciar proceso de Build
-&lt;a name=&quot;line-72&quot;&gt;&lt;/a&gt;function build(){
-&lt;a name=&quot;line-73&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-74&quot;&gt;&lt;/a&gt;    sh.echo(notice(&amp;#39;→ Inicializando o processo de Build&amp;#39;));
-&lt;a name=&quot;line-75&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-76&quot;&gt;&lt;/a&gt;    initClean();
-&lt;a name=&quot;line-77&quot;&gt;&lt;/a&gt;    initScaffolding();
-&lt;a name=&quot;line-78&quot;&gt;&lt;/a&gt;    initCompile();
-&lt;a name=&quot;line-79&quot;&gt;&lt;/a&gt;    initValidate();
-&lt;a name=&quot;line-80&quot;&gt;&lt;/a&gt;    initMinify();
-&lt;a name=&quot;line-81&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-82&quot;&gt;&lt;/a&gt;    sh.echo(success(&amp;#39;✔ Feito!&amp;#39;));
-&lt;a name=&quot;line-83&quot;&gt;&lt;/a&gt;}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;O arquivo acima foi retirado do projeto &lt;a href=&quot;http://managers.vitorbritto.com.br/&quot;&gt;Managers&lt;/a&gt;. Outros arquivos fazem parte desta &lt;em&gt;Build Tool&lt;/em&gt;, mas a intenção é mostrar como é possível utilizar o poder do NodeJS para realizarmos a automação de tarefas também. Perceba que ainda não utilizamos o Grunt ou Gulp e já temos 3 (três) métodos para realizarmos estes procedimentos/rotinas.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Confira os arquivos do exemplo acima, &lt;a href=&quot;https://github.com/vitorbritto/node-managers/tree/master/templates/node&quot;&gt;neste link&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Percebeu como integramos os comandos do Shell no NodeJS também? Show de bola, não? =]&lt;/p&gt;
-
-&lt;p&gt;Ainda assim, poderíamos ter utilizado o módulo &lt;code&gt;async&lt;/code&gt; ou &lt;em&gt;promises&lt;/em&gt; para trabalhar melhor o fluxo de dados, já que o NodeJS trabalha de forma não-bloqueante e assíncrona.&lt;/p&gt;
-
-&lt;p&gt;Outra opção seria integrar os &lt;em&gt;core modules&lt;/em&gt;: &lt;code&gt;streams&lt;/code&gt;, &lt;code&gt;events&lt;/code&gt;, &lt;code&gt;fs&lt;/code&gt;, &lt;code&gt;path&lt;/code&gt; e &lt;code&gt;child_process&lt;/code&gt;. Entretanto, ao utilizar o módulo &lt;em&gt;ShellJS&lt;/em&gt;, poupamos esforços e tornamos mais real ainda o propósito deste artigo, o qual é mostrar que o Shell é extremamente útil e que lhe oferece inúmeras possibilidades para executar processos de automação.&lt;/p&gt;
-
-              &lt;h3 id=&quot;De-um-lado-o-Grunt&quot;&gt;
-                &lt;a name=&quot;De-um-lado-o-Grunt&quot; href=&quot;#De-um-lado-o-Grunt&quot;&gt;&lt;/a&gt;De um lado o Grunt
-              &lt;/h3&gt;
-            
-&lt;p&gt;Um &lt;em&gt;Task Runner&lt;/em&gt; para automação de tarefas que depende do NodeJS e utiliza o JavaScript como base para que você construa as suas tarefas. Uma ferramenta, onde muitos passaram a criticar por conta da sua performance e excesso de linhas para configurar as tarefas.&lt;/p&gt;
-
-&lt;p&gt;Pois bem, este cenário pode ser contornado se configurarmos nossas tarefas de maneira adequada, utilizando os gargalos da API, evitando o uso desenfreado de plug-ins e buscando novas soluções.&lt;/p&gt;
-
-&lt;p&gt;Recentemente, publiquei algumas &lt;a href=&quot;http://www.vitorbritto.com.br/blog/dicas-uteis-para-quem-utiliza-gruntjs/&quot;&gt;dicas para quem utiliza o Grunt&lt;/a&gt; e estarei atualizando a medida em que novas ideias forem surgindo.&lt;/p&gt;
-
-              &lt;h3 id=&quot;Do-outro-lado-o-Gulp&quot;&gt;
-                &lt;a name=&quot;Do-outro-lado-o-Gulp&quot; href=&quot;#Do-outro-lado-o-Gulp&quot;&gt;&lt;/a&gt;Do outro lado o Gulp
-              &lt;/h3&gt;
-            
-&lt;p&gt;Também um ferramenta de automação que depende do NodeJS e utiliza o JavaScript para construir tarefas. A diferença? O Gulp faz uso de &lt;em&gt;pipes&lt;/em&gt; e &lt;em&gt;redirections&lt;/em&gt;, os quais fazem parte de &lt;em&gt;Streams&lt;/em&gt; e, por sua vez, está no NodeJS por conta do UNIX. Isso torna a sua performance (comparado ao Grunt) mais &amp;quot;aceitável&amp;quot;. Além disso, o Gulp tem uma sintaxe &lt;em&gt;node-like&lt;/em&gt;, o que aproxima a criação do seu criador.&lt;/p&gt;
-
-              &lt;h3 id=&quot;No-fim-das-contas&quot;&gt;
-                &lt;a name=&quot;No-fim-das-contas&quot; href=&quot;#No-fim-das-contas&quot;&gt;&lt;/a&gt;No fim das contas
-              &lt;/h3&gt;
-            
-&lt;p&gt;O Grunt e o Gulp são excelente ferramentas de automação e uma não vai tomar o lugar da outra! O que se torna preocupante é que muitos ainda utilizam estas ferramentas sem entender que estamos lidando com JavaScript e que podemos chamar o NodeJS para a brincadeira também. Afinal, estes caras foram desenvolvidos em cima do NodeJS, o qual utiliza a linguagem JavaScript.&lt;/p&gt;
-
-              &lt;h3 id=&quot;Não-vamos-nos-limitar&quot;&gt;
-                &lt;a name=&quot;Não-vamos-nos-limitar&quot; href=&quot;#Não-vamos-nos-limitar&quot;&gt;&lt;/a&gt;Não vamos nos limitar
-              &lt;/h3&gt;
-            
-&lt;p&gt;É preciso trilhar novos caminhos e testar novas ferramentas. Assim, saberemos quais delas devemos/podemos nos aprofundar e apostamos em uma melhora significativa no nosso ambiente de desenvolvimento. Se negarmos esta oportunidade, corremos o risco em não deixar o nosso Workflow mais eficiência e produtivo com uma ferramenta mais atual, objetiva e/ou prática.&lt;/p&gt;
-
-&lt;p&gt;Vivemos em um momento onde as ferramentas são criadas de forma desenfreada, mas o ser humano tem um instinto natural para se adaptar a esta evolução também. Entretanto, não podemos perder o foco. Devemos manter o equilíbrio entre a utilização de ferramentas que já fazem parte do nosso Workflow, com o bom senso em até quando está sendo útil investir em novas ferramentas.&lt;/p&gt;
-
-              &lt;h3 id=&quot;Uma-pequena-demonstração&quot;&gt;
-                &lt;a name=&quot;Uma-pequena-demonstração&quot; href=&quot;#Uma-pequena-demonstração&quot;&gt;&lt;/a&gt;Uma pequena demonstração
-              &lt;/h3&gt;
-            
-&lt;p&gt;Recentemente, criei um &lt;em&gt;task runner&lt;/em&gt; muito simples, chamado &lt;a href=&quot;http://vitorbritto.github.io/just/&quot;&gt;Just&lt;/a&gt;, para um experimento pessoal. Porém, acabou sendo muito útil para 2 projetos de pequeno porte. Resolvi torná-lo &lt;em&gt;open-source&lt;/em&gt; e espero que seja útil para você. Fique a vontade para contribuir e deixar sugestões sobre o projeto.&lt;/p&gt;
-
-&lt;p&gt;Nesta ferramenta, estou utilizando o &lt;a href=&quot;https://www.npmjs.org/package/shelljs&quot;&gt;&lt;em&gt;ShellJS&lt;/em&gt;&lt;/a&gt; para manipulação de arquivos e execução de comandos no Shell, o módulo &lt;a href=&quot;https://www.npmjs.org/package/commander&quot;&gt;&lt;em&gt;Commander&lt;/em&gt;&lt;/a&gt; para que eu consiga passar argumentos e tratar esta ferramenta como uma &lt;em&gt;CLI Tool&lt;/em&gt; e o módulo &lt;a href=&quot;https://www.npmjs.org/package/orchestrator&quot;&gt;&lt;em&gt;Orchestrator&lt;/em&gt;&lt;/a&gt;, o qual é a base para a construção das tarefas no &lt;strong&gt;Gulp&lt;/strong&gt; e que será, possivelmente, utilizado no &lt;a href=&quot;https://github.com/gruntjs/grunt-next&quot;&gt;Grunt v.1.0 alpha&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Veja abaixo o arquivo principal do &lt;strong&gt;Just&lt;/strong&gt;:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;#!/usr/bin/env node
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;// =====================================================
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;// Initial Configuration
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;// =====================================================
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;// Modules
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;var sh     = require(&amp;#39;shelljs&amp;#39;),
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;    cmd    = require(&amp;#39;commander&amp;#39;),
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;    config = require(&amp;#39;./config&amp;#39;),
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;    Just   = require(&amp;#39;orchestrator&amp;#39;),
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;    just   = new Just();
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;require(&amp;#39;colors&amp;#39;);
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;// =====================================================
-&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;// CLI Commands
-&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;// =====================================================
-&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;cmd
-&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;    .command(&amp;#39;run&amp;#39;)
-&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;    .description(&amp;#39;Run lint, minify and compile tasks&amp;#39;)
-&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;    .action(build);
-&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;cmd
-&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;    .command(&amp;#39;watch&amp;#39;)
-&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;    .description(&amp;#39;Run build tasks and watch for changes&amp;#39;)
-&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;    .action(watch);
-&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;// Config
-&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;cmd.parse(process.argv);
-&lt;a name=&quot;line-33&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-34&quot;&gt;&lt;/a&gt;if (process.argv.length === 2) {
-&lt;a name=&quot;line-35&quot;&gt;&lt;/a&gt;    cmd.help();
-&lt;a name=&quot;line-36&quot;&gt;&lt;/a&gt;}
-&lt;a name=&quot;line-37&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-38&quot;&gt;&lt;/a&gt;// =====================================================
-&lt;a name=&quot;line-39&quot;&gt;&lt;/a&gt;// Build Task
-&lt;a name=&quot;line-40&quot;&gt;&lt;/a&gt;// =====================================================
-&lt;a name=&quot;line-41&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-42&quot;&gt;&lt;/a&gt;function build() {
-&lt;a name=&quot;line-43&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-44&quot;&gt;&lt;/a&gt;    sh.echo(&amp;#39;→ Runnning&amp;#39;.cyan);
-&lt;a name=&quot;line-45&quot;&gt;&lt;/a&gt;    sh.echo(&amp;#39;&amp;#39;);
-&lt;a name=&quot;line-46&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-47&quot;&gt;&lt;/a&gt;    // Script task
-&lt;a name=&quot;line-48&quot;&gt;&lt;/a&gt;    just.add(&amp;#39;build&amp;#39;, function() {
-&lt;a name=&quot;line-49&quot;&gt;&lt;/a&gt;        config.jshint();
-&lt;a name=&quot;line-50&quot;&gt;&lt;/a&gt;        config.minify();
-&lt;a name=&quot;line-51&quot;&gt;&lt;/a&gt;        config.compile();
-&lt;a name=&quot;line-52&quot;&gt;&lt;/a&gt;    });
-&lt;a name=&quot;line-53&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-54&quot;&gt;&lt;/a&gt;    // Run tasks
-&lt;a name=&quot;line-55&quot;&gt;&lt;/a&gt;    just.start([&amp;#39;build&amp;#39;]);
-&lt;a name=&quot;line-56&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-57&quot;&gt;&lt;/a&gt;    sh.echo(&amp;#39;✔ done&amp;#39;.green);
-&lt;a name=&quot;line-58&quot;&gt;&lt;/a&gt;}
-&lt;a name=&quot;line-59&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-60&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-61&quot;&gt;&lt;/a&gt;// =====================================================
-&lt;a name=&quot;line-62&quot;&gt;&lt;/a&gt;// Watch Task
-&lt;a name=&quot;line-63&quot;&gt;&lt;/a&gt;// =====================================================
-&lt;a name=&quot;line-64&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-65&quot;&gt;&lt;/a&gt;function watch() {
-&lt;a name=&quot;line-66&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-67&quot;&gt;&lt;/a&gt;    // Watch task
-&lt;a name=&quot;line-68&quot;&gt;&lt;/a&gt;    just.add(&amp;#39;watch&amp;#39;, function() {
-&lt;a name=&quot;line-69&quot;&gt;&lt;/a&gt;        config.refresh();
-&lt;a name=&quot;line-70&quot;&gt;&lt;/a&gt;    });
-&lt;a name=&quot;line-71&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-72&quot;&gt;&lt;/a&gt;    // Watch task must be complete before this one begins
-&lt;a name=&quot;line-73&quot;&gt;&lt;/a&gt;    just.add(&amp;#39;build&amp;#39;, [&amp;#39;watch&amp;#39;], function() {
-&lt;a name=&quot;line-74&quot;&gt;&lt;/a&gt;        config.jshint();
-&lt;a name=&quot;line-75&quot;&gt;&lt;/a&gt;        config.minify();
-&lt;a name=&quot;line-76&quot;&gt;&lt;/a&gt;        config.compile();
-&lt;a name=&quot;line-77&quot;&gt;&lt;/a&gt;    });
-&lt;a name=&quot;line-78&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-79&quot;&gt;&lt;/a&gt;    // Run tasks
-&lt;a name=&quot;line-80&quot;&gt;&lt;/a&gt;    just.start([&amp;#39;watch&amp;#39;, &amp;#39;build&amp;#39;]);
-&lt;a name=&quot;line-81&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-82&quot;&gt;&lt;/a&gt;    sh.echo(&amp;#39;→ Watching for changes...&amp;#39;.cyan);
-&lt;a name=&quot;line-83&quot;&gt;&lt;/a&gt;    sh.echo(&amp;#39;&amp;#39;);
-&lt;a name=&quot;line-84&quot;&gt;&lt;/a&gt;    sh.echo(&amp;#39;→ Press CTRL+C to exit&amp;#39;.yellow);
-&lt;a name=&quot;line-85&quot;&gt;&lt;/a&gt;}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;O código completo você encontra &lt;a href=&quot;https://github.com/vitorbritto/just&quot;&gt;aqui&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-              &lt;h2 id=&quot;As-possibilidades-são-infinitas&quot;&gt;
-                &lt;a name=&quot;As-possibilidades-são-infinitas&quot; href=&quot;#As-possibilidades-são-infinitas&quot;&gt;&lt;/a&gt;As possibilidades são infinitas
-              &lt;/h2&gt;
-            
-&lt;p&gt;O processo de &lt;em&gt;build&lt;/em&gt; não é nenhuma novidade. Você deve ter percebido isso por conta do &lt;em&gt;Make&lt;/em&gt;. O &lt;em&gt;build&lt;/em&gt; é uma prática que foi adotada há muito tempo na Engenharia de Softwares, sendo utilizada a favor das metodologias ágeis. É com este processo que automatizamos tarefas e garantimos um alto nível de qualidade em nossos projetos.&lt;/p&gt;
-
-&lt;p&gt;Mas, fora isso, você notou a quantidade de ferramentas e alguns possíveis métodos que podemos utilizar para realizar a automação de tarefas em nossos projetos?&lt;/p&gt;
-
-&lt;p&gt;Perceba que, não falamos sobre o &lt;em&gt;Rake&lt;/em&gt; (RIP Jim Weirich), o qual possui uma base muito sólida em &lt;em&gt;Make&lt;/em&gt;, nem do &lt;em&gt;Maven&lt;/em&gt;, &lt;em&gt;Ant&lt;/em&gt;, &lt;em&gt;Cake&lt;/em&gt;, &lt;em&gt;Factory&lt;/em&gt; e &lt;em&gt;Phing&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Todas estas ferramentas beberam da mesma fonte, o UNIX!&lt;/p&gt;
-
-&lt;p&gt;Não fique limitado ao uso do Gulp ou Grunt &lt;strong&gt;com plugins&lt;/strong&gt;. Procure utilizar os &lt;em&gt;core modules&lt;/em&gt; do NodeJS e brincar com a API destes caras também. O mais divertido de tudo na programação, desenvolvimento web e o que for que envolva lógica de programação, é tornar possível novos desafios. E superá-los!&lt;/p&gt;
-
-&lt;p&gt;Torne esses momentos possíveis! Você vai se divertir.&lt;/p&gt;
-
-&lt;p&gt;Até a próxima!&lt;/p&gt;
-</description>
-        <pubDate>Sat, 22 Feb 2014 00:00:00 -0300</pubDate>
-        <link>http://www.vitorbritto.com.br/blog/evolucao-automacao-de-tarefas/</link>
-        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/evolucao-automacao-de-tarefas/</guid>
       </item>
     
   </channel>
