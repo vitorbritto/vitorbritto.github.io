@@ -4,7 +4,7 @@ title: Examinando sua aplicação
 description:
 link: http://www.vitorbritto.com.br/blog/examinando-sua-aplicacao/
 date: 2014-09-07
-path: 2014-09-07-examinando-a-sua-aplicacao.md
+path: 2014-09-07-examinando-sua-aplicacao.md
 cover: assets/images/posts/post-console.jpg
 comments: true
 ---
