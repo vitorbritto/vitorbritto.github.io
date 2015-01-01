@@ -7,6 +7,48 @@
     <atom:link href="http://www.vitorbritto.com.br/blog/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Novidades no Blog</title>
+        <description>&lt;p&gt;Saudações!&lt;/p&gt;
+
+&lt;p&gt;Vamos iniciar o ano com novidades no Blog. Duas novas categorias serão iniciadas, são elas:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Labs&lt;/li&gt;
+&lt;li&gt;Tips&lt;/li&gt;
+&lt;/ol&gt;
+
+              &lt;h2 id=&quot;Se-aventurar-é-bom&quot;&gt;
+                &lt;a name=&quot;Se-aventurar-é-bom&quot; href=&quot;#Se-aventurar-é-bom&quot;&gt;&lt;/a&gt;Se aventurar é bom
+              &lt;/h2&gt;
+            
+&lt;p&gt;No espaço &lt;strong&gt;LABS&lt;/strong&gt;, teremos algumas aventuras das linguagens de programação que me identifiquei durante o ano de 2014 e que tenho vontade em realizar experimentos, desenvolver projetos open-source e, quem sabe, incluir nos meus projetos do dia-a-dia (meio comercial). &lt;/p&gt;
+
+&lt;p&gt;Sim, é verdade! Não mencionei as linguagens. Aí vai:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Erlang / Elixir&lt;/li&gt;
+&lt;li&gt;Haskell&lt;/li&gt;
+&lt;li&gt;Elm&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Devo salientar que são linguagens que possuem o paradigma funcional e está é uma das minhas metas para 2015: estudar muita programação funcional!&lt;/p&gt;
+
+              &lt;h2 id=&quot;Por-um-ambiente-de-trabalho-melhor&quot;&gt;
+                &lt;a name=&quot;Por-um-ambiente-de-trabalho-melhor&quot; href=&quot;#Por-um-ambiente-de-trabalho-melhor&quot;&gt;&lt;/a&gt;Por um ambiente de trabalho melhor
+              &lt;/h2&gt;
+            
+&lt;p&gt;Já na categoria &lt;strong&gt;TIPS&lt;/strong&gt;, teremos dicas sobre produtividade, agilidade, eficiência, dentre outros aspectos e experiências que obtive durante esta longa estrada que percorri até o momento. Se você faz parte do meu círculo social no Twitter ou Facebook, já deve ter visto algumas dicas que repasso por lá.&lt;/p&gt;
+
+&lt;p&gt;Espero que vocês gostem das boas novas! &lt;/p&gt;
+
+&lt;p&gt;Até a próxima! =]&lt;/p&gt;
+</description>
+        <pubDate>Wed, 31 Dec 2014 00:00:00 -0300</pubDate>
+        <link>http://www.vitorbritto.com.br/blog/novidades-no-blog/</link>
+        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/novidades-no-blog/</guid>
+      </item>
+    
+      <item>
         <title>Examinando sua aplicação</title>
         <description>&lt;p&gt;Saudações!&lt;/p&gt;
 
@@ -1723,194 +1765,6 @@ Veja abaixo um exemplo:&lt;/p&gt;
         <pubDate>Wed, 11 Jun 2014 00:00:00 -0300</pubDate>
         <link>http://www.vitorbritto.com.br/blog/substituindo-o-bower-pelo-napa/</link>
         <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/substituindo-o-bower-pelo-napa/</guid>
-      </item>
-    
-      <item>
-        <title>Agendando tarefas com o Crontab</title>
-        <description>&lt;p&gt;Saudações!&lt;/p&gt;
-
-&lt;p&gt;Para os usuários UNIX, segue uma dica interessante para agendar tarefas com o comando crontab. Este cara, permite que você realize o agendamento de tarefas em determinados períodos.&lt;/p&gt;
-
-              &lt;h2 id=&quot;Cenário&quot;&gt;
-                &lt;a name=&quot;Cenário&quot; href=&quot;#Cenário&quot;&gt;&lt;/a&gt;Cenário
-              &lt;/h2&gt;
-            
-&lt;p&gt;Digamos que você possua um script para realizar um procedimento em um determinado intervalo de tempo. Seja para o backup de arquivos mais obsoletos em projetos que você realizou há algum tempo e, por algum motivo, não optou pelo seu versionamento ou um simples backup de um banco de dados.&lt;/p&gt;
-
-&lt;p&gt;No que se refere a &lt;strong&gt;backups&lt;/strong&gt;, existem duas formas para transitar estes dados:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Entre ambientes locais.&lt;/li&gt;
-&lt;li&gt;De um ambiente local para um remoto (e vice-versa).&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Além disso, podemos utilizar os comandos &lt;a href=&quot;http://ss64.com/bash/scp.html&quot;&gt;&lt;code&gt;scp&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;http://ss64.com/bash/rsync.html&quot;&gt;&lt;code&gt;rsync&lt;/code&gt;&lt;/a&gt; ou &lt;a href=&quot;http://ss64.com/bash/cp.html&quot;&gt;&lt;code&gt;cp&lt;/code&gt;&lt;/a&gt; para realizar a transferência destes arquivos.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Lembre-se de armazenar os seus arquivos em um local seguro no momento do &lt;em&gt;backup&lt;/em&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-              &lt;h2 id=&quot;Entendendo-o-crontab&quot;&gt;
-                &lt;a name=&quot;Entendendo-o-crontab&quot; href=&quot;#Entendendo-o-crontab&quot;&gt;&lt;/a&gt;Entendendo o crontab
-              &lt;/h2&gt;
-            
-&lt;p&gt;O formato para o &lt;em&gt;crontab&lt;/em&gt; é o seguinte:
-Campo
-Função
-Valores&lt;/p&gt;
-
-&lt;p&gt;1
-Minuto
-0-59&lt;/p&gt;
-
-&lt;p&gt;2
-Hora
-0-23&lt;/p&gt;
-
-&lt;p&gt;3
-Dia do mês
-1-31&lt;/p&gt;
-
-&lt;p&gt;4
-Mês
-1-12&lt;/p&gt;
-
-&lt;p&gt;5
-Dia da semana
-0-6&lt;/p&gt;
-
-&lt;p&gt;6
-Programa para execução
-comando ou script&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;O dia da semana começa a contar no &lt;strong&gt;domingo&lt;/strong&gt; (0).&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Confira abaixo como podemos criar as nossas tarefas:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Cada linha representa uma tarefa no crontab
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;00 6 * * 1 /caminho/para/script/status.sh
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;00 12 5 * * /caminho/para/script/temp.sh
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;30 23 * * * /caminho/para/script/backup.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Perceba que, estamos programando a execução de 3 &lt;em&gt;scripts&lt;/em&gt; em Shell nas datas selecionadas e os mesmos farão o seguinte:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;status.sh&lt;/code&gt;: realizar o procedimento contido neste script toda segunda, às 6:00 da manhã.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;temp.sh&lt;/code&gt;: realizar o procedimento contido neste script no dia 5 de cada mês, às 12:00.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;backup.sh&lt;/code&gt;: realizar o procedimento contido neste script todos os dias, às 23:30 da noite.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Você ainda pode adicionar um 7 (sétimo) campo, onde o sexto campo será substituído pelo nome do usuário no sistema e o sétimo campo adicionado com o programa a ser executado. Veja o exemplo a seguir:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Execute esta tarefa a cada três horas, no dia 1 (um) de cada mês com o usuário root.
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;00 */3 1 * * root /caminho/para/script/security.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Perceba que estamos utilizando um novo método para definir o período desta tarefa, o &lt;code&gt;*/3&lt;/code&gt;. Este trecho faz com que a tarefa seja executa em intervalos de 3 horas. Você poderia ainda definir os horários que esta tarefa seria executada, utilizando uma &lt;code&gt;,&lt;/code&gt; (vírgula) para cada horário. Por exemplo: &lt;code&gt;00 3,9,15,21 1 * * root /caminho/para/script/security.sh&lt;/code&gt;.&lt;/p&gt;
-
-              &lt;h4 id=&quot;IMPORTANTE&quot;&gt;
-                &lt;a name=&quot;IMPORTANTE&quot; href=&quot;#IMPORTANTE&quot;&gt;&lt;/a&gt;IMPORTANTE
-              &lt;/h4&gt;
-            
-&lt;p&gt;Os &lt;em&gt;scripts&lt;/em&gt; a serem executados no exemplo acima pelo crontab, &lt;strong&gt;precisam&lt;/strong&gt; estar definidos como executáveis no seu Shell. Para isso, certifique-se de que o comando &lt;code&gt;chmod +x /caminho/para/script/seuscript.sh&lt;/code&gt; foi executado previamente. Do contrário, utilize o operador &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; para compactar uma instrução no momento da execução do script. Como faremos isso?&lt;/p&gt;
-
-&lt;p&gt;Veja o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Tarefas:
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;00 6 * * 1 /caminho/para/script &amp;amp;&amp;amp; bash status.sh
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;00 12 5 * * /caminho/para/script &amp;amp;&amp;amp; bash temp.sh
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;30 23 * * * /caminho/para/script &amp;amp;&amp;amp; bash backup.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Notas:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Usar &lt;code&gt;bash&lt;/code&gt; ou &lt;code&gt;sh&lt;/code&gt; para executar o seu script, vai depender do seu Shell.&lt;/p&gt;
-
-&lt;p&gt;Não esqueça que para tornar um &lt;em&gt;script&lt;/em&gt; executável, é preciso definir um &lt;a href=&quot;http://pt.wikipedia.org/wiki/Shebang&quot;&gt;shebang&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-              &lt;h2 id=&quot;-15-Gerenciando-suas-tarefas-programadas&quot;&gt;
-                &lt;a name=&quot;-15-Gerenciando-suas-tarefas-programadas&quot; href=&quot;#-15-Gerenciando-suas-tarefas-programadas&quot;&gt;&lt;/a&gt;[][15]Gerenciando suas tarefas programadas
-              &lt;/h2&gt;
-            
-&lt;p&gt;Utilize o seguintes comandos para gerir as suas tarefas no crontab:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;crontab -e&lt;/strong&gt;: editar o arquivo atual ou criar um, caso não exista&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;crontab -l&lt;/strong&gt;: listar suas tarefas programadas&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;crontab -r&lt;/strong&gt;: remover uma tarefa programada&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; algumas empresas de hospedagem, disponibilizam o serviço para Crontab. Entre em contato com o atendimento da empresa para saber se este serviço está disponível para você.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-              &lt;h2 id=&quot;Indo-além&quot;&gt;
-                &lt;a name=&quot;Indo-além&quot; href=&quot;#Indo-além&quot;&gt;&lt;/a&gt;Indo além
-              &lt;/h2&gt;
-            
-&lt;p&gt;Existem algumas maneiras para facilitar ainda mais o uso do crontab.&lt;/p&gt;
-
-              &lt;h3 id=&quot;Palavras-especiais&quot;&gt;
-                &lt;a name=&quot;Palavras-especiais&quot; href=&quot;#Palavras-especiais&quot;&gt;&lt;/a&gt;Palavras especiais
-              &lt;/h3&gt;
-            
-&lt;p&gt;O crontab fornece alguns atalhos para definirmos nossas tarefas, veja abaixo:
-Atalho
-Significado&lt;/p&gt;
-
-&lt;p&gt;@reboot
-Será executado na inicialização do sistema.&lt;/p&gt;
-
-&lt;p&gt;@yearly
-Será executado uma vez ao ano, &amp;quot;0 0 1 1 *&amp;quot;.&lt;/p&gt;
-
-&lt;p&gt;@annually
-O mesmo que @yearly&lt;/p&gt;
-
-&lt;p&gt;@monthly
-Será executado a cada mês, &amp;quot;0 0 1 * *&amp;quot;.&lt;/p&gt;
-
-&lt;p&gt;@weekly
-Será executado uma vez por semana, &amp;quot;0 0 * * 0&amp;quot;.&lt;/p&gt;
-
-&lt;p&gt;@daily
-Será executado uma vez por dia, &amp;quot;0 0 * * *&amp;quot;.&lt;/p&gt;
-
-&lt;p&gt;@midnight
-O mesmo que @daily&lt;/p&gt;
-
-&lt;p&gt;@hourly
-Será executado a cada hora, &amp;quot;0 * * * *&amp;quot;.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Importante:&lt;/strong&gt; sempre aponte para os arquivos utilizando caminhos absolutos, pois o &lt;em&gt;crontab&lt;/em&gt; não lê as variáveis de ambiente do Shell.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-              &lt;h3 id=&quot;Carregar-suas-tarefas-em-um-único-arquivo&quot;&gt;
-                &lt;a name=&quot;Carregar-suas-tarefas-em-um-único-arquivo&quot; href=&quot;#Carregar-suas-tarefas-em-um-único-arquivo&quot;&gt;&lt;/a&gt;Carregar suas tarefas em um único arquivo
-              &lt;/h3&gt;
-            
-&lt;p&gt;Você pode definir todas as suas tarefas em um único arquivo e chamá-lo com o &lt;code&gt;crontab&lt;/code&gt;. Veja o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# 1. Crie o arquivo jobs.txt com o conteúdo abaixo:
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;00 6 * * 1 [comando ou script para executar]
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;00 12 5 * * [comando ou script para executar]
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;30 23 * * * [comando ou script para executar]
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;# 2. Execute o comando: crontab jobs.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;O processo vai substituir qualquer tarefa anterior com o conteúdo que estiver neste arquivo, sem qualquer aviso.&lt;/p&gt;
-
-&lt;p&gt;Fica a seu critério como nomear e categorizar as suas tarefas.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Até a próxima! =]&lt;/p&gt;
-</description>
-        <pubDate>Tue, 04 Mar 2014 00:00:00 -0300</pubDate>
-        <link>http://www.vitorbritto.com.br/blog/agendando-tarefas-com-crontab/</link>
-        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/agendando-tarefas-com-crontab/</guid>
       </item>
     
   </channel>
