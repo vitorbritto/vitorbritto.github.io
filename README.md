@@ -2,36 +2,43 @@
 
 My personal blog built with [Jekyll](http://jekyllrb.com/).
 
-## Usage
-
-### Requirements
+## Requirements
 
 - [Git](http://git-scm.com/downloads)
-- [Ruby](http://www.ruby-lang.org/pt/downloads/)
+- [Ruby](http://www.ruby-lang.org/pt/downloads/), [Bundler]() and [Rake](). 
 - [Jekyll](http://jekyllrb.com/)
 
-### Build
+## Usage
+
+### Run at Localhost
+
 Run this blog in your local host with the following steps:
 
-```bash
-1. First, you need to execute the command bellow to:
- - Clone the repository
- - Access the generated folder
- - Install npm dependencies
+    ```
+    1. First, you need to execute the command bellow to:
+     - Clone the repository
+     - Access the generated folder
+     - Install npm dependencies
+    
+    git clone git@github.com:vitorbritto/vitorbritto.github.io.git && cd $_ && npm i && bundle
+    
+    2. Then, edit the `_config.yml` file for:
+    
+    # Start the static web serve at your machine for edit/update some file
+    fullurl:        'http://0.0.0.0:4000/'
+    
+    # Build the project and deploy for production
+    fullurl:        'http://www.vitorbritto.com.br/blog/'
+    
+    3. Start the web server with `bundle exec rake && open -a http://0.0.0.0:4000`
+    4. Start editing/updating.
+    5. When you finish, change the `fullurl` to **build** the project and send the _pull request_. =]   
+    ```
 
-`git clone git@github.com:vitorbritto/vitorbritto.github.io.git && cd $_ && npm i`
+### Quick Edit
 
-3. Then, edit the `_config.yml` file for:
+Just click on _Editar este Post_. You will be redirected to the published post.
 
-# Start the static web serve at your machine for edit/update some file
-fullurl:        'http://0.0.0.0:4000/'
-
-# Build the project and deploy for production
-fullurl:        'http://www.vitorbritto.com.br/blog/'
-
-4. Start the web server with `rake && open -a http://0.0.0.0:4000`
-5. Start editing/updating.
-6. When you finish, change the `fullurl` to **build** the project and send the _pull request_. =]
 
 ## Structure
 
@@ -56,7 +63,6 @@ fullurl:        'http://www.vitorbritto.com.br/blog/'
 ├── .jshintrc
 ├── _config.yml
 ├── bower.json
-├── CNAME
 ├── config.rb
 ├── feed.xml
 ├── Gemfile
