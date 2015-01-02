@@ -25,7 +25,6 @@ Sabendo-se que passo a maior parte do tempo no terminal/console/shell e, até on
 
 O primeiro passo foi montar a estrutura do script responsável por está automação, colocando um cabeçalho e uma opção para `--help`. A boa prática em documentar o seu programa, facilita a sua manutenção. Não somente, o seu programa fica muito mais organizado e elegante.
 
-    ```
     #!/usr/bin/env bash
     
     # ------------------------------------------------------------------------------
@@ -49,14 +48,12 @@ O primeiro passo foi montar a estrutura do script responsável por está automa�
     #   - This script was created to generate new markdown files for my blog.
     #
     # ------------------------------------------------------------------------------
-    ```
 
 > Lembre-se sempre de incluir o _shebang_ na primeira linha do programa para torná-lo executável. Se quiser saber mais sobre isto, [clique aqui](http://www.vitorbritto.com.br/blog/criando-bons-programas-em-shell-script/).
 
 Além disso, é deverás importante viabilizar uma opção para ajudar o usuário na jornada pela ferramenta. Mesmo que este usuário seja você.
 
 
-    ```
     # Everybody need some help
     initpost_help() {
     
@@ -87,11 +84,9 @@ Além disso, é deverás importante viabilizar uma opção para ajudar o usuári
     EOT
     
     }
-    ```
 
 O segundo passo foi desenvolver funções utilitárias para determinados comportamentos deste programa. Neste caso, temos funções para criar _logs_ e renderizar na tela algumas mensagens.
 
-    ```
     # ------------------------------------------------------------------------------
     # | UTILS                                                                      |
     # ------------------------------------------------------------------------------
@@ -115,7 +110,6 @@ O segundo passo foi desenvolver funções utilitárias para determinados comport
     e_warning() {
         printf "$(tput setaf 3)! %s$(tput sgr0)\n" "$@"
     }
-    ```
     
 > Perceba que os dois passos anteriores podem ser reutilizáveis em outros programas Shell.
 
@@ -123,7 +117,6 @@ No próximo e terceiro passo, defini as variáveis e "constantes" deste programa
 
 > Fica à seu critério, como definir suas variáveis. Me sinto confortável desta maneira. Combinado?
 
-    ```
     # ------------------------------------------------------------------------------
     # | VARIABLES                                                                  |
     # ------------------------------------------------------------------------------
@@ -149,13 +142,11 @@ No próximo e terceiro passo, defini as variáveis e "constantes" deste programa
     # Set your assets URL
     ASSETS_URL="assets/images/posts"
     # ----------------------------------------------------------------
-    ```
 
 Nesta parte, separei as "constantes" das variáveis por **CORE** e **SETTINGS**. Veja como a documentação de cada elemento ajuda na identificação do que pode ser alterado ou não.
 
 No quarto passo, dei início ao desenvolvimento das _main functions_.
 
-    ```
     # Initial Content
     initpost_content() {
     
@@ -185,13 +176,11 @@ No quarto passo, dei início ao desenvolvimento das _main functions_.
         fi
     
     }
-    ```
     
 Se você se sentiu incomodado com a quantidade de _echo_ na função `initpost_content()`, saiba que podemos utilizar o o comando/utilitário `cat` (informações em `man cat`), gravar estas informações em um arquivo de texto externo ou a solução que você achar mais conveniente.
 
 Por fim, criei uma função responsável pela inicialização do programa com a respectiva `flag`(--help|-h _ou_ --create|-c).
 
-    ```
     # ------------------------------------------------------------------------------
     # | INITIALIZE PROGRAM                                                         |
     # ------------------------------------------------------------------------------
@@ -214,7 +203,6 @@ Por fim, criei uma função responsável pela inicialização do programa com a 
     
     # Initialize
     main $*
-    ```
 
 > O programa completo encontra-se [aqui](https://github.com/vitorbritto/forcefiles/blob/master/scripts/initpost.sh). 
 

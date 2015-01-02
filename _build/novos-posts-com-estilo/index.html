@@ -121,96 +121,90 @@
               </h2>
             
 <p>O primeiro passo foi montar a estrutura do script responsável por está automação, colocando um cabeçalho e uma opção para <code>--help</code>. A boa prática em documentar o seu programa, facilita a sua manutenção. Não somente, o seu programa fica muito mais organizado e elegante.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>```
-<a name="line-2"></a>#!/usr/bin/env bash
-<a name="line-3"></a>
-<a name="line-4"></a># ------------------------------------------------------------------------------
-<a name="line-5"></a>#
-<a name="line-6"></a># Program: initpost.sh
-<a name="line-7"></a># Author:  Vitor Britto
-<a name="line-8"></a># Description: script to create an initial structure for my posts.
-<a name="line-9"></a>#
-<a name="line-10"></a># Usage: ./initpost.sh [options] &lt;post name&gt;
-<a name="line-11"></a>#
-<a name="line-12"></a># Options:
-<a name="line-13"></a>#   -h, --help        output instructions
-<a name="line-14"></a>#   -c, --create      create post
-<a name="line-15"></a>#
-<a name="line-16"></a># Alias: alias ipost=&quot;bash ~/path/to/script/initpost.sh&quot;
-<a name="line-17"></a>#
-<a name="line-18"></a># Example:
-<a name="line-19"></a>#   ./initpost.sh -c How to replace strings with sed
-<a name="line-20"></a>#
-<a name="line-21"></a># Important Notes:
-<a name="line-22"></a>#   - This script was created to generate new markdown files for my blog.
-<a name="line-23"></a>#
-<a name="line-24"></a># ------------------------------------------------------------------------------
-<a name="line-25"></a>```
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>#!/usr/bin/env bash
+<a name="line-2"></a>
+<a name="line-3"></a># ------------------------------------------------------------------------------
+<a name="line-4"></a>#
+<a name="line-5"></a># Program: initpost.sh
+<a name="line-6"></a># Author:  Vitor Britto
+<a name="line-7"></a># Description: script to create an initial structure for my posts.
+<a name="line-8"></a>#
+<a name="line-9"></a># Usage: ./initpost.sh [options] &lt;post name&gt;
+<a name="line-10"></a>#
+<a name="line-11"></a># Options:
+<a name="line-12"></a>#   -h, --help        output instructions
+<a name="line-13"></a>#   -c, --create      create post
+<a name="line-14"></a>#
+<a name="line-15"></a># Alias: alias ipost=&quot;bash ~/path/to/script/initpost.sh&quot;
+<a name="line-16"></a>#
+<a name="line-17"></a># Example:
+<a name="line-18"></a>#   ./initpost.sh -c How to replace strings with sed
+<a name="line-19"></a>#
+<a name="line-20"></a># Important Notes:
+<a name="line-21"></a>#   - This script was created to generate new markdown files for my blog.
+<a name="line-22"></a>#
+<a name="line-23"></a># ------------------------------------------------------------------------------
 </code></pre></div>
 <blockquote>
 <p>Lembre-se sempre de incluir o <em>shebang</em> na primeira linha do programa para torná-lo executável. Se quiser saber mais sobre isto, <a href="http://www.vitorbritto.com.br/blog/criando-bons-programas-em-shell-script/">clique aqui</a>.</p>
 </blockquote>
 
 <p>Além disso, é deverás importante viabilizar uma opção para ajudar o usuário na jornada pela ferramenta. Mesmo que este usuário seja você.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>```
-<a name="line-2"></a># Everybody need some help
-<a name="line-3"></a>initpost_help() {
-<a name="line-4"></a>
-<a name="line-5"></a>cat &lt;&lt;EOT
-<a name="line-6"></a>
-<a name="line-7"></a>------------------------------------------------------------------------------
-<a name="line-8"></a>INIT POST - A shortcut to create an initial structure for my posts.
-<a name="line-9"></a>------------------------------------------------------------------------------
-<a name="line-10"></a>
-<a name="line-11"></a>Usage: ./initpost.sh [options] &lt;post name&gt;
-<a name="line-12"></a>
-<a name="line-13"></a>Options:
-<a name="line-14"></a>  -h, --help        output instructions
-<a name="line-15"></a>  -c, --create      create post
-<a name="line-16"></a>
-<a name="line-17"></a>Example:
-<a name="line-18"></a>  ./initpost.sh -c How to replace strings with sed
-<a name="line-19"></a>
-<a name="line-20"></a>Important Notes:
-<a name="line-21"></a>  - This script was created to generate new text files to my blog.
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a># Everybody need some help
+<a name="line-2"></a>initpost_help() {
+<a name="line-3"></a>
+<a name="line-4"></a>cat &lt;&lt;EOT
+<a name="line-5"></a>
+<a name="line-6"></a>------------------------------------------------------------------------------
+<a name="line-7"></a>INIT POST - A shortcut to create an initial structure for my posts.
+<a name="line-8"></a>------------------------------------------------------------------------------
+<a name="line-9"></a>
+<a name="line-10"></a>Usage: ./initpost.sh [options] &lt;post name&gt;
+<a name="line-11"></a>
+<a name="line-12"></a>Options:
+<a name="line-13"></a>  -h, --help        output instructions
+<a name="line-14"></a>  -c, --create      create post
+<a name="line-15"></a>
+<a name="line-16"></a>Example:
+<a name="line-17"></a>  ./initpost.sh -c How to replace strings with sed
+<a name="line-18"></a>
+<a name="line-19"></a>Important Notes:
+<a name="line-20"></a>  - This script was created to generate new text files to my blog.
+<a name="line-21"></a>
 <a name="line-22"></a>
-<a name="line-23"></a>
-<a name="line-24"></a>Copyright (c) Vitor Britto
-<a name="line-25"></a>Licensed under the MIT license.
-<a name="line-26"></a>
-<a name="line-27"></a>------------------------------------------------------------------------------
-<a name="line-28"></a>
-<a name="line-29"></a>EOT
-<a name="line-30"></a>
-<a name="line-31"></a>}
-<a name="line-32"></a>```
+<a name="line-23"></a>Copyright (c) Vitor Britto
+<a name="line-24"></a>Licensed under the MIT license.
+<a name="line-25"></a>
+<a name="line-26"></a>------------------------------------------------------------------------------
+<a name="line-27"></a>
+<a name="line-28"></a>EOT
+<a name="line-29"></a>
+<a name="line-30"></a>}
 </code></pre></div>
 <p>O segundo passo foi desenvolver funções utilitárias para determinados comportamentos deste programa. Neste caso, temos funções para criar <em>logs</em> e renderizar na tela algumas mensagens.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>```
-<a name="line-2"></a># ------------------------------------------------------------------------------
-<a name="line-3"></a># | UTILS                                                                      |
-<a name="line-4"></a># ------------------------------------------------------------------------------
-<a name="line-5"></a>
-<a name="line-6"></a># Header logging
-<a name="line-7"></a>e_header() {
-<a name="line-8"></a>    printf &quot;$(tput setaf 38)→ %s$(tput sgr0)\n&quot; &quot;$@&quot;
-<a name="line-9"></a>}
-<a name="line-10"></a>
-<a name="line-11"></a># Success logging
-<a name="line-12"></a>e_success() {
-<a name="line-13"></a>    printf &quot;$(tput setaf 76)✔ %s$(tput sgr0)\n&quot; &quot;$@&quot;
-<a name="line-14"></a>}
-<a name="line-15"></a>
-<a name="line-16"></a># Error logging
-<a name="line-17"></a>e_error() {
-<a name="line-18"></a>    printf &quot;$(tput setaf 1)✖ %s$(tput sgr0)\n&quot; &quot;$@&quot;
-<a name="line-19"></a>}
-<a name="line-20"></a>
-<a name="line-21"></a># Warning logging
-<a name="line-22"></a>e_warning() {
-<a name="line-23"></a>    printf &quot;$(tput setaf 3)! %s$(tput sgr0)\n&quot; &quot;$@&quot;
-<a name="line-24"></a>}
-<a name="line-25"></a>```
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a># ------------------------------------------------------------------------------
+<a name="line-2"></a># | UTILS                                                                      |
+<a name="line-3"></a># ------------------------------------------------------------------------------
+<a name="line-4"></a>
+<a name="line-5"></a># Header logging
+<a name="line-6"></a>e_header() {
+<a name="line-7"></a>    printf &quot;$(tput setaf 38)→ %s$(tput sgr0)\n&quot; &quot;$@&quot;
+<a name="line-8"></a>}
+<a name="line-9"></a>
+<a name="line-10"></a># Success logging
+<a name="line-11"></a>e_success() {
+<a name="line-12"></a>    printf &quot;$(tput setaf 76)✔ %s$(tput sgr0)\n&quot; &quot;$@&quot;
+<a name="line-13"></a>}
+<a name="line-14"></a>
+<a name="line-15"></a># Error logging
+<a name="line-16"></a>e_error() {
+<a name="line-17"></a>    printf &quot;$(tput setaf 1)✖ %s$(tput sgr0)\n&quot; &quot;$@&quot;
+<a name="line-18"></a>}
+<a name="line-19"></a>
+<a name="line-20"></a># Warning logging
+<a name="line-21"></a>e_warning() {
+<a name="line-22"></a>    printf &quot;$(tput setaf 3)! %s$(tput sgr0)\n&quot; &quot;$@&quot;
+<a name="line-23"></a>}
 </code></pre></div>
 <blockquote>
 <p>Perceba que os dois passos anteriores podem ser reutilizáveis em outros programas Shell.</p>
@@ -221,96 +215,90 @@
 <blockquote>
 <p>Fica à seu critério, como definir suas variáveis. Me sinto confortável desta maneira. Combinado?</p>
 </blockquote>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>```
-<a name="line-2"></a># ------------------------------------------------------------------------------
-<a name="line-3"></a># | VARIABLES                                                                  |
-<a name="line-4"></a># ------------------------------------------------------------------------------
-<a name="line-5"></a>
-<a name="line-6"></a># CORE: Do not change these lines
-<a name="line-7"></a># ----------------------------------------------------------------
-<a name="line-8"></a>POST_TITLE=&quot;${@:2:$(($#-1))}&quot;
-<a name="line-9"></a>POST_NAME=&quot;$(echo ${@:2:$(($#-1))} | sed -e &#39;s/ /-/g&#39; | sed &quot;y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/&quot;)&quot;
-<a name="line-10"></a>CURRENT_DATE=&quot;$(date +&#39;%Y-%m-%d&#39;)&quot;
-<a name="line-11"></a>FILE_NAME=&quot;${CURRENT_DATE}-${POST_NAME}.md&quot;
-<a name="line-12"></a># ----------------------------------------------------------------
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a># ------------------------------------------------------------------------------
+<a name="line-2"></a># | VARIABLES                                                                  |
+<a name="line-3"></a># ------------------------------------------------------------------------------
+<a name="line-4"></a>
+<a name="line-5"></a># CORE: Do not change these lines
+<a name="line-6"></a># ----------------------------------------------------------------
+<a name="line-7"></a>POST_TITLE=&quot;${@:2:$(($#-1))}&quot;
+<a name="line-8"></a>POST_NAME=&quot;$(echo ${@:2:$(($#-1))} | sed -e &#39;s/ /-/g&#39; | sed &quot;y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/&quot;)&quot;
+<a name="line-9"></a>CURRENT_DATE=&quot;$(date +&#39;%Y-%m-%d&#39;)&quot;
+<a name="line-10"></a>FILE_NAME=&quot;${CURRENT_DATE}-${POST_NAME}.md&quot;
+<a name="line-11"></a># ----------------------------------------------------------------
+<a name="line-12"></a>
 <a name="line-13"></a>
-<a name="line-14"></a>
-<a name="line-15"></a># SETTINGS: your configuration goes here
-<a name="line-16"></a># ----------------------------------------------------------------
-<a name="line-17"></a>
-<a name="line-18"></a># Set your destination folder
-<a name="line-19"></a>DIST_FOLDER=&quot;$HOME/Dropbox/DOCUMENTOS/Articles/&quot;
-<a name="line-20"></a>
-<a name="line-21"></a># Set your blog URL
-<a name="line-22"></a>BLOG_URL=&quot;http://vitorbritto.com/blog&quot;
-<a name="line-23"></a>
-<a name="line-24"></a># Set your assets URL
-<a name="line-25"></a>ASSETS_URL=&quot;assets/images/posts&quot;
-<a name="line-26"></a># ----------------------------------------------------------------
-<a name="line-27"></a>```
+<a name="line-14"></a># SETTINGS: your configuration goes here
+<a name="line-15"></a># ----------------------------------------------------------------
+<a name="line-16"></a>
+<a name="line-17"></a># Set your destination folder
+<a name="line-18"></a>DIST_FOLDER=&quot;$HOME/Dropbox/DOCUMENTOS/Articles/&quot;
+<a name="line-19"></a>
+<a name="line-20"></a># Set your blog URL
+<a name="line-21"></a>BLOG_URL=&quot;http://vitorbritto.com/blog&quot;
+<a name="line-22"></a>
+<a name="line-23"></a># Set your assets URL
+<a name="line-24"></a>ASSETS_URL=&quot;assets/images/posts&quot;
+<a name="line-25"></a># ----------------------------------------------------------------
 </code></pre></div>
 <p>Nesta parte, separei as &quot;constantes&quot; das variáveis por <strong>CORE</strong> e <strong>SETTINGS</strong>. Veja como a documentação de cada elemento ajuda na identificação do que pode ser alterado ou não.</p>
 
 <p>No quarto passo, dei início ao desenvolvimento das <em>main functions</em>.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>```
-<a name="line-2"></a># Initial Content
-<a name="line-3"></a>initpost_content() {
-<a name="line-4"></a>
-<a name="line-5"></a>echo &quot;---&quot;
-<a name="line-6"></a>echo &quot;layout: post&quot;
-<a name="line-7"></a>echo &quot;title: \&quot;${POST_TITLE}\&quot;&quot;
-<a name="line-8"></a>echo &quot;link: \&quot;${BLOG_URL}/${POST_NAME}/\&quot;&quot;
-<a name="line-9"></a>echo &quot;date: ${CURRENT_DATE}&quot;
-<a name="line-10"></a>echo &quot;cover: \&quot;${ASSETS_URL}/post-${POST_NAME}.jpg\&quot;&quot;
-<a name="line-11"></a>echo &quot;path: \&quot;${FILE_NAME}\&quot;&quot;
-<a name="line-12"></a>echo &quot;description:&quot;
-<a name="line-13"></a>echo &quot;comments: true&quot;
-<a name="line-14"></a>echo &quot;bio: Desenvolvedor Web e Designer, extremamente apaixonado pelo seu trabalho. Descobriu o mundo dos códigos há quase duas décadas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, projetos colaborativos, desenvolvimento de projetos pessoais e escrever os artigos aqui publicados.&quot;
-<a name="line-15"></a>echo &quot;---&quot;
-<a name="line-16"></a>
-<a name="line-17"></a>}
-<a name="line-18"></a>
-<a name="line-19"></a># Create file
-<a name="line-20"></a>initpost_file() {
-<a name="line-21"></a>    if [ ! -f &quot;$FILE_NAME&quot; ]; then
-<a name="line-22"></a>        e_header &quot;Creating template...&quot;
-<a name="line-23"></a>        initpost_content &gt; &quot;${DIST_FOLDER}/${FILE_NAME}&quot;
-<a name="line-24"></a>        e_success &quot;Initial post successfully created!&quot;
-<a name="line-25"></a>    else
-<a name="line-26"></a>        e_warning &quot;File already exist.&quot;
-<a name="line-27"></a>        exit 1
-<a name="line-28"></a>    fi
-<a name="line-29"></a>
-<a name="line-30"></a>}
-<a name="line-31"></a>```
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a># Initial Content
+<a name="line-2"></a>initpost_content() {
+<a name="line-3"></a>
+<a name="line-4"></a>echo &quot;---&quot;
+<a name="line-5"></a>echo &quot;layout: post&quot;
+<a name="line-6"></a>echo &quot;title: \&quot;${POST_TITLE}\&quot;&quot;
+<a name="line-7"></a>echo &quot;link: \&quot;${BLOG_URL}/${POST_NAME}/\&quot;&quot;
+<a name="line-8"></a>echo &quot;date: ${CURRENT_DATE}&quot;
+<a name="line-9"></a>echo &quot;cover: \&quot;${ASSETS_URL}/post-${POST_NAME}.jpg\&quot;&quot;
+<a name="line-10"></a>echo &quot;path: \&quot;${FILE_NAME}\&quot;&quot;
+<a name="line-11"></a>echo &quot;description:&quot;
+<a name="line-12"></a>echo &quot;comments: true&quot;
+<a name="line-13"></a>echo &quot;bio: Desenvolvedor Web e Designer, extremamente apaixonado pelo seu trabalho. Descobriu o mundo dos códigos há quase duas décadas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, projetos colaborativos, desenvolvimento de projetos pessoais e escrever os artigos aqui publicados.&quot;
+<a name="line-14"></a>echo &quot;---&quot;
+<a name="line-15"></a>
+<a name="line-16"></a>}
+<a name="line-17"></a>
+<a name="line-18"></a># Create file
+<a name="line-19"></a>initpost_file() {
+<a name="line-20"></a>    if [ ! -f &quot;$FILE_NAME&quot; ]; then
+<a name="line-21"></a>        e_header &quot;Creating template...&quot;
+<a name="line-22"></a>        initpost_content &gt; &quot;${DIST_FOLDER}/${FILE_NAME}&quot;
+<a name="line-23"></a>        e_success &quot;Initial post successfully created!&quot;
+<a name="line-24"></a>    else
+<a name="line-25"></a>        e_warning &quot;File already exist.&quot;
+<a name="line-26"></a>        exit 1
+<a name="line-27"></a>    fi
+<a name="line-28"></a>
+<a name="line-29"></a>}
 </code></pre></div>
 <p>Se você se sentiu incomodado com a quantidade de <em>echo</em> na função <code>initpost_content()</code>, saiba que podemos utilizar o o comando/utilitário <code>cat</code> (informações em <code>man cat</code>), gravar estas informações em um arquivo de texto externo ou a solução que você achar mais conveniente.</p>
 
 <p>Por fim, criei uma função responsável pela inicialização do programa com a respectiva <code>flag</code>(--help|-h <em>ou</em> --create|-c).</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a>```
-<a name="line-2"></a># ------------------------------------------------------------------------------
-<a name="line-3"></a># | INITIALIZE PROGRAM                                                         |
-<a name="line-4"></a># ------------------------------------------------------------------------------
-<a name="line-5"></a>
-<a name="line-6"></a>main() {
-<a name="line-7"></a>
-<a name="line-8"></a>    # Show help
-<a name="line-9"></a>    if [[ &quot;${1}&quot; == &quot;-h&quot; || &quot;${1}&quot; == &quot;--help&quot; ]]; then
-<a name="line-10"></a>        initpost_help ${1}
-<a name="line-11"></a>        exit
-<a name="line-12"></a>    fi
-<a name="line-13"></a>
-<a name="line-14"></a>    # Create
-<a name="line-15"></a>    if [[ &quot;${1}&quot; == &quot;-c&quot; || &quot;${1}&quot; == &quot;--create&quot; ]]; then
-<a name="line-16"></a>        initpost_file $*
-<a name="line-17"></a>        exit
-<a name="line-18"></a>    fi
-<a name="line-19"></a>
-<a name="line-20"></a>}
-<a name="line-21"></a>
-<a name="line-22"></a># Initialize
-<a name="line-23"></a>main $*
-<a name="line-24"></a>```
+<div class="highlight"><pre><code class="language-text" data-lang="text"><a name="line-1"></a># ------------------------------------------------------------------------------
+<a name="line-2"></a># | INITIALIZE PROGRAM                                                         |
+<a name="line-3"></a># ------------------------------------------------------------------------------
+<a name="line-4"></a>
+<a name="line-5"></a>main() {
+<a name="line-6"></a>
+<a name="line-7"></a>    # Show help
+<a name="line-8"></a>    if [[ &quot;${1}&quot; == &quot;-h&quot; || &quot;${1}&quot; == &quot;--help&quot; ]]; then
+<a name="line-9"></a>        initpost_help ${1}
+<a name="line-10"></a>        exit
+<a name="line-11"></a>    fi
+<a name="line-12"></a>
+<a name="line-13"></a>    # Create
+<a name="line-14"></a>    if [[ &quot;${1}&quot; == &quot;-c&quot; || &quot;${1}&quot; == &quot;--create&quot; ]]; then
+<a name="line-15"></a>        initpost_file $*
+<a name="line-16"></a>        exit
+<a name="line-17"></a>    fi
+<a name="line-18"></a>
+<a name="line-19"></a>}
+<a name="line-20"></a>
+<a name="line-21"></a># Initialize
+<a name="line-22"></a>main $*
 </code></pre></div>
 <blockquote>
 <p>O programa completo encontra-se <a href="https://github.com/vitorbritto/forcefiles/blob/master/scripts/initpost.sh">aqui</a>. </p>

@@ -25,96 +25,90 @@
               &lt;/h2&gt;
             
 &lt;p&gt;O primeiro passo foi montar a estrutura do script responsável por está automação, colocando um cabeçalho e uma opção para &lt;code&gt;--help&lt;/code&gt;. A boa prática em documentar o seu programa, facilita a sua manutenção. Não somente, o seu programa fica muito mais organizado e elegante.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;```
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;#!/usr/bin/env bash
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;# Program: initpost.sh
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;# Author:  Vitor Britto
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;# Description: script to create an initial structure for my posts.
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;# Usage: ./initpost.sh [options] &amp;lt;post name&amp;gt;
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;# Options:
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;#   -h, --help        output instructions
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;#   -c, --create      create post
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;# Alias: alias ipost=&amp;quot;bash ~/path/to/script/initpost.sh&amp;quot;
-&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;# Example:
-&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;#   ./initpost.sh -c How to replace strings with sed
-&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;# Important Notes:
-&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;#   - This script was created to generate new markdown files for my blog.
-&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;#
-&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
-&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;```
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;#!/usr/bin/env bash
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;# Program: initpost.sh
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;# Author:  Vitor Britto
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;# Description: script to create an initial structure for my posts.
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;# Usage: ./initpost.sh [options] &amp;lt;post name&amp;gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;# Options:
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;#   -h, --help        output instructions
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;#   -c, --create      create post
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;# Alias: alias ipost=&amp;quot;bash ~/path/to/script/initpost.sh&amp;quot;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;# Example:
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;#   ./initpost.sh -c How to replace strings with sed
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;# Important Notes:
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;#   - This script was created to generate new markdown files for my blog.
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Lembre-se sempre de incluir o &lt;em&gt;shebang&lt;/em&gt; na primeira linha do programa para torná-lo executável. Se quiser saber mais sobre isto, &lt;a href=&quot;http://www.vitorbritto.com.br/blog/criando-bons-programas-em-shell-script/&quot;&gt;clique aqui&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Além disso, é deverás importante viabilizar uma opção para ajudar o usuário na jornada pela ferramenta. Mesmo que este usuário seja você.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;```
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# Everybody need some help
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;initpost_help() {
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;cat &amp;lt;&amp;lt;EOT
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;------------------------------------------------------------------------------
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;INIT POST - A shortcut to create an initial structure for my posts.
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;------------------------------------------------------------------------------
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;Usage: ./initpost.sh [options] &amp;lt;post name&amp;gt;
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;Options:
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;  -h, --help        output instructions
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;  -c, --create      create post
-&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;Example:
-&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;  ./initpost.sh -c How to replace strings with sed
-&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;Important Notes:
-&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;  - This script was created to generate new text files to my blog.
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Everybody need some help
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;initpost_help() {
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;cat &amp;lt;&amp;lt;EOT
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;------------------------------------------------------------------------------
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;INIT POST - A shortcut to create an initial structure for my posts.
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;------------------------------------------------------------------------------
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;Usage: ./initpost.sh [options] &amp;lt;post name&amp;gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;Options:
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;  -h, --help        output instructions
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;  -c, --create      create post
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;Example:
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;  ./initpost.sh -c How to replace strings with sed
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;Important Notes:
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;  - This script was created to generate new text files to my blog.
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;
 &lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;Copyright (c) Vitor Britto
-&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;Licensed under the MIT license.
-&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;------------------------------------------------------------------------------
-&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;EOT
-&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;}
-&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;```
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;Copyright (c) Vitor Britto
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;Licensed under the MIT license.
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;------------------------------------------------------------------------------
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;EOT
+&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;O segundo passo foi desenvolver funções utilitárias para determinados comportamentos deste programa. Neste caso, temos funções para criar &lt;em&gt;logs&lt;/em&gt; e renderizar na tela algumas mensagens.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;```
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;# | UTILS                                                                      |
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;# Header logging
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;e_header() {
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;    printf &amp;quot;$(tput setaf 38)→ %s$(tput sgr0)\n&amp;quot; &amp;quot;$@&amp;quot;
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;}
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;# Success logging
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;e_success() {
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    printf &amp;quot;$(tput setaf 76)✔ %s$(tput sgr0)\n&amp;quot; &amp;quot;$@&amp;quot;
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;}
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;# Error logging
-&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;e_error() {
-&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;    printf &amp;quot;$(tput setaf 1)✖ %s$(tput sgr0)\n&amp;quot; &amp;quot;$@&amp;quot;
-&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;}
-&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;# Warning logging
-&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;e_warning() {
-&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;    printf &amp;quot;$(tput setaf 3)! %s$(tput sgr0)\n&amp;quot; &amp;quot;$@&amp;quot;
-&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;}
-&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;```
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# | UTILS                                                                      |
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;# Header logging
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;e_header() {
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    printf &amp;quot;$(tput setaf 38)→ %s$(tput sgr0)\n&amp;quot; &amp;quot;$@&amp;quot;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;# Success logging
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;e_success() {
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;    printf &amp;quot;$(tput setaf 76)✔ %s$(tput sgr0)\n&amp;quot; &amp;quot;$@&amp;quot;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;# Error logging
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;e_error() {
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;    printf &amp;quot;$(tput setaf 1)✖ %s$(tput sgr0)\n&amp;quot; &amp;quot;$@&amp;quot;
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;# Warning logging
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;e_warning() {
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;    printf &amp;quot;$(tput setaf 3)! %s$(tput sgr0)\n&amp;quot; &amp;quot;$@&amp;quot;
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Perceba que os dois passos anteriores podem ser reutilizáveis em outros programas Shell.&lt;/p&gt;
@@ -125,96 +119,90 @@
 &lt;blockquote&gt;
 &lt;p&gt;Fica à seu critério, como definir suas variáveis. Me sinto confortável desta maneira. Combinado?&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;```
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;# | VARIABLES                                                                  |
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;# CORE: Do not change these lines
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;# ----------------------------------------------------------------
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;POST_TITLE=&amp;quot;${@:2:$(($#-1))}&amp;quot;
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;POST_NAME=&amp;quot;$(echo ${@:2:$(($#-1))} | sed -e &amp;#39;s/ /-/g&amp;#39; | sed &amp;quot;y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/&amp;quot;)&amp;quot;
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;CURRENT_DATE=&amp;quot;$(date +&amp;#39;%Y-%m-%d&amp;#39;)&amp;quot;
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;FILE_NAME=&amp;quot;${CURRENT_DATE}-${POST_NAME}.md&amp;quot;
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;# ----------------------------------------------------------------
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# | VARIABLES                                                                  |
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;# CORE: Do not change these lines
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;# ----------------------------------------------------------------
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;POST_TITLE=&amp;quot;${@:2:$(($#-1))}&amp;quot;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;POST_NAME=&amp;quot;$(echo ${@:2:$(($#-1))} | sed -e &amp;#39;s/ /-/g&amp;#39; | sed &amp;quot;y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/&amp;quot;)&amp;quot;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;CURRENT_DATE=&amp;quot;$(date +&amp;#39;%Y-%m-%d&amp;#39;)&amp;quot;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;FILE_NAME=&amp;quot;${CURRENT_DATE}-${POST_NAME}.md&amp;quot;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;# ----------------------------------------------------------------
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;
 &lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;# SETTINGS: your configuration goes here
-&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;# ----------------------------------------------------------------
-&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;# Set your destination folder
-&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;DIST_FOLDER=&amp;quot;$HOME/Dropbox/DOCUMENTOS/Articles/&amp;quot;
-&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;# Set your blog URL
-&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;BLOG_URL=&amp;quot;http://vitorbritto.com/blog&amp;quot;
-&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;# Set your assets URL
-&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;ASSETS_URL=&amp;quot;assets/images/posts&amp;quot;
-&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;# ----------------------------------------------------------------
-&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;```
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;# SETTINGS: your configuration goes here
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;# ----------------------------------------------------------------
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;# Set your destination folder
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;DIST_FOLDER=&amp;quot;$HOME/Dropbox/DOCUMENTOS/Articles/&amp;quot;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;# Set your blog URL
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;BLOG_URL=&amp;quot;http://vitorbritto.com/blog&amp;quot;
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;# Set your assets URL
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;ASSETS_URL=&amp;quot;assets/images/posts&amp;quot;
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;# ----------------------------------------------------------------
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Nesta parte, separei as &amp;quot;constantes&amp;quot; das variáveis por &lt;strong&gt;CORE&lt;/strong&gt; e &lt;strong&gt;SETTINGS&lt;/strong&gt;. Veja como a documentação de cada elemento ajuda na identificação do que pode ser alterado ou não.&lt;/p&gt;
 
 &lt;p&gt;No quarto passo, dei início ao desenvolvimento das &lt;em&gt;main functions&lt;/em&gt;.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;```
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# Initial Content
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;initpost_content() {
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;echo &amp;quot;---&amp;quot;
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;echo &amp;quot;layout: post&amp;quot;
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;echo &amp;quot;title: \&amp;quot;${POST_TITLE}\&amp;quot;&amp;quot;
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;echo &amp;quot;link: \&amp;quot;${BLOG_URL}/${POST_NAME}/\&amp;quot;&amp;quot;
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;echo &amp;quot;date: ${CURRENT_DATE}&amp;quot;
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;echo &amp;quot;cover: \&amp;quot;${ASSETS_URL}/post-${POST_NAME}.jpg\&amp;quot;&amp;quot;
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;echo &amp;quot;path: \&amp;quot;${FILE_NAME}\&amp;quot;&amp;quot;
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;echo &amp;quot;description:&amp;quot;
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;echo &amp;quot;comments: true&amp;quot;
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;echo &amp;quot;bio: Desenvolvedor Web e Designer, extremamente apaixonado pelo seu trabalho. Descobriu o mundo dos códigos há quase duas décadas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, projetos colaborativos, desenvolvimento de projetos pessoais e escrever os artigos aqui publicados.&amp;quot;
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;echo &amp;quot;---&amp;quot;
-&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;}
-&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;# Create file
-&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;initpost_file() {
-&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;    if [ ! -f &amp;quot;$FILE_NAME&amp;quot; ]; then
-&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;        e_header &amp;quot;Creating template...&amp;quot;
-&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;        initpost_content &amp;gt; &amp;quot;${DIST_FOLDER}/${FILE_NAME}&amp;quot;
-&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;        e_success &amp;quot;Initial post successfully created!&amp;quot;
-&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;    else
-&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;        e_warning &amp;quot;File already exist.&amp;quot;
-&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;        exit 1
-&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;    fi
-&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;}
-&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;```
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Initial Content
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;initpost_content() {
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;echo &amp;quot;---&amp;quot;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;echo &amp;quot;layout: post&amp;quot;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;echo &amp;quot;title: \&amp;quot;${POST_TITLE}\&amp;quot;&amp;quot;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;echo &amp;quot;link: \&amp;quot;${BLOG_URL}/${POST_NAME}/\&amp;quot;&amp;quot;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;echo &amp;quot;date: ${CURRENT_DATE}&amp;quot;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;echo &amp;quot;cover: \&amp;quot;${ASSETS_URL}/post-${POST_NAME}.jpg\&amp;quot;&amp;quot;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;echo &amp;quot;path: \&amp;quot;${FILE_NAME}\&amp;quot;&amp;quot;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;echo &amp;quot;description:&amp;quot;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;echo &amp;quot;comments: true&amp;quot;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;echo &amp;quot;bio: Desenvolvedor Web e Designer, extremamente apaixonado pelo seu trabalho. Descobriu o mundo dos códigos há quase duas décadas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, projetos colaborativos, desenvolvimento de projetos pessoais e escrever os artigos aqui publicados.&amp;quot;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;echo &amp;quot;---&amp;quot;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;# Create file
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;initpost_file() {
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;    if [ ! -f &amp;quot;$FILE_NAME&amp;quot; ]; then
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;        e_header &amp;quot;Creating template...&amp;quot;
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;        initpost_content &amp;gt; &amp;quot;${DIST_FOLDER}/${FILE_NAME}&amp;quot;
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;        e_success &amp;quot;Initial post successfully created!&amp;quot;
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;    else
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;        e_warning &amp;quot;File already exist.&amp;quot;
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;        exit 1
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;    fi
+&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Se você se sentiu incomodado com a quantidade de &lt;em&gt;echo&lt;/em&gt; na função &lt;code&gt;initpost_content()&lt;/code&gt;, saiba que podemos utilizar o o comando/utilitário &lt;code&gt;cat&lt;/code&gt; (informações em &lt;code&gt;man cat&lt;/code&gt;), gravar estas informações em um arquivo de texto externo ou a solução que você achar mais conveniente.&lt;/p&gt;
 
 &lt;p&gt;Por fim, criei uma função responsável pela inicialização do programa com a respectiva &lt;code&gt;flag&lt;/code&gt;(--help|-h &lt;em&gt;ou&lt;/em&gt; --create|-c).&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;```
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;# | INITIALIZE PROGRAM                                                         |
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;main() {
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;    # Show help
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;    if [[ &amp;quot;${1}&amp;quot; == &amp;quot;-h&amp;quot; || &amp;quot;${1}&amp;quot; == &amp;quot;--help&amp;quot; ]]; then
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;        initpost_help ${1}
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;        exit
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;    fi
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;    # Create
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;    if [[ &amp;quot;${1}&amp;quot; == &amp;quot;-c&amp;quot; || &amp;quot;${1}&amp;quot; == &amp;quot;--create&amp;quot; ]]; then
-&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;        initpost_file $*
-&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;        exit
-&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;    fi
-&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;}
-&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;# Initialize
-&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;main $*
-&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;```
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# | INITIALIZE PROGRAM                                                         |
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;main() {
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    # Show help
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;    if [[ &amp;quot;${1}&amp;quot; == &amp;quot;-h&amp;quot; || &amp;quot;${1}&amp;quot; == &amp;quot;--help&amp;quot; ]]; then
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;        initpost_help ${1}
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;        exit
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;    fi
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    # Create
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;    if [[ &amp;quot;${1}&amp;quot; == &amp;quot;-c&amp;quot; || &amp;quot;${1}&amp;quot; == &amp;quot;--create&amp;quot; ]]; then
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;        initpost_file $*
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;        exit
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;    fi
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;# Initialize
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;main $*
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;blockquote&gt;
 &lt;p&gt;O programa completo encontra-se &lt;a href=&quot;https://github.com/vitorbritto/forcefiles/blob/master/scripts/initpost.sh&quot;&gt;aqui&lt;/a&gt;. &lt;/p&gt;
