@@ -7,6 +7,229 @@
     <atom:link href="http://www.vitorbritto.com.br/blog/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Novos posts com estilo</title>
+        <description>&lt;p&gt;Saudações!&lt;/p&gt;
+
+&lt;p&gt;Gostaria de compartilhar uma dica interessante para os usuários do &lt;em&gt;Static Generator&lt;/em&gt; Jekyll, que, apesar de ser uma excelente ferramenta, me deixou na mão em um ponto: criar novos posts. &lt;/p&gt;
+
+              &lt;h2 id=&quot;O-problema&quot;&gt;
+                &lt;a name=&quot;O-problema&quot; href=&quot;#O-problema&quot;&gt;&lt;/a&gt;O problema
+              &lt;/h2&gt;
+            
+&lt;p&gt;Mesmo com a facilidade da sintaxe do YAML (front matter) e o Markdown para escrever os meus artigos, senti falta de uma tarefa/comando/utilitário para automatizar o processo de criação de um modelo inicial para os meus posts.&lt;/p&gt;
+
+&lt;p&gt;Sabendo-se que passo a maior parte do tempo no terminal/console/shell e, até onde sei, não é possível criar um template via CLI para um novo post com o Jekyll, resolvi facilitar este processo desenvolvendo um programa em Shell para gerar um template de acordo com as minhas necessidades.&lt;/p&gt;
+
+              &lt;h2 id=&quot;A-solução&quot;&gt;
+                &lt;a name=&quot;A-solução&quot; href=&quot;#A-solução&quot;&gt;&lt;/a&gt;A solução
+              &lt;/h2&gt;
+            
+&lt;p&gt;O primeiro passo foi montar a estrutura do script responsável por está automação, colocando um cabeçalho e uma opção para &lt;code&gt;--help&lt;/code&gt;. A boa prática em documentar o seu programa, facilita a sua manutenção. Não somente, o seu programa fica muito mais organizado e elegante.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;```
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;#!/usr/bin/env bash
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;# Program: initpost.sh
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;# Author:  Vitor Britto
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;# Description: script to create an initial structure for my posts.
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;# Usage: ./initpost.sh [options] &amp;lt;post name&amp;gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;# Options:
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;#   -h, --help        output instructions
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;#   -c, --create      create post
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;# Alias: alias ipost=&amp;quot;bash ~/path/to/script/initpost.sh&amp;quot;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;# Example:
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;#   ./initpost.sh -c How to replace strings with sed
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;# Important Notes:
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;#   - This script was created to generate new markdown files for my blog.
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;#
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Lembre-se sempre de incluir o &lt;em&gt;shebang&lt;/em&gt; na primeira linha do programa para torná-lo executável. Se quiser saber mais sobre isto, &lt;a href=&quot;http://www.vitorbritto.com.br/blog/criando-bons-programas-em-shell-script/&quot;&gt;clique aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Além disso, é deverás importante viabilizar uma opção para ajudar o usuário na jornada pela ferramenta. Mesmo que este usuário seja você.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;```
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# Everybody need some help
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;initpost_help() {
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;cat &amp;lt;&amp;lt;EOT
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;------------------------------------------------------------------------------
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;INIT POST - A shortcut to create an initial structure for my posts.
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;------------------------------------------------------------------------------
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;Usage: ./initpost.sh [options] &amp;lt;post name&amp;gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;Options:
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;  -h, --help        output instructions
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;  -c, --create      create post
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;Example:
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;  ./initpost.sh -c How to replace strings with sed
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;Important Notes:
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;  - This script was created to generate new text files to my blog.
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;Copyright (c) Vitor Britto
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;Licensed under the MIT license.
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;------------------------------------------------------------------------------
+&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;EOT
+&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;O segundo passo foi desenvolver funções utilitárias para determinados comportamentos deste programa. Neste caso, temos funções para criar &lt;em&gt;logs&lt;/em&gt; e renderizar na tela algumas mensagens.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;```
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;# | UTILS                                                                      |
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;# Header logging
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;e_header() {
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;    printf &amp;quot;$(tput setaf 38)→ %s$(tput sgr0)\n&amp;quot; &amp;quot;$@&amp;quot;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;# Success logging
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;e_success() {
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    printf &amp;quot;$(tput setaf 76)✔ %s$(tput sgr0)\n&amp;quot; &amp;quot;$@&amp;quot;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;# Error logging
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;e_error() {
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;    printf &amp;quot;$(tput setaf 1)✖ %s$(tput sgr0)\n&amp;quot; &amp;quot;$@&amp;quot;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;# Warning logging
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;e_warning() {
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;    printf &amp;quot;$(tput setaf 3)! %s$(tput sgr0)\n&amp;quot; &amp;quot;$@&amp;quot;
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Perceba que os dois passos anteriores podem ser reutilizáveis em outros programas Shell.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;No próximo e terceiro passo, defini as variáveis e &amp;quot;constantes&amp;quot; deste programa. Ambas são escritas em &lt;em&gt;uppercase&lt;/em&gt;, a não ser quando crio variáveis locais (no escopo de uma função) que, por sua vez, são escritas em &lt;em&gt;lowercase&lt;/em&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Fica à seu critério, como definir suas variáveis. Me sinto confortável desta maneira. Combinado?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;```
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;# | VARIABLES                                                                  |
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;# CORE: Do not change these lines
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;# ----------------------------------------------------------------
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;POST_TITLE=&amp;quot;${@:2:$(($#-1))}&amp;quot;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;POST_NAME=&amp;quot;$(echo ${@:2:$(($#-1))} | sed -e &amp;#39;s/ /-/g&amp;#39; | sed &amp;quot;y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/&amp;quot;)&amp;quot;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;CURRENT_DATE=&amp;quot;$(date +&amp;#39;%Y-%m-%d&amp;#39;)&amp;quot;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;FILE_NAME=&amp;quot;${CURRENT_DATE}-${POST_NAME}.md&amp;quot;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;# ----------------------------------------------------------------
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;# SETTINGS: your configuration goes here
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;# ----------------------------------------------------------------
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;# Set your destination folder
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;DIST_FOLDER=&amp;quot;$HOME/Dropbox/DOCUMENTOS/Articles/&amp;quot;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;# Set your blog URL
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;BLOG_URL=&amp;quot;http://vitorbritto.com/blog&amp;quot;
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;# Set your assets URL
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;ASSETS_URL=&amp;quot;assets/images/posts&amp;quot;
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;# ----------------------------------------------------------------
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Nesta parte, separei as &amp;quot;constantes&amp;quot; das variáveis por &lt;strong&gt;CORE&lt;/strong&gt; e &lt;strong&gt;SETTINGS&lt;/strong&gt;. Veja como a documentação de cada elemento ajuda na identificação do que pode ser alterado ou não.&lt;/p&gt;
+
+&lt;p&gt;No quarto passo, dei início ao desenvolvimento das &lt;em&gt;main functions&lt;/em&gt;.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;```
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# Initial Content
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;initpost_content() {
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;echo &amp;quot;---&amp;quot;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;echo &amp;quot;layout: post&amp;quot;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;echo &amp;quot;title: \&amp;quot;${POST_TITLE}\&amp;quot;&amp;quot;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;echo &amp;quot;link: \&amp;quot;${BLOG_URL}/${POST_NAME}/\&amp;quot;&amp;quot;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;echo &amp;quot;date: ${CURRENT_DATE}&amp;quot;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;echo &amp;quot;cover: \&amp;quot;${ASSETS_URL}/post-${POST_NAME}.jpg\&amp;quot;&amp;quot;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;echo &amp;quot;path: \&amp;quot;${FILE_NAME}\&amp;quot;&amp;quot;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;echo &amp;quot;description:&amp;quot;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;echo &amp;quot;comments: true&amp;quot;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;echo &amp;quot;bio: Desenvolvedor Web e Designer, extremamente apaixonado pelo seu trabalho. Descobriu o mundo dos códigos há quase duas décadas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, projetos colaborativos, desenvolvimento de projetos pessoais e escrever os artigos aqui publicados.&amp;quot;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;echo &amp;quot;---&amp;quot;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;# Create file
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;initpost_file() {
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;    if [ ! -f &amp;quot;$FILE_NAME&amp;quot; ]; then
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;        e_header &amp;quot;Creating template...&amp;quot;
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;        initpost_content &amp;gt; &amp;quot;${DIST_FOLDER}/${FILE_NAME}&amp;quot;
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;        e_success &amp;quot;Initial post successfully created!&amp;quot;
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;    else
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;        e_warning &amp;quot;File already exist.&amp;quot;
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;        exit 1
+&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;    fi
+&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Se você se sentiu incomodado com a quantidade de &lt;em&gt;echo&lt;/em&gt; na função &lt;code&gt;initpost_content()&lt;/code&gt;, saiba que podemos utilizar o o comando/utilitário &lt;code&gt;cat&lt;/code&gt; (informações em &lt;code&gt;man cat&lt;/code&gt;), gravar estas informações em um arquivo de texto externo ou a solução que você achar mais conveniente.&lt;/p&gt;
+
+&lt;p&gt;Por fim, criei uma função responsável pela inicialização do programa com a respectiva &lt;code&gt;flag&lt;/code&gt;(--help|-h &lt;em&gt;ou&lt;/em&gt; --create|-c).&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;```
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;# | INITIALIZE PROGRAM                                                         |
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;# ------------------------------------------------------------------------------
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;main() {
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;    # Show help
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;    if [[ &amp;quot;${1}&amp;quot; == &amp;quot;-h&amp;quot; || &amp;quot;${1}&amp;quot; == &amp;quot;--help&amp;quot; ]]; then
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;        initpost_help ${1}
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;        exit
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;    fi
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;    # Create
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;    if [[ &amp;quot;${1}&amp;quot; == &amp;quot;-c&amp;quot; || &amp;quot;${1}&amp;quot; == &amp;quot;--create&amp;quot; ]]; then
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;        initpost_file $*
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;        exit
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;    fi
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;}
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;# Initialize
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;main $*
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;O programa completo encontra-se &lt;a href=&quot;https://github.com/vitorbritto/forcefiles/blob/master/scripts/initpost.sh&quot;&gt;aqui&lt;/a&gt;. &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;O script é configurável e espero que seja útil para você. &lt;/p&gt;
+
+&lt;p&gt;Até a próxima! =]&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Jan 2015 00:00:00 -0300</pubDate>
+        <link>http://www.vitorbritto.com.br/blog/novos-posts-com-estilo/</link>
+        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/novos-posts-com-estilo/</guid>
+      </item>
+    
+      <item>
         <title>Novidades no Blog</title>
         <description>&lt;p&gt;Saudações!&lt;/p&gt;
 
@@ -1697,74 +1920,6 @@ Veja abaixo um exemplo:&lt;/p&gt;
         <pubDate>Mon, 14 Jul 2014 00:00:00 -0300</pubDate>
         <link>http://www.vitorbritto.com.br/blog/adicionando-caminhos-na-variavel-de-ambiente-PATH/</link>
         <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/adicionando-caminhos-na-variavel-de-ambiente-PATH/</guid>
-      </item>
-    
-      <item>
-        <title>Substituindo o Bower pelo Napa</title>
-        <description>&lt;p&gt;Saudações!&lt;/p&gt;
-
-&lt;p&gt;Depois de quase 3 anos utilizando o &lt;strong&gt;Backbone&lt;/strong&gt; como &lt;em&gt;JavaScript framework&lt;/em&gt; para a arquitetura e modularização em minhas aplicações web, resolvi arriscar, estudar e realizar alguns experimentos com o &lt;strong&gt;AngularJS&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Não somente, resolvi migrar também para o padrão CommonJS e usar o &lt;a href=&quot;http://browserify.org/&quot;&gt;Browserify&lt;/a&gt; em meus projetos. Posso dizer que estou bastante satisfeito com o resultado e que atende perfeitamente as minhas necessidades. Não que o padrão AMD, com requireJS, não atendesse estas necessidades, mas, por estar muito próximo ao NodeJS atualmente, percebi que seria mais sensato realizar esta migração. Seja pela sintaxe, uso de módulos do npm no browser-side ou a padronização do meu código. Porém, isto não significa que o novo padrão adotado seja a solução para todos os cenários. Cada caso é um caso.&lt;/p&gt;
-
-              &lt;h3 id=&quot;Entendendo-o-cenário&quot;&gt;
-                &lt;a name=&quot;Entendendo-o-cenário&quot; href=&quot;#Entendendo-o-cenário&quot;&gt;&lt;/a&gt;Entendendo o cenário
-              &lt;/h3&gt;
-            
-&lt;p&gt;Em meio aos experimentos, resolvi iniciar um boilerplate para o &lt;strong&gt;MEAN Stack&lt;/strong&gt; e encontrei o &lt;a href=&quot;https://www.npmjs.org/package/napa&quot;&gt;Napa&lt;/a&gt;. A solução que este cara nos dá, é um método alternativo para consumir módulos arbitrários.&lt;/p&gt;
-
-&lt;p&gt;Até o momento desconheço módulos oficiais do Angular no &lt;em&gt;npm&lt;/em&gt;, mas, com o &lt;em&gt;napa&lt;/em&gt;, é possível instalar módulos do Angular e injetá-los no nosso manifesto JSON &lt;code&gt;package.json&lt;/code&gt; sem problemas.&lt;/p&gt;
-
-              &lt;h3 id=&quot;Como-faremos-isso-&quot;&gt;
-                &lt;a name=&quot;Como-faremos-isso-&quot; href=&quot;#Como-faremos-isso-&quot;&gt;&lt;/a&gt;Como faremos isso?
-              &lt;/h3&gt;
-            
-&lt;p&gt;O processo é bem prático, confira abaixo:&lt;/p&gt;
-
-&lt;p&gt;1 - Realize a instalação do &lt;strong&gt;napa&lt;/strong&gt;: &lt;code&gt;npm i napa --save-dev&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;2 - Insira o código abaixo no seu manifesto &lt;code&gt;package.json&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&amp;quot;scripts&amp;quot;: {
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    &amp;quot;install&amp;quot;: &amp;quot;napa&amp;quot;
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;},
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&amp;quot;napa&amp;quot;: {
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;    &amp;quot;angular&amp;quot;: &amp;quot;angular/bower-angular&amp;quot;,
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;    &amp;quot;angular-route&amp;quot;: &amp;quot;angular/bower-angular-route&amp;quot;
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;3 - Insira a função &lt;code&gt;require()&lt;/code&gt; dos módulos no script principal (ex.: &lt;code&gt;app.js&lt;/code&gt;):&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;require(&amp;#39;angular/angular&amp;#39;);
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;require(&amp;#39;angular-route/angular-route&amp;#39;);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;4 - Coloque o Angular na brincadeira:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;angular.module(&amp;#39;myApp&amp;#39;, [&amp;#39;ngRoute&amp;#39;]).config([&amp;#39;$routeProvider&amp;#39;, function($routeProvider) {
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    // Declare suas rotas
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    $routeProvider.when(&amp;#39;/view1&amp;#39;, {templateUrl: &amp;#39;partials/partial1.html&amp;#39;});
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    $routeProvider.when(&amp;#39;/view2&amp;#39;, {templateUrl: &amp;#39;partials/partial2.html&amp;#39;});
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;    $routeProvider.otherwise({redirectTo: &amp;#39;/view1&amp;#39;});
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;}]);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;5 - Profit! :)&lt;/p&gt;
-
-&lt;p&gt;Perceba que foi criado um objeto JSON de nome &lt;code&gt;napa&lt;/code&gt;, que vai conter os módulos necessários para a aplicação. Basta apontar para o caminho relativo do &lt;a href=&quot;https://github.com/angular&quot;&gt;repositório do Angular no Github&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Mas, e o objeto &lt;code&gt;scripts&lt;/code&gt;?&lt;/p&gt;
-
-&lt;p&gt;Bom, no manifesto JSON &lt;code&gt;package.json&lt;/code&gt; podemos executar &lt;em&gt;scripts&lt;/em&gt;. Neste cenário, estamos declarando que &lt;code&gt;npm install&lt;/code&gt; vai executar a instalação dos módulos contidos no objeto &lt;code&gt;napa&lt;/code&gt; também. Show de bola, não é? =]&lt;/p&gt;
-
-              &lt;h3 id=&quot;Resumindo-&quot;&gt;
-                &lt;a name=&quot;Resumindo-&quot; href=&quot;#Resumindo-&quot;&gt;&lt;/a&gt;Resumindo...
-              &lt;/h3&gt;
-            
-&lt;p&gt;Conseguimos instalar as dependências necessárias sem a necessidade de colocar o &lt;strong&gt;Bower&lt;/strong&gt; na jogada, além de centralizar estes caras em um único manifesto JSON (_package.json_). Lembre-se que estou utilizando o padrão CommonJS, e o Browserify é o responsável por tratar/compilar os scripts da aplicação.&lt;/p&gt;
-
-&lt;p&gt;Confira a documentação do napa &lt;a href=&quot;https://github.com/shama/napa&quot;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Até a próxima! =]&lt;/p&gt;
-</description>
-        <pubDate>Wed, 11 Jun 2014 00:00:00 -0300</pubDate>
-        <link>http://www.vitorbritto.com.br/blog/substituindo-o-bower-pelo-napa/</link>
-        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/substituindo-o-bower-pelo-napa/</guid>
       </item>
     
   </channel>
