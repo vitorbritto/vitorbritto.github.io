@@ -10,6 +10,9 @@ comments: true
 bio: Desenvolvedor Web e Designer, extremamente apaixonado pelo seu trabalho. Descobriu o mundo dos códigos há quase duas décadas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, projetos colaborativos, desenvolvimento de projetos pessoais e escrever os artigos aqui publicados.
 ---
 
+
+> UPDATE: Outras langs, as quais estarei estudando e realizando experimentos, são: Scheme, Clojure e Scala.
+
 Saudações!
 
 Vamos iniciar o ano com novidades no Blog. Duas novas categorias serão iniciadas, são elas:
@@ -19,7 +22,7 @@ Vamos iniciar o ano com novidades no Blog. Duas novas categorias serão iniciada
 
 ## Se aventurar é bom
 
-No espaço **LABS**, teremos algumas aventuras das linguagens de programação que me identifiquei durante o ano de 2014 e que tenho vontade em realizar experimentos, desenvolver projetos open-source e, quem sabe, incluir nos meus projetos do dia-a-dia (meio comercial). 
+No espaço **LABS**, teremos algumas aventuras das linguagens de programação que me identifiquei durante o ano de 2014 e que tenho vontade em realizar experimentos, desenvolver projetos open-source e, quem sabe, incluir nos meus projetos do dia-a-dia (meio comercial).
 
 Sim, é verdade! Não mencionei as linguagens. Aí vai:
 
@@ -34,6 +37,6 @@ Devo salientar que são linguagens que possuem o paradigma funcional e está é 
 
 Já na categoria **TIPS**, teremos dicas sobre produtividade, agilidade, eficiência, dentre outros aspectos e experiências que obtive durante esta longa estrada que percorri até o momento. Se você faz parte do meu círculo social no Twitter ou Facebook, já deve ter visto algumas dicas que repasso por lá.
 
-Espero que vocês gostem das boas novas! 
+Espero que vocês gostem das boas novas!
 
 Até a próxima! =]
