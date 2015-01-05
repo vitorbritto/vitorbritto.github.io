@@ -30,6 +30,7 @@ Alguns projetos que utilizam o Erlang:
 - Bookmarking no Delicious
 - Serviço de Chat do Facebook
 - CouchDB
+- WhatsApp
 
 ### A Comunidade
 
