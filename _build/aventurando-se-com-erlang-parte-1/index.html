@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Aventurando-se com Erlang - Parte 1</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Desenvolvedor Web" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="Aventurando-se com Erlang - Parte 1"/>
+    <meta property="og:site_name" content="Blog - Vitor Britto"/>
+    <meta property="og:url" content="http://www.vitorbritto.com.br/blog/aventurando-se-com-erlang-parte-1/"/>
+    <meta property="og:image" content="http://www.vitorbritto.com.br/blog/assets/images/fb.jpg"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="Desenvolvedor Web"/>
+
+    <link rel="shortcut icon" href="http://www.vitorbritto.com.br/blog/assets/images/favicon.png" type="image/x-icon">
+    <link href="http://feeds.feedburner.com/vitorbritto" rel="alternate" type="application/rss+xml">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet">
+    <link href="http://www.vitorbritto.com.br/blog/assets/css/style.css" rel="stylesheet" id="theme-css"/>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <header class="header">
+
+                <div class="span4">
+                    <div class="header-info">
+                        <h1 class="header-name"><a href="http://www.vitorbritto.com.br/blog">Vitor Britto</a></h1>
+                        <h4 class="header-description">Desenvolvedor Web</h4>
+                    </div>
+                </div>
+
+                <div class="span5">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/">Início</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/about">Sobre</a></li>
+        <li class="menu-item"><a href="http://www.vitorbritto.com.br/blog/projects">Projetos</a></li>
+    </ul>
+</nav>
+
+                </div>
+
+                <div class="span3">
+                    <nav>
+    <ul class="menu">
+        <li class="menu-item">
+            <a href="https://www.facebook.com/vbwebstudio" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://twitter.com/vitorbritto" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://github.com/vitorbritto" title="Github" target="_blank"><i class="icon-github"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="mailto:contato@vitorbritto.com.br"><i class="icon-envelope-alt"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="http://feeds.feedburner.com/vitorbritto" title="RSS Feed" target="_blank"><i class="icon-rss"></i></a>
+        </li>
+    </ul>
+</nav>
+
+                </div>
+
+            </header>
+        </div>
+
+        <div class="line"></div>
+
+
+<!-- Switch Theme -->
+<div class="theme-wrapper">
+    <p class="theme-text">Tema:</p>
+    <span class="theme-btn light" id="theme-light"></span>
+    <span class="theme-btn dark" id="theme-dark"></span>
+</div>
+
+    <div class="row">
+
+        <article class="article">
+
+            <img class="article-img" src="http://www.vitorbritto.com.br/blog/assets/images/posts/post-aventurando-se-com-erlang-parte-1.jpg">
+            <h2 class="article-title">Aventurando-se com Erlang - Parte 1</h2>
+
+            <ul class="article-info">
+                
+                <li><a href="https://github.com/vitorbritto/vitorbritto.github.io/blob/master/_posts/2015-01-09-aventurando-se-com-erlang-parte-1.md" title="Github" target="_blank"><i class="icon-github"></i> Editar este post</a></li>
+                
+                <li>Publicado em: 09/01/2015 | </li>
+                <li>Leia em: 8  minutos</li>
+
+            </ul>
+
+            <div class="line"></div>
+
+            <section class="article-entry">
+                <p>Saudações!</p>
+
+<p>Em um artigo anterior, falei um pouco sobre alguns experimentos que estarei realizando neste ano. <a href="http://www.vitorbritto.com.br/blog/iniciando-os-estudos-com-erlang/">No último artigo</a>, fiz uma breve apresentação sobre o Erlang e como você pode iniciar os seus estudos com esta linguagem de programação sensacional.</p>
+
+<p>De agora em diante, estarei escrevendo uma série de artigos a respeito da linguagem e sua terminologia. Confira os tópicos desta aventura logo abaixo.</p>
+
+<ul>
+<li><strong>Parte 1:</strong> O Erlang e seus aspectos iniciais.</li>
+<li><strong>Parte 2:</strong> No Erlang temos Tuples, Lists e Pattern Matching</li>
+<li><strong>Parte 3:</strong> Criando os seus primeiros módulos e funções</li>
+<li><strong>Parte 4:</strong> Case/If Statements no Erlang</li>
+<li><strong>Parte 5:</strong> Entendendo Guards e Accumulators</li>
+<li><strong>Parte 6:</strong> O que são Records e Macros?</li>
+<li><strong>Parte 7:</strong> Lançando exceções!</li>
+<li><strong>Parte 8:</strong> Concorrência no Erlang</li>
+<li><strong>Parte 9:</strong> Distributed Programming do Erlang</li>
+<li><strong>Parte 10:</strong> Manipulando arquivos no Erlang</li>
+<li><strong>Parte 11:</strong> Programando com Sockets no Erlang</li>
+<li><strong>Parte 12:</strong> Introdução ao OTP</li>
+<li><strong>Parte 13:</strong> Introdução ao Mnesia</li>
+<li><strong>Parte 14:</strong> Projeto prático com Erlang</li>
+</ul>
+
+<p>Pronto! Agora que você já tem o mapa, que tal embarcar nesta aventura? Então, vamos lá! =]</p>
+
+<blockquote>
+<p><strong>Nota:</strong> vale frisar que está série de artigos serve apenas para introduzir você na linguagem de programação Erlang. Para um estudo mais detalhado, <a href="http://learnyousomeerlang.com/">consulte este material</a>.</p>
+</blockquote>
+
+              <h2 id="O-Erlang-e-seus-aspectos-iniciais-">
+                <a name="O-Erlang-e-seus-aspectos-iniciais-" href="#O-Erlang-e-seus-aspectos-iniciais-"></a>O Erlang e seus aspectos iniciais.
+              </h2>
+            
+<p>O Erlang tem uma sintaxe muito compacta e isso promove uma grande facilita para escrever e entender os seus códigos nesta linguagem de programação. Se você vem do JavaScript, C, Ruby ou PHP, assim como eu, vai notar algumas peculiaridades nesta linguagem e pode se bater um pouco no início.</p>
+
+<p>Para não ficar no suspense, vamos esclarecer alguns pontos muito importantes. Me acompanhe.</p>
+
+              <h2 id="A-sintaxe">
+                <a name="A-sintaxe" href="#A-sintaxe"></a>A sintaxe
+              </h2>
+            
+<p>No Erlang, a sintaxe possui alguns <em>gotchas</em>. Podemos notar, por exemplo, que os comentários não seguem o modelo da linguagem C.</p>
+
+<p>No Erlang, os comentários são precedidos pelo caracter <code>%</code>. E temos alguns padrões para o seu uso.</p>
+<div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><a name="line-1"></a><span class="c">% Para comentários de uma linha</span>
+<a name="line-2"></a>
+<a name="line-3"></a><span class="c">%% Para comentários de funções</span>
+<a name="line-4"></a>
+<a name="line-5"></a><span class="c">%%% Para comentários de módulos</span>
+</code></pre></div>
+<p>Este é um padrão, mas não impede que você determine um padrão apropriado, confortável e legível para os seus programas em Erlang. No meu caso, determinei o seguinte padrão para os comentários:</p>
+<div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><a name="line-1"></a><span class="c">%% ====================================================================</span>
+<a name="line-2"></a><span class="c">%% CABEÇALHO DO PROGRAMA</span>
+<a name="line-3"></a><span class="c">%% ====================================================================</span>
+<a name="line-4"></a><span class="c">%%</span>
+<a name="line-5"></a><span class="c">%% Autor:</span>
+<a name="line-6"></a><span class="c">%% Descrição do módulo:</span>
+<a name="line-7"></a><span class="c">%% Versão:</span>
+<a name="line-8"></a><span class="c">%%</span>
+<a name="line-9"></a><span class="c">%% ====================================================================</span>
+<a name="line-10"></a>
+<a name="line-11"></a><span class="c">%% Comentário para Módulo ou Função</span>
+<a name="line-12"></a>
+<a name="line-13"></a><span class="c">% Comentários de uma linha ou múltiplas linhas</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Nota:</strong> o importante é não trocar o <code>%</code> pelo <code>//</code> ou <code>/**/</code>. =]</p>
+</blockquote>
+
+<p>Além disso, existem três caracteres muito importantes no Erlang. São eles:</p>
+
+<ul>
+<li><strong><em>Commas (vírgulas):</em></strong> utilizado para separar argumentos em funções, dados de construtores e padrões.</li>
+<li><strong><em>Periods (pontos):</em></strong> utilizado para separar funções e expressões (também no shell).</li>
+<li><strong><em>Semicolons (ponto-e-vírgula):</em></strong> utilizado para separar cláusulas em diversos contextos.</li>
+</ul>
+
+<blockquote>
+<p><strong>Nota:</strong> não se preocupe se algum dos termos citados acima soarem estranhos para você neste momento. Vamos cobrir todos eles, seguidos de exemplos práticos.</p>
+</blockquote>
+
+              <h2 id="Erlang-e-seus-tipos">
+                <a name="Erlang-e-seus-tipos" href="#Erlang-e-seus-tipos"></a>Erlang e seus tipos
+              </h2>
+            
+<p>O Erlang é composto pelos seguintes tipos básicos:</p>
+
+              <h3 id="Integer">
+                <a name="Integer" href="#Integer"></a>Integer
+              </h3>
+            
+<p>Representam os números inteiros. Podem ser expressos através de uma base (além da decimal) utilizando o formato <code>base#valor</code>. Veja abaixo:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a>1&gt; 10.
+<a name="line-2"></a>10
+<a name="line-3"></a>2&gt; 16#0AFFFF.
+<a name="line-4"></a>720895
+<a name="line-5"></a>3&gt; 2#10011100.
+<a name="line-6"></a>156
+</code></pre></div>
+<p>Percebeu o ponto no final de cada expressão? Lembra do que falei mais acima sobre os 3 caracteres importantes no Erlang? Pois! Toda expressão, quando finalizada, necessita de um <code>.</code> (period) para que o programa entenda que a partir daquele momento o código pode ser avaliado.</p>
+
+<p>Caso você não inclua o ponto, o programa retornará um erro de sintaxe ou não haverá qualquer saída/valor retornado. Veja abaixo o exemplo:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a>1&gt; 10
+<a name="line-2"></a>1&gt; .
+<a name="line-3"></a>10
+<a name="line-4"></a>2&gt; 10
+<a name="line-5"></a>2&gt; 10
+<a name="line-6"></a>2&gt; 10.
+<a name="line-7"></a>* 2: syntax error before: 10
+<a name="line-8"></a>2&gt;
+</code></pre></div>
+<p>Repare que no primeiro caso, digitei o inteiro <code>10</code>, mas sem o ponto. Aplicando o ponto na linha seguinte do Shell o valor é retornado, já que o interpretador do Erlang entende que a instrução e/ou expressão foi finalizada e pode ser avaliada.</p>
+
+<p>Já no segundo caso, tentei retornar o inteiro <code>10</code> por duas vezes consecutivas, mas, em um terceiro momento, inseri o mesmo inteiro com o ponto. Isso me retornou um erro de sintaxe. Desta maneira, não esqueça do ponto para avaliar suas expressões!</p>
+
+              <h3 id="Float-<em>-Floatting-Point-Numbers-<-em>">
+                <a name="Float-<em>-Floatting-Point-Numbers-<-em>" href="#Float-<em>-Floatting-Point-Numbers-<-em>"></a>Float <em>(Floatting-Point Numbers)</em>
+              </h3>
+            
+<p>Representam os números reais. Veja abaixo:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a>1&gt; 10.5.
+<a name="line-2"></a>10.5
+<a name="line-3"></a>2&gt; 10.543.
+<a name="line-4"></a>10.543
+<a name="line-5"></a>3&gt; 3.14.
+<a name="line-6"></a>3.14
+</code></pre></div>
+              <h3 id="Atoms">
+                <a name="Atoms" href="#Atoms"></a>Atoms
+              </h3>
+            
+<p>Atoms são literais constantes que representam a si mesmos, com a finalidade de enumerar valores. Se você já programou (brincou ou experimentou também) em C/C++, deve conhecer a diretiva <code>#define</code> e a sua funcionalidade. Assim como &quot;valores estáticos&quot; no Java e <code>enums</code> no Ruby.</p>
+
+<p>A razão para se utilizar <em>atoms</em> em códigos Erlang é simples: eficiência e leiturabilidade.</p>
+
+<p>Atoms devem iniciar com letras em <em>lowercase</em> seguidos por uma sequência de caracteres alfanuméricos ou sinais como <code>_</code> e/ou <code>@</code>. Caso queira declarar um <em>atom</em> com uma sequência não-alfanumérica, basta encapsular o mesmo com <code>&#39;</code> (<em>single quotes</em>/aspas simples).</p>
+
+<p>Exemplos de <em>Atoms</em>:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a><span class="c"># Iniciando com letras em lowercase</span>
+<a name="line-2"></a>foo
+<a name="line-3"></a>bar
+<a name="line-4"></a>baz
+<a name="line-5"></a>fooBarBaz
+<a name="line-6"></a>vitor@britto
+<a name="line-7"></a>atomify_me
+<a name="line-8"></a><span class="nb">true</span>
+<a name="line-9"></a><span class="nb">false</span>
+<a name="line-10"></a>
+<a name="line-11"></a><span class="c"># Quando utilizadas com single quotes</span>
+<a name="line-12"></a><span class="s1">&#39;Vitor Britto&#39;</span>
+<a name="line-13"></a><span class="s1">&#39;code@vitorbritto.com.br&#39;</span>
+<a name="line-14"></a><span class="s1">&#39;FooBarBaz&#39;</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Importante:</strong></p>
+
+<p>Sobre o tipo <em>Boolean</em> e <em>String</em></p>
+
+<p>Não existe valores booleanos, nem <em>Strings</em> no Erlang. Ao invés disso, os <em>atoms</em> <code>true</code> e <code>false</code> são utilizados em conjunto com os operadores lógicos ou para representar sequência de caracteres encapsulados por <code>&quot;&quot;</code> (<em>double quotes</em>/aspas duplas).</p>
+</blockquote>
+
+              <h2 id="Atribuindo-variáveis">
+                <a name="Atribuindo-variáveis" href="#Atribuindo-variáveis"></a>Atribuindo variáveis
+              </h2>
+            
+<p>No Erlang, devemos seguir algumas regrinhas para não quebrar o nosso programa. Uma delas, é como devemos atribuir variáveis ao nosso programa.</p>
+
+<p>Toda variável deve iniciar com letra maiúscula. Veja os exemplos abaixo:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a>1&gt; <span class="nv">Message</span> <span class="o">=</span> <span class="s2">&quot;Hello there!&quot;</span>.
+<a name="line-2"></a><span class="s2">&quot;Hello there!&quot;</span>
+<a name="line-3"></a>2&gt; <span class="nv">Num</span> <span class="o">=</span> 5.
+<a name="line-4"></a>5
+<a name="line-5"></a>3&gt; <span class="nv">Float</span> <span class="o">=</span> 5.345.
+<a name="line-6"></a>5.345
+<a name="line-7"></a>4&gt; <span class="nv">Atom</span> <span class="o">=</span> <span class="s1">&#39;some atom with space&#39;</span>.
+<a name="line-8"></a><span class="s1">&#39;some atom with space&#39;</span>
+</code></pre></div>
+<p>Além disso, Erlang permite que você atribua um valor para uma variável apenas. Não mais do que isso! Se você tentar atribuir uma variável para ela mesma ou um segundo valor para uma variável já criada, o programa vai retornar um erro. E isso faz muito sentido! =]</p>
+
+<p>Confira:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a>1&gt; <span class="nv">Num</span> <span class="o">=</span> 42.
+<a name="line-2"></a>42
+<a name="line-3"></a>2&gt; <span class="nv">Num</span> <span class="o">=</span> 43.
+<a name="line-4"></a>** exception error: no match of right hand side value 43
+<a name="line-5"></a>3&gt; <span class="nv">X</span><span class="o">=</span>X+1.
+<a name="line-6"></a>* 1: variable <span class="s1">&#39;X&#39;</span> is unbound
+<a name="line-7"></a>4&gt; <span class="nv">X</span> <span class="o">=</span> 2.
+<a name="line-8"></a>2
+<a name="line-9"></a>5&gt; <span class="nv">X</span> <span class="o">=</span> X + 3.
+<a name="line-10"></a>** exception error: no match of right hand side value 5
+</code></pre></div>
+              <h2 id="Manuseando-os-operadores">
+                <a name="Manuseando-os-operadores" href="#Manuseando-os-operadores"></a>Manuseando os operadores
+              </h2>
+            
+<p>No Erlang, temos operadores de comparação, lógicos e aritméticos.</p>
+
+              <h3 id="Operadores-Aritméticos">
+                <a name="Operadores-Aritméticos" href="#Operadores-Aritméticos"></a>Operadores Aritméticos
+              </h3>
+            
+<p><strong>Tipos:</strong></p>
+
+<ul>
+<li><code>+</code>: pode ser utilizado para operações com inteiros ou floats.</li>
+<li><code>-</code>: pode ser utilizado para operações com inteiros ou floats.</li>
+<li><code>/</code>: pode ser utilizado para operações com inteiros ou floats.</li>
+<li><code>*</code>: pode ser utilizado para operações com inteiros ou floats.</li>
+<li><code>div</code>: pode ser utilizado para operações com inteiros apenas.</li>
+<li><code>rem</code>: pode ser utilizado para operações com inteiros apenas.</li>
+</ul>
+
+<p><strong>Exemplos:</strong></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a>1&gt; +1.
+<a name="line-2"></a>1
+<a name="line-3"></a>2&gt; -1.
+<a name="line-4"></a>-1
+<a name="line-5"></a>3&gt; <span class="m">11</span> div 9.
+<a name="line-6"></a>1
+<a name="line-7"></a>4&gt; <span class="m">87</span> rem 5.
+<a name="line-8"></a>2
+<a name="line-9"></a>5&gt; <span class="o">(</span>15-3<span class="o">)</span>/4.
+<a name="line-10"></a>3.0
+<a name="line-11"></a>6&gt; 2*8*4.5.
+<a name="line-12"></a>72.0
+<a name="line-13"></a>7&gt; 1+2+4+8.
+<a name="line-14"></a>15
+<a name="line-15"></a>8&gt; 1/2 + <span class="o">(</span>4/3 * <span class="o">(</span><span class="m">5</span> + 9<span class="o">))</span>.
+<a name="line-16"></a>19.166666666666664
+</code></pre></div>
+              <h3 id="Operadores-de-Comparação">
+                <a name="Operadores-de-Comparação" href="#Operadores-de-Comparação"></a>Operadores de Comparação
+              </h3>
+            
+<p><strong>Tipos:</strong></p>
+
+<ul>
+<li><code>==</code></li>
+<li><code>=:=</code></li>
+<li><code>=/=</code></li>
+<li><code>&lt;</code></li>
+<li><code>&gt;</code></li>
+<li><code>&lt;=</code></li>
+<li><code>&gt;=</code></li>
+</ul>
+
+<p><strong>Exemplos:</strong></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a>1&gt; <span class="nb">true</span> <span class="o">==</span> true.
+<a name="line-2"></a><span class="nb">true</span>
+<a name="line-3"></a>2&gt; <span class="nb">true</span> <span class="o">==</span> false.
+<a name="line-4"></a><span class="nb">false</span>
+<a name="line-5"></a>3&gt; <span class="nb">true</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span>.
+<a name="line-6"></a><span class="nb">false</span>
+<a name="line-7"></a>4&gt; <span class="nb">true</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span>.
+<a name="line-8"></a><span class="nb">true</span>
+<a name="line-9"></a>5&gt; <span class="nb">true</span> <span class="o">=</span>:<span class="o">=</span> <span class="s1">&#39;true&#39;</span>.
+<a name="line-10"></a><span class="nb">true</span>
+<a name="line-11"></a>6&gt; <span class="nb">true</span> <span class="o">=</span>/<span class="o">=</span> <span class="s1">&#39;true&#39;</span>.
+<a name="line-12"></a><span class="nb">false</span>
+<a name="line-13"></a>7&gt; <span class="m">4</span> &gt; 5.
+<a name="line-14"></a><span class="nb">false</span>
+<a name="line-15"></a>8&gt; <span class="m">4</span> &lt; 5.
+<a name="line-16"></a><span class="nb">true</span>
+<a name="line-17"></a>9&gt; 1.4 <span class="o">=</span>&lt; 5.
+<a name="line-18"></a><span class="nb">true</span>
+<a name="line-19"></a>10&gt; 1.4 &gt;<span class="o">=</span> 0.5.
+<a name="line-20"></a><span class="nb">true</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Nota:</strong> reparou que para validar o tipo e o valor (strict equality), utilizamos <code>/</code> ou <code>:</code>? Em outras linguagens, a representação seria <code>===</code> ou <code>!==</code>.</p>
+</blockquote>
+
+              <h3 id="Operadores-Lógicos">
+                <a name="Operadores-Lógicos" href="#Operadores-Lógicos"></a>Operadores Lógicos
+              </h3>
+            
+<p>Para operações mais complexas, podemos utilizar os operadores lógicos.</p>
+
+<p><strong>Tipos:</strong></p>
+
+<ul>
+<li><code>and</code>: retornar <code>true</code> se ambos os valores forem <code>true</code>.</li>
+<li><code>andalso</code> (atalho para <code>and</code>): retorna <code>false</code>, se o primeiro argumento for <code>false</code>, ignorando a avaliação do segundo argumento.</li>
+<li><code>or</code>: retorna <code>true</code> se um dos argumentos for <code>true</code>.</li>
+<li><code>orelse</code>(atalho para <code>or</code>): retorna <code>true</code>, se o primeiro argumento for <code>true</code>, ignorando a avaliação do segundo argumento.</li>
+<li><code>xor</code>(exclusivo <code>or</code>): retorna <code>true</code> se um dos argumentos for <code>true</code> e o outro <code>false</code>.</li>
+<li><code>not</code> (operador de negação): retorna <code>true</code> se o argumento for <code>false</code> e vice-versa.</li>
+</ul>
+
+<p><strong>Exemplos:</strong></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><a name="line-1"></a>1&gt; not<span class="o">(</span> <span class="o">(</span><span class="m">1</span> &lt; 3<span class="o">)</span> and <span class="o">(</span><span class="nv">2</span> <span class="o">==</span> 2<span class="o">)</span> <span class="o">)</span>.
+<a name="line-2"></a><span class="nb">false</span>
+<a name="line-3"></a>2&gt; <span class="o">(</span><span class="m">1</span> &gt; 3<span class="o">)</span> and false.
+<a name="line-4"></a><span class="nb">false</span>
+<a name="line-5"></a>3&gt; <span class="o">(</span><span class="m">1</span> &gt; 3<span class="o">)</span> and <span class="o">(</span>5.4 <span class="o">==</span> <span class="s1">&#39;5.4&#39;</span><span class="o">)</span>.
+<a name="line-6"></a><span class="nb">false</span>
+<a name="line-7"></a>4&gt; <span class="o">(</span><span class="m">1</span> &lt; 3<span class="o">)</span> and true.
+<a name="line-8"></a><span class="nb">true</span>
+<a name="line-9"></a>5&gt; <span class="o">(</span><span class="m">1</span> &lt; 3<span class="o">)</span> xor true.
+<a name="line-10"></a><span class="nb">false</span>
+<a name="line-11"></a>6&gt; <span class="o">(</span><span class="nv">1</span> <span class="o">==</span> 3<span class="o">)</span> xor true.
+<a name="line-12"></a><span class="nb">true</span>
+<a name="line-13"></a>7&gt; <span class="o">(</span><span class="nv">1</span> <span class="o">=</span>:<span class="o">=</span> 3<span class="o">)</span> or true.
+<a name="line-14"></a><span class="nb">true</span>
+</code></pre></div>
+              <h2 id="Por-hoje-é-só-">
+                <a name="Por-hoje-é-só-" href="#Por-hoje-é-só-"></a>Por hoje é só!
+              </h2>
+            
+<p>No próximo artigo, conheceremos <em>Tuples</em>, <em>Lists</em> e <em>Pattern Matching</em>.</p>
+
+<p>Até a próxima! =]</p>
+
+<hr>
+
+<p><strong>Referências:</strong></p>
+
+<ul>
+<li><a href="http://www.amazon.com/Programming-Erlang-Concurrent-Pragmatic-Programmers/dp/193778553X">Programming Erlang</a> - Joe Armstrong.</li>
+<li><a href="http://www.amazon.com/Erlang-Programming-Francesco-Cesarini/dp/0596518188">Erlang Programming</a> - Francesco Cesarini &amp; Simon Thompson.</li>
+<li><a href="">Learn You Some Erlang for great good!</a><a href="http://learnyousomeerlang.com/">http://learnyousomeerlang.com/</a>) - Fred Hébert</li>
+</ul>
+
+<hr>
+
+            </section>
+
+        </article>
+
+        <section class="box">
+    <div class="span3">
+        <img class="box-thumb" src="http://www.vitorbritto.com.br/blog/assets/images/avatar.jpg">
+    </div>
+    <div class="span9">
+        <section class="box-details">
+            <h3>Vitor Britto</h3>
+            <p>Full Stack Web Developer, extremamente apaixonado pelo seu trabalho (e Unix). Descobriu o mundo dos códigos há quase duas decádas e mantém a mesma paixão desde o primeiro dia dessa descoberta. Trabalha como freelancer full time há quase 4 anos desenvolvendo projetos voltados para a web. Também direciona boa parte do seu tempo para pesquisas, desenvolvimento de projetos open-source e escrever os artigos aqui publicados.</p>
+        </section>
+    </div>
+</section>
+
+        <div class="box">
+    <div class="newsletter-wrapper">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=vitorbritto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <h3 class="newsletter-title">Receba os artigos no seu e-mail</h3>
+        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
+        <input class="input" type="email" name="email" placeholder="Digite o seu email"/>
+        <input type="hidden" value="vitorbritto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn-newsletter" type="submit" value="Assinar Newsletter" />
+    </form>
+    </div>
+</div>
+
+
+        <div class="line"></div>
+
+        
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+    var disqus_shortname = 'blogvitorbritto'; // shortname
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Por favor, habilite o JavaScript para ver os <a href="http://disqus.com/?ref_noscript">comentários</a> deste artigo.</noscript>
+
+
+
+    </div>
+
+        <div class="line"></div>
+
+        <div class="row">
+            <footer class="footer">
+                    <p class="footer-text">Desenvolvido por Vitor Britto. Feito com <a href="http://jekyllrb.com/" title="Jekyll" target="_blank">Jekyll</a>, <i class="icon-coffee"></i> e <i class="icon-heart"></i>.</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://www.vitorbritto.com.br/blog/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src='http://www.vitorbritto.com.br/blog/assets/js/app.min.js'></script>
+
+    <!-- Google Analytics -->
+    <script>
+    var _gaq=[['_setAccount','UA-12808940-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

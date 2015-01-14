@@ -7,6 +7,338 @@
     <atom:link href="http://www.vitorbritto.com.br/blog/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Aventurando-se com Erlang - Parte 1</title>
+        <description>&lt;p&gt;Saudações!&lt;/p&gt;
+
+&lt;p&gt;Em um artigo anterior, falei um pouco sobre alguns experimentos que estarei realizando neste ano. &lt;a href=&quot;http://www.vitorbritto.com.br/blog/iniciando-os-estudos-com-erlang/&quot;&gt;No último artigo&lt;/a&gt;, fiz uma breve apresentação sobre o Erlang e como você pode iniciar os seus estudos com esta linguagem de programação sensacional.&lt;/p&gt;
+
+&lt;p&gt;De agora em diante, estarei escrevendo uma série de artigos a respeito da linguagem e sua terminologia. Confira os tópicos desta aventura logo abaixo.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Parte 1:&lt;/strong&gt; O Erlang e seus aspectos iniciais.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Parte 2:&lt;/strong&gt; No Erlang temos Tuples, Lists e Pattern Matching&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Parte 3:&lt;/strong&gt; Criando os seus primeiros módulos e funções&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Parte 4:&lt;/strong&gt; Case/If Statements no Erlang&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Parte 5:&lt;/strong&gt; Entendendo Guards e Accumulators&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Parte 6:&lt;/strong&gt; O que são Records e Macros?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Parte 7:&lt;/strong&gt; Lançando exceções!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Parte 8:&lt;/strong&gt; Concorrência no Erlang&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Parte 9:&lt;/strong&gt; Distributed Programming do Erlang&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Parte 10:&lt;/strong&gt; Manipulando arquivos no Erlang&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Parte 11:&lt;/strong&gt; Programando com Sockets no Erlang&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Parte 12:&lt;/strong&gt; Introdução ao OTP&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Parte 13:&lt;/strong&gt; Introdução ao Mnesia&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Parte 14:&lt;/strong&gt; Projeto prático com Erlang&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pronto! Agora que você já tem o mapa, que tal embarcar nesta aventura? Então, vamos lá! =]&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; vale frisar que está série de artigos serve apenas para introduzir você na linguagem de programação Erlang. Para um estudo mais detalhado, &lt;a href=&quot;http://learnyousomeerlang.com/&quot;&gt;consulte este material&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h2 id=&quot;O-Erlang-e-seus-aspectos-iniciais-&quot;&gt;
+                &lt;a name=&quot;O-Erlang-e-seus-aspectos-iniciais-&quot; href=&quot;#O-Erlang-e-seus-aspectos-iniciais-&quot;&gt;&lt;/a&gt;O Erlang e seus aspectos iniciais.
+              &lt;/h2&gt;
+            
+&lt;p&gt;O Erlang tem uma sintaxe muito compacta e isso promove uma grande facilita para escrever e entender os seus códigos nesta linguagem de programação. Se você vem do JavaScript, C, Ruby ou PHP, assim como eu, vai notar algumas peculiaridades nesta linguagem e pode se bater um pouco no início.&lt;/p&gt;
+
+&lt;p&gt;Para não ficar no suspense, vamos esclarecer alguns pontos muito importantes. Me acompanhe.&lt;/p&gt;
+
+              &lt;h2 id=&quot;A-sintaxe&quot;&gt;
+                &lt;a name=&quot;A-sintaxe&quot; href=&quot;#A-sintaxe&quot;&gt;&lt;/a&gt;A sintaxe
+              &lt;/h2&gt;
+            
+&lt;p&gt;No Erlang, a sintaxe possui alguns &lt;em&gt;gotchas&lt;/em&gt;. Podemos notar, por exemplo, que os comentários não seguem o modelo da linguagem C.&lt;/p&gt;
+
+&lt;p&gt;No Erlang, os comentários são precedidos pelo caracter &lt;code&gt;%&lt;/code&gt;. E temos alguns padrões para o seu uso.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-erlang&quot; data-lang=&quot;erlang&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;% Para comentários de uma linha&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;%% Para comentários de funções&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;%%% Para comentários de módulos&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Este é um padrão, mas não impede que você determine um padrão apropriado, confortável e legível para os seus programas em Erlang. No meu caso, determinei o seguinte padrão para os comentários:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-erlang&quot; data-lang=&quot;erlang&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;%% ====================================================================&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;%% CABEÇALHO DO PROGRAMA&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;%% ====================================================================&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;%%&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;%% Autor:&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;%% Descrição do módulo:&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;%% Versão:&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;%%&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;%% ====================================================================&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;%% Comentário para Módulo ou Função&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;% Comentários de uma linha ou múltiplas linhas&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; o importante é não trocar o &lt;code&gt;%&lt;/code&gt; pelo &lt;code&gt;//&lt;/code&gt; ou &lt;code&gt;/**/&lt;/code&gt;. =]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Além disso, existem três caracteres muito importantes no Erlang. São eles:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Commas (vírgulas):&lt;/em&gt;&lt;/strong&gt; utilizado para separar argumentos em funções, dados de construtores e padrões.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Periods (pontos):&lt;/em&gt;&lt;/strong&gt; utilizado para separar funções e expressões (também no shell).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Semicolons (ponto-e-vírgula):&lt;/em&gt;&lt;/strong&gt; utilizado para separar cláusulas em diversos contextos.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; não se preocupe se algum dos termos citados acima soarem estranhos para você neste momento. Vamos cobrir todos eles, seguidos de exemplos práticos.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h2 id=&quot;Erlang-e-seus-tipos&quot;&gt;
+                &lt;a name=&quot;Erlang-e-seus-tipos&quot; href=&quot;#Erlang-e-seus-tipos&quot;&gt;&lt;/a&gt;Erlang e seus tipos
+              &lt;/h2&gt;
+            
+&lt;p&gt;O Erlang é composto pelos seguintes tipos básicos:&lt;/p&gt;
+
+              &lt;h3 id=&quot;Integer&quot;&gt;
+                &lt;a name=&quot;Integer&quot; href=&quot;#Integer&quot;&gt;&lt;/a&gt;Integer
+              &lt;/h3&gt;
+            
+&lt;p&gt;Representam os números inteiros. Podem ser expressos através de uma base (além da decimal) utilizando o formato &lt;code&gt;base#valor&lt;/code&gt;. Veja abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;1&amp;gt; 10.
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;10
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;2&amp;gt; 16#0AFFFF.
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;720895
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;3&amp;gt; 2#10011100.
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;156
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Percebeu o ponto no final de cada expressão? Lembra do que falei mais acima sobre os 3 caracteres importantes no Erlang? Pois! Toda expressão, quando finalizada, necessita de um &lt;code&gt;.&lt;/code&gt; (period) para que o programa entenda que a partir daquele momento o código pode ser avaliado.&lt;/p&gt;
+
+&lt;p&gt;Caso você não inclua o ponto, o programa retornará um erro de sintaxe ou não haverá qualquer saída/valor retornado. Veja abaixo o exemplo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;1&amp;gt; 10
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;1&amp;gt; .
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;10
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;2&amp;gt; 10
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;2&amp;gt; 10
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;2&amp;gt; 10.
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;* 2: syntax error before: 10
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;2&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Repare que no primeiro caso, digitei o inteiro &lt;code&gt;10&lt;/code&gt;, mas sem o ponto. Aplicando o ponto na linha seguinte do Shell o valor é retornado, já que o interpretador do Erlang entende que a instrução e/ou expressão foi finalizada e pode ser avaliada.&lt;/p&gt;
+
+&lt;p&gt;Já no segundo caso, tentei retornar o inteiro &lt;code&gt;10&lt;/code&gt; por duas vezes consecutivas, mas, em um terceiro momento, inseri o mesmo inteiro com o ponto. Isso me retornou um erro de sintaxe. Desta maneira, não esqueça do ponto para avaliar suas expressões!&lt;/p&gt;
+
+              &lt;h3 id=&quot;Float-&lt;em&gt;-Floatting-Point-Numbers-&lt;-em&gt;&quot;&gt;
+                &lt;a name=&quot;Float-&lt;em&gt;-Floatting-Point-Numbers-&lt;-em&gt;&quot; href=&quot;#Float-&lt;em&gt;-Floatting-Point-Numbers-&lt;-em&gt;&quot;&gt;&lt;/a&gt;Float &lt;em&gt;(Floatting-Point Numbers)&lt;/em&gt;
+              &lt;/h3&gt;
+            
+&lt;p&gt;Representam os números reais. Veja abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;1&amp;gt; 10.5.
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;10.5
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;2&amp;gt; 10.543.
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;10.543
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;3&amp;gt; 3.14.
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;3.14
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h3 id=&quot;Atoms&quot;&gt;
+                &lt;a name=&quot;Atoms&quot; href=&quot;#Atoms&quot;&gt;&lt;/a&gt;Atoms
+              &lt;/h3&gt;
+            
+&lt;p&gt;Atoms são literais constantes que representam a si mesmos, com a finalidade de enumerar valores. Se você já programou (brincou ou experimentou também) em C/C++, deve conhecer a diretiva &lt;code&gt;#define&lt;/code&gt; e a sua funcionalidade. Assim como &amp;quot;valores estáticos&amp;quot; no Java e &lt;code&gt;enums&lt;/code&gt; no Ruby.&lt;/p&gt;
+
+&lt;p&gt;A razão para se utilizar &lt;em&gt;atoms&lt;/em&gt; em códigos Erlang é simples: eficiência e leiturabilidade.&lt;/p&gt;
+
+&lt;p&gt;Atoms devem iniciar com letras em &lt;em&gt;lowercase&lt;/em&gt; seguidos por uma sequência de caracteres alfanuméricos ou sinais como &lt;code&gt;_&lt;/code&gt; e/ou &lt;code&gt;@&lt;/code&gt;. Caso queira declarar um &lt;em&gt;atom&lt;/em&gt; com uma sequência não-alfanumérica, basta encapsular o mesmo com &lt;code&gt;&amp;#39;&lt;/code&gt; (&lt;em&gt;single quotes&lt;/em&gt;/aspas simples).&lt;/p&gt;
+
+&lt;p&gt;Exemplos de &lt;em&gt;Atoms&lt;/em&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# Iniciando com letras em lowercase&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;foo
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;bar
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;baz
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;fooBarBaz
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;vitor@britto
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;atomify_me
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# Quando utilizadas com single quotes&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Vitor Britto&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;code@vitorbritto.com.br&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;FooBarBaz&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Importante:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Sobre o tipo &lt;em&gt;Boolean&lt;/em&gt; e &lt;em&gt;String&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Não existe valores booleanos, nem &lt;em&gt;Strings&lt;/em&gt; no Erlang. Ao invés disso, os &lt;em&gt;atoms&lt;/em&gt; &lt;code&gt;true&lt;/code&gt; e &lt;code&gt;false&lt;/code&gt; são utilizados em conjunto com os operadores lógicos ou para representar sequência de caracteres encapsulados por &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt; (&lt;em&gt;double quotes&lt;/em&gt;/aspas duplas).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h2 id=&quot;Atribuindo-variáveis&quot;&gt;
+                &lt;a name=&quot;Atribuindo-variáveis&quot; href=&quot;#Atribuindo-variáveis&quot;&gt;&lt;/a&gt;Atribuindo variáveis
+              &lt;/h2&gt;
+            
+&lt;p&gt;No Erlang, devemos seguir algumas regrinhas para não quebrar o nosso programa. Uma delas, é como devemos atribuir variáveis ao nosso programa.&lt;/p&gt;
+
+&lt;p&gt;Toda variável deve iniciar com letra maiúscula. Veja os exemplos abaixo:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;1&amp;gt; &lt;span class=&quot;nv&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hello there!&amp;quot;&lt;/span&gt;.
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Hello there!&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;2&amp;gt; &lt;span class=&quot;nv&quot;&gt;Num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 5.
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;5
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;3&amp;gt; &lt;span class=&quot;nv&quot;&gt;Float&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 5.345.
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;5.345
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;4&amp;gt; &lt;span class=&quot;nv&quot;&gt;Atom&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;some atom with space&amp;#39;&lt;/span&gt;.
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;some atom with space&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Além disso, Erlang permite que você atribua um valor para uma variável apenas. Não mais do que isso! Se você tentar atribuir uma variável para ela mesma ou um segundo valor para uma variável já criada, o programa vai retornar um erro. E isso faz muito sentido! =]&lt;/p&gt;
+
+&lt;p&gt;Confira:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;1&amp;gt; &lt;span class=&quot;nv&quot;&gt;Num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 42.
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;42
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;2&amp;gt; &lt;span class=&quot;nv&quot;&gt;Num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 43.
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;** exception error: no match of right hand side value 43
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;3&amp;gt; &lt;span class=&quot;nv&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;X+1.
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;* 1: variable &lt;span class=&quot;s1&quot;&gt;&amp;#39;X&amp;#39;&lt;/span&gt; is unbound
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;4&amp;gt; &lt;span class=&quot;nv&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2.
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;2
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;5&amp;gt; &lt;span class=&quot;nv&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; X + 3.
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;** exception error: no match of right hand side value 5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h2 id=&quot;Manuseando-os-operadores&quot;&gt;
+                &lt;a name=&quot;Manuseando-os-operadores&quot; href=&quot;#Manuseando-os-operadores&quot;&gt;&lt;/a&gt;Manuseando os operadores
+              &lt;/h2&gt;
+            
+&lt;p&gt;No Erlang, temos operadores de comparação, lógicos e aritméticos.&lt;/p&gt;
+
+              &lt;h3 id=&quot;Operadores-Aritméticos&quot;&gt;
+                &lt;a name=&quot;Operadores-Aritméticos&quot; href=&quot;#Operadores-Aritméticos&quot;&gt;&lt;/a&gt;Operadores Aritméticos
+              &lt;/h3&gt;
+            
+&lt;p&gt;&lt;strong&gt;Tipos:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;+&lt;/code&gt;: pode ser utilizado para operações com inteiros ou floats.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-&lt;/code&gt;: pode ser utilizado para operações com inteiros ou floats.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/&lt;/code&gt;: pode ser utilizado para operações com inteiros ou floats.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;*&lt;/code&gt;: pode ser utilizado para operações com inteiros ou floats.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;div&lt;/code&gt;: pode ser utilizado para operações com inteiros apenas.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rem&lt;/code&gt;: pode ser utilizado para operações com inteiros apenas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemplos:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;1&amp;gt; +1.
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;1
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;2&amp;gt; -1.
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;-1
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;3&amp;gt; &lt;span class=&quot;m&quot;&gt;11&lt;/span&gt; div 9.
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;1
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;4&amp;gt; &lt;span class=&quot;m&quot;&gt;87&lt;/span&gt; rem 5.
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;2
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;5&amp;gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;15-3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;/4.
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;3.0
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;6&amp;gt; 2*8*4.5.
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;72.0
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;7&amp;gt; 1+2+4+8.
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;15
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;8&amp;gt; 1/2 + &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;4/3 * &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt; + 9&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;.
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;19.166666666666664
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h3 id=&quot;Operadores-de-Comparação&quot;&gt;
+                &lt;a name=&quot;Operadores-de-Comparação&quot; href=&quot;#Operadores-de-Comparação&quot;&gt;&lt;/a&gt;Operadores de Comparação
+              &lt;/h3&gt;
+            
+&lt;p&gt;&lt;strong&gt;Tipos:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;==&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;=:=&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;=/=&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;=&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;=&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemplos:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;1&amp;gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; true.
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;2&amp;gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; false.
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;3&amp;gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;.
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;4&amp;gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;true&amp;#39;&lt;/span&gt;.
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;5&amp;gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;true&amp;#39;&lt;/span&gt;.
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;6&amp;gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;true&amp;#39;&lt;/span&gt;.
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;7&amp;gt; &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; &amp;gt; 5.
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;8&amp;gt; &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; &amp;lt; 5.
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;9&amp;gt; 1.4 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;lt; 5.
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;10&amp;gt; 1.4 &amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 0.5.
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; reparou que para validar o tipo e o valor (strict equality), utilizamos &lt;code&gt;/&lt;/code&gt; ou &lt;code&gt;:&lt;/code&gt;? Em outras linguagens, a representação seria &lt;code&gt;===&lt;/code&gt; ou &lt;code&gt;!==&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+              &lt;h3 id=&quot;Operadores-Lógicos&quot;&gt;
+                &lt;a name=&quot;Operadores-Lógicos&quot; href=&quot;#Operadores-Lógicos&quot;&gt;&lt;/a&gt;Operadores Lógicos
+              &lt;/h3&gt;
+            
+&lt;p&gt;Para operações mais complexas, podemos utilizar os operadores lógicos.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tipos:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;and&lt;/code&gt;: retornar &lt;code&gt;true&lt;/code&gt; se ambos os valores forem &lt;code&gt;true&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;andalso&lt;/code&gt; (atalho para &lt;code&gt;and&lt;/code&gt;): retorna &lt;code&gt;false&lt;/code&gt;, se o primeiro argumento for &lt;code&gt;false&lt;/code&gt;, ignorando a avaliação do segundo argumento.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;or&lt;/code&gt;: retorna &lt;code&gt;true&lt;/code&gt; se um dos argumentos for &lt;code&gt;true&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;orelse&lt;/code&gt;(atalho para &lt;code&gt;or&lt;/code&gt;): retorna &lt;code&gt;true&lt;/code&gt;, se o primeiro argumento for &lt;code&gt;true&lt;/code&gt;, ignorando a avaliação do segundo argumento.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;xor&lt;/code&gt;(exclusivo &lt;code&gt;or&lt;/code&gt;): retorna &lt;code&gt;true&lt;/code&gt; se um dos argumentos for &lt;code&gt;true&lt;/code&gt; e o outro &lt;code&gt;false&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;not&lt;/code&gt; (operador de negação): retorna &lt;code&gt;true&lt;/code&gt; se o argumento for &lt;code&gt;false&lt;/code&gt; e vice-versa.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemplos:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;1&amp;gt; not&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &amp;lt; 3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; and &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;2&amp;gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &amp;gt; 3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; and false.
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;3&amp;gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &amp;gt; 3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; and &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;5.4 &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;5.4&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;4&amp;gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &amp;lt; 3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; and true.
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;5&amp;gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &amp;lt; 3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; xor true.
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;6&amp;gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; 3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; xor true.
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;7&amp;gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; or true.
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+              &lt;h2 id=&quot;Por-hoje-é-só-&quot;&gt;
+                &lt;a name=&quot;Por-hoje-é-só-&quot; href=&quot;#Por-hoje-é-só-&quot;&gt;&lt;/a&gt;Por hoje é só!
+              &lt;/h2&gt;
+            
+&lt;p&gt;No próximo artigo, conheceremos &lt;em&gt;Tuples&lt;/em&gt;, &lt;em&gt;Lists&lt;/em&gt; e &lt;em&gt;Pattern Matching&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Até a próxima! =]&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;strong&gt;Referências:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.amazon.com/Programming-Erlang-Concurrent-Pragmatic-Programmers/dp/193778553X&quot;&gt;Programming Erlang&lt;/a&gt; - Joe Armstrong.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.amazon.com/Erlang-Programming-Francesco-Cesarini/dp/0596518188&quot;&gt;Erlang Programming&lt;/a&gt; - Francesco Cesarini &amp;amp; Simon Thompson.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;&quot;&gt;Learn You Some Erlang for great good!&lt;/a&gt;&lt;a href=&quot;http://learnyousomeerlang.com/&quot;&gt;http://learnyousomeerlang.com/&lt;/a&gt;) - Fred Hébert&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Fri, 09 Jan 2015 00:00:00 -0300</pubDate>
+        <link>http://www.vitorbritto.com.br/blog/aventurando-se-com-erlang-parte-1/</link>
+        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/aventurando-se-com-erlang-parte-1/</guid>
+      </item>
+    
+      <item>
         <title>Iniciando os estudos com Erlang</title>
         <description>&lt;p&gt;Saudações!&lt;/p&gt;
 
@@ -33,6 +365,7 @@
 &lt;li&gt;Bookmarking no Delicious&lt;/li&gt;
 &lt;li&gt;Serviço de Chat do Facebook&lt;/li&gt;
 &lt;li&gt;CouchDB&lt;/li&gt;
+&lt;li&gt;WhatsApp&lt;/li&gt;
 &lt;/ul&gt;
 
               &lt;h3 id=&quot;A-Comunidade&quot;&gt;
@@ -1488,428 +1821,6 @@
         <pubDate>Tue, 19 Aug 2014 00:00:00 -0300</pubDate>
         <link>http://www.vitorbritto.com.br/blog/aprendi-a-dizer-adeus/</link>
         <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/aprendi-a-dizer-adeus/</guid>
-      </item>
-    
-      <item>
-        <title>Controlando processos no UNIX</title>
-        <description>&lt;p&gt;Saudações!&lt;/p&gt;
-
-&lt;p&gt;Vamos combinar que é muito chato quando um programa/aplicação trava ou você não é possível finalizar um procedimento por conta da lentidão na execução de uma terafa no sistema. Para contornar esta situação e conseguirmos manipular os programas, vamos entender o que são os processos no Unix.&lt;/p&gt;
-
-              &lt;h3 id=&quot;Processando&quot;&gt;
-                &lt;a name=&quot;Processando&quot; href=&quot;#Processando&quot;&gt;&lt;/a&gt;Processando
-              &lt;/h3&gt;
-            
-&lt;p&gt;No Unix, é possível iniciar e interromper processos, enviar sinais aos programas em execução, verificar informações dos processos que estão sendo executados e muito mais. Mas, antes de entendermos como fazer isso, é preciso entender o que é um processo.&lt;/p&gt;
-
-&lt;p&gt;De forma simplificada, um processo é uma instância de um programa em execução. Logo ao iniciar o seu sistema, um processo chamado &lt;em&gt;init&lt;/em&gt; é executado com um PID de número &lt;strong&gt;1&lt;/strong&gt;. Para cada programa iniciado é atribuido um identificador único, o qual denominamos &lt;em&gt;PID&lt;/em&gt;(process identifier). Não vou entrar em detalhes sobre como cada processo é iniciado por debaixo dos panos. Para isto, leia &lt;a href=&quot;http://en.wikipedia.org/wiki/Process_identifier&quot;&gt;este material&lt;/a&gt; que pode ser encontrado no Wikipedia.&lt;/p&gt;
-
-&lt;p&gt;Sendo assim, ao executar um comando no prompt do Unix shell ou inicializar um programa/aplicativo você está iniciando um processo.&lt;/p&gt;
-
-              &lt;h3 id=&quot;Quais-processos-estão-em-execução-&quot;&gt;
-                &lt;a name=&quot;Quais-processos-estão-em-execução-&quot; href=&quot;#Quais-processos-estão-em-execução-&quot;&gt;&lt;/a&gt;Quais processos estão em execução?
-              &lt;/h3&gt;
-            
-&lt;p&gt;Para verificar quais processos estão em execução, basta executar o comando &lt;em&gt;ps&lt;/em&gt; (process status). Quando declarado sem qualquer argumento, o comando &lt;em&gt;ps&lt;/em&gt; exibe todos os processos vinculados com a sessão atual do seu sistema.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Confira o exemplo abaixo:&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;  PID TTY           TIME CMD
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt; &lt;span class=&quot;m&quot;&gt;2092&lt;/span&gt; ttys000    0:00.97 -bash
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Note que neste exemplo, o comando &lt;em&gt;ps&lt;/em&gt; exibe o ID do processo, em qual terminal o processo está vinculado, o tempo acumulado que este processo encontra-se em execução e o comando para este processo respectivamente.&lt;/p&gt;
-
-&lt;p&gt;Além disso, este comando é muito útil para verificar quais processos estão sendo executados em um sistema e quais consomem mais memória ou estão exigindo um uso excessivo da CPU.&lt;/p&gt;
-
-&lt;p&gt;Então, vamos entender melhor a mecânica por trás do comando &lt;em&gt;ps&lt;/em&gt;.&lt;/p&gt;
-
-              &lt;h3 id=&quot;Um-passo-de-cada-vez&quot;&gt;
-                &lt;a name=&quot;Um-passo-de-cada-vez&quot; href=&quot;#Um-passo-de-cada-vez&quot;&gt;&lt;/a&gt;Um passo de cada vez
-              &lt;/h3&gt;
-            
-&lt;p&gt;O comando &lt;em&gt;ps&lt;/em&gt; é um dos mais comuns e utilizados no/pelo Unix, mas oferece algumas diferenças de sintaxe para renderizar o output em seus variantes (flavors). A melhor maneira de entender como a sintaxe do &lt;em&gt;process status&lt;/em&gt; funciona no seu sistema, é utilizando o &lt;strong&gt;man pages&lt;/strong&gt;. Para facilitar a leitura, adicione e utilize o &lt;em&gt;alias&lt;/em&gt; abaixo para ler em formato PDF o manual do &lt;em&gt;ps&lt;/em&gt;. Se preferir, execute da maneira mais prática e convencional com: &lt;code&gt;man ps&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# Insira no .bashrc:&lt;/span&gt;
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;manpdf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;man -t $1 | pstopdf -i -o $1.pdf&amp;quot;&lt;/span&gt;
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# Execute com:&lt;/span&gt;
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;manpdf ps
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Importante:&lt;/strong&gt; o arquivo PDF para o man page do &lt;em&gt;ps&lt;/em&gt; será registrado no diretório corrente do terminal onde o &lt;em&gt;alias&lt;/em&gt; for executado.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Aí esta! Uma maneira prática para ler a respeito dos detalhes sobre o comando &lt;em&gt;ps&lt;/em&gt; no seu sistema. E outros comandos também, por que não? :)&lt;/p&gt;
-
-              &lt;h3 id=&quot;Mergulhando-nos-processos&quot;&gt;
-                &lt;a name=&quot;Mergulhando-nos-processos&quot; href=&quot;#Mergulhando-nos-processos&quot;&gt;&lt;/a&gt;Mergulhando nos processos
-              &lt;/h3&gt;
-            
-&lt;p&gt;Daqui para frente, vamos percorrer os seguintes tópicos:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;States (estados)&lt;/li&gt;
-&lt;li&gt;System process (processos do sistema)&lt;/li&gt;
-&lt;li&gt;Attributes (atributos)&lt;/li&gt;
-&lt;li&gt;Kill Process (matar processo)&lt;/li&gt;
-&lt;li&gt;Tree Process (árvore de processos)&lt;/li&gt;
-&lt;li&gt;Comando &lt;code&gt;top&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Nota Importante:&lt;/strong&gt; estou usando o Bash. :)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-              &lt;h4 id=&quot;Estados&quot;&gt;
-                &lt;a name=&quot;Estados&quot; href=&quot;#Estados&quot;&gt;&lt;/a&gt;Estados
-              &lt;/h4&gt;
-            
-&lt;p&gt;Para saber em qual estado o seu sistema se encontra, utilize o comando &lt;code&gt;ps&lt;/code&gt; com o argumento &lt;code&gt;u&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Confira o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps u
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;USER         PID    %CPU %MEM VSZ       RSS  TTY   STAT STARTED   TIME COMMAND
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;vitorbritto  &lt;span class=&quot;m&quot;&gt;2092&lt;/span&gt;   0.0  0.1  &lt;span class=&quot;m&quot;&gt;2437540&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;2924&lt;/span&gt; s000  S     5:39PM   0:01.20 -bash
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Perceba que o comando retorna uma série de informações a respeito do sistema no output (terminal), como:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;O usuário que executa o processo (USER)&lt;/li&gt;
-&lt;li&gt;O identificador do processo (PID)&lt;/li&gt;
-&lt;li&gt;A percentagem de uso do CPU (%CPU)&lt;/li&gt;
-&lt;li&gt;A percentagem de uso real da memória (%MEM)&lt;/li&gt;
-&lt;li&gt;O tamanho da memória virtual em KBs (VSZ)&lt;/li&gt;
-&lt;li&gt;O tamanho de memória física usada (RSS)&lt;/li&gt;
-&lt;li&gt;O terminal que o processo esá conectado (TTY)&lt;/li&gt;
-&lt;li&gt;Os estados atrelados ao processo (STAT)&lt;/li&gt;
-&lt;li&gt;Quando o processo foi iniciado (STARTED)&lt;/li&gt;
-&lt;li&gt;A quantidade de tempo utilizado pelo processo no CPU (TIME)&lt;/li&gt;
-&lt;li&gt;E o nome do comando (COMMAND)&lt;/li&gt;
-&lt;/ul&gt;
-
-              &lt;h4 id=&quot;Processos-do-Sistema&quot;&gt;
-                &lt;a name=&quot;Processos-do-Sistema&quot; href=&quot;#Processos-do-Sistema&quot;&gt;&lt;/a&gt;Processos do Sistema
-              &lt;/h4&gt;
-            
-&lt;p&gt;Por padrão, o seu sistema possui diversos processos em execução, para conferir uma lista detalhada de quais processos encontram-se em execução neste exato momento no seu sistema, digite: &lt;code&gt;ps ax&lt;/code&gt;. Para o nosso exemplo, vamos digitar o seguinte: &lt;code&gt;ps ax | wc -l&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Show de bola, Vitor! Digitei o comando e me retornou um número.&lt;/p&gt;
-
-&lt;p&gt;Pois bem! Este número representa a quantidade de processos em execução no seu sistema. Agora, vamos desmembrar este comando para que você possa entender o propósito de cada elemento nele.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;O argumento &lt;code&gt;a&lt;/code&gt; do comando &lt;code&gt;ps&lt;/code&gt; retorna informações dos processos de todos os usuários.&lt;/li&gt;
-&lt;li&gt;O argumento &lt;code&gt;x&lt;/code&gt; do comando &lt;code&gt;ps&lt;/code&gt; renderiza informações a respeito dos processos sem controlar o terminal.&lt;/li&gt;
-&lt;li&gt;O caracter &lt;code&gt;|&lt;/code&gt; é o que chamamos de &lt;em&gt;pipe&lt;/em&gt;. É um operador capaz de repassar uma informação a partir do &lt;em&gt;output&lt;/em&gt; de um comando para o &lt;em&gt;input&lt;/em&gt; de outro comando.&lt;/li&gt;
-&lt;li&gt;O segundo comando &lt;code&gt;wc -l&lt;/code&gt; é responsável por renderizar o total de processos em execução no seu sistema.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Já que este artigo não se trata do operador &lt;code&gt;|&lt;/code&gt; (pipe) e do comando &lt;code&gt;wc&lt;/code&gt; (e seus respectivos argumentos), recomendo a leitura de suas man pages. É uma ótima oportunidade para gerar um PDF, não é? :)&lt;/p&gt;
-
-&lt;p&gt;Pois bem. Os procesos são programas em execução e que lidam com aspectos essenciais de manipulação e manutenção no seu sistema. Muitos destes processos são, convencionalmente, chamados de &lt;em&gt;daemons&lt;/em&gt; e eles executam algumas rotinas. Digite o comando a seguir para visualizar quais processos estão em execução no seu sistema:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps ax
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Será retornada uma lista similar a esta:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps ax
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;  PID   TT  STAT      TIME COMMAND
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;   ??  Ss     0:48.81 /sbin/launchd
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;   &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;   ??  Ss     0:01.99 /usr/libexec/kextd
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;   &lt;span class=&quot;m&quot;&gt;11&lt;/span&gt;   ??  Ss     0:02.91 /usr/libexec/UserEventAgent -l System
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;   &lt;span class=&quot;m&quot;&gt;12&lt;/span&gt;   ??  Ss     0:03.60 /usr/sbin/notifyd
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;   &lt;span class=&quot;m&quot;&gt;14&lt;/span&gt;   ??  Ss     0:06.54 /usr/sbin/ntpd -c /private/etc/ntp-restrict.conf -n -g -p /var/run/ntpd.pid -f /var/db/ntp.drift
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;   &lt;span class=&quot;m&quot;&gt;17&lt;/span&gt;   ??  SNs    0:00.92 /usr/libexec/warmd
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;   ...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; a lista acima foi renderizada em um Mac OSX.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-              &lt;h4 id=&quot;Atributos-do-Processo&quot;&gt;
-                &lt;a name=&quot;Atributos-do-Processo&quot; href=&quot;#Atributos-do-Processo&quot;&gt;&lt;/a&gt;Atributos do Processo
-              &lt;/h4&gt;
-            
-&lt;p&gt;Cada processo possui um ambiente com diversos atributos, assim como argumentos para a linha de comando, variáveis do ambiente, descrição dos arquivos, mascara para criação de arquivos e muito mais.&lt;/p&gt;
-
-&lt;p&gt;Para verificar determinados atributos dos processos, você pode executar o comando &lt;em&gt;ps&lt;/em&gt; com a flag &lt;code&gt;-o&lt;/code&gt; e os atributos desejados. Veja o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps -o user,pid,stime,comm
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;E será renderizado isto:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps -o user,pid,stime,comm
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;USER          PID     STIME COMM
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;vitorbritto  &lt;span class=&quot;m&quot;&gt;2092&lt;/span&gt;   0:00.54 -bash
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Confira uma tabela dos atributos mais comuns disponíveis no Unix.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; alguns destes atributos foram mencionados no tópico &lt;a href=&quot;#estados&quot;&gt;estados&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;table&gt;&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Campo&lt;/th&gt;
-&lt;th&gt;Descrição&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;user&lt;/td&gt;
-&lt;td&gt;Usuário do processo&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;pid&lt;/td&gt;
-&lt;td&gt;ID do processo&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ppid&lt;/td&gt;
-&lt;td&gt;ID do processo filho&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;pcpu&lt;/td&gt;
-&lt;td&gt;Percentagem de uso do CPU&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;rss&lt;/td&gt;
-&lt;td&gt;Tamanho de memória física usada (em kilobytes)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;pmem&lt;/td&gt;
-&lt;td&gt;Percentagem de uso real da memória&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;vsz&lt;/td&gt;
-&lt;td&gt;Tamanho da memória virtual em KBs&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;tty&lt;/td&gt;
-&lt;td&gt;Terminal que o processo esá conectado&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;state (ou s)&lt;/td&gt;
-&lt;td&gt;Estado atrelado ao processo&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;stime&lt;/td&gt;
-&lt;td&gt;Quando o processo foi iniciado&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;time&lt;/td&gt;
-&lt;td&gt;Quantidade de tempo utilizado pelo processo no CPU&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;command (ou comm)&lt;/td&gt;
-&lt;td&gt;Nome do comando&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-
-              &lt;h4 id=&quot;Finalizando-um-processo&quot;&gt;
-                &lt;a name=&quot;Finalizando-um-processo&quot; href=&quot;#Finalizando-um-processo&quot;&gt;&lt;/a&gt;Finalizando um processo
-              &lt;/h4&gt;
-            
-&lt;p&gt;É possível finalizar um processo de algumas maneiras. O utilitário padrão para &amp;quot;matar&amp;quot; um processo, chama-se &lt;em&gt;kill&lt;/em&gt;. Tecnicamente, o comando &lt;code&gt;kill&lt;/code&gt; não interrompe ou finaliza o processo, isto é feito através de um sinal emitido para o processo. Os sinais (signals) são muito utilizados para a comunicação entre os processos. Cada sinal é responsável por uma ação do &lt;strong&gt;processo&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;O sinal padrão para o comando &lt;code&gt;kill&lt;/code&gt; é o &lt;em&gt;SIGTERM&lt;/em&gt; (terminar).&lt;/p&gt;
-
-&lt;p&gt;Para finalizar um processo, basta inserir o PID (identificador do processo). Veja o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;# Primeiro, buscamos o PID que queremos finalizar.
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;# Digamos que o processo a ser finalizado seja o navegador Firefox.
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;# No comando abaixo, passo a flag -o par retornar um output customizado
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;# com o comando e o identificador do processo (PID). Logo após uso o pipe (|)
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;# para repassar a informação com o grep, que funciona como um regex e realizar
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;# uma comparação com a string &amp;quot;firefox&amp;quot;.
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;vitorbritto at ~
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;$ ps axww -o pid,comm | grep firefox
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;  787 /Applications/Firefox.app/Contents/MacOS/firefox
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;# Verificamos que o PID deste comando é 787.
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;# Agora, vamos executar o comando kill para finalizar
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;# este processo utilizando o sinal padrão (SIGTERM).
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;$ kill 787
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Com o comando &lt;code&gt;kill -l&lt;/code&gt;, é possível renderizar no terminal os possíveis sinais com os seus respectivos números. Veja um exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;vitorbritto at ~
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;$ kill -l
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt; 1) SIGHUP       2) SIGINT       3) SIGQUI       4) SIGILL
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt; 5) SIGTRAP      6) SIGABRT      7) SIGEMT       8) SIGFPE
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt; 9) SIGKILL     10) SIGBUS      11) SIGSEGV     12) SIGSYS
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;13) SIGPIPE     14) SIGALRM     15) SIGTERM     16) SIGURG
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;17) SIGSTOP     18) SIGTSTP     19) SIGCONT     20) SIGCHLD
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;21) SIGTTIN     22) SIGTTOU     23) SIGIO       24) SIGXCPU
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;25) SIGXFSZ     26) SIGVTALRM   27) SIGPROF     28) SIGWINCH
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;29) SIGINFO     30) SIGUSR1     31) SIGUSR2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Muitos sistemas Unix fornecem alternativas ao comando &lt;code&gt;kill&lt;/code&gt; e que podem ser utilizados com o nome do comando ao invés do PID, como:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;pgrep&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;pkill&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;killall&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Em alguns sistemas, o &lt;code&gt;killall&lt;/code&gt; é utilizado para enviar sinais aos processos através de nomes. Tenha cuidado ao utilizar este cara, recomendo o uso do &lt;code&gt;pkill&lt;/code&gt;. Desta forma, ao invés de utilizar o ID do processo (PID), você utilizaria o nome do processo.
-Veja abaixo um exemplo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pkill firefox
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;O argumento utilizado no &lt;code&gt;pkill&lt;/code&gt; é uma simples expressão regular a ser comparada. Mesmo assim, antes de usar o &lt;code&gt;pkill&lt;/code&gt;, certifique-se de que a expressão existe com o &lt;code&gt;pgrep&lt;/code&gt;.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; no Mac OSX, tais comandos não são nativos. Você pode usar o homebrew para instalar o &lt;a href=&quot;http://proctools.sourceforge.net/&quot;&gt;proctools&lt;/a&gt; com o comando &lt;code&gt;brew install proctools&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-              &lt;h4 id=&quot;Árvore-de-Processos&quot;&gt;
-                &lt;a name=&quot;Árvore-de-Processos&quot; href=&quot;#Árvore-de-Processos&quot;&gt;&lt;/a&gt;Árvore de Processos
-              &lt;/h4&gt;
-            
-&lt;p&gt;Sem dúvidas, este é um dos comandos mais interessantes sobre processos. O &lt;code&gt;pstree&lt;/code&gt; permite que uma estrutura hierárquica seja renderizada no terminal, onde cada processo filho (child process) é relacionado ao seu processo pai (parent process).&lt;/p&gt;
-
-&lt;p&gt;Infelizmente, no OSX é preciso instalar este utilitário também. Veja o exemplo abaixo como podemos instalar este camarada com o &lt;em&gt;homebrew&lt;/em&gt; e a sua posterior visualização no terminal:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# 1. Instale com:&lt;/span&gt;
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew install pstree
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# 2. Execute com:&lt;/span&gt;
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pstree
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# 3. O resultado (parcial) será:&lt;/span&gt;
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;vitorbritto at ~
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pstree
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;-+&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;00001&lt;/span&gt; root /sbin/launchd
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;00010&lt;/span&gt; root /usr/libexec/kextd
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;00011&lt;/span&gt; root /usr/libexec/UserEventAgent -l System
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;00012&lt;/span&gt; root /usr/sbin/notifyd
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;00014&lt;/span&gt; root /usr/sbin/ntpd -c /private/etc/ntp-restrict.conf -n -g -p /var/run/ntpd.pid -f /var/db/ntp.drift
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;00017&lt;/span&gt; nobody /usr/libexec/warmd
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;00018&lt;/span&gt; _usbmuxd /System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/Resources/usbmuxd -launchd
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;--&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;00020&lt;/span&gt; root /usr/sbin/syslogd
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Certamente, é possível escrever um programa em Shell Script para renderizar uma &lt;code&gt;tree&lt;/code&gt; de acordo com as suas necessidades. Não entraremos em detalhes sobre como realizar este procedimento, para não perdermos o foco deste artigo, mas fique a vontade para realizar algumas pesquisas. Ok?&lt;/p&gt;
-
-              &lt;h4 id=&quot;Comando-&lt;code&gt;top&lt;-code&gt;&quot;&gt;
-                &lt;a name=&quot;Comando-&lt;code&gt;top&lt;-code&gt;&quot; href=&quot;#Comando-&lt;code&gt;top&lt;-code&gt;&quot;&gt;&lt;/a&gt;Comando &lt;code&gt;top&lt;/code&gt;
-              &lt;/h4&gt;
-            
-&lt;p&gt;Este é outro comando muito interessante. Principalmente para administradores Unix.&lt;/p&gt;
-
-&lt;p&gt;Com o comando &lt;code&gt;top&lt;/code&gt; é possível iniciar um utilitário interativo para análise dos processos, os quais são atualizados frequentemente e mostram informações físicas e virtuais da memória, CPU e processos lentos/travados (&lt;a href=&quot;http://en.wikipedia.org/wiki/Zombie_process&quot;&gt;Zombie Process&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;Confira um exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;Processes: &lt;span class=&quot;m&quot;&gt;75&lt;/span&gt; total, &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; running, &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; stuck, &lt;span class=&quot;m&quot;&gt;69&lt;/span&gt; sleeping, &lt;span class=&quot;m&quot;&gt;494&lt;/span&gt; threads                                                                                            03:35:56
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;Load Avg: 3.99, 3.51, 3.28  CPU usage: 66.8% user, 24.56% sys, 9.34% idle    SharedLibs: 2472K resident, 2260K data, 0B linkedit.
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;MemRegions: &lt;span class=&quot;m&quot;&gt;34948&lt;/span&gt; total, 642M resident, 17M private, 272M shared. PhysMem: 330M wired, 869M active, 834M inactive, 2034M used, 14M free.
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;VM: 187G vsize, 1101M framework vsize, 858219&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; pageins, 546183&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; pageouts. Networks: packets: 2578121/4689M in, 2119681/2093M out.
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;Disks: 564676/9683M &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt;, 289083/12G written.
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;PID   COMMAND      %CPU  TIME     &lt;span class=&quot;c&quot;&gt;#TH  #WQ  #POR #MREGS RPRVT  RSHRD  RSIZE  VPRVT  VSIZE  PGRP PPID STATE    UID  FAULTS     COW      MSGSENT    MSGRECV&lt;/span&gt;
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;3495&lt;/span&gt;  top          16.9  00:04.34 1/1  &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;28&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;29&lt;/span&gt;     1368K  216K   2076K  17M    2378M  &lt;span class=&quot;m&quot;&gt;3495&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2092&lt;/span&gt; running  &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    9727+      &lt;span class=&quot;m&quot;&gt;85&lt;/span&gt;       1294936+   647425+
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;3494&lt;/span&gt;  taskgated    0.0   00:00.03 &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;31&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;40&lt;/span&gt;     380K   272K   1740K  20M    2381M  &lt;span class=&quot;m&quot;&gt;3494&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    sleeping &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;577&lt;/span&gt;        &lt;span class=&quot;m&quot;&gt;106&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;116&lt;/span&gt;        48
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;3479&lt;/span&gt;  ocspd        0.0   00:00.04 &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;28&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;29&lt;/span&gt;     676K   276K   2100K  26M    2387M  &lt;span class=&quot;m&quot;&gt;3479&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    sleeping &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;749&lt;/span&gt;        &lt;span class=&quot;m&quot;&gt;98&lt;/span&gt;       &lt;span class=&quot;m&quot;&gt;185&lt;/span&gt;        77
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;3377&lt;/span&gt;  distnoted    0.0   00:00.01 &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;40&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;46&lt;/span&gt;     392K   240K   1012K  22M    2383M  &lt;span class=&quot;m&quot;&gt;3377&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3374&lt;/span&gt; sleeping &lt;span class=&quot;m&quot;&gt;89&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;413&lt;/span&gt;        &lt;span class=&quot;m&quot;&gt;83&lt;/span&gt;       &lt;span class=&quot;m&quot;&gt;255&lt;/span&gt;        124
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;3376&lt;/span&gt;  mdworker     0.0   00:00.36 &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;54&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;71&lt;/span&gt;     1492K  3748K  5632K  23M    2412M  &lt;span class=&quot;m&quot;&gt;3376&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3374&lt;/span&gt; sleeping &lt;span class=&quot;m&quot;&gt;89&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;2623&lt;/span&gt;       &lt;span class=&quot;m&quot;&gt;203&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;1702&lt;/span&gt;       757
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;3374&lt;/span&gt;  launchd      0.0   00:00.02 &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;53&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;45&lt;/span&gt;     368K   416K   784K   38M    2399M  &lt;span class=&quot;m&quot;&gt;3374&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    sleeping &lt;span class=&quot;m&quot;&gt;89&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;602&lt;/span&gt;        &lt;span class=&quot;m&quot;&gt;179&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;1254&lt;/span&gt;       523
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;2482&lt;/span&gt;  Mou          0.0   22:13.93 &lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;174&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;480&lt;/span&gt;    10M    12M    31M    301M   19G    &lt;span class=&quot;m&quot;&gt;2482&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;137&lt;/span&gt;  sleeping &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;369777&lt;/span&gt;     &lt;span class=&quot;m&quot;&gt;596&lt;/span&gt;      4043593+   2069826+
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;2447- node-webkit  17.6  69:54.83 4/2  &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;78&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;472&lt;/span&gt;    10M+   40M-   39M+   75M+   807M   &lt;span class=&quot;m&quot;&gt;2443&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2443&lt;/span&gt; running  &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  138640191+ &lt;span class=&quot;m&quot;&gt;690&lt;/span&gt;      2239122+   1119229+
-&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;2445- node-webkit  110.2 06:01:21 28/1 &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    137- 913-   145M+  36M    410M+  687M-  1426M- &lt;span class=&quot;m&quot;&gt;2443&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2443&lt;/span&gt; running  &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  1889563+   &lt;span class=&quot;m&quot;&gt;838&lt;/span&gt;      259273383+ 133231723+
-&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;2443- node-webkit  10.9  43:43.71 &lt;span class=&quot;m&quot;&gt;42&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;266&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;382&lt;/span&gt;    3204K  37M    19M+   341M   1102M  &lt;span class=&quot;m&quot;&gt;2443&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;137&lt;/span&gt;  stuck    &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  168935+    &lt;span class=&quot;m&quot;&gt;1219&lt;/span&gt;     41720371+  16962182+
-&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;2421&lt;/span&gt;  Preview      0.0   01:35.89 &lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;185&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;895&lt;/span&gt;    12M    24M    34M    222M   3708M  &lt;span class=&quot;m&quot;&gt;2421&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;137&lt;/span&gt;  sleeping &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;196129&lt;/span&gt;     &lt;span class=&quot;m&quot;&gt;745&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;380311&lt;/span&gt;     187637
-&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;2092&lt;/span&gt;  bash         0.0   00:01.46 &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;20&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;26&lt;/span&gt;     1268K  216K   1668K  19M    2380M  &lt;span class=&quot;m&quot;&gt;2092&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2091&lt;/span&gt; sleeping &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;15364&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;4346&lt;/span&gt;     &lt;span class=&quot;m&quot;&gt;491&lt;/span&gt;        237
-&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;2091&lt;/span&gt;  login        0.0   00:00.03 &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;34&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;58&lt;/span&gt;     0B     216K   432K   22M    2391M  &lt;span class=&quot;m&quot;&gt;2091&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2089&lt;/span&gt; sleeping &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;748&lt;/span&gt;        &lt;span class=&quot;m&quot;&gt;121&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;292&lt;/span&gt;        138
-&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;2089&lt;/span&gt;  Terminal     1.5   01:04.90 &lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;135&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;330&lt;/span&gt;    7376K  9412K  23M    32M    2538M  &lt;span class=&quot;m&quot;&gt;2089&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;137&lt;/span&gt;  sleeping &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;115422&lt;/span&gt;     &lt;span class=&quot;m&quot;&gt;539&lt;/span&gt;      342779+    165218+
-&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;1034&lt;/span&gt;  mdworker     0.0   00:47.94 &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;55&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;98&lt;/span&gt;     3096K  4116K  8244K  29M    2418M  &lt;span class=&quot;m&quot;&gt;1034&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;137&lt;/span&gt;  sleeping &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;126235&lt;/span&gt;     &lt;span class=&quot;m&quot;&gt;278&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;427269&lt;/span&gt;     174393
-&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;992&lt;/span&gt;   Sparrow      0.0   18:16.79 &lt;span class=&quot;m&quot;&gt;17&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;309&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;1955&lt;/span&gt;   51M    17M    67M    418M   3779M  &lt;span class=&quot;m&quot;&gt;992&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;137&lt;/span&gt;  sleeping &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;1391524&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;1828&lt;/span&gt;     6624660+   3008127+
-&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;885&lt;/span&gt;   plugin-conta 0.0   30:46.44 &lt;span class=&quot;m&quot;&gt;8&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;487&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;1344&lt;/span&gt;   1356K  28M    5816K  56M    2725M  &lt;span class=&quot;m&quot;&gt;787&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;787&lt;/span&gt;  sleeping &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;51300527&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;6662&lt;/span&gt;     17404742+  8400203+
-&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;&lt;span class=&quot;m&quot;&gt;787&lt;/span&gt;   firefox      11.0  04:42:22 &lt;span class=&quot;m&quot;&gt;74&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;339&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;19088&lt;/span&gt;  281M   34M    374M   514M   3563M  &lt;span class=&quot;m&quot;&gt;787&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;137&lt;/span&gt;  sleeping &lt;span class=&quot;m&quot;&gt;501&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;11793724&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;2573162&lt;/span&gt;  498594082+ 245596606+
-&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;7
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Com este &lt;em&gt;overview&lt;/em&gt; sobre processos no Unix, podemos seguir adiante e percorrer alguns aspectos para gerir tais processos. Para isto, vamos entender o que é e como funciona o comando &lt;code&gt;jobs&lt;/code&gt;.&lt;/p&gt;
-
-              &lt;h3 id=&quot;Controlando-os-processos&quot;&gt;
-                &lt;a name=&quot;Controlando-os-processos&quot; href=&quot;#Controlando-os-processos&quot;&gt;&lt;/a&gt;Controlando os processos
-              &lt;/h3&gt;
-            
-&lt;p&gt;Com o comando &lt;code&gt;jobs&lt;/code&gt;, é possível executar programas em &lt;em&gt;background&lt;/em&gt;. Isso possibilita a execução de múltiplos programas ao mesmo tempo e em paralelo, a suspensão e reinício de determinados comandos também.&lt;/p&gt;
-
-&lt;p&gt;Mas, como posso executar isso Vitor?&lt;/p&gt;
-
-              &lt;h4 id=&quot;Entendendo-melhor-o-comando-jobs&quot;&gt;
-                &lt;a name=&quot;Entendendo-melhor-o-comando-jobs&quot; href=&quot;#Entendendo-melhor-o-comando-jobs&quot;&gt;&lt;/a&gt;Entendendo melhor o comando jobs
-              &lt;/h4&gt;
-            
-&lt;p&gt;Você pode, simplesmente, inserir o operador &lt;code&gt;&amp;amp;&lt;/code&gt; ao final do comando que deseja executar. Com isso, o seu processo será executado em &lt;em&gt;background&lt;/em&gt; e o seu &lt;em&gt;prompt&lt;/em&gt; não será travado. Confira o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm search zip &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Neste exemplo, o &lt;code&gt;npm&lt;/code&gt; fará uma busca pelos módulos com o termo &lt;em&gt;zip&lt;/em&gt; e o seu prompt ficará livre para continuar executando demais comandos. Faça um teste. :)&lt;/p&gt;
-
-              &lt;h4 id=&quot;Manipulando-os-processos-em-execução&quot;&gt;
-                &lt;a name=&quot;Manipulando-os-processos-em-execução&quot; href=&quot;#Manipulando-os-processos-em-execução&quot;&gt;&lt;/a&gt;Manipulando os processos em execução
-              &lt;/h4&gt;
-            
-&lt;p&gt;Para verificar os processos em execução no &lt;em&gt;background&lt;/em&gt;, basta digitar no terminal o comando &lt;code&gt;jobs&lt;/code&gt;. Será exibida uma lista semelhante a que você verá abaixo:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;jobs&lt;/span&gt;
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;+ Running        npm search zip &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;É possível mover um processo para o &lt;em&gt;foreground&lt;/em&gt;, mas vale lembrar que este procedimento fará com que o prompt seja travado. Isso impossibilita qualquer ação do usuário até que o processo seja finalizado. Para ver como funciona, execute o seguinte comando no processo em &lt;em&gt;background&lt;/em&gt; recém-criado:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# Colocar no foreground o processo de número 1&lt;/span&gt;
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;fg &lt;/span&gt;1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; se houverem muitos jobs em execução no &lt;em&gt;background&lt;/em&gt;, é possível passar o número do &lt;em&gt;job&lt;/em&gt; como argumento. Exemplo: &lt;code&gt;fg &amp;lt;número do processo em background&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-              &lt;h4 id=&quot;Acabando-com-a-festa&quot;&gt;
-                &lt;a name=&quot;Acabando-com-a-festa&quot; href=&quot;#Acabando-com-a-festa&quot;&gt;&lt;/a&gt;Acabando com a festa
-              &lt;/h4&gt;
-            
-&lt;p&gt;No nosso exemplo temos um processo em execução, no qual está buscando os módulos do node com o termo &lt;em&gt;zip&lt;/em&gt; para renderizar no output (terminal). Entretanto, digamos que este processo esteja atrapalhando o desempenho do seu sistema ou que você não queira que ele prossiga. Para isso, podemos utilizar dois métodos para interromper este processo.&lt;/p&gt;
-
-&lt;p&gt;No primeiro método, tratando-se de um processo no &lt;em&gt;foreground&lt;/em&gt;, é possível suspender o mesmo com a combinação &lt;code&gt;CTRL+Z&lt;/code&gt;. Do contrário, se for um processo no &lt;em&gt;background&lt;/em&gt;, execute o comando &lt;code&gt;kill&lt;/code&gt; adicionando o caracter &lt;code&gt;%&lt;/code&gt; precedido do número do &lt;em&gt;job&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Por exemplo: &lt;code&gt;kill -18 %2&lt;/code&gt;.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; vale lembrar que o &lt;code&gt;-18&lt;/code&gt; não é um número negativo, e sim a representação do sinal a ser passado para o processo. neste caso, o sinal de número 18 (SIGTSTP - Signal Stop).&lt;/p&gt;
-&lt;/blockquote&gt;
-
-              &lt;h3 id=&quot;Por-enquanto-é-isso&quot;&gt;
-                &lt;a name=&quot;Por-enquanto-é-isso&quot; href=&quot;#Por-enquanto-é-isso&quot;&gt;&lt;/a&gt;Por enquanto é isso
-              &lt;/h3&gt;
-            
-&lt;p&gt;Podemos perceber o quão importante os processos são em um sistema e como podemos manipular/generenciar estes caras a fim de manter um bom desempenho neste ambiente.&lt;/p&gt;
-
-&lt;p&gt;Vimos também que:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Processos são simples inicializações de programas com uma única referência ao processo por um ID (PID).&lt;/li&gt;
-&lt;li&gt;Os processos possuem processos pai e processos filho (parent e child process).&lt;/li&gt;
-&lt;li&gt;As informações de um processo podem ser renderizadas no terminal com o comando &lt;code&gt;ps&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Podemos realizar diagnósticos em tempo real com o comando &lt;code&gt;top&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Conseguimos uma visualização mais elegante dos processos com o utilitário &lt;code&gt;pstree&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Sinais são utilizados como métodos para estabelecer uma comunicação entre os processos.&lt;/li&gt;
-&lt;li&gt;O comando &lt;code&gt;kill&lt;/code&gt; é o utilitário padrão para finalizar processos a partir de sinais. O sinal padrão é o &lt;strong&gt;SIGTERM&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;O Unix shell fornece uma maneira simples para realizar multi-tarefas em &lt;em&gt;background&lt;/em&gt; e em paralelo, adicionando um caracter &lt;code&gt;&amp;amp;&lt;/code&gt; (ampersand) ao final do comando.&lt;/li&gt;
-&lt;li&gt;Podemos gerenciar os procesos em &lt;em&gt;background&lt;/em&gt; com o comando &lt;code&gt;jobs&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Com o comando &lt;code&gt;kill&lt;/code&gt;, podemos suspender um processo.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Para facilitar em futuras pesquisas, segue uma lista com alguns dos termos relacionados/utilizados neste artigo:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Comandos:&lt;/strong&gt; &lt;code&gt;ps&lt;/code&gt;, &lt;code&gt;kill&lt;/code&gt;, &lt;code&gt;killall&lt;/code&gt;, &lt;code&gt;|&lt;/code&gt;, &lt;code&gt;pgrep&lt;/code&gt;, &lt;code&gt;pkill&lt;/code&gt;, &lt;code&gt;grep&lt;/code&gt;, &lt;code&gt;wc&lt;/code&gt;, &lt;code&gt;top&lt;/code&gt;, &lt;code&gt;pstree&lt;/code&gt;, &lt;code&gt;jobs&lt;/code&gt;, &lt;code&gt;bg&lt;/code&gt;, &lt;code&gt;fg&lt;/code&gt;, &lt;code&gt;&amp;amp;&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Processos:&lt;/strong&gt; Child Process &lt;strong&gt;e&lt;/strong&gt; Parent Process.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Atributos:&lt;/strong&gt; UID, PID, RSS, STAT, COMM, etc.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Sinais:&lt;/strong&gt; SIGTERM, SIGKILL, SIGSTP, etc.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Jobs:&lt;/strong&gt; &lt;em&gt;background&lt;/em&gt; e &lt;em&gt;foreground&lt;/em&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-              &lt;h3 id=&quot;Mas-não-para-por-aí-&quot;&gt;
-                &lt;a name=&quot;Mas-não-para-por-aí-&quot; href=&quot;#Mas-não-para-por-aí-&quot;&gt;&lt;/a&gt;Mas não para por aí!
-              &lt;/h3&gt;
-            
-&lt;p&gt;Lembre-se de que este artigo não cobre todos os detalhes sobre processos. A ideia foi passar um &lt;em&gt;overview&lt;/em&gt;, mas com um certo nível de detalhes sobre processos no Unix. Recomendo a leitura do livro &lt;a href=&quot;http://www.jstorimer.com/products/working-with-unix-processes&quot;&gt;Working with UNIX Processes&lt;/a&gt; do Jesse Storimer.&lt;/p&gt;
-
-&lt;p&gt;Além disso, para injetarmos um pouco de JavaScript nesta caminhada, farei uma continuação deste artigo sobre como os processos e sinais podem ser executados no NodeJS. Assim, veremos como os módulos nativos e os objetos existentes nesta plataforma podem ser úteis para controlar/manipular melhor a nossa aplicação. Combinado?&lt;/p&gt;
-
-&lt;p&gt;Até a próxima! =]&lt;/p&gt;
-</description>
-        <pubDate>Sun, 27 Jul 2014 00:00:00 -0300</pubDate>
-        <link>http://www.vitorbritto.com.br/blog/controlando-processos-no-unix/</link>
-        <guid isPermaLink="true">http://www.vitorbritto.com.br/blog/controlando-processos-no-unix/</guid>
       </item>
     
   </channel>
