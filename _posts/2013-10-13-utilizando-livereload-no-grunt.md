@@ -21,7 +21,7 @@ Para quem utiliza o Grunt, existem dois *plugins* que possibilitam uma dinâmica
 
 Para realizar os passos abaixo, o [Grunt](http://gruntjs.com/) deve estar instalado na sua máquina, assim como o `package.json` e `Gruntfile.js` estarem configurados.
 
-Confira o artigo sobre [Automação de tarefas com o Grunt](http://www.vitorbritto.com.br/blog/automacao-de-tarefas-com-gruntjs-parte-1/) para saber mais a respeito.
+Confira o artigo sobre [Automação de tarefas com o Grunt](http://vitorbritto.com.br/blog/automacao-de-tarefas-com-gruntjs-parte-1/) para saber mais a respeito.
 
 ### Instalando os plugins
 
